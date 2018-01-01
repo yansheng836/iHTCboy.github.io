@@ -6,32 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ihtc.cc">
-  <title>Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64/arm64. | iHTCboy&#39;s Blog</title>
+  <title>Tag: 2018 | iHTCboy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Xcode8 编译报错：
-
-Framework not found IOSurface for architecture arm64或者 Framework not found FileProvider for architecture x86_64/arm64. 
-
-原因IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xco">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64/arm64.">
-<meta property="og:url" content="http://ihtc.cc/2017/10/27/2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64./index.html">
+  <meta name="description" content="iOS,Android,Apple,Life,Think">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iHTCboy's Blog">
+<meta property="og:url" content="http://ihtc.cc/tags/2018/index.html">
 <meta property="og:site_name" content="iHTCboy's Blog">
-<meta property="og:description" content="Xcode8 编译报错：
-
-Framework not found IOSurface for architecture arm64或者 Framework not found FileProvider for architecture x86_64/arm64. 
-
-原因IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xco">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-01-01T13:33:25.000Z">
+<meta property="og:description" content="iOS,Android,Apple,Life,Think">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64/arm64.">
-<meta name="twitter:description" content="Xcode8 编译报错：
-
-Framework not found IOSurface for architecture arm64或者 Framework not found FileProvider for architecture x86_64/arm64. 
-
-原因IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xco">
+<meta name="twitter:title" content="iHTCboy's Blog">
+<meta name="twitter:description" content="iOS,Android,Apple,Life,Think">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s Blog" type="application/atom+xml">
   
@@ -193,163 +178,69 @@ Framework not found IOSurface for architecture arm64或者 Framework not found F
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64." class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64/arm64.
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/01/2018_你好，2018！/" class="archive-article-date">
+  	<time datetime="2018-01-01T13:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/01/2018_你好，2018！/">你好，2018！</a>
     </h1>
   
 
-        
-        <a href="/2017/10/27/2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64./" class="archive-article-date">
-  	<time datetime="2017-10-27T00:33:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Xcode8 编译报错：</p>
-<blockquote>
-<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
-</blockquote>
-<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>
-<a id="more"></a>
-<p>题外话，这个在 Xcode5 和 Xcode6 过度时，Metal.framework 时发生过，可能过了就忘记了。也发现 Xcode 很多特性平时没有注意，有空真要多看看 LLVM 的知识。</p>
-<h3 id="结果">结果</h3><p>如果原厂升级到 Xcode9，则不受影响。如果 Xcode8 编译报错，网上最初给出的方案，在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，结果最后坑定了！</p>
-<p>在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，上传iTunes Connet 报错：<br><img src="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512" alt="iTunes Connet 报错使用非法 API.jpg"></p>
-<h3 id="正解解决方案">正解解决方案</h3><p> Build Settings 中 Link Frameworks Automatically 把默认Yes 改成 No ，在 Xcode8 编译就能通过。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置 Link Frameworks Automatically 为 NO.jpeg"></p>
-<h3 id="参考&amp;扩展阅读">参考&amp;扩展阅读</h3><ul>
-<li><a href="https://stackoverflow.com/questions/25804696/xcode-6-gm-linker-error-when-building-for-device-metal-not-found/25924645" target="_blank" rel="external">ios8 - XCode 6 GM: linker error when building for device (Metal not found) - Stack Overflow</a></li>
-<li><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/WhatsNewXcode/Chapters/xcode_5_0.html#//apple_ref/doc/uid/TP40012953-SW1" target="_blank" rel="external">New Features in Xcode 5</a></li>
-<li><a href="https://mmmag.appsee.com/2014/09/22/xcode-new-link-frameworks-automatically-fix-framework-not-found-metal-for-architecture-armv7/" target="_blank" rel="external">XCode’s New “Link Frameworks Automatically” &amp; How to Fix “framework not found Metal for architecture armv7”</a></li>
-<li><a href="https://stackoverflow.com/questions/44450673/framework-not-found-iosurface-for-architecture-arm64" target="_blank" rel="external">ios - Framework not found IOSurface for architecture arm64 - Stack Overflow</a></li>
-<li><a href="https://stackoverflow.com/questions/33728359/when-do-you-have-to-link-frameworks-and-libraries-to-an-xcode-project" target="_blank" rel="external">ios - When do you have to link Frameworks and Libraries to an XCode project? - Stack Overflow</a></li>
-<li><a href="https://stackoverflow.com/questions/24902787/dont-we-need-to-link-framework-to-xcode-project-anymore" target="_blank" rel="external">Don’t we need to link framework to XCode project anymore?</a></li>
-<li><a href="https://stackoverflow.com/questions/18947516/import-vs-import-ios-7/18947634#" target="_blank" rel="external">objective c - @import vs #import - iOS 7 - Stack Overflow</a></li>
-<li><a href="http://www.jianshu.com/p/0ce22e777900" target="_blank" rel="external">Modules和Autolinking的介绍与使用 - 简书</a></li>
-<li><a href="http://blog.csdn.net/xiaofei125145/article/details/41117085" target="_blank" rel="external">xcode 新特性的 一点理解 enable module 和 link frameworks automatically - 滴水成川 - CSDN博客</a></li>
-</ul>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注明来源。</p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>如果觉得我的文章对您有用，请随意打赏。您的支付将鼓励我继续创作！<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpeg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/weixinpay.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">Framework not found</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">2018</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">IOSurface</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">Xcode9</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">年终总结</a>
         </li>
       
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 	<i class="icon-book icon"></i>
 	<a class="article-category-link" href="/categories/technology/">technology</a>
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
   
   
-    <a href="/2017/10/12/2017_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64." data-title="Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64/arm64." data-url="http://ihtc.cc/2017/10/27/2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64./"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"ihtcboy"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -377,9 +268,9 @@ Framework not found IOSurface for architecture arm64或者 Framework not found F
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
@@ -477,6 +368,14 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">2018</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">年终总结</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">Xcode</a>
