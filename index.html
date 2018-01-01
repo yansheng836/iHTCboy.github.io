@@ -180,6 +180,245 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64." class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/27/2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64./">Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64/arm64.</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/27/2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64./" class="archive-article-date">
+  	<time datetime="2017-10-27T00:33:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Xcode8 编译报错：</p>
+<blockquote>
+<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
+</blockquote>
+<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>
+        
+          <a class="article-more-a" href="/2017/10/27/2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64./#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">Framework not found</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">IOSurface</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">Xcode9</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/27/2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64./">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/12/2017_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/">Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/12/2017_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/" class="archive-article-date">
+  	<time datetime="2017-10-12T01:00:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Xcode9_打包，上传_iTunes_Connet_报错，提示需要在icon添加一张_Marketing_1024x1024_的图标">Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标</h4><blockquote>
+<p>WARNING ITMS-90704: “Missing Marketing Icon. iOS Apps must include a 1024x1024px Marketing Icon in PNG format. Apps that do not include the Marketing Icon cannot be submitted for App Review or Beta App Review.”</p>
+</blockquote>
+<p>Xcode9 中需要添加：<br><img src="http://upload-images.jianshu.io/upload_images/99517-97ddb8e31e633c19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AppStore 1024pt"></p>
+        
+          <a class="article-more-a" href="/2017/10/12/2017_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">App Store Icon</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">ITMS-90704</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">ITMS-90717</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">Xcode9</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/12/2017_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017_Xcode快捷键 高效必记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/27/2017_Xcode快捷键 高效必记/">Xcode快捷键 高效必记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/27/2017_Xcode快捷键 高效必记/" class="archive-article-date">
+  	<time datetime="2017-03-27T13:58:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言">前言</h3><p>最近入职，忙于公司业务熟悉与熟练。工作三年了，上一年在创业公司，更多的是学习公司生存法则，忙于产品开发，没有好好总结，有机会也可以写写创业公司那么事，对个人而言是宝贵的经历。所以，最近在工作中，也会慢慢总结一下自己经验，然后思考一下，也当学习分享，一起进步！<br>所以今天就先从IDE效率总结开始啊！</p>
+<h3 id="Xcode快捷键">Xcode快捷键</h3><p>文字版有空在编辑，上个图片版先！个人认为这些背下来，都是提高效率不少！</p>
+        
+          <a class="article-more-a" href="/2017/03/27/2017_Xcode快捷键 高效必记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">Xcode</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">快捷键</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/27/2017_Xcode快捷键 高效必记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-2016_再见2016" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -726,241 +965,6 @@
 
 
   
-    <article id="post-2016_彻底删除Mac下iMessage的历史聊天记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/18/2016_彻底删除Mac下iMessage的历史聊天记录/">彻底删除Mac下iMessage的历史聊天记录</a>
-    </h1>
-  
-
-        
-        <a href="/2016/05/18/2016_彻底删除Mac下iMessage的历史聊天记录/" class="archive-article-date">
-  	<time datetime="2016-05-18T07:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在用iMessage群发短信，然后就有了正文：</p>
-<h4 id="1、清空数据库">1、清空数据库</h4><p>在Finder桌面时，按住Option键后点“前往”-“资源库”即可，/Users/XXX/Library/Messages/Archive，XXX是当前的用户名。里面就有历史记录的。</p>
-        
-          <a class="article-more-a" href="/2016/05/18/2016_彻底删除Mac下iMessage的历史聊天记录/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">Mac</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">iMessage</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/technology/">technology</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/05/18/2016_彻底删除Mac下iMessage的历史聊天记录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015_最后的总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/31/2015_最后的总结/">草从集1.0【2015年总结】.ipa</a>
-    </h1>
-  
-
-        
-        <a href="/2015/12/31/2015_最后的总结/" class="archive-article-date">
-  	<time datetime="2015-12-30T17:54:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="序言">序言</h3><p>这一年，改变很多，从学生角色，完全成为一个职场能人。一路过来，不及思考，不及选择，不及放弃。现在回想，也就如此，也值一谈，就此开始！</p>
-<h3 id="第一章_最后的桂林实习">第一章 <strong>最后的桂林实习</strong></h3><p>想起年初，还在桂林市区实习，从上年10月开始，那日子过的太美好了，以致于现在来看，进步的不够多，也留下了对工作的认知。</p>
-<p>说点实在的吧。实习时为了产品上线，曾在公司睡过觉；因为太闲，也曾经跟老板哭诉过；因为年轻，也曾经不估而终。现在想起来，已经没有那么可怕，只是现在如果叫我在加班到12点，已经不可能了，人总是这样，经过好的东西好，坏的东西，就不想在接触。</p>
-        
-          <a class="article-more-a" href="/2015/12/31/2015_最后的总结/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">年终奖</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">总结</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">生活</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">草从集</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/life/">life</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/12/31/2015_最后的总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015_iOS快速枚举中stop注意事项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/17/2015_iOS快速枚举中stop注意事项/">iOS快速枚举中stop注意事项</a>
-    </h1>
-  
-
-        
-        <a href="/2015/12/17/2015_iOS快速枚举中stop注意事项/" class="archive-article-date">
-  	<time datetime="2015-12-17T00:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近有一个需要，只存储服务器返回数组里最多3个照片，所以遍历数时需要做一个判断：</p>
-<h3 id="1-版本1">1.版本1</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">[picArray enumerateObjectsUsingBlock:^<span class="list">(<span class="keyword">NSDictionary</span> * dic, NSUInteger idx, BOOL * _Nonnull stop)</span> <span class="collection">&#123;</span><br><span class="line">          if<span class="list">(<span class="keyword">idx</span> &gt;2)</span> *stop = YES;//最多<span class="number">3</span>张照片</span><br><span class="line">         <span class="collection">[pics addObject:<span class="collection">[dic objectForKey:@<span class="string">"picture"</span>]</span>]</span><span class="comment">;</span></span><br><span class="line">&#125;</span>]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2015/12/17/2015_iOS快速枚举中stop注意事项/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">BOOL * stop</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">enumerate</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">快速枚举</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/technology/">technology</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/12/17/2015_iOS快速枚举中stop注意事项/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1096,6 +1100,34 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Xcode9</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">App Store Icon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">ITMS-90704</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">ITMS-90717</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">IOSurface</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Framework not found</a>
               </li>
              
               <li class="article-tag-list-item">

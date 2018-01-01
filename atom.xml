@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Write the Code，Change the World。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2017-01-02T03:56:50.000Z</updated>
+  <updated>2018-01-01T13:33:25.000Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -13,6 +13,135 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64/arm64.]]></title>
+    <link href="http://ihtc.cc/2017/10/27/2017_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9A**Framework%20not%20found%20IOSurface%20for%20architecture%20arm64**%20%E6%88%96%E8%80%85%20**Framework%20not%20found%20FileProvider%20for%20architecture%20x86_64:arm64./"/>
+    <id>http://ihtc.cc/2017/10/27/2017_Xcode8报错：**Framework not found IOSurface for architecture arm64** 或者 **Framework not found FileProvider for architecture x86_64:arm64./</id>
+    <published>2017-10-27T00:33:16.000Z</published>
+    <updated>2018-01-01T13:33:25.000Z</updated>
+    <content type="html"><![CDATA[<p>Xcode8 编译报错：</p>
+<blockquote>
+<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
+</blockquote>
+<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>
+<a id="more"></a>
+<p>题外话，这个在 Xcode5 和 Xcode6 过度时，Metal.framework 时发生过，可能过了就忘记了。也发现 Xcode 很多特性平时没有注意，有空真要多看看 LLVM 的知识。</p>
+<h3 id="结果">结果</h3><p>如果原厂升级到 Xcode9，则不受影响。如果 Xcode8 编译报错，网上最初给出的方案，在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，结果最后坑定了！</p>
+<p>在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，上传iTunes Connet 报错：<br><img src="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512" alt="iTunes Connet 报错使用非法 API.jpg"></p>
+<h3 id="正解解决方案">正解解决方案</h3><p> Build Settings 中 Link Frameworks Automatically 把默认Yes 改成 No ，在 Xcode8 编译就能通过。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置 Link Frameworks Automatically 为 NO.jpeg"></p>
+<h3 id="参考&amp;扩展阅读">参考&amp;扩展阅读</h3><ul>
+<li><a href="https://stackoverflow.com/questions/25804696/xcode-6-gm-linker-error-when-building-for-device-metal-not-found/25924645" target="_blank" rel="external">ios8 - XCode 6 GM: linker error when building for device (Metal not found) - Stack Overflow</a></li>
+<li><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/WhatsNewXcode/Chapters/xcode_5_0.html#//apple_ref/doc/uid/TP40012953-SW1" target="_blank" rel="external">New Features in Xcode 5</a></li>
+<li><a href="https://mmmag.appsee.com/2014/09/22/xcode-new-link-frameworks-automatically-fix-framework-not-found-metal-for-architecture-armv7/" target="_blank" rel="external">XCode’s New “Link Frameworks Automatically” &amp; How to Fix “framework not found Metal for architecture armv7”</a></li>
+<li><a href="https://stackoverflow.com/questions/44450673/framework-not-found-iosurface-for-architecture-arm64" target="_blank" rel="external">ios - Framework not found IOSurface for architecture arm64 - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/33728359/when-do-you-have-to-link-frameworks-and-libraries-to-an-xcode-project" target="_blank" rel="external">ios - When do you have to link Frameworks and Libraries to an XCode project? - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/24902787/dont-we-need-to-link-framework-to-xcode-project-anymore" target="_blank" rel="external">Don’t we need to link framework to XCode project anymore?</a></li>
+<li><a href="https://stackoverflow.com/questions/18947516/import-vs-import-ios-7/18947634#" target="_blank" rel="external">objective c - @import vs #import - iOS 7 - Stack Overflow</a></li>
+<li><a href="http://www.jianshu.com/p/0ce22e777900" target="_blank" rel="external">Modules和Autolinking的介绍与使用 - 简书</a></li>
+<li><a href="http://blog.csdn.net/xiaofei125145/article/details/41117085" target="_blank" rel="external">xcode 新特性的 一点理解 enable module 和 link frameworks automatically - 滴水成川 - CSDN博客</a></li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xcode8 编译报错：</p>
+<blockquote>
+<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
+</blockquote>
+<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>]]>
+    
+    </summary>
+    
+      <category term="Framework not found" scheme="http://ihtc.cc/tags/Framework-not-found/"/>
+    
+      <category term="IOSurface" scheme="http://ihtc.cc/tags/IOSurface/"/>
+    
+      <category term="Xcode9" scheme="http://ihtc.cc/tags/Xcode9/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决]]></title>
+    <link href="http://ihtc.cc/2017/10/12/2017_Xcode9%20%E6%89%93%E5%8C%85App%20Store%20Icon(1024xp)%20WARNING%20ITMS-90704%20-90717%20%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>http://ihtc.cc/2017/10/12/2017_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/</id>
+    <published>2017-10-12T01:00:16.000Z</published>
+    <updated>2018-01-01T13:32:57.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="Xcode9_打包，上传_iTunes_Connet_报错，提示需要在icon添加一张_Marketing_1024x1024_的图标">Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标</h4><blockquote>
+<p>WARNING ITMS-90704: “Missing Marketing Icon. iOS Apps must include a 1024x1024px Marketing Icon in PNG format. Apps that do not include the Marketing Icon cannot be submitted for App Review or Beta App Review.”</p>
+</blockquote>
+<p>Xcode9 中需要添加：<br><img src="http://upload-images.jianshu.io/upload_images/99517-97ddb8e31e633c19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AppStore 1024pt"></p>
+<a id="more"></a>
+<p>如果是 Xcode8还是在 iTunes Connect 后台添加 1024x1024 图标：<br><img src="http://upload-images.jianshu.io/upload_images/99517-94aeddcf90f731d9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="iTunes Connect 后台说明"></p>
+<h4 id="App_Store_1024x1024px_图标规范">App Store 1024x1024px 图标规范</h4><p>用 Xcode9 打包后上传 iTunes Connet 报错：</p>
+<blockquote>
+<p>ERROR ITMS-90717  Invalid App Store Icon. The App Store Icon in the asset catalog in ‘Some.app’ can’t be transparent nor contain an alpha channel.</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-0a2ba03b013b5083.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ERROR ITMS-90717"></p>
+<p>原因：Xcode9中 1024x1024的图标只能 Alpha通道为否的 png 或 jpg 图片。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-6b4fc430ebc4a130.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="App Store 图标规范"></p>
+<h4 id="总结">总结</h4><p> App Store Icon (1024px)图标在 Xcode9 中只能放置不透明（没有 alpha通道）的 png 或 jpg 格式图片。</p>
+<h4 id="参考：">参考：</h4><ul>
+<li><a href="https://forums.developer.apple.com/thread/86829" target="_blank" rel="external">Marketing/App Store Icon PNG transparency issue | Apple Developer Forums</a></li>
+<li><a href="http://help.apple.com/xcode/mac/current/#/dev4b0ebb1bb" target="_blank" rel="external">Add an App Store icon - Xcode Help</a></li>
+<li><a href="http://cdn2.jianshu.io/p/e8f3791ec556" target="_blank" rel="external">ERROR ITMS-90717 - 简书</a></li>
+<li><a href="https://help.apple.com/itunes-connect/developer/#/dev8b5cb82e2" target="_blank" rel="external">添加一个 App Store 图标 - iTunes Connect 开发人员帮助</a></li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="Xcode9_打包，上传_iTunes_Connet_报错，提示需要在icon添加一张_Marketing_1024x1024_的图标">Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标</h4><blockquote>
+<p>WARNING ITMS-90704: “Missing Marketing Icon. iOS Apps must include a 1024x1024px Marketing Icon in PNG format. Apps that do not include the Marketing Icon cannot be submitted for App Review or Beta App Review.”</p>
+</blockquote>
+<p>Xcode9 中需要添加：<br><img src="http://upload-images.jianshu.io/upload_images/99517-97ddb8e31e633c19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AppStore 1024pt"></p>]]>
+    
+    </summary>
+    
+      <category term="App Store Icon" scheme="http://ihtc.cc/tags/App-Store-Icon/"/>
+    
+      <category term="ITMS-90704" scheme="http://ihtc.cc/tags/ITMS-90704/"/>
+    
+      <category term="ITMS-90717" scheme="http://ihtc.cc/tags/ITMS-90717/"/>
+    
+      <category term="Xcode9" scheme="http://ihtc.cc/tags/Xcode9/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Xcode快捷键 高效必记]]></title>
+    <link href="http://ihtc.cc/2017/03/27/2017_Xcode%E5%BF%AB%E6%8D%B7%E9%94%AE%20%E9%AB%98%E6%95%88%E5%BF%85%E8%AE%B0/"/>
+    <id>http://ihtc.cc/2017/03/27/2017_Xcode快捷键 高效必记/</id>
+    <published>2017-03-27T13:58:16.000Z</published>
+    <updated>2018-01-01T13:28:17.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近入职，忙于公司业务熟悉与熟练。工作三年了，上一年在创业公司，更多的是学习公司生存法则，忙于产品开发，没有好好总结，有机会也可以写写创业公司那么事，对个人而言是宝贵的经历。所以，最近在工作中，也会慢慢总结一下自己经验，然后思考一下，也当学习分享，一起进步！<br>所以今天就先从IDE效率总结开始啊！</p>
+<h3 id="Xcode快捷键">Xcode快捷键</h3><p>文字版有空在编辑，上个图片版先！个人认为这些背下来，都是提高效率不少！</p>
+<a id="more"></a>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-241791132f445fb9.jpg" alt="Xcode快捷键"></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="前言">前言</h3><p>最近入职，忙于公司业务熟悉与熟练。工作三年了，上一年在创业公司，更多的是学习公司生存法则，忙于产品开发，没有好好总结，有机会也可以写写创业公司那么事，对个人而言是宝贵的经历。所以，最近在工作中，也会慢慢总结一下自己经验，然后思考一下，也当学习分享，一起进步！<br>所以今天就先从IDE效率总结开始啊！</p>
+<h3 id="Xcode快捷键">Xcode快捷键</h3><p>文字版有空在编辑，上个图片版先！个人认为这些背下来，都是提高效率不少！</p>]]>
+    
+    </summary>
+    
+      <category term="Xcode" scheme="http://ihtc.cc/tags/Xcode/"/>
+    
+      <category term="快捷键" scheme="http://ihtc.cc/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[再见2016]]></title>
@@ -1033,110 +1162,6 @@ attributedSet.artist = @"artist"<span class="comment">;</span>
       <category term="草从集" scheme="http://ihtc.cc/tags/%E8%8D%89%E4%BB%8E%E9%9B%86/"/>
     
       <category term="life" scheme="http://ihtc.cc/categories/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[如何学到老]]></title>
-    <link href="http://ihtc.cc/2015/09/03/2015_%E5%A6%82%E4%BD%95%E5%AD%A6%E5%88%B0%E8%80%81/"/>
-    <id>http://ihtc.cc/2015/09/03/2015_如何学到老/</id>
-    <published>2015-09-03T02:33:26.000Z</published>
-    <updated>2015-09-04T09:41:29.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、怎样学深？">1、怎样学深？</h3><ul>
-<li>一万小时定律</li>
-</ul>
-<hr>
-<h3 id="2、怎样去学？">2、怎样去学？</h3><ul>
-<li>劳逸结合</li>
-<li>望闻问切（听说读写看）</li>
-</ul>
-<hr>
-<h3 id="3、怎样坚持？">3、怎样坚持？</h3><ul>
-<li>保持好奇心</li>
-</ul>
-<hr>
-<h4 id="服汤：不必再配合其它鸡汤服用，日省三服，学之，老之">服汤：<strong>不必再配合其它<code>鸡汤</code>服用，日省三服，学之，老之</strong></h4>]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、怎样学深？">1、怎样学深？</h3><ul>
-<li>一万小时定律</li>
-</ul>
-<hr>
-<h3 id="2、怎样去学？">2、怎样去学？</h3><ul>
-<li>劳逸结合</li>
-<li>望闻问切（听说读写看）</li>
-</ul>
-<hr>]]>
-    </summary>
-    
-      <category term="Mac" scheme="http://ihtc.cc/tags/Mac/"/>
-    
-      <category term="快捷方式" scheme="http://ihtc.cc/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/"/>
-    
-      <category term="效率" scheme="http://ihtc.cc/tags/%E6%95%88%E7%8E%87/"/>
-    
-      <category term="life" scheme="http://ihtc.cc/categories/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[支付宝手表？YunOSWatch]]></title>
-    <link href="http://ihtc.cc/2015/09/02/2015_%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%8B%E8%A1%A8%EF%BC%9FYunOSWatch/"/>
-    <id>http://ihtc.cc/2015/09/02/2015_支付宝手表？YunOSWatch/</id>
-    <published>2015-09-02T12:33:26.000Z</published>
-    <updated>2015-09-04T09:40:16.000Z</updated>
-    <content type="html"><![CDATA[<p>今天下载支付宝应用查看里面的数据时，发现了一个YunOSWatch.bundle<br><img src="http://upload-images.jianshu.io/upload_images/99517-efff5a111ce66565.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="iOS版支付宝"></p>
-<p>YunOSWatch目录下，两张图片很显眼：<br><img src="http://upload-images.jianshu.io/upload_images/99517-2612819e4a7afe56.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="YunOSWatch目录下"></p>
-<a id="more"></a>
-<p>刚开始以为是苹果手表：<br><img src="http://upload-images.jianshu.io/upload_images/99517-1f5daa85ffcae793.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="watch.png"></p>
-<p>这张很明显是YunOS?!<br><img src="http://upload-images.jianshu.io/upload_images/99517-8378f29c2c4c88a7.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="watch_bind.png"></p>
-<p>这张是展望图吧？<br><img src="http://upload-images.jianshu.io/upload_images/99517-2c83224652b07178.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="这张图原来是白色，为方便看改为灰色"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-bda18e3c3360e8b9.PNG?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="苹果手表上的界面"></p>
-<p>我查看了iOS版支付宝、apple watch上的所有功能，都没有发现上面3张图，是不是支付宝也打算通过手机、手表，打开自己的支付闭环平台？！非常期待！</p>
-<p>支付宝手表？真的有了婊子了？！</p>
-<p>ps：如果分析有错，欢迎在评论区讨论～</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今天下载支付宝应用查看里面的数据时，发现了一个YunOSWatch.bundle<br><img src="http://upload-images.jianshu.io/upload_images/99517-efff5a111ce66565.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="iOS版支付宝"></p>
-<p>YunOSWatch目录下，两张图片很显眼：<br><img src="http://upload-images.jianshu.io/upload_images/99517-2612819e4a7afe56.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="YunOSWatch目录下"></p>]]>
-    
-    </summary>
-    
-      <category term="YunOSWatch" scheme="http://ihtc.cc/tags/YunOSWatch/"/>
-    
-      <category term="iWatch" scheme="http://ihtc.cc/tags/iWatch/"/>
-    
-      <category term="支付宝手表" scheme="http://ihtc.cc/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%8B%E8%A1%A8/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[人生再歌，只爱今熙]]></title>
-    <link href="http://ihtc.cc/2015/09/01/2015_start-to-new/"/>
-    <id>http://ihtc.cc/2015/09/01/2015_start-to-new/</id>
-    <published>2015-09-01T14:57:17.000Z</published>
-    <updated>2015-09-03T10:51:42.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="校园">校园</h3><p>走回那个青春的树底<br>淡出那道池塘的金鱼<br>走进那些动情的书架<br>梦里那年我们的童真</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="校园">校园</h3><p>走回那个青春的树底<br>淡出那道池塘的金鱼<br>走进那些动情的书架<br>梦里那年我们的童真</p>
-]]>
-    </summary>
-    
-      <category term="宁夏" scheme="http://ihtc.cc/tags/%E5%AE%81%E5%A4%8F/"/>
-    
-      <category term="工作" scheme="http://ihtc.cc/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
-      <category term="开学" scheme="http://ihtc.cc/tags/%E5%BC%80%E5%AD%A6/"/>
-    
-      <category term="新的开始" scheme="http://ihtc.cc/tags/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
-    
-      <category term="校园" scheme="http://ihtc.cc/tags/%E6%A0%A1%E5%9B%AD/"/>
-    
-      <category term="毕业" scheme="http://ihtc.cc/tags/%E6%AF%95%E4%B8%9A/"/>
-    
-      <category term="poetry" scheme="http://ihtc.cc/categories/poetry/"/>
     
   </entry>
   
