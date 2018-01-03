@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[iHTCboy's Blog]]></title>
-  <subtitle><![CDATA[Write the Code，Change the World。]]></subtitle>
+  <subtitle><![CDATA[Learn something of everything, learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
   <updated>2018-01-03T14:32:27.000Z</updated>
