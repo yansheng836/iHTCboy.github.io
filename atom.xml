@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-01-03T14:32:27.000Z</updated>
+  <updated>2018-01-03T14:58:39.000Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[你好，2018！]]></title>
-    <link href="http://ihtc.cc/2018/01/01/2018_%E4%BD%A0%E5%A5%BD%EF%BC%8C2018%EF%BC%81/"/>
-    <id>http://ihtc.cc/2018/01/01/2018_你好，2018！/</id>
+    <link href="http://ihtc.cc/2018/01/01/2018_01_%E4%BD%A0%E5%A5%BD%EF%BC%8C2018%EF%BC%81/"/>
+    <id>http://ihtc.cc/2018/01/01/2018_01_你好，2018！/</id>
     <published>2018-01-01T13:49:16.000Z</published>
-    <updated>2018-01-03T14:32:27.000Z</updated>
+    <updated>2018-01-03T14:58:39.000Z</updated>
     <content type="html"><![CDATA[<p>德鲁克在《管理的实践》中写道：“管理者很多时候在做决策的时候，都是在分析未来有可能有什么市场环境的变化，这些变化会有什么机会。”</p>
 <h4 id="序言">序言</h4><p>这一年，在生命中非常有意义的一年，从创业者离场，回到一个中型企业，改变非常大。从职场熟人到职场老油条？毕业不知觉已经3年多了，有时还会回忆美好的学生时代，有时在想大学时在努力一点，也许现在生活更加美好一点啦。一路走过的2017，经历了非常之多，是时候在尘封前记录下来吧！</p>
 <a id="more"></a>
@@ -72,9 +72,186 @@
     
     </summary>
     
-      <category term="2018" scheme="http://ihtc.cc/tags/2018/"/>
+      <category term="life" scheme="http://ihtc.cc/categories/life/"/>
     
-      <category term="年终总结" scheme="http://ihtc.cc/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[教你如何强制显示一个竖屏的不能侧滑返回的SFSafariViewController]]></title>
+    <link href="http://ihtc.cc/2017/10/28/2017_10_%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E5%BC%BA%E5%88%B6%E6%98%BE%E7%A4%BA%E4%B8%80%E4%B8%AA%E7%AB%96%E5%B1%8F%E7%9A%84%E4%B8%8D%E8%83%BD%E4%BE%A7%E6%BB%91%E8%BF%94%E5%9B%9E%E7%9A%84SFSafariViewController/"/>
+    <id>http://ihtc.cc/2017/10/28/2017_10_教你如何强制显示一个竖屏的不能侧滑返回的SFSafariViewController/</id>
+    <published>2017-10-28T11:28:16.000Z</published>
+    <updated>2018-01-03T15:19:27.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="强制让控制器竖屏显示">强制让控制器竖屏显示</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)shouldAutorotate</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIInterfaceOrientationMask</span>)supportedInterfaceOrientations</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">UIInterfaceOrientationMaskPortrait</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIInterfaceOrientation</span>)preferredInterfaceOrientationForPresentation</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">UIInterfaceOrientationPortrait</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 隐藏系统状态样</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)prefersStatusBarHidden</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="设置不让SFSafariViewController侧滑返回">设置不让SFSafariViewController侧滑返回</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Swift:</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> viewController = SFSafariViewController(URL: url)  </span><br><span class="line">presentViewController(viewController, animated: <span class="keyword">true</span>) &#123;  </span><br><span class="line">  </span><br><span class="line">     <span class="keyword">for</span> view <span class="keyword">in</span> viewController.view.subviews &#123;  </span><br><span class="line">  </span><br><span class="line">          <span class="keyword">if</span> <span class="keyword">let</span> recognisers = view.gestureRecognizers &#123;  </span><br><span class="line">  </span><br><span class="line">               <span class="keyword">for</span> gestureRecogniser <span class="keyword">in</span> recognisers <span class="keyword">where</span> gestureRecogniser <span class="keyword">is</span> UIScreenEdgePanGestureRecognizer &#123;  </span><br><span class="line">  </span><br><span class="line">                    gestureRecogniser.enabled = <span class="keyword">false</span>  </span><br><span class="line">               &#125;  </span><br><span class="line">          &#125;  </span><br><span class="line">     &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">OC:</span><br><span class="line"></span><br><span class="line"> EFKRSafariViewController *safari = [[EFKRSafariViewController alloc] initWithURL:url];</span><br><span class="line">    safari<span class="variable">.closeHandler</span> = completion;</span><br><span class="line">    [<span class="keyword">self</span> presentViewController:safari animated:<span class="literal">YES</span> completion:^&#123;</span><br><span class="line">        <span class="comment">// 禁止侧滑返回，因为侧滑返回导致强制竖屏会变回横屏</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">UIView</span> * view <span class="keyword">in</span> safari<span class="variable">.view</span><span class="variable">.subviews</span>) &#123;</span><br><span class="line">            <span class="built_in">NSArray</span>&lt;__kindof <span class="built_in">UIGestureRecognizer</span> *&gt; * array = view<span class="variable">.gestureRecognizers</span>;</span><br><span class="line">            <span class="keyword">if</span> (array<span class="variable">.count</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="built_in">UIScreenEdgePanGestureRecognizer</span> * sepgr <span class="keyword">in</span> array) &#123;</span><br><span class="line">                    sepgr<span class="variable">.enabled</span> = <span class="literal">NO</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
+<h3 id="如何">如何</h3><p>创建继承SFSafariViewController的控制器，在里面添加上面的代码就可以啦！<br><img src="http://upload-images.jianshu.io/upload_images/99517-733355d4a71f6083.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="继承SFSafariViewController.png"></p>
+<h3 id="总结">总结</h3><p>有时候，我们在修改系统的控件属性时，总是希望想找到一个属性方法设置后，就可以达到自己想要的 UI或者逻辑，但其实，系统不可以提供那么多自定义的 API，所以，我们只能通过自己去找到想要的东西，然后去修复它，达到目的。类似的思想，比如hook。代码上也是很其妙。</p>
+<h3 id="参考扩展">参考扩展</h3><ul>
+<li><a href="https://forums.developer.apple.com/thread/29048" target="_blank" rel="external">SFSafariViewController in iOS 9.2 | Apple Developer Forums</a></li>
+<li><a href="https://stackoverflow.com/questions/35088076/safari-view-controller-swipe-left-to-dismiss-goes-black/46974814" target="_blank" rel="external">ios - Safari View Controller Swipe Left to dismiss goes black - Stack Overflow</a></li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="强制让控制器竖屏显示">强制让控制器竖屏显示</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)shouldAutorotate</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIInterfaceOrientationMask</span>)supportedInterfaceOrientations</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">UIInterfaceOrientationMaskPortrait</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIInterfaceOrientation</span>)preferredInterfaceOrientationForPresentation</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">UIInterfaceOrientationPortrait</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 隐藏系统状态样</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)prefersStatusBarHidden</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+      <category term="SFSafariViewController" scheme="http://ihtc.cc/tags/SFSafariViewController/"/>
+    
+      <category term="iOS侧滑返回" scheme="http://ihtc.cc/tags/iOS%E4%BE%A7%E6%BB%91%E8%BF%94%E5%9B%9E/"/>
+    
+      <category term="强制竖屏" scheme="http://ihtc.cc/tags/%E5%BC%BA%E5%88%B6%E7%AB%96%E5%B1%8F/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[AppStore 应用的本地化显示语言到底是什么决定的？]]></title>
+    <link href="http://ihtc.cc/2017/10/28/2017_10_AppStore%20%E5%BA%94%E7%94%A8%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%8C%96%E6%98%BE%E7%A4%BA%E8%AF%AD%E8%A8%80%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%E5%86%B3%E5%AE%9A%E7%9A%84%EF%BC%9F/"/>
+    <id>http://ihtc.cc/2017/10/28/2017_10_AppStore 应用的本地化显示语言到底是什么决定的？/</id>
+    <published>2017-10-28T11:04:16.000Z</published>
+    <updated>2018-01-03T15:18:15.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="本地化_App_Store_信息">本地化 App Store 信息</h3><p>iTunes Connect 本地化说明：</p>
+<blockquote>
+<p>在添加 App 至您的帐户之后，您可以添加语言并输入您的 App 在 App Store 中显示的本地化信息。若要查看您可以本地化 App 元数据的语言和语言区列表，请参见 App Store 本地化。若要了解您可以本地化的属性，请参见必填项、可本地化以及可编辑的属性。</p>
+<p>例如，<strong>如果主要语言设置为英文，那么该信息在所有 App Store 地区中都会显示为英文。</strong>如果您为您的 App 添加了法文并对文本、关键词和屏幕快照进行了本地化，那么语言设置为法文的用户会看到法文的本地化内容。所在地区支持法文（而非英文）的用户，也会看到法文的本地化内容。用户也可以在所有法语 App Store 中使用本地化关键词搜索到您的 App。在其他 App Store 地区，用户会看到以主要语言显示的信息（本示例中为英文）。</p>
+<p><strong>用户在设备上设置的语言控制 App Store 中显示的本地化内容。</strong> 如果没有与设置语言匹配的可用本地化内容，将显示最接近的本地化内容。如果您需要显示特定语言区的元数据，请在您的 App 中添加特定语言区的语言——例如，添加法文（加拿大）。无论用户设备的语言设置如何，您 App 的 App Store 网址（URL）都是相同的。</p>
+<p>您在 iTunes Connect 中添加到 App 中的语言与您在 Xcode 中添加到 App 中的语言不同。您在 Xcode 中添加的语言在 App Store 中的“语言”下显示。若要本地化您 App 的二进制文件，请参阅“Internationalization and Localization Guide（《国际化和本地化指南》）”。</p>
+<p>【重要事项】仅当 App 状态为可编辑时，您才可以管理语言。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="问题总结">问题总结</h3><h5 id="1-主要语言是指什么？有什么作用？">1.主要语言是指什么？有什么作用？</h5><blockquote>
+<p>如果某个 App Store 地区没有提供本地化的 App 信息，那么 App 信息将以主要语言呈现。如果您没有看到想要使用的支持语言，请参阅 <a href="https://itunespartner.apple.com/cn/apps/faq/管理您的%20App_本地化#64875326" target="_blank" rel="external">常见问题</a>。</p>
+</blockquote>
+<p>也就是，在新建App时，苹果要求选择 主要语言（其实就是至少有一种本地化语言）：<br><img src="http://upload-images.jianshu.io/upload_images/99517-fb137425b84f9d90.png?imageMogr2/auto-orient/strip%7CimageView2/2/h/440" alt="选择 主要语言.png"></p>
+<p>应用创建好后，还可以更改主要语言，前提是有创建了2个以上本地化语言：<br><img src="http://upload-images.jianshu.io/upload_images/99517-06d626524a83d6ea.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AppStore 主语言.jpg"></p>
+<p>所以，主要语言的作用就是 <strong>作为应用在 AppStore 上显示的主本地化语言</strong>。也就是说，如果应用只支持一种本地化语言，那么在所以 AppStore 上都是显示一样的语言。那么如果有2种本地化语言，又怎么显示呢？</p>
+<h5 id="2-如果应用支持2种本地化语言，用户在_AppStore_上会显示那种本地化语言呢？">2.如果应用支持2种本地化语言，用户在 AppStore 上会显示那种本地化语言呢？</h5><p><strong>假如应用支持 英文(英国)（主要语言）和法文：</strong></p>
+<ul>
+<li>用户操作系统中设置本地化的语言为英文，应用支持英文，则显示英文 App Store ;</li>
+<li>用户操作系统中设置本地化的语言为法文，应用支持法文，则显示法文 App Store ;</li>
+<li>用户操作系统中设置本地化的语言为中文的中国账号用户，因为在中国地区不支持英文和法文（按苹果支持语言列表查询），则显示主要语言：英文 App Store ;</li>
+<li>用户操作系统中设置本地化的语言为中文的法国账号用户，因为在法国地区支持法文, 英文（英国）（按苹果支持语言列表查询），则优先显示排前语言：法文 App Store 。（参考下图）</li>
+</ul>
+<p>可以得出，</p>
+<blockquote>
+<p>应用在 AppStore 显示的本地化语言顺序，如果应用支持用户设备操作系统中设置本地化的语言，那么应用在 AppStore 本地化以操作系统中设置本地化的语言来显示。如果设置本地化的语言不被应用支持，以用户账号所在地区支持的本地化语言为显示，如果支持多种，排序在前为准。如果用户账号所在地区支持的本地化语言不被应用支持，那么以应用设置的主要语言显示。</p>
+</blockquote>
+<p>苹果默认 AppStore 多数地区本地化都支持 英文（英国），加拿大、美国、澳大利亚除外:<br><img src="http://upload-images.jianshu.io/upload_images/99517-d1ece151c0eebd86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="法国支付 法文，英文（英国）.png"></p>
+<h5 id="3-我的_app_信息已本地化，它在_App_Store_上为什么不以特定的语言显示？">3.我的 app 信息已本地化，它在 App Store 上为什么不以特定的语言显示？</h5><p>要在 App Store 上看到您的 app 的特定本地化内容，您需要更改 OS X 或 iOS 的语言。</p>
+<p><code>OS X：</code><br>&gt;</p>
+<blockquote>
+<ol>
+<li>退出 iTunes</li>
+<li>前往“系统偏好设置”中的“语言与地区”</li>
+<li>添加新的语言，或将所需语言拖放到语言列表的顶部</li>
+<li>打开 iTunes</li>
+<li>点按“iTunes Store”按钮</li>
+<li>滚动到页面底部</li>
+<li>点按页面右侧的当前地区图标</li>
+<li>选取所需的 App Store 的地区</li>
+<li>搜索您的 App，此时应能看到您提供的本地化信息</li>
+</ol>
+</blockquote>
+<p><code>iOS：</code></p>
+<blockquote>
+<ol>
+<li>按两次主屏幕按钮，然后将 App Store 扫出屏幕，从而关闭 App Store</li>
+<li>前往“设置”&gt;“通用”&gt;“多语言环境”&gt;“语言”</li>
+<li>轻按所需的语言</li>
+<li>轻按“完成”</li>
+<li>打开 App Store 并滚动到页面底部</li>
+<li>如果已经登录，则轻按您的 Apple ID，然后轻按“注销”</li>
+<li>轻按“登录”</li>
+<li>轻按“创建 Apple ID”</li>
+<li>选取所需的地区并轻按“下一步”</li>
+<li>显示语言将发生变更。如果您不想创建新的 Apple ID，则轻按以新的语言显示的“取消”</li>
+<li>搜索您的 app，此时应能看到您提供的本地化信息</li>
+<li>要查看原始语言的本地化内容，请重复上述步骤，然后用您现有的 Apple ID 登录。</li>
+</ol>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-6a549aa162f5b541.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我的 app 信息已本地化，它在 App Store 上为什么不以特定的语言显示？.png"></p>
+<h3 id="更多参考">更多参考</h3><ul>
+<li><a href="https://help.apple.com/itunes-connect/developer/?lang=cn#/deve6f78a8e2" target="_blank" rel="external">本地化 App Store 信息 - iTunes Connect 开发人员帮助</a></li>
+<li><a href="https://itunespartner.apple.com/cn/apps/faq/管理您的%20App_本地化#64875326" target="_blank" rel="external">本地化 - iTunes Connect 资源和帮助</a></li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="本地化_App_Store_信息">本地化 App Store 信息</h3><p>iTunes Connect 本地化说明：</p>
+<blockquote>
+<p>在添加 App 至您的帐户之后，您可以添加语言并输入您的 App 在 App Store 中显示的本地化信息。若要查看您可以本地化 App 元数据的语言和语言区列表，请参见 App Store 本地化。若要了解您可以本地化的属性，请参见必填项、可本地化以及可编辑的属性。</p>
+<p>例如，<strong>如果主要语言设置为英文，那么该信息在所有 App Store 地区中都会显示为英文。</strong>如果您为您的 App 添加了法文并对文本、关键词和屏幕快照进行了本地化，那么语言设置为法文的用户会看到法文的本地化内容。所在地区支持法文（而非英文）的用户，也会看到法文的本地化内容。用户也可以在所有法语 App Store 中使用本地化关键词搜索到您的 App。在其他 App Store 地区，用户会看到以主要语言显示的信息（本示例中为英文）。</p>
+<p><strong>用户在设备上设置的语言控制 App Store 中显示的本地化内容。</strong> 如果没有与设置语言匹配的可用本地化内容，将显示最接近的本地化内容。如果您需要显示特定语言区的元数据，请在您的 App 中添加特定语言区的语言——例如，添加法文（加拿大）。无论用户设备的语言设置如何，您 App 的 App Store 网址（URL）都是相同的。</p>
+<p>您在 iTunes Connect 中添加到 App 中的语言与您在 Xcode 中添加到 App 中的语言不同。您在 Xcode 中添加的语言在 App Store 中的“语言”下显示。若要本地化您 App 的二进制文件，请参阅“Internationalization and Localization Guide（《国际化和本地化指南》）”。</p>
+<p>【重要事项】仅当 App 状态为可编辑时，您才可以管理语言。</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="AppStore" scheme="http://ihtc.cc/tags/AppStore/"/>
+    
+      <category term="Localization" scheme="http://ihtc.cc/tags/Localization/"/>
+    
+      <category term="应用本地化语言" scheme="http://ihtc.cc/tags/%E5%BA%94%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%8C%96%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[为新 iPhone X 添加启动图片]]></title>
+    <link href="http://ihtc.cc/2017/10/28/2017_10_%E4%B8%BA%E6%96%B0%20iPhone%20X%20%E6%B7%BB%E5%8A%A0%E5%90%AF%E5%8A%A8%E5%9B%BE%E7%89%87/"/>
+    <id>http://ihtc.cc/2017/10/28/2017_10_为新 iPhone X 添加启动图片/</id>
+    <published>2017-10-28T10:53:16.000Z</published>
+    <updated>2018-01-03T15:19:26.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Xcode9_的_iPhone_X_启动图片">Xcode9 的 iPhone X 启动图片</h3><p>iPhone X 启动图片大小：</p>
+<ul>
+<li>Portrait size ： 1125px × 2436px</li>
+<li>Landscape size：2436px × 1125px</li>
+</ul>
+<a id="more"></a>
+<p>在 Xcode9 中位置：<br><img src="http://upload-images.jianshu.io/upload_images/99517-0b378a8a1b288922.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=" iPhone X 启动图片.png"></p>
+<p>启动图片尺寸：<br><img src="http://upload-images.jianshu.io/upload_images/99517-54f5aa681f02debf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Static Launch Screen Images.png"></p>
+<p>目前是 iTunes 上传没有强制要求与说明，但是如果没有在 iPhoneX显示会上下留黑边，最好现在开始添加，苹果建议使用 storyboard 创建启动图片，但是要注意 iPhoneX 高度约束问题。网上给了一个应用没有iPhoneX启动图时打开的效果：<br><img src="http://upload-images.jianshu.io/upload_images/99517-3462692818a500cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/250" alt="Simulator Screen Shot - iPhone X - 2017-09-13 at 14.22.48_preview.png"></p>
+<p>最新消息，iPhone X 的屏幕快照可选性在 iTunes Connet 后台上传，因为昨天 iPhoneX 可预定啦！</p>
+<blockquote>
+<p>iTunes Connect 现已支持 iPhone X 屏幕快照<br>2017年10月27日</p>
+<p>现在，您可以为 iPhone X 上传屏幕快照。您将在 iOS App 版本信息页的“App 预览和屏幕快照”下方看到一个针对 5.8 英寸显示屏的新标签。<br>请注意，iPhone X 的屏幕快照为可选项，且不能用于更小尺寸的设备。在 iPhone 上运行的所有 App 仍需提供 5.5 英寸显示屏的屏幕快照。<br><strong>iPhone X 屏幕快照分辨率</strong>1125 x 2436（纵向）2436 x 1125（横向）<br>在<a href="https://help.apple.com/itunes-connect/developer/#/devd1093d90d" target="_blank" rel="external">《iTunes Connect 开发人员帮助》</a>中了解更多关于上传屏幕快照的信息。<br>了解更多有关<a href="https://developer.apple.com/cn/ios/update-apps-for-iphone-x/" target="_blank" rel="external">为 iPhone X 更新 App</a> 的信息。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-51d67b38d790f9d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/840" alt="App 预览和屏幕快照 屏幕快照必须为 JPG 或 PNG 格式，且必须采用 RGB 颜色空间。 预览必须为 M4V、MP4 或 MOV 格式，且不能超过 500 MB。.png"></p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/" target="_blank" rel="external">Launch Screen - Icons and Images - iOS Human Interface Guidelines</a></li>
+<li><a href="https://stackoverflow.com/questions/46263795/iphone-x-incorrect-launch-screen-orientation-used" target="_blank" rel="external">ios - iPhone X: Incorrect launch-screen orientation used - Stack Overflow</a></li>
+<li><a href="https://itunespartner.apple.com/cn/apps/news/5993372" target="_blank" rel="external">iTunes Connect 现已支持 iPhone X 屏幕快照-2017年10月27日</a></li>
+<li><a href="https://developer.apple.com/ios/submit/" target="_blank" rel="external">Submitting iOS apps to the App Store - Apple Developer</a></li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Xcode9_的_iPhone_X_启动图片">Xcode9 的 iPhone X 启动图片</h3><p>iPhone X 启动图片大小：</p>
+<ul>
+<li>Portrait size ： 1125px × 2436px</li>
+<li>Landscape size：2436px × 1125px</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="LaunchScreen" scheme="http://ihtc.cc/tags/LaunchScreen/"/>
+    
+      <category term="Xcode9" scheme="http://ihtc.cc/tags/Xcode9/"/>
+    
+      <category term="iPhoneX" scheme="http://ihtc.cc/tags/iPhoneX/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     
@@ -126,6 +303,84 @@
       <category term="IOSurface" scheme="http://ihtc.cc/tags/IOSurface/"/>
     
       <category term="Xcode9" scheme="http://ihtc.cc/tags/Xcode9/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[沙盒测试账号：不允许创建 iTunes 账户]]></title>
+    <link href="http://ihtc.cc/2017/10/27/2017_10_%E6%B2%99%E7%9B%92%E6%B5%8B%E8%AF%95%E8%B4%A6%E5%8F%B7%EF%BC%9A%E4%B8%8D%E5%85%81%E8%AE%B8%E5%88%9B%E5%BB%BA%20iTunes%20%E8%B4%A6%E6%88%B7/"/>
+    <id>http://ihtc.cc/2017/10/27/2017_10_沙盒测试账号：不允许创建 iTunes 账户/</id>
+    <published>2017-10-27T00:33:16.000Z</published>
+    <updated>2018-01-03T15:10:22.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="1-出现情况">1.出现情况</h4><p><img src="http://upload-images.jianshu.io/upload_images/99517-8dd5d2ba875806e5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300" alt="不允许创建 iTunes 账户.jpg"></p>
+<p>在设置里登陆沙盒账号提示：</p>
+<blockquote>
+<p>不允许创建 iTunes 账户<br>此 Apple ID 目前无法用于 iTunes Store, 请稍后重试</p>
+</blockquote>
+<p><strong>正确方式：</strong></p>
+<blockquote>
+<p>沙盒测试账号只能在测试应用点击储值时，弹窗中输入账号，不能在设置里的 App Store 里添加。</p>
+</blockquote>
+<p>苹果的文档也有说明，测试账号不能在设置里登陆 ：</p>
+<blockquote>
+<p>Important: Don’t enter your test account information in the Store settings panel. Doing so may invalidate your test account.</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="2-_正确的沙盒测试流程">2. 正确的沙盒测试流程</h3><blockquote>
+<p>To perform testing for in-app purchase products</p>
+<ol>
+<li><p>Set up test user accounts within Users and Roles in iTunes Connect, as detailed in <a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SettingUpUserAccounts.html#//apple_ref/doc/uid/TP40011225-CH25-SW10" target="_blank" rel="external">Creating Sandbox Tester Accounts</a> in <em><a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225" target="_blank" rel="external">iTunes Connect Developer Guide</a></em>.<br>You’ll need a test user for each territory you want to test the app in.</p>
+</li>
+<li><p>Clear any account information stored on your test device.</p>
+</li>
+</ol>
+<ul>
+<li>In Settings, go to the Store settings.</li>
+<li><p>Click the Sign Out button.<br>This prevents an actual user account from automatically being used when testing.</p>
+<p><strong>Important:</strong> Don’t enter your test account information in the Store settings panel. Doing so may invalidate your test account.</p>
+</li>
+</ul>
+<ol>
+<li>Connect your test device to your Mac.</li>
+<li>In Xcode, set your test device as your scheme’s destination.</li>
+<li>Open your app, and perform your in-app purchase product testing.</li>
+<li>Use your test account credentials to test the purchase.<br>When your app uses the Store Kit API to request a payment, you’re asked to sign in. Select Use Existing Account and enter your test account user name and password. You are then asked to confirm the purchase. The transaction completes.<br>No financial transaction takes place, but a receipt is generated for a successful transaction.</li>
+</ol>
+</blockquote>
+<h3 id="3-参考：">3.参考：</h3><ul>
+<li><a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/TestingInAppPurchases.html" target="_blank" rel="external">Testing Your App and In-App Purchase Products</a></li>
+<li><a href="https://stackoverflow.com/questions/38034491/unable-to-log-in-with-sandbox-test-users-on-device" target="_blank" rel="external">unable to log in with sandbox test users on device</a></li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="1-出现情况">1.出现情况</h4><p><img src="http://upload-images.jianshu.io/upload_images/99517-8dd5d2ba875806e5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300" alt="不允许创建 iTunes 账户.jpg"></p>
+<p>在设置里登陆沙盒账号提示：</p>
+<blockquote>
+<p>不允许创建 iTunes 账户<br>此 Apple ID 目前无法用于 iTunes Store, 请稍后重试</p>
+</blockquote>
+<p><strong>正确方式：</strong></p>
+<blockquote>
+<p>沙盒测试账号只能在测试应用点击储值时，弹窗中输入账号，不能在设置里的 App Store 里添加。</p>
+</blockquote>
+<p>苹果的文档也有说明，测试账号不能在设置里登陆 ：</p>
+<blockquote>
+<p>Important: Don’t enter your test account information in the Store settings panel. Doing so may invalidate your test account.</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="Sandbox" scheme="http://ihtc.cc/tags/Sandbox/"/>
+    
+      <category term="iTunes账户" scheme="http://ihtc.cc/tags/iTunes%E8%B4%A6%E6%88%B7/"/>
+    
+      <category term="沙盒测试" scheme="http://ihtc.cc/tags/%E6%B2%99%E7%9B%92%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="沙盒账号" scheme="http://ihtc.cc/tags/%E6%B2%99%E7%9B%92%E8%B4%A6%E5%8F%B7/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     
@@ -812,338 +1067,6 @@ attributedSet.artist = @"artist"<span class="comment">;</span>
       <category term="同步登陆" scheme="http://ihtc.cc/tags/%E5%90%8C%E6%AD%A5%E7%99%BB%E9%99%86/"/>
     
       <category term="第三方登陆" scheme="http://ihtc.cc/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[AppStore审核被拒，不能带“屌”]]></title>
-    <link href="http://ihtc.cc/2015/10/18/2015_AppStore%E5%AE%A1%E6%A0%B8%E8%A2%AB%E6%8B%92%EF%BC%8C%E4%B8%8D%E8%83%BD%E5%B8%A6%E2%80%9C%E5%B1%8C%E2%80%9D/"/>
-    <id>http://ihtc.cc/2015/10/18/2015_AppStore审核被拒，不能带“屌”/</id>
-    <published>2015-10-18T15:48:24.000Z</published>
-    <updated>2015-11-04T16:19:48.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="问题">问题</h3><p>最近app突然被拒，回复里说有<strong> “屌” </strong>字不行？？！！<br>原因说，我的应用是4+评级，所以应用的图标、截图、应用描述不能有<code>“屌”</code>字！！</p>
-<a id="more"></a>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc屏幕快照%202015-09-28%2009.09.55.png" alt="苹果反馈消息"></p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cctemp..ujjsutgn.png" alt="应用里有“屌”字"></p>
-<h3 id="讨论">讨论</h3><p>应用里有两个地方用到“屌”字</p>
-<ul>
-<li>中国互联网屌丝报告</li>
-<li>就是这么屌</li>
-</ul>
-<p>上面文字，在中国使用应该是正常吧？<br>如果按苹果这个逻辑，是不是AppStore里不能有“屌”字？</p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.ccIMG_3016.PNG" alt="搜索时出现“屌”"></p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.ccIMG_3017.PNG" alt="连截图都有“屌”字"></p>
-<p>那么问题来了，你一定猜到：这个应用评级一定不是4+！</p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.ccIMG_3019.PNG" alt="果然是12+"></p>
-<p>是的，你一定也猜到，我找到4+的，并且用“屌”为应用名了：<br><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.ccIMG_3018.PNG" alt="4+"></p>
-<h3 id="结论">结论</h3><p>最后，为了尽快上线，我们应用还是删除了相关图片，但是希望，苹果测试能不能“专业”一点，中国国情是什么你懂吗？难道他们就是有一个“敏感词”表，发现这个字，就直接拒绝？？?</p>
-<p>希望大家都平时都注意一下～避免意外～</p>
-<h3 id="—">—</h3><p>本文图片来源苹果官方，如有侵权请告知删除。</p>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="问题">问题</h3><p>最近app突然被拒，回复里说有<strong> “屌” </strong>字不行？？！！<br>原因说，我的应用是4+评级，所以应用的图标、截图、应用描述不能有<code>“屌”</code>字！！</p>]]>
-    
-    </summary>
-    
-      <category term="AppStore" scheme="http://ihtc.cc/tags/AppStore/"/>
-    
-      <category term="App审核" scheme="http://ihtc.cc/tags/App%E5%AE%A1%E6%A0%B8/"/>
-    
-      <category term="屌" scheme="http://ihtc.cc/tags/%E5%B1%8C/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[QQ和微信同步登陆，AppStore审核被拒4次的坑路]]></title>
-    <link href="http://ihtc.cc/2015/10/16/2015_QQ%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%90%8C%E6%AD%A5%E7%99%BB%E9%99%86%EF%BC%8CAppStore%E5%AE%A1%E6%A0%B8%E8%A2%AB%E6%8B%924%E6%AC%A1%E7%9A%84%E5%9D%91%E8%B7%AF/"/>
-    <id>http://ihtc.cc/2015/10/16/2015_QQ和微信同步登陆，AppStore审核被拒4次的坑路/</id>
-    <published>2015-10-16T15:58:26.000Z</published>
-    <updated>2015-11-04T16:17:50.000Z</updated>
-    <content type="html"><![CDATA[<p>最近应用加入了微信和QQ同步登陆，结果被拒绝了4次！！下面就让我带大家回顾这坑路～</p>
-<h3 id="第一次最拒绝">第一次最拒绝</h3><p>第一次以为是苹果测试手机没有安装QQ导致，所以写了代码判断手机是否安装QQ，如果没有安装就隐藏掉QQ登陆图标。</p>
-<a id="more"></a>
-<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="comment">//判断是否有qq</span></span><br><span class="line"><span class="keyword">if</span> <span class="params">(!<span class="params">([QQApiInterface isQQInstalled] &amp;&amp; [QQApiInterface isQQSupportApi])</span>)</span> &#123;</span><br><span class="line">    view.hideQQ = YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断是否有微信</span></span><br><span class="line"><span class="keyword">if</span> <span class="params">(![WXApi isWXAppSupportApi])</span>&#123;</span><br><span class="line">    view.hideWeixin = YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc解决方案中心2015-09-13%2017.13.58.png" alt="第一次被拒绝"></p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cctemp..qunlrjcx.jpg" alt="有安装的情况，苹果是用iPad测试的"></p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cctemp..sgpecehb.png" alt="都没有安装的情况"></p>
-<h5 id="问题总结">问题总结</h5><ul>
-<li>苹果不止用一台设备测试，或者不止一个人测试同一应用</li>
-<li>苹果用iPad测试，我觉得因为在iPad上就知道应用支持不支持iPad吧</li>
-<li>苹果不允许应用隐藏图标吗？！都没有安装显示毛线啊！</li>
-</ul>
-<h3 id="第二次被拒绝">第二次被拒绝</h3><p>苹果不允许我隐藏图标，那么我就显示出来吧！同时也会判断安装，如果没有安装就提示用户没有安装！这样也不给！！</p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc屏幕快照%202015-09-17%2009.15.38.png" alt="第二次被拒绝"></p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cctemp..pjxfsxjt.png" alt="微信提示没有安装"><br><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cctemp..xqgngvsq.png" alt="QQ提示没有安装"></p>
-<h3 id="第三次被拒绝">第三次被拒绝</h3><p>这次没有办法了，网上的方法说，如果没有key安装QQ的能用web网页登陆～</p>
-<blockquote>
-<p>腾讯的官方文档翻了个底朝天，友盟的文档也翻了个底朝天，俩demo也翻了个底朝天。<br>经过不懈努力，问题终于解决，原因真是够蛋疼的！！<br>友盟或者QQ互联提供的demo工程是低于xcode6.0创建的，默认工程的info.plist里有Bundle display name和Bundle name两个key。<br>而xcode6.0之后创建的工程的info.plist里没有Bundle display name！！调用腾讯的登录API就弹出个webview<br>界面提示需要安装最新版本QQ。<br>加上这个key就一切正常了，再删掉这个key调用QQ登录绝逼不行！！<br>这tmd腾讯也太操蛋了吧！！！！</p>
-</blockquote>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.qq.jpg.png" alt="QQ 不是最新版"></p>
-<h3 id="第四次被拒绝">第四次被拒绝</h3><p>最后一次，苹果也有点不耐烦了！！！<br>看到详细说明，如果第三方app没有安装，那么可以用网页授权方式！！终于找到出路了！！但是怎么才能web登陆？？？</p>
-<p>最后，在<a href="http://www.cocoachina.com/bbs/read.php?tid-269355-page-2.html" target="_blank" rel="external">cocoachina 论坛</a>找到答案：</p>
-<blockquote>
-<p>只要让腾讯客服对appid开通个权限就可以。</p>
-</blockquote>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.ccqqweb.png" alt="早上9点可以联系人工客服说就行了"></p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc屏幕快照%202015-09-19%2008.44.23.png" alt="苹果详细说明原因"></p>
-<h3 id="总结">总结</h3><p>在这个过程中，也看了一些应用的实现，基本都上面几种方式的一种，但是就能上架，这个苹果的测试人员有很多种吗？？！！<br>不管怎样，就这样走过坑！！应用最终上架了！！</p>
-<h3 id="微信同步登陆">微信同步登陆</h3><p>如果没有安装微信，微信同步登陆只能通过手机号码，不知道苹果测试员怎么测试呢？！</p>
-<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.ccIMG_2983.PNG" alt="没有安装微信时"></p>
-<h3 id="参考文章">参考文章</h3><ul>
-<li><a href="http://bbs.mob.com/forum.php?mod=viewthread&amp;tid=177" target="_blank" rel="external">关于IOS项目QQ空间授权提示安装最新版本的QQ的解决方法</a></li>
-<li><a href="http://www.zhihu.com/question/26733883" target="_blank" rel="external">iOS qq第三方登录为什么没有安装qq的时候没有显示登录页面？ - iOS 开发 - 知乎</a></li>
-<li><a href="http://www.cocoachina.com/bbs/read.php?tid-269355-page-2.html" target="_blank" rel="external">腾讯aouth提示没有安装QQ软件?</a></li>
-<li><a href="http://bbs.umeng.com/thread-5642-1-1.html" target="_blank" rel="external">android/IOS友盟social对qq/qzone的分享/授权登录支持情况说明表</a></li>
-</ul>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近应用加入了微信和QQ同步登陆，结果被拒绝了4次！！下面就让我带大家回顾这坑路～</p>
-<h3 id="第一次最拒绝">第一次最拒绝</h3><p>第一次以为是苹果测试手机没有安装QQ导致，所以写了代码判断手机是否安装QQ，如果没有安装就隐藏掉QQ登陆图标。</p>]]>
-    
-    </summary>
-    
-      <category term="QQ" scheme="http://ihtc.cc/tags/QQ/"/>
-    
-      <category term="同步登陆" scheme="http://ihtc.cc/tags/%E5%90%8C%E6%AD%A5%E7%99%BB%E9%99%86/"/>
-    
-      <category term="微信" scheme="http://ihtc.cc/tags/%E5%BE%AE%E4%BF%A1/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[iOS开发之让列表滚回最顶端最佳实践]]></title>
-    <link href="http://ihtc.cc/2015/10/01/2015_iOS%E5%BC%80%E5%8F%91%E4%B9%8B%E8%AE%A9%E5%88%97%E8%A1%A8%E6%BB%9A%E5%9B%9E%E6%9C%80%E9%A1%B6%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
-    <id>http://ihtc.cc/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/</id>
-    <published>2015-10-01T14:07:22.000Z</published>
-    <updated>2015-11-04T16:15:04.000Z</updated>
-    <content type="html"><![CDATA[<p>原来项目中一直用这个方法滚动回到首页：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">NSIndexPath *bottomIndexPath=[NSIndexPath <span class="string">indexPathForItem:</span><span class="number">0</span> <span class="string">inSection:</span><span class="number">0</span>];</span><br><span class="line">[self.collectionView <span class="string">scrollToItemAtIndexPath:</span>bottomIndexPath <span class="string">atScrollPosition:</span>UICollectionViewScrollPositionTop <span class="string">animated:</span>YES];</span><br></pre></td></tr></table></figure></p>
-<p>上面代码是collectionView滚动到第一区第一个，直到有一次应用崩溃，发现第一区没有item!! 尼玛，怎么办！！！</p>
- <a id="more"></a>
-<p>最后，找到下面代码，这样应用的健壮性又提高了，妈妈在也不用担心数据为空的情况啦！！</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//CGRectMake(0, 0, 1, 1)可以直接返回到UITableView的最顶端</span></span><br><span class="line">[tableview scrollRectToVisible:CGRectMake(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>) animated:NO];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//CGRectMake(0, 0, 0, 0)设定无效</span></span><br><span class="line"><span class="comment">//[tableview scrollRectToVisible:CGRectMake(0, 0, 0, 0) animated:NO];</span></span><br></pre></td></tr></table></figure>
-<p>上面方法，tableView/collectionView下都有效，直接复用！！！</p>
-<h3 id="参考：">参考：</h3><p><a href="http://limingcheng269.blog.163.com/blog/static/11206954201326103218965/" target="_blank" rel="external">iOS开发之让UITableView滚动控制并返回到最顶端</a></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>原来项目中一直用这个方法滚动回到首页：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">NSIndexPath *bottomIndexPath=[NSIndexPath <span class="string">indexPathForItem:</span><span class="number">0</span> <span class="string">inSection:</span><span class="number">0</span>];</span><br><span class="line">[self.collectionView <span class="string">scrollToItemAtIndexPath:</span>bottomIndexPath <span class="string">atScrollPosition:</span>UICollectionViewScrollPositionTop <span class="string">animated:</span>YES];</span><br></pre></td></tr></table></figure></p>
-<p>上面代码是collectionView滚动到第一区第一个，直到有一次应用崩溃，发现第一区没有item!! 尼玛，怎么办！！！</p>]]>
-    
-    </summary>
-    
-      <category term="TableView" scheme="http://ihtc.cc/tags/TableView/"/>
-    
-      <category term="collectionView" scheme="http://ihtc.cc/tags/collectionView/"/>
-    
-      <category term="iOS" scheme="http://ihtc.cc/tags/iOS/"/>
-    
-      <category term="scroll" scheme="http://ihtc.cc/tags/scroll/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo搭建Github Pages博客填坑教程]]></title>
-    <link href="http://ihtc.cc/2015/09/06/2015_Hexo%E6%90%AD%E5%BB%BAGithub-Pages%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91%E6%95%99%E7%A8%8B/"/>
-    <id>http://ihtc.cc/2015/09/06/2015_Hexo搭建Github-Pages博客填坑教程/</id>
-    <published>2015-09-05T17:23:36.000Z</published>
-    <updated>2018-01-03T14:32:01.000Z</updated>
-    <content type="html"><![CDATA[<p>目录：</p>
-<ul>
-<li>1.安装Hexo</li>
-<li>2.部署Hexo</li>
-<li>3.Hexo命令</li>
-<li>4.一些报错处理</li>
-<li>5.博客管理</li>
-<li>6.插件（RSS、Sitemap）</li>
-<li>7.评论设置</li>
-<li>8.404页面</li>
-<li>9.统计</li>
-<li>10.更新</li>
-<li>11.总结</li>
-<li>12.参考引用</li>
-<li>13.搭建博客相关网站</li>
-</ul>
-<h3 id="简述">简述</h3><p>本文主要讲解Hexo安装时遇到的坑，Hexo安装之后的使用教程，Hexo安装需要的环境和教程，请自行百度、谷歌。</p>
-<a id="more"></a>
-<h4 id="1-安装Hexo">1.安装Hexo</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure>
-<h6 id="坑1">坑1</h6><p>这里可能安装失败，可以权限不够，在命令前加<code>sudo</code><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="2-部署Hexo">2.部署Hexo</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init</span><br></pre></td></tr></table></figure>
-<h6 id="注：这个命令会初始化博客的目录，所以，执行这个命令时，在你想创建的目录下执行，就自动生成到对应目录下。">注：这个命令会初始化博客的目录，所以，执行这个命令时，在你想创建的目录下执行，就自动生成到对应目录下。</h6><p>执行命令生，会在当前命令的路径下，生成以下文件：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .deploy</span><br><span class="line">├── <span class="keyword">public</span></span><br><span class="line">├── scaffolds</span><br><span class="line">├── scripts</span><br><span class="line">├── <span class="keyword">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">├── themes</span><br><span class="line">├── _config.yml</span><br><span class="line">└── <span class="keyword">package</span>.json</span><br></pre></td></tr></table></figure>
-<ul>
-<li>.deploy：执行hexo deploy命令部署到GitHub上的内容目录</li>
-<li>public：执行hexo generate命令，输出的静态网页内容目录</li>
-<li>scaffolds：layout模板文件目录，其中的md文件可以添加编辑</li>
-<li>scripts：扩展脚本目录，这里可以自定义一些javascript脚本</li>
-<li>source：文章源码目录，该目录下的markdown和html文件均会被hexo处理。该页面对应repo的根目录，404文件、favicon.ico文件，CNAME文件等都应该放这里，该目录下可新建页面目录。</li>
-<li>_drafts：草稿文章</li>
-<li>_posts：发布文章</li>
-<li>themes：主题文件目录</li>
-<li>_config.yml：全局配置文件，大多数的设置都在这里</li>
-<li>package.json：应用程序数据，指明hexo的版本等信息，类似于一般软件中的关于按钮</li>
-</ul>
-<h4 id="3-Hexo命令">3.Hexo命令</h4><p>Hexo下，通过 <code>_config.yml</code> 设置博客，可以想象成我们用的软件里的设置一样，只是它通过一个文件列出这些参数，然后让我们填写和修改。</p>
-<ul>
-<li>全局设置</li>
-</ul>
-<p>在你博客目录下有一个文件名<code>_config.yml</code>，打开可以配置信息。</p>
-<ul>
-<li>局部页面</li>
-</ul>
-<p>在你博客目录下 <code>\themes\你使用的主题\_config.yml</code> </p>
-<ul>
-<li>写博客相关命令</li>
-</ul>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Hexo常用命令：</span><br><span class="line"></span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>       <span class="preprocessor">#新建文章</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>  <span class="preprocessor">#新建页面</span></span><br><span class="line">hexo generate             <span class="preprocessor">#生成静态页面至public目录</span></span><br><span class="line">hexo <span class="keyword">server</span>               <span class="preprocessor">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></span><br><span class="line">hexo deploy               <span class="preprocessor">#将.deploy目录部署到GitHub</span></span><br></pre></td></tr></table></figure>
-<p>当然，如果每次输入那么长命令，那么一定想到用<strong>简写</strong>：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">n</span> == hexo new</span><br><span class="line">hexo <span class="keyword">g</span> == hexo <span class="keyword">generate</span></span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo <span class="keyword">d</span> == hexo deploy</span><br></pre></td></tr></table></figure>
-<p>其它的，还可以<strong>复合命令</strong>：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -<span class="keyword">g</span></span><br><span class="line">hexo server -<span class="keyword">g</span></span><br></pre></td></tr></table></figure>
-<p>有时候生成的网页出错了，而生成的rss其实没有清除，那么用下面的命令，在重新生成吧</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br></pre></td></tr></table></figure>
-<p>当本地调试出现诡异现象时候，请先使用 hexo clean 清理已经生成的静态文件后重试。</p>
-<blockquote>
-<p>注：Hexo原理就是hexo在执行hexo generate时会在本地先把博客生成的一套静态站点放到public文件夹中，在执行hexo deploy时将其复制到.deploy文件夹中。Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了README.md，它也会在你下一次部署时被删去。怎么解决呢？<br>在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。</p>
-</blockquote>
-<h3 id="4-一些报错处理">4.一些报错处理</h3><h6 id="坑2">坑2</h6><ul>
-<li><p>一</p>
-<blockquote>
-<p>ERROR Plugin load failed: hexo-server<br>原因：<br>Besides, utilities are separated into a standalone module. hexo.util is not reachable anymore.<br>解决方法，执行命令：<br>sudo npm install hexo-server</p>
-</blockquote>
-</li>
-<li><p>二</p>
-<blockquote>
-<p>执行命令hexo server，有如下提示：<br>Usage: hexo<br>….<br>原因：<br>我认为是没有生成本地服务<br>解决方法，执行命令：<br>npm install hexo-server –save<br>提示：hexo-server@0.1.2 node_modules/hexo-server</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>三<blockquote>
-<p>白板和Cannot GET / 几个字<br>原因:<br>由于2.6以后就更新了，我们需要手动配置些东西，我们需要输入下面三行命令：</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-renderer-ejs <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-stylus <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-marked <span class="comment">--save</span></span><br><span class="line">这个时候再重新生成静态文件，命令：</span><br><span class="line">hexo generate （或hexo <span class="keyword">g</span>）</span><br><span class="line">启动本地服务器：</span><br><span class="line">hexo <span class="keyword">server</span> （或hexo s）</span></span><br></pre></td></tr></table></figure>
-<h4 id="5-博客管理">5.博客管理</h4><p>上面命令中，其实生成文章，可以直接把写好的文章插入到目录<code>/_posts</code> 下面，后缀为.MD就行，在文章头部固定格式：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: Mac提高使用效率的一些方法   <span class="preprocessor">#文章的标题，这个才是显示的文章标题，其实文件名不影响</span></span><br><span class="line">date: <span class="number">2015</span>-<span class="number">09</span>-<span class="number">01</span> <span class="number">20</span>:<span class="number">33</span>:<span class="number">26</span>      <span class="preprocessor">#用命令会自动生成，也可以自己写，所以文章时间可以改</span></span><br><span class="line">categories: technology         <span class="preprocessor">#文章的分类，这个可以自己定义</span></span><br><span class="line">tags: [Mac,效率,快捷方式]        <span class="preprocessor">#tag，为文章添加标签，方便搜索</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>当然，里面有很多东西的，如果你专注于写作，那么可以不用太关心了，比如tags标签可以写成下面那样，因为hexo文章的头部文件是用<a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="external">AML</a>来写的。</p>
-<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">-<span class="ruby"> tag1</span><br><span class="line"></span>-<span class="ruby"> tag2</span></span><br></pre></td></tr></table></figure>
-<p>如果在博客文章列表中，不想全文显示，可以增加 <!--more-->, 后面的内容就不会显示在列表。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--more--&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="6-插件">6.插件</h4><ul>
-<li>安装插件</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> &lt;<span class="keyword">plugin</span>-<span class="keyword">name</span>&gt; <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>添加RSS<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-feed</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>然后，到博客目录 /public 下，如果没有发现atom.xml，说明命令没有生效！！！(楼主就是在这里被坑了次)<br>解决方法：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure></p>
-<p>这个命令来自<a href="https://www.npmjs.com/package/hexo-generator-feed" target="_blank" rel="external">hexo-generator-feed</a></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">Install</span></span><br><span class="line">   $ npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span><br><span class="line"> Hexo <span class="number">3</span>: <span class="number">1.</span>x</span><br><span class="line"> Hexo <span class="number">2</span>: <span class="number">0.</span>x</span><br><span class="line">Options</span><br><span class="line">   You can configure this <span class="keyword">plugin</span> <span class="keyword">in</span> _config.yml.</span><br><span class="line"></span><br><span class="line">  feed:</span><br><span class="line">     <span class="keyword">type</span>: atom</span><br><span class="line">     <span class="keyword">path</span>: atom.<span class="keyword">xml</span></span><br><span class="line">     <span class="keyword">limit</span>: <span class="number">20</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">type</span> - Feed <span class="keyword">type</span>. (atom/rss2)</span><br><span class="line">	<span class="keyword">path</span> - Feed <span class="keyword">path</span>. (<span class="keyword">Default</span>: atom.<span class="keyword">xml</span>/rss2.<span class="keyword">xml</span>)</span><br><span class="line">	<span class="keyword">limit</span> - Maximum <span class="built_in">number</span> <span class="keyword">of</span> posts <span class="keyword">in</span> the feed (<span class="keyword">Use</span> <span class="number">0</span> <span class="keyword">or</span> <span class="literal">false</span> <span class="keyword">to</span> <span class="keyword">show</span> all posts)</span></span><br></pre></td></tr></table></figure>
-<p>其中可以选择：<br>然后在 Hexo 根目录下的 _config.yml 里配置一下</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">    type: atom</span><br><span class="line">    path: atom<span class="class">.xml</span></span><br><span class="line">    limit: <span class="number">20</span></span><br><span class="line"><span class="id">#type</span> 表示类型, 是 atom 还是 rss2.</span><br><span class="line"><span class="id">#path</span> 表示 Feed 路径</span><br><span class="line"><span class="id">#limit</span> 最多多少篇最近文章</span><br></pre></td></tr></table></figure>
-<p>最后，在 <code>hexo generate</code>之后，会发现public文件夹下多了atom.xml！</p>
-<p>例如要订阅我的blog只要输入<code>ihtc.cc/atom</code>就可以搜寻到啦！</p>
-<ul>
-<li>添加Sitemap<blockquote>
-<p>Sitemap 的提交主要的目的，是要避免搜索引擎的爬虫没有完整的收录整个网页的内容，所以提交 Sitemap 是能够补足搜索引擎的不足，进而加速网页的收录速度，达到搜寻引擎友好的目的。</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
-<p>这个命令来自<a href="https://www.npmjs.com/package/hexo-generator-sitemap" target="_blank" rel="external">hexo-generator-sitemap</a></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   <span class="operator"><span class="keyword">Install</span></span><br><span class="line">	$ npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span><br><span class="line">	</span><br><span class="line">	Hexo <span class="number">3</span>: <span class="number">1.</span>x</span><br><span class="line">	Hexo <span class="number">2</span>: <span class="number">0.</span>x</span><br><span class="line">Options</span><br><span class="line">	You can configure this <span class="keyword">plugin</span> <span class="keyword">in</span> _config.yml.</span><br><span class="line"></span><br><span class="line">	sitemap:</span><br><span class="line">	    <span class="keyword">path</span>: sitemap.<span class="keyword">xml</span></span><br><span class="line">	<span class="keyword">path</span> - Sitemap <span class="keyword">path</span>. (<span class="keyword">Default</span>: sitemap.<span class="keyword">xml</span>)</span></span><br></pre></td></tr></table></figure>
-<p>同样可以选择：<br>在 Hexo 根目录下的 _config.yml 里配置一下</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">   path: sitemap<span class="class">.xml</span></span><br><span class="line">   <span class="id">#path</span> 表示 Sitemap 的路径. 默认为 sitemap<span class="class">.xml</span>.</span><br></pre></td></tr></table></figure>
-<p>对于国内用户还需要安装插件 hexo-generator-baidu-sitemap, 顾名思义是为百度量身打造的. 安装</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-generator-baidu-sitemap <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
-<p>然后在 Hexo 根目录下的 _config.yml 里配置一下</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">baidusitemap</span>:</span><br><span class="line">     <span class="attribute">path</span>: baidusitemap.xml</span><br></pre></td></tr></table></figure>
-<p>为了博客有更好的展示率, 最好的方式是通过搜索引擎, 提交 Sitemap文件是一个方式，具体可参考：</p>
-<ul>
-<li><p><a href="http://lukang.me/2015/optimization-of-hexo-2.html" target="_blank" rel="external">Hexo 优化与定制(二) | Kang Lu’s Blog</a></p>
-</li>
-<li><p><a href="http://fionat.github.io/blog/2013/10/23/sitemap/" target="_blank" rel="external">｜Hexo优化｜如何向google提交sitemap（详细） | Fiona’s Blog</a></p>
-</li>
-<li><p>其它插件<br><a href="https://github.com/hexojs/hexo/wiki/Plugins" target="_blank" rel="external">Plugins · hexojs/hexo</a></p>
-</li>
-</ul>
-<h4 id="7-评论设置">7.评论设置</h4><p>在Hexo中，默认使用的评论是国外的Disqus,不过因为国内的”网络环境”问题，我们改为国内的<a href="http://duoshuo.com" target="_blank" rel="external">多说</a>评论系统。</p>
-<p>需要说明的是 <code>short_name:</code>字段，这个字段为你多说填写的站点名字，比如我的域名：ihtcboy.duoshuo.com，那么我的short_name:”ihtcboy”</p>
-<h4 id="8-404页面">8.404页面</h4><blockquote>
-<p>GitHub Pages 自定义404页面非常容易，直接在根目录下创建自己的404.html就可以。但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用hexo server在本机调试也是不起作用的。<br>其实，404页面可以做更多有意义的事，来做个404公益项目吧。</p>
-</blockquote>
-<p>腾讯公益 404.html :</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span>   </span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>404<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">br</span>&gt;</span><span class="comment">&lt;!--</span><br><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset="UTF-8" /&gt;</span><br><span class="line">    &lt;title&gt;公益404 | 不如&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">#404 Not found By Bruce</span><br><span class="line">&lt;h1&gt;404 Page Not Found&lt;/h1&gt;</span><br><span class="line">--&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://www.qq.com/404/search_children.js"</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span><span class="comment">&lt;!--</span><br><span class="line">公益404介接入地址</span><br><span class="line">益云公益404 http://yibo.iyiyun.com/Index/web404</span><br><span class="line">腾讯公益404 http://www.qq.com/404</span><br><span class="line">失蹤兒童少年資料管理中心404 http://404page.missingkids.org.tw</span><br><span class="line">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>复制上面代码，贴粘到目录下新建的404.html即可！</p>
-<h4 id="9-统计">9.统计</h4><blockquote>
-<p>因Google Analytics偶尔被墙，故国内用百度统计</p>
-</blockquote>
-<p>最新的统计服务已经开放，两行代码轻松搞定，你可以直接使用：<a href="http://service.ibruce.info" target="_blank" rel="external">不蒜子</a><br>本人墙裂推荐，只需要两行代码哦。各种用法实例和显示效果参考不蒜子文档中的实例链接。不蒜子，极客的算子，极简的算子，任你发挥的算子。</p>
-<ul>
-<li><a href="http://ibruce.info/2013/12/22/count-views-of-hexo/" target="_blank" rel="external">为hexo博客添加访问次数统计功能 | 不如</a></li>
-</ul>
-<h4 id="10-更新">10.更新</h4><ul>
-<li><p>更新hexo：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">update</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新主题：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/你的主题</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新插件：</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> update</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="11-总结">11.总结</h4><p>本文主要是解释了自己搭建过程中遇到的问题，还有综合了其它Hexo教程的总结，还有图床、搜索、CDN加速等内容没有说到，大家用到可以自行百度谷歌！</p>
-<h3 id="12-参考引用">12.参考引用</h3><p><a href="http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a><br><a href="http://zipperary.com/2013/05/28/hexo-guide-1/" target="_blank" rel="external">hexo系列教程：（一）hexo介绍 | Zippera’s blog</a><br><a href="http://zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="external">hexo系列教程：（二）搭建hexo博客 | Zippera’s blog</a><br><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客 | 不如</a><br><a href="http://yangjian.me/workspace/building-blog-with-hexo/" target="_blank" rel="external">使用hexo搭建博客 | Alimon’s Blog</a><br><a href="http://blog.sunnyxx.com/2014/02/27/hexo_startup/" target="_blank" rel="external">hexo边搭边记 | sunnyxx的技术博客</a><br><a href="http://code.wileam.com/build-a-hexo-blog-and-optimize/" target="_blank" rel="external">hexo搭建静态博客以及优化 | Joanna’s coding blog</a><br><a href="http://www.jianshu.com/p/465830080ea9/comments/550752#comment-550752" target="_blank" rel="external">HEXO+Github,搭建属于自己的博客 - 简书</a><br><a href="http://code.kpman.cc/2013/05/08/在hexo自訂rss/" target="_blank" rel="external">在hexo自訂rss | kpman | code</a><br><a href="http://michaelhsu.tw/2013/05/05/rssatom-sitemap-for-seo/" target="_blank" rel="external">RSS/Atom、Sitemap for SEO | Michael Hsu.tw</a><br><a href="http://lukang.me/2015/optimization-of-hexo-2.html" target="_blank" rel="external">Hexo 优化与定制(二) | Kang Lu’s Blog</a><br><a href="http://ijiaober.github.io/categories/hexo/" target="_blank" rel="external">Hexo | { GoonX }</a><br><a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不蒜子 | 不如</a></p>
-<h3 id="13-搭建博客相关网站">13.搭建博客相关网站</h3><p><a href="https://hexo.io" target="_blank" rel="external">Hexo官网</a><br><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexojs/hexo</a><br><a href="https://pages.github.com" target="_blank" rel="external">GitHub Pages</a></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>目录：</p>
-<ul>
-<li>1.安装Hexo</li>
-<li>2.部署Hexo</li>
-<li>3.Hexo命令</li>
-<li>4.一些报错处理</li>
-<li>5.博客管理</li>
-<li>6.插件（RSS、Sitemap）</li>
-<li>7.评论设置</li>
-<li>8.404页面</li>
-<li>9.统计</li>
-<li>10.更新</li>
-<li>11.总结</li>
-<li>12.参考引用</li>
-<li>13.搭建博客相关网站</li>
-</ul>
-<h3 id="简述">简述</h3><p>本文主要讲解Hexo安装时遇到的坑，Hexo安装之后的使用教程，Hexo安装需要的环境和教程，请自行百度、谷歌。</p>]]>
-    
-    </summary>
-    
-      <category term="Github Pages" scheme="http://ihtc.cc/tags/Github-Pages/"/>
-    
-      <category term="Hexo" scheme="http://ihtc.cc/tags/Hexo/"/>
-    
-      <category term="搭建博客" scheme="http://ihtc.cc/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     

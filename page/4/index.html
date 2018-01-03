@@ -180,6 +180,322 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2015_友盟iOS微信登陆没有回调的原因" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/07/2015_友盟iOS微信登陆没有回调的原因/">友盟iOS微信登陆没有回调的原因</a>
+    </h1>
+  
+
+        
+        <a href="/2015/08/07/2015_友盟iOS微信登陆没有回调的原因/" class="archive-article-date">
+  	<time datetime="2015-08-06T16:22:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-08-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、在友盟文档中这样说：">1、在友盟文档中这样说：</h3><p><a href="http://dev.umeng.com/social/ios/detail-share#7_4" target="_blank" rel="external">链接</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7.4  &#24494;&#20449;&#30331;&#24405;&#10;&#28155;&#21152;&#37197;&#32622;&#25991;&#20214;&#21442;&#32771;&#25991;&#26723;&#65306;&#28155;&#21152;&#24494;&#20449;&#21450;&#26379;&#21451;&#22280;&#65292;&#28155;&#21152;&#30456;&#20851;&#24211;&#25991;&#20214;&#65292;&#37197;&#32622;URL schemes&#21450;&#28155;&#21152;&#31995;&#32479;&#22238;&#35843;&#10;&#10;&#27880;&#24847;&#24494;&#20449;&#30331;&#24405;&#24517;&#39035;&#20808;&#22312;&#24494;&#20449;&#24320;&#25918;&#24179;&#21488;&#30003;&#35831;&#24494;&#20449;&#30331;&#24405;&#26435;&#38480;&#10;&#22312;&#20320;&#30340;&#31243;&#24207;APPdelegate&#20837;&#21475;&#26041;&#27861;&#28155;&#21152;&#19979;&#38754;&#30340;&#20195;&#30721;&#10;&#10;  #import &#34;UMSocialWechatHandler.h&#34;&#10;    //&#35774;&#32622;&#24494;&#20449;AppId&#12289;appSecret&#65292;&#20998;&#20139;url&#10;    [UMSocialWechatHandler setWXAppId:@&#34;wxd930ea5d5a258f4f&#34; appSecret:@&#34;db426a9829e4b49a0dcac7b4162da6b6&#34; url:@&#34;http://www.umeng.com/social&#34;];&#10;&#10;&#22312;&#24494;&#20449;&#30331;&#24405;&#25353;&#38062;&#20013;&#23454;&#29616;&#19979;&#38754;&#30340;&#26041;&#27861;&#10;&#10;  UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];&#10;&#10;        snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response)&#123;&#10;&#10;            if (response.responseCode == UMSResponseCodeSuccess) &#123;&#10;&#10;                UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary]valueForKey:UMShareToWechatSession];&#10;&#10;                NSLog(@&#34;username is %@, uid is %@, token is %@ url is %@&#34;,snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);&#10;&#10;            &#125;&#10;&#10; &#125;);&#10;&#10;&#22312;&#25480;&#26435;&#23436;&#25104;&#21518;&#35843;&#29992;&#33719;&#21462;&#29992;&#25143;&#20449;&#24687;&#30340;&#26041;&#27861;&#10;&#10;//&#24471;&#21040;&#30340;&#25968;&#25454;&#22312;&#22238;&#35843;Block&#23545;&#35937;&#24418;&#21442;respone&#30340;data&#23646;&#24615;&#10;[[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToWechatsession  completion:^(UMSocialResponseEntity *response)&#123;&#10;        NSLog(@&#34;SnsInformation is %@&#34;,response.data);&#10;    &#125;];</span><br></pre></td></tr></table></figure>
+<h3 id="2、实践使用时：">2、实践使用时：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - &#24494;&#20449;&#30331;&#24405;&#10;- (void)loginViewClickedWeiXiButton&#123;&#10;    &#10;    [UMSocialData setAppKey:@&#34;55bb141a67e58e9f80001801&#34;];&#10;    [UMSocialWechatHandler setWXAppId:@&#34;wx2802d4e49f68996f&#34; appSecret:@&#34;f1bf8a16c5f87570ab07782d3e0ab223&#34; url:@&#34;http://www.umeng.com/social&#34;];&#10;    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];&#10;    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response)&#123;&#10;        //  &#33719;&#21462;&#24494;&#21338;&#29992;&#25143;&#21517;&#12289;uid&#12289;token&#31561;&#10;        if (response.responseCode == UMSResponseCodeSuccess) &#123;&#10;             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary]valueForKey:UMShareToWechatSession];&#10;            NSLog(@&#34;username is %@, uid is %@, token is %@ iconUrl is %@&#34;,snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);&#10;        &#125;&#10;    &#125;);&#10;    &#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、【坑在这里】没有回调时因为要在应用代理方法中增加：">3、【坑在这里】没有回调时因为要在应用代理方法中增加：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//sdk&#10;#import &#34;UMSocialSnsService.h&#34;&#10;&#10;- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation&#10;&#123;&#10;    return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:nil];&#10;&#125;&#10;&#10;- (void)applicationDidBecomeActive:(UIApplication *)application&#10;&#123;&#10;    [UMSocialSnsService  applicationDidBecomeActive];&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="最后说明">最后说明</h3><ul>
+<li>微信的<code>openid</code>对应友盟里叫<code>usid</code></li>
+</ul>
+<p>下面是授权成功的回调数据：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- UMSocial:  makeRequestWithPath is /share/token/53290df956240b6b4a0084b3/, parameters is &#123;&#10;    &#34;access_token&#34; = &#34;OezXcEiiBSKSxW0eoylIeJDUKD6z6dmr42JANLPjNN56WRFnd-vVJO37ma0gCpKY1v5q8EVEMwdQqzvXoFFpe1jQXUzjqukub9-228J8sjvugvVVQYvzkhyvAgItvkYmMIGD_cE2hAWUm44_qCB-oQ&#34;;&#10;    ak = 53290df956240b6b4a0084b3;&#10;    de = &#34;iPhone7,1&#34;;&#10;    dt = 1438857527939;&#10;    ek = 4b37315fd0421b0b3a682a4a5e4487e9;&#10;    en = WiFi;&#10;    &#34;expires_in&#34; = 7199;&#10;    mac = &#34;02:00:00:00:00:00&#34;;&#10;    openid = oyAaTjrJMAb3qfCbyDRp3h0NKyew;&#10;    openudid = 147ad485c3b80ffd54bfc8689c2d7db1ed88994b;&#10;    os = iOS;&#10;    pcv = &#34;2.0&#34;;&#10;    &#34;refresh_token&#34; = &#34;OezXcEiiBSKSxW0eoylIeJDUKD6z6dmr42JANLPjNN56WRFnd-vVJO37ma0gCpKYHXgyDeQ4Xqm60G-omrGp2u-KbIy7zTP5gV5dnw3RVN-GzkjY8gCWIMC3_cCHcflH6IPexy2c-k46gGG0M07p6g&#34;;&#10;    sdkv = &#34;4.2.3&#34;;&#10;    to = wxsession;&#10;    tp = 0;&#10;    uid = 462ae0edb57d53dfd2affb5e4ae36ad;&#10;    usid = oyAaTjrJMAb3qfCbyDRp3h0NKyew;&#10;&#125; &#10;[18:38:48.197( 2055)] - UMSocial:  actionType is 15 , received json Dic is &#123;&#10;    data =     &#123;&#10;    &#125;;&#10;    msg = &#34;no error&#34;;&#10;    st = 200;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="-">-</h3><ul>
+<li>如果有什么疑问，可以在评论区一起讨论；</li>
+<li>如果有什么不正确的地方，欢迎指导！</li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">友盟</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">第三方登陆</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/08/07/2015_友盟iOS微信登陆没有回调的原因/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2015_同时响应多个UIGestureRecognizer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/29/2015_同时响应多个UIGestureRecognizer/">同时响应多个UIGestureRecognizer</a>
+    </h1>
+  
+
+        
+        <a href="/2015/07/29/2015_同时响应多个UIGestureRecognizer/" class="archive-article-date">
+  	<time datetime="2015-07-29T15:52:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在做产品试戴，效果如下：<br><img src="http://upload-images.jianshu.io/upload_images/99517-4a52cfabb55b00b6.JPG?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="效果图"></p>
+        
+          <a class="article-more-a" href="/2015/07/29/2015_同时响应多个UIGestureRecognizer/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">UIGestureRecognizer</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/07/29/2015_同时响应多个UIGestureRecognizer/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2015_分析iOS手机淘宝首页的设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/26/2015_分析iOS手机淘宝首页的设计/">分析iOS手机淘宝首页的设计</a>
+    </h1>
+  
+
+        
+        <a href="/2015/07/26/2015_分析iOS手机淘宝首页的设计/" class="archive-article-date">
+  	<time datetime="2015-07-26T14:39:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://upload-images.jianshu.io/upload_images/99517-ec1bc0d03b6480da.PNG?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt="手机淘宝5.3.1(哆啦a梦版)"></p>
+        
+          <a class="article-more-a" href="/2015/07/26/2015_分析iOS手机淘宝首页的设计/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">手机淘宝</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">设计</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/07/26/2015_分析iOS手机淘宝首页的设计/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2015_一个工具类的单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/26/2015_一个工具类的单例模式/">一个工具类的单例模式</a>
+    </h1>
+  
+
+        
+        <a href="/2015/07/26/2015_一个工具类的单例模式/" class="archive-article-date">
+  	<time datetime="2015-07-26T04:07:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近写了个工具类，用来集成<strong>短信、邮件、电话、打开Safari/AppStore、打开相机或相册</strong>，但是写 delegate 的时候，发现有警告：</p>
+<blockquote>
+<p>Incompatible pointer types assigning to ‘id<MFMessageComposeViewControllerDelegate>‘ from ‘Class’</p>
+</blockquote>
+<p>最后，发现，用单例模式才可以。原因：<code>类方法的self不能充当delegate</code></p>
+        
+          <a class="article-more-a" href="/2015/07/26/2015_一个工具类的单例模式/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">单例模式</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/07/26/2015_一个工具类的单例模式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-2015_用autolyout实现子视图对齐等宽排列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -621,321 +937,9 @@
 
 
   
-    <article id="post-2015_无法回滚" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/26/2015_无法回滚/">无法回滚</a>
-    </h1>
-  
-
-        
-        <a href="/2015/06/26/2015_无法回滚/" class="archive-article-date">
-  	<time datetime="2015-06-26T11:20:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>无法在回去<br>过去的美好，将永远的暂停<br>过去的心塞，将不再的疼痛<br>无法回流的泪水</p>
-        
-          <a class="article-more-a" href="/2015/06/26/2015_无法回滚/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">爱情</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">诗歌</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">随记</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/poetry/">poetry</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/06/26/2015_无法回滚/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015_最新Reveal-1-5-1-详细配置实战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/17/2015_最新Reveal-1-5-1-详细配置实战/">最新Reveal.1.5.1详细配置实战</a>
-    </h1>
-  
-
-        
-        <a href="/2015/06/17/2015_最新Reveal-1-5-1-详细配置实战/" class="archive-article-date">
-  	<time datetime="2015-06-16T16:25:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="序">序</h3><p>最近在唐巧哥的微信看到Reveal中国大优惠，一直听说这个软件很利害，但是对盗版软件的使用很力不从心，所以以前没有用过，果断买下了。</p>
-<p>买了后，发现不会配置，看的唐哥的《iOS开发进阶》讲很也不细，像我这样的小白，连vim都不熟悉，还能懂怎么保存？！？！</p>
-<h3 id="Reveal公共配置">Reveal公共配置</h3><h6 id="（1）在当前用户目录下，打开终端中新建一个-lldbinit文件,位置是~/-lldbinit。">（1）在当前用户目录下，打开终端中新建一个.lldbinit文件,位置是~/.lldbinit。</h6><p>命令是: <code>vim ~/.lldbinit</code><br>然后粘贴下面代码：</p>
-        
-          <a class="article-more-a" href="/2015/06/17/2015_最新Reveal-1-5-1-详细配置实战/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">Reveal</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">UIView</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/technology/">technology</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/06/17/2015_最新Reveal-1-5-1-详细配置实战/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015_结束的不仅仅是大学四年，是一个时代" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/09/2015_结束的不仅仅是大学四年，是一个时代/">结束的不仅仅是大学四年，是一个时代</a>
-    </h1>
-  
-
-        
-        <a href="/2015/06/09/2015_结束的不仅仅是大学四年，是一个时代/" class="archive-article-date">
-  	<time datetime="2015-06-08T17:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>摘下四叶草那一刻，意味着4年结束了<br>每每你们问我四叶草，它只是简单的信念<br>4年的大学，每年收获一个珍桂</p>
-<p><img src="" alt=""><br>《大一》<br>匆匆那年，我们还年轻<br>想起辩论赛，想起军训，想起傻逼的绿军队<br>每每一笑，都是泪水<br>那青涩的脸孔，我总向往着最美的阳光</p>
-<p><img src="" alt=""><br>那回，认真和努力<br>我保持着高考那堆理想，那堆美梦<br>去早起，去读书<br>充满鸡血般在图书馆装逼</p>
-        
-          <a class="article-more-a" href="/2015/06/09/2015_结束的不仅仅是大学四年，是一个时代/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">四年</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">大学</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">生活</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/life/">life</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/06/09/2015_结束的不仅仅是大学四年，是一个时代/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015_iOS支付宝SDK回调那坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/26/2015_iOS支付宝SDK回调那坑/">iOS支付宝SDK回调那坑</a>
-    </h1>
-  
-
-        
-        <a href="/2015/05/26/2015_iOS支付宝SDK回调那坑/" class="archive-article-date">
-  	<time datetime="2015-05-25T16:46:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>支付宝钱包支付接口开发包2.0标准版(iOS 2.2.1) ，回调不出来，demo给出的方法是：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application</span><br><span class="line">             openURL:(<span class="built_in">NSURL</span> *)url</span><br><span class="line">   sourceApplication:(<span class="built_in">NSString</span> *)sourceApplication</span><br><span class="line">          annotation:(<span class="keyword">id</span>)annotation &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> ([url<span class="variable">.host</span> isEqualToString:<span class="string">@"safepay"</span>]) &#123;</span><br><span class="line">     </span><br><span class="line">        [[AlipaySDK defaultService] processAuth_V2Result:url</span><br><span class="line">                                      standbyCallback:^(<span class="built_in">NSDictionary</span> *resultDic) &#123;</span><br><span class="line">         <span class="built_in">NSLog</span>(<span class="string">@"result = %@"</span>,resultDic);</span><br><span class="line">         <span class="built_in">NSString</span> *resultStr = resultDic[<span class="string">@"result"</span>];</span><br><span class="line">       &#125;];</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2015/05/26/2015_iOS支付宝SDK回调那坑/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">alipay</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">支付宝</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/technology/">technology</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/05/26/2015_iOS支付宝SDK回调那坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -1448,6 +1452,50 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">backBarButtonItem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Localization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">应用本地化语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">沙盒测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">沙盒账号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Sandbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">iTunes账户</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">强制竖屏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">SFSafariViewController</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">iOS侧滑返回</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">iPhoneX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">LaunchScreen</a>
               </li>
             
             <div class="clearfix"></div>
