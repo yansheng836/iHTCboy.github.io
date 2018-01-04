@@ -594,8 +594,8 @@
   
   <entry>
     <title><![CDATA[Xcode8报错："Framework not found IOSurface for architecture arm64"或者 "Framework not found FileProvider for architecture x86_64/arm64".]]></title>
-    <link href="http://ihtc.cc/2017/10/27/2017_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework%20not%20found%20IOSurface%20for%20architecture%20arm64%20%E6%88%96%E8%80%85%20Framework%20not%20found%20FileProvider%20for%20architecture%20x86_64:arm64./"/>
-    <id>http://ihtc.cc/2017/10/27/2017_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64./</id>
+    <link href="http://ihtc.cc/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework%20not%20found%20IOSurface%20for%20architecture%20arm64%20%E6%88%96%E8%80%85%20Framework%20not%20found%20FileProvider%20for%20architecture%20x86_64:arm64./"/>
+    <id>http://ihtc.cc/2017/10/27/2017_10_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64./</id>
     <published>2017-10-27T00:33:16.000Z</published>
     <updated>2018-01-01T13:36:21.000Z</updated>
     <content type="html"><![CDATA[<p>Xcode8 编译报错：</p>
@@ -645,8 +645,8 @@
   
   <entry>
     <title><![CDATA[Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决]]></title>
-    <link href="http://ihtc.cc/2017/10/12/2017_Xcode9%20%E6%89%93%E5%8C%85App%20Store%20Icon(1024xp)%20WARNING%20ITMS-90704%20-90717%20%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    <id>http://ihtc.cc/2017/10/12/2017_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/</id>
+    <link href="http://ihtc.cc/2017/10/12/2017_10_Xcode9%20%E6%89%93%E5%8C%85App%20Store%20Icon(1024xp)%20WARNING%20ITMS-90704%20-90717%20%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>http://ihtc.cc/2017/10/12/2017_10_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/</id>
     <published>2017-10-12T01:00:16.000Z</published>
     <updated>2018-01-01T13:32:57.000Z</updated>
     <content type="html"><![CDATA[<h4 id="Xcode9_打包，上传_iTunes_Connet_报错，提示需要在icon添加一张_Marketing_1024x1024_的图标">Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标</h4><blockquote>
@@ -695,8 +695,8 @@
   
   <entry>
     <title><![CDATA[Xcode快捷键 高效必记]]></title>
-    <link href="http://ihtc.cc/2017/03/27/2017_Xcode%E5%BF%AB%E6%8D%B7%E9%94%AE%20%E9%AB%98%E6%95%88%E5%BF%85%E8%AE%B0/"/>
-    <id>http://ihtc.cc/2017/03/27/2017_Xcode快捷键 高效必记/</id>
+    <link href="http://ihtc.cc/2017/03/27/2017_03_Xcode%E5%BF%AB%E6%8D%B7%E9%94%AE%20%E9%AB%98%E6%95%88%E5%BF%85%E8%AE%B0/"/>
+    <id>http://ihtc.cc/2017/03/27/2017_03_Xcode快捷键 高效必记/</id>
     <published>2017-03-27T13:58:16.000Z</published>
     <updated>2018-01-03T14:31:55.000Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近入职，忙于公司业务熟悉与熟练。工作三年了，上一年在创业公司，更多的是学习公司生存法则，忙于产品开发，没有好好总结，有机会也可以写写创业公司那么事，对个人而言是宝贵的经历。所以，最近在工作中，也会慢慢总结一下自己经验，然后思考一下，也当学习分享，一起进步！<br>所以今天就先从IDE效率总结开始啊！</p>
