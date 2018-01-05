@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="iHTCboy's Blog">
 <meta property="og:description" content="前言runtime 的黑魔法很多人都一定听过，或者已经在使用了。但是，怎么swizzle方法才是最好呢？
 一般写法123Method originalMethod = class_getInstanceMethod(aClass, originalSel);    Method swizzleMethod = class_getInstanceMethod(aClass, swizzleSel);">
-<meta property="og:updated_time" content="2018-01-03T16:04:37.000Z">
+<meta property="og:updated_time" content="2018-01-05T13:58:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你真的懂使用Runtime进行swizzle的最佳写法？">
 <meta name="twitter:description" content="前言runtime 的黑魔法很多人都一定听过，或者已经在使用了。但是，怎么swizzle方法才是最好呢？
@@ -204,8 +204,10 @@
       
         <h3 id="前言">前言</h3><p>runtime 的黑魔法很多人都一定听过，或者已经在使用了。但是，怎么swizzle方法才是最好呢？</p>
 <h3 id="一般写法">一般写法</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line">    <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line">    method_exchangeImplementations(originalMethod, swizzleMethod);</span><br></pre></td></tr></table></figure>
-<p>或者是下面这种方式，swizzle第二种写法:<br><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line"> <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line"> BOOL didAddMethod = class_addMethod(aClass, originalSel, method_getImplementation(swizzleMethod), method_getTypeEncoding(swizzleMethod));</span><br><span class="line"> <span class="keyword">if</span> (didAddMethod) <span class="comment">&#123;</span><br><span class="line">     class_replaceMethod(aClass, swizzleSel, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));</span><br><span class="line"> &#125;</span><span class="keyword">else</span><span class="comment">&#123;</span><br><span class="line">     method_exchangeImplementations(originalMethod, swizzleMethod);</span><br><span class="line"> &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>或者是下面这种方式，swizzle第二种写法:</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line"> <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line"> BOOL didAddMethod = class_addMethod(aClass, originalSel, method_getImplementation(swizzleMethod), method_getTypeEncoding(swizzleMethod));</span><br><span class="line"> <span class="keyword">if</span> (didAddMethod) <span class="comment">&#123;</span><br><span class="line">     class_replaceMethod(aClass, swizzleSel, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));</span><br><span class="line"> &#125;</span><span class="keyword">else</span><span class="comment">&#123;</span><br><span class="line">     method_exchangeImplementations(originalMethod, swizzleMethod);</span><br><span class="line"> &#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="更好写法">更好写法</h3><p>其它，这样写，一般不会有问题，但是在一些情况下，比如这个hook的类没有实现你要swizzle的方法，这时是没有swizzle成功的，然后你自己写的 swizzle 里又自己调用自己，就无限循环。</p>
+<a id="more"></a>
 <figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Method originalInsMethod = class_getInstanceMethod<span class="params">(class, originalSelector)</span>;</span><br><span class="line"><span class="comment">// 处理为实例方法</span></span><br><span class="line"><span class="keyword">if</span> <span class="params">(originalInsMethod)</span></span><br><span class="line">&#123;</span><br><span class="line">    method_exchangeImplementations<span class="params">(originalInsMethod, swizzledMethod)</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">// 处理为类方法</span></span><br><span class="line">    Method originalClassMethod = class_getClassMethod<span class="params">(class, originalSelector)</span>;</span><br><span class="line">    <span class="keyword">if</span> <span class="params">(originalClassMethod)</span></span><br><span class="line">    &#123;</span><br><span class="line">        method_exchangeImplementations<span class="params">(originalClassMethod, swizzledMethod)</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">// 如果hook的类没有实现这个方法，则先添加方法，然后设置方法的IMP为一个空block。否则直接class_replaceMethod，则方法实则没有交接</span></span><br><span class="line">        class_addMethod<span class="params">(class, originalSelector, method_getImplementation<span class="params">(swizzledMethod)</span>, method_getTypeEncoding<span class="params">(swizzledMethod)</span>)</span>;</span><br><span class="line">        method_setImplementation<span class="params">(swizzledMethod, imp_implementationWithBlock<span class="params">(^<span class="params">(id self, SEL _cmd)</span>&#123;&#125;)</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="总结">总结</h3><p>至于这个为什么会更好？ 有时间在慢慢说啦~ </p>
 <h3 id="参考">参考</h3><ul>
@@ -291,7 +293,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/01/2018_01_你好，2018！/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/01/2018_01_01_你好，2018！/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -473,15 +475,91 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Xcode</a>
+                <a href="javascript:void(0)" class="color1">AutoLayout</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">快捷键</a>
+                <a href="javascript:void(0)" class="color5">Imagesize</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">图片实际大小显示</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">swizzle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">iOS11</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">UIToolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">UIActivityIndicatorView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">hidden隐藏没效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">iTunes 12.7</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">下载IPA包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">沙盒测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">沙盒账号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Sandbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">iTunes账户</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">强制竖屏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">SFSafariViewController</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">iOS侧滑返回</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">iPhoneX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">Xcode9</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">LaunchScreen</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">sandbox</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,6 +580,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Framework not found</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">AppStore</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Localization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">应用本地化语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">Xcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,10 +775,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">AppStore</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">iTunes</a>
               </li>
              
@@ -846,98 +940,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">backBarButtonItem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Localization</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">应用本地化语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">沙盒测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">沙盒账号</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Sandbox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">iTunes账户</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">强制竖屏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">SFSafariViewController</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">iOS侧滑返回</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">iPhoneX</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">LaunchScreen</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">iOS11</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">sandbox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">AutoLayout</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Imagesize</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">图片实际大小显示</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Runtime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">swizzle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">UIToolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">UIActivityIndicatorView</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">hidden隐藏没效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">iTunes 12.7</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">下载IPA包</a>
               </li>
             
             <div class="clearfix"></div>
