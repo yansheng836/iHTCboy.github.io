@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-01-29T14:56:14.000Z</updated>
+  <updated>2018-01-29T15:03:37.000Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -13,23 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://ihtc.cc/2018/01/29/2018-01-17_%E5%88%A4%E6%96%ADNSString%E4%B8%BA%E7%A9%BA%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://ihtc.cc/2018/01/29/2018-01-17_判断NSString为空的问题/</id>
-    <published>2018-01-29T14:56:14.000Z</published>
-    <updated>2018-01-29T14:56:14.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="判断NSString为空的问题">判断NSString为空的问题</h1><p><a href="https://www.jianshu.com/p/fd32b759bace" target="_blank" rel="external">https://www.jianshu.com/p/fd32b759bace</a></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="判断NSString为空的问题">判断NSString为空的问题</h1><p><a href="https://www.jianshu.com/p/fd32b759bace" target="_blank" rel="external">https://www.]]>
-    </summary>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[装逼神句———有道词典命令行查询工具]]></title>
@@ -62,34 +45,6 @@
       <category term="命令行查单词" scheme="http://ihtc.cc/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E5%8D%95%E8%AF%8D/"/>
     
       <category term="有道词典" scheme="http://ihtc.cc/tags/%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://ihtc.cc/2018/01/18/2018-01-17_Xcode9.2%E5%88%B6%E4%BD%9C%E9%9D%99%E6%80%81&%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85%E5%85%A8%E6%B5%81%E7%A8%8B/"/>
-    <id>http://ihtc.cc/2018/01/18/2018-01-17_Xcode9.2制作静态&动态库和自动打包全流程/</id>
-    <published>2018-01-18T12:49:16.000Z</published>
-    <updated>2018-01-29T14:56:11.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="静态库_-a">静态库 .a</h3><h3 id="静态库_framework">静态库 framework</h3><h3 id="动态库_framework">动态库 framework</h3><h3 id="自动打库">自动打库</h3><h3 id="参考">参考</h3><p><a href="https://www.jianshu.com/p/bd8c97405f11" target="_blank" rel="external">https://www.jianshu.com/p/bd8c97405f11</a></p>
-<p><a href="https://www.jianshu.com/p/c796fcba1604" target="_blank" rel="external">https://www.jianshu.com/p/c796fcba1604</a></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="静态库_-a">静态库 .a</h3><h3 id="静态库_framework">静态库 framework</h3><h3 id="动态库_framework">动态库 framework</h3><h3 id="自动打库">自动打库</h3><h3 id="]]>
-    </summary>
-    
-      <category term="SDK制作" scheme="http://ihtc.cc/tags/SDK%E5%88%B6%E4%BD%9C/"/>
-    
-      <category term="动态库" scheme="http://ihtc.cc/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    
-      <category term="自动打包" scheme="http://ihtc.cc/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
-    
-      <category term="静态库" scheme="http://ihtc.cc/tags/%E9%9D%99%E6%80%81%E5%BA%93/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     
@@ -602,6 +557,57 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Xcode8报错："Framework not found IOSurface for architecture arm64"或者 "Framework not found FileProvider for architecture x86_64/arm64".]]></title>
+    <link href="http://ihtc.cc/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework%20not%20found%20IOSurface%20for%20architecture%20arm64%20%E6%88%96%E8%80%85%20Framework%20not%20found%20FileProvider%20for%20architecture%20x86_64:arm64./"/>
+    <id>http://ihtc.cc/2017/10/27/2017_10_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64./</id>
+    <published>2017-10-27T00:33:16.000Z</published>
+    <updated>2018-01-01T13:36:21.000Z</updated>
+    <content type="html"><![CDATA[<p>Xcode8 编译报错：</p>
+<blockquote>
+<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
+</blockquote>
+<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>
+<a id="more"></a>
+<p>题外话，这个在 Xcode5 和 Xcode6 过度时，Metal.framework 时发生过，可能过了就忘记了。也发现 Xcode 很多特性平时没有注意，有空真要多看看 LLVM 的知识。</p>
+<h3 id="结果">结果</h3><p>如果原厂升级到 Xcode9，则不受影响。如果 Xcode8 编译报错，网上最初给出的方案，在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，结果最后坑定了！</p>
+<p>在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，上传iTunes Connet 报错：<br><img src="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512" alt="iTunes Connet 报错使用非法 API.jpg"></p>
+<h3 id="正解解决方案">正解解决方案</h3><p> Build Settings 中 Link Frameworks Automatically 把默认Yes 改成 No ，在 Xcode8 编译就能通过。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置 Link Frameworks Automatically 为 NO.jpeg"></p>
+<h3 id="参考&amp;扩展阅读">参考&amp;扩展阅读</h3><ul>
+<li><a href="https://stackoverflow.com/questions/25804696/xcode-6-gm-linker-error-when-building-for-device-metal-not-found/25924645" target="_blank" rel="external">ios8 - XCode 6 GM: linker error when building for device (Metal not found) - Stack Overflow</a></li>
+<li><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/WhatsNewXcode/Chapters/xcode_5_0.html#//apple_ref/doc/uid/TP40012953-SW1" target="_blank" rel="external">New Features in Xcode 5</a></li>
+<li><a href="https://mmmag.appsee.com/2014/09/22/xcode-new-link-frameworks-automatically-fix-framework-not-found-metal-for-architecture-armv7/" target="_blank" rel="external">XCode’s New “Link Frameworks Automatically” &amp; How to Fix “framework not found Metal for architecture armv7”</a></li>
+<li><a href="https://stackoverflow.com/questions/44450673/framework-not-found-iosurface-for-architecture-arm64" target="_blank" rel="external">ios - Framework not found IOSurface for architecture arm64 - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/33728359/when-do-you-have-to-link-frameworks-and-libraries-to-an-xcode-project" target="_blank" rel="external">ios - When do you have to link Frameworks and Libraries to an XCode project? - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/24902787/dont-we-need-to-link-framework-to-xcode-project-anymore" target="_blank" rel="external">Don’t we need to link framework to XCode project anymore?</a></li>
+<li><a href="https://stackoverflow.com/questions/18947516/import-vs-import-ios-7/18947634#" target="_blank" rel="external">objective c - @import vs #import - iOS 7 - Stack Overflow</a></li>
+<li><a href="http://www.jianshu.com/p/0ce22e777900" target="_blank" rel="external">Modules和Autolinking的介绍与使用 - 简书</a></li>
+<li><a href="http://blog.csdn.net/xiaofei125145/article/details/41117085" target="_blank" rel="external">xcode 新特性的 一点理解 enable module 和 link frameworks automatically - 滴水成川 - CSDN博客</a></li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xcode8 编译报错：</p>
+<blockquote>
+<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
+</blockquote>
+<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>]]>
+    
+    </summary>
+    
+      <category term="Framework not found" scheme="http://ihtc.cc/tags/Framework-not-found/"/>
+    
+      <category term="IOSurface" scheme="http://ihtc.cc/tags/IOSurface/"/>
+    
+      <category term="Xcode9" scheme="http://ihtc.cc/tags/Xcode9/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[沙盒测试账号：不允许创建 iTunes 账户]]></title>
     <link href="http://ihtc.cc/2017/10/27/2017_10_%E6%B2%99%E7%9B%92%E6%B5%8B%E8%AF%95%E8%B4%A6%E5%8F%B7%EF%BC%9A%E4%B8%8D%E5%85%81%E8%AE%B8%E5%88%9B%E5%BB%BA%20iTunes%20%E8%B4%A6%E6%88%B7/"/>
     <id>http://ihtc.cc/2017/10/27/2017_10_沙盒测试账号：不允许创建 iTunes 账户/</id>
@@ -674,57 +680,6 @@
       <category term="沙盒测试" scheme="http://ihtc.cc/tags/%E6%B2%99%E7%9B%92%E6%B5%8B%E8%AF%95/"/>
     
       <category term="沙盒账号" scheme="http://ihtc.cc/tags/%E6%B2%99%E7%9B%92%E8%B4%A6%E5%8F%B7/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Xcode8报错："Framework not found IOSurface for architecture arm64"或者 "Framework not found FileProvider for architecture x86_64/arm64".]]></title>
-    <link href="http://ihtc.cc/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework%20not%20found%20IOSurface%20for%20architecture%20arm64%20%E6%88%96%E8%80%85%20Framework%20not%20found%20FileProvider%20for%20architecture%20x86_64:arm64./"/>
-    <id>http://ihtc.cc/2017/10/27/2017_10_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64./</id>
-    <published>2017-10-27T00:33:16.000Z</published>
-    <updated>2018-01-01T13:36:21.000Z</updated>
-    <content type="html"><![CDATA[<p>Xcode8 编译报错：</p>
-<blockquote>
-<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
-</blockquote>
-<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>
-<a id="more"></a>
-<p>题外话，这个在 Xcode5 和 Xcode6 过度时，Metal.framework 时发生过，可能过了就忘记了。也发现 Xcode 很多特性平时没有注意，有空真要多看看 LLVM 的知识。</p>
-<h3 id="结果">结果</h3><p>如果原厂升级到 Xcode9，则不受影响。如果 Xcode8 编译报错，网上最初给出的方案，在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，结果最后坑定了！</p>
-<p>在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，上传iTunes Connet 报错：<br><img src="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512" alt="iTunes Connet 报错使用非法 API.jpg"></p>
-<h3 id="正解解决方案">正解解决方案</h3><p> Build Settings 中 Link Frameworks Automatically 把默认Yes 改成 No ，在 Xcode8 编译就能通过。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置 Link Frameworks Automatically 为 NO.jpeg"></p>
-<h3 id="参考&amp;扩展阅读">参考&amp;扩展阅读</h3><ul>
-<li><a href="https://stackoverflow.com/questions/25804696/xcode-6-gm-linker-error-when-building-for-device-metal-not-found/25924645" target="_blank" rel="external">ios8 - XCode 6 GM: linker error when building for device (Metal not found) - Stack Overflow</a></li>
-<li><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/WhatsNewXcode/Chapters/xcode_5_0.html#//apple_ref/doc/uid/TP40012953-SW1" target="_blank" rel="external">New Features in Xcode 5</a></li>
-<li><a href="https://mmmag.appsee.com/2014/09/22/xcode-new-link-frameworks-automatically-fix-framework-not-found-metal-for-architecture-armv7/" target="_blank" rel="external">XCode’s New “Link Frameworks Automatically” &amp; How to Fix “framework not found Metal for architecture armv7”</a></li>
-<li><a href="https://stackoverflow.com/questions/44450673/framework-not-found-iosurface-for-architecture-arm64" target="_blank" rel="external">ios - Framework not found IOSurface for architecture arm64 - Stack Overflow</a></li>
-<li><a href="https://stackoverflow.com/questions/33728359/when-do-you-have-to-link-frameworks-and-libraries-to-an-xcode-project" target="_blank" rel="external">ios - When do you have to link Frameworks and Libraries to an XCode project? - Stack Overflow</a></li>
-<li><a href="https://stackoverflow.com/questions/24902787/dont-we-need-to-link-framework-to-xcode-project-anymore" target="_blank" rel="external">Don’t we need to link framework to XCode project anymore?</a></li>
-<li><a href="https://stackoverflow.com/questions/18947516/import-vs-import-ios-7/18947634#" target="_blank" rel="external">objective c - @import vs #import - iOS 7 - Stack Overflow</a></li>
-<li><a href="http://www.jianshu.com/p/0ce22e777900" target="_blank" rel="external">Modules和Autolinking的介绍与使用 - 简书</a></li>
-<li><a href="http://blog.csdn.net/xiaofei125145/article/details/41117085" target="_blank" rel="external">xcode 新特性的 一点理解 enable module 和 link frameworks automatically - 滴水成川 - CSDN博客</a></li>
-</ul>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注明来源。</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Xcode8 编译报错：</p>
-<blockquote>
-<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
-</blockquote>
-<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>]]>
-    
-    </summary>
-    
-      <category term="Framework not found" scheme="http://ihtc.cc/tags/Framework-not-found/"/>
-    
-      <category term="IOSurface" scheme="http://ihtc.cc/tags/IOSurface/"/>
-    
-      <category term="Xcode9" scheme="http://ihtc.cc/tags/Xcode9/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     
@@ -975,6 +930,68 @@
       <category term="iOS" scheme="http://ihtc.cc/tags/iOS/"/>
     
       <category term="应用无法安装" scheme="http://ihtc.cc/tags/%E5%BA%94%E7%94%A8%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS读取文件Bundle pathForResource方法返回nil问题]]></title>
+    <link href="http://ihtc.cc/2016/11/29/2016_iOS%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6Bundle%20pathForResource%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9Enil%E9%97%AE%E9%A2%98/"/>
+    <id>http://ihtc.cc/2016/11/29/2016_iOS读取文件Bundle pathForResource方法返回nil问题/</id>
+    <published>2016-11-29T09:19:16.000Z</published>
+    <updated>2016-12-31T13:58:51.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="检查代码">检查代码</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">oc:</span></span><br><span class="line">    NSString* soundPath = [[NSBundle mainBundle] <span class="string">pathForResource:</span>@<span class="string">"wakeup"</span> <span class="string">ofType:</span>@<span class="string">"caf"</span>]; </span><br><span class="line">    NSLog(@<span class="string">"soundPath:%@"</span>, soundPath); </span><br><span class="line"></span><br><span class="line">swift <span class="number">3.0</span>:</span><br><span class="line">    let audioFile = Bundle.main.path(<span class="string">forResource:</span> <span class="string">"frogs.m4a"</span>, <span class="string">ofType:</span> nil)</span><br><span class="line">    print(audioFile)</span><br></pre></td></tr></table></figure>
+<p>代码反复看了，clear工程n次，手机删掉项目n次，还是返回空，然后测试了一些pdf，png，mp3文件有路径返回，瞬间晕倒了</p>
+<a id="more"></a>
+<h3 id="问题所在">问题所在</h3><p><strong>音频文件没有包含到项目资源中</strong>，手工添加就可以了！</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-eb7306ade72d3b02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="音频文件没有包含到项目资源中"></p>
+<h3 id="总结">总结</h3><p>这种问题，不是代码多好多好就可以，一个问题，不只是知识点问题，可能对知识抱有怀疑，可以查正，如果发现查不到，然后这个问题是出在工具上，如果我直接新建一个工程，然后没有问题了就不管了，如果没有从根源上解决，下次出现也不能解决，这就是经验。</p>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="检查代码">检查代码</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">oc:</span></span><br><span class="line">    NSString* soundPath = [[NSBundle mainBundle] <span class="string">pathForResource:</span>@<span class="string">"wakeup"</span> <span class="string">ofType:</span>@<span class="string">"caf"</span>]; </span><br><span class="line">    NSLog(@<span class="string">"soundPath:%@"</span>, soundPath); </span><br><span class="line"></span><br><span class="line">swift <span class="number">3.0</span>:</span><br><span class="line">    let audioFile = Bundle.main.path(<span class="string">forResource:</span> <span class="string">"frogs.m4a"</span>, <span class="string">ofType:</span> nil)</span><br><span class="line">    print(audioFile)</span><br></pre></td></tr></table></figure>
+<p>代码反复看了，clear工程n次，手机删掉项目n次，还是返回空，然后测试了一些pdf，png，mp3文件有路径返回，瞬间晕倒了</p>]]>
+    
+    </summary>
+    
+      <category term="Bundle" scheme="http://ihtc.cc/tags/Bundle/"/>
+    
+      <category term="iOS" scheme="http://ihtc.cc/tags/iOS/"/>
+    
+      <category term="pathForResource" scheme="http://ihtc.cc/tags/pathForResource/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[清除Xcode的Archives列表的无用Apps]]></title>
+    <link href="http://ihtc.cc/2016/11/21/2016_%E6%B8%85%E9%99%A4Xcode%E7%9A%84Archives%E5%88%97%E8%A1%A8%E7%9A%84%E6%97%A0%E7%94%A8Apps/"/>
+    <id>http://ihtc.cc/2016/11/21/2016_清除Xcode的Archives列表的无用Apps/</id>
+    <published>2016-11-21T09:36:16.000Z</published>
+    <updated>2016-12-31T13:56:13.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Archives目录">Archives目录</h3><p>当有多个账号同时登陆Xcode时，有一些应用不在本机发布，就会出现下图的空列表：<br><img src="http://upload-images.jianshu.io/upload_images/99517-5d943f2ed9713287.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="No Archives"></p>
+<a id="more"></a>
+<h3 id="删除">删除</h3><p>你一定非常想删除这样的列表，但是Xcode中却没有删除功能！</p>
+<ul>
+<li>进入目录：~/Library/Developer/Xcode/Products</li>
+<li>删除对应无用的应用就可以！！</li>
+</ul>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Archives目录">Archives目录</h3><p>当有多个账号同时登陆Xcode时，有一些应用不在本机发布，就会出现下图的空列表：<br><img src="http://upload-images.jianshu.io/upload_images/99517-5d943f2ed9713287.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="No Archives"></p>]]>
+    
+    </summary>
+    
+      <category term="Archives" scheme="http://ihtc.cc/tags/Archives/"/>
+    
+      <category term="Xcode" scheme="http://ihtc.cc/tags/Xcode/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     
