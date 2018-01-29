@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-01-05T14:59:35.000Z</updated>
+  <updated>2018-01-29T14:56:14.000Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -15,11 +15,92 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://ihtc.cc/2018/01/29/2018-01-17_%E5%88%A4%E6%96%ADNSString%E4%B8%BA%E7%A9%BA%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://ihtc.cc/2018/01/29/2018-01-17_判断NSString为空的问题/</id>
+    <published>2018-01-29T14:56:14.000Z</published>
+    <updated>2018-01-29T14:56:14.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="判断NSString为空的问题">判断NSString为空的问题</h1><p><a href="https://www.jianshu.com/p/fd32b759bace" target="_blank" rel="external">https://www.jianshu.com/p/fd32b759bace</a></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="判断NSString为空的问题">判断NSString为空的问题</h1><p><a href="https://www.jianshu.com/p/fd32b759bace" target="_blank" rel="external">https://www.]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[装逼神句———有道词典命令行查询工具]]></title>
+    <link href="http://ihtc.cc/2018/01/29/2018-01-29_%E8%A3%85%E9%80%BC%E7%A5%9E%E5%8F%A5%E2%80%94%E2%80%94%E2%80%94%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7/"/>
+    <id>http://ihtc.cc/2018/01/29/2018-01-29_装逼神句———有道词典命令行查询工具/</id>
+    <published>2018-01-29T00:49:16.000Z</published>
+    <updated>2018-01-29T15:03:37.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="装逼说明">装逼说明</h2><p>不喜欢安装有道词典的应用程序，因为太耗资源还一堆广告，但是用浏览器打开<code>dict.youdao.com</code>也挺麻烦的，不是吗？快来试试有道词典命令行工具吧！</p>
+<h2 id="看图装逼">看图装逼</h2><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/2018-01-29-yddict-example.gif" alt="example"></p>
+<a id="more"></a>
+<h2 id="自已装逼">自已装逼</h2><h4 id="安装">安装</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> yddict -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="使用说明">使用说明</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yd <span class="tag">&lt;<span class="title">要查询的单词</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在<code>/usr/local/lib/node_modules/yddict/</code>目录下，可以进行一些自定义，或者更改查询的来源，<br>主要源码 index.js：</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env node</span></span><br><span class="line"><span class="keyword">const</span> request = require('request');</span><br><span class="line"><span class="keyword">const</span> cheerio = require('cheerio');</span><br><span class="line"><span class="keyword">const</span> chalk = require('chalk');</span><br><span class="line"><span class="keyword">const</span> fs = require('fs');</span><br><span class="line"><span class="keyword">const</span> <span class="type">Spinner</span> = require('cli-spinner').<span class="type">Spinner</span>;</span><br><span class="line"><span class="keyword">const</span> isChinese = require('<span class="keyword">is</span>-chinese')</span><br><span class="line"><span class="keyword">const</span> urlencode = require('urlencode');</span><br><span class="line"><span class="keyword">const</span> spinner = new <span class="type">Spinner</span>('努力查询中... %s');</span><br><span class="line"><span class="keyword">const</span> home = process.env[(process.platform == 'win32') ? '<span class="type">USERPROFILE</span>' : '<span class="type">HOME</span>'];</span><br><span class="line"><span class="keyword">const</span> configFile = home + <span class="string">"/config.json"</span>;</span><br><span class="line"><span class="keyword">let</span> color = 'gray';//更改查询结果的文字颜色</span><br><span class="line"></span><br><span class="line">spinner.setSpinnerString('|/-\\');</span><br><span class="line">spinner.start();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> readFile = (filename, encoding) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> fs.readFileSync(filename).toString(encoding);</span><br><span class="line">    &#125;</span><br><span class="line">    catch (e) &#123;</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = <span class="type">JSON</span>.parse(readFile(configFile,<span class="string">"utf8"</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> input = process.argv.slice(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">const</span> word = input.join(' ')</span><br><span class="line"><span class="keyword">const</span> isCn = isChinese(word);</span><br><span class="line"><span class="keyword">const</span> <span class="type">URL</span> = isCn ? `http://dict.youdao.com/w/eng/$&#123;urlencode(word)&#125;`:`http://dict.youdao.com/w/$&#123;urlencode(word)&#125;`</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  'url':<span class="type">URL</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(config)&#123;</span><br><span class="line">  <span class="keyword">if</span>(config.proxy)&#123;</span><br><span class="line">    options.proxy = config.proxy;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(config.color)&#123;</span><br><span class="line">    color = config.color;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> color_output = chalk.keyword(color);</span><br><span class="line">request(options,(error, response, body)=&gt;&#123;</span><br><span class="line">  <span class="keyword">const</span> $ = cheerio.load(body, &#123;</span><br><span class="line">    ignoreWhitespace: <span class="literal">true</span>,</span><br><span class="line">    xmlMode: <span class="literal">true</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">let</span> <span class="literal">result</span> = '';</span><br><span class="line"></span><br><span class="line">  spinner.stop(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">if</span>(isCn)&#123;</span><br><span class="line">    $('<span class="keyword">div</span>.trans-container &gt; ul').find('p.wordGroup').each(function(i,elm)&#123;</span><br><span class="line">      <span class="literal">result</span> = $(this).text().replace(/\s+/g,<span class="string">" "</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#phrsListTab &gt; div.trans-container &gt; ul').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  // phrase</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">result</span> === '') &#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#webPhrase &gt; p.wordGroup').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  // sentence</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">result</span> === '') &#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#fanyiToggle &gt; div.trans-container &gt; p:nth-child(2)').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  console.log(color_output(<span class="literal">result</span>));</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="装逼指导">装逼指导</h2><ul>
+<li><a href="https://github.com/kenshinji/yddict" target="_blank" rel="external">kenshinji/yddict: 一个命令行查单词的工具💻 📚</a></li>
+<li><a href="https://www.npmjs.com/package/yddict" target="_blank" rel="external">npm-有道词典命令行查询工具</a></li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="装逼说明">装逼说明</h2><p>不喜欢安装有道词典的应用程序，因为太耗资源还一堆广告，但是用浏览器打开<code>dict.youdao.com</code>也挺麻烦的，不是吗？快来试试有道词典命令行工具吧！</p>
+<h2 id="看图装逼">看图装逼</h2><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/2018-01-29-yddict-example.gif" alt="example"></p>]]>
+    
+    </summary>
+    
+      <category term="命令行查单词" scheme="http://ihtc.cc/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E5%8D%95%E8%AF%8D/"/>
+    
+      <category term="有道词典" scheme="http://ihtc.cc/tags/%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://ihtc.cc/2018/01/18/2018-01-17_Xcode9.2%E5%88%B6%E4%BD%9C%E9%9D%99%E6%80%81&%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85%E5%85%A8%E6%B5%81%E7%A8%8B/"/>
+    <id>http://ihtc.cc/2018/01/18/2018-01-17_Xcode9.2制作静态&动态库和自动打包全流程/</id>
+    <published>2018-01-18T12:49:16.000Z</published>
+    <updated>2018-01-29T14:56:11.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="静态库_-a">静态库 .a</h3><h3 id="静态库_framework">静态库 framework</h3><h3 id="动态库_framework">动态库 framework</h3><h3 id="自动打库">自动打库</h3><h3 id="参考">参考</h3><p><a href="https://www.jianshu.com/p/bd8c97405f11" target="_blank" rel="external">https://www.jianshu.com/p/bd8c97405f11</a></p>
+<p><a href="https://www.jianshu.com/p/c796fcba1604" target="_blank" rel="external">https://www.jianshu.com/p/c796fcba1604</a></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="静态库_-a">静态库 .a</h3><h3 id="静态库_framework">静态库 framework</h3><h3 id="动态库_framework">动态库 framework</h3><h3 id="自动打库">自动打库</h3><h3 id="]]>
+    </summary>
+    
+      <category term="SDK制作" scheme="http://ihtc.cc/tags/SDK%E5%88%B6%E4%BD%9C/"/>
+    
+      <category term="动态库" scheme="http://ihtc.cc/tags/%E5%8A%A8%E6%80%81%E5%BA%93/"/>
+    
+      <category term="自动打包" scheme="http://ihtc.cc/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
+    
+      <category term="静态库" scheme="http://ihtc.cc/tags/%E9%9D%99%E6%80%81%E5%BA%93/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[你好，2018！]]></title>
-    <link href="http://ihtc.cc/2018/01/01/2018_01_%E4%BD%A0%E5%A5%BD%EF%BC%8C2018%EF%BC%81/"/>
-    <id>http://ihtc.cc/2018/01/01/2018_01_你好，2018！/</id>
+    <link href="http://ihtc.cc/2018/01/01/2018-01-01_%E4%BD%A0%E5%A5%BD%EF%BC%8C2018%EF%BC%81/"/>
+    <id>http://ihtc.cc/2018/01/01/2018-01-01_你好，2018！/</id>
     <published>2018-01-01T13:49:16.000Z</published>
-    <updated>2018-01-05T14:59:35.000Z</updated>
+    <updated>2018-01-05T15:02:18.000Z</updated>
     <content type="html"><![CDATA[<p>德鲁克在《管理的实践》中写道：“管理者很多时候在做决策的时候，都是在分析未来有可能有什么市场环境的变化，这些变化会有什么机会。”</p>
 <h4 id="序言">序言</h4><p>这一年，在生命中非常有意义的一年，从创业者离场，回到一个中型企业，改变非常大。从职场熟人到职场老油条？毕业不知觉已经3年多了，有时还会回忆美好的学生时代，有时在想大学时在努力一点，也许现在生活更加美好一点啦。一路走过的2017，经历了非常之多，是时候在尘封前记录下来吧！</p>
 <a id="more"></a>
@@ -71,10 +152,6 @@
 <h4 id="序言">序言</h4><p>这一年，在生命中非常有意义的一年，从创业者离场，回到一个中型企业，改变非常大。从职场熟人到职场老油条？毕业不知觉已经3年多了，有时还会回忆美好的学生时代，有时在想大学时在努力一点，也许现在生活更加美好一点啦。一路走过的2017，经历了非常之多，是时候在尘封前记录下来吧！</p>]]>
     
     </summary>
-    
-      <category term="2018" scheme="http://ihtc.cc/tags/2018/"/>
-    
-      <category term="年终总结" scheme="http://ihtc.cc/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
       <category term="life" scheme="http://ihtc.cc/categories/life/"/>
     
@@ -898,110 +975,6 @@
       <category term="iOS" scheme="http://ihtc.cc/tags/iOS/"/>
     
       <category term="应用无法安装" scheme="http://ihtc.cc/tags/%E5%BA%94%E7%94%A8%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[iOS读取文件Bundle pathForResource方法返回nil问题]]></title>
-    <link href="http://ihtc.cc/2016/11/29/2016_iOS%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6Bundle%20pathForResource%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9Enil%E9%97%AE%E9%A2%98/"/>
-    <id>http://ihtc.cc/2016/11/29/2016_iOS读取文件Bundle pathForResource方法返回nil问题/</id>
-    <published>2016-11-29T09:19:16.000Z</published>
-    <updated>2016-12-31T13:58:51.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="检查代码">检查代码</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">oc:</span></span><br><span class="line">    NSString* soundPath = [[NSBundle mainBundle] <span class="string">pathForResource:</span>@<span class="string">"wakeup"</span> <span class="string">ofType:</span>@<span class="string">"caf"</span>]; </span><br><span class="line">    NSLog(@<span class="string">"soundPath:%@"</span>, soundPath); </span><br><span class="line"></span><br><span class="line">swift <span class="number">3.0</span>:</span><br><span class="line">    let audioFile = Bundle.main.path(<span class="string">forResource:</span> <span class="string">"frogs.m4a"</span>, <span class="string">ofType:</span> nil)</span><br><span class="line">    print(audioFile)</span><br></pre></td></tr></table></figure>
-<p>代码反复看了，clear工程n次，手机删掉项目n次，还是返回空，然后测试了一些pdf，png，mp3文件有路径返回，瞬间晕倒了</p>
-<a id="more"></a>
-<h3 id="问题所在">问题所在</h3><p><strong>音频文件没有包含到项目资源中</strong>，手工添加就可以了！</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-eb7306ade72d3b02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="音频文件没有包含到项目资源中"></p>
-<h3 id="总结">总结</h3><p>这种问题，不是代码多好多好就可以，一个问题，不只是知识点问题，可能对知识抱有怀疑，可以查正，如果发现查不到，然后这个问题是出在工具上，如果我直接新建一个工程，然后没有问题了就不管了，如果没有从根源上解决，下次出现也不能解决，这就是经验。</p>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="检查代码">检查代码</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">oc:</span></span><br><span class="line">    NSString* soundPath = [[NSBundle mainBundle] <span class="string">pathForResource:</span>@<span class="string">"wakeup"</span> <span class="string">ofType:</span>@<span class="string">"caf"</span>]; </span><br><span class="line">    NSLog(@<span class="string">"soundPath:%@"</span>, soundPath); </span><br><span class="line"></span><br><span class="line">swift <span class="number">3.0</span>:</span><br><span class="line">    let audioFile = Bundle.main.path(<span class="string">forResource:</span> <span class="string">"frogs.m4a"</span>, <span class="string">ofType:</span> nil)</span><br><span class="line">    print(audioFile)</span><br></pre></td></tr></table></figure>
-<p>代码反复看了，clear工程n次，手机删掉项目n次，还是返回空，然后测试了一些pdf，png，mp3文件有路径返回，瞬间晕倒了</p>]]>
-    
-    </summary>
-    
-      <category term="Bundle" scheme="http://ihtc.cc/tags/Bundle/"/>
-    
-      <category term="iOS" scheme="http://ihtc.cc/tags/iOS/"/>
-    
-      <category term="pathForResource" scheme="http://ihtc.cc/tags/pathForResource/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[清除Xcode的Archives列表的无用Apps]]></title>
-    <link href="http://ihtc.cc/2016/11/21/2016_%E6%B8%85%E9%99%A4Xcode%E7%9A%84Archives%E5%88%97%E8%A1%A8%E7%9A%84%E6%97%A0%E7%94%A8Apps/"/>
-    <id>http://ihtc.cc/2016/11/21/2016_清除Xcode的Archives列表的无用Apps/</id>
-    <published>2016-11-21T09:36:16.000Z</published>
-    <updated>2016-12-31T13:56:13.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="Archives目录">Archives目录</h3><p>当有多个账号同时登陆Xcode时，有一些应用不在本机发布，就会出现下图的空列表：<br><img src="http://upload-images.jianshu.io/upload_images/99517-5d943f2ed9713287.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="No Archives"></p>
-<a id="more"></a>
-<h3 id="删除">删除</h3><p>你一定非常想删除这样的列表，但是Xcode中却没有删除功能！</p>
-<ul>
-<li>进入目录：~/Library/Developer/Xcode/Products</li>
-<li>删除对应无用的应用就可以！！</li>
-</ul>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="Archives目录">Archives目录</h3><p>当有多个账号同时登陆Xcode时，有一些应用不在本机发布，就会出现下图的空列表：<br><img src="http://upload-images.jianshu.io/upload_images/99517-5d943f2ed9713287.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="No Archives"></p>]]>
-    
-    </summary>
-    
-      <category term="Archives" scheme="http://ihtc.cc/tags/Archives/"/>
-    
-      <category term="Xcode" scheme="http://ihtc.cc/tags/Xcode/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[NSDateFormatter的hh与HH和yyyy与YYYY出坑]]></title>
-    <link href="http://ihtc.cc/2016/10/11/2016_NSDateFormatter%E7%9A%84hh%E4%B8%8EHH%E5%92%8Cyyyy%E4%B8%8EYYYY%E5%87%BA%E5%9D%91/"/>
-    <id>http://ihtc.cc/2016/10/11/2016_NSDateFormatter的hh与HH和yyyy与YYYY出坑/</id>
-    <published>2016-10-11T15:30:16.000Z</published>
-    <updated>2016-12-31T13:53:38.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="原因">原因</h3><p>最近发现应用的倒计时显示为00:00:00，开始以为后台给的时间问题，然后怀疑是缓存问题，跟着代码调试了很久，终于发现原因。</p>
-<a id="more"></a>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDateFormatter</span> *formatter = [[<span class="built_in">NSDateFormatter</span> alloc] init];</span><br><span class="line">formatter<span class="variable">.dateFormat</span> = <span class="string">@"yyyy-MM-dd hh:mm:ss"</span>;</span><br><span class="line"><span class="built_in">NSDate</span> *nowDate = [formatter dateFromString:currentTime];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>发现一台设备调试显示： nowDate == nil</li>
-<li>其它设备日期显示正确</li>
-</ul>
-<h3 id="解决">解决</h3><p><strong> @”yyyy-MM-dd hh:mm:ss”;  </strong> 改成<strong> @”yyyy-MM-dd HH:mm:ss”;  </strong></p>
-<ul>
-<li><p>hh:mm:ss<br>按照12小时制的格式进行字符串格式化<br>如果时间处于00：00：00——12：59：59，则返回的字符串正常<br>如果时间处于13：00：00——23：59：59，则返回的字符串是实际时间-12小时后的值，也就是说比真实的时间少了12个小时。</p>
-</li>
-<li><p>HH:mm:ss<br>按照24小时制的格式进行字符串格式化<br><strong> 当手机时间为任意一个区间，则返回的字符串都是正常的。</strong></p>
-</li>
-</ul>
-<h3 id="参考">参考</h3><p><a href="http://blog.csdn.net/u011344883/article/details/48622015" target="_blank" rel="external">时间格式化hh:mm:ss和HH:mm:ss区别</a><br><a href="https://segmentfault.com/q/1010000000174542" target="_blank" rel="external">NSDateFormatter的yyyy和YYYY到底什么区别</a></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="原因">原因</h3><p>最近发现应用的倒计时显示为00:00:00，开始以为后台给的时间问题，然后怀疑是缓存问题，跟着代码调试了很久，终于发现原因。</p>]]>
-    
-    </summary>
-    
-      <category term="HH" scheme="http://ihtc.cc/tags/HH/"/>
-    
-      <category term="NSDateFormatter" scheme="http://ihtc.cc/tags/NSDateFormatter/"/>
-    
-      <category term="YYYY" scheme="http://ihtc.cc/tags/YYYY/"/>
-    
-      <category term="iOS" scheme="http://ihtc.cc/tags/iOS/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     

@@ -180,6 +180,238 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2016_iOS读取文件Bundle pathForResource方法返回nil问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/29/2016_iOS读取文件Bundle pathForResource方法返回nil问题/">iOS读取文件Bundle pathForResource方法返回nil问题</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/29/2016_iOS读取文件Bundle pathForResource方法返回nil问题/" class="archive-article-date">
+  	<time datetime="2016-11-29T09:19:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="检查代码">检查代码</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">oc:</span></span><br><span class="line">    NSString* soundPath = [[NSBundle mainBundle] <span class="string">pathForResource:</span>@<span class="string">"wakeup"</span> <span class="string">ofType:</span>@<span class="string">"caf"</span>]; </span><br><span class="line">    NSLog(@<span class="string">"soundPath:%@"</span>, soundPath); </span><br><span class="line"></span><br><span class="line">swift <span class="number">3.0</span>:</span><br><span class="line">    let audioFile = Bundle.main.path(<span class="string">forResource:</span> <span class="string">"frogs.m4a"</span>, <span class="string">ofType:</span> nil)</span><br><span class="line">    print(audioFile)</span><br></pre></td></tr></table></figure>
+<p>代码反复看了，clear工程n次，手机删掉项目n次，还是返回空，然后测试了一些pdf，png，mp3文件有路径返回，瞬间晕倒了</p>
+        
+          <a class="article-more-a" href="/2016/11/29/2016_iOS读取文件Bundle pathForResource方法返回nil问题/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">Bundle</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">pathForResource</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/29/2016_iOS读取文件Bundle pathForResource方法返回nil问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2016_清除Xcode的Archives列表的无用Apps" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/21/2016_清除Xcode的Archives列表的无用Apps/">清除Xcode的Archives列表的无用Apps</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/21/2016_清除Xcode的Archives列表的无用Apps/" class="archive-article-date">
+  	<time datetime="2016-11-21T09:36:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Archives目录">Archives目录</h3><p>当有多个账号同时登陆Xcode时，有一些应用不在本机发布，就会出现下图的空列表：<br><img src="http://upload-images.jianshu.io/upload_images/99517-5d943f2ed9713287.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="No Archives"></p>
+        
+          <a class="article-more-a" href="/2016/11/21/2016_清除Xcode的Archives列表的无用Apps/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">Archives</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">Xcode</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/21/2016_清除Xcode的Archives列表的无用Apps/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2016_NSDateFormatter的hh与HH和yyyy与YYYY出坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/11/2016_NSDateFormatter的hh与HH和yyyy与YYYY出坑/">NSDateFormatter的hh与HH和yyyy与YYYY出坑</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/11/2016_NSDateFormatter的hh与HH和yyyy与YYYY出坑/" class="archive-article-date">
+  	<time datetime="2016-10-11T15:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="原因">原因</h3><p>最近发现应用的倒计时显示为00:00:00，开始以为后台给的时间问题，然后怀疑是缓存问题，跟着代码调试了很久，终于发现原因。</p>
+        
+          <a class="article-more-a" href="/2016/10/11/2016_NSDateFormatter的hh与HH和yyyy与YYYY出坑/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">HH</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">NSDateFormatter</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">YYYY</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/technology/">technology</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/11/2016_NSDateFormatter的hh与HH和yyyy与YYYY出坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-2016_iOS CoreSpotlightSearch探索之道" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -706,259 +938,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2015/10/18/2015_AppStore审核被拒，不能带“屌”/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015_QQ和微信同步登陆，AppStore审核被拒4次的坑路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/16/2015_QQ和微信同步登陆，AppStore审核被拒4次的坑路/">QQ和微信同步登陆，AppStore审核被拒4次的坑路</a>
-    </h1>
-  
-
-        
-        <a href="/2015/10/16/2015_QQ和微信同步登陆，AppStore审核被拒4次的坑路/" class="archive-article-date">
-  	<time datetime="2015-10-16T15:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近应用加入了微信和QQ同步登陆，结果被拒绝了4次！！下面就让我带大家回顾这坑路～</p>
-<h3 id="第一次最拒绝">第一次最拒绝</h3><p>第一次以为是苹果测试手机没有安装QQ导致，所以写了代码判断手机是否安装QQ，如果没有安装就隐藏掉QQ登陆图标。</p>
-        
-          <a class="article-more-a" href="/2015/10/16/2015_QQ和微信同步登陆，AppStore审核被拒4次的坑路/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">QQ</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">同步登陆</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">微信</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/technology/">technology</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/10/16/2015_QQ和微信同步登陆，AppStore审核被拒4次的坑路/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015_iOS开发之让列表滚回最顶端最佳实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/">iOS开发之让列表滚回最顶端最佳实践</a>
-    </h1>
-  
-
-        
-        <a href="/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/" class="archive-article-date">
-  	<time datetime="2015-10-01T14:07:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-10-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原来项目中一直用这个方法滚动回到首页：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">NSIndexPath *bottomIndexPath=[NSIndexPath <span class="string">indexPathForItem:</span><span class="number">0</span> <span class="string">inSection:</span><span class="number">0</span>];</span><br><span class="line">[self.collectionView <span class="string">scrollToItemAtIndexPath:</span>bottomIndexPath <span class="string">atScrollPosition:</span>UICollectionViewScrollPositionTop <span class="string">animated:</span>YES];</span><br></pre></td></tr></table></figure></p>
-<p>上面代码是collectionView滚动到第一区第一个，直到有一次应用崩溃，发现第一区没有item!! 尼玛，怎么办！！！</p>
-        
-          <a class="article-more-a" href="/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">TableView</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">collectionView</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">iOS</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">scroll</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/technology/">technology</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015_Hexo搭建Github-Pages博客填坑教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/06/2015_Hexo搭建Github-Pages博客填坑教程/">Hexo搭建Github Pages博客填坑教程</a>
-    </h1>
-  
-
-        
-        <a href="/2015/09/06/2015_Hexo搭建Github-Pages博客填坑教程/" class="archive-article-date">
-  	<time datetime="2015-09-05T17:23:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>目录：</p>
-<ul>
-<li>1.安装Hexo</li>
-<li>2.部署Hexo</li>
-<li>3.Hexo命令</li>
-<li>4.一些报错处理</li>
-<li>5.博客管理</li>
-<li>6.插件（RSS、Sitemap）</li>
-<li>7.评论设置</li>
-<li>8.404页面</li>
-<li>9.统计</li>
-<li>10.更新</li>
-<li>11.总结</li>
-<li>12.参考引用</li>
-<li>13.搭建博客相关网站</li>
-</ul>
-<h3 id="简述">简述</h3><p>本文主要讲解Hexo安装时遇到的坑，Hexo安装之后的使用教程，Hexo安装需要的环境和教程，请自行百度、谷歌。</p>
-        
-          <a class="article-more-a" href="/2015/09/06/2015_Hexo搭建Github-Pages博客填坑教程/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">Github Pages</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">Hexo</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">搭建博客</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/technology/">technology</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/09/06/2015_Hexo搭建Github-Pages博客填坑教程/">展开全文 >></a>
         </p>
       
 
@@ -1583,6 +1562,30 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">backBarButtonItem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">命令行查单词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">有道词典</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">静态库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">动态库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">自动打包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">SDK制作</a>
               </li>
             
             <div class="clearfix"></div>
