@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-02-04T14:26:02.000Z</updated>
+  <updated>2018-02-04T14:36:09.000Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://ihtc.cc/2018/02/04/2018-02-04_Mac%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/"/>
     <id>http://ihtc.cc/2018/02/04/2018-02-04_Mac查看文件内容常用的命令小结/</id>
     <published>2018-02-04T14:04:16.000Z</published>
-    <updated>2018-02-04T14:26:02.000Z</updated>
+    <updated>2018-02-04T14:36:09.000Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近苹果的热更新和私有库问题检查的更严了，如果应用被拒，苹果在拒绝信中会说到使用<code>strings</code>/<code>otool</code>/<code>nm</code>命令进行自查，所以总结了一些命令，方便查找和定位文件内容相关信息。</p>
 <h3 id="1、grep">1、grep</h3><ul>
 <li><p>作用：判断是否包含字符串</p>
@@ -75,9 +75,8 @@
 <h3 id="6、lipo">6、lipo</h3><ul>
 <li><p>作用：create or operate on universal files（创建或处理通用文件的工具）</p>
 </li>
-<li><p>使用示例：</p>
-<pre><code>`lipo -info <span class="string">'file path'</span> ` <span class="comment">// 判断静态库所支持的平台 - i386 armv7 armv7s x86_64 arm64</span>
-</code></pre><p> <code>lipo -remove i386 origin_xxx.a -output op_xxx.a</code> // 删除静态库包括的i386平台</p>
+<li><p>使用示例：<br>  <code>lipo -info &#39;file path&#39;</code> // 判断静态库所支持的平台 - i386 armv7 armv7s x86_64 arm64</p>
+<p> <code>lipo -remove i386 origin_xxx.a -output op_xxx.a</code> // 删除静态库包括的i386平台</p>
 <p><code>lipo -thin i386 origin_xxx.a -output op_xxx.a</code> // 拆分静态库，只保留i386 CPU架构</p>
 <p><code>lipo -create device_xxx.a simulator_xxx.a -output universal_xxx.a</code> //对真机或者模拟器分别打出 .a 文件合并</p>
 </li>
