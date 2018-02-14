@@ -206,7 +206,7 @@
 <p>在<a href="https://zh.wikipedia.org/wiki/HTML" title="HTML">HTML</a>和<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS">CSS</a>中使用3<a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82" title="字节">字节</a>共6个<a href="https://zh.wikipedia.org/wiki/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6" title="十六进制">十六进制</a>数字表示一种颜色，每字节从00到FF，相当十进位数字从0到255，按顺序前两位是红色的值，中间两位是绿的值，最后两位是蓝色的值。</p>
 <p>由于<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5" title="网页">网页</a>（WEB）是基于计算机浏览器开发的媒体，所以颜色以光学<a href="https://zh.wikipedia.org/wiki/%E9%A2%9C%E8%89%B2" title="颜色">颜色</a>RGB（红、绿、蓝）为主。 网页颜色是以16进制代码表示，一般以“#”号开头，后面分别为R、G、B的16位进制数。 FF为最大数，代表十进制255。比如白色是R、G、B三个颜色最大，在网页代码便是：#FFFFFF。黑色是三个颜色为0，在网页代码便是：#000000。当颜色代码为#XXYYZZ时，可以用#XYZ表示，如#135与#113355表示同样的颜色。在<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS">CSS</a>中，也可以使用<code>rgb(127,127,127)</code>代替#7F7F7F（<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2#RGBA%E5%92%8CHSLA%E7%9A%84%E5%8D%81%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA">十进制表示</a>）。</p>
 </blockquote>
-<p>有意思的是，所以可以表示的颜色数总共有： 256^3 = 16,777,216 种，这个颜色就是我们常说的<strong>真彩色</strong>。</p>
+<p>有意思的是，可以知道表示颜色数总共有： 256^3 = 16,777,216 种，这个颜色就是我们常说的<strong>真彩色</strong>。</p>
 <h3 id="几种16进制颜色值转换UIColor的方式">几种16进制颜色值转换UIColor的方式</h3><p>16进制转换为10进制后的整形转换为UIColor：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// rgb颜色转换（rgbValue为16进制转换成10进制的整形）</span></span><br><span class="line"><span class="hexcolor">#def</span>ine <span class="function"><span class="title">MACRO_COLOR_HexCOLOR</span><span class="params">(rgbValue)</span></span>         ([UIColor colorWithRed:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF0000) &gt;&gt; <span class="number">16</span>))/<span class="number">255.0</span>f green:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF00) &gt;&gt; <span class="number">8</span>))/<span class="number">255.0</span>f blue:((<span class="attribute">float</span>)(rgbValue &amp; <span class="number">0</span>xFF))/<span class="number">255.0</span>f alpha:<span class="number">1.0</span>])</span><br></pre></td></tr></table></figure>
         
@@ -1108,6 +1108,18 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">16进制颜色</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">UIColor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">NSScanner</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">mac命令行</a>
               </li>
              
@@ -1633,18 +1645,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">backBarButtonItem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">16进制颜色</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">UIColor</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">NSScanner</a>
               </li>
              
               <li class="article-tag-list-item">
