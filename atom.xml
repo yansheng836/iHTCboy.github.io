@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-02-24T04:47:42.000Z</updated>
+  <updated>2018-02-24T10:27:53.000Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://ihtc.cc/2018/02/23/2018-02-23_%E5%85%8D%E8%B4%B9%E5%B0%86%E9%9F%B3%E9%A2%91%E8%BD%AC%E6%88%90%E6%96%87%E5%AD%97%E7%9A%84%E5%BF%AB%E9%80%9F%E6%96%B9%E6%B3%95/"/>
     <id>http://ihtc.cc/2018/02/23/2018-02-23_免费将音频转成文字的快速方法/</id>
     <published>2018-02-23T15:30:36.000Z</published>
-    <updated>2018-02-24T04:47:42.000Z</updated>
+    <updated>2018-02-24T10:27:53.000Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近在看YouTube视频时，里面有自动字幕功能，当时非常激动，字幕很准确；其实YouTube这个功能在2010就上线了。今天就是想利用YouTube这个强大的功能，将音频转换成文本啊！因为尝试了讯飞和百度后，不只是收费，准确率也不好，特别是英文。</p>
 <h3 id="自己的音频（视频）">自己的音频（视频）</h3><p>如果是视频，直接在YouTube上传就可以，如果是音频，YouTube不接受纯音频文件。所以，我们得通过第三方网站  <a href="https://www.tunestotube.com" target="_blank" rel="external">TunesToTube - Upload</a> 上传，给音频配上画面。</p>
 <a id="more"></a>
@@ -34,7 +34,7 @@
 <p>选择下载的字幕：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223-选择下载的字幕的类型.png" alt="0223-选择下载的字幕的类型.png"></p>
 <p>下载的字幕示意：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223-下载的字幕示意(中英文" alt="0223-下载的字幕示意(中英文).png">.png)</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223-下载的字幕示意（中英文）.png" alt="0223-下载的字幕示意(中英文).png"></p>
 <h3 id="总结">总结</h3><p>随着今年AI人工智能的发展，谷歌的自动翻译已经给世界带来了巨大的改变，相反国内，其实一直在说AI，却没有做出大的变化，就像优酷，没有考虑谷歌的强大，一直与爱x艺视频，腾x视频都在为版本争，而且国内都是综艺视频占大头，有点可惜。希望，AI在未来能解决更多简单操作但繁琐的重复劳动工作的问题，一起加油！</p>
 <h3 id="参考引用">参考引用</h3><ul>
 <li><a href="https://mp.weixin.qq.com/s/-N_6VBg2HO59l5ORsqbMuw" target="_blank" rel="external">一款自动、免费整理英文录音的神器，居然是它</a></li>
@@ -293,7 +293,7 @@
     <link href="http://ihtc.cc/2018/02/03/2018-02-03_%E8%AE%A9%E4%BD%A0%E7%9A%84iTerm%E6%9B%B4Geek!/"/>
     <id>http://ihtc.cc/2018/02/03/2018-02-03_让你的iTerm更Geek!/</id>
     <published>2018-02-03T15:42:16.000Z</published>
-    <updated>2018-02-24T04:33:15.000Z</updated>
+    <updated>2018-02-24T10:27:40.000Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>iTerm2 作为一个免费&amp;开源的应用，Mac程序员应用必备的软件！<br>作为一个专业的终端，功能真的很强大，<code>iTerm</code> + <code>oh-my-zsh</code>  应作为最佳配置使用！</p>
 <h3 id="一键调出_iTerm2">一键调出 iTerm2</h3><blockquote>
 <p>我们有时会遇上这样一种情况，就是我们只想用命令行执行某一个特定的操作，然后就不需要它了。其实在这种情况下我们没有必要打开命令行应用的。比如我们就是想看一眼某个文件夹里面都有什么文件，类似这种操作我们其实没有必要单独开启一个命令行窗<br>口的。</p>
@@ -306,7 +306,7 @@
 </ul>
 <p>然而！！！没有找到 <code>Hotkey toggles a dedicated window with profile</code> 这个选项！！！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-没有找到Hotkey toggles a dedicated window with profile.png" alt="没有找到Hotkey toggles a dedicated window with profile.png"></p>
 <p>我是使用 iTerm2( Build 3.1.5.beta.2):</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-iTerm2( Build 3.1.5.beta.2" alt="iTerm2( Build 3.1.5.beta.2).png">.png)</p>
+<p><img src="https://raw.githubusercontent.com/iHTCboy/iGallery/master/BlogImages/2018/02/0203-iTerm2（Build%203.1.5.beta.2）.png" alt="iTerm2( Build 3.1.5.beta.2).png"></p>
 <p><strong>Way! way!! way!!!</strong><br>原来新版已经移动到对应的<code>Profiles</code>下的<code>Keys</code>下：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Profiles-Keys.png" alt="Profiles-Keys.png"></p>
 <p>设置一下热键就可以啦！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Profiles-Hotkey.png" alt="Profiles-Hotkey.png"></p>
 <p>实用&amp;装逼时间：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-通过快捷键快速打开后台的iTerm2.gif" alt="通过快捷键快速打开后台的iTerm2.gif"></p>
