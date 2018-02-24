@@ -30,13 +30,13 @@
 
 
 检查是否包含（weixin）字符串：     matches 表示包含。">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-75dd1d660287e143.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-12d83f6d41039c74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-f042af117b42111b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-e508010adf9038f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-0fd12676fbc97b8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-ed7601e5c0f2fcdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-02-04T14:46:51.000Z">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-grep%20-r%20%22xxx”%20path.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-strings a.out | grep hello.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-otool -l path | grep crypt.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-nm -nm path.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-file path - static Lib.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-file path - dynamically Lib.png">
+<meta property="og:updated_time" content="2018-02-24T04:36:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac查看文件内容常用的命令小结">
 <meta name="twitter:description" content="前言最近苹果的热更新和私有库问题检查的更严了，如果应用被拒，苹果在拒绝信中会说到使用strings/otool/nm命令进行自查，所以总结了一些命令，方便查找和定位文件内容相关信息。
@@ -233,7 +233,7 @@
 <p>  <code>grep -r &quot;xxx” path</code></p>
 </li>
 </ul>
-<p>检查是否包含（weixin）字符串：<br>    <img src="http://upload-images.jianshu.io/upload_images/99517-75dd1d660287e143.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="grep -r &quot;xxx” path.png"><br> <code>matches</code> 表示包含。</p>
+<p>检查是否包含（weixin）字符串：<br>    <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-grep%20-r%20%22xxx”%20path.png" alt="grep -r &quot;xxx” path.png"><br> <code>matches</code> 表示包含。</p>
 <a id="more"></a>
 <h3 id="2、strings">2、strings</h3><ul>
 <li><p>作用：find the printable strings in a object, or other binary, file</p>
@@ -241,7 +241,7 @@
 <li><p>使用示例：</p>
 <p>  <code>strings a.out | grep hello</code> //检查 a.out 文件中含有 hello 字符串的字节序列</p>
 </li>
-<li><p>检查二进制是否含有关键词的库（比如检查私有库）：<br><img src="http://upload-images.jianshu.io/upload_images/99517-12d83f6d41039c74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="strings a.out | grep hello.png"></p>
+<li><p>检查二进制是否含有关键词的库（比如检查私有库）：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-strings a.out | grep hello.png" alt="strings a.out | grep hello.png"></p>
 </li>
 </ul>
 <ul>
@@ -255,7 +255,7 @@
 <p>  <code>otool -D path</code> //查看支持的架构</p>
 <p>  <code>otool -ov path</code> //output the Objective-C class structures and their defined methods.(输出Object-C类结构以及定义的方法)</p>
 </li>
-<li><p>查看该应用是否砸壳:<br>  <code>otool -l path | grep crypt</code> //<strong>cryptid  0</strong>（砸壳） 1（未砸壳）<br><img src="http://upload-images.jianshu.io/upload_images/99517-f042af117b42111b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="otool -l path | grep crypt.png"></p>
+<li><p>查看该应用是否砸壳:<br>  <code>otool -l path | grep crypt</code> //<strong>cryptid  0</strong>（砸壳） 1（未砸壳）<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-otool -l path | grep crypt.png" alt="otool -l path | grep crypt.png"></p>
 </li>
 <li><p>更多用法 <code>man otool</code></p>
 </li>
@@ -264,7 +264,7 @@
 <li><p>作用：display name list (symbol table). (显示符号表)</p>
 </li>
 <li><p>使用示例：<br>  <code>nm path</code> //得到Mach-O中的程序符号表</p>
-<p>  <code>nm -nm path</code>//目标文件的所有符号<br>  <img src="http://upload-images.jianshu.io/upload_images/99517-e508010adf9038f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nm -nm path.png"></p>
+<p>  <code>nm -nm path</code>//目标文件的所有符号<br>  <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-nm -nm path.png" alt="nm -nm path.png"></p>
 <p>  符号表中标示为 undefined，意思是目标文件引用了类_XXX（XXX库），不过这并没有实现它。</p>
 </li>
 <li><p>更多用法 <code>man nm</code></p>
@@ -274,7 +274,7 @@
 <li><p>作用：determine file type. (判断文件类型)</p>
 </li>
 <li><p>使用示例：<br>  <code>file path</code></p>
-<p>  判断.a/framework是静态库还是动态库:<br>静态库：<br><img src="http://upload-images.jianshu.io/upload_images/99517-0fd12676fbc97b8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="file path - static Lib.png"><br>动态库：<br><img src="http://upload-images.jianshu.io/upload_images/99517-ed7601e5c0f2fcdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="file path - dynamically Lib.png"></p>
+<p>  判断.a/framework是静态库还是动态库:<br>静态库：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-file path - static Lib.png" alt="file path - static Lib.png"><br>动态库：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-file path - dynamically Lib.png" alt="file path - dynamically Lib.png"></p>
 </li>
 </ul>
 <h3 id="6、lipo">6、lipo</h3><ul>
@@ -560,6 +560,30 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">YouTube</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">音频转文本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">自动翻译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">百度网盘限制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">破解下载限速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">百度云下载</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">16进制颜色</a>
@@ -1115,30 +1139,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">SDK制作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">百度网盘限制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">破解下载限速</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">百度云下载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">YouTube</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">音频转文本</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">自动翻译</a>
               </li>
             
             <div class="clearfix"></div>
