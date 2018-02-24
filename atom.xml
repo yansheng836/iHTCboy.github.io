@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-02-24T10:27:53.000Z</updated>
+  <updated>2018-02-24T11:33:35.000Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://ihtc.cc/2018/02/23/2018-02-23_%E5%85%8D%E8%B4%B9%E5%B0%86%E9%9F%B3%E9%A2%91%E8%BD%AC%E6%88%90%E6%96%87%E5%AD%97%E7%9A%84%E5%BF%AB%E9%80%9F%E6%96%B9%E6%B3%95/"/>
     <id>http://ihtc.cc/2018/02/23/2018-02-23_免费将音频转成文字的快速方法/</id>
     <published>2018-02-23T15:30:36.000Z</published>
-    <updated>2018-02-24T10:27:53.000Z</updated>
+    <updated>2018-02-24T11:33:35.000Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近在看YouTube视频时，里面有自动字幕功能，当时非常激动，字幕很准确；其实YouTube这个功能在2010就上线了。今天就是想利用YouTube这个强大的功能，将音频转换成文本啊！因为尝试了讯飞和百度后，不只是收费，准确率也不好，特别是英文。</p>
 <h3 id="自己的音频（视频）">自己的音频（视频）</h3><p>如果是视频，直接在YouTube上传就可以，如果是音频，YouTube不接受纯音频文件。所以，我们得通过第三方网站  <a href="https://www.tunestotube.com" target="_blank" rel="external">TunesToTube - Upload</a> 上传，给音频配上画面。</p>
 <a id="more"></a>
