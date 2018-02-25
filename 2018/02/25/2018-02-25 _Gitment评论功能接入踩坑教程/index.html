@@ -9,30 +9,30 @@
   <title>Gitment评论功能接入踩坑教程 | iHTCboy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。
-评论模块
+评论模块简介
 多说 - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；
 网易云跟帖 - 网易提供的评论组件，功能比较简单，性能优秀；管理后台在查询上还不算特别智能，但足够普通用户使用；
-畅言 - 搜狐提供的评论组件，功能丰富，体验优异；但必须">
+畅言 - 搜狐提供的评论组件，功能丰富，体验优异；但">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gitment评论功能接入踩坑教程">
 <meta property="og:url" content="http://ihtc.cc/2018/02/25/2018-02-25 _Gitment评论功能接入踩坑教程/index.html">
 <meta property="og:site_name" content="iHTCboy's Blog">
 <meta property="og:description" content="前言之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。
-评论模块
+评论模块简介
 多说 - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；
 网易云跟帖 - 网易提供的评论组件，功能比较简单，性能优秀；管理后台在查询上还不算特别智能，但足够普通用户使用；
-畅言 - 搜狐提供的评论组件，功能丰富，体验优异；但必须">
+畅言 - 搜狐提供的评论组件，功能丰富，体验优异；但">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0225-Error Comments Not Initialized.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0225-Initialize Comments.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0225-No Comment Yet.png">
-<meta property="og:updated_time" content="2018-02-25T12:15:04.000Z">
+<meta property="og:updated_time" content="2018-02-25T12:25:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gitment评论功能接入踩坑教程">
 <meta name="twitter:description" content="前言之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。
-评论模块
+评论模块简介
 多说 - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；
 网易云跟帖 - 网易提供的评论组件，功能比较简单，性能优秀；管理后台在查询上还不算特别智能，但足够普通用户使用；
-畅言 - 搜狐提供的评论组件，功能丰富，体验优异；但必须">
+畅言 - 搜狐提供的评论组件，功能丰富，体验优异；但">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s Blog" type="application/atom+xml">
   
@@ -234,14 +234,14 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="前言">前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。</p>
-<h3 id="评论模块">评论模块</h3><ul>
+<h3 id="评论模块简介">评论模块简介</h3><ul>
 <li><strong>多说</strong> - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；</li>
 <li><strong>网易云跟帖</strong> - 网易提供的评论组件，功能比较简单，性能优秀；管理后台在查询上还不算特别智能，但足够普通用户使用；</li>
-<li><strong>畅言</strong> - 搜狐提供的评论组件，功能丰富，体验优异；但必须进行域名备案。只要域名备过案就可以通过审核。</li>
+<li><strong>畅言</strong> - 搜狐提供的评论组件，功能丰富，体验优异；但必须进行域名备案。只要域名备过案就可以通过审核，简单问题复杂化。</li>
 <li><strong>Disqus</strong> - 国外使用较多的评论组件。万里长城永不倒，一枝红杏出墙来，你懂的。</li>
 </ul>
-<p>以上评论模块应该大家都知道，多说和网易云跟帖没有了，畅言要备案，对于对于挂靠在GitHub的博客非常的不友好，放弃！Disqus，不希望自己的博客，可以不分国界！也放弃！</p>
-<p>所以，将是我们要介绍的Gitment!</p>
+<p>以上评论模块应该大家都知道，多说和网易云跟帖没有了，畅言要备案，对于只是挂靠在GitHub的博客非常的不友好，放弃！Disqus，我们都希望自己的博客可以不分国界！所以Disqus也只能放弃！</p>
+<p>综上所述，将是我们要重点介绍的Gitment ！！！</p>
 <a id="more"></a>
 <h3 id="Gitment评论模块">Gitment评论模块</h3><blockquote>
 <p>Gitment is a comment system based on GitHub Issues, which can be used in the frontend without any server-side implementation.</p>
@@ -457,7 +457,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#评论模块"><span class="toc-number">2.</span> <span class="toc-text">评论模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gitment评论模块"><span class="toc-number">3.</span> <span class="toc-text">Gitment评论模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gitment坑点小结"><span class="toc-number">4.</span> <span class="toc-text">Gitment坑点小结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、owner:_‘Your_GitHub_ID’"><span class="toc-number">4.0.1.</span> <span class="toc-text">1、owner: ‘Your GitHub ID’</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、repo:_‘The_repo_to_store_comments"><span class="toc-number">4.0.2.</span> <span class="toc-text">2、repo: ‘The repo to store comments</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、Error:_Not_Found问题"><span class="toc-number">4.0.3.</span> <span class="toc-text">3、Error: Not Found问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、Error:_Comments_Not_Initialized"><span class="toc-number">4.0.4.</span> <span class="toc-text">4、Error: Comments Not Initialized</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、Error：validation_failed"><span class="toc-number">4.0.5.</span> <span class="toc-text">5、Error：validation failed</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6、gitment的汉化"><span class="toc-number">4.0.6.</span> <span class="toc-text">6、gitment的汉化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7、所有文章一键初始化评论"><span class="toc-number">4.0.7.</span> <span class="toc-text">7、所有文章一键初始化评论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8、请保持克制，切勿滥用。"><span class="toc-number">4.0.8.</span> <span class="toc-text">8、请保持克制，切勿滥用。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9、订阅issue"><span class="toc-number">4.0.9.</span> <span class="toc-text">9、订阅issue</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考引用"><span class="toc-number">6.</span> <span class="toc-text">参考引用</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#评论模块简介"><span class="toc-number">2.</span> <span class="toc-text">评论模块简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gitment评论模块"><span class="toc-number">3.</span> <span class="toc-text">Gitment评论模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gitment坑点小结"><span class="toc-number">4.</span> <span class="toc-text">Gitment坑点小结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、owner:_‘Your_GitHub_ID’"><span class="toc-number">4.0.1.</span> <span class="toc-text">1、owner: ‘Your GitHub ID’</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、repo:_‘The_repo_to_store_comments"><span class="toc-number">4.0.2.</span> <span class="toc-text">2、repo: ‘The repo to store comments</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、Error:_Not_Found问题"><span class="toc-number">4.0.3.</span> <span class="toc-text">3、Error: Not Found问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、Error:_Comments_Not_Initialized"><span class="toc-number">4.0.4.</span> <span class="toc-text">4、Error: Comments Not Initialized</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、Error：validation_failed"><span class="toc-number">4.0.5.</span> <span class="toc-text">5、Error：validation failed</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6、gitment的汉化"><span class="toc-number">4.0.6.</span> <span class="toc-text">6、gitment的汉化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7、所有文章一键初始化评论"><span class="toc-number">4.0.7.</span> <span class="toc-text">7、所有文章一键初始化评论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8、请保持克制，切勿滥用。"><span class="toc-number">4.0.8.</span> <span class="toc-text">8、请保持克制，切勿滥用。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9、订阅issue"><span class="toc-number">4.0.9.</span> <span class="toc-text">9、订阅issue</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考引用"><span class="toc-number">6.</span> <span class="toc-text">参考引用</span></a></li></ol>
                     </div>
                 </span>
             </div>
