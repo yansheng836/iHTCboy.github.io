@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-02-25T05:58:20.000Z</updated>
+  <updated>2018-02-25T12:15:04.000Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://ihtc.cc/2018/02/25/2018-02-25%20_Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%85%A5%E8%B8%A9%E5%9D%91%E6%95%99%E7%A8%8B/"/>
     <id>http://ihtc.cc/2018/02/25/2018-02-25 _Gitment评论功能接入踩坑教程/</id>
     <published>2018-02-25T04:45:26.000Z</published>
-    <updated>2018-02-25T05:58:20.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就在了今天这篇文章。</p>
+    <updated>2018-02-25T12:15:04.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。</p>
 <h3 id="评论模块">评论模块</h3><ul>
 <li><strong>多说</strong> - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；</li>
 <li><strong>网易云跟帖</strong> - 网易提供的评论组件，功能比较简单，性能优秀；管理后台在查询上还不算特别智能，但足够普通用户使用；</li>
@@ -51,7 +51,12 @@
 <p>所以明白了原理后，就是因为id太长，导致初始化失败，现在就是要让id保证在50个字符内。</p>
 <p>对应配置的id为：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">id</span>:<span class="value"> <span class="string">'&lt;%= page.title %&gt;'</span></span></span></span><br></pre></td></tr></table></figure></p>
 <p>如果用网页标题也不能保证在50个字符！</p>
-<p>最后，我用文章的时间，这样长度是保证在50个字符内，完美解决！（避免了文章每次更新标题或路径时，会重新创建一个issue评论的问题。）<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="property">id</span>: '&lt;%= page.<span class="type">date</span> %&gt;'</span><br></pre></td></tr></table></figure></p>
+<p>最后，我用文章的时间，这样长度是保证在50个字符内，完美解决！<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="property">id</span>: '&lt;%= page.<span class="type">date</span> %&gt;'</span><br></pre></td></tr></table></figure></p>
+<p>注意事项：</p>
+<ol>
+<li>用文章时间，避免了文章每次更新标题或路径时，会重新创建一个issue评论的问题，也解决了label长度问题。</li>
+<li>关于Gitment的id在那里修改的问题，大家需要根据自己使用的主题，找到id配置的位置进行修改。（ps 可以在主题的github仓库中搜索gitment来定位）</li>
+</ol>
 <h5 id="6、gitment的汉化">6、gitment的汉化</h5><p>只需到模板里将原来定义CSS和JS的那两行改成：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"https://billts.site/extra_css/gitment.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://billts.site/js/gitment.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>即可。来源：<a href="https://github.com/imsun/gitment/issues/104" target="_blank" rel="external">https://github.com/imsun/gitment/issues/104</a></p>
 <h5 id="7、所有文章一键初始化评论">7、所有文章一键初始化评论</h5><p>配置正确的文章，第一次显示，提示还没有初始化：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0225-Error Comments Not Initialized.png" alt="0225-Error Comments Not Initialized.png"></p>
@@ -79,7 +84,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就在了今天这篇文章。</p>
+    <![CDATA[<h3 id="前言">前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。</p>
 <h3 id="评论模块">评论模块</h3><ul>
 <li><strong>多说</strong> - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；</li>
 <li><strong>网易云跟帖</strong> - 网易提供的评论组件，功能比较简单，性能优秀；管理后台在查询上还不算特别智能，但足够普通用户使用；</li>
