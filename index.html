@@ -199,19 +199,19 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2018-03-05_一个NSInvocation崩溃引起的反思" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2018-03-05_两个NSInvocation崩溃引起的反思" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/03/2018-03-05_一个NSInvocation崩溃引起的反思/">一个NSInvocation崩溃引起的反思</a>
+      <a class="article-title" href="/2018/04/03/2018-03-05_两个NSInvocation崩溃引起的反思/">一个NSInvocation崩溃引起的反思</a>
     </h1>
   
 
         
-        <a href="/2018/04/03/2018-03-05_一个NSInvocation崩溃引起的反思/" class="archive-article-date">
+        <a href="/2018/04/03/2018-03-05_两个NSInvocation崩溃引起的反思/" class="archive-article-date">
   	<time datetime="2018-04-03T15:42:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-03</time>
 </a>
         
@@ -219,6 +219,11 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h3 id="前言">前言</h3><p>最近在使用NSInvocation进行多参数方法调用，结果就崩溃了！signature为nil 和 一直提示找不到方法！！！</p>
+<p><code>method signature argument cannot be nil</code> 崩溃信息：<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** <span class="type">Terminating</span> app due to uncaught exception '<span class="type">NSInvalidArgumentException</span>', reason: '+[<span class="type">NSInvocation</span> _invocationWithMethodSignature:frame:]: <span class="keyword">method</span> signature argument cannot be <span class="keyword">nil</span>'</span><br><span class="line">*** <span class="type">First</span> throw call stack:</span><br><span class="line">(<span class="number">0x1831a6d8c</span>  .........)</span><br><span class="line">libc++abi.dylib: terminating <span class="keyword">with</span> uncaught exception <span class="keyword">of</span> <span class="keyword">type</span> <span class="type">NSException</span></span><br></pre></td></tr></table></figure></p>
+<p><code>unrecognized selector sent to instance</code>崩溃信息：<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-<span class="keyword">[</span>ViewController openView]: unrecognized selector sent to<span class="instruction"> instance </span>0x10510b1b0'</span><br><span class="line">*** First<span class="instruction"> throw </span>call stack:</span><br><span class="line">(0x1831a6d8c ......<span class="function">)</span></span><br><span class="line">libc++abi.dylib: terminating with uncaught exception of type NSException</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/04/03/2018-03-05_两个NSInvocation崩溃引起的反思/#more">more >></a>
         
       
 
@@ -261,7 +266,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/03/2018-03-05_一个NSInvocation崩溃引起的反思/">显示全文 >></a>
+          <a class="article-more-a" href="/2018/04/03/2018-03-05_两个NSInvocation崩溃引起的反思/">显示全文 >></a>
         </p>
       
 
