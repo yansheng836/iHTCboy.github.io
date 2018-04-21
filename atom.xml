@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-04-21T13:52:38.825Z</updated>
+  <updated>2018-04-21T14:13:52.797Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[一个NSInvocation崩溃引起的反思]]></title>
+    <link href="http://ihtc.cc/2018/04/03/2018-03-05_%E4%B8%80%E4%B8%AANSInvocation%E5%B4%A9%E6%BA%83%E5%BC%95%E8%B5%B7%E7%9A%84%E5%8F%8D%E6%80%9D/"/>
+    <id>http://ihtc.cc/2018/04/03/2018-03-05_一个NSInvocation崩溃引起的反思/</id>
+    <published>2018-04-03T15:42:26.000Z</published>
+    <updated>2018-04-21T14:13:52.797Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="PyCharm" scheme="http://ihtc.cc/tags/PyCharm/"/>
+    
+      <category term="Python" scheme="http://ihtc.cc/tags/Python/"/>
+    
+      <category term="SQLite" scheme="http://ihtc.cc/tags/SQLite/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[PyCharm 2018 for mac 数据库实战：链接SQLite、建表、添加、查询数据]]></title>
@@ -1235,85 +1256,6 @@
       <category term="IOSurface" scheme="http://ihtc.cc/tags/IOSurface/"/>
     
       <category term="Xcode9" scheme="http://ihtc.cc/tags/Xcode9/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[沙盒测试账号：不允许创建 iTunes 账户]]></title>
-    <link href="http://ihtc.cc/2017/10/27/2017_10_%E6%B2%99%E7%9B%92%E6%B5%8B%E8%AF%95%E8%B4%A6%E5%8F%B7%EF%BC%9A%E4%B8%8D%E5%85%81%E8%AE%B8%E5%88%9B%E5%BB%BA%20iTunes%20%E8%B4%A6%E6%88%B7/"/>
-    <id>http://ihtc.cc/2017/10/27/2017_10_沙盒测试账号：不允许创建 iTunes 账户/</id>
-    <published>2017-10-27T00:33:16.000Z</published>
-    <updated>2018-02-04T14:52:13.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="1-出现情况">1.出现情况</h4><p><img src="http://upload-images.jianshu.io/upload_images/99517-8dd5d2ba875806e5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300" alt="不允许创建 iTunes 账户.jpg"></p>
-<p>在设置里登陆沙盒账号提示：</p>
-<blockquote>
-<p>不允许创建 iTunes 账户<br>此 Apple ID 目前无法用于 iTunes Store, 请稍后重试</p>
-</blockquote>
-<p><strong>正确方式：</strong></p>
-<blockquote>
-<p>沙盒测试账号只能在测试应用点击储值时，弹窗中输入账号，不能在设置里的 App Store 里添加。</p>
-</blockquote>
-<p>苹果的文档也有说明，测试账号不能在设置里登陆 ：</p>
-<blockquote>
-<p>Important: Don’t enter your test account information in the Store settings panel. Doing so may invalidate your test account.</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="2-_正确的沙盒测试流程">2. 正确的沙盒测试流程</h3><blockquote>
-<p>To perform testing for in-app purchase products</p>
-<ol>
-<li><p>Set up test user accounts within Users and Roles in iTunes Connect, as detailed in <a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SettingUpUserAccounts.html#//apple_ref/doc/uid/TP40011225-CH25-SW10" target="_blank" rel="external">Creating Sandbox Tester Accounts</a> in <em><a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225" target="_blank" rel="external">iTunes Connect Developer Guide</a></em>.<br>You’ll need a test user for each territory you want to test the app in.</p>
-</li>
-<li><p>Clear any account information stored on your test device.</p>
-</li>
-</ol>
-<ul>
-<li>In Settings, go to the Store settings.</li>
-<li><p>Click the Sign Out button.<br>This prevents an actual user account from automatically being used when testing.</p>
-<p><strong>Important:</strong> Don’t enter your test account information in the Store settings panel. Doing so may invalidate your test account.</p>
-</li>
-</ul>
-<ol>
-<li>Connect your test device to your Mac.</li>
-<li>In Xcode, set your test device as your scheme’s destination.</li>
-<li>Open your app, and perform your in-app purchase product testing.</li>
-<li>Use your test account credentials to test the purchase.<br>When your app uses the Store Kit API to request a payment, you’re asked to sign in. Select Use Existing Account and enter your test account user name and password. You are then asked to confirm the purchase. The transaction completes.<br>No financial transaction takes place, but a receipt is generated for a successful transaction.</li>
-</ol>
-</blockquote>
-<h3 id="3-参考：">3.参考：</h3><ul>
-<li><a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/TestingInAppPurchases.html" target="_blank" rel="external">Testing Your App and In-App Purchase Products</a></li>
-<li><a href="https://stackoverflow.com/questions/38034491/unable-to-log-in-with-sandbox-test-users-on-device" target="_blank" rel="external">unable to log in with sandbox test users on device</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h4 id="1-出现情况">1.出现情况</h4><p><img src="http://upload-images.jianshu.io/upload_images/99517-8dd5d2ba875806e5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300" alt="不允许创建 iTunes 账户.jpg"></p>
-<p>在设置里登陆沙盒账号提示：</p>
-<blockquote>
-<p>不允许创建 iTunes 账户<br>此 Apple ID 目前无法用于 iTunes Store, 请稍后重试</p>
-</blockquote>
-<p><strong>正确方式：</strong></p>
-<blockquote>
-<p>沙盒测试账号只能在测试应用点击储值时，弹窗中输入账号，不能在设置里的 App Store 里添加。</p>
-</blockquote>
-<p>苹果的文档也有说明，测试账号不能在设置里登陆 ：</p>
-<blockquote>
-<p>Important: Don’t enter your test account information in the Store settings panel. Doing so may invalidate your test account.</p>
-</blockquote>]]>
-    
-    </summary>
-    
-      <category term="Sandbox" scheme="http://ihtc.cc/tags/Sandbox/"/>
-    
-      <category term="iTunes账户" scheme="http://ihtc.cc/tags/iTunes%E8%B4%A6%E6%88%B7/"/>
-    
-      <category term="沙盒测试" scheme="http://ihtc.cc/tags/%E6%B2%99%E7%9B%92%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="沙盒账号" scheme="http://ihtc.cc/tags/%E6%B2%99%E7%9B%92%E8%B4%A6%E5%8F%B7/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     
