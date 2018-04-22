@@ -288,11 +288,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[NSString的boolValue]]></title>
-    <link href="http://ihtc.cc/2018/03/11/2018-03-11_NSString%E7%9A%84boolValue%E7%94%9A%E8%A7%A3/"/>
-    <id>http://ihtc.cc/2018/03/11/2018-03-11_NSString的boolValue甚解/</id>
+    <title><![CDATA[NSString的boolValue方法甚解]]></title>
+    <link href="http://ihtc.cc/2018/03/11/2018-03-11_NSString%E7%9A%84boolValue%E6%96%B9%E6%B3%95%E7%94%9A%E8%A7%A3/"/>
+    <id>http://ihtc.cc/2018/03/11/2018-03-11_NSString的boolValue方法甚解/</id>
     <published>2018-03-11T13:22:26.000Z</published>
-    <updated>2018-04-22T15:12:36.796Z</updated>
+    <updated>2018-04-22T15:16:11.526Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>NSString的<code>boolValue</code>之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按<code>command</code> + <code>control</code> 点击<code>boolValue</code>进入文档就可以看到：</p>
 <p>&gt;</p>
 <blockquote>
