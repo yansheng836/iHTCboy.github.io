@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ihtc.cc/"/>
-  <updated>2018-04-22T02:56:48.580Z</updated>
+  <updated>2018-04-22T03:01:05.586Z</updated>
   <id>http://ihtc.cc/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://ihtc.cc/2018/04/10/2018-04-10_macOS%E4%B8%AD%E5%9F%BA%E4%BA%8EL2TP%E5%8D%8F%E8%AE%AE%E7%9A%84VPN%E8%BF%9E%E6%8E%A5%E6%97%B6%E6%8F%90%E7%A4%BA%E2%80%9CIPSec%20%E5%85%B1%E4%BA%AB%E5%AF%86%E9%92%A5%E2%80%9D%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     <id>http://ihtc.cc/2018/04/10/2018-04-10_macOS中基于L2TP协议的VPN连接时提示“IPSec 共享密钥”丢失问题解决/</id>
     <published>2018-04-10T10:59:26.000Z</published>
-    <updated>2018-04-22T02:56:48.580Z</updated>
+    <updated>2018-04-22T03:01:05.586Z</updated>
     <content type="html"><![CDATA[<h3 id="遇到的问题">遇到的问题</h3><blockquote>
 <p>“IPSec 共享密钥”丢失。请验证您的设置并尝试重新连接。</p>
 </blockquote>
@@ -43,7 +43,7 @@
 <li><code>plugin L2TP.ppp</code>：配置ppp链路插件？具体暂未了解，知道的同学可以告诉我啊！</li>
 <li><code>l2tpnoipsec</code>: 配置ppp链路l2tp不需要ipsec密钥。</li>
 </ul>
-<p>操作示意：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-SudoVim-etc-ppp-options.png" alt="sudo vim /etc/ppp/options"></p>
+<p><strong>终端操作示意</strong><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-SudoVim-etc-ppp-options.png" alt="sudo vim /etc/ppp/options"></p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-vim-options-insert.png" alt="添加ppp的options配置文件"></p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-vim-wq!.png" alt="保存内容并退出vim"></p>
 <p>最后，想验证是否保存成功，可以用<code>open /etc/ppp/options</code>命令打开文件查看内容：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-open-options.png" alt="打开options文件查看内容"></p>
