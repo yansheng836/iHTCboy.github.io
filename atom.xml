@@ -135,11 +135,98 @@
   </entry>
   
   <entry>
+    <title><![CDATA[判断NSString为空的问题浅析]]></title>
+    <link href="http://ihtc.cc/2018/03/17/2018-03-17_%E5%88%A4%E6%96%ADNSString%E4%B8%BA%E7%A9%BA%E7%9A%84%E9%97%AE%E9%A2%98%E6%B5%85%E6%9E%90/"/>
+    <id>http://ihtc.cc/2018/03/17/2018-03-17_判断NSString为空的问题浅析/</id>
+    <published>2018-03-17T15:02:26.000Z</published>
+    <updated>2018-04-22T06:47:24.899Z</updated>
+    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>判断字符串是否为空的情况，一般判断的逻辑如下：</p>
+<ul>
+<li>是否为nil </li>
+<li>是否是NSNull</li>
+<li>是否去掉空格之后长度为0</li>
+</ul>
+<p>在某书看到如下代码：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSString</span> (<span class="title">Util</span>)</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSString</span> (<span class="title">Util</span>)</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string = str;</span><br><span class="line">    <span class="keyword">if</span> (string == <span class="literal">nil</span> || string == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([string isKindOfClass:[<span class="built_in">NSNull</span> class]]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([[string stringByTrimmingCharactersInSet:[<span class="built_in">NSCharacterSet</span> whitespaceCharacterSet]] length]==<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">链接：https:<span class="comment">//www.jianshu.com/p/fd32b759bace</span></span><br><span class="line">來源：简书</span><br></pre></td></tr></table></figure>
+ <a id="more"></a>
+<h3 id="判断NSString为空的问题">判断NSString为空的问题</h3><p>大家继续之前，可以认真看看上面的代码有没有问题？或者有没有优化的空间？</p>
+<p>原作者表示里面有一个坑，调用者为nil时：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">NSString</span> *<span class="keyword">str </span>= (网络解析出来的数据，解析结果为nil)<span class="comment">;</span></span><br><span class="line"><span class="keyword">BOOL </span><span class="keyword">isBlank </span>= [<span class="keyword">str </span><span class="keyword">isBlankString];</span></span><br></pre></td></tr></table></figure>
+<p>就是说，如果用实例方法进行判断为空，因为实例对象为空时，根据objc的动态性，向空对象发消息会直接返回nil，并不会找到实例方法进行调用。所以，要判断字符串为空，只能传入<code>字符串对象</code>（可能为空），进行判断。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">MyUtility</span></span></span><br><span class="line"></span><br><span class="line">+ (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)string;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">"MyUtility.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">MyUtility</span></span></span><br><span class="line"></span><br><span class="line">+ (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string = str;</span><br><span class="line">    <span class="keyword">if</span> (string == <span class="literal">nil</span> || string == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([string isKindOfClass:[<span class="built_in">NSNull</span> class]]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([[string stringByTrimmingCharactersInSet:[<span class="built_in">NSCharacterSet</span> whitespaceCharacterSet]] length]==<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>其中NULL、nil、Nil、NSNull的区别：</p>
+<table>
+<thead>
+<tr>
+<th>标志</th>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NULL</td>
+<td>(void *)0</td>
+<td>C指针的字面零值</td>
+</tr>
+<tr>
+<td>nil</td>
+<td>(id)0</td>
+<td>Objective-C对象的字面零值</td>
+</tr>
+<tr>
+<td>Nil</td>
+<td>(Class)0</td>
+<td>Objective-C类的字面零值</td>
+</tr>
+<tr>
+<td>NSNull</td>
+<td>[NSNull null]</td>
+<td>用来表示零值的单独的对象</td>
+</tr>
+</tbody>
+</table>
+<h3 id="总结">总结</h3><p>通过这个例子，可能看出看似简单的问题，其实都有非常值得探究的深渊！希望自己不要自尽为是，虚心学习，考虑问题有更多角度，细致严谨！</p>
+<h3 id="参考引用">参考引用</h3><ul>
+<li><a href="https://www.jianshu.com/p/fd32b759bace" target="_blank" rel="external">判断NSString为空容易犯的错 - 简书</a></li>
+<li><a href="http://nshipster.cn/nil/" target="_blank" rel="external">nil / Nil / NULL / NSNull - NSHipster</a></li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="前言">前言</h3><p>判断字符串是否为空的情况，一般判断的逻辑如下：</p>
+<ul>
+<li>是否为nil </li>
+<li>是否是NSNull</li>
+<li>是否去掉空格之后长度为0</li>
+</ul>
+<p>在某书看到如下代码：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSString</span> (<span class="title">Util</span>)</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSString</span> (<span class="title">Util</span>)</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string = str;</span><br><span class="line">    <span class="keyword">if</span> (string == <span class="literal">nil</span> || string == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([string isKindOfClass:[<span class="built_in">NSNull</span> class]]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([[string stringByTrimmingCharactersInSet:[<span class="built_in">NSCharacterSet</span> whitespaceCharacterSet]] length]==<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">链接：https:<span class="comment">//www.jianshu.com/p/fd32b759bace</span></span><br><span class="line">來源：简书</span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+      <category term="NSNull" scheme="http://ihtc.cc/tags/NSNull/"/>
+    
+      <category term="NSString" scheme="http://ihtc.cc/tags/NSString/"/>
+    
+      <category term="iOS" scheme="http://ihtc.cc/tags/iOS/"/>
+    
+      <category term="nil" scheme="http://ihtc.cc/tags/nil/"/>
+    
+      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[AppStore无法内购相关问题解决的解决方案]]></title>
     <link href="http://ihtc.cc/2018/03/14/2018-03-14_AppStore%E6%97%A0%E6%B3%95%E5%86%85%E8%B4%AD%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>http://ihtc.cc/2018/03/14/2018-03-14_AppStore无法内购相关问题解决的解决方案/</id>
     <published>2018-03-14T14:12:26.000Z</published>
-    <updated>2018-04-22T05:36:36.634Z</updated>
+    <updated>2018-04-22T05:48:16.569Z</updated>
     <content type="html"><![CDATA[<h3 id="1-如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：">1.如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：</h3><ol>
 <li>请确认应用是从 App Store 上面下载的。</li>
 <li>请确认不是越狱安装破解插件导致无法购买。</li>
@@ -155,6 +242,7 @@
 <blockquote>
 <p>中國大陸：400-666-8800<br>香港（中文） ：(852) 2112-0099<br>香港（英文）： (852) 2112-0099<br>澳門：先撥 0800-111， 再撥 800-708-5413<br>紐西蘭：0800127753<br>馬來西亞：1-800803638<br>澳洲：（61）1300321456<br>新加坡境內： 800-186-1087<br>新加坡境外： (65) 6835-1812<br>印尼：08001027753<br>日本境內： 0120-27753-5<br>日本境外： (81) 3-6365-4705<br>越南： 1800 1127</p>
 </blockquote>
+<p>更多查看：<a href="https://support.apple.com/zh-cn/HT201232" target="_blank" rel="external">联系 Apple 获取支持和服务 - Apple 支持</a></p>
 <h3 id="3-为什么我用苹果手机充值的时候偶尔会出现延迟到账的情况？">3.为什么我用苹果手机充值的时候偶尔会出现延迟到账的情况？</h3><p>苹果系统用户在使用内购服务时候，均通过苹果账号生成订单并提交给我司进行对于商品发货，费用并非由我司直接扣除，因此中间可能会产生延迟发货情况，还请在交易过程中耐心等待。</p>
 <h3 id="4-获取其他_iTunes_购买项目的帮助">4.获取其他 iTunes 购买项目的帮助</h3><ul>
 <li>有些超过 90 天的项目和购买不符合退款条件。请<a href="https://www.apple.com/legal/internet-services/itunes/appstore/cn/terms.html" target="_blank" rel="external">参阅条款和条件以了解更多信息</a>。</li>
@@ -171,7 +259,12 @@
 <li><a href="https://griddiary.uservoice.com/knowledgebase/articles/486079-无法内购问题检查列表" target="_blank" rel="external">无法内购问题检查列表 – Support Center | Grid Diary</a></li>
 <li><a href="https://support.apple.com/zh-cn/HT201266" target="_blank" rel="external">更改或移除 Apple ID 付款信息</a></li>
 <li><a href="https://support.apple.com/zh-cn/HT202039" target="_blank" rel="external">查看、更改或取消您的订阅 - Apple 支持</a></li>
+<li><a href="https://support.apple.com/zh-cn/HT201232" target="_blank" rel="external">联系 Apple 获取支持和服务 - Apple 支持</a></li>
 </ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="1-如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：">1.如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：</h3><ol>
@@ -1234,102 +1327,6 @@
       <category term="iOS侧滑返回" scheme="http://ihtc.cc/tags/iOS%E4%BE%A7%E6%BB%91%E8%BF%94%E5%9B%9E/"/>
     
       <category term="强制竖屏" scheme="http://ihtc.cc/tags/%E5%BC%BA%E5%88%B6%E7%AB%96%E5%B1%8F/"/>
-    
-      <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[AppStore 应用的本地化显示语言到底是什么决定的？]]></title>
-    <link href="http://ihtc.cc/2017/10/28/2017_10_AppStore%20%E5%BA%94%E7%94%A8%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%8C%96%E6%98%BE%E7%A4%BA%E8%AF%AD%E8%A8%80%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%E5%86%B3%E5%AE%9A%E7%9A%84%EF%BC%9F/"/>
-    <id>http://ihtc.cc/2017/10/28/2017_10_AppStore 应用的本地化显示语言到底是什么决定的？/</id>
-    <published>2017-10-28T11:04:16.000Z</published>
-    <updated>2018-01-03T15:18:15.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="本地化_App_Store_信息">本地化 App Store 信息</h3><p>iTunes Connect 本地化说明：</p>
-<blockquote>
-<p>在添加 App 至您的帐户之后，您可以添加语言并输入您的 App 在 App Store 中显示的本地化信息。若要查看您可以本地化 App 元数据的语言和语言区列表，请参见 App Store 本地化。若要了解您可以本地化的属性，请参见必填项、可本地化以及可编辑的属性。</p>
-<p>例如，<strong>如果主要语言设置为英文，那么该信息在所有 App Store 地区中都会显示为英文。</strong>如果您为您的 App 添加了法文并对文本、关键词和屏幕快照进行了本地化，那么语言设置为法文的用户会看到法文的本地化内容。所在地区支持法文（而非英文）的用户，也会看到法文的本地化内容。用户也可以在所有法语 App Store 中使用本地化关键词搜索到您的 App。在其他 App Store 地区，用户会看到以主要语言显示的信息（本示例中为英文）。</p>
-<p><strong>用户在设备上设置的语言控制 App Store 中显示的本地化内容。</strong> 如果没有与设置语言匹配的可用本地化内容，将显示最接近的本地化内容。如果您需要显示特定语言区的元数据，请在您的 App 中添加特定语言区的语言——例如，添加法文（加拿大）。无论用户设备的语言设置如何，您 App 的 App Store 网址（URL）都是相同的。</p>
-<p>您在 iTunes Connect 中添加到 App 中的语言与您在 Xcode 中添加到 App 中的语言不同。您在 Xcode 中添加的语言在 App Store 中的“语言”下显示。若要本地化您 App 的二进制文件，请参阅“Internationalization and Localization Guide（《国际化和本地化指南》）”。</p>
-<p>【重要事项】仅当 App 状态为可编辑时，您才可以管理语言。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="问题总结">问题总结</h3><h5 id="1-主要语言是指什么？有什么作用？">1.主要语言是指什么？有什么作用？</h5><blockquote>
-<p>如果某个 App Store 地区没有提供本地化的 App 信息，那么 App 信息将以主要语言呈现。如果您没有看到想要使用的支持语言，请参阅 <a href="https://itunespartner.apple.com/cn/apps/faq/管理您的%20App_本地化#64875326" target="_blank" rel="external">常见问题</a>。</p>
-</blockquote>
-<p>也就是，在新建App时，苹果要求选择 主要语言（其实就是至少有一种本地化语言）：<br><img src="http://upload-images.jianshu.io/upload_images/99517-fb137425b84f9d90.png?imageMogr2/auto-orient/strip%7CimageView2/2/h/440" alt="选择 主要语言.png"></p>
-<p>应用创建好后，还可以更改主要语言，前提是有创建了2个以上本地化语言：<br><img src="http://upload-images.jianshu.io/upload_images/99517-06d626524a83d6ea.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AppStore 主语言.jpg"></p>
-<p>所以，主要语言的作用就是 <strong>作为应用在 AppStore 上显示的主本地化语言</strong>。也就是说，如果应用只支持一种本地化语言，那么在所以 AppStore 上都是显示一样的语言。那么如果有2种本地化语言，又怎么显示呢？</p>
-<h5 id="2-如果应用支持2种本地化语言，用户在_AppStore_上会显示那种本地化语言呢？">2.如果应用支持2种本地化语言，用户在 AppStore 上会显示那种本地化语言呢？</h5><p><strong>假如应用支持 英文(英国)（主要语言）和法文：</strong></p>
-<ul>
-<li>用户操作系统中设置本地化的语言为英文，应用支持英文，则显示英文 App Store ;</li>
-<li>用户操作系统中设置本地化的语言为法文，应用支持法文，则显示法文 App Store ;</li>
-<li>用户操作系统中设置本地化的语言为中文的中国账号用户，因为在中国地区不支持英文和法文（按苹果支持语言列表查询），则显示主要语言：英文 App Store ;</li>
-<li>用户操作系统中设置本地化的语言为中文的法国账号用户，因为在法国地区支持法文, 英文（英国）（按苹果支持语言列表查询），则优先显示排前语言：法文 App Store 。（参考下图）</li>
-</ul>
-<p>可以得出，</p>
-<blockquote>
-<p>应用在 AppStore 显示的本地化语言顺序，如果应用支持用户设备操作系统中设置本地化的语言，那么应用在 AppStore 本地化以操作系统中设置本地化的语言来显示。如果设置本地化的语言不被应用支持，以用户账号所在地区支持的本地化语言为显示，如果支持多种，排序在前为准。如果用户账号所在地区支持的本地化语言不被应用支持，那么以应用设置的主要语言显示。</p>
-</blockquote>
-<p>苹果默认 AppStore 多数地区本地化都支持 英文（英国），加拿大、美国、澳大利亚除外:<br><img src="http://upload-images.jianshu.io/upload_images/99517-d1ece151c0eebd86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="法国支付 法文，英文（英国）.png"></p>
-<h5 id="3-我的_app_信息已本地化，它在_App_Store_上为什么不以特定的语言显示？">3.我的 app 信息已本地化，它在 App Store 上为什么不以特定的语言显示？</h5><p>要在 App Store 上看到您的 app 的特定本地化内容，您需要更改 OS X 或 iOS 的语言。</p>
-<p><code>OS X：</code><br>&gt;</p>
-<blockquote>
-<ol>
-<li>退出 iTunes</li>
-<li>前往“系统偏好设置”中的“语言与地区”</li>
-<li>添加新的语言，或将所需语言拖放到语言列表的顶部</li>
-<li>打开 iTunes</li>
-<li>点按“iTunes Store”按钮</li>
-<li>滚动到页面底部</li>
-<li>点按页面右侧的当前地区图标</li>
-<li>选取所需的 App Store 的地区</li>
-<li>搜索您的 App，此时应能看到您提供的本地化信息</li>
-</ol>
-</blockquote>
-<p><code>iOS：</code></p>
-<blockquote>
-<ol>
-<li>按两次主屏幕按钮，然后将 App Store 扫出屏幕，从而关闭 App Store</li>
-<li>前往“设置”&gt;“通用”&gt;“多语言环境”&gt;“语言”</li>
-<li>轻按所需的语言</li>
-<li>轻按“完成”</li>
-<li>打开 App Store 并滚动到页面底部</li>
-<li>如果已经登录，则轻按您的 Apple ID，然后轻按“注销”</li>
-<li>轻按“登录”</li>
-<li>轻按“创建 Apple ID”</li>
-<li>选取所需的地区并轻按“下一步”</li>
-<li>显示语言将发生变更。如果您不想创建新的 Apple ID，则轻按以新的语言显示的“取消”</li>
-<li>搜索您的 app，此时应能看到您提供的本地化信息</li>
-<li>要查看原始语言的本地化内容，请重复上述步骤，然后用您现有的 Apple ID 登录。</li>
-</ol>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-6a549aa162f5b541.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我的 app 信息已本地化，它在 App Store 上为什么不以特定的语言显示？.png"></p>
-<h3 id="更多参考">更多参考</h3><ul>
-<li><a href="https://help.apple.com/itunes-connect/developer/?lang=cn#/deve6f78a8e2" target="_blank" rel="external">本地化 App Store 信息 - iTunes Connect 开发人员帮助</a></li>
-<li><a href="https://itunespartner.apple.com/cn/apps/faq/管理您的%20App_本地化#64875326" target="_blank" rel="external">本地化 - iTunes Connect 资源和帮助</a></li>
-</ul>
-<blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="本地化_App_Store_信息">本地化 App Store 信息</h3><p>iTunes Connect 本地化说明：</p>
-<blockquote>
-<p>在添加 App 至您的帐户之后，您可以添加语言并输入您的 App 在 App Store 中显示的本地化信息。若要查看您可以本地化 App 元数据的语言和语言区列表，请参见 App Store 本地化。若要了解您可以本地化的属性，请参见必填项、可本地化以及可编辑的属性。</p>
-<p>例如，<strong>如果主要语言设置为英文，那么该信息在所有 App Store 地区中都会显示为英文。</strong>如果您为您的 App 添加了法文并对文本、关键词和屏幕快照进行了本地化，那么语言设置为法文的用户会看到法文的本地化内容。所在地区支持法文（而非英文）的用户，也会看到法文的本地化内容。用户也可以在所有法语 App Store 中使用本地化关键词搜索到您的 App。在其他 App Store 地区，用户会看到以主要语言显示的信息（本示例中为英文）。</p>
-<p><strong>用户在设备上设置的语言控制 App Store 中显示的本地化内容。</strong> 如果没有与设置语言匹配的可用本地化内容，将显示最接近的本地化内容。如果您需要显示特定语言区的元数据，请在您的 App 中添加特定语言区的语言——例如，添加法文（加拿大）。无论用户设备的语言设置如何，您 App 的 App Store 网址（URL）都是相同的。</p>
-<p>您在 iTunes Connect 中添加到 App 中的语言与您在 Xcode 中添加到 App 中的语言不同。您在 Xcode 中添加的语言在 App Store 中的“语言”下显示。若要本地化您 App 的二进制文件，请参阅“Internationalization and Localization Guide（《国际化和本地化指南》）”。</p>
-<p>【重要事项】仅当 App 状态为可编辑时，您才可以管理语言。</p>
-</blockquote>]]>
-    
-    </summary>
-    
-      <category term="AppStore" scheme="http://ihtc.cc/tags/AppStore/"/>
-    
-      <category term="Localization" scheme="http://ihtc.cc/tags/Localization/"/>
-    
-      <category term="应用本地化语言" scheme="http://ihtc.cc/tags/%E5%BA%94%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%8C%96%E8%AF%AD%E8%A8%80/"/>
     
       <category term="technology" scheme="http://ihtc.cc/categories/technology/"/>
     
