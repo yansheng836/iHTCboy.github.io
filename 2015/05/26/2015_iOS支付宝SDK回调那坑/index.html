@@ -5,21 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://ihtc.cc">
-  <title>iOS支付宝SDK回调那坑 | iHTCboy&#39;s Blog</title>
+  <link rel="dns-prefetch" href="http://iHTCboy.com">
+  <title>iOS支付宝SDK回调那坑 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="支付宝钱包支付接口开发包2.0标准版(iOS 2.2.1) ，回调不出来，demo给出的方法是：1234567891011121314151617- (BOOL)application:(UIApplication *)application             openURL:(NSURL *)url   sourceApplication:(NSString *)sourceApplica">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS支付宝SDK回调那坑">
-<meta property="og:url" content="http://ihtc.cc/2015/05/26/2015_iOS支付宝SDK回调那坑/index.html">
-<meta property="og:site_name" content="iHTCboy's Blog">
+<meta property="og:url" content="http://iHTCboy.com/2015/05/26/2015_iOS支付宝SDK回调那坑/index.html">
+<meta property="og:site_name" content="iHTCboy's blog">
 <meta property="og:description" content="支付宝钱包支付接口开发包2.0标准版(iOS 2.2.1) ，回调不出来，demo给出的方法是：1234567891011121314151617- (BOOL)application:(UIApplication *)application             openURL:(NSURL *)url   sourceApplication:(NSString *)sourceApplica">
-<meta property="og:updated_time" content="2015-09-04T09:25:09.000Z">
+<meta property="og:updated_time" content="2018-05-01T15:10:45.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS支付宝SDK回调那坑">
 <meta name="twitter:description" content="支付宝钱包支付接口开发包2.0标准版(iOS 2.2.1) ，回调不出来，demo给出的方法是：1234567891011121314151617- (BOOL)application:(UIApplication *)application             openURL:(NSURL *)url   sourceApplication:(NSString *)sourceApplica">
   
-    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -113,11 +113,11 @@ var _hmt = _hmt || [];
 				
 					<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 			</div>
 		</nav>
@@ -162,11 +162,11 @@ var _hmt = _hmt || [];
 					
 						<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 				</div>
 			</nav>
@@ -224,6 +224,10 @@ var _hmt = _hmt || [];
 <p>这支付宝也真是的，虽然集成过程中很简单，但是这个回调却让人想屎：<br>支付表是这样说的：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/<span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line"><span class="keyword">*</span>  处理授权信息Url</span><br><span class="line"><span class="keyword">*</span></span><br><span class="line"><span class="keyword">*</span>  <span class="comment">@param resultUrl 钱包返回的授权结果url</span></span><br><span class="line"><span class="keyword">*</span>  <span class="comment">@param completionBlock 跳授权结果回调，保证跳转钱包授权过程中，即使调用方app被系统```kill```时，能通过这个回调取到支付结果。</span></span><br><span class="line"><span class="keyword">*</span>/</span><br><span class="line">- (void)processAuth_V2Result:(NSURL <span class="keyword">*</span>)resultUrl</span><br><span class="line">            standbyCallback:(CompletionBlock)completionBlock;</span><br></pre></td></tr></table></figure></p>
 <p>另附几个状态码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">9000</span> 订单支付成功 </span><br><span class="line"><span class="number">8000</span> 正在处理中  </span><br><span class="line"><span class="number">4000</span> 订单支付失败 </span><br><span class="line"><span class="number">6001</span> 用户中途取消 </span><br><span class="line"><span class="number">6002</span> 网络连接出错</span><br></pre></td></tr></table></figure></p>
 <p>这个月把公司的项目重写了一遍，收获很多，等有点时间时，再慢慢分享给大家啊！<br>～nice</p>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
 
       
 
@@ -343,7 +347,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://ihtc.cc/2015/05/26/2015_iOS支付宝SDK回调那坑/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://iHTCboy.com/2015/05/26/2015_iOS支付宝SDK回调那坑/" alt="微信分享二维码">
     </div>
 </div>
 

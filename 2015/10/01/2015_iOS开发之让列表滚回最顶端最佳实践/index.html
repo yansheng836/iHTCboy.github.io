@@ -5,21 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://ihtc.cc">
-  <title>iOS开发之让列表滚回最顶端最佳实践 | iHTCboy&#39;s Blog</title>
+  <link rel="dns-prefetch" href="http://iHTCboy.com">
+  <title>iOS开发之让列表滚回最顶端最佳实践 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="原来项目中一直用这个方法滚动回到首页：123NSIndexPath *bottomIndexPath=[NSIndexPath indexPathForItem:0 inSection:0];[self.collectionView scrollToItemAtIndexPath:bottomIndexPath atScrollPosition:UICollectionViewScrollPosi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发之让列表滚回最顶端最佳实践">
-<meta property="og:url" content="http://ihtc.cc/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/index.html">
-<meta property="og:site_name" content="iHTCboy's Blog">
+<meta property="og:url" content="http://iHTCboy.com/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/index.html">
+<meta property="og:site_name" content="iHTCboy's blog">
 <meta property="og:description" content="原来项目中一直用这个方法滚动回到首页：123NSIndexPath *bottomIndexPath=[NSIndexPath indexPathForItem:0 inSection:0];[self.collectionView scrollToItemAtIndexPath:bottomIndexPath atScrollPosition:UICollectionViewScrollPosi">
-<meta property="og:updated_time" content="2015-11-04T16:15:04.000Z">
+<meta property="og:updated_time" content="2018-05-01T15:10:03.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发之让列表滚回最顶端最佳实践">
 <meta name="twitter:description" content="原来项目中一直用这个方法滚动回到首页：123NSIndexPath *bottomIndexPath=[NSIndexPath indexPathForItem:0 inSection:0];[self.collectionView scrollToItemAtIndexPath:bottomIndexPath atScrollPosition:UICollectionViewScrollPosi">
   
-    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -113,11 +113,11 @@ var _hmt = _hmt || [];
 				
 					<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 			</div>
 		</nav>
@@ -162,11 +162,11 @@ var _hmt = _hmt || [];
 					
 						<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 				</div>
 			</nav>
@@ -225,8 +225,9 @@ var _hmt = _hmt || [];
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//CGRectMake(0, 0, 1, 1)可以直接返回到UITableView的最顶端</span></span><br><span class="line">[tableview scrollRectToVisible:CGRectMake(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>) animated:NO];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//CGRectMake(0, 0, 0, 0)设定无效</span></span><br><span class="line"><span class="comment">//[tableview scrollRectToVisible:CGRectMake(0, 0, 0, 0) animated:NO];</span></span><br></pre></td></tr></table></figure>
 <p>上面方法，tableView/collectionView下都有效，直接复用！！！</p>
 <h3 id="参考：">参考：</h3><p><a href="http://limingcheng269.blog.163.com/blog/static/11206954201326103218965/" target="_blank" rel="external">iOS开发之让UITableView滚动控制并返回到最顶端</a></p>
+<p><br></p>
 <blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
 </blockquote>
 
       
@@ -351,7 +352,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://ihtc.cc/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://iHTCboy.com/2015/10/01/2015_iOS开发之让列表滚回最顶端最佳实践/" alt="微信分享二维码">
     </div>
 </div>
 

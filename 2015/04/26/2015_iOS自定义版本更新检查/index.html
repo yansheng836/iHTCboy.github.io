@@ -5,29 +5,29 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://ihtc.cc">
-  <title>iOS自定义版本更新检查 | iHTCboy&#39;s Blog</title>
+  <link rel="dns-prefetch" href="http://iHTCboy.com">
+  <title>iOS自定义版本更新检查 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、效果图
 
 2、关键点请求http://itunes.apple.com/lookup?id=968615456，就会返回关于这个应用的详细内容的JSON数据，后面就简单了吧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS自定义版本更新检查">
-<meta property="og:url" content="http://ihtc.cc/2015/04/26/2015_iOS自定义版本更新检查/index.html">
-<meta property="og:site_name" content="iHTCboy's Blog">
+<meta property="og:url" content="http://iHTCboy.com/2015/04/26/2015_iOS自定义版本更新检查/index.html">
+<meta property="og:site_name" content="iHTCboy's blog">
 <meta property="og:description" content="1、效果图
 
 2、关键点请求http://itunes.apple.com/lookup?id=968615456，就会返回关于这个应用的详细内容的JSON数据，后面就简单了吧">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-cc725ddfef91fb35.PNG">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-ba566e2120caa5ed.PNG">
-<meta property="og:updated_time" content="2015-09-04T09:26:28.000Z">
+<meta property="og:updated_time" content="2018-05-01T15:10:54.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS自定义版本更新检查">
 <meta name="twitter:description" content="1、效果图
 
 2、关键点请求http://itunes.apple.com/lookup?id=968615456，就会返回关于这个应用的详细内容的JSON数据，后面就简单了吧">
   
-    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -121,11 +121,11 @@ var _hmt = _hmt || [];
 				
 					<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 			</div>
 		</nav>
@@ -170,11 +170,11 @@ var _hmt = _hmt || [];
 					
 						<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 				</div>
 			</nav>
@@ -255,6 +255,10 @@ var _hmt = _hmt || [];
 <li>服务器版本跟本地版本可以随意，比如服务器1.4.1 ，本地1.4，也能检查了。</li>
 </ul>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">NSString * serverVersion =[[[resultDic <span class="string">objectForKey:</span>@<span class="string">"results"</span>] <span class="string">objectAtIndex:</span><span class="number">0</span>] <span class="string">valueForKey:</span>@<span class="string">"version"</span>];</span><br><span class="line">NSString * localVersion = [SystemUtils getVersionSting];</span><br><span class="line"></span><br><span class="line"><span class="comment">//以"."分隔数字然后分配到不同数组</span></span><br><span class="line">NSArray * serverArray = [serverVersion <span class="string">componentsSeparatedByString:</span>@<span class="string">"."</span>];</span><br><span class="line">NSArray * localArray = [localVersion <span class="string">componentsSeparatedByString:</span>@<span class="string">"."</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="typename">int</span> i = <span class="number">0</span>; i &lt; serverArray.count; i++) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以服务器版本为基准，判断本地版本位数小于服务器版本时，直接返回（并且判断为新版本，比如服务器1.5.1 本地为1.5）</span></span><br><span class="line">    <span class="keyword">if</span>(i &gt; (localArray.count -<span class="number">1</span>))&#123;</span><br><span class="line">       <span class="comment">//有新版本，提示！</span></span><br><span class="line">         <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//有新版本，服务器版本对应数字大于本地</span></span><br><span class="line">    <span class="keyword">if</span> ( [serverArray[i] intValue] &gt; [localArray[i] intValue]) &#123;</span><br><span class="line">         <span class="comment">//有新版本，提示！</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
 
       
 
@@ -374,7 +378,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://ihtc.cc/2015/04/26/2015_iOS自定义版本更新检查/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://iHTCboy.com/2015/04/26/2015_iOS自定义版本更新检查/" alt="微信分享二维码">
     </div>
 </div>
 

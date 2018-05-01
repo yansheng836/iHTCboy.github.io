@@ -5,24 +5,24 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://ihtc.cc">
-  <title>iOS判断汉字个数 | iHTCboy&#39;s Blog</title>
+  <link rel="dns-prefetch" href="http://iHTCboy.com">
+  <title>iOS判断汉字个数 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近在做注册登陆的认证，需求：用户名为6～12位“字符”也就是说，一个英文是一个字符，一个中文是两个字符，用正则表达式好像不容易实现吧？
 没什么好说的，直接上答案了：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS判断汉字个数">
-<meta property="og:url" content="http://ihtc.cc/2015/04/18/2015_iOS判断汉字个数/index.html">
-<meta property="og:site_name" content="iHTCboy's Blog">
+<meta property="og:url" content="http://iHTCboy.com/2015/04/18/2015_iOS判断汉字个数/index.html">
+<meta property="og:site_name" content="iHTCboy's blog">
 <meta property="og:description" content="最近在做注册登陆的认证，需求：用户名为6～12位“字符”也就是说，一个英文是一个字符，一个中文是两个字符，用正则表达式好像不容易实现吧？
 没什么好说的，直接上答案了：">
-<meta property="og:updated_time" content="2015-09-04T14:11:30.000Z">
+<meta property="og:updated_time" content="2018-05-01T15:09:51.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS判断汉字个数">
 <meta name="twitter:description" content="最近在做注册登陆的认证，需求：用户名为6～12位“字符”也就是说，一个英文是一个字符，一个中文是两个字符，用正则表达式好像不容易实现吧？
 没什么好说的，直接上答案了：">
   
-    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -116,11 +116,11 @@ var _hmt = _hmt || [];
 				
 					<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 			</div>
 		</nav>
@@ -165,11 +165,11 @@ var _hmt = _hmt || [];
 					
 						<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 				</div>
 			</nav>
@@ -229,6 +229,10 @@ var _hmt = _hmt || [];
 <h3 id="判断密码为6～20位字符">判断密码为6～20位字符</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)isValidatePassword:(<span class="built_in">NSString</span> *)password&#123;</span><br><span class="line">   <span class="built_in">NSString</span> *regex = <span class="string">@"^[\x21-\x7E]&#123;6,20&#125;$"</span>;</span><br><span class="line">   <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, regex];</span><br><span class="line">   <span class="keyword">return</span> [pred evaluateWithObject:password];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="判断手机格式">判断手机格式</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> + (<span class="built_in">BOOL</span>)checkTel:(<span class="built_in">NSString</span> *)str&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *regex = <span class="string">@"^[1][3-8]+\\d&#123;9&#125;"</span>;<span class="comment">//手机号码变化大，所以没有做更精确的判断</span></span><br><span class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, regex];</span><br><span class="line">    <span class="keyword">return</span>  [pred evaluateWithObject:str];;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="判断邮编格式为6位数字">判断邮编格式为6位数字</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> + (<span class="built_in">BOOL</span>)checkPostCode:(<span class="built_in">NSString</span> *)str&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *regex = <span class="string">@"^[0-9]&#123;6&#125;$"</span>;</span><br><span class="line">    <span class="built_in">NSPredicate</span> *pred = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, regex];</span><br><span class="line">    <span class="keyword">return</span>  [pred evaluateWithObject:str];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
 
       
 
@@ -348,7 +352,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://ihtc.cc/2015/04/18/2015_iOS判断汉字个数/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://iHTCboy.com/2015/04/18/2015_iOS判断汉字个数/" alt="微信分享二维码">
     </div>
 </div>
 

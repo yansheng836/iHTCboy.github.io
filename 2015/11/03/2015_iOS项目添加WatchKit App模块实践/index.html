@@ -5,16 +5,16 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://ihtc.cc">
-  <title>iOS项目添加WatchKit App模块实践 | iHTCboy&#39;s Blog</title>
+  <link rel="dns-prefetch" href="http://iHTCboy.com">
+  <title>iOS项目添加WatchKit App模块实践 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近在公司原来一个项目里增加了Apple　Watch模块，遇到了很多坑。首先说明，本人目前对Swift还不深入熟悉，所以还是打算在原项目里用OC来实现。其次，我用了Apple Watch3个月了，还是第一次入门，看了喵神的教程，一步步来的。想想WatchOS 都2了，再不用用都老了。
 下面简单说一下这个过程：
 0、前言如果在这之前，你没有看过或了解WatchKit相关内容，那么建议你读喵神的两篇文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS项目添加WatchKit App模块实践">
-<meta property="og:url" content="http://ihtc.cc/2015/11/03/2015_iOS项目添加WatchKit App模块实践/index.html">
-<meta property="og:site_name" content="iHTCboy's Blog">
+<meta property="og:url" content="http://iHTCboy.com/2015/11/03/2015_iOS项目添加WatchKit App模块实践/index.html">
+<meta property="og:site_name" content="iHTCboy's blog">
 <meta property="og:description" content="最近在公司原来一个项目里增加了Apple　Watch模块，遇到了很多坑。首先说明，本人目前对Swift还不深入熟悉，所以还是打算在原项目里用OC来实现。其次，我用了Apple Watch3个月了，还是第一次入门，看了喵神的教程，一步步来的。想想WatchOS 都2了，再不用用都老了。
 下面简单说一下这个过程：
 0、前言如果在这之前，你没有看过或了解WatchKit相关内容，那么建议你读喵神的两篇文">
@@ -31,14 +31,14 @@
 <meta property="og:image" content="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.timely%20mannner.png">
 <meta property="og:image" content="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.Complications.png">
 <meta property="og:image" content="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.myWatch.jpg">
-<meta property="og:updated_time" content="2015-11-05T15:31:40.000Z">
+<meta property="og:updated_time" content="2018-05-01T15:14:08.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS项目添加WatchKit App模块实践">
 <meta name="twitter:description" content="最近在公司原来一个项目里增加了Apple　Watch模块，遇到了很多坑。首先说明，本人目前对Swift还不深入熟悉，所以还是打算在原项目里用OC来实现。其次，我用了Apple Watch3个月了，还是第一次入门，看了喵神的教程，一步步来的。想想WatchOS 都2了，再不用用都老了。
 下面简单说一下这个过程：
 0、前言如果在这之前，你没有看过或了解WatchKit相关内容，那么建议你读喵神的两篇文">
   
-    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -132,11 +132,11 @@ var _hmt = _hmt || [];
 				
 					<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 			</div>
 		</nav>
@@ -181,11 +181,11 @@ var _hmt = _hmt || [];
 					
 						<a class="github" target="_blank" href="https://github.com/iHTCboy" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/iHTCapp" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:ihetiancong@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="http://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="https://iHTCboy.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 				</div>
 			</nav>
@@ -277,17 +277,20 @@ var _hmt = _hmt || [];
 <ul>
 <li>最后提供一个WatchKit下用的NSURLSession方法，网上都是Swift写，OC这样写：</li>
 </ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *requestUrl= <span class="string">@"http://www.google.com"</span>;</span><br><span class="line"><span class="built_in">NSURLSession</span> * session = [<span class="built_in">NSURLSession</span> sharedSession];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURLSessionDataTask</span> * task = [session dataTaskWithURL:[<span class="built_in">NSURL</span> URLWithString:requestUrl] completionHandler:^(<span class="built_in">NSData</span> * _Nullable data, <span class="built_in">NSURLResponse</span> * _Nullable response, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">    <span class="keyword">if</span>(data!=<span class="literal">nil</span>)&#123;<span class="comment">// 请求成功</span></span><br><span class="line">        <span class="built_in">NSDictionary</span> *resultDic = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:data options:<span class="built_in">NSJSONReadingMutableLeaves</span> error:<span class="literal">nil</span>];</span><br><span class="line">       </span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;<span class="comment">//请求失败</span></span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[task resume];<span class="comment">// 调用这个方法才会去请求网络</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *requestUrl= <span class="string">@"http://www.google.com"</span>;</span><br><span class="line"><span class="built_in">NSURLSession</span> * session = [<span class="built_in">NSURLSession</span> sharedSession];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURLSessionDataTask</span> * task = [session dataTaskWithURL:[<span class="built_in">NSURL</span> URLWithString:requestUrl] completionHandler:^(<span class="built_in">NSData</span> * _Nullable data, <span class="built_in">NSURLResponse</span> * _Nullable response, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">    <span class="keyword">if</span>(data!=<span class="literal">nil</span>)&#123;<span class="comment">// 请求成功</span></span><br><span class="line">        <span class="built_in">NSDictionary</span> *resultDic = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:data options:<span class="built_in">NSJSONReadingMutableLeaves</span> error:<span class="literal">nil</span>];</span><br><span class="line">       </span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;<span class="comment">//请求失败</span></span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[task resume];<span class="comment">// 调用这个方法才会去请求网络</span></span><br></pre></td></tr></table></figure>
 <h3 id="四、审核的一些坑">四、审核的一些坑</h3><p>前面提到勾选 <code>include Glance Scene</code> 和 <code>include Complication</code> ，结果在实现时，没有搞好，直接在Glance Scene里显示一个下载链接的二维码，苹果审核员问我二维码是干什么用的？它会变吗？</p>
 <ul>
-<li><p>Glance Scene最好要用一些有意义的数据显示<br><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.Complication.png" alt="二维码被拒绝"></p>
-</li>
-<li><p>Complication这个，我是勾选了，第二次又被拒绝，我想说，苹果审核能一次审核全部功能吗？？？？<br><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.timely%20mannner.png" alt="开启了Complication，但没有实现功能被拒绝"></p>
-</li>
+<li>Glance Scene最好要用一些有意义的数据显示</li>
 </ul>
+<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.Complication.png" alt="二维码被拒绝"></p>
 <ul>
-<li>取消Complication功能，就是把下图的Data Source Class删除，在把五个勾去掉就可以了：<br><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.Complications.png" alt="Complications Configuration"></li>
+<li>Complication这个，我是勾选了，第二次又被拒绝，我想说，苹果审核能一次审核全部功能吗？？？？</li>
 </ul>
+<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.timely%20mannner.png" alt="开启了Complication，但没有实现功能被拒绝"></p>
+<ul>
+<li>取消Complication功能，就是把下图的Data Source Class删除，在把五个勾去掉就可以了：</li>
+</ul>
+<p><img src="http://7xliwf.com1.z0.glb.clouddn.com/ihtc.cc.Complications.png" alt="Complications Configuration"></p>
 <p>终于改了，希望审核明天通过吧！！</p>
 <h3 id="五、总结">五、总结</h3><p>关于Watch App审核，如果你选择了某个功能，但没有实现，那么一定会被拒绝的，大家注意一下这点，坑就来那里～</p>
 <p>用了一个星期，了解了WatchKit的基础功能，实现了基本的需求。其实发现，刚开始很害怕实现不了，或者说，去做时知道一定会遇到很多问题，所以不敢去碰它。作为工程师，我们需要恒心和勇气，才能面对接下来的大数据时代，我们的知道时刻要充电，做好准备吧！</p>
@@ -297,8 +300,9 @@ var _hmt = _hmt || [];
 <li><a href="http://www.onevcat.com/2015/08/watchos2/" target="_blank" rel="external">WWDC15 Session笔记 - 30 分钟开发一个简单的 watchOS 2 app</a></li>
 <li><a href="http://www.csdn.net/article/2015-06-01/2824816/2" target="_blank" rel="external">Apple Watch应用优化的一些心得技巧总结</a></li>
 </ul>
+<p><br></p>
 <blockquote>
-<p>注：本文首发于 <a href="http://ihtc.cc">iHTC’ Blog</a>，如若转载，请注来源</p>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
 </blockquote>
 
       
@@ -419,7 +423,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://ihtc.cc/2015/11/03/2015_iOS项目添加WatchKit App模块实践/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://iHTCboy.com/2015/11/03/2015_iOS项目添加WatchKit App模块实践/" alt="微信分享二维码">
     </div>
 </div>
 
