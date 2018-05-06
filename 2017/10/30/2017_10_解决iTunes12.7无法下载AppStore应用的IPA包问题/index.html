@@ -6,25 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://iHTCboy.com">
-  <title>Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决 | iHTCboy&#39;s blog</title>
+  <title>解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标
-WARNING ITMS-90704: “Missing Marketing Icon. iOS Apps must include a 1024x1024px Marketing Icon in PNG format. Apps that do not incl">
+  <meta name="description" content="问题描述苹果 iTunes 12.7 已经无法下载 ipa 包，如果想在 iTunes 12.7 使用已经无力回天。所以，只能降级！降级！降级！
+注：降级 iTunes 12.6.2 会导致无法识别到 iPhone8 / iPhone8 plus / iPhone X 设备， 2017.10月30号更新，下载   iTunes 12.6.3 支持 iPhone 8，iPhone X和iOS 11。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决">
-<meta property="og:url" content="https://iHTCboy.com/2017/10/12/2017_10_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/index.html">
+<meta property="og:title" content="解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题">
+<meta property="og:url" content="https://iHTCboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标
-WARNING ITMS-90704: “Missing Marketing Icon. iOS Apps must include a 1024x1024px Marketing Icon in PNG format. Apps that do not incl">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-97ddb8e31e633c19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-94aeddcf90f731d9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-0a2ba03b013b5083.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-6b4fc430ebc4a130.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-01T15:16:06.060Z">
+<meta property="og:description" content="问题描述苹果 iTunes 12.7 已经无法下载 ipa 包，如果想在 iTunes 12.7 使用已经无力回天。所以，只能降级！降级！降级！
+注：降级 iTunes 12.6.2 会导致无法识别到 iPhone8 / iPhone8 plus / iPhone X 设备， 2017.10月30号更新，下载   iTunes 12.6.3 支持 iPhone 8，iPhone X和iOS 11。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-2e7b98d8fcfd3222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-a0616ac7faf1bd96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-df63838f6a06d428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-d2b2e9fcdb07518d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-b63ca2317cbfa656.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-a45ad3fc859c5a1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-9448fa7049a00b3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-94150e04ff083781.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-52c22a2951ab23ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-93401c64a06c43c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-f82894706ffcfe4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640">
+<meta property="og:updated_time" content="2018-05-06T13:04:01.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决">
-<meta name="twitter:description" content="Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标
-WARNING ITMS-90704: “Missing Marketing Icon. iOS Apps must include a 1024x1024px Marketing Icon in PNG format. Apps that do not incl">
+<meta name="twitter:title" content="解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题">
+<meta name="twitter:description" content="问题描述苹果 iTunes 12.7 已经无法下载 ipa 包，如果想在 iTunes 12.7 使用已经无力回天。所以，只能降级！降级！降级！
+注：降级 iTunes 12.6.2 会导致无法识别到 iPhone8 / iPhone8 plus / iPhone X 设备， 2017.10月30号更新，下载   iTunes 12.6.3 支持 iPhone 8，iPhone X和iOS 11。">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -209,45 +216,66 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2017_10_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决
+      解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题
     </h1>
   
 
         
-        <a href="/2017/10/12/2017_10_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/" class="archive-article-date">
-  	<time datetime="2017-10-12T01:00:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
+        <a href="/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/" class="archive-article-date">
+  	<time datetime="2017-10-30T05:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Xcode9_打包，上传_iTunes_Connet_报错，提示需要在icon添加一张_Marketing_1024x1024_的图标">Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标</h4><blockquote>
-<p>WARNING ITMS-90704: “Missing Marketing Icon. iOS Apps must include a 1024x1024px Marketing Icon in PNG format. Apps that do not include the Marketing Icon cannot be submitted for App Review or Beta App Review.”</p>
-</blockquote>
-<p>Xcode9 中需要添加：<br><img src="http://upload-images.jianshu.io/upload_images/99517-97ddb8e31e633c19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AppStore 1024pt"></p>
+        <h3 id="问题描述">问题描述</h3><p>苹果 iTunes 12.7 已经无法下载 ipa 包，如果想在 iTunes 12.7 使用已经无力回天。所以，只能降级！降级！降级！</p>
+<p>注：降级 iTunes 12.6.2 会导致无法识别到 iPhone8 / iPhone8 plus / iPhone X 设备， 2017.10月30号更新，下载   iTunes 12.6.3 支持 iPhone 8，iPhone X和iOS 11。</p>
 <a id="more"></a>
-<p>如果是 Xcode8还是在 iTunes Connect 后台添加 1024x1024 图标：<br><img src="http://upload-images.jianshu.io/upload_images/99517-94aeddcf90f731d9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="iTunes Connect 后台说明"></p>
-<h4 id="App_Store_1024x1024px_图标规范">App Store 1024x1024px 图标规范</h4><p>用 Xcode9 打包后上传 iTunes Connet 报错：</p>
+<h3 id="降级步骤">降级步骤</h3><h5 id="1-下载旧的_iTunes_12-6">1.下载旧的 iTunes 12.6</h5><p>首先下载旧包： <a href="https://support.apple.com/downloads/itunes" target="_blank" rel="external">下载链接</a></p>
+<p>下载  iTunes 12.6.3： <a href="https://secure-appldnld.apple.com/itunes12/091-33628-20170922-EF8F0FE4-9FEF-11E7-B113-91CF9A97A551/iTunes12.6.3.dmg" target="_blank" rel="external">Mac</a>, <a href="https://secure-appldnld.apple.com/itunes12/091-33627-20170922-EF8CB708-9FEF-11E7-8504-92CF9A97A551/iTunesSetup.exe" target="_blank" rel="external">PC 32-bit</a> or <a href="https://secure-appldnld.apple.com/itunes12/091-33626-20170922-F51D3530-A003-11E7-8324-03D19A97A551/iTunes64Setup.exe" target="_blank" rel="external">PC 64-bit</a></p>
+<p>支持 Mac 和 Windows!</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-2e7b98d8fcfd3222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="Apple - Support - iTunes Downloads.png"></p>
+<h5 id="2-卸载_iTunes_12-7">2.卸载 iTunes 12.7</h5><p>如果你已经下载新版本，只能先卸载，否则无法安装。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-a0616ac7faf1bd96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="a.png"></p>
+<h5 id="3-安装_iTunes12-6-2-dmg">3.安装 iTunes12.6.2.dmg</h5><p>以下以 Mac 电脑安装为例，windows 类似（但没有验证哦）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-df63838f6a06d428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="安装 iTunes12.6.2.dmg.png"></p>
+<p>安装过程，要关闭一些应用，只能关闭不然无法安装：<br><img src="http://upload-images.jianshu.io/upload_images/99517-d2b2e9fcdb07518d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="Xcode 关闭.png"></p>
+<p>安装时间有点长？最终是20分钟安装完，看电脑性能，又要换电脑了-_- 。<br><img src="http://upload-images.jianshu.io/upload_images/99517-b63ca2317cbfa656.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="安装 iTunes12.6.2.dmg 中.png"></p>
+<h5 id="4-打开_iTunes_报错">4.打开 iTunes 报错</h5><p>如果之前安装过 其它版本，打开时提示</p>
 <blockquote>
-<p>ERROR ITMS-90717  Invalid App Store Icon. The App Store Icon in the asset catalog in ‘Some.app’ can’t be transparent nor contain an alpha channel.</p>
+<p>iTunes安装完之后显示：不能读取文件‘iTunes Library.itl’’,说因为它是由更高版本iTunes所创建的。你要现在下载 iTunes 吗？</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-0a2ba03b013b5083.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ERROR ITMS-90717"></p>
-<p>原因：Xcode9中 1024x1024的图标只能 Alpha通道为否的 png 或 jpg 图片。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-6b4fc430ebc4a130.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="App Store 图标规范"></p>
-<h4 id="总结">总结</h4><p> App Store Icon (1024px)图标在 Xcode9 中只能放置不透明（没有 alpha通道）的 png 或 jpg 格式图片。</p>
-<h4 id="参考：">参考：</h4><ul>
-<li><a href="https://forums.developer.apple.com/thread/86829" target="_blank" rel="external">Marketing/App Store Icon PNG transparency issue | Apple Developer Forums</a></li>
-<li><a href="http://help.apple.com/xcode/mac/current/#/dev4b0ebb1bb" target="_blank" rel="external">Add an App Store icon - Xcode Help</a></li>
-<li><a href="http://cdn2.jianshu.io/p/e8f3791ec556" target="_blank" rel="external">ERROR ITMS-90717 - 简书</a></li>
-<li><a href="https://help.apple.com/itunes-connect/developer/#/dev8b5cb82e2" target="_blank" rel="external">添加一个 App Store 图标 - iTunes Connect 开发人员帮助</a></li>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-a45ad3fc859c5a1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="iTunes安装完之后显示：不能读取文件‘iTunes Library.itl&#39;&#39;,说因为它是由更高版本iTunes所创建的。.png"></p>
+<p><strong>解决方法</strong> 到 Music/iTunes 目录下，删除 iTunes 目录就可以，重启打开就正常</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-9448fa7049a00b3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="删除 Music/iTunes 目录.png"></p>
+<h5 id="5-打开_iTunes_应用">5.打开 iTunes 应用</h5><p>第一次打开 iTunes 是没有应用列表的，要点击如图设置：<br><img src="http://upload-images.jianshu.io/upload_images/99517-94150e04ff083781.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="e.png"><br><img src="http://upload-images.jianshu.io/upload_images/99517-52c22a2951ab23ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="e-2.png"></p>
+<h5 id="6-又可以下载_ipa_啦，happy！">6.又可以下载 ipa 啦，happy！</h5><p><img src="http://upload-images.jianshu.io/upload_images/99517-93401c64a06c43c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="f.png"><br><img src="http://upload-images.jianshu.io/upload_images/99517-f82894706ffcfe4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="f-2.png"></p>
+<h3 id="总结">总结</h3><p>目前这个方法在 10月30号还可以使用，后续不知道苹果会不会禁止，所以，iTunes 12.6 的安装包大家保存好啦~</p>
+<p>其实，苹果这个做也是迎合云端的趋势，现在已经很少有人在电脑上备份手机信息、通讯录、相片等，未来苹果也是希望用户使用 iCloud 来同步数据和备份数据。大家慢慢就习惯了，当然用 ipa 包另有所图的就这样啦~</p>
+<h3 id="2017-10月30号更新">2017.10月30号更新</h3><h5 id="方法2">方法2</h5><p>现在有另一种解决方案：苹果提供了一个版本的iTunes（12.6.3）的支持新的设备，iTunes 12.6.3包括支持iPhone 8，iPhone X和iOS 11设备的识别。<a href="https://support.apple.com/en-us/HT208079" target="_blank" rel="external">Deploy apps in a business environment with iTunes - Apple Support</a></p>
+<p>下载  iTunes 12.6.3： <a href="https://secure-appldnld.apple.com/itunes12/091-33628-20170922-EF8F0FE4-9FEF-11E7-B113-91CF9A97A551/iTunes12.6.3.dmg" target="_blank" rel="external">Mac</a>, <a href="https://secure-appldnld.apple.com/itunes12/091-33627-20170922-EF8CB708-9FEF-11E7-8504-92CF9A97A551/iTunesSetup.exe" target="_blank" rel="external">PC 32-bit</a> or <a href="https://secure-appldnld.apple.com/itunes12/091-33626-20170922-F51D3530-A003-11E7-8324-03D19A97A551/iTunes64Setup.exe" target="_blank" rel="external">PC 64-bit</a>* </p>
+<blockquote>
+<p><strong>Deploy apps in a business environment with iTunes</strong><br>Learn how to deploy apps with iTunes.</p>
+<p>Apple offers <a href="https://help.apple.com/deployment/ios/#/iorb94d350b2" target="_blank" rel="external">Volume Purchase Programs</a> and Apple Configurator on Mac to help enterprise environments manage and mass-deploy apps on iOS devices. But certain business partners might still need to use iTunes to install apps.</p>
+<p>Install apps with iTunes<br>If you’ve already installed a newer version of iTunes, you can download this version of iTunes on your <a href="https://secure-appldnld.apple.com/itunes12/091-33628-20170922-EF8F0FE4-9FEF-11E7-B113-91CF9A97A551/iTunes12.6.3.dmg" target="_blank" rel="external">Mac</a>, <a href="https://secure-appldnld.apple.com/itunes12/091-33627-20170922-EF8CB708-9FEF-11E7-8504-92CF9A97A551/iTunesSetup.exe" target="_blank" rel="external">PC 32-bit</a> or <a href="https://secure-appldnld.apple.com/itunes12/091-33626-20170922-F51D3530-A003-11E7-8324-03D19A97A551/iTunes64Setup.exe" target="_blank" rel="external">PC 64-bit</a>* and run the installer. After installation is complete, you can continue to deploy apps with iTunes.<br>You won’t be prompted to download new versions of iTunes after you install this version. Manually <a href="https://www.apple.com/itunes/download/" target="_blank" rel="external">update to the latest version of iTunes</a> when you’re ready to upgrade.</p>
+<p><em>*Apple provides technical support only for the latest version of iTunes.</em><br>Published Date: Oct 14, 2017</p>
+</blockquote>
+<p>这个iTunes 12.6.3 是苹果10月14日更新的，最大特点是支持iPhone 8，iPhone X和iOS 11。<br>根据苹果说明，提供 iTunes 12.6.3 来满足一些企业的需求，比如批量 <a href="https://help.apple.com/deployment/ios/#/ior1c8a0c6f4" target="_blank" rel="external">iOS 部署</a>，现在看来安装 iTunes 12.6.3 这个版本，应该是可下载 IPA 包的可行方案的权宜之计。**</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://github.com/iHTCboy/HelloWorld" target="_blank" rel="external">Hello World</a></li>
+<li><a href="https://support.apple.com/downloads/itunes" target="_blank" rel="external">Apple - Support - iTunes Downloads</a></li>
+<li><a href="https://stackoverflow.com/questions/46224966/get-ipa-file-in-mac-with-itunes-12-7" target="_blank" rel="external">app store - Get ipa file in Mac with iTunes 12.7 - Stack Overflow</a></li>
+<li><a href="https://apple.stackexchange.com/questions/298391/how-do-i-download-an-ios-app-ipa-file-to-my-mac-after-itunes-12-7-update" target="_blank" rel="external">iphone - How do I download an iOS App (IPA) file to my Mac after iTunes 12.7 update? - Ask Different</a></li>
+<li><a href="https://9to5mac.com/2017/10/09/apple-itunes-apps-focused-removed-stopgap/" target="_blank" rel="external">Apple still offers an iTunes version with App Store, Ringtones and other features removed in ‘focused’ iTunes 12.7 | 9to5Mac</a></li>
+<li><a href="https://support.apple.com/en-us/HT208079" target="_blank" rel="external">Deploy apps in a business environment with iTunes - Apple Support</a></li>
 </ul>
 <p><br></p>
 <blockquote>
@@ -297,19 +325,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">App Store Icon</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">iTunes 12.7</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ITMS-90704</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ITMS-90717</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Xcode9</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">下载IPA包</a>
         		</li>
       		
 		</ul>
@@ -376,7 +396,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://iHTCboy.com/2017/10/12/2017_10_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://iHTCboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -390,18 +410,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/10/27/2017_10_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64./" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/09/2017_11_iOS11适配UIToolbar无法点击问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Xcode8报错：&quot;Framework not found IOSurface for architecture arm64&quot;或者 &quot;Framework not found FileProvider for architecture x86_64/arm64&quot;.
+          iOS11适配UIToolbar无法点击问题
         
       </div>
     </a>
   
   
-    <a href="/2017/03/27/2017_03_Xcode快捷键 高效必记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Xcode快捷键 高效必记</div>
+    <a href="/2017/10/28/2017_10_iOS11沙盒测试内购时重复提示登陆账号/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS11沙盒测试内购时重复提示登陆账号</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -428,7 +448,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Xcode9_打包，上传_iTunes_Connet_报错，提示需要在icon添加一张_Marketing_1024x1024_的图标"><span class="toc-number">1.</span> <span class="toc-text">Xcode9 打包，上传 iTunes Connet 报错，提示需要在icon添加一张 Marketing 1024x1024 的图标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#App_Store_1024x1024px_图标规范"><span class="toc-number">2.</span> <span class="toc-text">App Store 1024x1024px 图标规范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考："><span class="toc-number">4.</span> <span class="toc-text">参考：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#降级步骤"><span class="toc-number">2.</span> <span class="toc-text">降级步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-下载旧的_iTunes_12-6"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.下载旧的 iTunes 12.6</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-卸载_iTunes_12-7"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.卸载 iTunes 12.7</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-安装_iTunes12-6-2-dmg"><span class="toc-number">2.0.3.</span> <span class="toc-text">3.安装 iTunes12.6.2.dmg</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-打开_iTunes_报错"><span class="toc-number">2.0.4.</span> <span class="toc-text">4.打开 iTunes 报错</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-打开_iTunes_应用"><span class="toc-number">2.0.5.</span> <span class="toc-text">5.打开 iTunes 应用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-又可以下载_ipa_啦，happy！"><span class="toc-number">2.0.6.</span> <span class="toc-text">6.又可以下载 ipa 啦，happy！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2017-10月30号更新"><span class="toc-number">4.</span> <span class="toc-text">2017.10月30号更新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#方法2"><span class="toc-number">4.0.1.</span> <span class="toc-text">方法2</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -453,7 +473,7 @@ var _hmt = _hmt || [];
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "Thu Oct 12 2017 09:00:16 GMT+0800",
+  id: "Mon Oct 30 2017 13:04:16 GMT+0800",
   owner: 'iHTCboy',
   repo: 'iHTCboy.github.io',
   oauth: {

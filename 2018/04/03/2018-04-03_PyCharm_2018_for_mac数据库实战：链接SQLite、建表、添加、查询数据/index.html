@@ -6,32 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://iHTCboy.com">
-  <title>Xcode8报错：&quot;Framework not found IOSurface for architecture arm64&quot;或者 &quot;Framework not found FileProvider for architecture x86_64/arm64&quot;. | iHTCboy&#39;s blog</title>
+  <title>PyCharm 2018 for mac 数据库实战：链接SQLite、建表、添加、查询数据 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Xcode8 编译报错：
-
-Framework not found IOSurface for architecture arm64或者 Framework not found FileProvider for architecture x86_64/arm64. 
-
-原因IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xco">
+  <meta name="description" content="一、前言
+最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Xcode8报错："Framework not found IOSurface for architecture arm64"或者 "Framework not found FileProvider for architecture x86_64/arm64".">
-<meta property="og:url" content="https://iHTCboy.com/2017/10/27/2017_10_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64./index.html">
+<meta property="og:title" content="PyCharm 2018 for mac 数据库实战：链接SQLite、建表、添加、查询数据">
+<meta property="og:url" content="https://iHTCboy.com/2018/04/03/2018-04-03_PyCharm_2018_for_mac数据库实战：链接SQLite、建表、添加、查询数据/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="Xcode8 编译报错：
-
-Framework not found IOSurface for architecture arm64或者 Framework not found FileProvider for architecture x86_64/arm64. 
-
-原因IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xco">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-01T15:16:03.215Z">
+<meta property="og:description" content="一、前言
+最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createDBfile.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-openSqliteConfig.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-downloadSqliteDriver.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-ConnectionSqliteFile.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-TestConnectionSqlite.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-PycharmSqliteConsole.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createTable.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createTableConsole.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-insertIntoValues.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-SelectFrom.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-referencesForeignKey.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-insertInfoValuesMore.png">
+<meta property="og:updated_time" content="2018-05-06T13:03:14.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xcode8报错："Framework not found IOSurface for architecture arm64"或者 "Framework not found FileProvider for architecture x86_64/arm64".">
-<meta name="twitter:description" content="Xcode8 编译报错：
-
-Framework not found IOSurface for architecture arm64或者 Framework not found FileProvider for architecture x86_64/arm64. 
-
-原因IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xco">
+<meta name="twitter:title" content="PyCharm 2018 for mac 数据库实战：链接SQLite、建表、添加、查询数据">
+<meta name="twitter:description" content="一、前言
+最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -216,47 +217,49 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2017_10_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64." class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2018-04-03_PyCharm_2018_for_mac数据库实战：链接SQLite、建表、添加、查询数据" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Xcode8报错：&quot;Framework not found IOSurface for architecture arm64&quot;或者 &quot;Framework not found FileProvider for architecture x86_64/arm64&quot;.
+      PyCharm 2018 for mac 数据库实战：链接SQLite、建表、添加、查询数据
     </h1>
   
 
         
-        <a href="/2017/10/27/2017_10_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64./" class="archive-article-date">
-  	<time datetime="2017-10-27T00:33:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-27</time>
+        <a href="/2018/04/03/2018-04-03_PyCharm_2018_for_mac数据库实战：链接SQLite、建表、添加、查询数据/" class="archive-article-date">
+  	<time datetime="2018-04-03T13:46:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Xcode8 编译报错：</p>
-<blockquote>
-<p><strong>Framework not found IOSurface for architecture arm64</strong><br>或者<br> <strong>Framework not found FileProvider for architecture x86_64/arm64.</strong> </p>
-</blockquote>
-<h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>
+        <h3 id="一、前言">一、前言</h3><hr>
+<p>最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~</p>
 <a id="more"></a>
-<p>题外话，这个在 Xcode5 和 Xcode6 过度时，Metal.framework 时发生过，可能过了就忘记了。也发现 Xcode 很多特性平时没有注意，有空真要多看看 LLVM 的知识。</p>
-<h3 id="结果">结果</h3><p>如果原厂升级到 Xcode9，则不受影响。如果 Xcode8 编译报错，网上最初给出的方案，在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，结果最后坑定了！</p>
-<p>在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，上传iTunes Connet 报错：<br><img src="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512" alt="iTunes Connet 报错使用非法 API.jpg"></p>
-<h3 id="正解解决方案">正解解决方案</h3><p> Build Settings 中 Link Frameworks Automatically 把默认Yes 改成 No ，在 Xcode8 编译就能通过。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置 Link Frameworks Automatically 为 NO.jpeg"></p>
-<h3 id="参考&amp;扩展阅读">参考&amp;扩展阅读</h3><ul>
-<li><a href="https://stackoverflow.com/questions/25804696/xcode-6-gm-linker-error-when-building-for-device-metal-not-found/25924645" target="_blank" rel="external">ios8 - XCode 6 GM: linker error when building for device (Metal not found) - Stack Overflow</a></li>
-<li><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/WhatsNewXcode/Chapters/xcode_5_0.html#//apple_ref/doc/uid/TP40012953-SW1" target="_blank" rel="external">New Features in Xcode 5</a></li>
-<li><a href="https://mmmag.appsee.com/2014/09/22/xcode-new-link-frameworks-automatically-fix-framework-not-found-metal-for-architecture-armv7/" target="_blank" rel="external">XCode’s New “Link Frameworks Automatically” &amp; How to Fix “framework not found Metal for architecture armv7”</a></li>
-<li><a href="https://stackoverflow.com/questions/44450673/framework-not-found-iosurface-for-architecture-arm64" target="_blank" rel="external">ios - Framework not found IOSurface for architecture arm64 - Stack Overflow</a></li>
-<li><a href="https://stackoverflow.com/questions/33728359/when-do-you-have-to-link-frameworks-and-libraries-to-an-xcode-project" target="_blank" rel="external">ios - When do you have to link Frameworks and Libraries to an XCode project? - Stack Overflow</a></li>
-<li><a href="https://stackoverflow.com/questions/24902787/dont-we-need-to-link-framework-to-xcode-project-anymore" target="_blank" rel="external">Don’t we need to link framework to XCode project anymore?</a></li>
-<li><a href="https://stackoverflow.com/questions/18947516/import-vs-import-ios-7/18947634#" target="_blank" rel="external">objective c - @import vs #import - iOS 7 - Stack Overflow</a></li>
-<li><a href="http://www.jianshu.com/p/0ce22e777900" target="_blank" rel="external">Modules和Autolinking的介绍与使用 - 简书</a></li>
-<li><a href="http://blog.csdn.net/xiaofei125145/article/details/41117085" target="_blank" rel="external">xcode 新特性的 一点理解 enable module 和 link frameworks automatically - 滴水成川 - CSDN博客</a></li>
+<h3 id="二、链接SQLite">二、链接SQLite</h3><hr>
+<h6 id="2-1_控制台创建数据库DB文件">2.1 控制台创建数据库DB文件</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createDBfile.png" alt="创建数据库DB文件"></p>
+<h6 id="2-2_打开sqlite配置界面">2.2 打开sqlite配置界面</h6><p>按下图步骤打开sqlite配置目录<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-openSqliteConfig.png" alt="打开sqlite配置界面"></p>
+<h6 id="2-3_安装sqlite驱动">2.3 安装sqlite驱动</h6><p>点击下载驱动，直到显示提示“no objects”：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-downloadSqliteDriver.png" alt="安装sqlite驱动"></p>
+<h6 id="2-4_链接刚才创建的数据库_ios_test-db文件">2.4  链接刚才创建的数据库 ios_test.db文件</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-ConnectionSqliteFile.png" alt=" 链接数据库Sqlite文件"></p>
+<p>点击步骤4的“Test Connection” 时，显示 <code>Successful</code> 就表示连接成功，点击右下角的OK返回！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-TestConnectionSqlite.png" alt="Test Connection"></p>
+<p>PyCharm自动打开Sqlite数据库：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-PycharmSqliteConsole.png" alt="SqliteConsole"></p>
+<h3 id="三、操作数据库">三、操作数据库</h3><hr>
+<h6 id="3-1_创建一张表">3.1 创建一张表</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createTable.png" alt="createTable"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createTableConsole.png" alt="createTableConsole"></p>
+<h6 id="3-2_添加数据">3.2 添加数据</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-insertIntoValues.png" alt="insertIntoTable"></p>
+<h6 id="3-3_查询数据">3.3 查询数据</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-SelectFrom.png" alt="SelectTable"></p>
+<h6 id="3-4_关联表">3.4 关联表</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-referencesForeignKey.png" alt="referencesForeignKey"></p>
+<h6 id="3-5_更多示例">3.5 更多示例</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-insertInfoValuesMore.png" alt="insertValues"></p>
+<p>相关代码：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建一个表</span></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> iOSDevice(</span><br><span class="line">  deviceName <span class="built_in">TEXT</span></span><br><span class="line">);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 插入数据</span></span><br><span class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> iOSDevice <span class="keyword">values</span>(<span class="string">'iPhone8'</span>);</span></span><br><span class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> iOSDevice <span class="keyword">values</span>(<span class="string">'iPhone8 Plus'</span>);</span></span><br><span class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> iOSDevice <span class="keyword">values</span>(<span class="string">'iPhoneX'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询所有数据</span></span><br><span class="line"><span class="operator">select * <span class="keyword">from</span> iOSDevice;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建一个新表</span></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> iProduct (</span><br><span class="line">  Mac    <span class="built_in">text</span>,</span><br><span class="line">  iPhone <span class="built_in">text</span>,</span><br><span class="line">  iPad   <span class="built_in">text</span>,</span><br><span class="line">  Watch  <span class="built_in">text</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">--  关联表</span></span><br><span class="line">  foreign <span class="keyword">key</span> (iPhone) <span class="keyword">references</span> iOSDevice(deviceName)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--  插入多个值</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> iProduct <span class="keyword">values</span>(</span><br><span class="line">  <span class="string">'Macbook Pro'</span>,</span><br><span class="line">  <span class="string">'iPhone'</span>,</span><br><span class="line">  <span class="string">'iPad mini4'</span>,</span><br><span class="line">  <span class="string">'apple Watch'</span></span><br><span class="line">);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询表数据</span></span><br><span class="line"><span class="operator">select * <span class="keyword">from</span> iProduct;</span></span><br></pre></td></tr></table></figure>
+<h3 id="四、总结">四、总结</h3><hr>
+<p>通过PyCharm进行SQLite操作，之前真没有想到PyCharm如此强大！IDE就是<code>IDE</code>，收费也是硬道理！希望好好利用PyCharm做更多有趣的事件~</p>
+<h3 id="五、参考引用">五、参考引用</h3><ul>
+<li><a href="https://blog.csdn.net/qq_36482772/article/details/53458400" target="_blank" rel="external">PyCharm IDE 链接sqlite、建表、添加、查询数据 - CSDN博客 </a></li>
 </ul>
 <p><br></p>
 <blockquote>
@@ -306,15 +309,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Framework not found</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PyCharm</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IOSurface</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Xcode9</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">SQLite</a>
         		</li>
       		
 		</ul>
@@ -381,7 +384,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://iHTCboy.com/2017/10/27/2017_10_Xcode8报错：Framework not found IOSurface for architecture arm64 或者 Framework not found FileProvider for architecture x86_64:arm64./" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://iHTCboy.com/2018/04/03/2018-04-03_PyCharm_2018_for_mac数据库实战：链接SQLite、建表、添加、查询数据/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -395,18 +398,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/10/27/2017_10_沙盒测试账号：不允许创建 iTunes 账户/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/04/10/2018-04-10_macOS中基于L2TP协议的VPN连接时提示“IPSec共享密钥”丢失问题解决/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          沙盒测试账号：不允许创建 iTunes 账户
+          macOS中基于L2TP协议的VPN连接时提示“IPSec 共享密钥”丢失问题解决
         
       </div>
     </a>
   
   
-    <a href="/2017/10/12/2017_10_Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决</div>
+    <a href="/2018/03/17/2018-03-17_判断NSString为空的问题浅析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">判断NSString为空的问题浅析</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -433,7 +436,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#原因"><span class="toc-number">1.</span> <span class="toc-text">原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果"><span class="toc-number">2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正解解决方案"><span class="toc-number">3.</span> <span class="toc-text">正解解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考&扩展阅读"><span class="toc-number">4.</span> <span class="toc-text">参考&扩展阅读</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、链接SQLite"><span class="toc-number">2.</span> <span class="toc-text">二、链接SQLite</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1_控制台创建数据库DB文件"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">2.1 控制台创建数据库DB文件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2_打开sqlite配置界面"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">2.2 打开sqlite配置界面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-3_安装sqlite驱动"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">2.3 安装sqlite驱动</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-4_链接刚才创建的数据库_ios_test-db文件"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">2.4  链接刚才创建的数据库 ios_test.db文件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、操作数据库"><span class="toc-number">3.</span> <span class="toc-text">三、操作数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-1_创建一张表"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">3.1 创建一张表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2_添加数据"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">3.2 添加数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-3_查询数据"><span class="toc-number">3.0.0.3.</span> <span class="toc-text">3.3 查询数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-4_关联表"><span class="toc-number">3.0.0.4.</span> <span class="toc-text">3.4 关联表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-5_更多示例"><span class="toc-number">3.0.0.5.</span> <span class="toc-text">3.5 更多示例</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、总结"><span class="toc-number">4.</span> <span class="toc-text">四、总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、参考引用"><span class="toc-number">5.</span> <span class="toc-text">五、参考引用</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -458,7 +461,7 @@ var _hmt = _hmt || [];
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "Fri Oct 27 2017 08:33:16 GMT+0800",
+  id: "Tue Apr 03 2018 21:46:26 GMT+0800",
   owner: 'iHTCboy',
   repo: 'iHTCboy.github.io',
   oauth: {
