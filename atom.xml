@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-05-05T16:45:29.198Z</updated>
+  <updated>2018-05-06T09:32:27.452Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,93 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Github Pages页面如何实现域名跳转，重定向到新网址]]></title>
+    <link href="https://iHTCboy.com/2018/05/06/2018-05-06_Github%20Pages%E9%A1%B5%E9%9D%A2%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%9F%9F%E5%90%8D%E8%B7%B3%E8%BD%AC%EF%BC%8C%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E6%96%B0%E7%BD%91%E5%9D%80/"/>
+    <id>https://iHTCboy.com/2018/05/06/2018-05-06_Github Pages页面如何实现域名跳转，重定向到新网址/</id>
+    <published>2018-05-06T08:35:16.000Z</published>
+    <updated>2018-05-06T09:32:27.452Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最新还是决下心来换域名啦！从 <a href="http://ihtc.cc" target="_blank" rel="external">http://ihtc.cc</a> 换成 <a href="https://ihtcboy.com">https://ihtcboy.com</a> ！然后问题就来了，以前分享到第三方的链接打开404了，旧域名也访问不通，这样子不行呢！用了2年多的旧域名，在百度谷歌还是积累了一些爬虫，还有很多分享到第三方平台的文章呢！想一想，还是想救一救它！！！</p>
+<a id="more"></a>
+<h3 id="2、准备工作">2、准备工作</h3><p>首先，因为是2个域名，所以我分别用2个GitHub账号设置对应的Repo地址解析。</p>
+<table>
+<thead>
+<tr>
+<th>域名</th>
+<th>Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ihtc.cc</td>
+<td>HeTianCong.github.io</td>
+</tr>
+<tr>
+<td>ihtcboy.com</td>
+<td>iHTCboy.github.io</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3、域名重定向">3、域名重定向</h3><p>首先要解决的问题是 ihtc.cc 重写向到 ihtcboy.com，在网上搜索到，域名的重写向可以有以下3种方法（如果还有其它，欢迎大家补充！）：</p>
+<ol>
+<li>域名转发</li>
+<li>301重定向</li>
+<li>JS跳转</li>
+</ol>
+<p>方法一，域名注册商支持域名转发功能才行！放弃~<br>方法二， 就是Web 服务器（这里是GitHub）给访问老域名的请求返回一个 302，然后跳转到新域名上。考虑到使用的GitHub托管服务是不可能配置 Web 服务器的，也只能放弃~</p>
+<p>最后就是剩下JavaScript 实现，在 <code>HeTianCong.github.io</code> 新建<br><code>index.html</code> 文件，内容为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.location.href=<span class="string">"https://ihtcboy.com"</span>;</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>解析：</strong></p>
+<p>index.html就是访问 ihtc.cc 时，GitHub 默认打开的页面，所以在里面用JS重写向到新的域名，这样就解决了旧域名重写向新网址的问题啦！！</p>
+<h3 id="4、文章重定向">4、文章重定向</h3><p>旧的文章链接：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://ihtc.cc/<span class="number">2018/02/25</span>/<span class="number">2018-02-25</span>%20_Gitment评论功能接入踩坑教程/</span><br></pre></td></tr></table></figure>
+<p>既然要重定向新的域名，，就不可能在旧的Repo里增加全部旧文章吧（虽然方案是可行），但是这样又起不到读者知道新域名的问题，硬要搞2个Repo，那就没有前面的重定向必要啦！！！</p>
+<p>最后想到旧的链接访问不通时，表现形式：<br><strong>404<br>There isn’t a GitHub Pages site here.</strong>！</p>
+<p>那么在 Repo 下建立一个 <code>404.html</code>，这样是不是就可以拿到访问文章的链接，然后就你所欲为！马上就开始行动吧！</p>
+<p><code>404.html</code> 文件，内容为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://cdn.bootcss.com/purl/2.3.1/purl.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="keyword">var</span> url = purl();</span><br><span class="line"><span class="keyword">if</span> (url.attr(<span class="string">'host'</span>) == <span class="string">'ihtc.cc'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> old_url = url.attr(<span class="string">'source'</span>);</span><br><span class="line">    <span class="keyword">var</span> new_url = old_url.replace(<span class="string">'ihtc.cc'</span>, <span class="string">"ihtcboy.com"</span>);</span><br><span class="line">    <span class="built_in">window</span>.location.replace(new_url); </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (url.attr(<span class="string">'host'</span>) == <span class="string">'www.ihtc.cc'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> old_url = url.attr(<span class="string">'source'</span>);</span><br><span class="line">    <span class="keyword">var</span> new_url = old_url.replace(<span class="string">'www.ihtc.cc'</span>, <span class="string">"ihtcboy.com"</span>);</span><br><span class="line">    <span class="built_in">window</span>.location.replace(new_url);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.location.href=<span class="string">"https://ihtcboy.com"</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>最后实践发现，这个方法可行！！！</p>
+<p>从浏览器访问 <code>www.ihtc.cc/xxx</code> 或 <code>ihtc.cc/xxx</code> 的读者，都会被重定向到 <strong>ihtcboy.com</strong>! </p>
+<h3 id="5、总结">5、总结</h3><p>刚开始是想放弃，因为经常中谷歌搜索文章里，常常发现404的 <strong>There isn’t a GitHub Pages site here.</strong>，都是怀疑作者域名过期或变更等，又没有自己后台服务器，只能不了而之，旧的读者从此就与这个网站失联，觉得是有点可惜！</p>
+<p>所以，今天的这个文章，希望对愿意写文章，有又变更域名需求的博客同仁来说，希望是一个更好的开始！</p>
+<h3 id="6、参考">6、参考</h3><ul>
+<li><a href="https://github.com/HeTianCong/HeTianCong.github.io" target="_blank" rel="external">HeTianCong.github.io</a></li>
+<li><a href="https://blog.csdn.net/dianjinmi/article/details/78383955" target="_blank" rel="external">如何实现域名A指向域名B？三种域名跳转方法供选择 - CSDN博客</a></li>
+<li><a href="https://blog.jamespan.me/2015/04/12/the-blogs-migration" target="_blank" rel="external">博客折腾记之网址变更｜Ruo Dojo</a></li>
+<li><a href="http://yanping.me/cn/blog/2012/02/06/github-pages-domain-3/" target="_blank" rel="external">三谈github页面域名绑定：域名跳转 - 雁起平沙的网络日志</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://ihtc.cc" target="_blank" rel="external">iHTCboy’s Blog</a>，如若转载，请注明来源。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最新还是决下心来换域名啦！从 <a href="http://ihtc.cc">http://ihtc.cc</a> 换成 <a href="https://ihtcboy.com">https://ihtcboy.com</a> ！然后问题就来了，以前分享到第三方的链接打开404了，旧域名也访问不通，这样子不行呢！用了2年多的旧域名，在百度谷歌还是积累了一些爬虫，还有很多分享到第三方平台的文章呢！想一想，还是想救一救它！！！</p>]]>
+    
+    </summary>
+    
+      <category term="Github Pages" scheme="https://iHTCboy.com/tags/Github-Pages/"/>
+    
+      <category term="JS跳转" scheme="https://iHTCboy.com/tags/JS%E8%B7%B3%E8%BD%AC/"/>
+    
+      <category term="域名跳转" scheme="https://iHTCboy.com/tags/%E5%9F%9F%E5%90%8D%E8%B7%B3%E8%BD%AC/"/>
+    
+      <category term="重定向" scheme="https://iHTCboy.com/tags/%E9%87%8D%E5%AE%9A%E5%90%91/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[忆爷爷 —— 留守老人的一代]]></title>
     <link href="https://iHTCboy.com/2018/05/05/2018-05-05_%E5%BF%86%E7%88%B7%E7%88%B7%20%E2%80%94%E2%80%94%20%E7%95%99%E5%AE%88%E8%80%81%E4%BA%BA%E7%9A%84%E4%B8%80%E4%BB%A3/"/>
     <id>https://iHTCboy.com/2018/05/05/2018-05-05_忆爷爷 —— 留守老人的一代/</id>
     <published>2018-05-04T16:05:16.000Z</published>
-    <updated>2018-05-05T16:45:29.198Z</updated>
+    <updated>2018-05-06T08:22:44.282Z</updated>
     <content type="html"><![CDATA[<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/myGrandpa.jpg" alt="my grandpa"></p>
 <h3 id="忆">忆</h3><p>爷爷生于三十年代，抗日战争之际。</p>
 <p>听爷爷说，我们家以前是地主，解放后，我们家族就走下坡路，爷辈各兄弟分散多地。</p>
@@ -30,6 +112,7 @@
 <p>99年，千禧年来临前，在叔的带领下来到广州。然后一直到现在，在外打工将近二十个年头。背井离乡，那时间我才10岁不到，爷爷一个人在家里照顾2个姐姐，2个哥哥，直到他们都出来打工，最后一个一个远走他乡，离他而去。</p>
 <p>20年，对于一个老人，每年过年过节一个人！春节、清明节、端午节、中秋节，都没有回去过，对于老人来说，什么又是对又是错，钱又有什么用。</p>
 <p>说说那时交通，20个小时班车，因为火车站在广州市中心，所以只能就近坐班车，从下午到晚上，然后第二天早上回到南宁，回到家里，真的不容易。现在动车4个小时，公交车和地铁方便，回家当天就到，也许以后也没有人知道，甚至大多数90后也不了而之，随着历史的迁移只会越小人知道，然后就最后没有人知道这些历史，没有人知道上一辈人的辛苦，上一辈人的辛酸。</p>
+<p>爷爷写的一手好的毛笔字，村里的红事白事都会叫他写，惟一的春联他就不敢写，都是叫村里的老师帮写，也许他还觉得自己文采不够？另外，爷爷自学了针灸，平时有空都会帮别人治治，虽然我不确认效果，但是中国的针灸历史很久。从这两个方面，就觉得爷爷有什么东西值得我去学习，在那个年代，那个压力，这种精神，永远不朽！</p>
 <h3 id="念">念</h3><p>读高中时，因为广东不给外地人读，所以回南宁读书，有几个寒暑假都在家里陪爷爷一起过。想起高中的那时候，由于学业繁忙，每天都是爷爷买菜煮饭给我吃，这就这样，一辈子的回忆。也只有这样的机会，我才能了解这些故事，少数人才记得的历史。</p>
 <p>听爷爷常常唠叨，他以为家族一辈子都不会在兴旺起来。当年闹饥荒，地主被批斗，奶奶就是被批斗而逝去。在我记忆里，没有奶奶的画面，听爷爷说，我很小时奶奶就去了。</p>
 <p>爷爷不经常提说这些历史，就像他说恨毛主席。爷爷经历了我们这一代无法想象的苦，我们又享受上一辈奋斗带来的富，已经没有多少人会记住历史。就像爷爷说希望当年那些对待他的人，让他们知道错。在别人看来，爷爷过于自我，普通人没有人会理解，别人会恶评。</p>
@@ -70,36 +153,36 @@
     <link href="https://iHTCboy.com/2018/04/10/2018-04-10_macOS%E4%B8%AD%E5%9F%BA%E4%BA%8EL2TP%E5%8D%8F%E8%AE%AE%E7%9A%84VPN%E8%BF%9E%E6%8E%A5%E6%97%B6%E6%8F%90%E7%A4%BA%E2%80%9CIPSec%20%E5%85%B1%E4%BA%AB%E5%AF%86%E9%92%A5%E2%80%9D%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     <id>https://iHTCboy.com/2018/04/10/2018-04-10_macOS中基于L2TP协议的VPN连接时提示“IPSec 共享密钥”丢失问题解决/</id>
     <published>2018-04-10T10:59:26.000Z</published>
-    <updated>2018-05-01T15:17:43.402Z</updated>
-    <content type="html"><![CDATA[<h3 id="遇到的问题">遇到的问题</h3><blockquote>
+    <updated>2018-05-06T08:45:36.687Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、遇到的问题">1、遇到的问题</h3><blockquote>
 <p>“IPSec 共享密钥”丢失。请验证您的设置并尝试重新连接。</p>
 </blockquote>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-VPNConnetionFailure.png" alt="20180410-VPNConnetionFailure.png"></p>
 <p>在网上找到很多相似的解决方法，但是却没有人说出为什么要这样做？？</p>
 <a id="more"></a>
-<h3 id="问题原因&amp;解决">问题原因&amp;解决</h3><h4 id="原因：">原因：</h4><p>最后在Oracle官方文档找到了解释：</p>
+<h3 id="2、问题原因&amp;解决">2、问题原因&amp;解决</h3><h4 id="2-1_原因：">2.1 原因：</h4><p>最后在Oracle官方文档找到了解释：</p>
 <p>引用 <strong>Oracle Solaris 10 8/11 Information Library</strong> 文档:</p>
 <blockquote>
 <p>/etc/ppp/options<br>包含缺省应用于系统中所有 PPP 链路的特征（例如，计算机是否要求对等点对其本身进行验证）的文件。如果不存在此文件，将禁止非超级用户使用 PPP。</p>
 </blockquote>
 <p>也就是说，默认情况下macOS跟Liunx一样，在<code>/etc/ppp/</code>目录下没有 <code>options</code>这个配置文件，所以对于非root用户就无法使用ppp链路。</p>
-<h4 id="解决">解决</h4><p>知其然，所以知其后然，这时候的解决方法就是在<code>/etc/ppp/</code>目录下建立options`这个配置文件，并且配置ppp链路l2tp不需要ipsec密钥。</p>
+<h4 id="2-2_解决">2.2 解决</h4><p>知其然，所以知其后然，这时候的解决方法就是在<code>/etc/ppp/</code>目录下建立options`这个配置文件，并且配置ppp链路l2tp不需要ipsec密钥。</p>
 <p>下面就是vim命令操作，如果想系统学习相关命令可查看 <a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html" target="_blank" rel="external">每天一个linux命令目录</a>，这里不打算详细讲解，有兴趣同学可以另行学习。</p>
-<p><strong>操作步骤</strong><br>（1）在终端任意路径下输入命令： <code>sudo vim /etc/ppp/options</code><br>然后输入电脑密码后，显示vim操作界面后按键盘<code>i</code>进入插入模式，输入下面内容：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugin L2TP<span class="class">.ppp</span></span><br><span class="line">l2tpnoipsec</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.2.1 操作步骤</strong><br>（1）在终端任意路径下输入命令： <code>sudo vim /etc/ppp/options</code><br>然后输入电脑密码后，显示vim操作界面后按键盘<code>i</code>进入插入模式，输入下面内容：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugin L2TP<span class="class">.ppp</span></span><br><span class="line">l2tpnoipsec</span><br></pre></td></tr></table></figure></p>
 <p>（2）然后按<code>esc</code>键退出插入模式，最后输入<code>:wq!</code>，强制保存并退出vim模式。</p>
-<p><strong>命令解释</strong></p>
+<p><strong>2.2.2 命令解释</strong></p>
 <ul>
 <li><code>sudo</code>：用管理员权限执行命令</li>
 <li><code>vim</code>：用vim打开文件，后面跟上文件所在的路径</li>
 <li><code>plugin L2TP.ppp</code>：配置ppp链路插件？具体暂未了解，知道的同学可以告诉我啊！</li>
 <li><code>l2tpnoipsec</code>: 配置ppp链路l2tp不需要ipsec密钥。</li>
 </ul>
-<p><strong>终端操作示意</strong><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-SudoVim-etc-ppp-options.png" alt="sudo vim /etc/ppp/options"></p>
+<p><strong>2.2.3 终端操作示意</strong><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-SudoVim-etc-ppp-options.png" alt="sudo vim /etc/ppp/options"></p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-vim-options-insert.png" alt="添加ppp的options配置文件"></p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-vim-wq!.png" alt="保存内容并退出vim"></p>
 <p>最后，想验证是否保存成功，可以用<code>open /etc/ppp/options</code>命令打开文件查看内容：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-open-options.png" alt="打开options文件查看内容"></p>
-<h3 id="总结">总结</h3><p>在这个探索的过程，自己了解得更多，就会发现自己知道的越少！求甚解，也许就是最好的学习态度，大家都要坚持！</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="3、总结">3、总结</h3><p>在这个探索的过程，自己了解得更多，就会发现自己知道的越少！求甚解，也许就是最好的学习态度，大家都要坚持！</p>
+<h3 id="4、参考引用">4、参考引用</h3><ul>
 <li><a href="https://docs.oracle.com/cd/E24847_01/html/E22299/pppsvrconfig.reference-65.html" target="_blank" rel="external">在文件中和命令行上使用 PPP 选项 - 系统管理指南：网络服务</a></li>
 <li><a href="https://lxneng.com/posts/177" target="_blank" rel="external">Mac OS X 下无密钥方式连接基于L2TP协议的VPN</a></li>
 <li><a href="https://www.jianshu.com/p/6bbfbc49e54c" target="_blank" rel="external">mac的vpn配置“IPSec 共享密钥”丢失问题 - 简书</a></li>
@@ -114,7 +197,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="遇到的问题">遇到的问题</h3><blockquote>
+    <![CDATA[<h3 id="1、遇到的问题">1、遇到的问题</h3><blockquote>
 <p>“IPSec 共享密钥”丢失。请验证您的设置并尝试重新连接。</p>
 </blockquote>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-VPNConnetionFailure.png" alt="20180410-VPNConnetionFailure.png"></p>
@@ -190,8 +273,8 @@
     <link href="https://iHTCboy.com/2018/03/17/2018-03-17_%E5%88%A4%E6%96%ADNSString%E4%B8%BA%E7%A9%BA%E7%9A%84%E9%97%AE%E9%A2%98%E6%B5%85%E6%9E%90/"/>
     <id>https://iHTCboy.com/2018/03/17/2018-03-17_判断NSString为空的问题浅析/</id>
     <published>2018-03-17T15:02:26.000Z</published>
-    <updated>2018-05-01T15:17:34.352Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>判断字符串是否为空的情况，一般判断的逻辑如下：</p>
+    <updated>2018-05-06T08:46:03.761Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>判断字符串是否为空的情况，一般判断的逻辑如下：</p>
 <ul>
 <li>是否为nil </li>
 <li>是否是NSNull</li>
@@ -200,7 +283,7 @@
 <p>在某书看到如下代码：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSString</span> (<span class="title">Util</span>)</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSString</span> (<span class="title">Util</span>)</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string = str;</span><br><span class="line">    <span class="keyword">if</span> (string == <span class="literal">nil</span> || string == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([string isKindOfClass:[<span class="built_in">NSNull</span> class]]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([[string stringByTrimmingCharactersInSet:[<span class="built_in">NSCharacterSet</span> whitespaceCharacterSet]] length]==<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">链接：https:<span class="comment">//www.jianshu.com/p/fd32b759bace</span></span><br><span class="line">來源：简书</span><br></pre></td></tr></table></figure>
  <a id="more"></a>
-<h3 id="判断NSString为空的问题">判断NSString为空的问题</h3><p>大家继续之前，可以认真看看上面的代码有没有问题？或者有没有优化的空间？</p>
+<h3 id="2、判断NSString为空的问题">2、判断NSString为空的问题</h3><p>大家继续之前，可以认真看看上面的代码有没有问题？或者有没有优化的空间？</p>
 <p>原作者表示里面有一个坑，调用者为nil时：</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">NSString</span> *<span class="keyword">str </span>= (网络解析出来的数据，解析结果为nil)<span class="comment">;</span></span><br><span class="line"><span class="keyword">BOOL </span><span class="keyword">isBlank </span>= [<span class="keyword">str </span><span class="keyword">isBlankString];</span></span><br></pre></td></tr></table></figure>
 <p>就是说，如果用实例方法进行判断为空，因为实例对象为空时，根据objc的动态性，向空对象发消息会直接返回nil，并不会找到实例方法进行调用。所以，要判断字符串为空，只能传入<code>字符串对象</code>（可能为空），进行判断。</p>
@@ -238,8 +321,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="总结">总结</h3><p>通过这个例子，可能看出看似简单的问题，其实都有非常值得探究的深渊！希望自己不要自尽为是，虚心学习，考虑问题有更多角度，细致严谨！</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="3、总结">3、总结</h3><p>通过这个例子，可能看出看似简单的问题，其实都有非常值得探究的深渊！希望自己不要自尽为是，虚心学习，考虑问题有更多角度，细致严谨！</p>
+<h3 id="4、参考引用">4、参考引用</h3><ul>
 <li><a href="https://www.jianshu.com/p/fd32b759bace" target="_blank" rel="external">判断NSString为空容易犯的错 - 简书</a></li>
 <li><a href="http://nshipster.cn/nil/" target="_blank" rel="external">nil / Nil / NULL / NSNull - NSHipster</a></li>
 </ul>
@@ -249,7 +332,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>判断字符串是否为空的情况，一般判断的逻辑如下：</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>判断字符串是否为空的情况，一般判断的逻辑如下：</p>
 <ul>
 <li>是否为nil </li>
 <li>是否是NSNull</li>
@@ -277,7 +360,7 @@
     <link href="https://iHTCboy.com/2018/03/14/2018-03-14_AppStore%E6%97%A0%E6%B3%95%E5%86%85%E8%B4%AD%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>https://iHTCboy.com/2018/03/14/2018-03-14_AppStore无法内购相关问题解决的解决方案/</id>
     <published>2018-03-14T14:12:26.000Z</published>
-    <updated>2018-05-01T15:17:29.761Z</updated>
+    <updated>2018-05-06T08:46:14.204Z</updated>
     <content type="html"><![CDATA[<h3 id="1-如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：">1.如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：</h3><ol>
 <li>请确认应用是从 App Store 上面下载的。</li>
 <li>请确认不是越狱安装破解插件导致无法购买。</li>
@@ -303,7 +386,7 @@
 <li>获取关于 <a href="https://support.apple.com/zh-cn/HT207594" target="_blank" rel="external">iCloud 储存空间方案降级</a>方面的帮助。</li>
 <li>您还可以在 <a href="https://support.apple.com/zh-cn/HT204088" target="_blank" rel="external">App Store 或 iTunes Store 中查看购买历史记录</a>。</li>
 </ul>
-<h3 id="参考">参考</h3><ul>
+<h3 id="5-参考">5.参考</h3><ul>
 <li><a href="https://support.apple.com/zh-cn/HT202023" target="_blank" rel="external">关于 App 内购买项目 - Apple 支持</a></li>
 <li><a href="https://support.apple.com/zh-cn/HT204530#contact" target="_blank" rel="external">如果您没有看到应用内购买项目 - Apple 支持</a></li>
 <li><a href="https://support.apple.com/zh-cn/HT204084" target="_blank" rel="external">获取关于从 App Store、iTunes Store 或 iBooks Store 所购项目的帮助 - Apple 支持</a></li>
@@ -343,8 +426,8 @@
     <link href="https://iHTCboy.com/2018/03/11/2018-03-11_NSString%E7%9A%84boolValue%E6%96%B9%E6%B3%95%E7%94%9A%E8%A7%A3/"/>
     <id>https://iHTCboy.com/2018/03/11/2018-03-11_NSString的boolValue方法甚解/</id>
     <published>2018-03-11T13:22:26.000Z</published>
-    <updated>2018-05-01T15:17:26.056Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>NSString的<code>boolValue</code>之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按<code>command</code> + <code>control</code> 点击<code>boolValue</code>进入文档就可以看到：</p>
+    <updated>2018-05-06T08:46:40.122Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>NSString的<code>boolValue</code>之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按<code>command</code> + <code>control</code> 点击<code>boolValue</code>进入文档就可以看到：</p>
 <p>&gt;</p>
 <blockquote>
 <p><strong>boolValue</strong><br>The Boolean value of the string.</p>
@@ -358,12 +441,12 @@
 <p>如果不是以有效的十进制数字开始的文本表示，则此属性为NO。</p>
 <p>该属性采用十进制表示法，并在字符串的开头跳过空格。它也会跳过最初的空格字符（忽略全部的空格开头），或者单个 -/+ 符号开头。</p>
 </blockquote>
-<h3 id="测试一波">测试一波</h3><p>大家可以思考一下，下面的代码输出结果是什么？</p>
+<h3 id="2、测试一波">2、测试一波</h3><p>大家可以思考一下，下面的代码输出结果是什么？</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">NSArray *tests = @[ @<span class="string">"Y"</span>,</span><br><span class="line">                        @<span class="string">"N"</span>,</span><br><span class="line">                        @<span class="string">"T"</span>,</span><br><span class="line">                        @<span class="string">"F"</span>,</span><br><span class="line">                        @<span class="string">"t"</span>,</span><br><span class="line">                        @<span class="string">"f"</span>,</span><br><span class="line">                        @<span class="string">"1"</span>,</span><br><span class="line">                        @<span class="string">"0"</span>,</span><br><span class="line">                        @<span class="string">"Yes"</span>,</span><br><span class="line">                        @<span class="string">"No"</span>,</span><br><span class="line">                        @<span class="string">"No really no"</span>,</span><br><span class="line">                        @<span class="string">"true"</span>,</span><br><span class="line">                        @<span class="string">"false"</span>,</span><br><span class="line">                        @<span class="string">"To be or not to be"</span>,</span><br><span class="line">                        @<span class="string">"False"</span>,</span><br><span class="line">                        @<span class="string">"3567"</span>,</span><br><span class="line">                        @<span class="string">"0123456789"</span>,</span><br><span class="line">                        @<span class="string">"000"</span>,</span><br><span class="line">                        @<span class="string">"0ab"</span>,</span><br><span class="line">                        @<span class="string">"1cd"</span>,</span><br><span class="line">                        @<span class="string">"abc"</span>,</span><br><span class="line">                        @<span class="string">""</span>,</span><br><span class="line">                        @<span class="string">"+aeb"</span>,</span><br><span class="line">                        @<span class="string">"+3sb"</span>,</span><br><span class="line">                        @<span class="string">"-ss"</span>,</span><br><span class="line">                        @<span class="string">"-01"</span>,</span><br><span class="line">                        @<span class="string">"-21"</span>,</span><br><span class="line">                        @<span class="string">" 1"</span>,</span><br><span class="line">                        @<span class="string">" 0"</span>,</span><br><span class="line">                        @<span class="string">"--1"</span>,</span><br><span class="line">                        @<span class="string">"++1"</span>,</span><br><span class="line">                        @<span class="string">"-+1"</span>,</span><br><span class="line">                        @<span class="string">"  2"</span>,</span><br><span class="line">                        @<span class="string">"  0"</span>,</span><br><span class="line">                        @<span class="string">"   2  0"</span>,</span><br><span class="line">                        @<span class="string">"   0  2"</span>,</span><br><span class="line">                        @<span class="string">"  20"</span>,</span><br><span class="line">                        @<span class="string">"000-1"</span>,</span><br><span class="line">                        @<span class="string">" + 111"</span>,</span><br><span class="line">                        @<span class="string">"  +111"</span></span><br><span class="line">                        ];</span><br><span class="line">    NSArray *boolToString = @[@<span class="string">"NO"</span>, @<span class="string">"YES"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (NSString *test <span class="keyword">in</span> tests)&#123;</span><br><span class="line">        NSLog(@<span class="string">"boolValue:\"%@\" =&gt; %@"</span>, test, boolToString<span class="string">[[test boolValue]]</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="结果">结果</h3><p>运行结果：</p>
+<h3 id="3、结果">3、结果</h3><p>运行结果：</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">boolValue:</span><span class="string">"Y"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"N"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"T"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"F"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"t"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"f"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"1"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"0"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"Yes"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"No"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"No really no"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"true"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"false"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"To be or not to be"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"False"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"3567"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"0123456789"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"000"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"0ab"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"1cd"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"abc"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">""</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"+aeb"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"+3sb"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"-ss"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"-01"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"-21"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">" 1"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">" 0"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"--1"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"++1"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"-+1"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"  2"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"  0"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"   2  0"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"   0  2"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"  20"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"000-1"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">" + 111"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"  +111"</span> =&gt; YES</span><br></pre></td></tr></table></figure>
-<h3 id="总结">总结</h3><p>不知道大家答对多少？是不是对这个方法又熟悉了几分呢？实践见真知。</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="4、总结">4、总结</h3><p>不知道大家答对多少？是不是对这个方法又熟悉了几分呢？实践见真知。</p>
+<h3 id="5、参考引用">5、参考引用</h3><ul>
 <li><a href="http://blog.manbolo.com/2013/07/22/nsstring-boolvalue" target="_blank" rel="external">[NSString boolValue]-Manbolo Blog</a></li>
 </ul>
 <p><br></p>
@@ -372,7 +455,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>NSString的<code>boolValue</code>之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按<code>command</code> + <code>control</code> 点击<code>boolValue</code>进入文档就可以看到：</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>NSString的<code>boolValue</code>之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按<code>command</code> + <code>control</code> 点击<code>boolValue</code>进入文档就可以看到：</p>
 <p>&gt;</p>
 <blockquote>
 <p><strong>boolValue</strong><br>The Boolean value of the string.</p>
@@ -397,14 +480,14 @@
     <link href="https://iHTCboy.com/2018/03/05/2018-03-05_%E4%B8%A4%E4%B8%AANSInvocation%E5%B4%A9%E6%BA%83%E5%BC%95%E8%B5%B7%E7%9A%84%E5%8F%8D%E6%80%9D/"/>
     <id>https://iHTCboy.com/2018/03/05/2018-03-05_两个NSInvocation崩溃引起的反思/</id>
     <published>2018-03-05T15:42:26.000Z</published>
-    <updated>2018-05-01T15:17:22.690Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近在使用NSInvocation进行多参数方法调用，结果就崩溃了！signature为nil 和 一直提示找不到方法！！！</p>
+    <updated>2018-05-06T08:47:33.703Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在使用NSInvocation进行多参数方法调用，结果就崩溃了！signature为nil 和 一直提示找不到方法！！！</p>
 <p><code>method signature argument cannot be nil</code> 崩溃信息：<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** <span class="type">Terminating</span> app due to uncaught exception '<span class="type">NSInvalidArgumentException</span>', reason: '+[<span class="type">NSInvocation</span> _invocationWithMethodSignature:frame:]: <span class="keyword">method</span> signature argument cannot be <span class="keyword">nil</span>'</span><br><span class="line">*** <span class="type">First</span> throw call stack:</span><br><span class="line">(<span class="number">0x1831a6d8c</span>  .........)</span><br><span class="line">libc++abi.dylib: terminating <span class="keyword">with</span> uncaught exception <span class="keyword">of</span> <span class="keyword">type</span> <span class="type">NSException</span></span><br></pre></td></tr></table></figure></p>
 <p><code>unrecognized selector sent to instance</code>崩溃信息：<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-<span class="keyword">[</span>ViewController openView]: unrecognized selector sent to<span class="instruction"> instance </span>0x10510b1b0'</span><br><span class="line">*** First<span class="instruction"> throw </span>call stack:</span><br><span class="line">(0x1831a6d8c ......<span class="function">)</span></span><br><span class="line">libc++abi.dylib: terminating with uncaught exception of type NSException</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>原始示例代码：</p>
+<p>开始的代码：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)myInvocation &#123;</span><br><span class="line">    </span><br><span class="line">    SEL myMethod = <span class="keyword">@selector</span>(sum:parm:parm:);</span><br><span class="line">    <span class="comment">//创建一个函数签名，这个签名可以是任意的,但需要注意，签名函数的参数数量要和调用的一致。</span></span><br><span class="line">    <span class="built_in">NSMethodSignature</span> * sig  = [[<span class="keyword">self</span> class] instanceMethodSignatureForSelector:myMethod];</span><br><span class="line">    <span class="comment">//通过签名初始化</span></span><br><span class="line">    <span class="built_in">NSInvocation</span> * invocatin = [<span class="built_in">NSInvocation</span> invocationWithMethodSignature:sig];</span><br><span class="line">    <span class="comment">//设置target</span></span><br><span class="line">    [invocatin setTarget:<span class="keyword">self</span>];</span><br><span class="line">    <span class="comment">//设置selecteor</span></span><br><span class="line">    [invocatin setSelector:myMethod];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">3</span>;</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">     //index为2 是因为0、1两个参数已经被target和selector占用，其实可以这样设置：</span><br><span class="line">     ViewController * view = self;</span><br><span class="line">     [invocatin setArgument:&amp;view atIndex:0];</span><br><span class="line">     [invocatin setArgument:&amp;myMethod atIndex:1];</span><br><span class="line">     */</span></span><br><span class="line">    [invocatin setArgument:&amp;a atIndex:<span class="number">2</span>];</span><br><span class="line">    [invocatin setArgument:&amp;b atIndex:<span class="number">3</span>];</span><br><span class="line">    [invocatin setArgument:&amp;c atIndex:<span class="number">4</span>];</span><br><span class="line">    [invocatin retainArguments];</span><br><span class="line">    <span class="comment">//我们将c的值设置为返回值</span></span><br><span class="line">    [invocatin setReturnValue:&amp;c];</span><br><span class="line">    <span class="keyword">int</span> d;</span><br><span class="line">    <span class="comment">//取这个返回值</span></span><br><span class="line">    [invocatin getReturnValue:&amp;d];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,d);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//消息调用</span></span><br><span class="line">    [invocatin invoke];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">int</span>)sum:(<span class="keyword">int</span>)a parm:(<span class="keyword">int</span>)b parm:(<span class="keyword">int</span>)c&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"sum: %d:%d:%d"</span>,a,b,c);</span><br><span class="line">    <span class="keyword">return</span> a+b+c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="NSInvocation_注意项">NSInvocation 注意项</h3><p>一直排查，开始以为是方法名写错了，认真一个一个字检查，没有错哦！！<br>Way?! </p>
+<h3 id="2、NSInvocation_注意项">2、NSInvocation 注意项</h3><p>一直排查，开始以为是方法名写错了，认真一个一个字检查，没有错哦！！<br>Way?! </p>
 <p>不得而，还是在看看苹果文档！！！</p>
 <hr>
 <p><strong>instanceMethodSignatureForSelector:</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="tag">NSMethodSignature</span> *)<span class="rule"><span class="attribute">instanceMethodSignatureForSelector</span>:<span class="value">(SEL)aSelector</span></span>;</span><br></pre></td></tr></table></figure></p>
@@ -417,17 +500,17 @@
 <p>Returns an NSMethodSignature object that contains a description of the method identified by a given selector.</p>
 </blockquote>
 <hr>
-<h4 id="崩溃一_分析：">崩溃一 分析：</h4><p>从苹果文档可以看到，生成NSMethodSignature对象有2个方法，一个是实例方法和一个类方法。</p>
+<h4 id="2-1_崩溃一_分析：">2.1 崩溃一 分析：</h4><p>从苹果文档可以看到，生成NSMethodSignature对象有2个方法，一个是实例方法和一个类方法。</p>
 <ul>
 <li>如果SEL是类方法要使用 <strong>methodSignatureForSelector:</strong>，</li>
 <li>如果SEL是实例方法就使用 <strong>instanceMethodSignatureForSelector:</strong></li>
 </ul>
 <p>所以，把<code>instanceMethodSignatureForSelector:</code> 改为<code>methodSignatureForSelector</code> 就解决啦！</p>
-<h4 id="崩溃二_分析：">崩溃二 分析：</h4><p>有了上面的分析，崩溃二是因为 <code>setTarget:</code>使用实例self，而类方法应用使用类，所以修改为<code>[invocatin setTarget:[self class]];</code>，就解决啦！</p>
-<h4 id="最终代码：">最终代码：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)myInvocation &#123;</span><br><span class="line">    </span><br><span class="line">    SEL myMethod = @selector(sum:parm:parm:);</span><br><span class="line">    <span class="comment">//创建一个函数签名，这个签名可以是任意的,但需要注意，签名函数的参数数量要和调用的一致。</span></span><br><span class="line">    NSMethodSignature * sig  = [[self <span class="keyword">class</span>] methodSignatureForSelector:myMethod];</span><br><span class="line">    <span class="comment">//通过签名初始化</span></span><br><span class="line">    NSInvocation * invocatin = [NSInvocation invocationWithMethodSignature:sig];</span><br><span class="line">    <span class="comment">//设置target</span></span><br><span class="line">    [invocatin setTarget:[self <span class="keyword">class</span>]];</span><br><span class="line">    <span class="comment">//设置selecteor</span></span><br><span class="line">    [invocatin setSelector:myMethod];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">3</span>;</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">     //index为2 是因为0、1两个参数已经被target和selector占用，其实可以这样设置：</span><br><span class="line">     ViewController * view = self;</span><br><span class="line">     [invocatin setArgument:&amp;view atIndex:0];</span><br><span class="line">     [invocatin setArgument:&amp;myMethod atIndex:1];</span><br><span class="line">     */</span></span><br><span class="line">    [invocatin setArgument:&amp;a atIndex:<span class="number">2</span>];</span><br><span class="line">    [invocatin setArgument:&amp;b atIndex:<span class="number">3</span>];</span><br><span class="line">    [invocatin setArgument:&amp;c atIndex:<span class="number">4</span>];</span><br><span class="line">    [invocatin retainArguments];</span><br><span class="line">    <span class="comment">//我们将c的值设置为返回值</span></span><br><span class="line">    [invocatin setReturnValue:&amp;c];</span><br><span class="line">    <span class="keyword">int</span> d;</span><br><span class="line">    <span class="comment">//取这个返回值</span></span><br><span class="line">    [invocatin getReturnValue:&amp;d];</span><br><span class="line">    NSLog(@<span class="string">"%d"</span>,d);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//消息调用</span></span><br><span class="line">    [invocatin invoke];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">int</span>)sum:(<span class="keyword">int</span>)a parm:(<span class="keyword">int</span>)b parm:(<span class="keyword">int</span>)c&#123;</span><br><span class="line">    NSLog(@<span class="string">"sum: %d:%d:%d"</span>,a,b,c);</span><br><span class="line">    <span class="keyword">return</span> a+b+c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="总结">总结</h3><p>出现这样一个问题，直接说明平时没有关注文档和API实现，当前NSInvocation不常用，但是这次排查也用半天时间，有时候怀疑自己代码时，还是要从根本上找原因——— 从官方文档重新开始！ </p>
+<h4 id="2-2_崩溃二_分析：">2.2 崩溃二 分析：</h4><p>有了上面的分析，崩溃二是因为 <code>setTarget:</code>使用实例self，而类方法应用使用类，所以修改为<code>[invocatin setTarget:[self class]];</code>，就解决啦！</p>
+<h4 id="2-3_最终代码：">2.3 最终代码：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)myInvocation &#123;</span><br><span class="line">    </span><br><span class="line">    SEL myMethod = @selector(sum:parm:parm:);</span><br><span class="line">    <span class="comment">//创建一个函数签名，这个签名可以是任意的,但需要注意，签名函数的参数数量要和调用的一致。</span></span><br><span class="line">    NSMethodSignature * sig  = [[self <span class="keyword">class</span>] methodSignatureForSelector:myMethod];</span><br><span class="line">    <span class="comment">//通过签名初始化</span></span><br><span class="line">    NSInvocation * invocatin = [NSInvocation invocationWithMethodSignature:sig];</span><br><span class="line">    <span class="comment">//设置target</span></span><br><span class="line">    [invocatin setTarget:[self <span class="keyword">class</span>]];</span><br><span class="line">    <span class="comment">//设置selecteor</span></span><br><span class="line">    [invocatin setSelector:myMethod];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">3</span>;</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">     //index为2 是因为0、1两个参数已经被target和selector占用，其实可以这样设置：</span><br><span class="line">     ViewController * view = self;</span><br><span class="line">     [invocatin setArgument:&amp;view atIndex:0];</span><br><span class="line">     [invocatin setArgument:&amp;myMethod atIndex:1];</span><br><span class="line">     */</span></span><br><span class="line">    [invocatin setArgument:&amp;a atIndex:<span class="number">2</span>];</span><br><span class="line">    [invocatin setArgument:&amp;b atIndex:<span class="number">3</span>];</span><br><span class="line">    [invocatin setArgument:&amp;c atIndex:<span class="number">4</span>];</span><br><span class="line">    [invocatin retainArguments];</span><br><span class="line">    <span class="comment">//我们将c的值设置为返回值</span></span><br><span class="line">    [invocatin setReturnValue:&amp;c];</span><br><span class="line">    <span class="keyword">int</span> d;</span><br><span class="line">    <span class="comment">//取这个返回值</span></span><br><span class="line">    [invocatin getReturnValue:&amp;d];</span><br><span class="line">    NSLog(@<span class="string">"%d"</span>,d);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//消息调用</span></span><br><span class="line">    [invocatin invoke];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">int</span>)sum:(<span class="keyword">int</span>)a parm:(<span class="keyword">int</span>)b parm:(<span class="keyword">int</span>)c&#123;</span><br><span class="line">    NSLog(@<span class="string">"sum: %d:%d:%d"</span>,a,b,c);</span><br><span class="line">    <span class="keyword">return</span> a+b+c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、总结">3、总结</h3><p>出现这样一个问题，直接说明平时没有关注文档和API实现，当前NSInvocation不常用，但是这次排查也用半天时间，有时候怀疑自己代码时，还是要从根本上找原因——— 从官方文档重新开始！ </p>
 <p>另外，复制网上的代码是一个危险的动作，不求甚解有时候坑就越深，希望自己以后不懂的知识要使用时，除了工期赶&amp;复制，还要及时补充自己的空白，知其码，并知其然！努力成为一个优秀工程师！严谨！</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="4、参考引用">4、参考引用</h3><ul>
 <li><a href="https://stackoverflow.com/questions/10900403/how-can-i-invoke-a-class-method-by-nsinvocation" target="_blank" rel="external">objective c - How can I invoke a class method by NSInvocation? - Stack Overflow</a></li>
 <li><a href="https://developer.apple.com/documentation/foundation/nsinvocation" target="_blank" rel="external">NSInvocation - Foundation | Apple Developer Documentation</a></li>
 <li><a href="https://developer.apple.com/documentation/objectivec/nsobject/1571960-methodsignatureforselector?language=objc" target="_blank" rel="external">methodSignatureForSelector: - NSObject | Apple Developer Documentation</a></li>
@@ -439,7 +522,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>最近在使用NSInvocation进行多参数方法调用，结果就崩溃了！signature为nil 和 一直提示找不到方法！！！</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在使用NSInvocation进行多参数方法调用，结果就崩溃了！signature为nil 和 一直提示找不到方法！！！</p>
 <p><code>method signature argument cannot be nil</code> 崩溃信息：<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** <span class="type">Terminating</span> app due to uncaught exception '<span class="type">NSInvalidArgumentException</span>', reason: '+[<span class="type">NSInvocation</span> _invocationWithMethodSignature:frame:]: <span class="keyword">method</span> signature argument cannot be <span class="keyword">nil</span>'</span><br><span class="line">*** <span class="type">First</span> throw call stack:</span><br><span class="line">(<span class="number">0x1831a6d8c</span>  .........)</span><br><span class="line">libc++abi.dylib: terminating <span class="keyword">with</span> uncaught exception <span class="keyword">of</span> <span class="keyword">type</span> <span class="type">NSException</span></span><br></pre></td></tr></table></figure></p>
 <p><code>unrecognized selector sent to instance</code>崩溃信息：<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-<span class="keyword">[</span>ViewController openView]: unrecognized selector sent to<span class="instruction"> instance </span>0x10510b1b0'</span><br><span class="line">*** First<span class="instruction"> throw </span>call stack:</span><br><span class="line">(0x1831a6d8c ......<span class="function">)</span></span><br><span class="line">libc++abi.dylib: terminating with uncaught exception of type NSException</span><br></pre></td></tr></table></figure></p>]]>
     
@@ -460,9 +543,9 @@
     <link href="https://iHTCboy.com/2018/02/25/2018-02-25%20_Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%85%A5%E8%B8%A9%E5%9D%91%E6%95%99%E7%A8%8B/"/>
     <id>https://iHTCboy.com/2018/02/25/2018-02-25 _Gitment评论功能接入踩坑教程/</id>
     <published>2018-02-25T04:45:26.000Z</published>
-    <updated>2018-05-01T15:17:16.623Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。</p>
-<h3 id="评论模块简介">评论模块简介</h3><ul>
+    <updated>2018-05-06T08:48:31.772Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。</p>
+<h3 id="2、评论模块简介">2、评论模块简介</h3><ul>
 <li><strong>多说</strong> - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；</li>
 <li><strong>网易云跟帖</strong> - 网易提供的评论组件，功能比较简单，性能优秀；管理后台在查询上还不算特别智能，但足够普通用户使用；</li>
 <li><strong>畅言</strong> - 搜狐提供的评论组件，功能丰富，体验优异；但必须进行域名备案。只要域名备过案就可以通过审核，简单问题复杂化。</li>
@@ -471,21 +554,21 @@
 <p>以上评论模块应该大家都知道，多说和网易云跟帖没有了，畅言要备案，对于只是挂靠在GitHub的博客非常的不友好，放弃！Disqus，我们都希望自己的博客可以不分国界！所以Disqus也只能放弃！</p>
 <p>综上所述，将是我们要重点介绍的Gitment ！！！</p>
 <a id="more"></a>
-<h3 id="Gitment评论模块">Gitment评论模块</h3><blockquote>
+<h3 id="3、Gitment评论模块">3、Gitment评论模块</h3><blockquote>
 <p>Gitment is a comment system based on GitHub Issues, which can be used in the frontend without any server-side implementation.</p>
 <p>Gitment 基于 GitHub Issues 的评论系统。支持在前端直接引入，不需要任何后端代码。可以在页面进行登录、查看、评论、点赞等操作，同时有完整的 Markdown / GFM 和代码高亮支持。尤为适合各种基于 GitHub Pages 的静态博客或项目页面。</p>
 </blockquote>
 <p>想了解具体示例，可以点击查看官方Demo Page：<a href="https://imsun.github.io/gitment/" target="_blank" rel="external">Gitment Demo</a></p>
 <p>具体的接入我就不在这里说了，本文末有参考链接大家可以去了解学习，主要是说一下其中的坑点。</p>
-<h3 id="Gitment坑点小结">Gitment坑点小结</h3><h5 id="1、owner:_‘Your_GitHub_ID’">1、owner: ‘Your GitHub ID’</h5><p> <code>owner: &#39;你的 GitHub ID&#39;,</code><br> 可以是你的GitHub用户名，也可以是github id，建议直接用GitHub用户名就可以。</p>
-<h5 id="2、repo:_‘The_repo_to_store_comments">2、repo: ‘The repo to store comments</h5><p><code>repo: &#39;存储评论的 github repo&#39;</code><br>这个是你要存储评论内容的仓库名，可以与博客下的仓库，也可以新建一个仓库专门存储评论内容的。</p>
-<h5 id="3、Error:_Not_Found问题">3、Error: Not Found问题</h5><p>owner或者repo配置错误了，注意名字和仓库名字的大小写。</p>
-<h5 id="4、Error:_Comments_Not_Initialized">4、Error: Comments Not Initialized</h5><ul>
+<h3 id="4、Gitment坑点小结">4、Gitment坑点小结</h3><h5 id="4-1、owner:_‘Your_GitHub_ID’">4.1、owner: ‘Your GitHub ID’</h5><p> <code>owner: &#39;你的 GitHub ID&#39;,</code><br> 可以是你的GitHub用户名，也可以是github id，建议直接用GitHub用户名就可以。</p>
+<h5 id="4-2、repo:_‘The_repo_to_store_comments">4.2、repo: ‘The repo to store comments</h5><p><code>repo: &#39;存储评论的 github repo&#39;</code><br>这个是你要存储评论内容的仓库名，可以与博客下的仓库，也可以新建一个仓库专门存储评论内容的。</p>
+<h5 id="4-3、Error:_Not_Found问题">4.3、Error: Not Found问题</h5><p>owner或者repo配置错误了，注意名字和仓库名字的大小写。</p>
+<h5 id="4-4、Error:_Comments_Not_Initialized">4.4、Error: Comments Not Initialized</h5><ul>
 <li>在注册OAuth Application这个步骤中，给Authorization callback URL指定的地址错了</li>
 <li>还没有在该页面的Gitment评论区登陆GitHub账号</li>
 </ul>
 <p>如果还是不行，可以参考另一个情况 <a href="https://github.com/imsun/gitment/issues/95" target="_blank" rel="external">Error: Comments Not Initialized · Issue #95 · imsun/gitment</a></p>
-<h5 id="5、Error：validation_failed">5、Error：validation failed</h5><p>issue的标签label有长度限制！labels的最大长度限制是50个字符。</p>
+<h5 id="4-5、Error：validation_failed">4.5、Error：validation failed</h5><p>issue的标签label有长度限制！labels的最大长度限制是50个字符。</p>
 <p><code>id: &#39;页面 ID&#39;, // 可选。默认为 location.href</code></p>
 <p>这个id的作用，就是针对一个文章有唯一的标识来判断这篇本章。</p>
 <p>在issues里面，可以发现是根据网页标题来新建issues的，然后每个issues有两个labels（标签），一个是gitment，另一个就是id。</p>
@@ -498,17 +581,17 @@
 <li>用文章时间，避免了文章每次更新标题或路径时，会重新创建一个issue评论的问题，也解决了label长度问题。</li>
 <li>关于Gitment的id在那里修改的问题，大家需要根据自己使用的主题，找到id配置的位置进行修改。（ps 可以在主题的github仓库中搜索gitment来定位）</li>
 </ol>
-<h5 id="6、gitment的汉化">6、gitment的汉化</h5><p>只需到模板里将原来定义CSS和JS的那两行改成：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"https://billts.site/extra_css/gitment.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://billts.site/js/gitment.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="4-6、gitment的汉化">4.6、gitment的汉化</h5><p>只需到模板里将原来定义CSS和JS的那两行改成：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"https://billts.site/extra_css/gitment.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://billts.site/js/gitment.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>即可。来源：<a href="https://github.com/imsun/gitment/issues/104" target="_blank" rel="external">https://github.com/imsun/gitment/issues/104</a></p>
-<h5 id="7、所有文章一键初始化评论">7、所有文章一键初始化评论</h5><p>配置正确的文章，第一次显示，提示还没有初始化：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0225-Error Comments Not Initialized.png" alt="0225-Error Comments Not Initialized.png"></p>
+<h5 id="4-7、所有文章一键初始化评论">4.7、所有文章一键初始化评论</h5><p>配置正确的文章，第一次显示，提示还没有初始化：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0225-Error Comments Not Initialized.png" alt="0225-Error Comments Not Initialized.png"></p>
 <p>文章作者需要登陆GitHub授权后，会显示初始化按钮(注意，不要多点按钮，否则issues出现多条一样的)：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0225-Initialize Comments.png" alt="0225-Initialize Comments.png"></p>
 <p>点击初始化按钮后，如果正常就会出现：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0225-No Comment Yet.png" alt="0225-No Comment Yet.png"></p>
 <p>关于自动初始化所有文章的功能，到本文编写时，还没有一个完善的解决方法，就是用脚本来执行自动化，有需要的可以详细了解：<a href="https://github.com/imsun/gitment/issues/5" target="_blank" rel="external">https://github.com/imsun/gitment/issues/5</a></p>
-<h5 id="8、请保持克制，切勿滥用。">8、请保持克制，切勿滥用。</h5><p>作者提醒使用本项目的用户，请保持克制，切勿滥用。<a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="external">详见 Gitment：使用 GitHub Issues 搭建评论系统</a></p>
-<h5 id="9、订阅issue">9、订阅issue</h5><p>issue订阅，有新评论时就可以通过邮件提醒，这个功能是把双刃剑，因为有些垃圾订阅邮件骚扰，大家看着用吧。</p>
-<h3 id="总结">总结</h3><p>Gitment目前来说，已经解决了一个博客简单的评论功能，点赞 / 有完整的 Markdown / GFM 和代码高亮支持!</p>
+<h5 id="4-8、请保持克制，切勿滥用。">4.8、请保持克制，切勿滥用。</h5><p>作者提醒使用本项目的用户，请保持克制，切勿滥用。<a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="external">详见 Gitment：使用 GitHub Issues 搭建评论系统</a></p>
+<h5 id="4-9、订阅issue">4.9、订阅issue</h5><p>issue订阅，有新评论时就可以通过邮件提醒，这个功能是把双刃剑，因为有些垃圾订阅邮件骚扰，大家看着用吧。</p>
+<h3 id="5、总结">5、总结</h3><p>Gitment目前来说，已经解决了一个博客简单的评论功能，点赞 / 有完整的 Markdown / GFM 和代码高亮支持!</p>
 <p>通过Gitment至少可以证明一点，生产力的发展有无限可能，环境的限制，会有的各种奇异的想法，或者奇异的东西出现，Gitment就是一个完美的证明，充分解决了一个简单博客的评论功能。另一方面，与国内的生活要求，希望大家能够遵守规则，让GitHub和Gitment在我们生活中快乐成长！</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="6、参考引用">6、参考引用</h3><ul>
 <li><a href="https://github.com/imsun/gitment" target="_blank" rel="external">GitHub imsun/gitment: A comment system based on GitHub Issues.</a></li>
 <li><a href="https://imsun.github.io/gitment/" target="_blank" rel="external">Gitment Demo</a></li>
 <li><a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="external">Gitment：使用 GitHub Issues 搭建评论系统 | I’m Sun</a></li>
@@ -525,8 +608,8 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。</p>
-<h3 id="评论模块简介">评论模块简介</h3><ul>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。</p>
+<h3 id="2、评论模块简介">2、评论模块简介</h3><ul>
 <li><strong>多说</strong> - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；</li>
 <li><strong>网易云跟帖</strong> - 网易提供的评论组件，功能比较简单，性能优秀；管理后台在查询上还不算特别智能，但足够普通用户使用；</li>
 <li><strong>畅言</strong> - 搜狐提供的评论组件，功能丰富，体验优异；但必须进行域名备案。只要域名备过案就可以通过审核，简单问题复杂化。</li>
@@ -552,9 +635,9 @@
     <link href="https://iHTCboy.com/2018/02/23/2018-02-23_%E5%85%8D%E8%B4%B9%E5%B0%86%E9%9F%B3%E9%A2%91%E8%BD%AC%E6%88%90%E6%96%87%E5%AD%97%E7%9A%84%E5%BF%AB%E9%80%9F%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2018/02/23/2018-02-23_免费将音频转成文字的快速方法/</id>
     <published>2018-02-23T15:30:36.000Z</published>
-    <updated>2018-05-01T15:17:11.082Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近在看YouTube视频时，里面有自动字幕功能，当时非常激动，字幕很准确；其实YouTube这个功能在2010就上线了。今天就是想利用YouTube这个强大的功能，将音频转换成文本啊！因为尝试了讯飞和百度后，不只是收费，准确率也不好，特别是英文。</p>
-<h3 id="自己的音频（视频）">自己的音频（视频）</h3><p>如果是视频，直接在YouTube上传就可以，如果是音频，YouTube不接受纯音频文件。所以，我们得通过第三方网站  <a href="https://www.tunestotube.com" target="_blank" rel="external">TunesToTube - Upload</a> 上传，给音频配上画面。</p>
+    <updated>2018-05-06T08:48:52.357Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在看YouTube视频时，里面有自动字幕功能，当时非常激动，字幕很准确；其实YouTube这个功能在2010就上线了。今天就是想利用YouTube这个强大的功能，将音频转换成文本啊！因为尝试了讯飞和百度后，不只是收费，准确率也不好，特别是英文。</p>
+<h3 id="2、自己的音频（视频）">2、自己的音频（视频）</h3><p>如果是视频，直接在YouTube上传就可以，如果是音频，YouTube不接受纯音频文件。所以，我们得通过第三方网站  <a href="https://www.tunestotube.com" target="_blank" rel="external">TunesToTube - Upload</a> 上传，给音频配上画面。</p>
 <a id="more"></a>
 <p>上传音频后转换视频：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223- TunesToTube - Upload.png" alt="0223- TunesToTube - Upload.png"></p>
@@ -562,14 +645,14 @@
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223-YouTube视频自动生成字幕.png" alt="0223-YouTube视频自动生成字幕.png"></p>
 <p>可以查看自动生成的字幕，并且下载！</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223-YouTube自动生成的字幕下载.png" alt="0223-YouTube自动生成的字幕下载.png"></p>
-<h3 id="YouTube的视频">YouTube的视频</h3><p>如果是YouTube上已经有的视频，你想下载字幕，则可以通过第三方API来下载完整的字幕，以下是用 - <a href="https://zhuwei.me/y2b/" target="_blank" rel="external">YouTube字幕下载</a> 网站示意:</p>
+<h3 id="3、YouTube的视频">3、YouTube的视频</h3><p>如果是YouTube上已经有的视频，你想下载字幕，则可以通过第三方API来下载完整的字幕，以下是用 - <a href="https://zhuwei.me/y2b/" target="_blank" rel="external">YouTube字幕下载</a> 网站示意:</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223-YouTube字幕下载工具.png" alt="0223-YouTube字幕下载工具.png"></p>
 <p>选择下载的字幕：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223-选择下载的字幕的类型.png" alt="0223-选择下载的字幕的类型.png"></p>
 <p>下载的字幕示意：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0223-下载的字幕示意（中英文）.png" alt="0223-下载的字幕示意(中英文).png"></p>
-<h3 id="总结">总结</h3><p>随着今年AI人工智能的发展，谷歌的自动翻译已经给世界带来了巨大的改变，相反国内，其实一直在说AI，却没有做出大的变化，就像优酷，没有考虑谷歌的强大，一直与爱x艺视频，腾x视频都在为版本争，而且国内都是综艺视频占大头，有点可惜。希望，AI在未来能解决更多简单操作但繁琐的重复劳动工作的问题，一起加油！</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="4、总结">4、总结</h3><p>随着今年AI人工智能的发展，谷歌的自动翻译已经给世界带来了巨大的改变，相反国内，其实一直在说AI，却没有做出大的变化，就像优酷，没有考虑谷歌的强大，一直与爱x艺视频，腾x视频都在为版本争，而且国内都是综艺视频占大头，有点可惜。希望，AI在未来能解决更多简单操作但繁琐的重复劳动工作的问题，一起加油！</p>
+<h3 id="5、参考引用">5、参考引用</h3><ul>
 <li><a href="https://mp.weixin.qq.com/s/-N_6VBg2HO59l5ORsqbMuw" target="_blank" rel="external">一款自动、免费整理英文录音的神器，居然是它</a></li>
 <li><a href="https://www.tunestotube.com" target="_blank" rel="external">TunesToTube - Upload</a></li>
 <li><a href="https://zhuwei.me/y2b/" target="_blank" rel="external">YouTube字幕下载_Vimeo字幕下载<em>Download Youtube and Vimeo Captions(Subtitles)</em>朱炜</a></li>
@@ -581,8 +664,8 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>最近在看YouTube视频时，里面有自动字幕功能，当时非常激动，字幕很准确；其实YouTube这个功能在2010就上线了。今天就是想利用YouTube这个强大的功能，将音频转换成文本啊！因为尝试了讯飞和百度后，不只是收费，准确率也不好，特别是英文。</p>
-<h3 id="自己的音频（视频）">自己的音频（视频）</h3><p>如果是视频，直接在YouTube上传就可以，如果是音频，YouTube不接受纯音频文件。所以，我们得通过第三方网站  <a href="https://www.tunestotube.com">TunesToTube - Upload</a> 上传，给音频配上画面。</p>]]>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在看YouTube视频时，里面有自动字幕功能，当时非常激动，字幕很准确；其实YouTube这个功能在2010就上线了。今天就是想利用YouTube这个强大的功能，将音频转换成文本啊！因为尝试了讯飞和百度后，不只是收费，准确率也不好，特别是英文。</p>
+<h3 id="2、自己的音频（视频）">2、自己的音频（视频）</h3><p>如果是视频，直接在YouTube上传就可以，如果是音频，YouTube不接受纯音频文件。所以，我们得通过第三方网站  <a href="https://www.tunestotube.com">TunesToTube - Upload</a> 上传，给音频配上画面。</p>]]>
     
     </summary>
     
@@ -603,17 +686,17 @@
     <link href="https://iHTCboy.com/2018/02/16/2018-02-16_%E5%88%A9%E7%94%A8iPhone%E2%80%9C%E7%A0%B4%E8%A7%A3%E2%80%9D%E4%B8%8B%E8%BD%BD%E7%99%BE%E5%BA%A6%E4%BA%91%E6%96%87%E4%BB%B6%E9%99%90%E9%80%9F%E9%97%AE%E9%A2%98/"/>
     <id>https://iHTCboy.com/2018/02/16/2018-02-16_利用iPhone“破解”下载百度云文件限速问题/</id>
     <published>2018-02-16T09:12:16.000Z</published>
-    <updated>2018-05-01T15:17:07.373Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近想下载一个资源，找到百度网盘的，文件总大小871.84M，下载速度100kb/s，没有开会员，这速度有良心了！but，下载到300多m就断开了！！！wtf！！！然后网上找到 <a href="https://github.com/yangshun1029/aria2gui" target="_blank" rel="external">Aria2GUI</a>，然后发现，现在百度网盘已经封杀了。</p>
+    <updated>2018-05-06T08:49:09.307Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近想下载一个资源，找到百度网盘的，文件总大小871.84M，下载速度100kb/s，没有开会员，这速度有良心了！but，下载到300多m就断开了！！！wtf！！！然后网上找到 <a href="https://github.com/yangshun1029/aria2gui" target="_blank" rel="external">Aria2GUI</a>，然后发现，现在百度网盘已经封杀了。</p>
 <p>纠结，开会员？这是一个伪需求，因为自己不经常使用百度网盘，就下载一次开一次会员15元，不是说这个贵，总会觉得感觉有点大财小用的样子，所以如果百度云能推出下载一次一分钱或一毛钱酱紫，我觉得是可以接受的。好了，废话就不多说了，今天我们的另一个方法吧。</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0216-下载的百度云文件有可能会断开.png" alt="0216-下载的百度云文件有可能会断开.png"></p>
 <a id="more"></a>
-<h3 id="打开iPhone百度网盘下载">打开iPhone百度网盘下载</h3><p>因为发现用手机百度网盘App下载，网速是根据你的网线速度决定的，不需要开通会员，网速也不会受到限制。因为百度网盘下载上的资源是不能分享到其它应用的（.rar、.zip、视频等），所以没有网速的限制吧！？</p>
+<h3 id="2、打开iPhone百度网盘下载">2、打开iPhone百度网盘下载</h3><p>因为发现用手机百度网盘App下载，网速是根据你的网线速度决定的，不需要开通会员，网速也不会受到限制。因为百度网盘下载上的资源是不能分享到其它应用的（.rar、.zip、视频等），所以没有网速的限制吧！？</p>
 <p>正是利用这点，百度网盘找到你要下载的文件，点击下载就可以了，下载完后就是好事！接下来要考虑的是怎么把下载好的文件，拉出来！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0216-百度网盘 for iPhone.JPG" alt="已经下载好的文件示例-百度网盘 for iPhone.JPG"></p>
-<h3 id="打开iTunes提取文件">打开iTunes提取文件</h3><p>用iTunes找到手机，点击手机查看手机信息，点击<code>文件共享</code>，找到百度网盘的文稿：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0216-iTunes-文件共享-百度网盘.png" alt="0216-iTunes-文件共享-百度网盘.png"></p>
+<h3 id="3、打开iTunes提取文件">3、打开iTunes提取文件</h3><p>用iTunes找到手机，点击手机查看手机信息，点击<code>文件共享</code>，找到百度网盘的文稿：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0216-iTunes-文件共享-百度网盘.png" alt="0216-iTunes-文件共享-百度网盘.png"></p>
 <p>把拖拽出来的文件，找到<code>Cache</code>文件，里面就是缓存的资源，包括下载的文件、在线看的视频内容、预览的图片等。<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0216-百度网盘在iTunes中子文件夹Cache.png" alt="0216-百度网盘在iTunes中子文件夹Cache.png"></p>
-<h3 id="总结">总结</h3><p>利用这个方法，我在家里网速10M情况下，不到半个小时，就已经下载完这个文件并且得到源文件！！所以比用其他的下载方法方便可靠又安全。用官方的应用下载确实是便捷！密码帐号这些都不会外漏，无安全的隐患。在这里祝大家玩得开心，下载的开心，新年快乐！</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="4、总结">4、总结</h3><p>利用这个方法，我在家里网速10M情况下，不到半个小时，就已经下载完这个文件并且得到源文件！！所以比用其他的下载方法方便可靠又安全。用官方的应用下载确实是便捷！密码帐号这些都不会外漏，无安全的隐患。在这里祝大家玩得开心，下载的开心，新年快乐！</p>
+<h3 id="5、参考引用">5、参考引用</h3><ul>
 <li><a href="https://github.com/yangshun1029/aria2gui" target="_blank" rel="external">Aria2GUI</a></li>
 <li><a href="https://www.zhihu.com/question/38463514/answer/320312462" target="_blank" rel="external">iPhone的百度云下载的压缩包如何用其他软件解压？ - 知乎</a></li>
 </ul>
@@ -623,7 +706,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>最近想下载一个资源，找到百度网盘的，文件总大小871.84M，下载速度100kb/s，没有开会员，这速度有良心了！but，下载到300多m就断开了！！！wtf！！！然后网上找到 <a href="https://github.com/yangshun1029/aria2gui">Aria2GUI</a>，然后发现，现在百度网盘已经封杀了。</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近想下载一个资源，找到百度网盘的，文件总大小871.84M，下载速度100kb/s，没有开会员，这速度有良心了！but，下载到300多m就断开了！！！wtf！！！然后网上找到 <a href="https://github.com/yangshun1029/aria2gui">Aria2GUI</a>，然后发现，现在百度网盘已经封杀了。</p>
 <p>纠结，开会员？这是一个伪需求，因为自己不经常使用百度网盘，就下载一次开一次会员15元，不是说这个贵，总会觉得感觉有点大财小用的样子，所以如果百度云能推出下载一次一分钱或一毛钱酱紫，我觉得是可以接受的。好了，废话就不多说了，今天我们的另一个方法吧。</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0216-下载的百度云文件有可能会断开.png" alt="0216-下载的百度云文件有可能会断开.png"></p>]]>
     
@@ -644,15 +727,15 @@
     <link href="https://iHTCboy.com/2018/02/07/2018-02-07_%E5%85%B3%E4%BA%8E16%E8%BF%9B%E5%88%B6%E9%A2%9C%E8%89%B2%E5%80%BC%E8%BD%AC%E6%8D%A2%E4%B8%BAUIColor%E7%9A%84%E6%80%9D%E8%80%83/"/>
     <id>https://iHTCboy.com/2018/02/07/2018-02-07_关于16进制颜色值转换为UIColor的思考/</id>
     <published>2018-02-07T12:26:16.000Z</published>
-    <updated>2018-05-01T15:17:01.433Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>大家都知道iOS的UIColor提供的自定义初始化是通过RGB(A) 4个10进行制的参数，那么为什么用16进制呢？因为web和安卓端以常识性用16进制读取，所以为了方便设计师出图标注，很多时候都是16进制的效果图。而今天就是要讨论一下，这个16进制的转换的方法。</p>
+    <updated>2018-05-06T08:49:26.543Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>大家都知道iOS的UIColor提供的自定义初始化是通过RGB(A) 4个10进行制的参数，那么为什么用16进制呢？因为web和安卓端以常识性用16进制读取，所以为了方便设计师出图标注，很多时候都是16进制的效果图。而今天就是要讨论一下，这个16进制的转换的方法。</p>
 <p><a href="https://zh.wikipedia.org/wiki/网页颜色#十六进制数字表示方法" target="_blank" rel="external">网页颜色 - 维基百科</a>:</p>
 <blockquote>
 <p>在<a href="https://zh.wikipedia.org/wiki/HTML" title="HTML" target="_blank" rel="external">HTML</a>和<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS" target="_blank" rel="external">CSS</a>中使用3<a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82" title="字节" target="_blank" rel="external">字节</a>共6个<a href="https://zh.wikipedia.org/wiki/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6" title="十六进制" target="_blank" rel="external">十六进制</a>数字表示一种颜色，每字节从00到FF，相当十进位数字从0到255，按顺序前两位是红色的值，中间两位是绿的值，最后两位是蓝色的值。</p>
 <p>由于<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5" title="网页" target="_blank" rel="external">网页</a>（WEB）是基于计算机浏览器开发的媒体，所以颜色以光学<a href="https://zh.wikipedia.org/wiki/%E9%A2%9C%E8%89%B2" title="颜色" target="_blank" rel="external">颜色</a>RGB（红、绿、蓝）为主。 网页颜色是以16进制代码表示，一般以“#”号开头，后面分别为R、G、B的16位进制数。 FF为最大数，代表十进制255。比如白色是R、G、B三个颜色最大，在网页代码便是：#FFFFFF。黑色是三个颜色为0，在网页代码便是：#000000。当颜色代码为#XXYYZZ时，可以用#XYZ表示，如#135与#113355表示同样的颜色。在<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS" target="_blank" rel="external">CSS</a>中，也可以使用<code>rgb(127,127,127)</code>代替#7F7F7F（<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2#RGBA%E5%92%8CHSLA%E7%9A%84%E5%8D%81%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA" target="_blank" rel="external">十进制表示</a>）。</p>
 </blockquote>
 <p>有意思的是，可以知道表示颜色数总共有： 256^3 = 16,777,216 种，这个颜色就是我们常说的<strong>真彩色</strong>。</p>
-<h3 id="几种16进制颜色值转换UIColor的方式">几种16进制颜色值转换UIColor的方式</h3><p>16进制转换为10进制后的整形转换为UIColor：</p>
+<h3 id="2、几种16进制颜色值转换UIColor的方式">2、几种16进制颜色值转换UIColor的方式</h3><p>16进制转换为10进制后的整形转换为UIColor：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// rgb颜色转换（rgbValue为16进制转换成10进制的整形）</span></span><br><span class="line"><span class="hexcolor">#def</span>ine <span class="function"><span class="title">MACRO_COLOR_HexCOLOR</span><span class="params">(rgbValue)</span></span>         ([UIColor colorWithRed:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF0000) &gt;&gt; <span class="number">16</span>))/<span class="number">255.0</span>f green:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF00) &gt;&gt; <span class="number">8</span>))/<span class="number">255.0</span>f blue:((<span class="attribute">float</span>)(rgbValue &amp; <span class="number">0</span>xFF))/<span class="number">255.0</span>f alpha:<span class="number">1.0</span>])</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <ul>
@@ -670,13 +753,13 @@
 </ul>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 颜色转换三：iOS中十六进制的颜色（以#开头）转换为UIColor</span></span><br><span class="line">+ (UIColor *) <span class="string">colorWithHexString:</span> (NSString *)color</span><br><span class="line">&#123;</span><br><span class="line">    NSString *cString = [[color <span class="string">stringByTrimmingCharactersInSet:</span>[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// String should be 6 or 8 characters</span></span><br><span class="line">    <span class="keyword">if</span> ([cString length] &lt; <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> [UIColor clearColor];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断前缀并剪切掉</span></span><br><span class="line">    <span class="keyword">if</span> ([cString <span class="string">hasPrefix:</span>@<span class="string">"0X"</span>])</span><br><span class="line">        cString = [cString <span class="string">substringFromIndex:</span><span class="number">2</span>];</span><br><span class="line">    <span class="keyword">if</span> ([cString <span class="string">hasPrefix:</span>@<span class="string">"#"</span>])</span><br><span class="line">        cString = [cString <span class="string">substringFromIndex:</span><span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span> ([cString length] != <span class="number">6</span>)</span><br><span class="line">        <span class="keyword">return</span> [UIColor clearColor];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从六位数值中找到RGB对应的位数并转换</span></span><br><span class="line">    NSRange range;</span><br><span class="line">    range.location = <span class="number">0</span>;</span><br><span class="line">    range.length = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//R、G、B</span></span><br><span class="line">    NSString *rString = [cString <span class="string">substringWithRange:</span>range];</span><br><span class="line"></span><br><span class="line">    range.location = <span class="number">2</span>;</span><br><span class="line">    NSString *gString = [cString <span class="string">substringWithRange:</span>range];</span><br><span class="line"></span><br><span class="line">    range.location = <span class="number">4</span>;</span><br><span class="line">    NSString *bString = [cString <span class="string">substringWithRange:</span>range];   </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Scan values</span></span><br><span class="line">    unsigned <span class="typename">int</span> r, g, b;</span><br><span class="line">    [[NSScanner <span class="string">scannerWithString:</span>rString] <span class="string">scanHexInt:</span>&amp;r];</span><br><span class="line">    [[NSScanner <span class="string">scannerWithString:</span>gString] <span class="string">scanHexInt:</span>&amp;g];</span><br><span class="line">    [[NSScanner <span class="string">scannerWithString:</span>bString] <span class="string">scanHexInt:</span>&amp;b];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [UIColor <span class="string">colorWithRed:</span>((<span class="typename">float</span>) r <span class="regexp">/ 255.0f) green:((float) g /</span> <span class="number">255.0</span>f) <span class="string">blue:</span>((<span class="typename">float</span>) b / <span class="number">255.0</span>f) <span class="string">alpha:</span><span class="number">1.0</span>f];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：艳晓</span><br><span class="line">链接：<span class="string">https:</span><span class="comment">//www.jianshu.com/p/96835798e4fc</span></span><br></pre></td></tr></table></figure>
 <p>这种方法，做了<code>0x</code>和<code>#</code>判断，但是为什么那么长！！！有没有办法优化？</p>
-<h3 id="优化的方法？">优化的方法？</h3><p>因为用了<code>NSScanner</code>进行转换，所以为什么不用NSScanner直接判断，然后转换呢？另外苹果文档注释：</p>
+<h3 id="3、优化的方法？">3、优化的方法？</h3><p>因为用了<code>NSScanner</code>进行转换，所以为什么不用NSScanner直接判断，然后转换呢？另外苹果文档注释：</p>
 <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">BOOL</span>)scanHexInt:(nullable unsigned *)<span class="literal">result</span>;   // <span class="type">Optionally</span> prefixed <span class="keyword">with</span> <span class="string">"0x"</span> <span class="keyword">or</span> <span class="string">"0X"</span></span><br></pre></td></tr></table></figure>
 <p>所以，其实用<code>NSScanner</code>进行转换时，不用判断 “0x” or “0X”，所以直接判断 <code>#</code>后过滤掉(跳过)就可以啦！！！</p>
 <p>直接看代码吧，发现看代码比文字更有力！：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">UIColor</span> *) colorWithHexString:(<span class="built_in">NSString</span> *)hexString </span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSScanner</span> *scanner = [<span class="built_in">NSScanner</span> scannerWithString:hexString];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//从当前的扫描位置开始扫描，判断扫描字符串是否从当前位置能扫描到和传入字符串相同的一串字符，如果能扫描到就返回YES，指针指向的地址存储的就是这段字符串的内容。</span></span><br><span class="line">    [scanner scanString:<span class="string">@"#"</span> intoString:<span class="literal">NULL</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">unsigned</span> rgbValue = <span class="number">0</span>;</span><br><span class="line">    [scanner scanHexInt:&amp;rgbValue];<span class="comment">// Optionally prefixed with "0x" or "0X"</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> MACRO_COLOR_HexCOLOR(rgbValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面的<code>scanString: intoString:</code>方法是一个技巧，判断是否包含#，如果包括时，scanner的<code>scanLocation</code>会指向下一个字符。所以用<code>scanHexInt:</code>将十六进制无符号整形时，已经不包含<code>#</code>，所以能成功转换。</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="4、参考引用">4、参考引用</h3><ul>
 <li><a href="https://github.com/kballard/uicolor-utilities/blob/master/UIColor-Expanded.m" target="_blank" rel="external">uicolor-utilities/UIColor-Expanded.m at master · kballard/uicolor-utilities</a></li>
 <li><a href="https://www.jianshu.com/p/96835798e4fc" target="_blank" rel="external">iOS中十六进制的颜色转换UIColor（RGB） - 简书</a></li>
 <li><a href="https://www.jianshu.com/p/a0ee15f94131" target="_blank" rel="external">NSScanner：一个陌生的条件判断利器 - 简书</a></li>
@@ -690,14 +773,14 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>大家都知道iOS的UIColor提供的自定义初始化是通过RGB(A) 4个10进行制的参数，那么为什么用16进制呢？因为web和安卓端以常识性用16进制读取，所以为了方便设计师出图标注，很多时候都是16进制的效果图。而今天就是要讨论一下，这个16进制的转换的方法。</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>大家都知道iOS的UIColor提供的自定义初始化是通过RGB(A) 4个10进行制的参数，那么为什么用16进制呢？因为web和安卓端以常识性用16进制读取，所以为了方便设计师出图标注，很多时候都是16进制的效果图。而今天就是要讨论一下，这个16进制的转换的方法。</p>
 <p><a href="https://zh.wikipedia.org/wiki/网页颜色#十六进制数字表示方法">网页颜色 - 维基百科</a>:</p>
 <blockquote>
 <p>在<a href="https://zh.wikipedia.org/wiki/HTML" title="HTML">HTML</a>和<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS">CSS</a>中使用3<a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82" title="字节">字节</a>共6个<a href="https://zh.wikipedia.org/wiki/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6" title="十六进制">十六进制</a>数字表示一种颜色，每字节从00到FF，相当十进位数字从0到255，按顺序前两位是红色的值，中间两位是绿的值，最后两位是蓝色的值。</p>
 <p>由于<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5" title="网页">网页</a>（WEB）是基于计算机浏览器开发的媒体，所以颜色以光学<a href="https://zh.wikipedia.org/wiki/%E9%A2%9C%E8%89%B2" title="颜色">颜色</a>RGB（红、绿、蓝）为主。 网页颜色是以16进制代码表示，一般以“#”号开头，后面分别为R、G、B的16位进制数。 FF为最大数，代表十进制255。比如白色是R、G、B三个颜色最大，在网页代码便是：#FFFFFF。黑色是三个颜色为0，在网页代码便是：#000000。当颜色代码为#XXYYZZ时，可以用#XYZ表示，如#135与#113355表示同样的颜色。在<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS">CSS</a>中，也可以使用<code>rgb(127,127,127)</code>代替#7F7F7F（<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2#RGBA%E5%92%8CHSLA%E7%9A%84%E5%8D%81%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA">十进制表示</a>）。</p>
 </blockquote>
 <p>有意思的是，可以知道表示颜色数总共有： 256^3 = 16,777,216 种，这个颜色就是我们常说的<strong>真彩色</strong>。</p>
-<h3 id="几种16进制颜色值转换UIColor的方式">几种16进制颜色值转换UIColor的方式</h3><p>16进制转换为10进制后的整形转换为UIColor：</p>
+<h3 id="2、几种16进制颜色值转换UIColor的方式">2、几种16进制颜色值转换UIColor的方式</h3><p>16进制转换为10进制后的整形转换为UIColor：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// rgb颜色转换（rgbValue为16进制转换成10进制的整形）</span></span><br><span class="line"><span class="hexcolor">#def</span>ine <span class="function"><span class="title">MACRO_COLOR_HexCOLOR</span><span class="params">(rgbValue)</span></span>         ([UIColor colorWithRed:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF0000) &gt;&gt; <span class="number">16</span>))/<span class="number">255.0</span>f green:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF00) &gt;&gt; <span class="number">8</span>))/<span class="number">255.0</span>f blue:((<span class="attribute">float</span>)(rgbValue &amp; <span class="number">0</span>xFF))/<span class="number">255.0</span>f alpha:<span class="number">1.0</span>])</span><br></pre></td></tr></table></figure>]]>
     
     </summary>
@@ -717,7 +800,7 @@
     <link href="https://iHTCboy.com/2018/02/04/2018-02-04_Mac%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/"/>
     <id>https://iHTCboy.com/2018/02/04/2018-02-04_Mac查看文件内容常用的命令小结/</id>
     <published>2018-02-04T14:04:16.000Z</published>
-    <updated>2018-05-01T15:16:56.507Z</updated>
+    <updated>2018-05-06T08:49:37.061Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近苹果的热更新和私有库问题检查的更严了，如果应用被拒，苹果在拒绝信中会说到使用<code>strings</code>/<code>otool</code>/<code>nm</code>命令进行自查，所以总结了一些命令，方便查找和定位文件内容相关信息。</p>
 <h3 id="1、grep">1、grep</h3><ul>
 <li><p>作用：判断是否包含字符串</p>
@@ -779,7 +862,7 @@
 <p><code>lipo -create device_xxx.a simulator_xxx.a -output universal_xxx.a</code> //对真机或者模拟器分别打出 .a 文件合并</p>
 </li>
 </ul>
-<h3 id="参考阅读">参考阅读</h3><ul>
+<h3 id="7、参考阅读">7、参考阅读</h3><ul>
 <li><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/nm.1.html" target="_blank" rel="external">“nm tool” Xcode manual page</a></li>
 <li><a href="https://github.com/mrmign/iOS-private-api-scanner/blob/master/iOS-api-scan.md" target="_blank" rel="external">iOS-private-api-scanner/iOS私有API扫描工作总结· mrmign/iOS-private-api-scanner</a></li>
 <li><a href="https://github.com/NetEaseGame/iOS-private-api-checker" target="_blank" rel="external">iOS-private-api-checker苹果iOS私有API检查工具</a></li>
@@ -826,9 +909,9 @@
     <link href="https://iHTCboy.com/2018/02/03/2018-02-03_%E8%AE%A9%E4%BD%A0%E7%9A%84iTerm%E6%9B%B4Geek!/"/>
     <id>https://iHTCboy.com/2018/02/03/2018-02-03_让你的iTerm更Geek!/</id>
     <published>2018-02-03T15:42:16.000Z</published>
-    <updated>2018-05-01T15:16:52.353Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>iTerm2 作为一个免费&amp;开源的应用，Mac程序员应用必备的软件！<br>作为一个专业的终端，功能真的很强大，<code>iTerm</code> + <code>oh-my-zsh</code>  应作为最佳配置使用！</p>
-<h3 id="一键调出_iTerm2">一键调出 iTerm2</h3><blockquote>
+    <updated>2018-05-06T08:50:03.487Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm2 作为一个免费&amp;开源的应用，Mac程序员应用必备的软件！<br>作为一个专业的终端，功能真的很强大，<code>iTerm</code> + <code>oh-my-zsh</code>  应作为最佳配置使用！</p>
+<h3 id="2、一键调出_iTerm2">2、一键调出 iTerm2</h3><blockquote>
 <p>我们有时会遇上这样一种情况，就是我们只想用命令行执行某一个特定的操作，然后就不需要它了。其实在这种情况下我们没有必要打开命令行应用的。比如我们就是想看一眼某个文件夹里面都有什么文件，类似这种操作我们其实没有必要单独开启一个命令行窗<br>口的。</p>
 </blockquote>
 <a id="more"></a>
@@ -844,11 +927,11 @@
 <p>设置一下热键就可以啦！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Profiles-Hotkey.png" alt="Profiles-Hotkey.png"></p>
 <p>实用&amp;装逼时间：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-通过快捷键快速打开后台的iTerm2.gif" alt="通过快捷键快速打开后台的iTerm2.gif"></p>
 <p>有时候想快速打开，真的很方便！</p>
-<h3 id="iTerm2_光标按照单词快速移动设置">iTerm2 光标按照单词快速移动设置</h3><p>在Mac自带的终端中是可以使用 option+←和option+→ 这两个快捷键实现光标按照单词快速移动，但是发现iTerm用这个快捷键没有反应！！！每次只能用<code>ctrl + f/b</code>一个个字符移动，效率非常低！经过搜索，发现需要重新配置相应的映射。</p>
+<h3 id="3、iTerm2_光标按照单词快速移动设置">3、iTerm2 光标按照单词快速移动设置</h3><p>在Mac自带的终端中是可以使用 option+←和option+→ 这两个快捷键实现光标按照单词快速移动，但是发现iTerm用这个快捷键没有反应！！！每次只能用<code>ctrl + f/b</code>一个个字符移动，效率非常低！经过搜索，发现需要重新配置相应的映射。</p>
 <p>打开iTerm2的 Preferences -&gt;选择相应的 Profile（默认为Default），选择“Keys”选项卡，然后可以在Key Mappings看到option+←和option+→ 这两组快捷键用作了其他功能，这里我们只需要重新绑定新的映射即可（下图是已经绑定之后的新映射）。</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Key Mappings.png" alt="Key Mappings.png"></p>
 <p>分别修改option+←和option+→的映射如下图所示，选择Action为“Send Escape Sequence”，然后输入“b”和“f”即可。<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Key Mappings-shortcut.png" alt="Key Mappings-shortcut.png"></p>
-<h3 id="iTerm2_备忘命令行快捷键">iTerm2 备忘命令行快捷键</h3><table>
+<h3 id="4、iTerm2_备忘命令行快捷键">4、iTerm2 备忘命令行快捷键</h3><table>
 <thead>
 <tr>
 <th>快捷键</th>
@@ -990,7 +1073,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="参考引用">参考引用</h2><ul>
+<h3 id="5、参考引用">5、参考引用</h3><ul>
 <li><a href="http://huang-jerryc.com/2016/08/11/打造高效个性Terminal（一）之%20iTerm/" target="_blank" rel="external">打造高效个性Terminal（一）之 iTerm | BlueSun</a></li>
 <li><a href="https://www.jianshu.com/p/4409e6ac1975" target="_blank" rel="external">让你的Mac更Geek（逼格） - 简书</a></li>
 <li><a href="http://swiftcafe.io/2015/07/25/iterm/" target="_blank" rel="external">iTerm - 让你的命令行也能丰富多彩 - SwiftCafe 享受代码的乐趣</a></li>
@@ -1005,8 +1088,8 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>iTerm2 作为一个免费&amp;开源的应用，Mac程序员应用必备的软件！<br>作为一个专业的终端，功能真的很强大，<code>iTerm</code> + <code>oh-my-zsh</code>  应作为最佳配置使用！</p>
-<h3 id="一键调出_iTerm2">一键调出 iTerm2</h3><blockquote>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm2 作为一个免费&amp;开源的应用，Mac程序员应用必备的软件！<br>作为一个专业的终端，功能真的很强大，<code>iTerm</code> + <code>oh-my-zsh</code>  应作为最佳配置使用！</p>
+<h3 id="2、一键调出_iTerm2">2、一键调出 iTerm2</h3><blockquote>
 <p>我们有时会遇上这样一种情况，就是我们只想用命令行执行某一个特定的操作，然后就不需要它了。其实在这种情况下我们没有必要打开命令行应用的。比如我们就是想看一眼某个文件夹里面都有什么文件，类似这种操作我们其实没有必要单独开启一个命令行窗<br>口的。</p>
 </blockquote>]]>
     
@@ -1027,15 +1110,15 @@
     <link href="https://iHTCboy.com/2018/01/29/2018-01-29_%E8%A3%85%E9%80%BC%E7%A5%9E%E5%8F%A5%E2%80%94%E2%80%94%E2%80%94%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7/"/>
     <id>https://iHTCboy.com/2018/01/29/2018-01-29_装逼神句———有道词典命令行查询工具/</id>
     <published>2018-01-29T00:49:16.000Z</published>
-    <updated>2018-05-01T15:16:48.119Z</updated>
-    <content type="html"><![CDATA[<h2 id="装逼说明">装逼说明</h2><p>不喜欢安装有道词典的应用程序，因为太耗资源还一堆广告，但是用浏览器打开<code>dict.youdao.com</code>也挺麻烦的，不是吗？快来试试有道词典命令行工具吧！</p>
-<h2 id="看图装逼">看图装逼</h2><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/01/2018-01-29-yddict-example.gif" alt="example"></p>
+    <updated>2018-05-06T08:50:44.472Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、装逼说明">1、装逼说明</h3><p>不喜欢安装有道词典的应用程序，因为太耗资源还一堆广告，但是用浏览器打开<code>dict.youdao.com</code>也挺麻烦的，不是吗？快来试试有道词典命令行工具吧！</p>
+<h3 id="2、看图装逼">2、看图装逼</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/01/2018-01-29-yddict-example.gif" alt="example"></p>
 <a id="more"></a>
-<h2 id="自已装逼">自已装逼</h2><h4 id="安装">安装</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> yddict -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="使用说明">使用说明</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yd <span class="tag">&lt;<span class="title">要查询的单词</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3、自已装逼">3、自已装逼</h3><h4 id="3-1_安装">3.1 安装</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> yddict -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="3-2_使用说明">3.2 使用说明</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yd <span class="tag">&lt;<span class="title">要查询的单词</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在<code>/usr/local/lib/node_modules/yddict/</code>目录下，可以进行一些自定义，或者更改查询的来源，<br>主要源码 index.js：</p>
 <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env node</span></span><br><span class="line"><span class="keyword">const</span> request = require('request');</span><br><span class="line"><span class="keyword">const</span> cheerio = require('cheerio');</span><br><span class="line"><span class="keyword">const</span> chalk = require('chalk');</span><br><span class="line"><span class="keyword">const</span> fs = require('fs');</span><br><span class="line"><span class="keyword">const</span> <span class="type">Spinner</span> = require('cli-spinner').<span class="type">Spinner</span>;</span><br><span class="line"><span class="keyword">const</span> isChinese = require('<span class="keyword">is</span>-chinese')</span><br><span class="line"><span class="keyword">const</span> urlencode = require('urlencode');</span><br><span class="line"><span class="keyword">const</span> spinner = new <span class="type">Spinner</span>('努力查询中... %s');</span><br><span class="line"><span class="keyword">const</span> home = process.env[(process.platform == 'win32') ? '<span class="type">USERPROFILE</span>' : '<span class="type">HOME</span>'];</span><br><span class="line"><span class="keyword">const</span> configFile = home + <span class="string">"/config.json"</span>;</span><br><span class="line"><span class="keyword">let</span> color = 'gray';//更改查询结果的文字颜色</span><br><span class="line"></span><br><span class="line">spinner.setSpinnerString('|/-\\');</span><br><span class="line">spinner.start();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> readFile = (filename, encoding) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> fs.readFileSync(filename).toString(encoding);</span><br><span class="line">    &#125;</span><br><span class="line">    catch (e) &#123;</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = <span class="type">JSON</span>.parse(readFile(configFile,<span class="string">"utf8"</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> input = process.argv.slice(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">const</span> word = input.join(' ')</span><br><span class="line"><span class="keyword">const</span> isCn = isChinese(word);</span><br><span class="line"><span class="keyword">const</span> <span class="type">URL</span> = isCn ? `http://dict.youdao.com/w/eng/$&#123;urlencode(word)&#125;`:`http://dict.youdao.com/w/$&#123;urlencode(word)&#125;`</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  'url':<span class="type">URL</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(config)&#123;</span><br><span class="line">  <span class="keyword">if</span>(config.proxy)&#123;</span><br><span class="line">    options.proxy = config.proxy;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(config.color)&#123;</span><br><span class="line">    color = config.color;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> color_output = chalk.keyword(color);</span><br><span class="line">request(options,(error, response, body)=&gt;&#123;</span><br><span class="line">  <span class="keyword">const</span> $ = cheerio.load(body, &#123;</span><br><span class="line">    ignoreWhitespace: <span class="literal">true</span>,</span><br><span class="line">    xmlMode: <span class="literal">true</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">let</span> <span class="literal">result</span> = '';</span><br><span class="line"></span><br><span class="line">  spinner.stop(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">if</span>(isCn)&#123;</span><br><span class="line">    $('<span class="keyword">div</span>.trans-container &gt; ul').find('p.wordGroup').each(function(i,elm)&#123;</span><br><span class="line">      <span class="literal">result</span> = $(this).text().replace(/\s+/g,<span class="string">" "</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#phrsListTab &gt; div.trans-container &gt; ul').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  // phrase</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">result</span> === '') &#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#webPhrase &gt; p.wordGroup').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  // sentence</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">result</span> === '') &#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#fanyiToggle &gt; div.trans-container &gt; p:nth-child(2)').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  console.log(color_output(<span class="literal">result</span>));</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="装逼指导">装逼指导</h2><ul>
+<h3 id="4、装逼指导">4、装逼指导</h3><ul>
 <li><a href="https://github.com/kenshinji/yddict" target="_blank" rel="external">kenshinji/yddict: 一个命令行查单词的工具💻 📚</a></li>
 <li><a href="https://www.npmjs.com/package/yddict" target="_blank" rel="external">npm-有道词典命令行查询工具</a></li>
 </ul>
@@ -1045,8 +1128,8 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="装逼说明">装逼说明</h2><p>不喜欢安装有道词典的应用程序，因为太耗资源还一堆广告，但是用浏览器打开<code>dict.youdao.com</code>也挺麻烦的，不是吗？快来试试有道词典命令行工具吧！</p>
-<h2 id="看图装逼">看图装逼</h2><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/01/2018-01-29-yddict-example.gif" alt="example"></p>]]>
+    <![CDATA[<h3 id="1、装逼说明">1、装逼说明</h3><p>不喜欢安装有道词典的应用程序，因为太耗资源还一堆广告，但是用浏览器打开<code>dict.youdao.com</code>也挺麻烦的，不是吗？快来试试有道词典命令行工具吧！</p>
+<h3 id="2、看图装逼">2、看图装逼</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/01/2018-01-29-yddict-example.gif" alt="example"></p>]]>
     
     </summary>
     
@@ -1283,72 +1366,6 @@
       <category term="UIToolbar" scheme="https://iHTCboy.com/tags/UIToolbar/"/>
     
       <category term="iOS11" scheme="https://iHTCboy.com/tags/iOS11/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题]]></title>
-    <link href="https://iHTCboy.com/2017/10/30/2017_10_%E8%A7%A3%E5%86%B3%20iTunes%2012.7%20%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%20AppStore%E5%BA%94%E7%94%A8%E7%9A%84IPA%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    <id>https://iHTCboy.com/2017/10/30/2017_10_解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题/</id>
-    <published>2017-10-30T05:04:16.000Z</published>
-    <updated>2018-05-01T15:16:24.777Z</updated>
-    <content type="html"><![CDATA[<h3 id="问题描述">问题描述</h3><p>苹果 iTunes 12.7 已经无法下载 ipa 包，如果想在 iTunes 12.7 使用已经无力回天。所以，只能降级！降级！降级！</p>
-<p>注：降级 iTunes 12.6.2 会导致无法识别到 iPhone8 / iPhone8 plus / iPhone X 设备， 2017.10月30号更新，下载   iTunes 12.6.3 支持 iPhone 8，iPhone X和iOS 11。</p>
-<a id="more"></a>
-<h3 id="降级步骤">降级步骤</h3><h5 id="1-下载旧的_iTunes_12-6">1.下载旧的 iTunes 12.6</h5><p>首先下载旧包： <a href="https://support.apple.com/downloads/itunes" target="_blank" rel="external">下载链接</a></p>
-<p>下载  iTunes 12.6.3： <a href="https://secure-appldnld.apple.com/itunes12/091-33628-20170922-EF8F0FE4-9FEF-11E7-B113-91CF9A97A551/iTunes12.6.3.dmg" target="_blank" rel="external">Mac</a>, <a href="https://secure-appldnld.apple.com/itunes12/091-33627-20170922-EF8CB708-9FEF-11E7-8504-92CF9A97A551/iTunesSetup.exe" target="_blank" rel="external">PC 32-bit</a> or <a href="https://secure-appldnld.apple.com/itunes12/091-33626-20170922-F51D3530-A003-11E7-8324-03D19A97A551/iTunes64Setup.exe" target="_blank" rel="external">PC 64-bit</a></p>
-<p>支持 Mac 和 Windows!</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-2e7b98d8fcfd3222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="Apple - Support - iTunes Downloads.png"></p>
-<h5 id="2-卸载_iTunes_12-7">2.卸载 iTunes 12.7</h5><p>如果你已经下载新版本，只能先卸载，否则无法安装。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-a0616ac7faf1bd96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="a.png"></p>
-<h5 id="3-安装_iTunes12-6-2-dmg">3.安装 iTunes12.6.2.dmg</h5><p>以下以 Mac 电脑安装为例，windows 类似（但没有验证哦）</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-df63838f6a06d428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="安装 iTunes12.6.2.dmg.png"></p>
-<p>安装过程，要关闭一些应用，只能关闭不然无法安装：<br><img src="http://upload-images.jianshu.io/upload_images/99517-d2b2e9fcdb07518d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="Xcode 关闭.png"></p>
-<p>安装时间有点长？最终是20分钟安装完，看电脑性能，又要换电脑了-_- 。<br><img src="http://upload-images.jianshu.io/upload_images/99517-b63ca2317cbfa656.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="安装 iTunes12.6.2.dmg 中.png"></p>
-<h5 id="4-打开_iTunes_报错">4.打开 iTunes 报错</h5><p>如果之前安装过 其它版本，打开时提示</p>
-<blockquote>
-<p>iTunes安装完之后显示：不能读取文件‘iTunes Library.itl’’,说因为它是由更高版本iTunes所创建的。你要现在下载 iTunes 吗？</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-a45ad3fc859c5a1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="iTunes安装完之后显示：不能读取文件‘iTunes Library.itl&#39;&#39;,说因为它是由更高版本iTunes所创建的。.png"></p>
-<p><strong>解决方法</strong> 到 Music/iTunes 目录下，删除 iTunes 目录就可以，重启打开就正常</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-9448fa7049a00b3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="删除 Music/iTunes 目录.png"></p>
-<h5 id="5-打开_iTunes_应用">5.打开 iTunes 应用</h5><p>第一次打开 iTunes 是没有应用列表的，要点击如图设置：<br><img src="http://upload-images.jianshu.io/upload_images/99517-94150e04ff083781.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="e.png"><br><img src="http://upload-images.jianshu.io/upload_images/99517-52c22a2951ab23ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="e-2.png"></p>
-<h5 id="6-又可以下载_ipa_啦，happy！">6.又可以下载 ipa 啦，happy！</h5><p><img src="http://upload-images.jianshu.io/upload_images/99517-93401c64a06c43c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="f.png"><br><img src="http://upload-images.jianshu.io/upload_images/99517-f82894706ffcfe4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="f-2.png"></p>
-<h3 id="总结">总结</h3><p>目前这个方法在 10月30号还可以使用，后续不知道苹果会不会禁止，所以，iTunes 12.6 的安装包大家保存好啦~</p>
-<p>其实，苹果这个做也是迎合云端的趋势，现在已经很少有人在电脑上备份手机信息、通讯录、相片等，未来苹果也是希望用户使用 iCloud 来同步数据和备份数据。大家慢慢就习惯了，当然用 ipa 包另有所图的就这样啦~</p>
-<h3 id="2017-10月30号更新">2017.10月30号更新</h3><h5 id="方法2">方法2</h5><p>现在有另一种解决方案：苹果提供了一个版本的iTunes（12.6.3）的支持新的设备，iTunes 12.6.3包括支持iPhone 8，iPhone X和iOS 11设备的识别。<a href="https://support.apple.com/en-us/HT208079" target="_blank" rel="external">Deploy apps in a business environment with iTunes - Apple Support</a></p>
-<p>下载  iTunes 12.6.3： <a href="https://secure-appldnld.apple.com/itunes12/091-33628-20170922-EF8F0FE4-9FEF-11E7-B113-91CF9A97A551/iTunes12.6.3.dmg" target="_blank" rel="external">Mac</a>, <a href="https://secure-appldnld.apple.com/itunes12/091-33627-20170922-EF8CB708-9FEF-11E7-8504-92CF9A97A551/iTunesSetup.exe" target="_blank" rel="external">PC 32-bit</a> or <a href="https://secure-appldnld.apple.com/itunes12/091-33626-20170922-F51D3530-A003-11E7-8324-03D19A97A551/iTunes64Setup.exe" target="_blank" rel="external">PC 64-bit</a>* </p>
-<blockquote>
-<p><strong>Deploy apps in a business environment with iTunes</strong><br>Learn how to deploy apps with iTunes.</p>
-<p>Apple offers <a href="https://help.apple.com/deployment/ios/#/iorb94d350b2" target="_blank" rel="external">Volume Purchase Programs</a> and Apple Configurator on Mac to help enterprise environments manage and mass-deploy apps on iOS devices. But certain business partners might still need to use iTunes to install apps.</p>
-<p>Install apps with iTunes<br>If you’ve already installed a newer version of iTunes, you can download this version of iTunes on your <a href="https://secure-appldnld.apple.com/itunes12/091-33628-20170922-EF8F0FE4-9FEF-11E7-B113-91CF9A97A551/iTunes12.6.3.dmg" target="_blank" rel="external">Mac</a>, <a href="https://secure-appldnld.apple.com/itunes12/091-33627-20170922-EF8CB708-9FEF-11E7-8504-92CF9A97A551/iTunesSetup.exe" target="_blank" rel="external">PC 32-bit</a> or <a href="https://secure-appldnld.apple.com/itunes12/091-33626-20170922-F51D3530-A003-11E7-8324-03D19A97A551/iTunes64Setup.exe" target="_blank" rel="external">PC 64-bit</a>* and run the installer. After installation is complete, you can continue to deploy apps with iTunes.<br>You won’t be prompted to download new versions of iTunes after you install this version. Manually <a href="https://www.apple.com/itunes/download/" target="_blank" rel="external">update to the latest version of iTunes</a> when you’re ready to upgrade.</p>
-<p><em>*Apple provides technical support only for the latest version of iTunes.</em><br>Published Date: Oct 14, 2017</p>
-</blockquote>
-<p>这个iTunes 12.6.3 是苹果10月14日更新的，最大特点是支持iPhone 8，iPhone X和iOS 11。<br>根据苹果说明，提供 iTunes 12.6.3 来满足一些企业的需求，比如批量 <a href="https://help.apple.com/deployment/ios/#/ior1c8a0c6f4" target="_blank" rel="external">iOS 部署</a>，现在看来安装 iTunes 12.6.3 这个版本，应该是可下载 IPA 包的可行方案的权宜之计。**</p>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://github.com/iHTCboy/HelloWorld" target="_blank" rel="external">Hello World</a></li>
-<li><a href="https://support.apple.com/downloads/itunes" target="_blank" rel="external">Apple - Support - iTunes Downloads</a></li>
-<li><a href="https://stackoverflow.com/questions/46224966/get-ipa-file-in-mac-with-itunes-12-7" target="_blank" rel="external">app store - Get ipa file in Mac with iTunes 12.7 - Stack Overflow</a></li>
-<li><a href="https://apple.stackexchange.com/questions/298391/how-do-i-download-an-ios-app-ipa-file-to-my-mac-after-itunes-12-7-update" target="_blank" rel="external">iphone - How do I download an iOS App (IPA) file to my Mac after iTunes 12.7 update? - Ask Different</a></li>
-<li><a href="https://9to5mac.com/2017/10/09/apple-itunes-apps-focused-removed-stopgap/" target="_blank" rel="external">Apple still offers an iTunes version with App Store, Ringtones and other features removed in ‘focused’ iTunes 12.7 | 9to5Mac</a></li>
-<li><a href="https://support.apple.com/en-us/HT208079" target="_blank" rel="external">Deploy apps in a business environment with iTunes - Apple Support</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="问题描述">问题描述</h3><p>苹果 iTunes 12.7 已经无法下载 ipa 包，如果想在 iTunes 12.7 使用已经无力回天。所以，只能降级！降级！降级！</p>
-<p>注：降级 iTunes 12.6.2 会导致无法识别到 iPhone8 / iPhone8 plus / iPhone X 设备， 2017.10月30号更新，下载   iTunes 12.6.3 支持 iPhone 8，iPhone X和iOS 11。</p>]]>
-    
-    </summary>
-    
-      <category term="iTunes 12.7" scheme="https://iHTCboy.com/tags/iTunes-12-7/"/>
-    
-      <category term="下载IPA包" scheme="https://iHTCboy.com/tags/%E4%B8%8B%E8%BD%BDIPA%E5%8C%85/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     

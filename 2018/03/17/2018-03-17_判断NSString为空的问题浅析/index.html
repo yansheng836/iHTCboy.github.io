@@ -8,37 +8,37 @@
   <link rel="dns-prefetch" href="https://iHTCboy.com">
   <title>判断NSString为空的问题浅析 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言判断字符串是否为空的情况，一般判断的逻辑如下：
+  <meta name="description" content="1、前言判断字符串是否为空的情况，一般判断的逻辑如下：
 
 是否为nil 
 是否是NSNull
 是否去掉空格之后长度为0
 
 在某书看到如下代码：
-12345678910111213141516171819202122@interface NSString (Util)- (BOOL)isBlankString:(NSString *)str;@end@implementation NSString (U">
+12345678910111213141516171819202122@interface NSString (Util)- (BOOL)isBlankString:(NSString *)str;@end@implementation NSString">
 <meta property="og:type" content="article">
 <meta property="og:title" content="判断NSString为空的问题浅析">
 <meta property="og:url" content="https://iHTCboy.com/2018/03/17/2018-03-17_判断NSString为空的问题浅析/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="前言判断字符串是否为空的情况，一般判断的逻辑如下：
+<meta property="og:description" content="1、前言判断字符串是否为空的情况，一般判断的逻辑如下：
 
 是否为nil 
 是否是NSNull
 是否去掉空格之后长度为0
 
 在某书看到如下代码：
-12345678910111213141516171819202122@interface NSString (Util)- (BOOL)isBlankString:(NSString *)str;@end@implementation NSString (U">
-<meta property="og:updated_time" content="2018-05-01T15:17:34.352Z">
+12345678910111213141516171819202122@interface NSString (Util)- (BOOL)isBlankString:(NSString *)str;@end@implementation NSString">
+<meta property="og:updated_time" content="2018-05-06T08:46:03.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断NSString为空的问题浅析">
-<meta name="twitter:description" content="前言判断字符串是否为空的情况，一般判断的逻辑如下：
+<meta name="twitter:description" content="1、前言判断字符串是否为空的情况，一般判断的逻辑如下：
 
 是否为nil 
 是否是NSNull
 是否去掉空格之后长度为0
 
 在某书看到如下代码：
-12345678910111213141516171819202122@interface NSString (Util)- (BOOL)isBlankString:(NSString *)str;@end@implementation NSString (U">
+12345678910111213141516171819202122@interface NSString (Util)- (BOOL)isBlankString:(NSString *)str;@end@implementation NSString">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -243,7 +243,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="前言">前言</h3><p>判断字符串是否为空的情况，一般判断的逻辑如下：</p>
+        <h3 id="1、前言">1、前言</h3><p>判断字符串是否为空的情况，一般判断的逻辑如下：</p>
 <ul>
 <li>是否为nil </li>
 <li>是否是NSNull</li>
@@ -252,7 +252,7 @@ var _hmt = _hmt || [];
 <p>在某书看到如下代码：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSString</span> (<span class="title">Util</span>)</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSString</span> (<span class="title">Util</span>)</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)isBlankString:(<span class="built_in">NSString</span> *)str &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string = str;</span><br><span class="line">    <span class="keyword">if</span> (string == <span class="literal">nil</span> || string == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([string isKindOfClass:[<span class="built_in">NSNull</span> class]]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ([[string stringByTrimmingCharactersInSet:[<span class="built_in">NSCharacterSet</span> whitespaceCharacterSet]] length]==<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">链接：https:<span class="comment">//www.jianshu.com/p/fd32b759bace</span></span><br><span class="line">來源：简书</span><br></pre></td></tr></table></figure>
  <a id="more"></a>
-<h3 id="判断NSString为空的问题">判断NSString为空的问题</h3><p>大家继续之前，可以认真看看上面的代码有没有问题？或者有没有优化的空间？</p>
+<h3 id="2、判断NSString为空的问题">2、判断NSString为空的问题</h3><p>大家继续之前，可以认真看看上面的代码有没有问题？或者有没有优化的空间？</p>
 <p>原作者表示里面有一个坑，调用者为nil时：</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">NSString</span> *<span class="keyword">str </span>= (网络解析出来的数据，解析结果为nil)<span class="comment">;</span></span><br><span class="line"><span class="keyword">BOOL </span><span class="keyword">isBlank </span>= [<span class="keyword">str </span><span class="keyword">isBlankString];</span></span><br></pre></td></tr></table></figure>
 <p>就是说，如果用实例方法进行判断为空，因为实例对象为空时，根据objc的动态性，向空对象发消息会直接返回nil，并不会找到实例方法进行调用。所以，要判断字符串为空，只能传入<code>字符串对象</code>（可能为空），进行判断。</p>
@@ -290,8 +290,8 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
-<h3 id="总结">总结</h3><p>通过这个例子，可能看出看似简单的问题，其实都有非常值得探究的深渊！希望自己不要自尽为是，虚心学习，考虑问题有更多角度，细致严谨！</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="3、总结">3、总结</h3><p>通过这个例子，可能看出看似简单的问题，其实都有非常值得探究的深渊！希望自己不要自尽为是，虚心学习，考虑问题有更多角度，细致严谨！</p>
+<h3 id="4、参考引用">4、参考引用</h3><ul>
 <li><a href="https://www.jianshu.com/p/fd32b759bace" target="_blank" rel="external">判断NSString为空容易犯的错 - 简书</a></li>
 <li><a href="http://nshipster.cn/nil/" target="_blank" rel="external">nil / Nil / NULL / NSNull - NSHipster</a></li>
 </ul>
@@ -474,7 +474,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断NSString为空的问题"><span class="toc-number">2.</span> <span class="toc-text">判断NSString为空的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考引用"><span class="toc-number">4.</span> <span class="toc-text">参考引用</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、判断NSString为空的问题"><span class="toc-number">2.</span> <span class="toc-text">2、判断NSString为空的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、总结"><span class="toc-number">3.</span> <span class="toc-text">3、总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、参考引用"><span class="toc-number">4.</span> <span class="toc-text">4、参考引用</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -627,6 +627,22 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Github Pages</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">域名跳转</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">重定向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JS跳转</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爷爷</a>
@@ -1262,10 +1278,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Github Pages</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-nm -nm path.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-file path - static Lib.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-file path - dynamically Lib.png">
-<meta property="og:updated_time" content="2018-05-01T15:16:56.507Z">
+<meta property="og:updated_time" content="2018-05-06T08:49:37.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac查看文件内容常用的命令小结">
 <meta name="twitter:description" content="前言最近苹果的热更新和私有库问题检查的更严了，如果应用被拒，苹果在拒绝信中会说到使用strings/otool/nm命令进行自查，所以总结了一些命令，方便查找和定位文件内容相关信息。
@@ -313,7 +313,7 @@ var _hmt = _hmt || [];
 <p><code>lipo -create device_xxx.a simulator_xxx.a -output universal_xxx.a</code> //对真机或者模拟器分别打出 .a 文件合并</p>
 </li>
 </ul>
-<h3 id="参考阅读">参考阅读</h3><ul>
+<h3 id="7、参考阅读">7、参考阅读</h3><ul>
 <li><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/nm.1.html" target="_blank" rel="external">“nm tool” Xcode manual page</a></li>
 <li><a href="https://github.com/mrmign/iOS-private-api-scanner/blob/master/iOS-api-scan.md" target="_blank" rel="external">iOS-private-api-scanner/iOS私有API扫描工作总结· mrmign/iOS-private-api-scanner</a></li>
 <li><a href="https://github.com/NetEaseGame/iOS-private-api-checker" target="_blank" rel="external">iOS-private-api-checker苹果iOS私有API检查工具</a></li>
@@ -510,7 +510,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、grep"><span class="toc-number">2.</span> <span class="toc-text">1、grep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、strings"><span class="toc-number">3.</span> <span class="toc-text">2、strings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、otool"><span class="toc-number">4.</span> <span class="toc-text">3、otool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、nm"><span class="toc-number">5.</span> <span class="toc-text">4、nm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、file"><span class="toc-number">6.</span> <span class="toc-text">5、file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、lipo"><span class="toc-number">7.</span> <span class="toc-text">6、lipo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考阅读"><span class="toc-number">8.</span> <span class="toc-text">参考阅读</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、grep"><span class="toc-number">2.</span> <span class="toc-text">1、grep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、strings"><span class="toc-number">3.</span> <span class="toc-text">2、strings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、otool"><span class="toc-number">4.</span> <span class="toc-text">3、otool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、nm"><span class="toc-number">5.</span> <span class="toc-text">4、nm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、file"><span class="toc-number">6.</span> <span class="toc-text">5、file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、lipo"><span class="toc-number">7.</span> <span class="toc-text">6、lipo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、参考阅读"><span class="toc-number">8.</span> <span class="toc-text">7、参考阅读</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -663,6 +663,22 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Github Pages</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">域名跳转</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">重定向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JS跳转</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爷爷</a>
@@ -1298,10 +1314,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Github Pages</a>
               </li>
              
               <li class="article-tag-list-item">

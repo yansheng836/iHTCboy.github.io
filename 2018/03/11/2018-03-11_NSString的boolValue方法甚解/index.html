@@ -8,28 +8,28 @@
   <link rel="dns-prefetch" href="https://iHTCboy.com">
   <title>NSString的boolValue方法甚解 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言NSString的boolValue之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按command + control 点击boolValue进入文档就可以看到：
+  <meta name="description" content="1、前言NSString的boolValue之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按command + control 点击boolValue进入文档就可以看到：
 &amp;gt;
 
 boolValueThe Boolean value of the string.
-Declaration@property(readonly)">
+Declaration@property(readonl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NSString的boolValue方法甚解">
 <meta property="og:url" content="https://iHTCboy.com/2018/03/11/2018-03-11_NSString的boolValue方法甚解/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="前言NSString的boolValue之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按command + control 点击boolValue进入文档就可以看到：
+<meta property="og:description" content="1、前言NSString的boolValue之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按command + control 点击boolValue进入文档就可以看到：
 &amp;gt;
 
 boolValueThe Boolean value of the string.
-Declaration@property(readonly)">
-<meta property="og:updated_time" content="2018-05-01T15:17:26.056Z">
+Declaration@property(readonl">
+<meta property="og:updated_time" content="2018-05-06T08:46:40.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NSString的boolValue方法甚解">
-<meta name="twitter:description" content="前言NSString的boolValue之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按command + control 点击boolValue进入文档就可以看到：
+<meta name="twitter:description" content="1、前言NSString的boolValue之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按command + control 点击boolValue进入文档就可以看到：
 &amp;gt;
 
 boolValueThe Boolean value of the string.
-Declaration@property(readonly)">
+Declaration@property(readonl">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -234,7 +234,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="前言">前言</h3><p>NSString的<code>boolValue</code>之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按<code>command</code> + <code>control</code> 点击<code>boolValue</code>进入文档就可以看到：</p>
+        <h3 id="1、前言">1、前言</h3><p>NSString的<code>boolValue</code>之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按<code>command</code> + <code>control</code> 点击<code>boolValue</code>进入文档就可以看到：</p>
 <p>&gt;</p>
 <blockquote>
 <p><strong>boolValue</strong><br>The Boolean value of the string.</p>
@@ -248,12 +248,12 @@ var _hmt = _hmt || [];
 <p>如果不是以有效的十进制数字开始的文本表示，则此属性为NO。</p>
 <p>该属性采用十进制表示法，并在字符串的开头跳过空格。它也会跳过最初的空格字符（忽略全部的空格开头），或者单个 -/+ 符号开头。</p>
 </blockquote>
-<h3 id="测试一波">测试一波</h3><p>大家可以思考一下，下面的代码输出结果是什么？</p>
+<h3 id="2、测试一波">2、测试一波</h3><p>大家可以思考一下，下面的代码输出结果是什么？</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">NSArray *tests = @[ @<span class="string">"Y"</span>,</span><br><span class="line">                        @<span class="string">"N"</span>,</span><br><span class="line">                        @<span class="string">"T"</span>,</span><br><span class="line">                        @<span class="string">"F"</span>,</span><br><span class="line">                        @<span class="string">"t"</span>,</span><br><span class="line">                        @<span class="string">"f"</span>,</span><br><span class="line">                        @<span class="string">"1"</span>,</span><br><span class="line">                        @<span class="string">"0"</span>,</span><br><span class="line">                        @<span class="string">"Yes"</span>,</span><br><span class="line">                        @<span class="string">"No"</span>,</span><br><span class="line">                        @<span class="string">"No really no"</span>,</span><br><span class="line">                        @<span class="string">"true"</span>,</span><br><span class="line">                        @<span class="string">"false"</span>,</span><br><span class="line">                        @<span class="string">"To be or not to be"</span>,</span><br><span class="line">                        @<span class="string">"False"</span>,</span><br><span class="line">                        @<span class="string">"3567"</span>,</span><br><span class="line">                        @<span class="string">"0123456789"</span>,</span><br><span class="line">                        @<span class="string">"000"</span>,</span><br><span class="line">                        @<span class="string">"0ab"</span>,</span><br><span class="line">                        @<span class="string">"1cd"</span>,</span><br><span class="line">                        @<span class="string">"abc"</span>,</span><br><span class="line">                        @<span class="string">""</span>,</span><br><span class="line">                        @<span class="string">"+aeb"</span>,</span><br><span class="line">                        @<span class="string">"+3sb"</span>,</span><br><span class="line">                        @<span class="string">"-ss"</span>,</span><br><span class="line">                        @<span class="string">"-01"</span>,</span><br><span class="line">                        @<span class="string">"-21"</span>,</span><br><span class="line">                        @<span class="string">" 1"</span>,</span><br><span class="line">                        @<span class="string">" 0"</span>,</span><br><span class="line">                        @<span class="string">"--1"</span>,</span><br><span class="line">                        @<span class="string">"++1"</span>,</span><br><span class="line">                        @<span class="string">"-+1"</span>,</span><br><span class="line">                        @<span class="string">"  2"</span>,</span><br><span class="line">                        @<span class="string">"  0"</span>,</span><br><span class="line">                        @<span class="string">"   2  0"</span>,</span><br><span class="line">                        @<span class="string">"   0  2"</span>,</span><br><span class="line">                        @<span class="string">"  20"</span>,</span><br><span class="line">                        @<span class="string">"000-1"</span>,</span><br><span class="line">                        @<span class="string">" + 111"</span>,</span><br><span class="line">                        @<span class="string">"  +111"</span></span><br><span class="line">                        ];</span><br><span class="line">    NSArray *boolToString = @[@<span class="string">"NO"</span>, @<span class="string">"YES"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (NSString *test <span class="keyword">in</span> tests)&#123;</span><br><span class="line">        NSLog(@<span class="string">"boolValue:\"%@\" =&gt; %@"</span>, test, boolToString<span class="string">[[test boolValue]]</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="结果">结果</h3><p>运行结果：</p>
+<h3 id="3、结果">3、结果</h3><p>运行结果：</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">boolValue:</span><span class="string">"Y"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"N"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"T"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"F"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"t"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"f"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"1"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"0"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"Yes"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"No"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"No really no"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"true"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"false"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"To be or not to be"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"False"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"3567"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"0123456789"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"000"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"0ab"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"1cd"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"abc"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">""</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"+aeb"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"+3sb"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"-ss"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"-01"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"-21"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">" 1"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">" 0"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"--1"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"++1"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"-+1"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"  2"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"  0"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"   2  0"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"   0  2"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"  20"</span> =&gt; YES</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"000-1"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">" + 111"</span> =&gt; NO</span><br><span class="line"><span class="label">boolValue:</span><span class="string">"  +111"</span> =&gt; YES</span><br></pre></td></tr></table></figure>
-<h3 id="总结">总结</h3><p>不知道大家答对多少？是不是对这个方法又熟悉了几分呢？实践见真知。</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="4、总结">4、总结</h3><p>不知道大家答对多少？是不是对这个方法又熟悉了几分呢？实践见真知。</p>
+<h3 id="5、参考引用">5、参考引用</h3><ul>
 <li><a href="http://blog.manbolo.com/2013/07/22/nsstring-boolvalue" target="_blank" rel="external">[NSString boolValue]-Manbolo Blog</a></li>
 </ul>
 <p><br></p>
@@ -431,7 +431,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试一波"><span class="toc-number">2.</span> <span class="toc-text">测试一波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果"><span class="toc-number">3.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考引用"><span class="toc-number">5.</span> <span class="toc-text">参考引用</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、测试一波"><span class="toc-number">2.</span> <span class="toc-text">2、测试一波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、结果"><span class="toc-number">3.</span> <span class="toc-text">3、结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、总结"><span class="toc-number">4.</span> <span class="toc-text">4、总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、参考引用"><span class="toc-number">5.</span> <span class="toc-text">5、参考引用</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -584,6 +584,22 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Github Pages</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">域名跳转</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">重定向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JS跳转</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爷爷</a>
@@ -1219,10 +1235,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Github Pages</a>
               </li>
              
               <li class="article-tag-list-item">

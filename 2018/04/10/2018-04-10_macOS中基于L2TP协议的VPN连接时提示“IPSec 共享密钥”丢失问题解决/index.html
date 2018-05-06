@@ -8,7 +8,7 @@
   <link rel="dns-prefetch" href="https://iHTCboy.com">
   <title>macOS中基于L2TP协议的VPN连接时提示“IPSec 共享密钥”丢失问题解决 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="遇到的问题
+  <meta name="description" content="1、遇到的问题
 “IPSec 共享密钥”丢失。请验证您的设置并尝试重新连接。
 
 
@@ -17,7 +17,7 @@
 <meta property="og:title" content="macOS中基于L2TP协议的VPN连接时提示“IPSec 共享密钥”丢失问题解决">
 <meta property="og:url" content="https://iHTCboy.com/2018/04/10/2018-04-10_macOS中基于L2TP协议的VPN连接时提示“IPSec 共享密钥”丢失问题解决/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="遇到的问题
+<meta property="og:description" content="1、遇到的问题
 “IPSec 共享密钥”丢失。请验证您的设置并尝试重新连接。
 
 
@@ -27,10 +27,10 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-vim-options-insert.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-vim-wq!.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-open-options.png">
-<meta property="og:updated_time" content="2018-05-01T15:17:43.402Z">
+<meta property="og:updated_time" content="2018-05-06T08:45:36.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macOS中基于L2TP协议的VPN连接时提示“IPSec 共享密钥”丢失问题解决">
-<meta name="twitter:description" content="遇到的问题
+<meta name="twitter:description" content="1、遇到的问题
 “IPSec 共享密钥”丢失。请验证您的设置并尝试重新连接。
 
 
@@ -239,35 +239,35 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="遇到的问题">遇到的问题</h3><blockquote>
+        <h3 id="1、遇到的问题">1、遇到的问题</h3><blockquote>
 <p>“IPSec 共享密钥”丢失。请验证您的设置并尝试重新连接。</p>
 </blockquote>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-VPNConnetionFailure.png" alt="20180410-VPNConnetionFailure.png"></p>
 <p>在网上找到很多相似的解决方法，但是却没有人说出为什么要这样做？？</p>
 <a id="more"></a>
-<h3 id="问题原因&amp;解决">问题原因&amp;解决</h3><h4 id="原因：">原因：</h4><p>最后在Oracle官方文档找到了解释：</p>
+<h3 id="2、问题原因&amp;解决">2、问题原因&amp;解决</h3><h4 id="2-1_原因：">2.1 原因：</h4><p>最后在Oracle官方文档找到了解释：</p>
 <p>引用 <strong>Oracle Solaris 10 8/11 Information Library</strong> 文档:</p>
 <blockquote>
 <p>/etc/ppp/options<br>包含缺省应用于系统中所有 PPP 链路的特征（例如，计算机是否要求对等点对其本身进行验证）的文件。如果不存在此文件，将禁止非超级用户使用 PPP。</p>
 </blockquote>
 <p>也就是说，默认情况下macOS跟Liunx一样，在<code>/etc/ppp/</code>目录下没有 <code>options</code>这个配置文件，所以对于非root用户就无法使用ppp链路。</p>
-<h4 id="解决">解决</h4><p>知其然，所以知其后然，这时候的解决方法就是在<code>/etc/ppp/</code>目录下建立options`这个配置文件，并且配置ppp链路l2tp不需要ipsec密钥。</p>
+<h4 id="2-2_解决">2.2 解决</h4><p>知其然，所以知其后然，这时候的解决方法就是在<code>/etc/ppp/</code>目录下建立options`这个配置文件，并且配置ppp链路l2tp不需要ipsec密钥。</p>
 <p>下面就是vim命令操作，如果想系统学习相关命令可查看 <a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html" target="_blank" rel="external">每天一个linux命令目录</a>，这里不打算详细讲解，有兴趣同学可以另行学习。</p>
-<p><strong>操作步骤</strong><br>（1）在终端任意路径下输入命令： <code>sudo vim /etc/ppp/options</code><br>然后输入电脑密码后，显示vim操作界面后按键盘<code>i</code>进入插入模式，输入下面内容：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugin L2TP<span class="class">.ppp</span></span><br><span class="line">l2tpnoipsec</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.2.1 操作步骤</strong><br>（1）在终端任意路径下输入命令： <code>sudo vim /etc/ppp/options</code><br>然后输入电脑密码后，显示vim操作界面后按键盘<code>i</code>进入插入模式，输入下面内容：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugin L2TP<span class="class">.ppp</span></span><br><span class="line">l2tpnoipsec</span><br></pre></td></tr></table></figure></p>
 <p>（2）然后按<code>esc</code>键退出插入模式，最后输入<code>:wq!</code>，强制保存并退出vim模式。</p>
-<p><strong>命令解释</strong></p>
+<p><strong>2.2.2 命令解释</strong></p>
 <ul>
 <li><code>sudo</code>：用管理员权限执行命令</li>
 <li><code>vim</code>：用vim打开文件，后面跟上文件所在的路径</li>
 <li><code>plugin L2TP.ppp</code>：配置ppp链路插件？具体暂未了解，知道的同学可以告诉我啊！</li>
 <li><code>l2tpnoipsec</code>: 配置ppp链路l2tp不需要ipsec密钥。</li>
 </ul>
-<p><strong>终端操作示意</strong><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-SudoVim-etc-ppp-options.png" alt="sudo vim /etc/ppp/options"></p>
+<p><strong>2.2.3 终端操作示意</strong><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-SudoVim-etc-ppp-options.png" alt="sudo vim /etc/ppp/options"></p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-vim-options-insert.png" alt="添加ppp的options配置文件"></p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-vim-wq!.png" alt="保存内容并退出vim"></p>
 <p>最后，想验证是否保存成功，可以用<code>open /etc/ppp/options</code>命令打开文件查看内容：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180410-open-options.png" alt="打开options文件查看内容"></p>
-<h3 id="总结">总结</h3><p>在这个探索的过程，自己了解得更多，就会发现自己知道的越少！求甚解，也许就是最好的学习态度，大家都要坚持！</p>
-<h3 id="参考引用">参考引用</h3><ul>
+<h3 id="3、总结">3、总结</h3><p>在这个探索的过程，自己了解得更多，就会发现自己知道的越少！求甚解，也许就是最好的学习态度，大家都要坚持！</p>
+<h3 id="4、参考引用">4、参考引用</h3><ul>
 <li><a href="https://docs.oracle.com/cd/E24847_01/html/E22299/pppsvrconfig.reference-65.html" target="_blank" rel="external">在文件中和命令行上使用 PPP 选项 - 系统管理指南：网络服务</a></li>
 <li><a href="https://lxneng.com/posts/177" target="_blank" rel="external">Mac OS X 下无密钥方式连接基于L2TP协议的VPN</a></li>
 <li><a href="https://www.jianshu.com/p/6bbfbc49e54c" target="_blank" rel="external">mac的vpn配置“IPSec 共享密钥”丢失问题 - 简书</a></li>
@@ -455,7 +455,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">1.</span> <span class="toc-text">遇到的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题原因&解决"><span class="toc-number">2.</span> <span class="toc-text">问题原因&解决</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原因："><span class="toc-number">2.1.</span> <span class="toc-text">原因：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决"><span class="toc-number">2.2.</span> <span class="toc-text">解决</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考引用"><span class="toc-number">4.</span> <span class="toc-text">参考引用</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、遇到的问题"><span class="toc-number">1.</span> <span class="toc-text">1、遇到的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、问题原因&解决"><span class="toc-number">2.</span> <span class="toc-text">2、问题原因&解决</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1_原因："><span class="toc-number">2.1.</span> <span class="toc-text">2.1 原因：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2_解决"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 解决</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、总结"><span class="toc-number">3.</span> <span class="toc-text">3、总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、参考引用"><span class="toc-number">4.</span> <span class="toc-text">4、参考引用</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -608,6 +608,22 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Github Pages</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">域名跳转</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">重定向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JS跳转</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爷爷</a>
@@ -1243,10 +1259,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Github Pages</a>
               </li>
              
               <li class="article-tag-list-item">
