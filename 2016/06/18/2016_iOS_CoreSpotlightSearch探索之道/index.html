@@ -6,26 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://iHTCboy.com">
-  <title>React Native项目Xcode打包发布iOS问题 | iHTCboy&#39;s blog</title>
+  <title>iOS CoreSpotlightSearch探索之道 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Xcode打包分布准备对于新手来说，如果是混合开发或者纯RN应用开发好后，想打包上线了，却发现官方文档没有找到详细打包的流程文档，对于完全没有经验的新手真的不太好友。下面是参考资料总结而成：
-1、打包命令 react-native bundle，在RN项目根目录下：1react-native bundle --entry-file index.ios.js --platform ios --dev">
+  <meta name="description" content="前言看到上图的搜索结果，找完了文档都没有发现这个效果怎样实现，我也是醉了，然后不小心看到下图，我相信有方法能实现，只是现在还没有发现！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native项目Xcode打包发布iOS问题">
-<meta property="og:url" content="https://iHTCboy.com/2016/12/25/2016_React Native项目Xcode打包发布iOS问题/index.html">
+<meta property="og:title" content="iOS CoreSpotlightSearch探索之道">
+<meta property="og:url" content="https://iHTCboy.com/2016/06/18/2016_iOS_CoreSpotlightSearch探索之道/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="Xcode打包分布准备对于新手来说，如果是混合开发或者纯RN应用开发好后，想打包上线了，却发现官方文档没有找到详细打包的流程文档，对于完全没有经验的新手真的不太好友。下面是参考资料总结而成：
-1、打包命令 react-native bundle，在RN项目根目录下：1react-native bundle --entry-file index.ios.js --platform ios --dev">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-6a9c15bd541da22a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-a6665ab5cf8f135a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-1a801cd7016e8048.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-48879ec871457a8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-9c168d50b3e3a31b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-01T15:15:32.309Z">
+<meta property="og:description" content="前言看到上图的搜索结果，找完了文档都没有发现这个效果怎样实现，我也是醉了，然后不小心看到下图，我相信有方法能实现，只是现在还没有发现！">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-9a3b2a1cc4a53302.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-c0f46c5d2308fb70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-8aaacffe38ead37a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-6618a31f933c3512.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-9d1242b99045caf2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-7286b9a8bb99388e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-6ab7ba38af3b3b5e.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-909c83ec7c4f7e91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-12f0ae64a9c16b14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-a042dcd755a69491.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-45bd345ccb64d4f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-c7860b385e98702a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-05-01T15:15:37.505Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native项目Xcode打包发布iOS问题">
-<meta name="twitter:description" content="Xcode打包分布准备对于新手来说，如果是混合开发或者纯RN应用开发好后，想打包上线了，却发现官方文档没有找到详细打包的流程文档，对于完全没有经验的新手真的不太好友。下面是参考资料总结而成：
-1、打包命令 react-native bundle，在RN项目根目录下：1react-native bundle --entry-file index.ios.js --platform ios --dev">
+<meta name="twitter:title" content="iOS CoreSpotlightSearch探索之道">
+<meta name="twitter:description" content="前言看到上图的搜索结果，找完了文档都没有发现这个效果怎样实现，我也是醉了，然后不小心看到下图，我相信有方法能实现，只是现在还没有发现！">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -210,48 +214,69 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016_React Native项目Xcode打包发布iOS问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2016_iOS_CoreSpotlightSearch探索之道" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      React Native项目Xcode打包发布iOS问题
+      iOS CoreSpotlightSearch探索之道
     </h1>
   
 
         
-        <a href="/2016/12/25/2016_React Native项目Xcode打包发布iOS问题/" class="archive-article-date">
-  	<time datetime="2016-12-25T12:45:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-25</time>
+        <a href="/2016/06/18/2016_iOS_CoreSpotlightSearch探索之道/" class="archive-article-date">
+  	<time datetime="2016-06-18T10:17:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Xcode打包分布准备">Xcode打包分布准备</h3><p>对于新手来说，如果是混合开发或者纯RN应用开发好后，想打包上线了，却发现官方文档没有找到详细打包的流程文档，对于完全没有经验的新手真的不太好友。下面是参考资料总结而成：</p>
-<h5 id="1、打包命令_react-native_bundle，在RN项目根目录下：">1、打包命令 <a href="https://github.com/facebook/react-native/blob/master/local-cli/bundle/bundleCommandLineArgs.js" target="_blank" rel="external">react-native bundle</a>，在RN项目根目录下：</h5><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">react</span><span class="literal">-</span><span class="comment">native</span> <span class="comment">bundle</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">entry</span><span class="literal">-</span><span class="comment">file</span> <span class="comment">index</span><span class="string">.</span><span class="comment">ios</span><span class="string">.</span><span class="comment">js</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">platform</span> <span class="comment">ios</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">false</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">bundle</span><span class="literal">-</span><span class="comment">output</span> <span class="comment">ios/ios</span><span class="string">.</span><span class="comment">jsbundle</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>参数：<br>–entry-file ：ios或者android入口的js名称，比如<strong>index.ios.js</strong><br>–platform ：平台名称(ios或者android)<br>–dev ：设置为false的时候将会对JavaScript代码进行优化处理。<br>–bundle-output,：生成的jsbundle文件的所在目录和名称，比如 ios/ios.jsbundle。</p>
-<p>在当前项目中，输入上面命令，然后在ios/目录下生成2个离线包：<br><img src="http://upload-images.jianshu.io/upload_images/99517-6a9c15bd541da22a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output ios:ios.jsbundle.png"></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ react-native bundle --entry-file index.ios.js --platform ios --dev <span class="literal">false</span> --bundle-output ios/ios.jsbundle</span><br><span class="line">[<span class="number">2016</span>-<span class="number">12</span>-<span class="number">25</span> <span class="number">19</span>:<span class="number">55</span>:<span class="number">01</span>] &lt;START&gt; Initializing Packager</span><br><span class="line">[<span class="number">2016</span>-<span class="number">12</span>-<span class="number">25</span> <span class="number">19</span>:<span class="number">55</span>:<span class="number">01</span>] &lt;START&gt; Building in-memory fs <span class="keyword">for</span> JavaScript</span><br><span class="line">[<span class="number">2016</span>-<span class="number">12</span>-<span class="number">25</span> <span class="number">19</span>:<span class="number">55</span>:<span class="number">01</span>] &lt;END&gt;   Building in-<span class="function">memory fs <span class="keyword">for</span> <span class="title">JavaScript</span> <span class="params">(<span class="number">88</span>ms)</span></span><br><span class="line">[2016-12-25 19:55:01] &lt;START&gt; Building Haste Map</span><br><span class="line">[2016-12-25 19:55:02] &lt;END&gt;   Building Haste <span class="title">Map</span> <span class="params">(<span class="number">1091</span>ms)</span></span><br><span class="line">[2016-12-25 19:55:02] &lt;END&gt;   Initializing <span class="title">Packager</span> <span class="params">(<span class="number">1212</span>ms)</span></span><br><span class="line">[2016-12-25 19:55:02] &lt;START&gt; Transforming files</span><br><span class="line">[2016-12-25 19:55:15] &lt;END&gt;   Transforming <span class="title">files</span> <span class="params">(<span class="number">13122</span>ms)</span></span><br><span class="line">bundle: start</span><br><span class="line">bundle: finish</span><br><span class="line">bundle: Writing bundle output to: ios/ios.<span class="title">jsbundle</span></span><br><span class="line"><span class="params">(node:<span class="number">8023</span>)</span> DeprecationWarning: Using Buffer without `new` will soon stop working. Use `new <span class="title">Buffer</span><span class="params">()</span>`, or preferably `Buffer.<span class="title">from</span><span class="params">()</span>`, `Buffer.<span class="title">allocUnsafe</span><span class="params">()</span>` or `Buffer.<span class="title">alloc</span><span class="params">()</span>` instead.</span><br><span class="line">bundle: Done writing bundle output</span><br><span class="line">Assets destination folder is not <span class="built_in">set</span>, skipping...</span></span><br></pre></td></tr></table></figure>
-<p>运行上面命令后，在项目的ios文件夹下看到 <strong>ios.jsbundle</strong>、<strong>ios.jsbundle.meta</strong>。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-a6665ab5cf8f135a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="生成的离线包.png"></p>
-<h5 id="2、iOS项目中导入包">2、iOS项目中导入包</h5><p><img src="http://upload-images.jianshu.io/upload_images/99517-1a801cd7016e8048.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="生成的离线包.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-48879ec871457a8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="安图选择完成.png"></p>
-<h5 id="3、修改项目中BundleURL">3、修改项目中BundleURL</h5><p>修改AppDelegate.h的定向URL，需要注意的是名字要跟你生成的jsbundle的名字一致。</p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//  <span class="atom">jsCodeLocation</span> = [[<span class="name">RCTBundleURLProvider</span> <span class="atom">sharedSettings</span>] <span class="atom">jsBundleURLForBundleRoot</span>:@<span class="string">"index.ios"</span> <span class="atom">fallbackResource</span>:<span class="atom">nil</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="atom">jsCodeLocation</span> = [[<span class="name">NSBundle</span> <span class="atom">mainBundle</span>] <span class="name">URLForResource</span>:@<span class="string">"ios"</span> <span class="atom">withExtension</span>:@<span class="string">"jsbundle"</span>];</span><br></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-9c168d50b3e3a31b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改 jsCodeLocationURL.png"></p>
-<ul>
-<li>如果项目是混合开发，那么用到BundleURL的地方也要改成这个BundleURL地址。</li>
-<li>如果修改了项目的js文件，那么就要重新打包一次，或者利用热更新机制更新。</li>
-</ul>
+        <p><img src="http://upload-images.jianshu.io/upload_images/99517-9a3b2a1cc4a53302.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AppleStore搜索结果示例"></p>
+<h3 id="前言">前言</h3><p>看到上图的搜索结果，找完了文档都没有发现这个效果怎样实现，我也是醉了，然后不小心看到下图，我相信有方法能实现，只是现在还没有发现！</p>
+ <a id="more"></a>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-c0f46c5d2308fb70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="淘票票搜索显示.png"></p>
+<p>研究了几天，还是让我找到了结果，苹果还是不行啊，还是我不行？反正一路过来，不容易！！自己想实现的效果，含泪也要实现出来—.—<br><img src="http://upload-images.jianshu.io/upload_images/99517-8aaacffe38ead37a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最后实现的可用全部类型.png"></p>
+<p>下面就是探索之道，喜欢看代码的就直接先上代码看吧<br> <a href="https://github.com/iHTCboy/CoreSpotlightSearchDemo" target="_blank" rel="external">CoreSpotlightSearchDemo</a></p>
+<h3 id="1、普通类型">1、普通类型</h3><p>一般应用搜索出来的结果都是一图片，一标题，一内容<br><img src="http://upload-images.jianshu.io/upload_images/99517-6618a31f933c3512.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="简书的搜索结果"></p>
+<p>但是如果想实现没有图片呢？如下图：<br><img src="http://upload-images.jianshu.io/upload_images/99517-9d1242b99045caf2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="没有实现的，有点难看吧，至少有应用logo吧！"><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">   // 把一个空数据赋给图片对象，然后系统好像判断了如果没有图片，则不显示？</span><br><span class="line"><span class="code">    attributedSet.thumbnailData = [NSData new];</span></span><br><span class="line"><span class="code">```</span> </span><br><span class="line"></span><br><span class="line"><span class="header">### 2.右上角带有时间</span></span><br><span class="line">右上角带有时间的类型，一直看文档和网上的教程，都没有发现时间的设置，一般都是简单提一下怎么设置然后显示，不求甚解？！</span><br><span class="line">![<span class="link_label">带有时间的</span>](<span class="link_url">http://upload-images.jianshu.io/upload_images/99517-ba6003190161f2c5.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br><span class="line"></span><br><span class="line"><span class="code">```</span> </span><br><span class="line"><span class="code">    // 显示时间的必要条件</span></span><br><span class="line"><span class="code">    attributedSet.contentType = (NSString*)kUTTypeMessage;</span></span><br><span class="line"><span class="code">    attributedSet.contentCreationDate = [NSDate date];</span></span><br><span class="line"><span class="code">```</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">### 3.显示电话</span></span><br><span class="line">下图是实现的电话显示和系统通讯录的搜索结果比较，系统有FaceTime的会显示，没有就隐藏，同时有发送短信的功能。但是系统好像没有开放这么多功能给开发者，只是给了电话的显示。而且，电话设置多个号码，但是点击时，直接打数据数组的第一个号码。最后是图标也不一样，系统的电话图标是实心的，实现的却是空心，累都凉了。</span><br><span class="line"></span><br><span class="line"><span class="code">```</span> </span><br><span class="line"><span class="code">    // 显示的必要条件，是一个数据，可以有多个号码，但只会读第一个电话</span></span><br><span class="line"><span class="code">    attributedSet.phoneNumbers = @[@"12345678",@"42535353"];</span></span><br><span class="line"><span class="code">    attributedSet.supportsPhoneCall = @1;</span></span><br><span class="line"><span class="code">```</span> </span><br><span class="line"></span><br><span class="line">![<span class="link_label">实现的电话类型png</span>](<span class="link_url">http://upload-images.jianshu.io/upload_images/99517-f20fb4943676011f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br><span class="line"></span><br><span class="line">![<span class="link_label">通讯录.png</span>](<span class="link_url">http://upload-images.jianshu.io/upload_images/99517-6f5f9aa97a5dd3db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br><span class="line"></span><br><span class="line">![<span class="link_label">有多个号码系统打电话则显示多个选择.PNG</span>](<span class="link_url">http://upload-images.jianshu.io/upload_images/99517-bf0bdb549134fa58.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br><span class="line"></span><br><span class="line"><span class="header">### 4.带有位置导航的</span></span><br><span class="line">点击导航会跳转到地图，然后系统自动导航（代码里写好了经纬度），系统的地图都没有显示这个图标出来，就是这样了。提醒的是，如果你点击导航图标默认是跳转到系统的地图，然后是你当前地点到目标地点的线路规范，然后就可以导航了。如果点击cell其它内容，则跳转回应用，自己实现逻辑。</span><br><span class="line">![<span class="link_label">位置导航类型.png</span>](<span class="link_url">http://upload-images.jianshu.io/upload_images/99517-8ccdd6d64132edc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br></pre></td></tr></table></figure></p>
+<pre><code>// 显示的必要条件，经纬度
+attributedSet.longitude = @<span class="number">113.270793</span><span class="comment">;</span>
+attributedSet.latitude = @<span class="number">23.135308</span><span class="comment">;</span>
+attributedSet.supportsNavigation = @1<span class="comment">;</span>
+</code></pre><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="header">### 5.带有星星评价的</span></span><br><span class="line">这个测试了很久才显示出来的，心累了。</span><br><span class="line">星星的显示，只能是整数个或者半个星星，最大是5，就是显示5星。星星后面还可以星星的评价说明，这个起点缀作用啦！</span><br><span class="line">![<span class="link_label">带星星评价</span>](<span class="link_url">http://upload-images.jianshu.io/upload_images/99517-8ff8d409ba87cac9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br></pre></td></tr></table></figure>
+<p> //要选中对应的媒体类型<br>    attributedSet.contentType = (NSString<em>) kUTTypeAudio;<br>//    attributedSet.contentType = (NSString</em>) kUTTypeMovie;<br>    attributedSet.rating = @3.5;<br>    attributedSet.ratingDescription = @”raign44”;<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">### 6.音乐</span></span><br><span class="line">我实现出来的音乐跟系统的音乐显示完全不一样，不清楚是我这边没有实现，还是苹果没有开放接口。我感觉是苹果没有开放的原因，如果你实现了一定要告诉我，我会知错就改的。</span><br><span class="line"></span><br><span class="line">![<span class="link_label">音乐类型</span>](<span class="link_url">http://upload-images.jianshu.io/upload_images/99517-18253ee128b3f451.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br><span class="line"></span><br><span class="line">![<span class="link_label"> 苹果音乐.PNG</span>](<span class="link_url">http://upload-images.jianshu.io/upload_images/99517-3ebc424e2ecb1f06.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br></pre></td></tr></table></figure></p>
+<pre><code>attributedSet.contentType = (NSString*) kUTTypeAudio<span class="comment">;</span>
+attributedSet.album = @"album"<span class="comment">;</span>
+attributedSet.lyricist = @"lyricist"<span class="comment">;</span>
+attributedSet.composer = @"composer"<span class="comment">;</span>
+attributedSet.artist = @"artist"<span class="comment">;</span>
+</code></pre><p>```</p>
+<h3 id="7-文档类型【未实现】">7.文档类型【未实现】</h3><p>这个也没有测试出来，等高手。文档类型带的是时间的修复。找到字段，设置了，但没有显示出来。下面是印象笔记和有道云笔记实现的效果。<br><img src="http://upload-images.jianshu.io/upload_images/99517-7286b9a8bb99388e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="文档类型.png"></p>
+<h3 id="8-邮件类型【未实现】">8.邮件类型【未实现】</h3><p>系统的邮件类型显示分三行的。第一行是发件人，第二行是主题，第三行是内容。但是我还是没有找到苹果实现的效果。QQ邮箱显示的也是三行，但是他用了一个技巧，就是内容用了一个换行<code>\\n</code>，让内容一分为二，这样的效果我只能说将就了，但系统的实现我也没有找到，知道的麻烦也通知一下我，我一个星期在嘛呀。。<br><img src="http://upload-images.jianshu.io/upload_images/99517-6ab7ba38af3b3b5e.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="苹果邮件.PNG"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-909c83ec7c4f7e91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ邮箱搜索显示效果.png"></p>
+<h3 id="9-搜索关键字？">9.搜索关键字？</h3><p>最特别的是，我在搜索很多关键字时，发现京东每一次都出现，并且关键字也命中啦！如下图：<br><img src="http://upload-images.jianshu.io/upload_images/99517-12f0ae64a9c16b14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="京东搜索.png"></p>
+<p>当时我就疑惑，这tm的怎么实现的！！！x爆天了！查看了系统的文档，都没有发现这样的搜索接口。然后想到 关键字的搜索，比如用<code>&quot;*&quot; &quot;?&quot;</code>，但是发现系统是无法代替换搜索的。最后想到京东覆盖了非常多的关键字，就是<strong>大量的注入</strong>关键字！！。这招真服了！！</p>
+<p>关于大量注入，我测试了一万条，因为系统的索引建立是在子线程执行，然后其实也没有什么大问题。</p>
+<h3 id="10-其它类型">10.其它类型</h3><p>有了前面的类型，想要让你搜索结果显示的不一样，就是综合其它效果，做出自己漂亮吸引的形式啦！！<br>如下是京东的商品显示，效果感觉还可以。当然，其它应用应该找到合适自己的显示，或好的让用户点击的欲望吧！<br><img src="http://upload-images.jianshu.io/upload_images/99517-a042dcd755a69491.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="京东搜索结果多行显示.png"></p>
+<h3 id="11-言外之意">11.言外之意</h3><p>从前面就可以看出，CSS(CoreSpotlightSearch)有非常多，非常复杂的知识，很多需要大家了解搜索吧。比如可以设置搜索关键字<code>@property(nullable, copy) NSArray&lt;NSString*&gt; *keywords;</code> ，也可以设置每一条搜索的过期时间<code>@property (copy, null_resettable) NSDate * expirationDate</code>，当然还可以删除某条记录或全部，关于更新，我发现每一条记录是根据<code>UniqueIdentifier</code>，如果发现相同的UniqueIdentifier，则系统会覆盖原来的内容，从而达到更新的作用。还有点击搜索结果，跳转回应用做逻辑处理，大家可以参考本文结尾的参考文章来学习，在这里就不多言了。</p>
+<h3 id="12-写写总结">12.写写总结</h3><p>代码写的越多，对人生的感悟越多，对代码也产生了敬畏之道。有人说，代码产生的是对用户的作用，不要一言追求重构，新技术。一个小小的功能，也许就是用户继续使用你的App的惟一原因，而不是这一次你重构了多少代码。</p>
+<p>所以，在使用CSS时，应该考虑怎么为用户提供优质的搜索结果，而不是竞争或出风头！</p>
+<p>因为用户有权选择不显示应用的搜索结果：<br><img src="http://upload-images.jianshu.io/upload_images/99517-45bd345ccb64d4f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="关闭应用搜索结果.png"></p>
+<p>但我在想，我安装了200+应用，有时候都不想显示，苹果没有一个全部关闭的按钮，我想这不是苹果不知道，而是不“为”！就是希望用户保留搜索，一个大数据的时代！！</p>
+<p>当然，我们在使用时，是不是也要关心一直搜索隐私问题，苹果说了(他说了算)：<br><img src="http://upload-images.jianshu.io/upload_images/99517-c7860b385e98702a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Spotlight隐私说明.png"></p>
 <h3 id="参考">参考</h3><ul>
-<li><a href="http://www.jianshu.com/p/ce71b4a8a246" target="_blank" rel="external">React Native ios打包 - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/7683efdd31f5" target="_blank" rel="external">React Native iOS打包，给用户生成ipa文件 - 简书</a></li>
-<li><a href="http://mp.weixin.qq.com/s?__biz=MzIwMTkxNzU3MA==&amp;mid=2247483827&amp;idx=1&amp;sn=fb7695d8c2e361d6d05ffdaa1b4ccdfb&amp;scene=2&amp;srcid=0815De5rVOvAW4T5ahhZQzht&amp;from=timeline&amp;isappinstalled=0&amp;utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">React Native程序部署至iOS应用商店之前需要的配置和如何生成release版本的APK包</a></li>
+<li><a href="http://www.cocoachina.com/ios/20160128/15163.html" target="_blank" rel="external">如何使用iOS 9的Core Spotlight框架</a></li>
+<li><a href="http://www.jianshu.com/p/b55172f0767b" target="_blank" rel="external">iOS开发之Core Spotlight实战</a></li>
+<li><a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CoreSpotlight_Framework/" target="_blank" rel="external">Core Spotlight Framework Reference</a></li>
+<li><a href="https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308-CH4-SW1" target="_blank" rel="external">App Search Programming Guide/ Search Drives User Engagement</a></li>
+<li><a href="https://developer.apple.com/videos/play/wwdc2015/709/" target="_blank" rel="external">Introducing Search APIs - WWDC 2015 - Videos - Apple Developer</a></li>
+<li><a href="http://www.cocoachina.com/ios/20160615/16703.html" target="_blank" rel="external">快速上手 Core Spotlight</a></li>
+<li><a href="https://github.com/ChenYilong/iOS9AdaptationTips" target="_blank" rel="external">iOS9适配 《AdaptationTips》</a></li>
 </ul>
+<p>喜欢的点赞一个，有问题先看代码吧，欢迎留言交流！<br>Demo: <a href="https://github.com/iHTCboy/CoreSpotlightSearchDemo" target="_blank" rel="external">CoreSpotlightSearchDemo</a></p>
 <p><br></p>
 <blockquote>
 <p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
@@ -300,19 +325,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RN</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ReactNative</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CoreSpotlightSearch</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">打ipa包</a>
         		</li>
       		
 		</ul>
@@ -379,7 +396,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://iHTCboy.com/2016/12/25/2016_React Native项目Xcode打包发布iOS问题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://iHTCboy.com/2016/06/18/2016_iOS_CoreSpotlightSearch探索之道/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -393,18 +410,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2016/12/31/2016_再见2016/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/10/11/2016_NSDateFormatter的hh与HH和yyyy与YYYY出坑/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          再见2016
+          NSDateFormatter的hh与HH和yyyy与YYYY出坑
         
       </div>
     </a>
   
   
-    <a href="/2016/12/23/2016_iOS应用显示一直安装，重启无效，也删除不了问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS应用显示一直安装，重启无效，也删除不了问题</div>
+    <a href="/2016/05/18/2016_彻底删除Mac下iMessage的历史聊天记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">彻底删除Mac下iMessage的历史聊天记录</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -431,7 +448,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode打包分布准备"><span class="toc-number">1.</span> <span class="toc-text">Xcode打包分布准备</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、打包命令_react-native_bundle，在RN项目根目录下："><span class="toc-number">1.0.1.</span> <span class="toc-text">1、打包命令 react-native bundle，在RN项目根目录下：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、iOS项目中导入包"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、iOS项目中导入包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、修改项目中BundleURL"><span class="toc-number">1.0.3.</span> <span class="toc-text">3、修改项目中BundleURL</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、普通类型"><span class="toc-number">2.</span> <span class="toc-text">1、普通类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-文档类型【未实现】"><span class="toc-number">3.</span> <span class="toc-text">7.文档类型【未实现】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-邮件类型【未实现】"><span class="toc-number">4.</span> <span class="toc-text">8.邮件类型【未实现】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-搜索关键字？"><span class="toc-number">5.</span> <span class="toc-text">9.搜索关键字？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-其它类型"><span class="toc-number">6.</span> <span class="toc-text">10.其它类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-言外之意"><span class="toc-number">7.</span> <span class="toc-text">11.言外之意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-写写总结"><span class="toc-number">8.</span> <span class="toc-text">12.写写总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">9.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -456,7 +473,7 @@ var _hmt = _hmt || [];
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "Sun Dec 25 2016 20:45:16 GMT+0800",
+  id: "Sat Jun 18 2016 18:17:16 GMT+0800",
   owner: 'iHTCboy',
   repo: 'iHTCboy.github.io',
   oauth: {
