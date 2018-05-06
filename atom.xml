@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Github Pages页面重定向到新网址，实现域名跳转]]></title>
-    <link href="https://iHTCboy.com/2018/05/06/2018-05-06_Github_Pages%E9%A1%B5%E9%9D%A2%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E6%96%B0%E7%BD%91%E5%9D%80%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%9F%9F%E5%90%8D%E8%B7%B3%E8%BD%AC/"/>
-    <id>https://iHTCboy.com/2018/05/06/2018-05-06_Github_Pages页面重定向到新网址，实现域名跳转/</id>
+    <link href="https://iHTCboy.com/2018/05/06/2018-05-06_Github_Pages%E9%A1%B5%E9%9D%A2%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E6%96%B0%E7%BD%91%E5%9D%80,%E5%AE%9E%E7%8E%B0%E5%9F%9F%E5%90%8D%E8%B7%B3%E8%BD%AC/"/>
+    <id>https://iHTCboy.com/2018/05/06/2018-05-06_Github_Pages页面重定向到新网址,实现域名跳转/</id>
     <published>2018-05-06T08:35:16.000Z</published>
     <updated>2018-05-06T13:02:31.846Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最新还是决下心来换域名啦！从 <a href="http://ihtc.cc" target="_blank" rel="external">http://ihtc.cc</a> 换成 <a href="https://ihtcboy.com">https://ihtcboy.com</a> ！然后问题就来了，以前文章的链接打开404了，旧域名也访问不通，这样子不行呢！用了2年多的旧域名，在百度谷歌还是积累了一些爬虫，还有很多分享到第三方平台的文章呢！想一想，还是想救一救它！！！</p>
