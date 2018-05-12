@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-05-06T13:02:31.846Z</updated>
+  <updated>2018-05-12T15:45:36.532Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[mac版QQ聊天信息备份与导出方法]]></title>
+    <link href="https://iHTCboy.com/2018/05/08/2018-05-08_mac%E7%89%88QQ%E8%81%8A%E5%A4%A9%E4%BF%A1%E6%81%AF%E5%A4%87%E4%BB%BD%E4%B8%8E%E5%AF%BC%E5%87%BA%E6%96%B9%E6%B3%95/"/>
+    <id>https://iHTCboy.com/2018/05/08/2018-05-08_mac版QQ聊天信息备份与导出方法/</id>
+    <published>2018-05-08T11:35:16.000Z</published>
+    <updated>2018-05-12T15:45:36.532Z</updated>
+    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近，我司终于更换新电脑的计划落实啦！！！</p>
+<blockquote>
+<p>Mac mini 3.0GHz 双核 Intel Core i7 处理器 (Turbo Boost 高达 3.5GHz)<br>16GB 1600MHz LPDDR3 SDRAM<br>1TB 融合硬盘<br>Intel Iris Graphics 图形处理器</p>
+</blockquote>
+<p>非常值的可贺！然而，就是新电脑，一切都是新！一切都是白！！非常多工具的数据需要迁移，开发环境需要配置，最近也打算总结一下新电脑配置方面的文章，作为自己备份，或者给新手参考，相信有很大帮助。今天就先从QQ说起吧~</p>
+<a id="more"></a>
+<h3 id="正题">正题</h3><p>说回来，因为QQ内容是工作的主要记录，所以，</p>
+<h4 id="企业QQ聊天内容迁移">企业QQ聊天内容迁移</h4><p>将下面目录：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>用户名<span class="regexp">/Library/</span>Containers<span class="regexp">/com.tencent.eimmac/</span>Data<span class="regexp">/Library/</span>Application Support<span class="regexp">/QQ</span></span><br></pre></td></tr></table></figure>
+<p>复制目录下所有内容到新电脑，就可以啦!</p>
+<h4 id="用户版QQ聊天内容迁移">用户版QQ聊天内容迁移</h4><p>将下面目录：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>用户名<span class="regexp">/Library/</span>Containers<span class="regexp">/com.tencent.qq/</span>Data<span class="regexp">/Library/</span>Application Support<span class="regexp">/QQ/</span></span><br></pre></td></tr></table></figure>
+<p>复制目录下所有内容到新电脑，</p>
+<p>如果需要把聊天中的图片也迁移，就需要在复制目录：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>用户名<span class="regexp">/Library/</span>Containers<span class="regexp">/com.tencent.qq/</span>Data<span class="regexp">/Documents/</span></span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>上面目录中 <code>用户名</code> 是你电脑的账户名</li>
+<li>企业QQ是在com.tencent.eimmac目录下，而用户版QQ是在 com.tencent.qq 下</li>
+</ul>
+<h4 id="授鱼&amp;授渔">授鱼&amp;授渔</h4><p>如果是其它功能的内容迁移，道理相似，把对应的软件的目录的内容复制到新电脑就可以了。当然，想方便查看软件的目录备份内容，可以用 CleanMyMac 卸载器 查看：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180508-CleanMyMac_unloader.png" alt="CleanMyMac_unloader"></p>
+<h3 id="总结">总结</h3><p>作为程序员，越来越觉得云端的好处，迁移数据是一件痛苦（辛苦）的事件，如果是电脑小白，那更加是的。所以，有必要作一些更好的方法，比如云端备份软件的配置，用脚本来操作迁移过程，因为不是经常性换电脑，所以这个就不作进一步实践了。</p>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="前言">前言</h3><p>最近，我司终于更换新电脑的计划落实啦！！！</p>
+<blockquote>
+<p>Mac mini 3.0GHz 双核 Intel Core i7 处理器 (Turbo Boost 高达 3.5GHz)<br>16GB 1600MHz LPDDR3 SDRAM<br>1TB 融合硬盘<br>Intel Iris Graphics 图形处理器</p>
+</blockquote>
+<p>非常值的可贺！然而，就是新电脑，一切都是新！一切都是白！！非常多工具的数据需要迁移，开发环境需要配置，最近也打算总结一下新电脑配置方面的文章，作为自己备份，或者给新手参考，相信有很大帮助。今天就先从QQ说起吧~</p>]]>
+    
+    </summary>
+    
+      <category term="mac版QQ信息导出" scheme="https://iHTCboy.com/tags/mac%E7%89%88QQ%E4%BF%A1%E6%81%AF%E5%AF%BC%E5%87%BA/"/>
+    
+      <category term="聊天内容迁移" scheme="https://iHTCboy.com/tags/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E8%BF%81%E7%A7%BB/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Github Pages页面重定向到新网址，实现域名跳转]]></title>
     <link href="https://iHTCboy.com/2018/05/06/2018-05-06_Github_Pages%E9%A1%B5%E9%9D%A2%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E6%96%B0%E7%BD%91%E5%9D%80,%E5%AE%9E%E7%8E%B0%E5%9F%9F%E5%90%8D%E8%B7%B3%E8%BD%AC/"/>
     <id>https://iHTCboy.com/2018/05/06/2018-05-06_Github_Pages页面重定向到新网址,实现域名跳转/</id>
     <published>2018-05-06T08:35:16.000Z</published>
-    <updated>2018-05-06T13:02:31.846Z</updated>
+    <updated>2018-05-07T06:50:39.390Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最新还是决下心来换域名啦！从 <a href="http://ihtc.cc" target="_blank" rel="external">http://ihtc.cc</a> 换成 <a href="https://ihtcboy.com">https://ihtcboy.com</a> ！然后问题就来了，以前文章的链接打开404了，旧域名也访问不通，这样子不行呢！用了2年多的旧域名，在百度谷歌还是积累了一些爬虫，还有很多分享到第三方平台的文章呢！想一想，还是想救一救它！！！</p>
 <a id="more"></a>
 <h3 id="2、准备工作">2、准备工作</h3><p>首先，因为是2个域名，所以我分别用2个GitHub账号设置对应的Repo地址解析。</p>
@@ -103,7 +159,7 @@
     <link href="https://iHTCboy.com/2018/05/05/2018-05-05_%E5%BF%86%E7%88%B7%E7%88%B7%E2%80%94%E2%80%94%E7%95%99%E5%AE%88%E8%80%81%E4%BA%BA%E7%9A%84%E4%B8%80%E4%BB%A3/"/>
     <id>https://iHTCboy.com/2018/05/05/2018-05-05_忆爷爷——留守老人的一代/</id>
     <published>2018-05-04T16:05:16.000Z</published>
-    <updated>2018-05-06T13:02:01.934Z</updated>
+    <updated>2018-05-12T14:35:59.187Z</updated>
     <content type="html"><![CDATA[<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/myGrandpa.jpg" alt="my grandpa"></p>
 <h3 id="忆">忆</h3><p>爷爷生于三十年代，抗日战争之际。</p>
 <p>听爷爷说，我们家以前是地主，解放后，我们家族就走下坡路，爷辈各兄弟分散多地。</p>
@@ -123,7 +179,7 @@
 <p>有时候站在历史的回流中，看着城市里面永远不会熄灭的灯光，其实是最大的阴影，最大的黑暗。</p>
 <p>在历史的车轮碾压下，尘归尘土归土。现在的小康生活，来的太容易。每天纸醉金迷，玩物丧志，玩弄人生。最可怕的是，只会羡慕别人，完全没有自我的那些生命。一辈子就这些长，有些事要记住，有些事要去做，如果不能体会到的困境，就不会意识到自己在睡觉吧。</p>
 <p>那些无奈，辛勤的日子，依然会有人记得，带着梦想去奋斗吧！</p>
-<p>忆往昔，爷爷一路走好，愿天堂没有孤独。</p>
+<p><del>忆往昔，爷爷一路走好，愿天堂没有孤独。</del></p>
 <p><br></p>
 <p align="right">5月4日 夜</p>
 
@@ -1144,6 +1200,65 @@
   </entry>
   
   <entry>
+    <title><![CDATA[iTerm配置导出与迁移方法]]></title>
+    <link href="https://iHTCboy.com/2018/01/18/2018-05-12_iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA%E4%B8%8E%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95/"/>
+    <id>https://iHTCboy.com/2018/01/18/2018-05-12_iTerm配置导出与迁移方法/</id>
+    <published>2018-01-18T07:49:16.000Z</published>
+    <updated>2018-05-12T16:16:06.556Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，另外导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>
+<a id="more"></a>
+<h3 id="2、iTerm配置导出&amp;迁移">2、iTerm配置导出&amp;迁移</h3><p>如果大家英文好，直接上官网看看吧，<a href="https://www.iterm2.com/documentation-dynamic-profiles.html" target="_blank" rel="external">Dynamic Profiles - Documentation - iTerm2 - macOS Terminal Replacement</a></p>
+<p>我这里简单说一下步骤，打开配置：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iTerm -&gt; <span class="constant">Preferences </span>-&gt; <span class="constant">Profiles </span>-&gt; <span class="constant">Other Actions</span></span><br></pre></td></tr></table></figure>
+<p>然后有2种选择方式：</p>
+<ul>
+<li><p>Copy Profile as JSON （复制选择的当前配置）</p>
+</li>
+<li><p>Copy All Profiles as JSON （复制全部的配置）</p>
+</li>
+</ul>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180512-iTerm-Preferences-Profiles-Other Actions.png" alt="20180512-iTerm-Preferences-Profiles-Other_Actions.png"></p>
+<p>这里选择复制全部的配置，然后保存到一个文件里面，后缀可以不用选择，文件名随意起，如：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180512-iterm-myconfig.png" alt="20180512-iterm-myconfig.png"></p>
+<p>然后把这个配置文件，复制到新电脑的下面目录下：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/Library/</span>Application Support<span class="regexp">/iTerm2/</span>DynamicProfiles<span class="regexp">/</span></span><br></pre></td></tr></table></figure>
+<p>然后启动新电脑的 iTerm2，这时配置已经加载迁移成功啦，DynamicProfiles目录下的文件可以删除，因为 iTerm2 启动里，会自动加载这个目录下的配置内容，但是配置读取成功后，iTerm是另外保存配置的。</p>
+<h3 id="总结">总结</h3><p>这次迁移新电脑过程中，很多软件都重新下载，另外，之前在淘宝买个正版的软件，比如16年时，数码荔枝正版软件，当前代理的 CleanMyMac3 优惠价只要45元，当时就下手了。但是今天，突然发现只能一台设备激活，但是在AppStore购买的软件，可以无限下载啊！！！无限设备呢！！！！</p>
+<p>之前 Mweb 黑色星期五是半价，就在AppStore购买了，现在可以随意多台设备下载！所以，想想，其实还是在AppStore下载购买好！原因有:</p>
+<ul>
+<li>自动更新，安全可靠</li>
+<li>一个账号购买，无限安装设备（家庭共享也可以免费下载）</li>
+</ul>
+<p>当然，有些软件不在AppStore上架，可能就是上面的无限下载导致软件开发商不愿意在AppStore上架的原因吧，比如 jetbrains, Adobe 大厂， 很多软件也是，唉，我已经在AppStore购买了很多正版软件，真心觉得自动安装更新非常方便，现在的时代时间就是金钱，希望更多开发商在AppStore for mac 上架应用（当然，如果真希望用户只能一台设备安装，如果与苹果协商有解决方案，其实也是大喜的标示~）</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://www.iterm2.com/documentation-dynamic-profiles.html" target="_blank" rel="external">Dynamic Profiles - Documentation - iTerm2 - macOS Terminal Replacement</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，另外导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>]]>
+    
+    </summary>
+    
+      <category term="iTerm2_DynamicProfiles" scheme="https://iHTCboy.com/tags/iTerm2-DynamicProfiles/"/>
+    
+      <category term="iTerm配置导出" scheme="https://iHTCboy.com/tags/iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA/"/>
+    
+      <category term="iTerm配置迁移" scheme="https://iHTCboy.com/tags/iTerm%E9%85%8D%E7%BD%AE%E8%BF%81%E7%A7%BB/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[你好，2018！]]></title>
     <link href="https://iHTCboy.com/2018/01/01/2018-01-01_%E4%BD%A0%E5%A5%BD%EF%BC%8C2018%EF%BC%81/"/>
     <id>https://iHTCboy.com/2018/01/01/2018-01-01_你好，2018！/</id>
@@ -1284,90 +1399,6 @@
       <category term="Imagesize" scheme="https://iHTCboy.com/tags/Imagesize/"/>
     
       <category term="图片实际大小显示" scheme="https://iHTCboy.com/tags/%E5%9B%BE%E7%89%87%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F%E6%98%BE%E7%A4%BA/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[UIActivityIndicatorView的hidden隐藏属性没作用？]]></title>
-    <link href="https://iHTCboy.com/2017/11/15/2017_11_UIActivityIndicatorView%E7%9A%84hidden%E9%9A%90%E8%97%8F%E5%B1%9E%E6%80%A7%E6%B2%A1%E4%BD%9C%E7%94%A8%EF%BC%9F/"/>
-    <id>https://iHTCboy.com/2017/11/15/2017_11_UIActivityIndicatorView的hidden隐藏属性没作用？/</id>
-    <published>2017-11-15T01:17:16.000Z</published>
-    <updated>2018-05-01T15:16:28.856Z</updated>
-    <content type="html"><![CDATA[<h3 id="现象">现象</h3><p>创作的UIActivityIndicatorView，想当作一般的 View 使用，然后想隐藏时，把hidden属性设置为 YES；但是一直没有作用。</p>
-<h3 id="原因">原因</h3><p>UIActivityIndicatorView有一个属性hidesWhenStopped。它默认为YES(true)。建议用这个属性来隐藏UIActivityIndicatorView，因为在一些异步和通知回调中，hidden属性起不到作用，可以参考我写的 <a href="https://github.com/iHTCboy/UIActivityIndicatorViewDemo" target="_blank" rel="external">GitHub Demo</a>.</p>
-<blockquote>
-<p>// default is YES. calls -setHidden when animating gets set to NO</p>
-</blockquote>
- <a id="more"></a>
-<h3 id="解决方案">解决方案</h3><p>设置indicatorView.hidesWhenStopped属性，使用startAnimating、stopAnimating方法来按钮 UIActivityIndicatorView 是否显示，这样不管什么情况下，都可以正常。</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">indicatorView.hidesWhenStopped = YES<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">if</span> (isShow) &#123;</span><br><span class="line">    <span class="attr_selector">[self.loadingView startAnimating]</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">else</span>&#123;</span><br><span class="line">    <span class="attr_selector">[self.loadingView stopAnimating]</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://github.com/iHTCboy/HelloWorld" target="_blank" rel="external">Hello World</a></li>
-<li><a href="https://stackoverflow.com/questions/25745172/swift-uiactivityindicatorview-hidden-false-not-working" target="_blank" rel="external">xcode6 - swift UIActivityIndicatorView .hidden = false not working - Stack Overflow</a></li>
-<li><a href="https://stackoverflow.com/questions/29948983/uiactivityindicatorview-hidden-property-is-set-to-yes-by-default/29952413" target="_blank" rel="external">ios - UIActivityIndicatorView hidden property is set to YES by default - Stack Overflow</a></li>
-<li><a href="https://github.com/iHTCboy/UIActivityIndicatorViewDemo" target="_blank" rel="external">https://github.com/iHTCboy/UIActivityIndicatorViewDemo</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="现象">现象</h3><p>创作的UIActivityIndicatorView，想当作一般的 View 使用，然后想隐藏时，把hidden属性设置为 YES；但是一直没有作用。</p>
-<h3 id="原因">原因</h3><p>UIActivityIndicatorView有一个属性hidesWhenStopped。它默认为YES(true)。建议用这个属性来隐藏UIActivityIndicatorView，因为在一些异步和通知回调中，hidden属性起不到作用，可以参考我写的 <a href="https://github.com/iHTCboy/UIActivityIndicatorViewDemo">GitHub Demo</a>.</p>
-<blockquote>
-<p>// default is YES. calls -setHidden when animating gets set to NO</p>
-</blockquote>]]>
-    
-    </summary>
-    
-      <category term="UIActivityIndicatorView" scheme="https://iHTCboy.com/tags/UIActivityIndicatorView/"/>
-    
-      <category term="hidden隐藏没效" scheme="https://iHTCboy.com/tags/hidden%E9%9A%90%E8%97%8F%E6%B2%A1%E6%95%88/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[iOS11适配UIToolbar无法点击问题]]></title>
-    <link href="https://iHTCboy.com/2017/11/09/2017_11_iOS11%E9%80%82%E9%85%8DUIToolbar%E6%97%A0%E6%B3%95%E7%82%B9%E5%87%BB%E9%97%AE%E9%A2%98/"/>
-    <id>https://iHTCboy.com/2017/11/09/2017_11_iOS11适配UIToolbar无法点击问题/</id>
-    <published>2017-11-09T12:54:16.000Z</published>
-    <updated>2018-05-01T15:16:32.452Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>一个简单的浏览器，使用到UIToolbar做底部工具栏，在 iOS11 上就有点击无响应的问题。现在发现苹果一到大系统版本，很多 UIView的实现和生命周期都变化，他们系统不用兼容 iOS10，想怎么改就怎么改，没有顾虑，但是我们作为开发者只能受累。<br><img src="http://upload-images.jianshu.io/upload_images/99517-9e8c46fce3a85889.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="C93266DA-14DD-46E0-9064-F5F5728E67EF.png"></p>
-<h3 id="iOS_11">iOS 11</h3><p>原因：Toolbar 在iOS11默认添加有<code>_UIToolbarContentView</code>，_UIToolbarContentView <code>_UIButtonBarStackView</code>覆盖在自定义的按钮上面，导致按钮无响应。</p>
- <a id="more"></a>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-0064ec0d0729f0e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="在Toolbar 上有_UIButtonBarStackView.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-6e3ed37aa98a0aaf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="在 Toolbar 上层有_UIToolbarContentView.png"></p>
-<h3 id="解决">解决</h3><p>为了解决iOS11(与较低版本兼容)的问题，您只需要在UIToolBar被添加为UI层次结构的子视图之后，调用 layoutIfNeeded方法，UIToolbarContentView会降低到UIToolBar的第一个子视图，然后你就可以将所有的子视图添加到最顶层。</p>
-<p>For example in ObjC:</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">UIToolbar</span> *toolbar = [UIToolbar new]<span class="comment">;</span></span><br><span class="line">[<span class="keyword">self </span><span class="keyword">addSubview: </span>toolbar]<span class="comment">;</span></span><br><span class="line">[toolbar layoutIfNeeded]<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">&lt;here one can <span class="keyword">add </span>all <span class="keyword">subviews </span>needed&gt;</span><br></pre></td></tr></table></figure>
-<p>在创建成功后，使用layoutIfNeeded方法，让_UIToolbarContentView马上生效，这样在添加子视图就没有问题啦。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-f77faa171cc652b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="正常后_UIToolbarContentView.png"></p>
-<h3 id="总结">总结</h3><p>iOS11 上的 NavigationBar 好像也有相似的结构变化，每一次新系统，用户无愿意升级，开发者为适配要付出更多，一方面是苹果的改变压力在加大，系统的维护也是一个很大工作；另一方面 App 的界面越来越复杂，如果在搭建时没有设计好 UI 框架，部分依赖系统组件功能，导致受到影响也比较大。</p>
-<h3 id="参考阅读">参考阅读</h3><ul>
-<li><a href="https://github.com/iHTCboy/HelloWorld" target="_blank" rel="external">Hello World</a></li>
-<li><a href="https://stackoverflow.com/questions/46107640/ios11-uitoolbar-contentview" target="_blank" rel="external">ios - iOS11 UIToolBar Contentview - Stack Overflow</a></li>
-<li><a href="https://github.com/slackhq/SlackTextViewController/issues/604" target="_blank" rel="external">iOS 11 breaks slacktextviewcontroller · Issue #604 · slackhq/SlackTextViewController</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>一个简单的浏览器，使用到UIToolbar做底部工具栏，在 iOS11 上就有点击无响应的问题。现在发现苹果一到大系统版本，很多 UIView的实现和生命周期都变化，他们系统不用兼容 iOS10，想怎么改就怎么改，没有顾虑，但是我们作为开发者只能受累。<br><img src="http://upload-images.jianshu.io/upload_images/99517-9e8c46fce3a85889.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="C93266DA-14DD-46E0-9064-F5F5728E67EF.png"></p>
-<h3 id="iOS_11">iOS 11</h3><p>原因：Toolbar 在iOS11默认添加有<code>_UIToolbarContentView</code>，_UIToolbarContentView <code>_UIButtonBarStackView</code>覆盖在自定义的按钮上面，导致按钮无响应。</p>]]>
-    
-    </summary>
-    
-      <category term="UIToolbar" scheme="https://iHTCboy.com/tags/UIToolbar/"/>
-    
-      <category term="iOS11" scheme="https://iHTCboy.com/tags/iOS11/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
