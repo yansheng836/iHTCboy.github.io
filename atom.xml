@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-05-12T15:45:36.532Z</updated>
+  <updated>2018-05-12T16:21:38.235Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[iTerm配置导出与迁移方法]]></title>
+    <link href="https://iHTCboy.com/2018/05/12/2018-05-12_iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA%E4%B8%8E%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95/"/>
+    <id>https://iHTCboy.com/2018/05/12/2018-05-12_iTerm配置导出与迁移方法/</id>
+    <published>2018-05-12T15:49:16.000Z</published>
+    <updated>2018-05-12T16:21:38.235Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，另外导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>
+<a id="more"></a>
+<h3 id="2、iTerm配置导出&amp;迁移">2、iTerm配置导出&amp;迁移</h3><p>如果大家英文好，直接上官网看看吧，<a href="https://www.iterm2.com/documentation-dynamic-profiles.html" target="_blank" rel="external">Dynamic Profiles - Documentation - iTerm2 - macOS Terminal Replacement</a></p>
+<p>我这里简单说一下步骤，打开配置：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iTerm -&gt; <span class="constant">Preferences </span>-&gt; <span class="constant">Profiles </span>-&gt; <span class="constant">Other Actions</span></span><br></pre></td></tr></table></figure>
+<p>然后有2种选择方式：</p>
+<ul>
+<li><p>Copy Profile as JSON （复制选择的当前配置）</p>
+</li>
+<li><p>Copy All Profiles as JSON （复制全部的配置）</p>
+</li>
+</ul>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180512-iTerm-Preferences-Profiles-Other_Actions.png" alt="20180512-iTerm-Preferences-Profiles-Other_Actions.png"></p>
+<p>这里选择复制全部的配置，然后保存到一个文件里面，后缀可以不用选择，文件名随意起，如：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180512-iterm-myconfig.png" alt="20180512-iterm-myconfig.png"></p>
+<p>然后把这个配置文件，复制到新电脑的下面目录下：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/Library/</span>Application Support<span class="regexp">/iTerm2/</span>DynamicProfiles<span class="regexp">/</span></span><br></pre></td></tr></table></figure>
+<p>然后启动新电脑的 iTerm2，这时配置已经加载迁移成功啦，DynamicProfiles目录下的文件可以删除，因为 iTerm2 启动里，会自动加载这个目录下的配置内容，但是配置读取成功后，iTerm是另外保存配置的。</p>
+<h3 id="总结">总结</h3><p>这次迁移新电脑过程中，很多软件都重新下载，另外，之前在淘宝买个正版的软件，比如16年时，数码荔枝正版软件，当前代理的 CleanMyMac3 优惠价只要45元，当时就下手了。但是今天，突然发现只能一台设备激活，但是在AppStore购买的软件，可以无限下载啊！！！无限设备呢！！！！</p>
+<p>之前 Mweb 黑色星期五是半价，就在AppStore购买了，现在可以随意多台设备下载！所以，想想，其实还是在AppStore下载购买好！原因有:</p>
+<ul>
+<li>自动更新，安全可靠</li>
+<li>一个账号购买，无限安装设备（家庭共享也可以免费下载）</li>
+</ul>
+<p>当然，有些软件不在AppStore上架，可能就是上面的无限下载导致软件开发商不愿意在AppStore上架的原因吧，比如 jetbrains, Adobe 大厂， 很多软件也是，唉，我已经在AppStore购买了很多正版软件，真心觉得自动安装更新非常方便，现在的时代时间就是金钱，希望更多开发商在AppStore for mac 上架应用（当然，如果真希望用户只能一台设备安装，如果与苹果协商有解决方案，其实也是大喜的标示~）</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://www.iterm2.com/documentation-dynamic-profiles.html" target="_blank" rel="external">Dynamic Profiles - Documentation - iTerm2 - macOS Terminal Replacement</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，另外导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>]]>
+    
+    </summary>
+    
+      <category term="iTerm2_DynamicProfiles" scheme="https://iHTCboy.com/tags/iTerm2-DynamicProfiles/"/>
+    
+      <category term="iTerm配置导出" scheme="https://iHTCboy.com/tags/iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA/"/>
+    
+      <category term="iTerm配置迁移" scheme="https://iHTCboy.com/tags/iTerm%E9%85%8D%E7%BD%AE%E8%BF%81%E7%A7%BB/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[mac版QQ聊天信息备份与导出方法]]></title>
@@ -1194,65 +1253,6 @@
       <category term="命令行查单词" scheme="https://iHTCboy.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E5%8D%95%E8%AF%8D/"/>
     
       <category term="有道词典" scheme="https://iHTCboy.com/tags/%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[iTerm配置导出与迁移方法]]></title>
-    <link href="https://iHTCboy.com/2018/01/18/2018-05-12_iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA%E4%B8%8E%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95/"/>
-    <id>https://iHTCboy.com/2018/01/18/2018-05-12_iTerm配置导出与迁移方法/</id>
-    <published>2018-01-18T07:49:16.000Z</published>
-    <updated>2018-05-12T16:16:06.556Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，另外导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>
-<a id="more"></a>
-<h3 id="2、iTerm配置导出&amp;迁移">2、iTerm配置导出&amp;迁移</h3><p>如果大家英文好，直接上官网看看吧，<a href="https://www.iterm2.com/documentation-dynamic-profiles.html" target="_blank" rel="external">Dynamic Profiles - Documentation - iTerm2 - macOS Terminal Replacement</a></p>
-<p>我这里简单说一下步骤，打开配置：</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iTerm -&gt; <span class="constant">Preferences </span>-&gt; <span class="constant">Profiles </span>-&gt; <span class="constant">Other Actions</span></span><br></pre></td></tr></table></figure>
-<p>然后有2种选择方式：</p>
-<ul>
-<li><p>Copy Profile as JSON （复制选择的当前配置）</p>
-</li>
-<li><p>Copy All Profiles as JSON （复制全部的配置）</p>
-</li>
-</ul>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180512-iTerm-Preferences-Profiles-Other Actions.png" alt="20180512-iTerm-Preferences-Profiles-Other_Actions.png"></p>
-<p>这里选择复制全部的配置，然后保存到一个文件里面，后缀可以不用选择，文件名随意起，如：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180512-iterm-myconfig.png" alt="20180512-iterm-myconfig.png"></p>
-<p>然后把这个配置文件，复制到新电脑的下面目录下：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/Library/</span>Application Support<span class="regexp">/iTerm2/</span>DynamicProfiles<span class="regexp">/</span></span><br></pre></td></tr></table></figure>
-<p>然后启动新电脑的 iTerm2，这时配置已经加载迁移成功啦，DynamicProfiles目录下的文件可以删除，因为 iTerm2 启动里，会自动加载这个目录下的配置内容，但是配置读取成功后，iTerm是另外保存配置的。</p>
-<h3 id="总结">总结</h3><p>这次迁移新电脑过程中，很多软件都重新下载，另外，之前在淘宝买个正版的软件，比如16年时，数码荔枝正版软件，当前代理的 CleanMyMac3 优惠价只要45元，当时就下手了。但是今天，突然发现只能一台设备激活，但是在AppStore购买的软件，可以无限下载啊！！！无限设备呢！！！！</p>
-<p>之前 Mweb 黑色星期五是半价，就在AppStore购买了，现在可以随意多台设备下载！所以，想想，其实还是在AppStore下载购买好！原因有:</p>
-<ul>
-<li>自动更新，安全可靠</li>
-<li>一个账号购买，无限安装设备（家庭共享也可以免费下载）</li>
-</ul>
-<p>当然，有些软件不在AppStore上架，可能就是上面的无限下载导致软件开发商不愿意在AppStore上架的原因吧，比如 jetbrains, Adobe 大厂， 很多软件也是，唉，我已经在AppStore购买了很多正版软件，真心觉得自动安装更新非常方便，现在的时代时间就是金钱，希望更多开发商在AppStore for mac 上架应用（当然，如果真希望用户只能一台设备安装，如果与苹果协商有解决方案，其实也是大喜的标示~）</p>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://www.iterm2.com/documentation-dynamic-profiles.html" target="_blank" rel="external">Dynamic Profiles - Documentation - iTerm2 - macOS Terminal Replacement</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，另外导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>]]>
-    
-    </summary>
-    
-      <category term="iTerm2_DynamicProfiles" scheme="https://iHTCboy.com/tags/iTerm2-DynamicProfiles/"/>
-    
-      <category term="iTerm配置导出" scheme="https://iHTCboy.com/tags/iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA/"/>
-    
-      <category term="iTerm配置迁移" scheme="https://iHTCboy.com/tags/iTerm%E9%85%8D%E7%BD%AE%E8%BF%81%E7%A7%BB/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
