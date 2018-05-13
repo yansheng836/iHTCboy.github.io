@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-05-12T16:21:38.235Z</updated>
+  <updated>2018-05-13T02:14:49.527Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,15 +19,15 @@
     <link href="https://iHTCboy.com/2018/05/12/2018-05-12_iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA%E4%B8%8E%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2018/05/12/2018-05-12_iTerm配置导出与迁移方法/</id>
     <published>2018-05-12T15:49:16.000Z</published>
-    <updated>2018-05-12T16:21:38.235Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，另外导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>
+    <updated>2018-05-13T02:14:49.527Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，也没有找到导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>
 <a id="more"></a>
 <h3 id="2、iTerm配置导出&amp;迁移">2、iTerm配置导出&amp;迁移</h3><p>如果大家英文好，直接上官网看看吧，<a href="https://www.iterm2.com/documentation-dynamic-profiles.html" target="_blank" rel="external">Dynamic Profiles - Documentation - iTerm2 - macOS Terminal Replacement</a></p>
 <p>我这里简单说一下步骤，打开配置：</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iTerm -&gt; <span class="constant">Preferences </span>-&gt; <span class="constant">Profiles </span>-&gt; <span class="constant">Other Actions</span></span><br></pre></td></tr></table></figure>
 <p>然后有2种选择方式：</p>
 <ul>
-<li><p>Copy Profile as JSON （复制选择的当前配置）</p>
+<li><p>Copy Profile as JSON （复制当前选中的配置）</p>
 </li>
 <li><p>Copy All Profiles as JSON （复制全部的配置）</p>
 </li>
@@ -59,7 +59,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，另外导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>]]>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，也没有找到导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>]]>
     
     </summary>
     
