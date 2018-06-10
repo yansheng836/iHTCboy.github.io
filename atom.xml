@@ -660,10 +660,10 @@
   
   <entry>
     <title><![CDATA[Gitment评论功能接入踩坑教程]]></title>
-    <link href="https://iHTCboy.com/2018/02/25/2018-02-25%20_Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%85%A5%E8%B8%A9%E5%9D%91%E6%95%99%E7%A8%8B/"/>
-    <id>https://iHTCboy.com/2018/02/25/2018-02-25 _Gitment评论功能接入踩坑教程/</id>
+    <link href="https://iHTCboy.com/2018/02/25/2018-02-25_Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%85%A5%E8%B8%A9%E5%9D%91%E6%95%99%E7%A8%8B/"/>
+    <id>https://iHTCboy.com/2018/02/25/2018-02-25_Gitment评论功能接入踩坑教程/</id>
     <published>2018-02-25T04:45:26.000Z</published>
-    <updated>2018-05-06T08:48:31.772Z</updated>
+    <updated>2018-06-09T02:21:38.863Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>之前接入的评论功能，都因为各种原因被放弃了，今天从新计划接入评论功能，所以就有了今天这篇文章。</p>
 <h3 id="2、评论模块简介">2、评论模块简介</h3><ul>
 <li><strong>多说</strong> - 最多用户使用的评论，但遗憾2017年6月将暂定服务；不建议新用户使用，但为旧用户保留，也感谢多说一路的陪伴；</li>
