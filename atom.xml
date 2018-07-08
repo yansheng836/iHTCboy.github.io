@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-06-09T02:21:54.271Z</updated>
+  <updated>2018-07-08T10:48:46.629Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[简书文章被锁定]]></title>
+    <link href="https://iHTCboy.com/2018/07/08/2018-07-08_%E7%AE%80%E4%B9%A6%E6%96%87%E7%AB%A0%E8%A2%AB%E9%94%81%E5%AE%9A/"/>
+    <id>https://iHTCboy.com/2018/07/08/2018-07-08_简书文章被锁定/</id>
+    <published>2018-07-08T10:49:16.000Z</published>
+    <updated>2018-07-08T10:48:46.629Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、文章被锁定">1、文章被锁定</h3><p>昨晚看到简书消息：</p>
+<p>你的文章《《绝代宠妓》(Dangerous Beauty)观后感》已转为仅自己可见，如有疑问请查看《为什么文章会被锁定？》或邮件联系 help@jianshu.com，谢谢你的分享</p>
+<a id="more"></a>
+<h3 id="2、去中心化">2、去中心化</h3><p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、文章被锁定">1、文章被锁定</h3><p>昨晚看到简书消息：</p>
+<p>你的文章《《绝代宠妓》(Dangerous Beauty)观后感》已转为仅自己可见，如有疑问请查看《为什么文章会被锁定？》或邮件联系 help@jianshu.com，谢谢你的分享</p>]]>
+    
+    </summary>
+    
+      <category term="简书文章被封" scheme="https://iHTCboy.com/tags/%E7%AE%80%E4%B9%A6%E6%96%87%E7%AB%A0%E8%A2%AB%E5%B0%81/"/>
+    
+      <category term="违反规定" scheme="https://iHTCboy.com/tags/%E8%BF%9D%E5%8F%8D%E8%A7%84%E5%AE%9A/"/>
+    
+      <category term="life" scheme="https://iHTCboy.com/categories/life/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[iTerm配置导出与迁移方法]]></title>
     <link href="https://iHTCboy.com/2018/05/12/2018-05-12_iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA%E4%B8%8E%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2018/05/12/2018-05-12_iTerm配置导出与迁移方法/</id>
     <published>2018-05-12T15:49:16.000Z</published>
-    <updated>2018-06-09T02:21:54.271Z</updated>
+    <updated>2018-07-08T10:08:59.019Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，也没有找到导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>
 <a id="more"></a>
 <h3 id="2、iTerm配置导出&amp;迁移">2、iTerm配置导出&amp;迁移</h3><p>如果大家英文好，直接上官网看看吧，<a href="https://www.iterm2.com/documentation-dynamic-profiles.html" target="_blank" rel="external">Dynamic Profiles - Documentation - iTerm2 - macOS Terminal Replacement</a></p>
@@ -58,7 +86,7 @@
 </ul>
 <p><br></p>
 <blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
 </blockquote>
 ]]></content>
     <summary type="html">
@@ -81,7 +109,7 @@
     <link href="https://iHTCboy.com/2018/05/08/2018-05-08_mac%E7%89%88QQ%E8%81%8A%E5%A4%A9%E4%BF%A1%E6%81%AF%E5%A4%87%E4%BB%BD%E4%B8%8E%E5%AF%BC%E5%87%BA%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2018/05/08/2018-05-08_mac版QQ聊天信息备份与导出方法/</id>
     <published>2018-05-08T11:35:16.000Z</published>
-    <updated>2018-05-12T15:45:36.532Z</updated>
+    <updated>2018-07-08T10:08:58.995Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近，我司终于更换新电脑的计划落实啦！！！</p>
 <blockquote>
 <p>Mac mini 3.0GHz 双核 Intel Core i7 处理器 (Turbo Boost 高达 3.5GHz)<br>16GB 1600MHz LPDDR3 SDRAM<br>1TB 融合硬盘<br>Intel Iris Graphics 图形处理器</p>
@@ -112,7 +140,7 @@
 </ul>
 <p><br></p>
 <blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
 </blockquote>
 ]]></content>
     <summary type="html">
@@ -137,7 +165,7 @@
     <link href="https://iHTCboy.com/2018/05/06/2018-05-06_Github_Pages%E9%A1%B5%E9%9D%A2%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E6%96%B0%E7%BD%91%E5%9D%80,%E5%AE%9E%E7%8E%B0%E5%9F%9F%E5%90%8D%E8%B7%B3%E8%BD%AC/"/>
     <id>https://iHTCboy.com/2018/05/06/2018-05-06_Github_Pages页面重定向到新网址,实现域名跳转/</id>
     <published>2018-05-06T08:35:16.000Z</published>
-    <updated>2018-05-07T06:50:39.390Z</updated>
+    <updated>2018-07-08T10:08:17.472Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最新还是决下心来换域名啦！从 <a href="http://ihtc.cc" target="_blank" rel="external">http://ihtc.cc</a> 换成 <a href="https://ihtcboy.com">https://ihtcboy.com</a> ！然后问题就来了，以前文章的链接打开404了，旧域名也访问不通，这样子不行呢！用了2年多的旧域名，在百度谷歌还是积累了一些爬虫，还有很多分享到第三方平台的文章呢！想一想，还是想救一救它！！！</p>
 <a id="more"></a>
 <h3 id="2、准备工作">2、准备工作</h3><p>首先，因为是2个域名，所以我分别用2个GitHub账号设置对应的Repo地址解析。</p>
@@ -196,7 +224,7 @@
 </ul>
 <p><br></p>
 <blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
 </blockquote>
 ]]></content>
     <summary type="html">
@@ -1367,41 +1395,6 @@
       <category term="Runtime" scheme="https://iHTCboy.com/tags/Runtime/"/>
     
       <category term="swizzle" scheme="https://iHTCboy.com/tags/swizzle/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[使用AutoLayout约束, 为啥图片的大小(Image size)却还以实际大小显示？]]></title>
-    <link href="https://iHTCboy.com/2017/11/18/2017_11_%E4%BD%BF%E7%94%A8AutoLayout%E7%BA%A6%E6%9D%9F,%20%E4%B8%BA%E5%95%A5%E5%9B%BE%E7%89%87%E7%9A%84%E5%A4%A7%E5%B0%8F(Image%20size)%E5%8D%B4%E8%BF%98%E4%BB%A5%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F%E6%98%BE%E7%A4%BA%EF%BC%9F/"/>
-    <id>https://iHTCboy.com/2017/11/18/2017_11_使用AutoLayout约束, 为啥图片的大小(Image size)却还以实际大小显示？/</id>
-    <published>2017-11-18T12:49:16.000Z</published>
-    <updated>2018-05-01T15:16:40.638Z</updated>
-    <content type="html"><![CDATA[<h3 id="问题">问题</h3><p>给一个 UIImageView 设置一张图片时，使用 AutoLayout 给 UIImageView 约束宽高，但是实际显示的大小，图片以实际的大小显示出来，代码也没有设置 frame，设置contentMode为UIViewContentModeScaleAspectFit 也不起作用。</p>
-<h3 id="原因">原因</h3><p>最后注册到约束时，设置了 <code>@property NSLayoutPriority priority;</code> ，就是设置了线束的优先级为<code>UILayoutPriorityDefaultHigh</code>，导致这个约束级别比图片默认显示的大小的优先级低。</p>
- <a id="more"></a>
-<h3 id="解决方法">解决方法</h3><p>如果开始一定要给一个低级的约束，那么要以约束大小显示时，在重新添加一个相同大小约束的<code>UILayoutPriorityRequired</code>，这样就会覆盖低优先级的约束，图片大小就不会超级约束范围。</p>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://github.com/iHTCboy/HelloWorld" target="_blank" rel="external">Hello World</a></li>
-<li><a href="https://stackoverflow.com/questions/26833627/with-auto-layout-how-do-i-make-a-uiimageviews-size-dynamic-depending-on-the-im" target="_blank" rel="external">ios - With Auto Layout, how do I make a UIImageView’s size dynamic depending on the image? - Stack Overflow</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="问题">问题</h3><p>给一个 UIImageView 设置一张图片时，使用 AutoLayout 给 UIImageView 约束宽高，但是实际显示的大小，图片以实际的大小显示出来，代码也没有设置 frame，设置contentMode为UIViewContentModeScaleAspectFit 也不起作用。</p>
-<h3 id="原因">原因</h3><p>最后注册到约束时，设置了 <code>@property NSLayoutPriority priority;</code> ，就是设置了线束的优先级为<code>UILayoutPriorityDefaultHigh</code>，导致这个约束级别比图片默认显示的大小的优先级低。</p>]]>
-    
-    </summary>
-    
-      <category term="AutoLayout" scheme="https://iHTCboy.com/tags/AutoLayout/"/>
-    
-      <category term="Imagesize" scheme="https://iHTCboy.com/tags/Imagesize/"/>
-    
-      <category term="图片实际大小显示" scheme="https://iHTCboy.com/tags/%E5%9B%BE%E7%89%87%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F%E6%98%BE%E7%A4%BA/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
