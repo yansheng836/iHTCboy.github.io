@@ -6,6 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://iHTCboy.com">
+  <link rel="canonical" href="https://ihtcboy.com" />
   <title>Github Pages页面重定向到新网址，实现域名跳转 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、前言最新还是决下心来换域名啦！从 http://ihtc.cc 换成 https://ihtcboy.com ！然后问题就来了，以前文章的链接打开404了，旧域名也访问不通，这样子不行呢！用了2年多的旧域名，在百度谷歌还是积累了一些爬虫，还有很多分享到第三方平台的文章呢！想一想，还是想救一救它！！！">
@@ -1529,5 +1530,10 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+  <script type="text/javascript">
+    var host = "ihtcboy.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
 </body>
 </html>
