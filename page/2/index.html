@@ -204,6 +204,107 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2018-03-11_NSString的boolValue方法甚解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/11/2018-03-11_NSString的boolValue方法甚解/">NSString的boolValue方法甚解</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/11/2018-03-11_NSString的boolValue方法甚解/" class="archive-article-date">
+  	<time datetime="2018-03-11T13:22:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、前言">1、前言</h3><p>NSString的<code>boolValue</code>之前有使用，但是一直没有真正了解什么时候返回YES（true）或NO(false)。其实，苹果在官方文档中已经写的很清楚，按<code>command</code> + <code>control</code> 点击<code>boolValue</code>进入文档就可以看到：</p>
+<p>&gt;</p>
+<blockquote>
+<p><strong>boolValue</strong><br>The Boolean value of the string.</p>
+<p><strong>Declaration</strong><br>@property(readonly) BOOL boolValue;</p>
+<p><strong>Discussion</strong><br>This property is YES on encountering one of “Y”, “y”, “T”, “t”, or a digit 1-9—the method ignores any trailing characters. This property is NO if the receiver doesn’t begin with a valid decimal text representation of a number.<br>The property assumes a decimal representation and skips whitespace at the beginning of the string. It also skips initial whitespace characters, or optional -/+ sign followed by zeroes.</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2018/03/11/2018-03-11_NSString的boolValue方法甚解/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">NSString</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">boolValue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/11/2018-03-11_NSString的boolValue方法甚解/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2018-03-05_两个NSInvocation崩溃引起的反思" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1105,101 +1206,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2017_11_你真的懂使用Runtime进行swizzle的最佳写法？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/2017_11_你真的懂使用Runtime进行swizzle的最佳写法？/">你真的懂使用Runtime进行swizzle的最佳写法？</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/18/2017_11_你真的懂使用Runtime进行swizzle的最佳写法？/" class="archive-article-date">
-  	<time datetime="2017-11-18T13:15:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言">前言</h3><p>runtime 的黑魔法很多人都一定听过，或者已经在使用了。但是，怎么swizzle方法才是最好呢？</p>
-<h3 id="一般写法">一般写法</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line">    <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line">    method_exchangeImplementations(originalMethod, swizzleMethod);</span><br></pre></td></tr></table></figure>
-<p>或者是下面这种方式，swizzle第二种写法:</p>
-<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line"> <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line"> BOOL didAddMethod = class_addMethod(aClass, originalSel, method_getImplementation(swizzleMethod), method_getTypeEncoding(swizzleMethod));</span><br><span class="line"> <span class="keyword">if</span> (didAddMethod) <span class="comment">&#123;</span><br><span class="line">     class_replaceMethod(aClass, swizzleSel, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));</span><br><span class="line"> &#125;</span><span class="keyword">else</span><span class="comment">&#123;</span><br><span class="line">     method_exchangeImplementations(originalMethod, swizzleMethod);</span><br><span class="line"> &#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="更好写法">更好写法</h3><p>其它，这样写，一般不会有问题，但是在一些情况下，比如这个hook的类没有实现你要swizzle的方法，这时是没有swizzle成功的，然后你自己写的 swizzle 里又自己调用自己，就无限循环。</p>
-        
-          <a class="article-more-a" href="/2017/11/18/2017_11_你真的懂使用Runtime进行swizzle的最佳写法？/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Runtime</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">swizzle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/18/2017_11_你真的懂使用Runtime进行swizzle的最佳写法？/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1333,6 +1339,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">去中心化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">iOS12</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">沙盒账户</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">sandbox</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1645,10 +1663,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">LaunchScreen</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sandbox</a>
               </li>
              
               <li class="article-tag-list-item">

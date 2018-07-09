@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-08T13:53:32.614Z</updated>
+  <updated>2018-07-09T15:14:35.225Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,13 +19,13 @@
     <link href="https://iHTCboy.com/2018/07/08/2018-07-08_%E7%AE%80%E4%B9%A6%E6%96%87%E7%AB%A0%E8%A2%AB%E9%94%81%E5%AE%9A/"/>
     <id>https://iHTCboy.com/2018/07/08/2018-07-08_简书文章被锁定/</id>
     <published>2018-07-08T10:49:16.000Z</published>
-    <updated>2018-07-08T13:53:32.614Z</updated>
+    <updated>2018-07-09T15:14:35.225Z</updated>
     <content type="html"><![CDATA[<h3 id="1、文章被锁定">1、文章被锁定</h3><p>昨晚看到简书消息：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180708-jianshu_lock.png" alt="20180708-jianshu_lock.png"></p>
 <p>原文章已经转移到个人博客：</p>
 <ul>
-<li><a href="https://ihtcboy.com/2015/06/22/2015-06-22_《绝代宠妓》(Dangerous_Beauty">《绝代宠妓》（Dangerous Beauty）观后感</a>观后感)</li>
 <li><a href="https://ihtcboy.com/2015/07/26/2015-07-26_建立信任机制">《建立信任机制》</a></li>
+<li><a href="https://ihtcboy.com/2015/06/22/2015-06-22_《绝代宠妓》(Dangerous_Beauty">《绝代宠妓》（Dangerous Beauty）观后感</a>观后感)</li>
 </ul>
 <h3 id="2、去中心化">2、去中心化</h3><a id="more"></a>
 <p>我不知道这是机器过滤还是人工选择，但作为第一批用户，见证成长，为这样的行为感觉太可惜。想起简书很久之前，我在14年无意见看到简书时，就觉得这个写作社区很棒，当时还联系了简书，交流了一下：</p>
@@ -46,8 +46,8 @@
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180708-jianshu_lock.png" alt="20180708-jianshu_lock.png"></p>
 <p>原文章已经转移到个人博客：</p>
 <ul>
-<li><a href="https://ihtcboy.com/2015/06/22/2015-06-22_《绝代宠妓》(Dangerous_Beauty">《绝代宠妓》（Dangerous Beauty）观后感</a>观后感)</li>
 <li><a href="https://ihtcboy.com/2015/07/26/2015-07-26_建立信任机制">《建立信任机制》</a></li>
+<li><a href="https://ihtcboy.com/2015/06/22/2015-06-22_《绝代宠妓》(Dangerous_Beauty">《绝代宠妓》（Dangerous Beauty）观后感</a>观后感)</li>
 </ul>
 <h3 id="2、去中心化">2、去中心化</h3>]]>
     
@@ -60,6 +60,59 @@
       <category term="违反规定" scheme="https://iHTCboy.com/tags/%E8%BF%9D%E5%8F%8D%E8%A7%84%E5%AE%9A/"/>
     
       <category term="life" scheme="https://iHTCboy.com/categories/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[淡淡iOS12独立沙盒账户登陆]]></title>
+    <link href="https://iHTCboy.com/2018/06/20/2018-06-20_%E6%B7%A1%E6%B7%A1iOS12%E7%8B%AC%E7%AB%8B%E6%B2%99%E7%9B%92%E8%B4%A6%E6%88%B7%E7%99%BB%E9%99%86/"/>
+    <id>https://iHTCboy.com/2018/06/20/2018-06-20_淡淡iOS12独立沙盒账户登陆/</id>
+    <published>2018-06-20T11:49:16.000Z</published>
+    <updated>2018-07-09T15:24:15.702Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在iOS12前，如果对沙盒账号测试充值不熟悉的同学，也许会遇到过这样的情况：</p>
+<blockquote>
+<p>不允许创建 iTunes 账户<br>此 AppleID 目前无法用于 iTunes Store。请稍后重试</p>
+</blockquote>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/06/20180620-sandbox-loginerror.png" alt="20180620-sandbox-loginerror.png"></p>
+<p>其实，测试账号不能在设置里登陆，只能在测试app里面发起充值时弹窗中登陆。苹果的文档也有说明，<a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/TestingInAppPurchases.html" target="_blank" rel="external">https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/TestingInAppPurchases.html</a></p>
+<h3 id="2、iOS_Sandbox">2、iOS Sandbox</h3><p>iOS12 终于把沙盒储值账号单独出来：</p>
+<a id="more"></a>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/06/20180620-iOS12-sandbox.png" alt="20180620-iOS12-sandbox.png"></p>
+<p>其实，沙盒账号是苹果账号的一种，沙盒账号与正式账号是唯一，也就是说一个邮箱只能是沙盒或者是正式账号，注册了其一就无法在用于另一种。</p>
+<p>现在把沙盒账号独立出来，对于开发者来说，肯定是好事，因为很多次运营测试同事跑过来问，为什么沙盒账号登陆不了？？？<br>每次遇到新人，我只能默默的，也许苹果也发现了这个问题，而现在这个问题解决了！！！</p>
+<p>其实，苹果的充值很多问题，其中掉单是最严重也是吐槽最多的，也许，苹果正在优化这一块？也许~</p>
+<h3 id="3、参考">3、参考</h3><ul>
+<li><a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/TestingInAppPurchases.html" target="_blank" rel="external">Apple_TestingInAppPurchases_Guide</a></li>
+<li><a href="https://stackoverflow.com/questions/38034491/unable-to-log-in-with-sandbox-test-users-on-device" target="_blank" rel="external">unable-to-log-in-with-sandbox-test-users-on-device</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>在iOS12前，如果对沙盒账号测试充值不熟悉的同学，也许会遇到过这样的情况：</p>
+<blockquote>
+<p>不允许创建 iTunes 账户<br>此 AppleID 目前无法用于 iTunes Store。请稍后重试</p>
+</blockquote>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/06/20180620-sandbox-loginerror.png" alt="20180620-sandbox-loginerror.png"></p>
+<p>其实，测试账号不能在设置里登陆，只能在测试app里面发起充值时弹窗中登陆。苹果的文档也有说明，<a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/TestingInAppPurchases.html">https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/TestingInAppPurchases.html</a></p>
+<h3 id="2、iOS_Sandbox">2、iOS Sandbox</h3><p>iOS12 终于把沙盒储值账号单独出来：</p>]]>
+    
+    </summary>
+    
+      <category term="iOS12" scheme="https://iHTCboy.com/tags/iOS12/"/>
+    
+      <category term="sandbox" scheme="https://iHTCboy.com/tags/sandbox/"/>
+    
+      <category term="沙盒账户" scheme="https://iHTCboy.com/tags/%E6%B2%99%E7%9B%92%E8%B4%A6%E6%88%B7/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
   </entry>
   
@@ -1374,50 +1427,6 @@
       <category term="年终总结" scheme="https://iHTCboy.com/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
       <category term="life" scheme="https://iHTCboy.com/categories/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[你真的懂使用Runtime进行swizzle的最佳写法？]]></title>
-    <link href="https://iHTCboy.com/2017/11/18/2017_11_%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E4%BD%BF%E7%94%A8Runtime%E8%BF%9B%E8%A1%8Cswizzle%E7%9A%84%E6%9C%80%E4%BD%B3%E5%86%99%E6%B3%95%EF%BC%9F/"/>
-    <id>https://iHTCboy.com/2017/11/18/2017_11_你真的懂使用Runtime进行swizzle的最佳写法？/</id>
-    <published>2017-11-18T13:15:16.000Z</published>
-    <updated>2018-05-01T15:16:37.370Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>runtime 的黑魔法很多人都一定听过，或者已经在使用了。但是，怎么swizzle方法才是最好呢？</p>
-<h3 id="一般写法">一般写法</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line">    <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line">    method_exchangeImplementations(originalMethod, swizzleMethod);</span><br></pre></td></tr></table></figure>
-<p>或者是下面这种方式，swizzle第二种写法:</p>
-<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line"> <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line"> BOOL didAddMethod = class_addMethod(aClass, originalSel, method_getImplementation(swizzleMethod), method_getTypeEncoding(swizzleMethod));</span><br><span class="line"> <span class="keyword">if</span> (didAddMethod) <span class="comment">&#123;</span><br><span class="line">     class_replaceMethod(aClass, swizzleSel, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));</span><br><span class="line"> &#125;</span><span class="keyword">else</span><span class="comment">&#123;</span><br><span class="line">     method_exchangeImplementations(originalMethod, swizzleMethod);</span><br><span class="line"> &#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="更好写法">更好写法</h3><p>其它，这样写，一般不会有问题，但是在一些情况下，比如这个hook的类没有实现你要swizzle的方法，这时是没有swizzle成功的，然后你自己写的 swizzle 里又自己调用自己，就无限循环。</p>
-<a id="more"></a>
-<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Method originalInsMethod = class_getInstanceMethod<span class="params">(class, originalSelector)</span>;</span><br><span class="line"><span class="comment">// 处理为实例方法</span></span><br><span class="line"><span class="keyword">if</span> <span class="params">(originalInsMethod)</span></span><br><span class="line">&#123;</span><br><span class="line">    method_exchangeImplementations<span class="params">(originalInsMethod, swizzledMethod)</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">// 处理为类方法</span></span><br><span class="line">    Method originalClassMethod = class_getClassMethod<span class="params">(class, originalSelector)</span>;</span><br><span class="line">    <span class="keyword">if</span> <span class="params">(originalClassMethod)</span></span><br><span class="line">    &#123;</span><br><span class="line">        method_exchangeImplementations<span class="params">(originalClassMethod, swizzledMethod)</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">// 如果hook的类没有实现这个方法，则先添加方法，然后设置方法的IMP为一个空block。否则直接class_replaceMethod，则方法实则没有交接</span></span><br><span class="line">        class_addMethod<span class="params">(class, originalSelector, method_getImplementation<span class="params">(swizzledMethod)</span>, method_getTypeEncoding<span class="params">(swizzledMethod)</span>)</span>;</span><br><span class="line">        method_setImplementation<span class="params">(swizzledMethod, imp_implementationWithBlock<span class="params">(^<span class="params">(id self, SEL _cmd)</span>&#123;&#125;)</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="总结">总结</h3><p>至于这个为什么会更好？ 有时间在慢慢说啦~ </p>
-<h3 id="参考">参考</h3><ul>
-<li><a href="http://blog.csdn.net/ashqal/article/details/40979353" target="_blank" rel="external">利用ios的hook机制实现adobe air ios ane下appdelegate的动态替换 - CSDN博客</a></li>
-<li><a href="http://www.vanbein.com/posts/ios进阶/2015/12/10/sel/" target="_blank" rel="external">Method结构, SEL, IMP理解 - Vanbein’s Blog</a></li>
-<li><a href="http://www.jianshu.com/p/114782a909f9" target="_blank" rel="external">深入理解 Objective-C 的方法调用流程 - 简书</a></li>
-<li><a href="http://longtimenoc.com/archives/ios在运行时为类添加方法" target="_blank" rel="external">[iOS]在运行时为类添加方法</a></li>
-<li><a href="http://www.jianshu.com/p/1bacd182329f?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="external">Runtime中Swizzle时你可能没注意到的问题 - 简书</a></li>
-<li><a href="https://github.com/iHTCboy/HelloWorld" target="_blank" rel="external">Hello World</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>runtime 的黑魔法很多人都一定听过，或者已经在使用了。但是，怎么swizzle方法才是最好呢？</p>
-<h3 id="一般写法">一般写法</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line">    <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line">    method_exchangeImplementations(originalMethod, swizzleMethod);</span><br></pre></td></tr></table></figure>
-<p>或者是下面这种方式，swizzle第二种写法:</p>
-<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Method</span> <span class="title">originalMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, originalSel)</span>;</span></span><br><span class="line"> <span class="function"><span class="keyword">Method</span> <span class="title">swizzleMethod</span> = <span class="title">class_getInstanceMethod</span><span class="params">(aClass, swizzleSel)</span>;</span></span><br><span class="line"> BOOL didAddMethod = class_addMethod(aClass, originalSel, method_getImplementation(swizzleMethod), method_getTypeEncoding(swizzleMethod));</span><br><span class="line"> <span class="keyword">if</span> (didAddMethod) <span class="comment">&#123;</span><br><span class="line">     class_replaceMethod(aClass, swizzleSel, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));</span><br><span class="line"> &#125;</span><span class="keyword">else</span><span class="comment">&#123;</span><br><span class="line">     method_exchangeImplementations(originalMethod, swizzleMethod);</span><br><span class="line"> &#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="更好写法">更好写法</h3><p>其它，这样写，一般不会有问题，但是在一些情况下，比如这个hook的类没有实现你要swizzle的方法，这时是没有swizzle成功的，然后你自己写的 swizzle 里又自己调用自己，就无限循环。</p>]]>
-    
-    </summary>
-    
-      <category term="Runtime" scheme="https://iHTCboy.com/tags/Runtime/"/>
-    
-      <category term="swizzle" scheme="https://iHTCboy.com/tags/swizzle/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
   </entry>
   
