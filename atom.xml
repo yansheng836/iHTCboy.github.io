@@ -194,6 +194,49 @@
   </entry>
   
   <entry>
+    <title><![CDATA[iOS快速清除全部的消息推送]]></title>
+    <link href="https://iHTCboy.com/2018/05/26/2018-05-26_iOS%E5%BF%AB%E9%80%9F%E6%B8%85%E9%99%A4%E5%85%A8%E9%83%A8%E7%9A%84%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/"/>
+    <id>https://iHTCboy.com/2018/05/26/2018-05-26_iOS快速清除全部的消息推送/</id>
+    <published>2018-05-26T15:46:16.000Z</published>
+    <updated>2018-07-10T15:18:18.754Z</updated>
+    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>越来越多的应用，请求用户推送权限，一般情况下，普通应用我是不允许的，除了通讯应用、支付宝（银行app有很多不羊毛的活动推送，不允许）、GTD（Things、Due）、健身（Kepp、SixPack），其它的像淘宝天猫、京东，每次打开app，都要反复问我还要不要打开推送，你们就不能先调查一下我用的iOS系统多久吗？请问一个用了4年以上的用户，如果他还想打你们家的app推送，难道不知道在那里开吗？脑子进水吧。</p>
+<h3 id="iOS10_以上">iOS10 以上</h3><p>如果是iOS10以上，并且是iPhone 6S、iPhone 6S plus ，就可以利用3D Touch一键清除通知。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/99517-c68e50013f5a76fd.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_C28272FF6B00-1.jpeg"></p>
+<p>如果是点击推送的 x ，就会出现 Clear，点击后会清除当前区的推送<br><img src="https://upload-images.jianshu.io/upload_images/99517-78893677f32158e9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_24407F30BCFE-1.jpeg"></p>
+<p>如果长压（3D Touch），就出现 Clear All Notifications，点击就会清楚全部的推送<br> <img src="https://upload-images.jianshu.io/upload_images/99517-28f2786b22166cc7.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_2184A87A7C29-1.jpeg"></p>
+<h3 id="iOS_9">iOS 9</h3><p>如果是iOS 9 和更老的机型，首先按住锁屏上方的把手把通知中心拉下来，拖到底，松手，然后再向上把它拖回去，锁屏瞬间清空!</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/99517-c68a865b0fa7ec49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/99517-e2342bb38da13c44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="总结">总结</h3><p>iOS10以后的通知中心，合并了全部和未读消息，然后没有提供一个更好的展示形式，只是推送内容和交互更新，并没有解决推送过多的问题，就比如微信推送的消息是最多的，并且推送的类型也不一样，轻重急缓不分！<br>推送作为中国人工作和生活提示，已经越来越重要，更加高效和智能的推送展现，迫在眉睫。</p>
+<p>听说iOS12会重新设计通知，希望是真的，非常期待，因为苹果这2年已经没有为系统做更多的创新或颠覆，希望苹果有所创新！</p>
+<h3 id="参考引用">参考引用</h3><ul>
+<li><a href="https://sspai.com/post/35483" target="_blank" rel="external">具透丨好的 iOS 体验，从用好通知开始：iOS 10 通知详解 - 少数派</a></li>
+<li><a href="https://www.i4.cn/news_detail_6588.html" target="_blank" rel="external">教你快速清除烦人的消息推送<em>iPhone技巧</em>爱思助手</a></li>
+<li><a href="http://www.gq.com.cn/digital/news_14320c4d37b8beea-3.html#pid=4" target="_blank" rel="external">NO.3一键清除通知_数码_GQ男士网</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="前言">前言</h3><p>越来越多的应用，请求用户推送权限，一般情况下，普通应用我是不允许的，除了通讯应用、支付宝（银行app有很多不羊毛的活动推送，不允许）、GTD（Things、Due）、健身（Kepp、SixPack），其它的像淘宝天猫、京东，每次打开ap]]>
+    </summary>
+    
+      <category term="iOS" scheme="https://iHTCboy.com/tags/iOS/"/>
+    
+      <category term="消息推送" scheme="https://iHTCboy.com/tags/%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[iTerm配置导出与迁移方法]]></title>
     <link href="https://iHTCboy.com/2018/05/12/2018-05-12_iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA%E4%B8%8E%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2018/05/12/2018-05-12_iTerm配置导出与迁移方法/</id>
@@ -1399,42 +1442,6 @@
       <category term="iTerm进阶" scheme="https://iHTCboy.com/tags/iTerm%E8%BF%9B%E9%98%B6/"/>
     
       <category term="命令行快捷键" scheme="https://iHTCboy.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[装逼神句———有道词典命令行查询工具]]></title>
-    <link href="https://iHTCboy.com/2018/01/29/2018-01-29_%E8%A3%85%E9%80%BC%E7%A5%9E%E5%8F%A5%E2%80%94%E2%80%94%E2%80%94%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7/"/>
-    <id>https://iHTCboy.com/2018/01/29/2018-01-29_装逼神句———有道词典命令行查询工具/</id>
-    <published>2018-01-29T00:49:16.000Z</published>
-    <updated>2018-05-06T08:50:44.472Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、装逼说明">1、装逼说明</h3><p>不喜欢安装有道词典的应用程序，因为太耗资源还一堆广告，但是用浏览器打开<code>dict.youdao.com</code>也挺麻烦的，不是吗？快来试试有道词典命令行工具吧！</p>
-<h3 id="2、看图装逼">2、看图装逼</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/01/2018-01-29-yddict-example.gif" alt="example"></p>
-<a id="more"></a>
-<h3 id="3、自已装逼">3、自已装逼</h3><h4 id="3-1_安装">3.1 安装</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> yddict -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="3-2_使用说明">3.2 使用说明</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yd <span class="tag">&lt;<span class="title">要查询的单词</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在<code>/usr/local/lib/node_modules/yddict/</code>目录下，可以进行一些自定义，或者更改查询的来源，<br>主要源码 index.js：</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env node</span></span><br><span class="line"><span class="keyword">const</span> request = require('request');</span><br><span class="line"><span class="keyword">const</span> cheerio = require('cheerio');</span><br><span class="line"><span class="keyword">const</span> chalk = require('chalk');</span><br><span class="line"><span class="keyword">const</span> fs = require('fs');</span><br><span class="line"><span class="keyword">const</span> <span class="type">Spinner</span> = require('cli-spinner').<span class="type">Spinner</span>;</span><br><span class="line"><span class="keyword">const</span> isChinese = require('<span class="keyword">is</span>-chinese')</span><br><span class="line"><span class="keyword">const</span> urlencode = require('urlencode');</span><br><span class="line"><span class="keyword">const</span> spinner = new <span class="type">Spinner</span>('努力查询中... %s');</span><br><span class="line"><span class="keyword">const</span> home = process.env[(process.platform == 'win32') ? '<span class="type">USERPROFILE</span>' : '<span class="type">HOME</span>'];</span><br><span class="line"><span class="keyword">const</span> configFile = home + <span class="string">"/config.json"</span>;</span><br><span class="line"><span class="keyword">let</span> color = 'gray';//更改查询结果的文字颜色</span><br><span class="line"></span><br><span class="line">spinner.setSpinnerString('|/-\\');</span><br><span class="line">spinner.start();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> readFile = (filename, encoding) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> fs.readFileSync(filename).toString(encoding);</span><br><span class="line">    &#125;</span><br><span class="line">    catch (e) &#123;</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = <span class="type">JSON</span>.parse(readFile(configFile,<span class="string">"utf8"</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> input = process.argv.slice(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">const</span> word = input.join(' ')</span><br><span class="line"><span class="keyword">const</span> isCn = isChinese(word);</span><br><span class="line"><span class="keyword">const</span> <span class="type">URL</span> = isCn ? `http://dict.youdao.com/w/eng/$&#123;urlencode(word)&#125;`:`http://dict.youdao.com/w/$&#123;urlencode(word)&#125;`</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  'url':<span class="type">URL</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(config)&#123;</span><br><span class="line">  <span class="keyword">if</span>(config.proxy)&#123;</span><br><span class="line">    options.proxy = config.proxy;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(config.color)&#123;</span><br><span class="line">    color = config.color;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> color_output = chalk.keyword(color);</span><br><span class="line">request(options,(error, response, body)=&gt;&#123;</span><br><span class="line">  <span class="keyword">const</span> $ = cheerio.load(body, &#123;</span><br><span class="line">    ignoreWhitespace: <span class="literal">true</span>,</span><br><span class="line">    xmlMode: <span class="literal">true</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">let</span> <span class="literal">result</span> = '';</span><br><span class="line"></span><br><span class="line">  spinner.stop(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">if</span>(isCn)&#123;</span><br><span class="line">    $('<span class="keyword">div</span>.trans-container &gt; ul').find('p.wordGroup').each(function(i,elm)&#123;</span><br><span class="line">      <span class="literal">result</span> = $(this).text().replace(/\s+/g,<span class="string">" "</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#phrsListTab &gt; div.trans-container &gt; ul').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  // phrase</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">result</span> === '') &#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#webPhrase &gt; p.wordGroup').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  // sentence</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">result</span> === '') &#123;</span><br><span class="line">    <span class="literal">result</span> = $('<span class="keyword">div</span><span class="comment">#fanyiToggle &gt; div.trans-container &gt; p:nth-child(2)').text();</span></span><br><span class="line">  &#125;</span><br><span class="line">  console.log(color_output(<span class="literal">result</span>));</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="4、装逼指导">4、装逼指导</h3><ul>
-<li><a href="https://github.com/kenshinji/yddict" target="_blank" rel="external">kenshinji/yddict: 一个命令行查单词的工具💻 📚</a></li>
-<li><a href="https://www.npmjs.com/package/yddict" target="_blank" rel="external">npm-有道词典命令行查询工具</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、装逼说明">1、装逼说明</h3><p>不喜欢安装有道词典的应用程序，因为太耗资源还一堆广告，但是用浏览器打开<code>dict.youdao.com</code>也挺麻烦的，不是吗？快来试试有道词典命令行工具吧！</p>
-<h3 id="2、看图装逼">2、看图装逼</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/01/2018-01-29-yddict-example.gif" alt="example"></p>]]>
-    
-    </summary>
-    
-      <category term="命令行查单词" scheme="https://iHTCboy.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E5%8D%95%E8%AF%8D/"/>
-    
-      <category term="有道词典" scheme="https://iHTCboy.com/tags/%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
