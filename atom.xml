@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-09T15:14:35.225Z</updated>
+  <updated>2018-07-10T15:13:37.765Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,88 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Python爬虫实践入门篇]]></title>
+    <link href="https://iHTCboy.com/2018/07/10/2018-07-10_Python%E7%88%AC%E8%99%AB%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8%E7%AF%87/"/>
+    <id>https://iHTCboy.com/2018/07/10/2018-07-10_Python爬虫实践入门篇/</id>
+    <published>2018-07-10T13:49:16.000Z</published>
+    <updated>2018-07-10T15:13:37.765Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>
+<a id="more"></a>
+<h3 id="2、需要的准备">2、需要的准备</h3><ul>
+<li>Python：需要基本的python语法基础</li>
+<li>requests：专业用于请求处理，<a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">requests库学习文档中文版</a></li>
+<li>lxml：其实可以用pythonth自带的正则表达式库re，但是为了更加简单入门，用 <a href="https://lxml.de/index.html" target="_blank" rel="external">lxml</a> 中的 etree 进行网页数据定位爬取。</li>
+</ul>
+<p>通过pip安装 requests 和 lxml 库，在终端输入：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> requests</span><br><span class="line">pip <span class="keyword">install</span> lxml</span><br></pre></td></tr></table></figure></p>
+<p>下载过程成功的输出：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collecting lxml</span><br><span class="line">  Cache entry deserialization failed, entry ignored</span><br><span class="line">  Downloading https:<span class="comment">//files.pythonhosted.org/packages/00/fd/5e65f293e366a63198dade275b886e5d24752367c2e67e3993023b0d58ef/lxml-4.2.3-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (8.7MB)</span></span><br><span class="line">    <span class="number">100</span>% |████████████████████████████████| <span class="number">8.7</span>MB <span class="number">821</span>kB/s </span><br><span class="line">Installing collected packages: lxml</span><br><span class="line">Successfully installed lxml-<span class="number">4.2</span><span class="number">.3</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>注：<br>如果安装过程遇到任何问题，请谷歌吧，如果网上找不到答案，也不要问我！找不到答案我直播吃翔！！！</li>
+</ul>
+<h3 id="3、实践过程">3、实践过程</h3><p>为了这过程有点兴趣，我找了一个美图的网站，爬虫了一波图片~</p>
+<p>实践爬虫的网站链接：<a href="https://www点aitaotu点com（注意，这不是打广告！）" target="_blank" rel="external">https://www点aitaotu点com（注意，这不是打广告！）</a></p>
+<ul>
+<li>下载页面html内容：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page = <span class="string">'https://www点aitaotu点com/guonei/36350.html'</span></span><br><span class="line">data = requests.get(page).text</span><br><span class="line">dom = etree.HTML(data)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解析(定位)元素:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title_path = <span class="string">'//*[@id="photos"]/h1/text()'</span></span><br><span class="line">totalpage_path = <span class="string">'//*[@id="picnum"]/span[2]/text()'</span></span><br><span class="line">image_path = <span class="string">'//*[@id="big-pic"]/p/a/img'</span></span><br></pre></td></tr></table></figure>
+<p>这里的xpath怎么获取，就是网页里面，打开开发者检查元素工具，在safari和chrome都有这个功能：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-html-show-element.png" alt="20180710-html-show-element.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-html-copy-xpath.png" alt="20180710-html-copy-xpath.png"></p>
+<ul>
+<li>获取元素内容：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title = dom.xpath(title_path)[<span class="number">0</span>]</span><br><span class="line">total = dom.xpath(totalpage_path)[<span class="number">0</span>]</span><br><span class="line">image_url = dom.xpath(image_path)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">img_src = image_url.xpath(<span class="string">'./@src'</span>)[<span class="number">0</span>]</span><br><span class="line">img_alt = image_url.xpath(<span class="string">'./@alt'</span>)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>这里解析就不解析了，其实通过PyCharm IDE可能实时查看每个对象的属性，可以更清晰的了解解析的元素结构，帮助理解，这里就暂时不说IDE的方法啦，大家有兴趣可以试试，也是很简单的~</p>
+<p>最后拿到图片链接，就是下载图片然后保存输出到电脑啊！（文章尾附完整代码！）</p>
+<h3 id="总结">总结</h3><p>爬虫入门就这样结束啦！学习了python后，发现语法很简单，代码很轻松就完成！不到100行！！！</p>
+<p>python通过各种库，解决了编程语言自身的庞大，完成了自己是胶水语言的特点！</p>
+<p>通过这次实践，其实，有很多细节东西，只有自己做了才知道，比较说保存图片的路径，找到当前目录，怎么分目录保存，目录文件操作，这些都是自己之前实践了一个django工具学习过来的。所以，现在经历多了，才知道，什么时候学习都不晚，有些东西，真的是不知道什么时候你会用上，真的，自己早知道这个道理几年，就不像年轻时那么想，这东西怎么可能会用上，不学！！！果然是年轻坑爹！！！<strong>学会老，学到老吧！</strong></p>
+<h3 id="代码">代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin/python3</span></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">downloadImages</span><span class="params">(url)</span>:</span></span><br><span class="line">    data = requests.get(page).text</span><br><span class="line">    dom = etree.HTML(data)</span><br><span class="line"></span><br><span class="line">    title_path = <span class="string">'//*[@id="photos"]/h1/text()'</span></span><br><span class="line">    totalpage_path = <span class="string">'//*[@id="picnum"]/span[2]/text()'</span></span><br><span class="line">    image_path = <span class="string">'//*[@id="big-pic"]/p/a/img'</span></span><br><span class="line"></span><br><span class="line">    title = dom.xpath(title_path)[<span class="number">0</span>]</span><br><span class="line">    total = dom.xpath(totalpage_path)[<span class="number">0</span>]</span><br><span class="line">    image_url = dom.xpath(image_path)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    img_src = image_url.xpath(<span class="string">'./@src'</span>)[<span class="number">0</span>]</span><br><span class="line">    img_alt = image_url.xpath(<span class="string">'./@alt'</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    print(title, total, img_src, img_alt)</span><br><span class="line"></span><br><span class="line">    cwd = os.getcwd()</span><br><span class="line">    save_path = os.path.join(cwd, <span class="string">'images/'</span> + title)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(save_path):</span><br><span class="line">        os.makedirs(save_path)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">u'保存图片的路径：'</span>, save_path)</span><br><span class="line"></span><br><span class="line">    img_path = os.path.dirname(img_src)</span><br><span class="line">    img_name = os.path.basename(img_src)</span><br><span class="line">    img_format = img_name.split(<span class="string">'.'</span>)[<span class="number">1</span>]</span><br><span class="line">    print(img_path, img_name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, int(total) + <span class="number">1</span>):</span><br><span class="line">        new_img_url = <span class="string">'%s/%02d.%s'</span> % (img_path, i, img_format)</span><br><span class="line">        save_img_path = <span class="string">'%s/%02d.%s'</span> % (save_path, i, img_format)</span><br><span class="line">        <span class="comment"># 下载图片</span></span><br><span class="line">        image = requests.get(new_img_url)</span><br><span class="line">        <span class="comment"># 命名并保存图片</span></span><br><span class="line">        <span class="keyword">with</span> open(save_img_path, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    url = <span class="string">'https://www.aitaotu.com/'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># download list</span></span><br><span class="line">    list = [<span class="string">'guonei/36350.html'</span>, <span class="string">'guonei/36352.html'</span>, <span class="string">'guonei/36351.html'</span>, <span class="string">'guonei/36357.html'</span>, <span class="string">'guonei/36250.html'</span>,</span><br><span class="line">            <span class="string">'guonei/36341.html'</span>, <span class="string">'guonei/36334.html'</span>, <span class="string">'guonei/36306.html'</span>, <span class="string">'guonei/35969.html'</span>, <span class="string">'guonei/35219.html'</span>,</span><br><span class="line">            <span class="string">'guonei/36290.html'</span>, <span class="string">'guonei/36277.html'</span>, <span class="string">'guonei/36263.html'</span>, <span class="string">'gangtai/36303.html'</span>, <span class="string">'gangtai/36226.html'</span>,</span><br><span class="line">            <span class="string">'guonei/35260.html'</span>, <span class="string">'guonei/35247.html'</span>, <span class="string">'guonei/36257.html'</span>, <span class="string">'guonei/36221.html'</span>, <span class="string">'guonei/21647.html'</span>,</span><br><span class="line">            <span class="string">'guonei/21499.html'</span>, <span class="string">'guonei/36319.html'</span>, <span class="string">'guonei/34903.html'</span>, <span class="string">'guonei/14148.html'</span>, <span class="string">'guonei/33780.html'</span>,</span><br><span class="line">            <span class="string">'guonei/14338.html'</span>, <span class="string">'guonei/14550.html'</span>, <span class="string">'guonei/14818.html'</span>, <span class="string">'guonei/16820.html'</span>, <span class="string">'guonei/18388.html'</span>,</span><br><span class="line">            <span class="string">'guonei/13447.html'</span>, <span class="string">'guonei/25912.html'</span>, <span class="string">'guonei/13991.html'</span>, <span class="string">'guonei/8246.html'</span>, <span class="string">'guonei/36171.html'</span></span><br><span class="line">            ]</span><br><span class="line"></span><br><span class="line">    print(<span class="string">u'准备下载：%d套图'</span>, len(list))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> type <span class="keyword">in</span> list:</span><br><span class="line">        page = url + type</span><br><span class="line">        downloadImages(page)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    print(<span class="string">u'下载完成啦！'</span>)</span><br></pre></td></tr></table></figure>
+<p>代码就没有太多注释，因为很简单，就说一下运行方式吧，在终端：</p>
+<p>python2:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<p>python3:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python3</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">Python教程 - 廖雪峰的官方网站</a></li>
+<li><a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">Requests: 让 HTTP 服务人类 — Requests 2.18.1 文档</a></li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html" target="_blank" rel="external">Beautiful Soup 4.2.0 文档</a></li>
+<li><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">正则表达式30分钟入门教程</a></li>
+<li><a href="http://tool.oschina.net/regex/" target="_blank" rel="external">在线正则表达式测试</a></li>
+<li><a href="https://lxml.de/index.html" target="_blank" rel="external">lxml - Processing XML and HTML with Python</a></li>
+<li><a href="https://www.kawabangga.com/posts/2058" target="_blank" rel="external">Python lxml教程 | 卡瓦邦噶！</a></li>
+<li><a href="https://piaosanlang.gitbooks.io/spiders/02day/section2.3.html" target="_blank" rel="external">非结构化数据之lxml库 · 网络爬虫教程</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="https://iHTCboy.com/tags/Python/"/>
+    
+      <category term="爬虫" scheme="https://iHTCboy.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[聊聊简书文章被锁定]]></title>
     <link href="https://iHTCboy.com/2018/07/08/2018-07-08_%E7%AE%80%E4%B9%A6%E6%96%87%E7%AB%A0%E8%A2%AB%E9%94%81%E5%AE%9A/"/>
     <id>https://iHTCboy.com/2018/07/08/2018-07-08_简书文章被锁定/</id>
     <published>2018-07-08T10:49:16.000Z</published>
-    <updated>2018-07-09T15:14:35.225Z</updated>
+    <updated>2018-07-10T13:31:42.845Z</updated>
     <content type="html"><![CDATA[<h3 id="1、文章被锁定">1、文章被锁定</h3><p>昨晚看到简书消息：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180708-jianshu_lock.png" alt="20180708-jianshu_lock.png"></p>
 <p>原文章已经转移到个人博客：</p>
@@ -68,7 +145,7 @@
     <link href="https://iHTCboy.com/2018/06/20/2018-06-20_%E6%B7%A1%E6%B7%A1iOS12%E7%8B%AC%E7%AB%8B%E6%B2%99%E7%9B%92%E8%B4%A6%E6%88%B7%E7%99%BB%E9%99%86/"/>
     <id>https://iHTCboy.com/2018/06/20/2018-06-20_淡淡iOS12独立沙盒账户登陆/</id>
     <published>2018-06-20T11:49:16.000Z</published>
-    <updated>2018-07-09T15:34:40.642Z</updated>
+    <updated>2018-07-10T13:31:34.613Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在iOS12前，如果对沙盒账号测试充值不熟悉的同学，也许会遇到过这样的情况：</p>
 <blockquote>
 <p>不允许创建 iTunes 账户<br>此 AppleID 目前无法用于 iTunes Store。请稍后重试</p>
@@ -80,7 +157,7 @@
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/06/20180620-iOS12-sandbox.png" alt="20180620-iOS12-sandbox.png"></p>
 <p>其实，沙盒账号是苹果账号的一种，沙盒账号与正式账号是唯一，也就是说一个邮箱只能是沙盒或者是正式账号，注册了其一就无法在用于另一种。</p>
 <p>现在把沙盒账号独立出来，对于开发者来说，肯定是好事，因为很多次运营测试同事跑过来问，为什么沙盒账号登陆不了？？？<br>每次遇到新人，我只能默默的，也许苹果也发现了这个问题，而现在这个问题解决了！！！</p>
-<p>其实，苹果的充值很多问题，其中掉单是最严重也是吐槽最多的，也许，苹果正在优化这一块？也许~</p>
+<p>其实，苹果的充值很多问题，其中掉单是最严重也是吐槽最多的，也许，苹果正在优化这一块？也许~ 期待吧！</p>
 <h3 id="3、参考">3、参考</h3><ul>
 <li><a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/TestingInAppPurchases.html" target="_blank" rel="external">Apple_TestingInAppPurchases_Guide</a></li>
 <li><a href="https://stackoverflow.com/questions/38034491/unable-to-log-in-with-sandbox-test-users-on-device" target="_blank" rel="external">unable-to-log-in-with-sandbox-test-users-on-device</a></li>
@@ -1360,73 +1437,6 @@
       <category term="有道词典" scheme="https://iHTCboy.com/tags/%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[你好，2018！]]></title>
-    <link href="https://iHTCboy.com/2018/01/01/2018-01-01_%E4%BD%A0%E5%A5%BD%EF%BC%8C2018%EF%BC%81/"/>
-    <id>https://iHTCboy.com/2018/01/01/2018-01-01_你好，2018！/</id>
-    <published>2018-01-01T13:49:16.000Z</published>
-    <updated>2018-05-01T15:16:45.131Z</updated>
-    <content type="html"><![CDATA[<p>德鲁克在《管理的实践》中写道：“管理者很多时候在做决策的时候，都是在分析未来有可能有什么市场环境的变化，这些变化会有什么机会。”</p>
-<h4 id="序言">序言</h4><p>这一年，在生命中非常有意义的一年，从创业者离场，回到一个中型企业，改变非常大。从职场熟人到职场老油条？毕业不知觉已经3年多了，有时还会回忆美好的学生时代，有时在想大学时在努力一点，也许现在生活更加美好一点啦。一路走过的2017，经历了非常之多，是时候在尘封前记录下来吧！</p>
-<a id="more"></a>
-<h4 id="第一章_创业公司的离开">第一章 创业公司的离开</h4><p>想起2016年初，辞职后就跟同事开始了创业公司，见证公司从无名，到有名，到离开时6人的团队，也换过了鲜血，一路走过来，确实不容易。其实，刚开始有同事离开时，自己心里确实很难过，一起就是兄弟，一样拼博，刚开始想不通，内心不能接受，慢慢的就理解了，其实就像自己当初离开上家公司一样，地球总是在转运，我们的离开只是一点一滴，生活还在，大家都没有离开。开怀，要情商高，经历多了自然会提升。</p>
-<p>其中，最想谈的，还是我们的老板，他让我相信，如果经历没有达到量变，思维能力是感悟不出来的，除了技术是死知识，活的能力，只有多经历，然后多听，听听别人的脑海，自己的世界就会更大！</p>
-<p>最后，很非常我们的团队，在这样创业环境中，我们努力了，进步了，虽然我们只是创业大军时的一个缩影，在这个美好的时代，能够参与创业，见证一个公司的成立，这是像一个生命的诞生，充满着创业者的心血，希望大家以后看到创业公司和创业者，要多一点理解和多一份帮忙，也许一个公司的生死就在你的手里~</p>
-<h4 id="第二章_说走就走的旅行">第二章 说走就走的旅行</h4><p>年初离职后，选择给自己放松一下，说走就走，最后选择了去云南看雪。有意思的事，朋友圈大家都说冬天去云南风景不够美。事实证明，也只有自己去到，才能感觉到当地风俗文化，建筑人情。春夏秋冬，风景别致！</p>
-<p>云南确实是一个不错的地方，丽江的古韵，香格里拉的风情，大理的庙石，昆明的春天，值得一去。</p>
-<p>在夏末时，去惠州看海，比之前去的珠海更漂亮，海更大，水更青，一个周末的时间有点紧凑，所以享受不了海水的温暖，在一个异地，另有一番滋味~</p>
-<p>另外今年办了港澳通行证和护照，但是入职新公司，就是没有更多的时间能够真正的给自己去一个更好的，或者说更加幻想的地方，去体验更多的世界角落，更美好的东西，更漂亮的东西，更加广阔的眼界。希望2018年，给自己更多的高度和视觉，凤凰涅磐！</p>
-<h4 id="第三章_团队的魅力">第三章 团队的魅力</h4><p>在2017年之前的工作，虽然公司也有团队，但这个阶层是不一样的。之前都是自己负责iOS的全部开发工作，现在是，在一个iOS的团队里，这是一个团队协作！</p>
-<p>团队协作能力，一直是我缺失的重要一部分。工作不在是的一亩三分地，每做一个git commit 都要考虑清楚，不仅仅是对团队的影响，严重的会影响整个项目，并且整个项目你并不能够从整体上把握，这是很可怕的事情。一个big team，只有在一个团队中，才能感受到团队的力量，并且希望大家遵守规则，一起努力的做好。</p>
-<p>团队管理能力，说到管理，层次提升了，需要的能力也更高了，咱现在的条件，我确实是没有这样的能力去做一个团队的管理。我希望自己能够再接再厉，今年努力的去尝试，管理的经验不会白来，自己要珍惜这样的机会。</p>
-<h4 id="第四章_公司的氛围">第四章 公司的氛围</h4><p>拒绝老油条。</p>
-<p>虽然我工作了几年，这个时候大家都变成老油条，工作的事件能推掉就推掉，能闲着就玩游戏，能早点下班了就早点走。不能说不把公司当成家，是没有错的；但是没有把工作做好，我觉得这是很不应该的。</p>
-<p>希望自己拒绝老油条！务实基础，努力进取！</p>
-<p>公司的环境，是我工作以来，最好的氛围啦。</p>
-<p>团队协作，git管理，谷歌搜索，英文文档，韩文文档，各种国外的文化，感受各地的特色，慢慢地发现自己太渺小了，自己了解了太少了，自己确实对这个世界并不熟悉。</p>
-<p>“人穷志短”实在是太精辟了。最近大家说的『贫穷限制了我的想象力』，我是发现程序员们都越来越限制自己的能力，满足不了自己的工作，满足不了自己的欲望，只是轻声叹息。愿大家，不要把责任都推到公司，多从自己找些原因，然后克服自己，战胜自己！</p>
-<h4 id="第五章_中年危机？">第五章 中年危机？</h4><p>二十七八的年轻人，开始考虑人生的发展和最终的归属，我不能说这是没有根据，但实在是自己给自己限制了想像力。</p>
-<p>正如下图，给自己一个最终的目标吧，程序员职业发展路线：<br><img src="http://upload-images.jianshu.io/upload_images/99517-08802846e4c391cc.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="程序员职业发展路线"></p>
-<p>其实我觉得没什么压不压力的，没什么中年不中年危机的，主要是因为你们的脑海中都是有家庭，上有老下有小，家庭压力大，然后在中国传统的世界观里面总是有家，然后就买房买车，要各种的生活需求。然后自己团不过气来吧！其实自己学会放松，无欲无求，也就这样子，就像国外的程序员一样，没有说什么，困不困难了，没工作就没工作，该生活还是要生活。把这种做技术和做管理作为一种自己的兴趣，把上班当成了自己的爱好，当成自己想要做的事情，那你就不会觉得有什么危机，工作就是你的生活，生活就是工作，把生活和工作作为生活的一部分，那也是一个很好的理想。还怕自己每天总是想着我被辞退，我被炒鱿鱼，甚至说我自己活不下去，我自己老了，又何必。学会居安思危，但是同时也不要杞人忧天。生活每天都是充满了挑战，充满了学习，自己快乐就好！但愿，你能懂！</p>
-<h4 id="第六章_学习的动力">第六章 学习的动力</h4><p>2017年，在深蹲iOS中，也在耕耘Swift。<br>专注于iOS开发，喜欢移动开发，在学习Android/Python/bash，希望自己能在脚本自动化方面下功夫，然后打造移动的自动化，完成从前端到后端的打通，实现自己的梦想。</p>
-<p>学海无涯，量力而行。</p>
-<h4 id="第七章_2017计划">第七章 2017计划</h4><ul>
-<li>锻炼</li>
-<li>健康</li>
-<li>存钱</li>
-<li>节俭</li>
-<li>读书</li>
-<li>学习</li>
-<li>旅游</li>
-<li>娱乐</li>
-</ul>
-<p><strong>锻炼健康</strong>：除了平时多吃水果外，还要每天晚上睡觉前也要运动一下，仰卧起坐之类的都可以做；还有周末有空一定要去跑一下步，多运动锻炼，更多的需要自觉，形成一个习惯了，才是一个长久之计。</p>
-<p><strong>存钱节俭</strong>：计划每月存固定的钱，绝对不能拿出来用，给自己定每月的花费。今年确实是可以存点钱，因为没有出去怎么玩，也没有什么高端爱好，2018继续勉励，不用卖的东西，绝不要买！</p>
-<p><strong>读书学习</strong>：2017年，确认没有读完几本书，主要还是在工作中总结，总结自己的经历和实践。今年，主要专注移动自动化，当然希望领导、演讲、博弈、文化、经济等方面知识要多感悟，构建多个知识体系的大全观。同时，希望今年学2到3门编程语言吧，Python/Ruby/?。</p>
-<p><strong>旅游娱乐</strong>：长线：张家界、杭州、厦门、北京、西藏； 短线：香港、澳门、深圳、清远。</p>
-<p>2018，旺！旺！旺！</p>
-<p>“和真理一样，未来总是掌握在少数人手中。”</p>
-<p>希望自己，像追求真理一样，努力成为少数人。</p>
-<p>最后，用一句话总结和展望：<br>“小伙子，要有耐心，打造你的核心技能，要想做出世界一流的工作，不单是好奇心，还需要那种改变世界的憧憬，去想象有一天，自己的工作对世界产生很大的影响。”</p>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>德鲁克在《管理的实践》中写道：“管理者很多时候在做决策的时候，都是在分析未来有可能有什么市场环境的变化，这些变化会有什么机会。”</p>
-<h4 id="序言">序言</h4><p>这一年，在生命中非常有意义的一年，从创业者离场，回到一个中型企业，改变非常大。从职场熟人到职场老油条？毕业不知觉已经3年多了，有时还会回忆美好的学生时代，有时在想大学时在努力一点，也许现在生活更加美好一点啦。一路走过的2017，经历了非常之多，是时候在尘封前记录下来吧！</p>]]>
-    
-    </summary>
-    
-      <category term="2018" scheme="https://iHTCboy.com/tags/2018/"/>
-    
-      <category term="年终总结" scheme="https://iHTCboy.com/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="life" scheme="https://iHTCboy.com/categories/life/"/>
     
   </entry>
   
