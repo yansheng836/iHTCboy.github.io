@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-10T15:13:57.093Z</updated>
+  <updated>2018-07-10T15:19:08.983Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,14 +19,14 @@
     <link href="https://iHTCboy.com/2018/07/10/2018-07-10_Python%E7%88%AC%E8%99%AB%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8%E7%AF%87/"/>
     <id>https://iHTCboy.com/2018/07/10/2018-07-10_Python爬虫实践入门篇/</id>
     <published>2018-07-10T13:49:16.000Z</published>
-    <updated>2018-07-10T15:13:57.093Z</updated>
+    <updated>2018-07-10T15:19:08.983Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>
-<a id="more"></a>
 <h3 id="2、需要的准备">2、需要的准备</h3><ul>
 <li>Python：需要基本的python语法基础</li>
 <li>requests：专业用于请求处理，<a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">requests库学习文档中文版</a></li>
 <li>lxml：其实可以用pythonth自带的正则表达式库re，但是为了更加简单入门，用 <a href="https://lxml.de/index.html" target="_blank" rel="external">lxml</a> 中的 etree 进行网页数据定位爬取。</li>
 </ul>
+<a id="more"></a>
 <p>通过pip安装 requests 和 lxml 库，在终端输入：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> requests</span><br><span class="line">pip <span class="keyword">install</span> lxml</span><br></pre></td></tr></table></figure></p>
 <p>下载过程成功的输出：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collecting lxml</span><br><span class="line">  Cache entry deserialization failed, entry ignored</span><br><span class="line">  Downloading https:<span class="comment">//files.pythonhosted.org/packages/00/fd/5e65f293e366a63198dade275b886e5d24752367c2e67e3993023b0d58ef/lxml-4.2.3-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (8.7MB)</span></span><br><span class="line">    <span class="number">100</span>% |████████████████████████████████| <span class="number">8.7</span>MB <span class="number">821</span>kB/s </span><br><span class="line">Installing collected packages: lxml</span><br><span class="line">Successfully installed lxml-<span class="number">4.2</span><span class="number">.3</span></span><br></pre></td></tr></table></figure></p>
 <ul>
@@ -79,7 +79,12 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>]]>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>
+<h3 id="2、需要的准备">2、需要的准备</h3><ul>
+<li>Python：需要基本的python语法基础</li>
+<li>requests：专业用于请求处理，<a href="http://docs.python-requests.org/zh_CN/latest/">requests库学习文档中文版</a></li>
+<li>lxml：其实可以用pythonth自带的正则表达式库re，但是为了更加简单入门，用 <a href="https://lxml.de/index.html">lxml</a> 中的 etree 进行网页数据定位爬取。</li>
+</ul>]]>
     
     </summary>
     
