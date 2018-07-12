@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-10T15:19:08.983Z</updated>
+  <updated>2018-07-12T14:53:55.647Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/07/10/2018-07-10_Python%E7%88%AC%E8%99%AB%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8%E7%AF%87/"/>
     <id>https://iHTCboy.com/2018/07/10/2018-07-10_Python爬虫实践入门篇/</id>
     <published>2018-07-10T13:49:16.000Z</published>
-    <updated>2018-07-10T15:19:08.983Z</updated>
+    <updated>2018-07-12T14:53:55.647Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>
 <h3 id="2、需要的准备">2、需要的准备</h3><ul>
 <li>Python：需要基本的python语法基础</li>
@@ -28,6 +28,7 @@
 </ul>
 <a id="more"></a>
 <p>通过pip安装 requests 和 lxml 库，在终端输入：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> requests</span><br><span class="line">pip <span class="keyword">install</span> lxml</span><br></pre></td></tr></table></figure></p>
+<p>注：如果是安装到Python3就用<code>pip3 install</code></p>
 <p>下载过程成功的输出：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collecting lxml</span><br><span class="line">  Cache entry deserialization failed, entry ignored</span><br><span class="line">  Downloading https:<span class="comment">//files.pythonhosted.org/packages/00/fd/5e65f293e366a63198dade275b886e5d24752367c2e67e3993023b0d58ef/lxml-4.2.3-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (8.7MB)</span></span><br><span class="line">    <span class="number">100</span>% |████████████████████████████████| <span class="number">8.7</span>MB <span class="number">821</span>kB/s </span><br><span class="line">Installing collected packages: lxml</span><br><span class="line">Successfully installed lxml-<span class="number">4.2</span><span class="number">.3</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>注：<br>如果安装过程遇到任何问题，请谷歌吧，如果网上找不到答案，也不要问我！找不到答案我直播吃翔！！！</li>
@@ -58,6 +59,7 @@
 <p>代码就没有太多注释，因为很简单，就说一下运行方式吧，在终端：</p>
 <p>python2:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
 <p>python3:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python3</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<p>最后的成果：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-last-results.png" alt="20180710-last-results.png"></p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">Python教程 - 廖雪峰的官方网站</a></li>
 <li><a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">Requests: 让 HTTP 服务人类 — Requests 2.18.1 文档</a></li>
@@ -203,16 +205,16 @@
     <link href="https://iHTCboy.com/2018/05/26/2018-05-26_iOS%E5%BF%AB%E9%80%9F%E6%B8%85%E9%99%A4%E5%85%A8%E9%83%A8%E7%9A%84%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/"/>
     <id>https://iHTCboy.com/2018/05/26/2018-05-26_iOS快速清除全部的消息推送/</id>
     <published>2018-05-26T15:46:16.000Z</published>
-    <updated>2018-07-10T15:22:26.177Z</updated>
+    <updated>2018-07-12T15:09:02.721Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>越来越多的应用，请求用户推送权限，一般情况下，普通应用我是不允许的，除了通讯应用、支付宝（银行app有很多不羊毛的活动推送，不允许）、GTD（Things、Due）、健身（Kepp、SixPack），其它的像淘宝天猫、京东，每次打开app，都要反复问我还要不要打开推送，你们就不能先调查一下我用的iOS系统多久吗？请问一个用了4年以上的用户，如果他还想打你们家的app推送，难道不知道在那里开吗？脑子进水吧。</p>
 <h3 id="iOS10_以上">iOS10 以上</h3><p>如果是iOS10以上，并且是iPhone 6S、iPhone 6S plus ，就可以利用3D Touch一键清除通知。</p>
 <a id="more"></a>
-<p><img src="https://upload-images.jianshu.io/upload_images/99517-c68e50013f5a76fd.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_C28272FF6B00-1.jpeg"></p>
-<p>如果是点击推送的 x ，就会出现 Clear，点击后会清除当前区的推送<br><img src="https://upload-images.jianshu.io/upload_images/99517-78893677f32158e9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_24407F30BCFE-1.jpeg"></p>
-<p>如果长压（3D Touch），就出现 Clear All Notifications，点击就会清楚全部的推送<br> <img src="https://upload-images.jianshu.io/upload_images/99517-28f2786b22166cc7.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_2184A87A7C29-1.jpeg"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Clear-All-Push-notification.jpeg" alt="20180526-iOS-Clear-All-Push-notification.jpeg"></p>
+<p>如果是点击推送的 x ，就会出现 Clear，点击后会清除当前区的推送<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Push-notification-Clear.jpeg" alt="20180526-iOS-Push-notification-Clear.jpeg"></p>
+<p>如果长压（3D Touch），就出现 Clear All Notifications，点击就会清楚全部的推送<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Clear-All-Push-notification.jpeg" alt="20180526-iOS-Clear-All-Push-notification.jpeg"></p>
 <h3 id="iOS_9">iOS 9</h3><p>如果是iOS 9 和更老的机型，首先按住锁屏上方的把手把通知中心拉下来，拖到底，松手，然后再向上把它拖回去，锁屏瞬间清空!</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/99517-c68a865b0fa7ec49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/99517-e2342bb38da13c44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Push-notification-Pull.png" alt="20180526-iOS-Push-notification-Pull.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Push-notification-Push.png" alt="20180526-iOS-Push-notification-Push.png"></p>
 <h3 id="总结">总结</h3><p>iOS10以后的通知中心，合并了全部和未读消息，然后没有提供一个更好的展示形式，只是推送内容和交互更新，并没有解决推送过多的问题，就比如微信推送的消息是最多的，并且推送的类型也不一样，轻重急缓不分！<br>推送作为中国人工作和生活提示，已经越来越重要，更加高效和智能的推送展现，迫在眉睫。</p>
 <p>听说iOS12会重新设计通知，希望是真的，非常期待，因为苹果这2年已经没有为系统做更多的创新或颠覆，希望苹果有所创新！</p>
 <h3 id="参考引用">参考引用</h3><ul>

@@ -25,7 +25,8 @@ requests：专业用于请求处理，requests库学习文档中文版
 lxml：其实可以用pythonth自带的正则表达式库re，但是为了更加简单入门，用 lxml 中的 etree 进行网页数据定位爬取。">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-html-show-element.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-html-copy-xpath.png">
-<meta property="og:updated_time" content="2018-07-10T15:19:08.983Z">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-last-results.png">
+<meta property="og:updated_time" content="2018-07-12T14:53:55.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫实践入门篇">
 <meta name="twitter:description" content="1、前言学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。
@@ -245,6 +246,7 @@ var _hmt = _hmt || [];
 </ul>
 <a id="more"></a>
 <p>通过pip安装 requests 和 lxml 库，在终端输入：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> requests</span><br><span class="line">pip <span class="keyword">install</span> lxml</span><br></pre></td></tr></table></figure></p>
+<p>注：如果是安装到Python3就用<code>pip3 install</code></p>
 <p>下载过程成功的输出：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collecting lxml</span><br><span class="line">  Cache entry deserialization failed, entry ignored</span><br><span class="line">  Downloading https:<span class="comment">//files.pythonhosted.org/packages/00/fd/5e65f293e366a63198dade275b886e5d24752367c2e67e3993023b0d58ef/lxml-4.2.3-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (8.7MB)</span></span><br><span class="line">    <span class="number">100</span>% |████████████████████████████████| <span class="number">8.7</span>MB <span class="number">821</span>kB/s </span><br><span class="line">Installing collected packages: lxml</span><br><span class="line">Successfully installed lxml-<span class="number">4.2</span><span class="number">.3</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>注：<br>如果安装过程遇到任何问题，请谷歌吧，如果网上找不到答案，也不要问我！找不到答案我直播吃翔！！！</li>
@@ -275,6 +277,7 @@ var _hmt = _hmt || [];
 <p>代码就没有太多注释，因为很简单，就说一下运行方式吧，在终端：</p>
 <p>python2:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
 <p>python3:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python3</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<p>最后的成果：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-last-results.png" alt="20180710-last-results.png"></p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">Python教程 - 廖雪峰的官方网站</a></li>
 <li><a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">Requests: 让 HTTP 服务人类 — Requests 2.18.1 文档</a></li>
