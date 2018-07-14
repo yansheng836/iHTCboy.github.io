@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-14T08:55:47.738Z</updated>
+  <updated>2018-07-14T08:56:33.865Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="https://iHTCboy.com/2018/07/13/2018-07-13_macOS%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0Console/"/>
     <id>https://iHTCboy.com/2018/07/13/2018-07-13_macOS的控制台Console/</id>
     <published>2018-07-13T14:29:16.000Z</published>
-    <updated>2018-07-14T08:55:47.738Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>从Xcode9.4开始，Devices 已经移除了真机设备的日志输出log，而移到苹果系统独立的macOS的控制台(Console.app):</p>
+    <updated>2018-07-14T08:56:33.865Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>从Xcode9.4开始，Devices 界面已经移除了真机设备的日志输出log，而移到macOS系统独立的控制台app(Console.app):</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180713-macOS-Console.app.png" alt="20180713-macOS-Console.app.png-w200"></p>
 <a id="more"></a>
 <h3 id="2、控制台_Console-app">2、控制台 Console.app</h3><blockquote>
@@ -120,7 +120,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>从Xcode9.4开始，Devices 已经移除了真机设备的日志输出log，而移到苹果系统独立的macOS的控制台(Console.app):</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>从Xcode9.4开始，Devices 界面已经移除了真机设备的日志输出log，而移到macOS系统独立的控制台app(Console.app):</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180713-macOS-Console.app.png" alt="20180713-macOS-Console.app.png-w200"></p>]]>
     
     </summary>
