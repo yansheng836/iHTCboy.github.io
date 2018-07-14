@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-12T15:32:46.700Z</updated>
+  <updated>2018-07-14T08:45:17.914Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,132 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[macOS的控制台Console.app]]></title>
+    <link href="https://iHTCboy.com/2018/07/13/2018-07-13_macOS%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0Console/"/>
+    <id>https://iHTCboy.com/2018/07/13/2018-07-13_macOS的控制台Console/</id>
+    <published>2018-07-13T14:29:16.000Z</published>
+    <updated>2018-07-14T08:45:17.914Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>从Xcode9.4开始，Devices 已经移除了真机设置的日志输出log，而移到苹果系统独立的macOS的控制台(Console.app):</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180713-macOS-Console.app.png" alt="20180713-macOS-Console.app.png-w200"></p>
+<a id="more"></a>
+<h3 id="2、控制台_Console-app">2、控制台 Console.app</h3><blockquote>
+<p>查看日志信息和报告以获取有关 Mac 和设备的诊断信息。</p>
+</blockquote>
+<p>控制台应用很早的macOS版本就有了，但是不常用，其实Xcode中移除，也是因为与控制器功能相似，对于Xcode来说，也许真的是一个负担，并且Xcode现在bug已经够多了，移除也是一个好事吧。</p>
+<p>可以直接看苹果文档：<a href="https://support.apple.com/zh-cn/guide/console/welcome/1.0" target="_blank" rel="external">欢迎使用控制台 - Apple 支持</a></p>
+<h3 id="3、一些技巧">3、一些技巧</h3><p>相对于以前想看设备的日志，其实，控制台可谓更轻量，更快捷，更专业吧。下面就说说一些技巧：</p>
+<ul>
+<li>筛选所需<br>我们打开控制台的目的，一般都是调试我们自己开发的iOS应用吧！这时候，链接设备后，其实我们只关心我们自己的应用的日志，但默认情况下，会显示所有应用当前输出的日志，这时候，筛选所需显得很有必要！<br>找到你应用输出的一条日志，然后鼠标右键（或按住 Control 键点按日志信息），然后选择 <code>显示“进程&#39;XXX&#39;”</code>：</li>
+</ul>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180713-macOS-Console-Filter-Process-Items.png" alt="20180713-macOS-Console-Filter-Process-Items.png"></p>
+<p>这里示例<code>WeRead</code>(微信读书)的进程筛选，然后就会只显示这个应用的全部日志，相对于Xcode的日志界面，其实非常方便啦~</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180713-macOS-Console-Filter-Process-Items-activity.png" alt="20180713-macOS-Console-Filter-Process-Items-activity.png"></p>
+<ul>
+<li>显示所需<br>另一方面，第一条日志默认只显示一行，如果想显示全部，可以点击后，在下方显示具体的内容：</li>
+</ul>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180713-macOS-Console-Show-Items.png" alt="20180713-macOS-Console-Show-Items.png"></p>
+<p>如果用快捷键（→ 和 ←）左右箭头键可以快速在当前选择的行显示全部的内容：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180713-macOS-Console-Show-Specific-Items.png" alt="20180713-macOS-Console-Show-Specific-Items.png"></p>
+<h3 id="4、快捷键">4、快捷键</h3><p>使用键盘快捷键快速完成“控制台”中的许多任务。</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command-Option-F</td>
+<td>搜索日志信息和活动</td>
+</tr>
+<tr>
+<td>Command-F</td>
+<td>在日志信息中查找文本</td>
+</tr>
+<tr>
+<td>Command-G</td>
+<td>跳到下一条搜索结果</td>
+</tr>
+<tr>
+<td>Command-Shift-G</td>
+<td>跳到上一条搜索结果</td>
+</tr>
+<tr>
+<td>Command-K</td>
+<td>清除日志信息或活动</td>
+</tr>
+<tr>
+<td>Shift-Command-R</td>
+<td>重新载入日志信息或活动</td>
+</tr>
+<tr>
+<td>Shift-Command-N</td>
+<td>跳到最近的日志信息或活动</td>
+</tr>
+<tr>
+<td>Command-0</td>
+<td>显示或隐藏边栏</td>
+</tr>
+<tr>
+<td>Command-R</td>
+<td>在 Finder 中显示报告</td>
+</tr>
+<tr>
+<td>→</td>
+<td>在本行展开所选日志信息</td>
+</tr>
+<tr>
+<td>←</td>
+<td>在本行折叠所选日志信息</td>
+</tr>
+<tr>
+<td>Control-Command-F</td>
+<td>进入或退出全屏幕视图</td>
+</tr>
+<tr>
+<td>Command-C</td>
+<td>拷贝所选日志信息文本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5、总结">5、总结</h3><p>这个过程，大家也许会发现，用快捷键是提高效率的直接方式，用 <code>Alfred</code> 来打开也很方便（后面计划写一个<code>Alfred</code>开发者效率的文章，期待吧!）。刚开始，也许对于打开控制台查看日志log输出不习惯，但有时候只是查看日志排查问题，直接打开 Console.app 真的方便很多（你知道打开Xcode需要的时候更久，并且在打开Devices更是久啊），所以，综上，这个控制台 Console.app也是一件好事！</p>
+<p>说到这里，其实，我更想吐槽的是Xcdoe！！！越来越庞大，还有Swift的交替，直接导致品控越来越差。所以，从这个角度来看，苹果把Xcode的很多相关但不重置的功能单独出来，也许是到于Xcode开发团队来说，是一件好事，到后续的版本迭代也是好事吧，希望Xcode10给开发者带来<code>新</code>体验！期待9月！！</p>
+<h3 id="6、参考">6、参考</h3><ul>
+<li><a href="https://support.apple.com/zh-cn/guide/console/welcome/1.0" target="_blank" rel="external">欢迎使用控制台 - Apple 支持</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>从Xcode9.4开始，Devices 已经移除了真机设置的日志输出log，而移到苹果系统独立的macOS的控制台(Console.app):</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180713-macOS-Console.app.png" alt="20180713-macOS-Console.app.png-w200"></p>]]>
+    
+    </summary>
+    
+      <category term="Console.app" scheme="https://iHTCboy.com/tags/Console-app/"/>
+    
+      <category term="macOS" scheme="https://iHTCboy.com/tags/macOS/"/>
+    
+      <category term="苹果控制台" scheme="https://iHTCboy.com/tags/%E8%8B%B9%E6%9E%9C%E6%8E%A7%E5%88%B6%E5%8F%B0/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Python爬虫实践入门篇]]></title>
     <link href="https://iHTCboy.com/2018/07/10/2018-07-10_Python%E7%88%AC%E8%99%AB%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8%E7%AF%87/"/>
     <id>https://iHTCboy.com/2018/07/10/2018-07-10_Python爬虫实践入门篇/</id>
     <published>2018-07-10T13:49:16.000Z</published>
-    <updated>2018-07-12T15:32:46.700Z</updated>
+    <updated>2018-07-14T08:32:58.431Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>
 <h3 id="2、需要的准备">2、需要的准备</h3><ul>
 <li>Python：需要基本的python语法基础</li>
@@ -52,10 +173,10 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title = dom.xpath(title_path)[<span class="number">0</span>]</span><br><span class="line">total = dom.xpath(totalpage_path)[<span class="number">0</span>]</span><br><span class="line">image_url = dom.xpath(image_path)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">img_src = image_url.xpath(<span class="string">'./@src'</span>)[<span class="number">0</span>]</span><br><span class="line">img_alt = image_url.xpath(<span class="string">'./@alt'</span>)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 <p>这里解析就不解析了，其实通过PyCharm IDE可能实时查看每个对象的属性，可以更清晰的了解解析的元素结构，帮助理解，这里就暂时不说IDE的方法啦，大家有兴趣可以试试，也是很简单的~</p>
 <p>最后拿到图片链接，就是下载图片然后保存输出到电脑啊！（文章尾附完整代码！）</p>
-<h3 id="总结">总结</h3><p>爬虫入门就这样结束啦！学习了python后，发现语法很简单，代码很轻松就完成！不到100行！！！</p>
+<h3 id="4、总结">4、总结</h3><p>爬虫入门就这样结束啦！学习了python后，发现语法很简单，代码很轻松就完成！不到100行！！！</p>
 <p>python通过各种库，解决了编程语言自身的庞大，完成了自己是胶水语言的特点！</p>
 <p>通过这次实践，其实，有很多细节东西，只有自己做了才知道，比较说保存图片的路径，找到当前目录，怎么分目录保存，目录文件操作，这些都是自己之前实践了一个django工具学习过来的。所以，现在经历多了，才知道，什么时候学习都不晚，有些东西，真的是不知道什么时候你会用上，真的，自己早知道这个道理几年，就不像年轻时那么想，这东西怎么可能会用上，不学！！！果然是年轻坑爹！！！<strong>学会老，学到老吧！</strong></p>
-<h3 id="代码">代码</h3><ul>
+<h3 id="5、代码">5、代码</h3><ul>
 <li><a href="https://github.com/iHTCboy/WebCrawlerExample" target="_blank" rel="external">iHTCboy/WebCrawlerExample: 网页爬虫实践示例</a></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin/python3</span></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">downloadImages</span><span class="params">(url)</span>:</span></span><br><span class="line">    data = requests.get(page).text</span><br><span class="line">    dom = etree.HTML(data)</span><br><span class="line"></span><br><span class="line">    title_path = <span class="string">'//*[@id="photos"]/h1/text()'</span></span><br><span class="line">    totalpage_path = <span class="string">'//*[@id="picnum"]/span[2]/text()'</span></span><br><span class="line">    image_path = <span class="string">'//*[@id="big-pic"]/p/a/img'</span></span><br><span class="line"></span><br><span class="line">    title = dom.xpath(title_path)[<span class="number">0</span>]</span><br><span class="line">    total = dom.xpath(totalpage_path)[<span class="number">0</span>]</span><br><span class="line">    image_url = dom.xpath(image_path)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    img_src = image_url.xpath(<span class="string">'./@src'</span>)[<span class="number">0</span>]</span><br><span class="line">    img_alt = image_url.xpath(<span class="string">'./@alt'</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    print(title, total, img_src, img_alt)</span><br><span class="line"></span><br><span class="line">    cwd = os.getcwd()</span><br><span class="line">    save_path = os.path.join(cwd, <span class="string">'images/'</span> + title)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(save_path):</span><br><span class="line">        os.makedirs(save_path)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">u'保存图片的路径：'</span>, save_path)</span><br><span class="line"></span><br><span class="line">    img_path = os.path.dirname(img_src)</span><br><span class="line">    img_name = os.path.basename(img_src)</span><br><span class="line">    img_format = img_name.split(<span class="string">'.'</span>)[<span class="number">1</span>]</span><br><span class="line">    print(img_path, img_name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, int(total) + <span class="number">1</span>):</span><br><span class="line">        new_img_url = <span class="string">'%s/%02d.%s'</span> % (img_path, i, img_format)</span><br><span class="line">        save_img_path = <span class="string">'%s/%02d.%s'</span> % (save_path, i, img_format)</span><br><span class="line">        <span class="comment"># 下载图片</span></span><br><span class="line">        image = requests.get(new_img_url)</span><br><span class="line">        <span class="comment"># 命名并保存图片</span></span><br><span class="line">        <span class="keyword">with</span> open(save_img_path, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    url = <span class="string">'https://www.aitaotu.com/'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># download list</span></span><br><span class="line">    list = [<span class="string">'guonei/36350.html'</span>, <span class="string">'guonei/36352.html'</span>, <span class="string">'guonei/36351.html'</span>, <span class="string">'guonei/36357.html'</span>, <span class="string">'guonei/36250.html'</span>,</span><br><span class="line">            <span class="string">'guonei/36341.html'</span>, <span class="string">'guonei/36334.html'</span>, <span class="string">'guonei/36306.html'</span>, <span class="string">'guonei/35969.html'</span>, <span class="string">'guonei/35219.html'</span>,</span><br><span class="line">            <span class="string">'guonei/36290.html'</span>, <span class="string">'guonei/36277.html'</span>, <span class="string">'guonei/36263.html'</span>, <span class="string">'gangtai/36303.html'</span>, <span class="string">'gangtai/36226.html'</span>,</span><br><span class="line">            <span class="string">'guonei/35260.html'</span>, <span class="string">'guonei/35247.html'</span>, <span class="string">'guonei/36257.html'</span>, <span class="string">'guonei/36221.html'</span>, <span class="string">'guonei/21647.html'</span>,</span><br><span class="line">            <span class="string">'guonei/21499.html'</span>, <span class="string">'guonei/36319.html'</span>, <span class="string">'guonei/34903.html'</span>, <span class="string">'guonei/14148.html'</span>, <span class="string">'guonei/33780.html'</span>,</span><br><span class="line">            <span class="string">'guonei/14338.html'</span>, <span class="string">'guonei/14550.html'</span>, <span class="string">'guonei/14818.html'</span>, <span class="string">'guonei/16820.html'</span>, <span class="string">'guonei/18388.html'</span>,</span><br><span class="line">            <span class="string">'guonei/13447.html'</span>, <span class="string">'guonei/25912.html'</span>, <span class="string">'guonei/13991.html'</span>, <span class="string">'guonei/8246.html'</span>, <span class="string">'guonei/36171.html'</span></span><br><span class="line">            ]</span><br><span class="line"></span><br><span class="line">    print(<span class="string">u'准备下载：%d套图'</span>, len(list))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> type <span class="keyword">in</span> list:</span><br><span class="line">        page = url + type</span><br><span class="line">        downloadImages(page)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    print(<span class="string">u'下载完成啦！'</span>)</span><br></pre></td></tr></table></figure>
@@ -63,7 +184,7 @@
 <p>python2:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
 <p>python3:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python3</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
 <p>最后的成果：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-last-results.png" alt="20180710-last-results.png"></p>
-<h3 id="参考">参考</h3><ul>
+<h3 id="6、参考">6、参考</h3><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">Python教程 - 廖雪峰的官方网站</a></li>
 <li><a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">Requests: 让 HTTP 服务人类 — Requests 2.18.1 文档</a></li>
 <li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html" target="_blank" rel="external">Beautiful Soup 4.2.0 文档</a></li>
@@ -1254,207 +1375,6 @@
       <category term="otool" scheme="https://iHTCboy.com/tags/otool/"/>
     
       <category term="strings" scheme="https://iHTCboy.com/tags/strings/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[让你的iTerm更Geek!]]></title>
-    <link href="https://iHTCboy.com/2018/02/03/2018-02-03_%E8%AE%A9%E4%BD%A0%E7%9A%84iTerm%E6%9B%B4Geek!/"/>
-    <id>https://iHTCboy.com/2018/02/03/2018-02-03_让你的iTerm更Geek!/</id>
-    <published>2018-02-03T15:42:16.000Z</published>
-    <updated>2018-05-06T08:50:03.487Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm2 作为一个免费&amp;开源的应用，Mac程序员应用必备的软件！<br>作为一个专业的终端，功能真的很强大，<code>iTerm</code> + <code>oh-my-zsh</code>  应作为最佳配置使用！</p>
-<h3 id="2、一键调出_iTerm2">2、一键调出 iTerm2</h3><blockquote>
-<p>我们有时会遇上这样一种情况，就是我们只想用命令行执行某一个特定的操作，然后就不需要它了。其实在这种情况下我们没有必要打开命令行应用的。比如我们就是想看一眼某个文件夹里面都有什么文件，类似这种操作我们其实没有必要单独开启一个命令行窗<br>口的。</p>
-</blockquote>
-<a id="more"></a>
-<p>然后网上找到的配置是这样的，设置HotKey：<br>打开iTerm的Preperence → Profiles → Keys → HotKey 进行勾选设置<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Preperence → Profiles → Keys → HotKey .jpg" alt="Preperence → Profiles → Keys → HotKey .jpg"></p>
-<ul>
-<li>Show/hide iTerm2 with a system-wide hotkey</li>
-<li>Hotkey toggles a dedicated window with profile<br>勾选上面的两个选项，关闭iTerm2，然后再次打开，任意应用程序界面按快捷键尝试一下。你会爱上这个感觉。</li>
-</ul>
-<p>然而！！！没有找到 <code>Hotkey toggles a dedicated window with profile</code> 这个选项！！！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-没有找到Hotkey toggles a dedicated window with profile.png" alt="没有找到Hotkey toggles a dedicated window with profile.png"></p>
-<p>我是使用 iTerm2( Build 3.1.5.beta.2):</p>
-<p><img src="https://raw.githubusercontent.com/iHTCboy/iGallery/master/BlogImages/2018/02/0203-iTerm2（Build%203.1.5.beta.2）.png" alt="iTerm2( Build 3.1.5.beta.2).png"></p>
-<p><strong>Way! way!! way!!!</strong><br>原来新版已经移动到对应的<code>Profiles</code>下的<code>Keys</code>下：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Profiles-Keys.png" alt="Profiles-Keys.png"></p>
-<p>设置一下热键就可以啦！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Profiles-Hotkey.png" alt="Profiles-Hotkey.png"></p>
-<p>实用&amp;装逼时间：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-通过快捷键快速打开后台的iTerm2.gif" alt="通过快捷键快速打开后台的iTerm2.gif"></p>
-<p>有时候想快速打开，真的很方便！</p>
-<h3 id="3、iTerm2_光标按照单词快速移动设置">3、iTerm2 光标按照单词快速移动设置</h3><p>在Mac自带的终端中是可以使用 option+←和option+→ 这两个快捷键实现光标按照单词快速移动，但是发现iTerm用这个快捷键没有反应！！！每次只能用<code>ctrl + f/b</code>一个个字符移动，效率非常低！经过搜索，发现需要重新配置相应的映射。</p>
-<p>打开iTerm2的 Preferences -&gt;选择相应的 Profile（默认为Default），选择“Keys”选项卡，然后可以在Key Mappings看到option+←和option+→ 这两组快捷键用作了其他功能，这里我们只需要重新绑定新的映射即可（下图是已经绑定之后的新映射）。</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Key Mappings.png" alt="Key Mappings.png"></p>
-<p>分别修改option+←和option+→的映射如下图所示，选择Action为“Send Escape Sequence”，然后输入“b”和“f”即可。<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0203-Key Mappings-shortcut.png" alt="Key Mappings-shortcut.png"></p>
-<h3 id="4、iTerm2_备忘命令行快捷键">4、iTerm2 备忘命令行快捷键</h3><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>作用说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>command + f</td>
-<td><strong>搜索&amp;查找</strong>，如果输入搜索内容后，按下 tab 键，就会 iTerm 自动帮选中搜索关键词，并且自动的帮我们复制到了剪贴板中。如果输入的是 shift+tab，则自动将查找内容的左边选中并复制。按 esc 退出搜索。</td>
-</tr>
-<tr>
-<td>command + k</td>
-<td>清空屏幕</td>
-</tr>
-<tr>
-<td>command + d</td>
-<td>垂直分屏</td>
-</tr>
-<tr>
-<td>command + shift + d</td>
-<td>水平分屏</td>
-</tr>
-<tr>
-<td>command + ;</td>
-<td>查看历史命令</td>
-</tr>
-<tr>
-<td>command + shift + h</td>
-<td>查看剪贴板历史，会自动列出输入过的命令</td>
-</tr>
-<tr>
-<td>command + number</td>
-<td>tab 标签窗口来回切换</td>
-</tr>
-<tr>
-<td>command + option + ←/→ <br>或 command + [ / ]</td>
-<td>切换屏幕</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ctrl +  x</td>
-<td>第一次按时，移动光标至行首；再次按时，回到原有位置</td>
-</tr>
-<tr>
-<td>ctrl + a</td>
-<td>到行首（Ahead of line）</td>
-</tr>
-<tr>
-<td>ctrl + e</td>
-<td>到行尾（End of line）</td>
-</tr>
-<tr>
-<td>ctrl + f/b</td>
-<td>前进后退(相当于左右方向键)</td>
-</tr>
-<tr>
-<td>ctrl + u</td>
-<td>清除当前行（无论光标在什么位置）</td>
-</tr>
-<tr>
-<td>ctrl + d</td>
-<td>删除光标当前位置的<strong>字符</strong></td>
-</tr>
-<tr>
-<td>ctrl + h</td>
-<td>删除光标之前的<strong>字符</strong></td>
-</tr>
-<tr>
-<td>ctrl + w</td>
-<td>删除光标之前的<strong>单词</strong></td>
-</tr>
-<tr>
-<td>ctrl + k</td>
-<td>删除光标当前位置到文本末尾的<strong>所有字符</strong></td>
-</tr>
-<tr>
-<td>ctrl + t</td>
-<td>交换光标当前位置的字符与前一个字符的位置</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ctrl + c <br>或 ctrl + j <br>或 ctrl + o</td>
-<td>取消当前行输入的命令（中断操作）。重新起一行。</td>
-</tr>
-<tr>
-<td>ctrl + y</td>
-<td>粘贴之前（ctrl +u/k/w）删除的内容</td>
-</tr>
-<tr>
-<td>ctrl + p</td>
-<td>上一条命令。调出命令历史中的前一条（Previous）命令，相当于通常的上箭头</td>
-</tr>
-<tr>
-<td>ctrl + n</td>
-<td>下一条命令。调出命令历史中的下一条（Next）命令，相当于通常的上箭头</td>
-</tr>
-<tr>
-<td>ctrl + s</td>
-<td>冻结终端操作（暂停脚本）</td>
-</tr>
-<tr>
-<td>ctrl  + q</td>
-<td>恢复冻结（继续执行脚本）</td>
-</tr>
-<tr>
-<td>ctrl + r</td>
-<td>搜索命令历史。根据用户输入查找相关历史命令（reverse-i-search）</td>
-</tr>
-<tr>
-<td>ctrl + l  <br>或 command + r  <br> 或 clear</td>
-<td>换到新一屏，创建一个空屏</td>
-</tr>
-<tr>
-<td>ctrl + i <br>或 tab</td>
-<td>横行制表符，在命令行中补齐指令</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>!word</td>
-<td>重复运行最近一条以“word”开头的指令，如!ls 或 !l</td>
-</tr>
-<tr>
-<td>!$</td>
-<td>调用上一条指令的最后一个参数作为当前指令对象,如，假设上一条指令为： ls abc.txt bbc.txt 那么， vi !$ 相当于： vi bbc.txt</td>
-</tr>
-<tr>
-<td>!number</td>
-<td>调用执行指定编号的历史记录指令,如!2, !11</td>
-</tr>
-</tbody>
-</table>
-<h3 id="5、参考引用">5、参考引用</h3><ul>
-<li><a href="http://huang-jerryc.com/2016/08/11/打造高效个性Terminal（一）之%20iTerm/" target="_blank" rel="external">打造高效个性Terminal（一）之 iTerm | BlueSun</a></li>
-<li><a href="https://www.jianshu.com/p/4409e6ac1975" target="_blank" rel="external">让你的Mac更Geek（逼格） - 简书</a></li>
-<li><a href="http://swiftcafe.io/2015/07/25/iterm/" target="_blank" rel="external">iTerm - 让你的命令行也能丰富多彩 - SwiftCafe 享受代码的乐趣</a></li>
-<li><a href="http://blog.csdn.net/skyyws/article/details/78480132" target="_blank" rel="external">Mac下iTerm2光标按照单词快速移动设置 - CSDN博客</a></li>
-<li><a href="https://ruby-china.org/topics/6114" target="_blank" rel="external">OS X 下的 iTerm 2 如何让 cursor 跳字移动？ · Ruby China</a></li>
-<li><a href="https://cnbin.github.io/blog/2015/06/20/iterm2-kuai-jie-jian-da-quan/" target="_blank" rel="external">iTerm2 快捷键大全 - 陈斌彬的技术博客</a></li>
-<li><a href="https://my.oschina.net/dyl226/blog/752030" target="_blank" rel="external">Mac 终端Terminal光标移动快捷键</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTerm2 作为一个免费&amp;开源的应用，Mac程序员应用必备的软件！<br>作为一个专业的终端，功能真的很强大，<code>iTerm</code> + <code>oh-my-zsh</code>  应作为最佳配置使用！</p>
-<h3 id="2、一键调出_iTerm2">2、一键调出 iTerm2</h3><blockquote>
-<p>我们有时会遇上这样一种情况，就是我们只想用命令行执行某一个特定的操作，然后就不需要它了。其实在这种情况下我们没有必要打开命令行应用的。比如我们就是想看一眼某个文件夹里面都有什么文件，类似这种操作我们其实没有必要单独开启一个命令行窗<br>口的。</p>
-</blockquote>]]>
-    
-    </summary>
-    
-      <category term="Terminal" scheme="https://iHTCboy.com/tags/Terminal/"/>
-    
-      <category term="iTerm进阶" scheme="https://iHTCboy.com/tags/iTerm%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="命令行快捷键" scheme="https://iHTCboy.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
