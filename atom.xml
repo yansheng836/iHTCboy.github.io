@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-15T14:04:31.940Z</updated>
+  <updated>2018-07-15T14:08:21.116Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[程序员的macOS系列：精选Mac App]]></title>
     <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89Mac%20App/"/>
     <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选Mac App/</id>
-    <published>2018-07-15T14:19:16.000Z</published>
-    <updated>2018-07-15T14:04:31.940Z</updated>
+    <published>2018-07-15T14:29:16.000Z</published>
+    <updated>2018-07-15T14:08:21.116Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。也有很多在总结了相关的文档，这里是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li>程序员的macOS系列：精选Mac App</li>
@@ -30,7 +30,6 @@
 <a id="more"></a>
 <h3 id="2、精选Mac_App">2、精选Mac App</h3><p>Mac电脑上有很多应用，这里不提供任何安装吧，默认是链接到对应的App官网，大概说明一下应用简要用途。</p>
 <h4 id="IDE">IDE</h4><p>集成开发环境</p>
-<h5 id="Xcode">Xcode</h5><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Xcode.png" width="100" height:auto="" alt="20180715-macOS-Xcode.png"></p>
 <table>
 <thead>
 <tr>
@@ -51,21 +50,8 @@
 <td><a href="https://developer.apple.com/xcode/" target="_blank" rel="external">Xcode - Apple Developer</a></td>
 <td><a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank" rel="external">‎Xcode on the Mac App Store</a></td>
 </tr>
-</tbody>
-</table>
-<h5 id="Android_Studio">Android Studio</h5><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-AndroidStudio.png" width="200" height:auto="" alt="20180715-macOS-AndroidStudio.png"></p>
-<table>
-<thead>
 <tr>
-<th>App</th>
-<th>简介</th>
-<th>价格</th>
-<th>官网</th>
-<th>下载</th>
-</tr>
-</thead>
-<tbody>
-<tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-AndroidStudio.png" width="200" height:auto="" alt="20180715-macOS-AndroidStudio.png"></td>
 <td>Android Studio</td>
 <td>Android Studio是一个为Android平台开发程序的集成开发环境。</td>
 <td>免费</td>
@@ -74,9 +60,40 @@
 <td>[‎Download Android Studio and SDK tools</td>
 <td>Android Developers](<a href="https://developer.android.com/studio/" target="_blank" rel="external">https://developer.android.com/studio/</a>)</td>
 </tr>
+<tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-PyCharm.png" width="200" height:auto="" alt="20180715-macOS-PyCharm.png"></td>
+<td>PyCharm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>WebStorm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>AppCode</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<h5 id="PyCharm">PyCharm</h5><h5 id="WebStorm">WebStorm</h5><h5 id="AppCode">AppCode</h5><h5 id="IntelliJ_IDEA">IntelliJ IDEA</h5><h5 id="PhpStorm">PhpStorm</h5><h5 id="CLion">CLion</h5><h5 id="GoLand">GoLand</h5><h5 id="CodeRunner">CodeRunner</h5><h5 id="wechatwebdevtools（微信开发者工具）">wechatwebdevtools（微信开发者工具）</h5><h5 id="CocosCreator">CocosCreator</h5><h4 id="Developer_Tools">Developer Tools</h4><p>程序开发中使用的工具应用。</p>
+<h5 id="IntelliJ_IDEA">IntelliJ IDEA</h5><h5 id="PhpStorm">PhpStorm</h5><h5 id="CLion">CLion</h5><h5 id="GoLand">GoLand</h5><h5 id="CodeRunner">CodeRunner</h5><h5 id="wechatwebdevtools（微信开发者工具）">wechatwebdevtools（微信开发者工具）</h5><h5 id="CocosCreator">CocosCreator</h5><h4 id="Developer_Tools">Developer Tools</h4><p>程序开发中使用的工具应用。</p>
 <h5 id="Visual_Studio_Code">Visual Studio Code</h5><h5 id="Atom">Atom</h5><h5 id="Sublime_Text">Sublime Text</h5><h5 id="iTerm">iTerm</h5><h5 id="Navicat_Premium">Navicat Premium</h5><h5 id="SourceTree">SourceTree</h5><h5 id="GitHub_Desktop">GitHub Desktop</h5><h5 id="Dash">Dash</h5><h5 id="Charles">Charles</h5><h5 id="Easy_APNs_Provider">Easy APNs Provider</h5><h5 id="Genymotion">Genymotion</h5><h5 id="VirtualBox">VirtualBox</h5><h5 id="Parallels_Desktop">Parallels Desktop</h5><h5 id="Reveal">Reveal</h5><h5 id="Kaleidoscope">Kaleidoscope</h5><h5 id="Prepo">Prepo</h5><h5 id="PaintCode">PaintCode</h5><h5 id="QuartzCode">QuartzCode</h5><h5 id="Core_Animator">Core Animator</h5><h5 id="VisualJSON">VisualJSON</h5><h5 id="FauxPas">FauxPas</h5><h5 id="iReSign">iReSign</h5><h5 id="iOS_App_Signer">iOS App Signer</h5><h5 id="Impactor">Impactor</h5><h5 id="MachOView">MachOView</h5><h5 id="Hopper_Disassembler">Hopper Disassembler</h5><h5 id="IDA_Pro">IDA Pro</h5><h4 id="System">System</h4><p>增加或改变macOS系统功能，常驻状态栏或成为系统服务的一部分。</p>
 <h5 id="Alfred">Alfred</h5><h5 id="Moom">Moom</h5><h5 id="KekaThe">KekaThe</h5><h5 id="Unarchiver">Unarchiver</h5><h5 id="Jietu">Jietu</h5><h5 id="iText">iText</h5><h5 id="ShadowsocksX">ShadowsocksX</h5><h5 id="TinyCal">TinyCal</h5><h5 id="TripMode">TripMode</h5><h3 id="Utitli">Utitli</h3><p>通用工具，提升和有效的专精应用。</p>
 <h4 id="Mate_Translate">Mate Translate</h4><h5 id="Google_Chrome">Google Chrome</h5><h5 id="CleanMyMac">CleanMyMac</h5><h5 id="Downie">Downie</h5><h5 id="iSmartPhoto">iSmartPhoto</h5><h5 id="miniQpicview（看图）">miniQpicview（看图）</h5><h5 id="GIF_Brewery">GIF Brewery</h5><h5 id="YoudaoDict（网易有道词典）">YoudaoDict（网易有道词典）</h5><h5 id="Waltr">Waltr</h5><h5 id="iExplorer">iExplorer</h5><h5 id="iMazing">iMazing</h5><h5 id="HandShaker">HandShaker</h5><h5 id="QuickTime_Player">QuickTime Player</h5><h4 id="Write">Write</h4><p>图文创作，包括文章、日记</p>
