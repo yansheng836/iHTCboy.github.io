@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-15T07:46:28.220Z</updated>
+  <updated>2018-07-15T08:04:06.437Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="https://iHTCboy.com/2018/07/14/2018-07-14_%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84Django%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97---%E7%AC%AC7%E9%83%A8%E5%88%86/"/>
     <id>https://iHTCboy.com/2018/07/14/2018-07-14_一个完整的Django入门指南---第7部分/</id>
     <published>2018-07-14T10:49:16.000Z</published>
-    <updated>2018-07-15T07:46:28.220Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>这篇文章是翻译 <a href="https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/" target="_blank" rel="external">A Complete Beginner’s Guide to Django</a> 系列的最后一篇文章 <a href="https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html" target="_blank" rel="external">A Complete Beginner’s Guide to Django - Part 7</a>，因为我搜索查找了很久，都没有找到中文的翻译篇（如果有，就是我没有找到…），又因为这个系列真的非常的好，简单，容易，非常适配入门，所以打算自已试试翻译，也当是自己学习入门的一步吧！</p>
+    <updated>2018-07-15T08:04:06.437Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>本篇文章是翻译 <a href="https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/" target="_blank" rel="external">A Complete Beginner’s Guide to Django</a> 系列的最后一篇文章 <a href="https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html" target="_blank" rel="external">A Complete Beginner’s Guide to Django - Part 7</a>，因为搜索找了很久都没有找到对应的中文翻译篇（如果有，就是我没有找到…），又因为这个系列真的非常的好，简单，容易，非常适配入门，所以就打算自已试试翻译，也当是自己学习入门的一步吧！</p>
 <a id="more"></a>
 <h3 id="简介（Introduction）">简介（Introduction）</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-A-Complete Beginner&#39;s-Guide-to-Django-Part7.jpg" alt="20180714-A-Complete Beginner&#39;s-Guide-to-Django-Part7.jpg"></p>
 <p>欢迎来到我们教程系列的最后一部分！这篇文章，我们将把Django应用程序部署到生产服务器。我们还将为我们的服务器配置Email服务和HTTPS证书。</p>
@@ -313,7 +313,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>这篇文章是翻译 <a href="https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/">A Complete Beginner’s Guide to Django</a> 系列的最后一篇文章 <a href="https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html">A Complete Beginner’s Guide to Django - Part 7</a>，因为我搜索查找了很久，都没有找到中文的翻译篇（如果有，就是我没有找到…），又因为这个系列真的非常的好，简单，容易，非常适配入门，所以打算自已试试翻译，也当是自己学习入门的一步吧！</p>]]>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>本篇文章是翻译 <a href="https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/">A Complete Beginner’s Guide to Django</a> 系列的最后一篇文章 <a href="https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html">A Complete Beginner’s Guide to Django - Part 7</a>，因为搜索找了很久都没有找到对应的中文翻译篇（如果有，就是我没有找到…），又因为这个系列真的非常的好，简单，容易，非常适配入门，所以就打算自已试试翻译，也当是自己学习入门的一步吧！</p>]]>
     
     </summary>
     
