@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-django-boards.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-mailgun-add-domain.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-mailgun-add-NDS-Records.png">
-<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-NDS-List-Add-mail-record.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-List-Add-mail-record.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-list-MX-record.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-list-add-MX-Record.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-Add-DNS-Records-For-Tracking.png">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-Email-Please-reset-your-password.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-Email-Mailgun-Message-Delivery.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-Let's-Encrypt-certbot-Https.png">
-<meta property="og:updated_time" content="2018-07-15T08:04:06.437Z">
+<meta property="og:updated_time" content="2018-07-15T09:22:45.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(译)一个完整的Django入门指南---第7部分">
 <meta name="twitter:description" content="1、前言本篇文章是翻译 A Complete Beginner’s Guide to Django 系列的最后一篇文章 A Complete Beginner’s Guide to Django - Part 7，因为搜索找了很久都没有找到对应的中文翻译篇（如果有，就是我没有找到…），又因为这个系列真的非常的好，简单，容易，非常适配入门，所以就打算自已试试翻译，也当是自己学习入门的一步吧！">
@@ -258,7 +258,7 @@ var _hmt = _hmt || [];
 <p>关于Git的一个非常好的事情是它不仅仅是一个版本控制系统。围绕它建立了丰富的工具和服务生态系统。一些很好的例子比如持续集成、部署、代码审查、代码质量和项目管理。</p>
 <p>使用Git来支持Django项目的部署过程非常有用。这是从源代码存储库中拉取最新版本或在出现问题时回滚到特定版本的便捷方式。有许多服务使用Git来集成，以便执行自动化测试和部署。</p>
 <p>如果您没有在本地计算机上安装Git，请从 <a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a> 下载和安装。</p>
-<h4 id="（Git_基本配置）Basic_Setup">（Git 基本配置）Basic Setup</h4><p>首先，设置你电脑的Git身份：</p>
+<h4 id="Git_基本配置（Basic_Setup）">Git 基本配置（Basic Setup）</h4><p>首先，设置你电脑的Git身份：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &#34;Vitor Freitas&#34;&#10;git config --global user.email vitor@simpleisbetterthancomplex.com</span><br></pre></td></tr></table></figure>
 <p>译者注：</p>
 <ul>
@@ -447,7 +447,7 @@ var _hmt = _hmt || [];
 <p>注册一个免费帐户。然后按照步骤操作，这非常简单。您必须与您注册域名的服务一起使用。在我的例子中，它是 <a href="https://namecheap.pxf.io/c/477033/386170/5618" target="_blank" rel="external">Namecheap</a>。</p>
 <p>点击添加域以向您的帐户添加新域。按照说明操作，确保使用 “mg.” 子域名：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-mailgun-add-domain.png" alt="20180714-mailgun-add-domain.png"></p>
 <p>现在抓取第一组DNS记录，它是两个TXT记录：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-mailgun-add-NDS-Records.png" alt="20180714-mailgun-add-NDS-Records.png"></p>
-<p>使用您的注册商提供的网络界面将其添加到您的域中：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-NDS-List-Add-mail-record.png" alt="20180714-NDS-List-Add-mail-record.png"></p>
+<p>使用您的注册商提供的网络界面将其添加到您的域中：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-List-Add-mail-record.png" alt="20180714-DNS-List-Add-mail-record.png"></p>
 <p>重复上述步骤，对MX记录做同样的事情：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-list-MX-record.png" alt="20180714-DNS-list-MX-record.png"></p>
 <p>将它们添加到域中：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-list-add-MX-Record.png" alt="20180714-DNS-list-add-MX-Record.png"></p>
 <p>现在这一步不是强制性的，但由于我们已经在这里，所以也配置一下：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-Add-DNS-Records-For-Tracking.png" alt="20180714-Add-DNS-Records-For-Tracking.png"></p>
@@ -665,6 +665,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2018/07/15/2018-07-15_程序员的macOS系列：精选Mac App/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          程序员的macOS系列：精选Mac App
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/07/13/2018-07-13_macOS的控制台Console/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">macOS的控制台Console.app</div>
@@ -694,7 +703,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简介（Introduction）"><span class="toc-number">2.</span> <span class="toc-text">简介（Introduction）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#版本控制（Version_Control）"><span class="toc-number">3.</span> <span class="toc-text">版本控制（Version Control）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（Git_基本配置）Basic_Setup"><span class="toc-number">3.1.</span> <span class="toc-text">（Git 基本配置）Basic Setup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git_远程仓库（Remote_Repository）"><span class="toc-number">3.2.</span> <span class="toc-text">Git 远程仓库（Remote Repository）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目配置（Project_Settings）"><span class="toc-number">4.</span> <span class="toc-text">项目配置（Project Settings）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#记录依赖库版本（Tracking_Requirements）"><span class="toc-number">5.</span> <span class="toc-text">记录依赖库版本（Tracking Requirements）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名（Domain_Name）"><span class="toc-number">6.</span> <span class="toc-text">域名（Domain Name）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署策略（20180714-GitHub-Initial-Commit-pn）"><span class="toc-number">7.</span> <span class="toc-text">部署策略（20180714-GitHub-Initial-Commit.pn）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到VPS（Digital_Ocean）（Deploying_to_a_VPS_(Digital_Ocean)）"><span class="toc-number">8.</span> <span class="toc-text">部署到VPS（Digital Ocean）（Deploying to a VPS (Digital Ocean)）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#应用用户（Application_User）"><span class="toc-number">8.1.</span> <span class="toc-text">应用用户（Application User）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PostgreSQL数据库配置（PostgreSQL_Database_Setup）"><span class="toc-number">8.2.</span> <span class="toc-text">PostgreSQL数据库配置（PostgreSQL Database Setup）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Django项目配置（Django_Project_Setup）"><span class="toc-number">8.3.</span> <span class="toc-text">Django项目配置（Django Project Setup）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置Gunicorn（Configuring_Gunicorn）"><span class="toc-number">8.4.</span> <span class="toc-text">配置Gunicorn（Configuring Gunicorn）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置Supervisor（Configuring_Supervisor）"><span class="toc-number">8.5.</span> <span class="toc-text">配置Supervisor（Configuring Supervisor）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置NGINX（Configuring_NGINX）"><span class="toc-number">8.6.</span> <span class="toc-text">配置NGINX（Configuring NGINX）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置电子邮件服务（Configuring_an_Email_Service）"><span class="toc-number">9.</span> <span class="toc-text">配置电子邮件服务（Configuring an Email Service）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置HTTPS证书（Configuring_HTTPS_Certificate）"><span class="toc-number">10.</span> <span class="toc-text">配置HTTPS证书（Configuring HTTPS Certificate）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结（Conclusions）"><span class="toc-number">11.</span> <span class="toc-text">总结（Conclusions）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#译者总结"><span class="toc-number">12.</span> <span class="toc-text">译者总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考扩展"><span class="toc-number">13.</span> <span class="toc-text">参考扩展</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简介（Introduction）"><span class="toc-number">2.</span> <span class="toc-text">简介（Introduction）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#版本控制（Version_Control）"><span class="toc-number">3.</span> <span class="toc-text">版本控制（Version Control）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Git_基本配置（Basic_Setup）"><span class="toc-number">3.1.</span> <span class="toc-text">Git 基本配置（Basic Setup）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git_远程仓库（Remote_Repository）"><span class="toc-number">3.2.</span> <span class="toc-text">Git 远程仓库（Remote Repository）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目配置（Project_Settings）"><span class="toc-number">4.</span> <span class="toc-text">项目配置（Project Settings）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#记录依赖库版本（Tracking_Requirements）"><span class="toc-number">5.</span> <span class="toc-text">记录依赖库版本（Tracking Requirements）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名（Domain_Name）"><span class="toc-number">6.</span> <span class="toc-text">域名（Domain Name）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署策略（20180714-GitHub-Initial-Commit-pn）"><span class="toc-number">7.</span> <span class="toc-text">部署策略（20180714-GitHub-Initial-Commit.pn）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到VPS（Digital_Ocean）（Deploying_to_a_VPS_(Digital_Ocean)）"><span class="toc-number">8.</span> <span class="toc-text">部署到VPS（Digital Ocean）（Deploying to a VPS (Digital Ocean)）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#应用用户（Application_User）"><span class="toc-number">8.1.</span> <span class="toc-text">应用用户（Application User）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PostgreSQL数据库配置（PostgreSQL_Database_Setup）"><span class="toc-number">8.2.</span> <span class="toc-text">PostgreSQL数据库配置（PostgreSQL Database Setup）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Django项目配置（Django_Project_Setup）"><span class="toc-number">8.3.</span> <span class="toc-text">Django项目配置（Django Project Setup）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置Gunicorn（Configuring_Gunicorn）"><span class="toc-number">8.4.</span> <span class="toc-text">配置Gunicorn（Configuring Gunicorn）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置Supervisor（Configuring_Supervisor）"><span class="toc-number">8.5.</span> <span class="toc-text">配置Supervisor（Configuring Supervisor）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置NGINX（Configuring_NGINX）"><span class="toc-number">8.6.</span> <span class="toc-text">配置NGINX（Configuring NGINX）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置电子邮件服务（Configuring_an_Email_Service）"><span class="toc-number">9.</span> <span class="toc-text">配置电子邮件服务（Configuring an Email Service）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置HTTPS证书（Configuring_HTTPS_Certificate）"><span class="toc-number">10.</span> <span class="toc-text">配置HTTPS证书（Configuring HTTPS Certificate）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结（Conclusions）"><span class="toc-number">11.</span> <span class="toc-text">总结（Conclusions）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#译者总结"><span class="toc-number">12.</span> <span class="toc-text">译者总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考扩展"><span class="toc-number">13.</span> <span class="toc-text">参考扩展</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -849,15 +858,23 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MacApp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1246,10 +1263,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Archives</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">

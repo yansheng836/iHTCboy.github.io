@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-15T08:04:06.437Z</updated>
+  <updated>2018-07-15T14:04:31.940Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,115 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[程序员的macOS系列：精选Mac App]]></title>
+    <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89Mac%20App/"/>
+    <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选Mac App/</id>
+    <published>2018-07-15T14:19:16.000Z</published>
+    <updated>2018-07-15T14:04:31.940Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。也有很多在总结了相关的文档，这里是一个程序员系列的，注意定位就好。</p>
+<ul>
+<li>程序员的macOS系列：精选Mac App</li>
+<li>程序员的macOS系列：Mac开发环境配置</li>
+<li>程序员的macOS系列：高效Alfred进阶</li>
+</ul>
+<p>目前计划写《程序员的macOS系列》这三篇，后续有想法在增加吧~</p>
+<a id="more"></a>
+<h3 id="2、精选Mac_App">2、精选Mac App</h3><p>Mac电脑上有很多应用，这里不提供任何安装吧，默认是链接到对应的App官网，大概说明一下应用简要用途。</p>
+<h4 id="IDE">IDE</h4><p>集成开发环境</p>
+<h5 id="Xcode">Xcode</h5><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Xcode.png" width="100" height:auto="" alt="20180715-macOS-Xcode.png"></p>
+<table>
+<thead>
+<tr>
+<th>App</th>
+<th>名称</th>
+<th>简介</th>
+<th>价格</th>
+<th>官网</th>
+<th>下载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Xcode.png" width="200" height:auto="" alt="20180715-macOS-Xcode.png"></td>
+<td>Xcode</td>
+<td>Xcode是 Mac, iPhone, iPad, Apple TV, and Apple Watch 等应用的开发集成工具。</td>
+<td>免费</td>
+<td><a href="https://developer.apple.com/xcode/" target="_blank" rel="external">Xcode - Apple Developer</a></td>
+<td><a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank" rel="external">‎Xcode on the Mac App Store</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="Android_Studio">Android Studio</h5><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-AndroidStudio.png" width="200" height:auto="" alt="20180715-macOS-AndroidStudio.png"></p>
+<table>
+<thead>
+<tr>
+<th>App</th>
+<th>简介</th>
+<th>价格</th>
+<th>官网</th>
+<th>下载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Android Studio</td>
+<td>Android Studio是一个为Android平台开发程序的集成开发环境。</td>
+<td>免费</td>
+<td>[Android Studio</td>
+<td>Android Developers](<a href="https://developer.android.com/studio/intro/" target="_blank" rel="external">https://developer.android.com/studio/intro/</a>)</td>
+<td>[‎Download Android Studio and SDK tools</td>
+<td>Android Developers](<a href="https://developer.android.com/studio/" target="_blank" rel="external">https://developer.android.com/studio/</a>)</td>
+</tr>
+</tbody>
+</table>
+<h5 id="PyCharm">PyCharm</h5><h5 id="WebStorm">WebStorm</h5><h5 id="AppCode">AppCode</h5><h5 id="IntelliJ_IDEA">IntelliJ IDEA</h5><h5 id="PhpStorm">PhpStorm</h5><h5 id="CLion">CLion</h5><h5 id="GoLand">GoLand</h5><h5 id="CodeRunner">CodeRunner</h5><h5 id="wechatwebdevtools（微信开发者工具）">wechatwebdevtools（微信开发者工具）</h5><h5 id="CocosCreator">CocosCreator</h5><h4 id="Developer_Tools">Developer Tools</h4><p>程序开发中使用的工具应用。</p>
+<h5 id="Visual_Studio_Code">Visual Studio Code</h5><h5 id="Atom">Atom</h5><h5 id="Sublime_Text">Sublime Text</h5><h5 id="iTerm">iTerm</h5><h5 id="Navicat_Premium">Navicat Premium</h5><h5 id="SourceTree">SourceTree</h5><h5 id="GitHub_Desktop">GitHub Desktop</h5><h5 id="Dash">Dash</h5><h5 id="Charles">Charles</h5><h5 id="Easy_APNs_Provider">Easy APNs Provider</h5><h5 id="Genymotion">Genymotion</h5><h5 id="VirtualBox">VirtualBox</h5><h5 id="Parallels_Desktop">Parallels Desktop</h5><h5 id="Reveal">Reveal</h5><h5 id="Kaleidoscope">Kaleidoscope</h5><h5 id="Prepo">Prepo</h5><h5 id="PaintCode">PaintCode</h5><h5 id="QuartzCode">QuartzCode</h5><h5 id="Core_Animator">Core Animator</h5><h5 id="VisualJSON">VisualJSON</h5><h5 id="FauxPas">FauxPas</h5><h5 id="iReSign">iReSign</h5><h5 id="iOS_App_Signer">iOS App Signer</h5><h5 id="Impactor">Impactor</h5><h5 id="MachOView">MachOView</h5><h5 id="Hopper_Disassembler">Hopper Disassembler</h5><h5 id="IDA_Pro">IDA Pro</h5><h4 id="System">System</h4><p>增加或改变macOS系统功能，常驻状态栏或成为系统服务的一部分。</p>
+<h5 id="Alfred">Alfred</h5><h5 id="Moom">Moom</h5><h5 id="KekaThe">KekaThe</h5><h5 id="Unarchiver">Unarchiver</h5><h5 id="Jietu">Jietu</h5><h5 id="iText">iText</h5><h5 id="ShadowsocksX">ShadowsocksX</h5><h5 id="TinyCal">TinyCal</h5><h5 id="TripMode">TripMode</h5><h3 id="Utitli">Utitli</h3><p>通用工具，提升和有效的专精应用。</p>
+<h4 id="Mate_Translate">Mate Translate</h4><h5 id="Google_Chrome">Google Chrome</h5><h5 id="CleanMyMac">CleanMyMac</h5><h5 id="Downie">Downie</h5><h5 id="iSmartPhoto">iSmartPhoto</h5><h5 id="miniQpicview（看图）">miniQpicview（看图）</h5><h5 id="GIF_Brewery">GIF Brewery</h5><h5 id="YoudaoDict（网易有道词典）">YoudaoDict（网易有道词典）</h5><h5 id="Waltr">Waltr</h5><h5 id="iExplorer">iExplorer</h5><h5 id="iMazing">iMazing</h5><h5 id="HandShaker">HandShaker</h5><h5 id="QuickTime_Player">QuickTime Player</h5><h4 id="Write">Write</h4><p>图文创作，包括文章、日记</p>
+<h5 id="Keynote/_Numbers/_Pages">Keynote/ Numbers/ Pages</h5><h5 id="Microsoft_Word/Excel/PowerPoint">Microsoft Word/Excel/PowerPoint</h5><h5 id="MindNode">MindNode</h5><h5 id="StarUML">StarUML</h5><h5 id="MWeb">MWeb</h5><h5 id="MacDown">MacDown</h5><h5 id="Evernote">Evernote</h5><h5 id="YoudaoNote">YoudaoNote</h5><p>##### </p>
+<h4 id="Design">Design</h4><p>设计，包括影音视图。</p>
+<h5 id="Adobe_Illustrator_CC">Adobe Illustrator CC</h5><h5 id="Adobe_Photoshop_CC">Adobe Photoshop CC</h5><h5 id="Axure_RP">Axure RP</h5><h5 id="Color_Picker">Color Picker</h5><h5 id="ColorSnapper2">ColorSnapper2</h5><h5 id="Final_Cut_Pro">Final Cut Pro</h5><h5 id="Motion">Motion</h5><h5 id="Compressor">Compressor</h5><h5 id="Logic_Pro_X">Logic Pro X</h5><h5 id="MainStage">MainStage</h5><h5 id="Sketch">Sketch</h5><h5 id="Logoist">Logoist</h5><h5 id="Pixelmator">Pixelmator</h5><h5 id="xScope">xScope</h5><h3 id="通讯">通讯</h3><h4 id="Telegram">Telegram</h4><h4 id="WeChat">WeChat</h4><h4 id="QQ">QQ</h4><h4 id="TeamViewer">TeamViewer</h4><h4 id="Remote_Desktop">Remote Desktop</h4><h4 id="Maipo">Maipo</h4><p>####</p>
+<p>####</p>
+<h3 id="GTD">GTD</h3><p>时间，就是生命。</p>
+<h5 id="Things3">Things3</h5><h5 id="Gestimer">Gestimer</h5><h5 id="Pomodoro_Timer">Pomodoro Timer</h5><h5 id="Tomato_One">Tomato One</h5><h5 id="JustFocus">JustFocus</h5><h5 id="Noizio">Noizio</h5><h4 id="Learning">Learning</h4><p>学习，知识无涯。</p>
+<h5 id="WWDC">WWDC</h5><h5 id="Reeder">Reeder</h5><h5 id="English_Class">English Class</h5><h5 id="iBooks">iBooks</h5><h4 id="Recreation（娱乐）">Recreation（娱乐）</h4><p>娱乐，消遣和放松。</p>
+<h4 id="NeteaseMusic（网易云音乐）">NeteaseMusic（网易云音乐）</h4><h5 id="MPlayerX">MPlayerX</h5><h5 id="Movist">Movist</h5><h5 id="VLC">VLC</h5><h5 id="IINA">IINA</h5><h3 id="参考">参考</h3><p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。也有很多在总结了相关的文档，这里是一个程序员系列的，注意定位就好。</p>
+<ul>
+<li>程序员的macOS系列：精选Mac App</li>
+<li>程序员的macOS系列：Mac开发环境配置</li>
+<li>程序员的macOS系列：高效Alfred进阶</li>
+</ul>
+<p>目前计划写《程序员的macOS系列》这三篇，后续有想法在增加吧~</p>]]>
+    
+    </summary>
+    
+      <category term="Mac" scheme="https://iHTCboy.com/tags/Mac/"/>
+    
+      <category term="MacApp" scheme="https://iHTCboy.com/tags/MacApp/"/>
+    
+      <category term="macOS" scheme="https://iHTCboy.com/tags/macOS/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[(译)一个完整的Django入门指南---第7部分]]></title>
     <link href="https://iHTCboy.com/2018/07/14/2018-07-14_%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84Django%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97---%E7%AC%AC7%E9%83%A8%E5%88%86/"/>
     <id>https://iHTCboy.com/2018/07/14/2018-07-14_一个完整的Django入门指南---第7部分/</id>
     <published>2018-07-14T10:49:16.000Z</published>
-    <updated>2018-07-15T08:04:06.437Z</updated>
+    <updated>2018-07-15T09:22:45.885Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>本篇文章是翻译 <a href="https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/" target="_blank" rel="external">A Complete Beginner’s Guide to Django</a> 系列的最后一篇文章 <a href="https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html" target="_blank" rel="external">A Complete Beginner’s Guide to Django - Part 7</a>，因为搜索找了很久都没有找到对应的中文翻译篇（如果有，就是我没有找到…），又因为这个系列真的非常的好，简单，容易，非常适配入门，所以就打算自已试试翻译，也当是自己学习入门的一步吧！</p>
 <a id="more"></a>
 <h3 id="简介（Introduction）">简介（Introduction）</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-A-Complete Beginner&#39;s-Guide-to-Django-Part7.jpg" alt="20180714-A-Complete Beginner&#39;s-Guide-to-Django-Part7.jpg"></p>
@@ -33,7 +137,7 @@
 <p>关于Git的一个非常好的事情是它不仅仅是一个版本控制系统。围绕它建立了丰富的工具和服务生态系统。一些很好的例子比如持续集成、部署、代码审查、代码质量和项目管理。</p>
 <p>使用Git来支持Django项目的部署过程非常有用。这是从源代码存储库中拉取最新版本或在出现问题时回滚到特定版本的便捷方式。有许多服务使用Git来集成，以便执行自动化测试和部署。</p>
 <p>如果您没有在本地计算机上安装Git，请从 <a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a> 下载和安装。</p>
-<h4 id="（Git_基本配置）Basic_Setup">（Git 基本配置）Basic Setup</h4><p>首先，设置你电脑的Git身份：</p>
+<h4 id="Git_基本配置（Basic_Setup）">Git 基本配置（Basic Setup）</h4><p>首先，设置你电脑的Git身份：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &#34;Vitor Freitas&#34;&#10;git config --global user.email vitor@simpleisbetterthancomplex.com</span><br></pre></td></tr></table></figure>
 <p>译者注：</p>
 <ul>
@@ -222,7 +326,7 @@
 <p>注册一个免费帐户。然后按照步骤操作，这非常简单。您必须与您注册域名的服务一起使用。在我的例子中，它是 <a href="https://namecheap.pxf.io/c/477033/386170/5618" target="_blank" rel="external">Namecheap</a>。</p>
 <p>点击添加域以向您的帐户添加新域。按照说明操作，确保使用 “mg.” 子域名：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-mailgun-add-domain.png" alt="20180714-mailgun-add-domain.png"></p>
 <p>现在抓取第一组DNS记录，它是两个TXT记录：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-mailgun-add-NDS-Records.png" alt="20180714-mailgun-add-NDS-Records.png"></p>
-<p>使用您的注册商提供的网络界面将其添加到您的域中：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-NDS-List-Add-mail-record.png" alt="20180714-NDS-List-Add-mail-record.png"></p>
+<p>使用您的注册商提供的网络界面将其添加到您的域中：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-List-Add-mail-record.png" alt="20180714-DNS-List-Add-mail-record.png"></p>
 <p>重复上述步骤，对MX记录做同样的事情：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-list-MX-record.png" alt="20180714-DNS-list-MX-record.png"></p>
 <p>将它们添加到域中：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-DNS-list-add-MX-Record.png" alt="20180714-DNS-list-add-MX-Record.png"></p>
 <p>现在这一步不是强制性的，但由于我们已经在这里，所以也配置一下：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-Add-DNS-Records-For-Tracking.png" alt="20180714-Add-DNS-Records-For-Tracking.png"></p>
@@ -1504,79 +1608,6 @@
       <category term="百度网盘限制" scheme="https://iHTCboy.com/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%99%90%E5%88%B6/"/>
     
       <category term="破解下载限速" scheme="https://iHTCboy.com/tags/%E7%A0%B4%E8%A7%A3%E4%B8%8B%E8%BD%BD%E9%99%90%E9%80%9F/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[关于16进制颜色值转换为UIColor的思考]]></title>
-    <link href="https://iHTCboy.com/2018/02/07/2018-02-07_%E5%85%B3%E4%BA%8E16%E8%BF%9B%E5%88%B6%E9%A2%9C%E8%89%B2%E5%80%BC%E8%BD%AC%E6%8D%A2%E4%B8%BAUIColor%E7%9A%84%E6%80%9D%E8%80%83/"/>
-    <id>https://iHTCboy.com/2018/02/07/2018-02-07_关于16进制颜色值转换为UIColor的思考/</id>
-    <published>2018-02-07T12:26:16.000Z</published>
-    <updated>2018-05-06T08:49:26.543Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>大家都知道iOS的UIColor提供的自定义初始化是通过RGB(A) 4个10进行制的参数，那么为什么用16进制呢？因为web和安卓端以常识性用16进制读取，所以为了方便设计师出图标注，很多时候都是16进制的效果图。而今天就是要讨论一下，这个16进制的转换的方法。</p>
-<p><a href="https://zh.wikipedia.org/wiki/网页颜色#十六进制数字表示方法" target="_blank" rel="external">网页颜色 - 维基百科</a>:</p>
-<blockquote>
-<p>在<a href="https://zh.wikipedia.org/wiki/HTML" title="HTML" target="_blank" rel="external">HTML</a>和<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS" target="_blank" rel="external">CSS</a>中使用3<a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82" title="字节" target="_blank" rel="external">字节</a>共6个<a href="https://zh.wikipedia.org/wiki/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6" title="十六进制" target="_blank" rel="external">十六进制</a>数字表示一种颜色，每字节从00到FF，相当十进位数字从0到255，按顺序前两位是红色的值，中间两位是绿的值，最后两位是蓝色的值。</p>
-<p>由于<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5" title="网页" target="_blank" rel="external">网页</a>（WEB）是基于计算机浏览器开发的媒体，所以颜色以光学<a href="https://zh.wikipedia.org/wiki/%E9%A2%9C%E8%89%B2" title="颜色" target="_blank" rel="external">颜色</a>RGB（红、绿、蓝）为主。 网页颜色是以16进制代码表示，一般以“#”号开头，后面分别为R、G、B的16位进制数。 FF为最大数，代表十进制255。比如白色是R、G、B三个颜色最大，在网页代码便是：#FFFFFF。黑色是三个颜色为0，在网页代码便是：#000000。当颜色代码为#XXYYZZ时，可以用#XYZ表示，如#135与#113355表示同样的颜色。在<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS" target="_blank" rel="external">CSS</a>中，也可以使用<code>rgb(127,127,127)</code>代替#7F7F7F（<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2#RGBA%E5%92%8CHSLA%E7%9A%84%E5%8D%81%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA" target="_blank" rel="external">十进制表示</a>）。</p>
-</blockquote>
-<p>有意思的是，可以知道表示颜色数总共有： 256^3 = 16,777,216 种，这个颜色就是我们常说的<strong>真彩色</strong>。</p>
-<h3 id="2、几种16进制颜色值转换UIColor的方式">2、几种16进制颜色值转换UIColor的方式</h3><p>16进制转换为10进制后的整形转换为UIColor：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// rgb颜色转换（rgbValue为16进制转换成10进制的整形）</span></span><br><span class="line"><span class="hexcolor">#def</span>ine <span class="function"><span class="title">MACRO_COLOR_HexCOLOR</span><span class="params">(rgbValue)</span></span>         ([UIColor colorWithRed:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF0000) &gt;&gt; <span class="number">16</span>))/<span class="number">255.0</span>f green:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF00) &gt;&gt; <span class="number">8</span>))/<span class="number">255.0</span>f blue:((<span class="attribute">float</span>)(rgbValue &amp; <span class="number">0</span>xFF))/<span class="number">255.0</span>f alpha:<span class="number">1.0</span>])</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<ul>
-<li>方法一：</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">pragma</span> mark -<span class="number">16</span>进制颜色值转化UIColor</span></span><br><span class="line">+ (UIColor *)colorFromHexString:(NSString *)hexString</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> rgbValue = <span class="number">0</span>;</span><br><span class="line">    NSScanner *scanner = [NSScanner scannerWithString:hexString];</span><br><span class="line">    [scanner setScanLocation:<span class="number">1</span>]; <span class="comment">// bypass '#' character</span></span><br><span class="line">    [scanner scanHexInt:&amp;rgbValue]; <span class="comment">// Optionally prefixed with "0x" or "0X"</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> MACRO_COLOR_HexCOLOR(rgbValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这种方法，只能输入以<code>#</code>开头的十六进制颜色，比如<code>#3c93fd</code>，如果输入<code>0X3c93fd</code>，最后都会得到黑色。（因为rgbValue为0，所以全部颜色为0，得到黑色。）</p>
-<ul>
-<li>方法二：</li>
-</ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">UIColor</span> *)colorWithHexString:(<span class="built_in">NSString</span> *) hexString</span><br><span class="line"> &#123;</span><br><span class="line">	<span class="built_in">NSScanner</span> *scanner = [<span class="built_in">NSScanner</span> scannerWithString: hexString];</span><br><span class="line">	<span class="keyword">unsigned</span> hexNum;</span><br><span class="line">	<span class="keyword">if</span> (![scanner scanHexInt:&amp;hexNum]) <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">	<span class="keyword">return</span> MACRO_COLOR_HexCOLOR(hexNum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这种方法，只能输入以<code>0X</code>或<code>0x</code>开头的十六进制颜色，比如<code>0x3c93fd</code>，如果输入<code>#3c93fd</code>，最后都会得到nil（透明）。（scanner转换10进制失败，hexNum为0，但是直接return nil，）</p>
-<ul>
-<li>方法三：</li>
-</ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 颜色转换三：iOS中十六进制的颜色（以#开头）转换为UIColor</span></span><br><span class="line">+ (UIColor *) <span class="string">colorWithHexString:</span> (NSString *)color</span><br><span class="line">&#123;</span><br><span class="line">    NSString *cString = [[color <span class="string">stringByTrimmingCharactersInSet:</span>[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// String should be 6 or 8 characters</span></span><br><span class="line">    <span class="keyword">if</span> ([cString length] &lt; <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> [UIColor clearColor];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断前缀并剪切掉</span></span><br><span class="line">    <span class="keyword">if</span> ([cString <span class="string">hasPrefix:</span>@<span class="string">"0X"</span>])</span><br><span class="line">        cString = [cString <span class="string">substringFromIndex:</span><span class="number">2</span>];</span><br><span class="line">    <span class="keyword">if</span> ([cString <span class="string">hasPrefix:</span>@<span class="string">"#"</span>])</span><br><span class="line">        cString = [cString <span class="string">substringFromIndex:</span><span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span> ([cString length] != <span class="number">6</span>)</span><br><span class="line">        <span class="keyword">return</span> [UIColor clearColor];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从六位数值中找到RGB对应的位数并转换</span></span><br><span class="line">    NSRange range;</span><br><span class="line">    range.location = <span class="number">0</span>;</span><br><span class="line">    range.length = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//R、G、B</span></span><br><span class="line">    NSString *rString = [cString <span class="string">substringWithRange:</span>range];</span><br><span class="line"></span><br><span class="line">    range.location = <span class="number">2</span>;</span><br><span class="line">    NSString *gString = [cString <span class="string">substringWithRange:</span>range];</span><br><span class="line"></span><br><span class="line">    range.location = <span class="number">4</span>;</span><br><span class="line">    NSString *bString = [cString <span class="string">substringWithRange:</span>range];   </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Scan values</span></span><br><span class="line">    unsigned <span class="typename">int</span> r, g, b;</span><br><span class="line">    [[NSScanner <span class="string">scannerWithString:</span>rString] <span class="string">scanHexInt:</span>&amp;r];</span><br><span class="line">    [[NSScanner <span class="string">scannerWithString:</span>gString] <span class="string">scanHexInt:</span>&amp;g];</span><br><span class="line">    [[NSScanner <span class="string">scannerWithString:</span>bString] <span class="string">scanHexInt:</span>&amp;b];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [UIColor <span class="string">colorWithRed:</span>((<span class="typename">float</span>) r <span class="regexp">/ 255.0f) green:((float) g /</span> <span class="number">255.0</span>f) <span class="string">blue:</span>((<span class="typename">float</span>) b / <span class="number">255.0</span>f) <span class="string">alpha:</span><span class="number">1.0</span>f];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：艳晓</span><br><span class="line">链接：<span class="string">https:</span><span class="comment">//www.jianshu.com/p/96835798e4fc</span></span><br></pre></td></tr></table></figure>
-<p>这种方法，做了<code>0x</code>和<code>#</code>判断，但是为什么那么长！！！有没有办法优化？</p>
-<h3 id="3、优化的方法？">3、优化的方法？</h3><p>因为用了<code>NSScanner</code>进行转换，所以为什么不用NSScanner直接判断，然后转换呢？另外苹果文档注释：</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">BOOL</span>)scanHexInt:(nullable unsigned *)<span class="literal">result</span>;   // <span class="type">Optionally</span> prefixed <span class="keyword">with</span> <span class="string">"0x"</span> <span class="keyword">or</span> <span class="string">"0X"</span></span><br></pre></td></tr></table></figure>
-<p>所以，其实用<code>NSScanner</code>进行转换时，不用判断 “0x” or “0X”，所以直接判断 <code>#</code>后过滤掉(跳过)就可以啦！！！</p>
-<p>直接看代码吧，发现看代码比文字更有力！：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">UIColor</span> *) colorWithHexString:(<span class="built_in">NSString</span> *)hexString </span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSScanner</span> *scanner = [<span class="built_in">NSScanner</span> scannerWithString:hexString];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//从当前的扫描位置开始扫描，判断扫描字符串是否从当前位置能扫描到和传入字符串相同的一串字符，如果能扫描到就返回YES，指针指向的地址存储的就是这段字符串的内容。</span></span><br><span class="line">    [scanner scanString:<span class="string">@"#"</span> intoString:<span class="literal">NULL</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">unsigned</span> rgbValue = <span class="number">0</span>;</span><br><span class="line">    [scanner scanHexInt:&amp;rgbValue];<span class="comment">// Optionally prefixed with "0x" or "0X"</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> MACRO_COLOR_HexCOLOR(rgbValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的<code>scanString: intoString:</code>方法是一个技巧，判断是否包含#，如果包括时，scanner的<code>scanLocation</code>会指向下一个字符。所以用<code>scanHexInt:</code>将十六进制无符号整形时，已经不包含<code>#</code>，所以能成功转换。</p>
-<h3 id="4、参考引用">4、参考引用</h3><ul>
-<li><a href="https://github.com/kballard/uicolor-utilities/blob/master/UIColor-Expanded.m" target="_blank" rel="external">uicolor-utilities/UIColor-Expanded.m at master · kballard/uicolor-utilities</a></li>
-<li><a href="https://www.jianshu.com/p/96835798e4fc" target="_blank" rel="external">iOS中十六进制的颜色转换UIColor（RGB） - 简书</a></li>
-<li><a href="https://www.jianshu.com/p/a0ee15f94131" target="_blank" rel="external">NSScanner：一个陌生的条件判断利器 - 简书</a></li>
-<li><a href="http://blog.csdn.net/likendsl/article/details/7974761" target="_blank" rel="external">NSScanner类的基本用法 - CSDN博客</a></li>
-<li><a href="https://www.jianshu.com/p/dee32c7401e1" target="_blank" rel="external">NSScanner使用详解 - 简书</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/网页颜色#十六进制数字表示方法" target="_blank" rel="external">网页颜色 - 维基百科</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>大家都知道iOS的UIColor提供的自定义初始化是通过RGB(A) 4个10进行制的参数，那么为什么用16进制呢？因为web和安卓端以常识性用16进制读取，所以为了方便设计师出图标注，很多时候都是16进制的效果图。而今天就是要讨论一下，这个16进制的转换的方法。</p>
-<p><a href="https://zh.wikipedia.org/wiki/网页颜色#十六进制数字表示方法">网页颜色 - 维基百科</a>:</p>
-<blockquote>
-<p>在<a href="https://zh.wikipedia.org/wiki/HTML" title="HTML">HTML</a>和<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS">CSS</a>中使用3<a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82" title="字节">字节</a>共6个<a href="https://zh.wikipedia.org/wiki/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6" title="十六进制">十六进制</a>数字表示一种颜色，每字节从00到FF，相当十进位数字从0到255，按顺序前两位是红色的值，中间两位是绿的值，最后两位是蓝色的值。</p>
-<p>由于<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5" title="网页">网页</a>（WEB）是基于计算机浏览器开发的媒体，所以颜色以光学<a href="https://zh.wikipedia.org/wiki/%E9%A2%9C%E8%89%B2" title="颜色">颜色</a>RGB（红、绿、蓝）为主。 网页颜色是以16进制代码表示，一般以“#”号开头，后面分别为R、G、B的16位进制数。 FF为最大数，代表十进制255。比如白色是R、G、B三个颜色最大，在网页代码便是：#FFFFFF。黑色是三个颜色为0，在网页代码便是：#000000。当颜色代码为#XXYYZZ时，可以用#XYZ表示，如#135与#113355表示同样的颜色。在<a href="https://zh.wikipedia.org/wiki/CSS" title="CSS">CSS</a>中，也可以使用<code>rgb(127,127,127)</code>代替#7F7F7F（<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2#RGBA%E5%92%8CHSLA%E7%9A%84%E5%8D%81%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA">十进制表示</a>）。</p>
-</blockquote>
-<p>有意思的是，可以知道表示颜色数总共有： 256^3 = 16,777,216 种，这个颜色就是我们常说的<strong>真彩色</strong>。</p>
-<h3 id="2、几种16进制颜色值转换UIColor的方式">2、几种16进制颜色值转换UIColor的方式</h3><p>16进制转换为10进制后的整形转换为UIColor：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// rgb颜色转换（rgbValue为16进制转换成10进制的整形）</span></span><br><span class="line"><span class="hexcolor">#def</span>ine <span class="function"><span class="title">MACRO_COLOR_HexCOLOR</span><span class="params">(rgbValue)</span></span>         ([UIColor colorWithRed:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF0000) &gt;&gt; <span class="number">16</span>))/<span class="number">255.0</span>f green:((<span class="attribute">float</span>)((rgbValue &amp; <span class="number">0</span>xFF00) &gt;&gt; <span class="number">8</span>))/<span class="number">255.0</span>f blue:((<span class="attribute">float</span>)(rgbValue &amp; <span class="number">0</span>xFF))/<span class="number">255.0</span>f alpha:<span class="number">1.0</span>])</span><br></pre></td></tr></table></figure>]]>
-    
-    </summary>
-    
-      <category term="16进制颜色" scheme="https://iHTCboy.com/tags/16%E8%BF%9B%E5%88%B6%E9%A2%9C%E8%89%B2/"/>
-    
-      <category term="NSScanner" scheme="https://iHTCboy.com/tags/NSScanner/"/>
-    
-      <category term="UIColor" scheme="https://iHTCboy.com/tags/UIColor/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
