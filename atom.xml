@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-16T02:45:56.406Z</updated>
+  <updated>2018-07-16T02:51:48.529Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89Mac%20App/"/>
     <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选Mac App/</id>
     <published>2018-07-15T14:29:16.000Z</published>
-    <updated>2018-07-16T02:45:56.406Z</updated>
+    <updated>2018-07-16T02:51:48.529Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。也有很多在总结了相关的文档，这里是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li>程序员的macOS系列：精选Mac App</li>
@@ -156,6 +156,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h4 id="Developer_Tools">Developer Tools</h4><p>程序开发中使用的工具应用。</p>
 <table>
 <thead>
@@ -387,6 +388,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h4 id="System">System</h4><p>增加或改变macOS系统功能，常驻状态栏或成为系统服务的一部分。</p>
 <table>
 <thead>
@@ -473,6 +475,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h3 id="Utility">Utility</h3><p>通用工具，提升和有效的专精应用。</p>
 <table>
 <thead>
@@ -591,6 +594,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h4 id="Write">Write</h4><p>图文创作，包括文章、日记</p>
 <table>
 <thead>
@@ -685,6 +689,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h4 id="Design">Design</h4><p>设计，包括影音视图。</p>
 <table>
 <thead>
