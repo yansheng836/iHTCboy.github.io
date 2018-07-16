@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-15T15:19:58.790Z</updated>
+  <updated>2018-07-16T02:45:56.406Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89Mac%20App/"/>
     <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选Mac App/</id>
     <published>2018-07-15T14:29:16.000Z</published>
-    <updated>2018-07-15T15:19:58.790Z</updated>
+    <updated>2018-07-16T02:45:56.406Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。也有很多在总结了相关的文档，这里是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li>程序员的macOS系列：精选Mac App</li>
@@ -28,7 +28,7 @@
 </ul>
 <p>目前计划写《程序员的macOS系列》这三篇，后续有想法在增加吧~</p>
 <a id="more"></a>
-<h3 id="2、精选Mac_App">2、精选Mac App</h3><p>Mac电脑上有很多应用，这里不提供任何安装吧，默认是链接到对应的App官网，大概说明一下应用简要用途。</p>
+<h3 id="2、精选Mac_App">2、精选Mac App</h3><p>Mac电脑上有很多应用，这里不提供任何安装包，默认是链接到对应的App官网，另外，如果App有上架到AppStore，建议在AppStore购买下载，说不定下次换电脑时会非常方便！</p>
 <h4 id="IDE">IDE</h4><p>集成开发环境，程序员利器！</p>
 <table>
 <thead>
@@ -170,219 +170,220 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Visual_Studio_Code.png" width="200" height:auto="" alt="20180715-macOS-Visual_Studio_Code.png"></td>
 <td>Visual Studio Code</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Visual Studio Code是一个由微软开发的，同时支持Windows、Linux和macOS操作系统且开放源代码的文本编辑器。它支持调试，并内置了Git 版本控制功能，同时也具有开发环境功能，例如代码补全、代码片段、代码重构等。</td>
+<td>免费</td>
+<td><a href="https://code.visualstudio.com" target="_blank" rel="external">Visual Studio Code - Code Editing. Redefined</a></td>
+<td><a href="https://code.visualstudio.com/download" target="_blank" rel="external">Download Visual Studio Code - Mac, Linux, Windows</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-atom.png" width="200" height:auto="" alt="20180715-macOS-atom.png"></td>
 <td>Atom</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Atom是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持macOS、Windows和Linux操作系统，支持Node.js所写的插件，并内置由Github提供的Git版本控制系统。多数的延伸包皆为开放源代码授权，并由社区建置与维护。</td>
+<td>免费</td>
+<td><a href="https://ide.atom.io" target="_blank" rel="external">Atom IDE</a></td>
+<td><a href="https://atom.io" target="_blank" rel="external">Atom</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Sublime_Text.png" width="200" height:auto="" alt="20180715-macOS-Sublime_Text.png"></td>
 <td>Sublime Text</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Sublime Text是一套跨平台的文本编辑器，支持基于Python的插件。Sublime Text是专有软件，可通过包扩展。大多数的包使用自由软件授权发布，并由社区建置维护。</td>
+<td>免费/收费</td>
+<td><a href="https://www.sublimetext.com" target="_blank" rel="external">Sublime Text - A sophisticated text editor for code, markup and prose</a></td>
+<td><a href="https://www.sublimetext.com/3" target="_blank" rel="external">Download - Sublime Text</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iTerm.png" width="200" height:auto="" alt="20180715-macOS-iTerm.png"></td>
 <td>iTerm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>iTerm 是一款完全免费的，专为 masOS 用户打造的命令行应用。有很多能够提升效率的实用功能，比如说窗口分割、热键窗口、智能搜索、自动完成、快速复制等</td>
+<td>免费</td>
+<td><a href="https://www.iterm2.com" target="_blank" rel="external">iTerm2 - macOS Terminal Replacement</a></td>
+<td><a href="https://www.iterm2.com/downloads.html" target="_blank" rel="external">Downloads - iTerm2</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Navicat_Premium.png" width="200" height:auto="" alt="20180715-macOS-Navicat_Premium.png"></td>
 <td>Navicat Premium</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Navicat Premium 是一套数据库开发工具，让你从单一应用程序中同时连接 MySQL、MariaDB、SQL Server、Oracle、PostgreSQL 和 SQLite 数据库。它与 Amazon RDS、Amazon Aurora、Amazon Redshift、Microsoft Azure、Oracle Cloud、阿里云和腾讯云等云数据库兼容。你可以快速轻松地创建、管理和维护数据库。</td>
+<td>收费</td>
+<td><a href="https://www.navicat.com.cn/products/navicat-premium" target="_blank" rel="external">Navicat Premium - 以单一的 GUI 同时连接不同类型的数据库</a></td>
+<td><a href="https://www.navicat.com.cn/download/navicat-premium" target="_blank" rel="external">下载 Navicat Premium 14 天免费</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-sourcetree.png" width="200" height:auto="" alt="20180715-macOS-sourcetree.png"></td>
 <td>SourceTree</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>SourceTree 是Windows 和Mac OS X 下免费的Git 和Hg 客户端，拥有可视化界面，容易上手操作。</td>
+<td>免费</td>
+<td><a href="https://www.sourcetreeapp.com" target="_blank" rel="external">Sourcetree - Free Git GUI for Mac and Windows</a></td>
+<td><a href="https://www.sourcetreeapp.com" target="_blank" rel="external">Sourcetree</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-GitHub_Desktop.png" width="200" height:auto="" alt="20180715-macOS-GitHub_Desktop.png"></td>
 <td>GitHub Desktop</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>GitHub Desktop is an open source Electron-based GitHub app. It is written in TypeScript and uses React.</td>
+<td>免费</td>
+<td><a href="https://desktop.github.com" target="_blank" rel="external">GitHub Desktop - Simple collaboration from your desktop</a></td>
+<td><a href="https://desktop.github.com" target="_blank" rel="external">GitHub Desktop</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Dash.png" width="200" height:auto="" alt="20180715-macOS-Dash.png"></td>
 <td>Dash</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Dash is an API Documentation Browser and Code Snippet Manager. Dash stores snippets of code and instantly searches offline documentation sets for 200+ APIs, 100+ cheat sheets and more. You can even generate your own docsets or request docsets to be included.</td>
+<td>收费</td>
+<td><a href="https://kapeli.com/dash" target="_blank" rel="external">Dash for macOS</a></td>
+<td><a href="https://kapeli.com/dash" target="_blank" rel="external">Dash for macOS</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-charles.png" width="200" height:auto="" alt="20180715-macOS-charles.png"></td>
 <td>Charles</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet. This includes requests, responses and the HTTP headers (which contain the cookies and caching information).</td>
+<td>免费/收费</td>
+<td><a href="https://www.charlesproxy.com" target="_blank" rel="external">Charles Web Debugging Proxy • HTTP Monitor / HTTP Proxy / HTTPS &amp; SSL Proxy / Reverse Proxy</a></td>
+<td><a href="https://www.charlesproxy.com/download/latest-release/" target="_blank" rel="external">Download Charles</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Easy_APNs_Provider.png" width="200" height:auto="" alt="20180715-macOS-Easy_APNs_Provider.png"></td>
 <td>Easy APNs Provider</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>一个推送服务提供商（Apns Provider）方能发送推送来测试iOS程序。</td>
+<td>免费</td>
+<td><a href="http://www.cocoachina.com/bbs/read.php?tid-290938.html" target="_blank" rel="external">苹果推送服务测试小工具 Easy APNs Provider （Mac平台）</a></td>
+<td><a href="https://itunes.apple.com/us/app/easy-apns-provider-push-notification-service-testing-tool/id989622350?mt=12" target="_blank" rel="external">‎Easy APNs Provider on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Genymotion.png" width="200" height:auto="" alt="20180715-macOS-Genymotion.png"></td>
 <td>Genymotion</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Create any Android device - Emulate all Android versions and screen size.</td>
+<td>免费/收费</td>
+<td><a href="https://www.genymotion.com" target="_blank" rel="external">Genymotion Android Emulator</a></td>
+<td><a href="https://www.genymotion.com/desktop/" target="_blank" rel="external">Genymotion</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-VirtualBox.png" width="200" height:auto="" alt="20180715-macOS-VirtualBox.png"></td>
 <td>VirtualBox</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Oracle VirtualBox是由德国InnoTek软件公司出品的虚拟机软件，现在则由甲骨文公司进行开发，是甲骨文公司xVM虚拟化平台技术的一部分。它提供用户在32位或64位的Windows、Solaris及Linux 操作系统上虚拟其它x86的操作系统。</td>
+<td>免费</td>
+<td><a href="https://www.virtualbox.org/wiki/VirtualBox" target="_blank" rel="external">VirtualBox – Oracle VM VirtualBox</a></td>
+<td><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">Downloads – Oracle VM VirtualBox</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Parallels_Desktop.png" width="200" height:auto="" alt="20180715-macOS-Parallels_Desktop.png"></td>
 <td>Parallels Desktop</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Parallels Desktop是一款运行在Mac 电脑上的极为优秀的虚拟机软件。 用户可以在Mac OS X 下非常方便运行Windows、Linux 等操作系统及应用。 用户不必繁琐重复地重启电脑即可在Win 与Mac 之间切换甚至同时使用它们。</td>
+<td>收费</td>
+<td><a href="https://www.parallels.com/cn/products/desktop" target="_blank" rel="external">Parallels Desktop 13</a></td>
+<td><a href="https://www.parallels.com/cn/products/desktop" target="_blank" rel="external">Parallels Desktop 13</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Reveal.png" width="200" height:auto="" alt="20180715-macOS-Reveal.png"></td>
 <td>Reveal</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Reveal是iOS开发工具中的神器之一，它能够在应用程序运行过程中调试应用程序界面。</td>
+<td>免费/收费</td>
+<td><a href="https://revealapp.com" target="_blank" rel="external">Reveal - Runtime view debugging for iOS &amp; tvOS apps &amp; extensions</a></td>
+<td><a href="https://revealapp.com/download/" target="_blank" rel="external">Download - Reveal</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Kaleidoscope.png" width="200" height:auto="" alt="20180715-macOS-Kaleidoscope.png"></td>
 <td>Kaleidoscope</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Kaleidoscope is the world’s most powerful file comparison app. Compare different text files, images, and folders on your Mac and iPad. Review and merge changes in a matter of seconds (merging available only on the Mac).</td>
+<td>收费</td>
+<td><a href="https://www.kaleidoscopeapp.com" target="_blank" rel="external">Kaleidoscope</a></td>
+<td><a href="https://itunes.apple.com/us/app/kaleidoscope/id587512244?mt=12" target="_blank" rel="external">‎Kaleidoscope on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Prepo.png" width="200" height:auto="" alt="20180715-macOS-Prepo.png"></td>
 <td>Prepo</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Prepo可以帮助设计师快速生成各种尺寸的图标，只需你将最大分辨率的图标拖拽进来，其他的尺寸交给Prepo做就好了。</td>
+<td>免费</td>
+<td><a href="https://wearemothership.com/work/prepo/" target="_blank" rel="external">Prepo 2 - Mac and iOS - Preview, resize and export icon and @2x artwork for app development</a></td>
+<td><a href="https://itunes.apple.com/us/app/prepo/id476533227?mt=12" target="_blank" rel="external">‎Prepo on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-PaintCode.png" width="200" height:auto="" alt="20180715-macOS-PaintCode.png"></td>
 <td>PaintCode</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>随心所欲的将界面设计转换成代码。</td>
+<td>收费</td>
+<td><a href="https://www.paintcodeapp.com" target="_blank" rel="external">PaintCode - Turn your drawings into Objective-C or Swift drawing code</a></td>
+<td><a href="https://www.paintcodeapp.com" target="_blank" rel="external">PaintCode</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-QuartzCode.png" width="200" height:auto="" alt="20180715-macOS-QuartzCode.png"></td>
 <td>QuartzCode</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>QuartzCode是一款专门用来创作iOS/macOS动画的软件，基本上把整个Core Animation框架的内容都搬到了软件里面，比如各种Layer、Mask、可以用来动画的属性，基本上跟代码是一致的，完全可以当成“可视化动画编程”工具，而且制作以后可以导出代码+资源文件，直接就可以在代码里面调用，方便自定义修改。</td>
+<td>收费</td>
+<td><a href="http://www.quartzcodeapp.com" target="_blank" rel="external">QuartzCode - Turn your animations to objective-c or swift OS X / iOS animations code</a></td>
+<td><a href="https://itunes.apple.com/app/quartzcode-vector-animation/id913523893" target="_blank" rel="external">‎QCode on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Core_Animator.png" width="200" height:auto="" alt="20180715-macOS-Core_Animator.png"></td>
 <td>Core Animator</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Core Animator 是一款动画制作软件，可以自动生成 Objective-C 和 Swift 代码，让开发者快速在 App 中制作动画效果甚至是游戏。</td>
+<td>收费</td>
+<td><a href="http://www.coreanimator.com" target="_blank" rel="external">CoreAnimator</a></td>
+<td><a href="https://itunes.apple.com/us/app/core-animator/id934434650?mt=12" target="_blank" rel="external">‎Core Animator on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-VisualJSON.png" width="200" height:auto="" alt="20180715-macOS-VisualJSON.png"></td>
 <td>VisualJSON</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Visual JSON is a simple and very easy to use JSON visulization tool for JSON API server/client developers.</td>
+<td>免费</td>
+<td><a href="http://youknowone.github.io/VisualJSON/" target="_blank" rel="external">VisualJSON by youknowone</a></td>
+<td><a href="https://itunes.apple.com/us/app/visual-json/id488709442?mt=12" target="_blank" rel="external">‎Visual JSON on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-FauxPas.png" width="200" height:auto="" alt="20180715-macOS-FauxPas.png"></td>
 <td>FauxPas</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Faux Pas inspects your iOS or Mac app’s Xcode project and warns about possible bugs, as well as about maintainability and style issues.</td>
+<td>收费</td>
+<td><a href="http://fauxpasapp.com" target="_blank" rel="external">Faux Pas for Xcode</a></td>
+<td><a href="http://fauxpasapp.com" target="_blank" rel="external">Faux Pas for Xcode</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iReSign.png" width="200" height:auto="" alt="20180715-macOS-iReSign.png"></td>
 <td>iReSign</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>iReSign allows iDevice app bundles (.ipa) files to be signed or resigned with a digital certificate from Apple for distribution. This tool is aimed at enterprises users, for enterprise deployment, when the person signing the app is different than the person(s) developing it.</td>
+<td>免费</td>
+<td><a href="https://github.com/maciekish/iReSign" target="_blank" rel="external">maciekish/iReSign</a></td>
+<td><a href="https://github.com/maciekish/iReSign" target="_blank" rel="external">maciekish/iReSign</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iOS_App_Signer.png" width="200" height:auto="" alt="20180715-macOS-iOS_App_Signer.png"></td>
 <td>iOS App Signer</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>This is an app for OS X that can (re)sign apps and bundle them into ipa files that are ready to be installed on an iOS device.</td>
+<td>免费</td>
+<td><a href="https://github.com/DanTheMan827/ios-app-signer" target="_blank" rel="external">DanTheMan827/ios-app-signer</a></td>
+<td><a href="https://github.com/DanTheMan827/ios-app-signer/releases" target="_blank" rel="external">Releases · DanTheMan827/ios-app-signer</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Impactor.png" width="200" height:auto="" alt="20180715-macOS-Impactor.png"></td>
 <td>Impactor</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Cydia Impactor is a GUI tool for working with mobile devices. It has features already, but is still very much a work-in-progress.</td>
+<td>免费</td>
+<td><a href="http://www.cydiaimpactor.com" target="_blank" rel="external">Cydia Impactor</a></td>
+<td><a href="http://www.cydiaimpactor.com" target="_blank" rel="external">Cydia Impactor</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-MachOView.png" width="200" height:auto="" alt="20180715-macOS-MachOView.png"></td>
 <td>MachOView</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>MachOView is a visual Mach-O file browser. It provides a complete solution for exploring and in-place editing Intel and ARM binaries.</td>
+<td>免费</td>
+<td><a href="https://sourceforge.net/p/machoview/code/ci/master/tree/" target="_blank" rel="external">MachOView - Code</a></td>
+<td><a href="https://sourceforge.net/projects/machoview/" target="_blank" rel="external">MachOView download - SourceForge.net</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Hopper_Disassembler-v4.png" width="200" height:auto="" alt="20180715-macOS-Hopper_Disassembler-v4.png"></td>
 <td>Hopper Disassembler</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Hopper Disassembler是一款是32位和64位的二进制反汇编器，反编译和调试。你可以使用此工具拆开你想要的任何二进制。</td>
+<td>收费</td>
+<td><a href="https://www.hopperapp.com" target="_blank" rel="external">Hopper</a></td>
+<td><a href="https://www.hopperapp.com" target="_blank" rel="external">Hopper</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-IDA_Pro_7.png" width="200" height:auto="" alt="20180715-macOS-IDA_Pro_7.png"></td>
 <td>IDA Pro</td>
-<td></td>
-<td></td>
-<td></td>
+<td>IDA Pro，为Interactive Disassembler公司的反组译与除错工具的产品。常用于逆向工程。</td>
+<td>收费</td>
+<td><a href="https://www.hex-rays.com/products/ida/" target="_blank" rel="external">IDA</a></td>
+<td><a href="https://www.hex-rays.com/products/ida/order.shtml" target="_blank" rel="external">IDA: Ordering</a></td>
 </tr>
 </tbody>
 </table>
@@ -403,7 +404,7 @@
 <td></td>
 <td>Alfred</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -411,7 +412,7 @@
 <td></td>
 <td>Moom</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -419,7 +420,7 @@
 <td></td>
 <td>Keka</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -427,7 +428,7 @@
 <td></td>
 <td>The Unarchiver</td>
 <td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -435,7 +436,7 @@
 <td></td>
 <td>Jietu</td>
 <td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -443,7 +444,7 @@
 <td></td>
 <td>iText</td>
 <td></td>
-<td></td>
+<td>免费/订阅</td>
 <td></td>
 <td></td>
 </tr>
@@ -451,7 +452,7 @@
 <td></td>
 <td>ShadowsocksX</td>
 <td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -459,7 +460,7 @@
 <td></td>
 <td>TinyCal</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -467,12 +468,12 @@
 <td></td>
 <td>TripMode</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="Utitli">Utitli</h3><p>通用工具，提升和有效的专精应用。</p>
+<h3 id="Utility">Utility</h3><p>通用工具，提升和有效的专精应用。</p>
 <table>
 <thead>
 <tr>
@@ -497,7 +498,7 @@
 <td></td>
 <td>CleanMyMac</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -505,7 +506,7 @@
 <td></td>
 <td>Google Chrome</td>
 <td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -513,15 +514,15 @@
 <td></td>
 <td>iSmartPhoto</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td>miniQpicview（看图）</td>
+<td>miniQpicview<br>（看图）</td>
 <td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -535,9 +536,9 @@
 </tr>
 <tr>
 <td></td>
-<td>YoudaoDict（网易有道词典）</td>
+<td>YoudaoDict<br>（网易有道词典）</td>
 <td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -545,7 +546,7 @@
 <td></td>
 <td>Downie</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -553,7 +554,7 @@
 <td></td>
 <td>Waltr</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -561,7 +562,7 @@
 <td></td>
 <td>iExplorer</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -569,7 +570,7 @@
 <td></td>
 <td>iMazing</td>
 <td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
@@ -577,7 +578,7 @@
 <td></td>
 <td>HandShaker</td>
 <td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -585,7 +586,7 @@
 <td></td>
 <td>QuickTime Player</td>
 <td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 </tr>
 </tbody>
@@ -605,78 +606,85 @@
 <tbody>
 <tr>
 <td></td>
+<td>Microsoft <br>Word<br>Excel<br>PowerPoint</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>Keynote</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>Numbers</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>Pages</td>
 <td></td>
 <td></td>
+<td>免费</td>
 <td></td>
+</tr>
+<tr>
+<td></td>
+<td>MindNode</td>
+<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>StarUML</td>
 <td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>MWeb</td>
+<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
+</tr>
+<tr>
 <td></td>
+<td>MacDown</td>
+<td></td>
+<td>免费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Evernote<br>（印象笔记）</td>
+<td></td>
+<td>免费/订阅</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>YoudaoNote<br>（有道云笔记）</td>
+<td></td>
+<td>免费</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h5 id="Keynote/_Numbers/_Pages">Keynote/ Numbers/ Pages</h5><h5 id="Microsoft_Word/Excel/PowerPoint">Microsoft Word/Excel/PowerPoint</h5><h5 id="MindNode">MindNode</h5><h5 id="StarUML">StarUML</h5><h5 id="MWeb">MWeb</h5><h5 id="MacDown">MacDown</h5><h5 id="Evernote">Evernote</h5><h5 id="YoudaoNote">YoudaoNote</h5><p>##### </p>
 <h4 id="Design">Design</h4><p>设计，包括影音视图。</p>
 <table>
 <thead>
@@ -691,90 +699,176 @@
 </thead>
 <tbody>
 <tr>
+<td>Adobe Photoshop CC</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
+<td>Adobe Illustrator CC</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
+<td>Sketch</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
+<td>Axure RP</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
+<td>Color Picker</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
+<td>ColorSnapper2</td>
+<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 <td></td>
+</tr>
+<tr>
+<td>xScope</td>
 <td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Logoist</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Pixelmator</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Final Cut Pro</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Motion</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Compressor</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Logic Pro X</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MainStage</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="通讯">通讯</h3><p>交互，万物相联。</p>
+<table>
+<thead>
+<tr>
+<th>App</th>
+<th>名称</th>
+<th>简介</th>
+<th>价格</th>
+<th>官网</th>
+<th>下载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Telegram</td>
+<td></td>
+<td>免费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>WeChat<br>（微信）</td>
+<td></td>
+<td>免费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>QQ</td>
+<td></td>
+<td>免费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>TeamViewer</td>
+<td></td>
+<td>免费/订阅</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Remote Desktop</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Maipo</td>
+<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -803,8 +897,6 @@
 </tr>
 </tbody>
 </table>
-<h5 id="Adobe_Illustrator_CC">Adobe Illustrator CC</h5><h5 id="Adobe_Photoshop_CC">Adobe Photoshop CC</h5><h5 id="Axure_RP">Axure RP</h5><h5 id="Color_Picker">Color Picker</h5><h5 id="ColorSnapper2">ColorSnapper2</h5><h5 id="Final_Cut_Pro">Final Cut Pro</h5><h5 id="Motion">Motion</h5><h5 id="Compressor">Compressor</h5><h5 id="Logic_Pro_X">Logic Pro X</h5><h5 id="MainStage">MainStage</h5><h5 id="Sketch">Sketch</h5><h5 id="Logoist">Logoist</h5><h5 id="Pixelmator">Pixelmator</h5><h5 id="xScope">xScope</h5><h3 id="通讯">通讯</h3><h4 id="Telegram">Telegram</h4><h4 id="WeChat">WeChat</h4><h4 id="QQ">QQ</h4><h4 id="TeamViewer">TeamViewer</h4><h4 id="Remote_Desktop">Remote Desktop</h4><h4 id="Maipo">Maipo</h4><p>####</p>
-<p>####</p>
 <h3 id="GTD">GTD</h3><p>时间，就是生命。</p>
 <table>
 <thead>
@@ -820,7 +912,23 @@
 <tbody>
 <tr>
 <td></td>
+<td>Things3</td>
 <td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Gestimer</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Pomodoro Timer</td>
 <td></td>
 <td></td>
 <td></td>
@@ -828,70 +936,30 @@
 </tr>
 <tr>
 <td></td>
+<td>Tomato One</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>JustFocus</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>Noizio</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h5 id="Things3">Things3</h5><h5 id="Gestimer">Gestimer</h5><h5 id="Pomodoro_Timer">Pomodoro Timer</h5><h5 id="Tomato_One">Tomato One</h5><h5 id="JustFocus">JustFocus</h5><h5 id="Noizio">Noizio</h5><h4 id="Learning">Learning</h4><p>学习，知识无涯。</p>
+<h4 id="Learning">Learning</h4><p>学习，知识无涯。</p>
 <table>
 <thead>
 <tr>
@@ -906,7 +974,23 @@
 <tbody>
 <tr>
 <td></td>
+<td>WWDC</td>
 <td></td>
+<td>免费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Reeder</td>
+<td></td>
+<td>收费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>English Class</td>
 <td></td>
 <td></td>
 <td></td>
@@ -914,25 +998,9 @@
 </tr>
 <tr>
 <td></td>
+<td>iBooks</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -977,7 +1045,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="WWDC">WWDC</h5><h5 id="Reeder">Reeder</h5><h5 id="English_Class">English Class</h5><h5 id="iBooks">iBooks</h5><h4 id="Recreation（娱乐）">Recreation（娱乐）</h4><p>娱乐，消遣和放松。</p>
+<h4 id="Recreation（娱乐）">Recreation（娱乐）</h4><p>娱乐，消遣和放松。</p>
 <table>
 <thead>
 <tr>
@@ -992,7 +1060,15 @@
 <tbody>
 <tr>
 <td></td>
+<td>NeteaseMusic<br>（网易云音乐）</td>
 <td></td>
+<td>免费</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>MPlayerX</td>
 <td></td>
 <td></td>
 <td></td>
@@ -1000,33 +1076,25 @@
 </tr>
 <tr>
 <td></td>
+<td>Movist</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>收费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>VLC</td>
 <td></td>
-<td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
+<td>IINA</td>
 <td></td>
-<td></td>
-<td></td>
+<td>免费</td>
 <td></td>
 <td></td>
 </tr>
@@ -1063,7 +1131,10 @@
 </tr>
 </tbody>
 </table>
-<h4 id="NeteaseMusic（网易云音乐）">NeteaseMusic（网易云音乐）</h4><h5 id="MPlayerX">MPlayerX</h5><h5 id="Movist">Movist</h5><h5 id="VLC">VLC</h5><h5 id="IINA">IINA</h5><h3 id="参考">参考</h3><p><br></p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://zh.wikipedia.org/wiki/Wikipedia:首页" target="_blank" rel="external">维基百科</a></li>
+</ul>
+<p><br></p>
 <ul>
 <li>如有疑问，欢迎在评论区一起讨论！</li>
 <li>如有不正确的地方，欢迎指导！</li>
