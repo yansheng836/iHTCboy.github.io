@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-16T03:15:25.452Z</updated>
+  <updated>2018-07-16T15:22:15.144Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89Mac%20App/"/>
     <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选Mac App/</id>
     <published>2018-07-15T14:29:16.000Z</published>
-    <updated>2018-07-16T03:15:25.452Z</updated>
+    <updated>2018-07-16T15:22:15.144Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。也有很多在总结了相关的文档，这里是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li>程序员的macOS系列：精选Mac App</li>
@@ -491,107 +491,108 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Mate_Translate.png" width="200" height:auto="" alt="20180715-macOS-Mate_Translate.png"></td>
 <td>Mate Translate</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>非常棒的应用，翻译很精确！</td>
+<td>收费</td>
+<td><a href="https://www.matetranslate.com" target="_blank" rel="external">Mate Translate – your ultimate translation app</a></td>
+<td><a href="https://itunes.apple.com/us/app/mate-translate-translator/id1005088137?mt=12" target="_blank" rel="external">‎Mate Translate – translator on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-CleanMyMac3.png" width="200" height:auto="" alt="20180715-macOS-CleanMyMac3.png"></td>
 <td>CleanMyMac</td>
-<td></td>
+<td>如果电脑空间小，清空电脑还有很有作用。比对苹果x删除，用CleanMyMac卸载更干净。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://macpaw.com" target="_blank" rel="external">CleanMyMac 3: The Best Mac Cleanup App for OS X. Get a Cleaner Mac in Minutes.</a></td>
+<td><a href="https://macpaw.com/download/cleanmymac" target="_blank" rel="external">Download CleanMyMac 3</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Google_Chrome.png" width="200" height:auto="" alt="20180715-macOS-Google_Chrome.png"></td>
 <td>Google Chrome</td>
-<td></td>
+<td>一款快速、简单且安全的浏览器，适合在所有设备上使用。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="https://www.google.com/chrome/" target="_blank" rel="external">Chrome 网络浏览器</a></td>
+<td><a href="https://www.google.com/chrome/" target="_blank" rel="external">Chrome 网络浏览器</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iSmartPhoto.png" width="200" height:auto="" alt="20180715-macOS-iSmartPhoto.png"></td>
 <td>iSmartPhoto</td>
-<td></td>
+<td>iSmartPhoto是一个快速的图像浏览器和强大的图像管理器。不像 iPhoto，iSmartPhoto for mac不需要你手动导入照片–它自动拉取你的照片从任何文件夹或驱动器。通过只是双单击查找器的单个图像或拖动文件夹，iSmartPhoto会自动显示每个图像从所选的文件夹及其子文件夹。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://ismartphoto.wordpress.com" target="_blank" rel="external">ismartphoto</a></td>
+<td><a href="https://itunes.apple.com/us/app/ismartphoto/id940107333?mt=12" target="_blank" rel="external">‎iSmartPhoto on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
-<td>miniQpicview<br>（看图）</td>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-miniqpicview.png" width="200" height:auto="" alt="20180715-macOS-miniqpicview.png"></td>
+<td>Kantu<br>（看图）</td>
+<td>Kantu (看图)是腾讯在 macOS 平台出品的优质看图工具，轻轻松松从万张照片中找到你想要的。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="https://kantu.qq.com" target="_blank" rel="external">看图 - 轻松找照片</a></td>
+<td><a href="https://itunes.apple.com/cn/app/id1314842898" target="_blank" rel="external">‎看图-轻松找照片 on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-GIF_Brewery_3.png" width="200" height:auto="" alt="20180715-macOS-GIF_Brewery_3.png"></td>
 <td>GIF Brewery</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>GIF Brewery 制作GIF 动图。</td>
+<td>免费</td>
+<td><a href="https://gfycat.com/gifbrewery" target="_blank" rel="external">GIF Brewery by Gfycat</a></td>
+<td><a href="https://itunes.apple.com/us/app/gif-brewery-3-by-gfycat/id1081413713?mt=12" target="_blank" rel="external">‎GIF Brewery 3 by Gfycat on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-163Dict.png" width="200" height:auto="" alt="20180715-macOS-163Dict.png"></td>
 <td>YoudaoDict<br>（网易有道词典）</td>
-<td></td>
+<td>一款英语、日语、韩语、法语免费全能查词翻译软件。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="http://cidian.youdao.com/index-mac.html" target="_blank" rel="external"></a></td>
+<td><a href="https://itunes.apple.com/us/app/youdaodict/id491854842?mt=12" target="_blank" rel="external">‎YoudaoDict on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Downie3.png" width="200" height:auto="" alt="20180715-macOS-Downie3.png"></td>
 <td>Downie</td>
-<td></td>
+<td>易用的在线视频下载工具。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://software.charliemonroe.net/downie.php" target="_blank" rel="external">Downie - YouTube Video Downloader for macOS - Charlie Monroe Software</a></td>
+<td><a href="https://software.charliemonroe.net/downie.php" target="_blank" rel="external">Downie - YouTube Video Downloader for macOS - Charlie Monroe Software</a></td>
 </tr>
 <tr>
-<td></td>
-<td>Waltr</td>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Waltr_2.png" width="200" height:auto="" alt="20180715-macOS-Waltr_2.png"></td>
+<td>Waltr 2</td>
+<td>非常方便的同步iOS设备，拖拽就可以输送音乐、视频、电子书。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://softorino.com/w2/" target="_blank" rel="external">WALTR 2. The all-new product.</a></td>
+<td><a href="https://softorino.com/w2/" target="_blank" rel="external">WALTR 2. The all-new product.</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iExplorer.png" width="200" height:auto="" alt="20180715-macOS-iExplorer.png"></td>
 <td>iExplorer</td>
-<td></td>
+<td>iExplorer 是一个非常优秀的一个免 iTunes 同步文件的资源管理器。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://macroplant.com/iexplorer" target="_blank" rel="external">iPhone Music, Messages &amp; File Transfer for Mac &amp; PC · iExplorer</a></td>
+<td><a href="https://macroplant.com/iexplorer" target="_blank" rel="external">iExplorer</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iMazing.png" width="200" height:auto="" alt="20180715-macOS-iMazing.png"></td>
 <td>iMazing</td>
-<td></td>
+<td>让备受信赖的软件为您传输和保存音乐、消息、文件和数据。安全备份任何 iPhone、iPad 或 iPod touch。iMazing 功能强大、易于使用，称得上是 Mac 和 PC 上最好的 iOS 设备管理器。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://imazing.com/zh" target="_blank" rel="external">iMazing - 兼容 Mac 及 PC 的 iPhone、iPad 和 iPod 管理软件。传输、拷贝、备份音乐、信息、文件等数据。</a></td>
+<td><a href="https://imazing.com/zh/download" target="_blank" rel="external">下载 iMazing 2</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-HandShaker.png" width="200" height:auto="" alt="20180715-macOS-HandShaker.png"></td>
 <td>HandShaker</td>
-<td></td>
+<td>HandShaker Mac 版（原名 SmartFinder)，使你在 Mac 电脑上也可以方便自如地管理你在 Android 手机中的内容。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="https://www.smartisan.com/apps/#/handshaker" target="_blank" rel="external">Smartisian 应用下载-锤子科技官网</a></td>
+<td><a href="https://itunes.apple.com/cn/app/handshaker/id1012930195" target="_blank" rel="external">‎HandShaker - 安卓手机管理工具 - on the Mac App Store </a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-QuickTimePlayerX.png" width="200" height:auto="" alt="20180715-macOS-QuickTimePlayerX.png"></td>
 <td>QuickTime Player</td>
-<td></td>
+<td>QuickTime Player作为macOS默认的播放器，完美的iOS屏幕投影，完美的屏幕录像。</td>
 <td>免费</td>
-<td></td>
+<td><a href="https://support.apple.com/downloads/quicktime" target="_blank" rel="external">Apple - QuickTime - Downloads</a></td>
+<td><a href="https://support.apple.com/downloads/quicktime" target="_blank" rel="external">Apple - QuickTime - Downloads</a></td>
 </tr>
 </tbody>
 </table>
@@ -610,83 +611,69 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_Word.png" width="200" height:auto="" alt="20180715-macOS-Microsoft_Word.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_Excel.png" width="200" height:auto="" alt="20180715-macOS-Microsoft_Excel.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_PowerPoint.png" width="200" height:auto="" alt="20180715-macOS-Microsoft_PowerPoint.png"></td>
 <td>Microsoft <br>Word<br>Excel<br>PowerPoint</td>
-<td></td>
+<td>微软Office三件套，良心！</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://products.office.com/en-us/mac/microsoft-office-for-mac" target="_blank" rel="external">Office 365 for Mac, Office 2016 for Mac</a></td>
+<td><a href="https://support.office.com/en-us/article/download-and-install-or-reinstall-office-365-or-office-2016-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658" target="_blank" rel="external">Download and install</a></td>
 </tr>
 <tr>
-<td></td>
-<td>Keynote</td>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Keynote.png" width="200" height:auto="" alt="20180715-macOS-Keynote.png"> <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Numbers.png" width="200" height:auto="" alt="20180715-macOS-Numbers.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Pages.png" width="200" height:auto="" alt="20180715-macOS-Pages.png"></td>
+<td>Keynote<br>Numbers<pages></pages></td>
+<td>Keynote是一个演示幻灯片应用软件，由苹果电脑公司出品，运行于OS X 操作系统。最早发布于2003年1月。Keynote现在与Pages、Numbers组成工具软件套装iWork。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="https://www.apple.com/cn/keynote/" target="_blank" rel="external">Keynote 讲演 - Apple (中国)</a></td>
+<td><a href="https://itunes.apple.com/cn/app/keynote/id409183694?mt=12&amp;ls=1&amp;v0=www-cn-mac-keynote-app-keynote" target="_blank" rel="external">Keynote on the ‎Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
-<td>Numbers</td>
-<td></td>
-<td>免费</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Pages</td>
-<td></td>
-<td></td>
-<td>免费</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>MindNode</td>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-MindNode.png" width="200" height:auto="" alt="20180715-macOS-MindNode.png"></td>
+<td>MindNode 4</td>
+<td>很漂亮和简洁的思维导图制作软件。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://mindnode.com" target="_blank" rel="external">MindNode</a></td>
+<td><a href="https://itunes.apple.com/us/app/mindnode-4/id312220102?mt=8" target="_blank" rel="external">‎MindNode 4 on the App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-StarUML.png" width="200" height:auto="" alt="20180715-macOS-StarUML.png"></td>
 <td>StarUML</td>
-<td></td>
+<td>StarUML是一种生成类图和其他类型的统一建模语言(UML)图表的工具。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="http://staruml.io" target="_blank" rel="external">StarUML</a></td>
+<td><a href="http://staruml.io/download" target="_blank" rel="external">Download - StarUML</a></td>
 </tr>
 <tr>
-<td></td>
-<td>MWeb</td>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-MWeb.png" width="200" height:auto="" alt="20180715-macOS-MWeb.png"></td>
+<td>MWeb 3</td>
+<td>MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://zh.mweb.im" target="_blank" rel="external">MWeb - 专业的Markdown写作、记笔记、静态博客生成软件 - MWeb</a></td>
+<td><a href="https://itunes.apple.com/cn/app/mweb/id1403919533?l=zh&amp;ls=1&amp;mt=12" target="_blank" rel="external">MWeb on the ‎Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-MacDown.png" width="200" height:auto="" alt="20180715-macOS-MacDown.png"></td>
 <td>MacDown</td>
-<td></td>
+<td>开源免费的Mardown编辑器。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="https://macdown.uranusjr.com" target="_blank" rel="external">MacDown: The open source Markdown editor for macOS</a></td>
+<td><a href="https://github.com/MacDownApp/macdown/releases" target="_blank" rel="external">Releases · MacDownApp/macdown</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Evernote.png" width="200" height:auto="" alt="20180715-macOS-Evernote.png"></td>
 <td>Evernote<br>（印象笔记）</td>
-<td></td>
+<td>随时随地获取、整理、分享笔记。</td>
 <td>免费/订阅</td>
-<td></td>
-<td></td>
+<td>[智能工作，有序生活，记录一切。</td>
+<td>Evernote](<a href="https://evernote.com" target="_blank" rel="external">https://evernote.com</a>)</td>
+<td><a href="https://itunes.apple.com/us/app/evernote-stay-organized/id406056744?mt=12" target="_blank" rel="external">‎Evernote – stay organized on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-YoudaoNote.png" width="200" height:auto="" alt="20180715-macOS-YoudaoNote.png"></td>
 <td>YoudaoNote<br>（有道云笔记）</td>
-<td></td>
+<td>有道云笔记是网易有道按照国人使用习惯进行开发的多平台记录工具，受到超过5000万用户的喜爱。</td>
 <td>免费</td>
-<td></td>
+<td><a href="https://note.youdao.com" target="_blank" rel="external">有道云笔记</a></td>
+<td><a href="https://itunes.apple.com/us/app/有道云笔记/id1121484812?mt=12" target="_blank" rel="external">‎有道云笔记 on the Mac App Store</a></td>
 </tr>
 </tbody>
 </table>
@@ -705,118 +692,120 @@
 </thead>
 <tbody>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Adobe_Photoshop_CC_2018_AppIcon.png" width="200" height:auto="" alt="20180715-macOS-Adobe_Photoshop_CC_2018_AppIcon.png"></td>
 <td>Adobe Photoshop CC</td>
-<td></td>
+<td>Adobe Photoshop，简称“Ps”，是一个由Adobe开发和发行的图像处理软件。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.adobe.com" target="_blank" rel="external">Adobe: Creative, marketing and document management solutions</a></td>
+<td><a href="https://www.adobe.com/products/photoshop.html?promoid=PC1PQQ5T&amp;mv=other" target="_blank" rel="external">Adobe Photoshop CC - Best photo, image, and design editing software</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Adobe_Illustrator_CC_appicon.png" width="200" height:auto="" alt="20180715-macOS-Adobe_Illustrator_CC_appicon.png"></td>
 <td>Adobe Illustrator CC</td>
-<td></td>
+<td>Adobe Illustrator，简称“AI”，是Adobe系统公司推出的基于向量的图形制作软体。最初是1986年为苹果公司麦金塔电脑设计开发的，1987年1月发布，在此之前它只是Adobe内部的字体开发和PostScript编辑软件。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.adobe.com" target="_blank" rel="external">Adobe: Creative, marketing and document management solutions</a></td>
+<td><a href="https://www.adobe.com/products/illustrator.html?promoid=PGRQQLFS&amp;mv=other" target="_blank" rel="external">Adobe Illustrator CC - Vector graphic design software</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Sketch.png" width="200" height:auto="" alt="20180715-macOS-Sketch.png"></td>
 <td>Sketch</td>
-<td></td>
+<td>Sketch 是一款矢量绘图工具。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.sketchapp.com" target="_blank" rel="external">Sketch - The digital design toolkit</a></td>
+<td><a href="https://www.sketchapp.com/get/" target="_blank" rel="external">Sketch - Download Sketch</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-AXURE.png" width="200" height:auto="" alt="20180715-macOS-AXURE.png"></td>
 <td>Axure RP</td>
-<td></td>
+<td>Axure RP是一款专业的快速原型设计工具。Axure（发音：Ack-sure），代表美国Axure公司；RP则是Rapid Prototyping（快速原型）的缩写。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.axure.com" target="_blank" rel="external">Prototypes, Specifications, and Diagrams in One Tool - Axure Software</a></td>
+<td><a href="https://www.axure.com/download" target="_blank" rel="external">Download Axure RP 8 - Axure Software</a></td>
 </tr>
 <tr>
-<td>Color Picker</td>
-<td></td>
-<td>收费</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-ColorSnapper2.png" width="200" height:auto="" alt="20180715-macOS-ColorSnapper2.png"></td>
 <td>ColorSnapper2</td>
-<td></td>
+<td>这个取色软件很棒，取色能转成代码最突出，CSS/Swift/OC/Java/Android/.Net/OpenG/..等代码。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://colorsnapper.com/?utm_source=MAS&amp;utm_medium=product&amp;utm_campaign=ColorSnapper2" target="_blank" rel="external">ColorSnapper — The Color Picker App for macOS</a></td>
+<td><a href="https://itunes.apple.com/us/app/colorsnapper-2/id969418666?mt=12" target="_blank" rel="external">‎ColorSnapper 2 on the Mac App Store</a></td>
 </tr>
 <tr>
-<td>xScope</td>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Color_Picker_icon.png" width="200" height:auto="" alt="20180715-macOS-Color_Picker_icon.png"></td>
+<td>Color Picker</td>
+<td>比较简洁的取色工具，以前是免费的，现在不太建议买。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="http://nscoding.co.uk" target="_blank" rel="external">nscoding - Patrick Chamelo - Vasileia Chatziioannou</a></td>
+<td><a href="https://itunes.apple.com/us/app/color-picker/id641027709?mt=12" target="_blank" rel="external">‎Color Picker on the Mac App Store</a></td>
 </tr>
 <tr>
-<td>Logoist</td>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-xScope.png" width="200" height:auto="" alt="20180715-macOS-xScope.png"></td>
+<td>xScope 4</td>
+<td>xScope 是一款Mac上的设计开发辅助工具，尤其是移动应用的设计，帮助每个设计者快速，精确的完成工作，度量距离，角度的标尺，放大镜，精确垂直，水平标记辅助线，精确阔度，找画面上符合位置测交叉点。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://xscopeapp.com" target="_blank" rel="external">xScope • Measure. Inspect. Test.</a></td>
+<td><a href="https://itunes.apple.com/us/app/xscope-4/id889428659?mt=12" target="_blank" rel="external">‎xScope 4 on the Mac App Store</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Logoist_2.png" width="200" height:auto="" alt="20180715-macOS-Logoist_2.png"></td>
+<td>Logoist 3</td>
+<td>Logoist 是 Mac OS X 平台上一款非常不错的 Mac 平面设计软件，能设计 logo、标题艺术、图像、横幅、网站元素、贺卡、按钮、iBooks 作者标题、图片拼贴、桌面背景等等，只要任何叫的出名字的图形，Logoist 都可以帮你办到。</td>
+<td>收费</td>
+<td><a href="https://www.syniumsoftware.com/logoist" target="_blank" rel="external">Logoist 3 - Powerful Vector Design App for Mac</a></td>
+<td><a href="https://itunes.apple.com/us/app/logoist-3/id1247301872?mt=12" target="_blank" rel="external">‎Logoist 3 on the Mac App Store</a></td>
+</tr>
+<tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Pixelmator.png" width="200" height:auto="" alt="20180715-macOS-Pixelmator.png"></td>
 <td>Pixelmator</td>
-<td></td>
+<td>Mac OS X 专有的图像处理软件。Pixelmator 界面清爽，布局灵活，熟悉 Photoshop 的人可迅速上手。软件建立在一些开源和 Mac OS X 图形技术之上，可调用 Mac 图形加速。使用起来在界面交互和流畅感上均优于 Photoshop，且与 Mac 自带程序整合不错。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.pixelmator.com/mac/" target="_blank" rel="external">Pixelmator</a></td>
+<td><a href="https://itunes.apple.com/us/app/pixelmator/id407963104?mt=12" target="_blank" rel="external">‎Pixelmator on the Mac App Store</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Final_Cut_Pro.png" width="200" height:auto="" alt="20180715-macOS-Final_Cut_Pro.png"></td>
 <td>Final Cut Pro</td>
-<td></td>
+<td>后期制作，前景更广阔。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.apple.com/cn/final-cut-pro/" target="_blank" rel="external">Final Cut Pro X - Apple (中国)</a></td>
+<td><a href="https://itunes.apple.com/us/app/final-cut-pro/id424389933?mt=12" target="_blank" rel="external">‎Final Cut Pro on the Mac App Store</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Motion.png" width="200" height:auto="" alt="20180715-macOS-Motion.png"></td>
 <td>Motion</td>
-<td></td>
+<td>特效，特别容易。Motion 是一款强大的运动图形工具，可帮你便捷地制作影院级 2D、3D 和 360° 字幕，流畅的转场，以及逼真的实时特效。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.apple.com/cn/final-cut-pro/motion/" target="_blank" rel="external">Motion 5 - Apple (中国)</a></td>
+<td><a href="https://itunes.apple.com/cn/app/motion/id434290957?mt=12" target="_blank" rel="external">‎Motion on the Mac App Store</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-compressor.png" width="200" height:auto="" alt="20180715-macOS-compressor.png"></td>
 <td>Compressor</td>
-<td></td>
+<td>强大的编码，传输，完成。Compressor 与 Final Cut Pro 紧密整合，带来了自定义输出设置、分布式编码和丰富的传输功能。它支持 360° 全景视频、HDR、HEVC 和 MXF 输出，让你能以强大、灵活的方式导出 Final Cut Pro 项目。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.apple.com/cn/final-cut-pro/compressor/" target="_blank" rel="external">Final Cut Pro X - Compressor 4 - Apple (中国)</a></td>
+<td><a href="https://itunes.apple.com/cn/app/compressor/id424390742?l=en&amp;mt=12" target="_blank" rel="external">‎Compressor on the Mac App Store</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-LogicProX.png" width="200" height:auto="" alt="20180715-macOS-LogicProX.png"></td>
 <td>Logic Pro X</td>
-<td></td>
+<td>Logic Pro X 制作的动力十足， 创作的十足强音。</td>
 <td>收费</td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://www.apple.com/cn/logic-pro/" target="_blank" rel="external">Logic Pro X - Apple (中国)</a></td>
+<td><a href="https://itunes.apple.com/cn/app/logic-pro-x/id634148309?l=en&amp;mt=12" target="_blank" rel="external">‎Logic Pro X on the Mac App Store</a></td>
 </tr>
 <tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-MainStage_3.png" width="200" height:auto="" alt="20180715-macOS-MainStage_3.png"></td>
 <td>MainStage</td>
-<td></td>
+<td>MainStage 3 舞台音效，媲美录音室效果。现在，将你的 Mac 变身现场演出装备。凭借不计其数的各种插件和音效选择，你可以让键盘、吉他或演唱表现令观众耳目一新，难以忘怀。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://www.apple.com/cn/mainstage/" target="_blank" rel="external">Logic Pro X - MainStage 3 - 将你的 Mac 变身现场演出装备 - Apple (中国)</a></td>
+<td><a href="https://itunes.apple.com/cn/app/mainstage-3/id634159523?l=en&amp;mt=12" target="_blank" rel="external">‎MainStage 3 on the Mac App Store</a></td>
 </tr>
 </tbody>
 </table>
+<p><br><br><br></p>
 <h3 id="通讯">通讯</h3><p>交互，万物相联。</p>
 <table>
 <thead>
@@ -831,78 +820,56 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Telegram.png" width="200" height:auto="" alt="20180715-macOS-Telegram.png"></td>
 <td>Telegram</td>
-<td></td>
+<td>Telegram是一个跨平台的即时通信软件，它的客户端是自由及开放源代码软件，但是它的服务器是专有软件。用户可以相互交换加密与自析构的消息，以及照片、视频、文件，支持所有的文件类型。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="https://telegram.org" target="_blank" rel="external">Telegram Messenger</a></td>
+<td><a href="https://itunes.apple.com/us/app/telegram/id747648890" target="_blank" rel="external">‎Telegram on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Weixin.png" width="200" height:auto="" alt="20180715-macOS-Weixin.png"></td>
 <td>WeChat<br>（微信）</td>
-<td></td>
+<td>一款免费发短讯和打电话的一体化应用程式。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="http://www.wechat.com" target="_blank" rel="external">WeChat - Free messaging and calling app</a></td>
+<td><a href="https://itunes.apple.com/us/app/wechat/id836500024?mt=12" target="_blank" rel="external">‎WeChat on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-QQ.png" width="200" height:auto="" alt="20180715-macOS-QQ.png"></td>
 <td>QQ</td>
-<td></td>
+<td>QQ</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="http://im.qq.com/qq/apple/mac/" target="_blank" rel="external">QQ Mac版-匠心之韵·清新聊人</a></td>
+<td><a href="https://itunes.apple.com/us/app/qq/id451108668?mt=12" target="_blank" rel="external">‎QQ on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-TeamViewer.png" width="200" height:auto="" alt="20180715-macOS-TeamViewer.png"></td>
 <td>TeamViewer</td>
-<td></td>
+<td>TeamViewer 基于最广泛的平台和技术，连接全世界的人、地区和事物。</td>
 <td>免费/订阅</td>
-<td></td>
-<td></td>
+<td><a href="https://www.teamviewer.com/zhcn/" target="_blank" rel="external">TeamViewer – 远程支持、远程访问、在线协作和会议</a></td>
+<td><a href="https://www.teamviewer.com/zhcn/download/mac/" target="_blank" rel="external">macOS版TeamViewer下载</a></td>
 </tr>
 <tr>
-<td></td>
-<td>Remote Desktop</td>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-RemoteDesktopApp.png" width="200" height:auto="" alt="20180715-macOS-RemoteDesktopApp.png"></td>
+<td>Apple Remote Desktop</td>
+<td>Apple Remote Desktop 是管理你网络上的 Mac 电脑的最佳方式。分发软件，为终端用户提供实时在线帮助，创建详细的软硬件报告，自动执行常规的管理任务。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://www.apple.com/remotedesktop/" target="_blank" rel="external">Remote Desktop - Apple</a></td>
+<td><a href="https://itunes.apple.com/us/app/apple-remote-desktop/id409907375?mt=12" target="_blank" rel="external">‎Apple Remote Desktop on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Maipo.png" width="200" height:auto="" alt="20180715-macOS-Maipo.png"></td>
 <td>Maipo</td>
-<td></td>
+<td>全功能新浪微博 macOS 客户端</td>
 <td>免费</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="http://weiboformac.sinaapp.com" target="_blank" rel="external">Maipo - 全功能新浪微博 macOS 客户端</a></td>
+<td><a href="https://itunes.apple.com/us/app/maipo-for-weibo/id789066512?mt=12" target="_blank" rel="external">‎Maipo for Weibo on the Mac App Store</a></td>
 </tr>
 </tbody>
 </table>
+<p><br><br><br></p>
 <h3 id="GTD">GTD</h3><p>时间，就是生命。</p>
 <table>
 <thead>
@@ -917,54 +884,56 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Things3.png" width="200" height:auto="" alt="20180715-macOS-Things3.png"></td>
 <td>Things3</td>
-<td></td>
+<td>一款优秀的GTD任务管理工具。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="https://culturedcode.com/things/" target="_blank" rel="external">The all-new Things. Your to-do list for Mac &amp; iOS</a></td>
+<td><a href="https://itunes.apple.com/us/app/things-3/id904280696?mt=12" target="_blank" rel="external">‎Things 3 on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Gestimer.png" width="200" height:auto="" alt="20180715-macOS-Gestimer.png"></td>
 <td>Gestimer</td>
-<td></td>
+<td>简单方便的提醒创建小工具。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="http://maddin.io/gestimer/" target="_blank" rel="external">Gestimer - For those little reminders during the day</a></td>
+<td><a href="https://itunes.apple.com/us/app/gestimer/id990588172?mt=12" target="_blank" rel="external">‎Gestimer on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Pomodoro_Timer.png" width="200" height:auto="" alt="20180715-macOS-Pomodoro_Timer.png"></td>
 <td>Pomodoro Timer</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>漂亮的番茄时钟。</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Tomato_One.png" width="200" height:auto="" alt="20180715-macOS-Tomato_One.png"></td>
 <td>Tomato One</td>
-<td></td>
+<td>简洁的番茄时钟。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="http://rinik.net/support" target="_blank" rel="external">Rinik Support</a></td>
+<td><a href="https://itunes.apple.com/us/app/tomato-one-free-focus-timer/id907364780?mt=12" target="_blank" rel="external">‎Tomato One - Free Focus Timer on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-JustFocus.png" width="200" height:auto="" alt="20180715-macOS-JustFocus.png"></td>
 <td>JustFocus</td>
-<td></td>
+<td>番茄时间，休息时间时显示漂亮的锁屏图片。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="http://justinyan.me" target="_blank" rel="external">枫言枫语</a></td>
+<td><a href="https://itunes.apple.com/us/app/just-focus/id1142151959?mt=12" target="_blank" rel="external">‎Just Focus on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Noizio.png" width="200" height:auto="" alt="20180715-macOS-Noizio.png"></td>
 <td>Noizio</td>
-<td></td>
+<td>Noizio 是一款Mac OS X 下的白噪音应用，可以让自己觉着是坐在一个壁炉前、咖啡馆里、森林里，海边。可以让你忽略其他噪音，专注工作。</td>
 <td>收费</td>
-<td></td>
+<td><a href="http://noiz.io" target="_blank" rel="external">Noizio – ambient sound equalizer for relax or productivity.</a></td>
+<td><a href="https://itunes.apple.com/us/app/noizio/id928871589?mt=12" target="_blank" rel="external">‎Noizio on the Mac App Store</a></td>
 </tr>
 </tbody>
 </table>
+<p><br><br><br></p>
 <h4 id="Learning">Learning</h4><p>学习，知识无涯。</p>
 <table>
 <thead>
@@ -979,78 +948,40 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-WWDC.png" width="200" height:auto="" alt="20180715-macOS-WWDC.png"></td>
 <td>WWDC</td>
-<td></td>
+<td>开源免费的看WWDC视频的应用！</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="https://wwdc.io" target="_blank" rel="external">The unofficial WWDC app for macOS</a></td>
+<td><a href="https://github.com/insidegui/WWDC/releases" target="_blank" rel="external">Releases · insidegui/WWDC</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Reeder.png" width="200" height:auto="" alt="20180715-macOS-Reeder.png"></td>
 <td>Reeder</td>
-<td></td>
+<td>一款很好的RSS订阅应用。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="http://reederapp.com" target="_blank" rel="external">★reeder</a></td>
+<td><a href="https://itunes.apple.com/us/app/reeder-3/id880001334?mt=12" target="_blank" rel="external">‎Reeder 3 on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-English_Class.png" width="200" height:auto="" alt="20180715-macOS-English_Class.png"></td>
 <td>English Class</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>This is a multifunctional instrument for improving and controlling English knowledge and skills.</td>
+<td>收费</td>
+<td><a href="http://academmedialabs.com" target="_blank" rel="external">Academ Media</a></td>
+<td><a href="https://itunes.apple.com/sg/app/english-class-pro/id1038312994?mt=12" target="_blank" rel="external">‎English Class Pro on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iBooksAppIcon.png" width="200" height:auto="" alt="20180715-macOS-iBooksAppIcon.png"></td>
 <td>iBooks</td>
-<td></td>
+<td>macOS和iOS同步看书的原生体验很棒！</td>
 <td>免费</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://support.apple.com/zh-cn/ibooks" target="_blank" rel="external">iBooks - 官方 Apple 支持</a></td>
+<td><a href="https://support.apple.com/zh-cn/ibooks" target="_blank" rel="external">iBooks - 官方 Apple 支持</a></td>
 </tr>
 </tbody>
 </table>
+<p><br><br><br></p>
 <h4 id="Recreation（娱乐）">Recreation（娱乐）</h4><p>娱乐，消遣和放松。</p>
 <table>
 <thead>
@@ -1065,78 +996,57 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-163Music.png" width="200" height:auto="" alt="20180715-macOS-163Music.png"></td>
 <td>NeteaseMusic<br>（网易云音乐）</td>
 <td></td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="https://music.163.com" target="_blank" rel="external">网易云音乐</a></td>
+<td><a href="https://itunes.apple.com/cn/app/网易云音乐/id944848654?mt=12" target="_blank" rel="external">网易云音乐 on the ‎Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
-<td>MPlayerX</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Movist.png" width="200" height:auto="" alt="20180715-macOS-Movist.png"></td>
 <td>Movist</td>
-<td></td>
+<td>Movist是Mac平台下一个全格式播放器,基于QuickTime &amp; FFmpeg,您可以选择由QuickTime 还是 FFmpeg来解码播放,支持.avi、.mkv、.wmv、flv、rmvb等格式。</td>
 <td>收费</td>
-<td></td>
-<td></td>
+<td><a href="http://cocoable.com" target="_blank" rel="external">cocoable.com</a></td>
+<td><a href="https://itunes.apple.com/us/app/movist/id461788075?mt=12" target="_blank" rel="external">‎Movist on the Mac App Store</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-MPlayerX.png" width="200" height:auto="" alt="20180715-macOS-MPlayerX.png"></td>
+<td>MPlayerX</td>
+<td>MPlayerX是MAC上的一款使用简单方便的视频播放器，基于FFmpeg 和 Mplayer 开发。界面简洁明了，支持多种格式，包括RMVB、AVI、WMV、MKV等常用视频格式，也支持SRT、ASS等字幕格式。</td>
+<td>收费</td>
+<td><a href="http://mplayerx.org" target="_blank" rel="external">MPlayerX</a></td>
+<td><a href="https://itunes.apple.com/us/app/mplayerx/id421131143?mt=12" target="_blank" rel="external">‎MPlayerX on the Mac App Store</a></td>
+</tr>
+<tr>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-VLC.png" width="200" height:auto="" alt="20180715-macOS-VLC.png"></td>
 <td>VLC</td>
-<td></td>
+<td>VLC 是一款自由、开源的跨平台多媒体播放器及框架，可播放大多数多媒体文件，以及 DVD、音频 CD、VCD 及各类流媒体协议。</td>
 <td>免费</td>
-<td></td>
-<td></td>
+<td><a href="http://www.videolan.org/vlc/" target="_blank" rel="external">VLC media player, the best Open Source player - VideoLAN</a></td>
+<td><a href="http://www.videolan.org/vlc/" target="_blank" rel="external">Official download of VLC</a></td>
 </tr>
 <tr>
-<td></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-IINA.png" width="200" height:auto="" alt="20180715-macOS-IINA.png"></td>
 <td>IINA</td>
-<td></td>
+<td>macOS 上好的现代视频播放器。</td>
 <td>免费</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="https://github.com/lhc70000/iina" target="_blank" rel="external">lhc70000/iina: The modern video player for macOS.</a></td>
+<td><a href="https://github.com/lhc70000/iina/releases" target="_blank" rel="external">Releases · lhc70000/iina</a></td>
 </tr>
 </tbody>
 </table>
+<p><br><br><br></p>
+<h3 id="总结">总结</h3><p>没想到想总结好，最后发现太多软件了，上百个应用，想写的详细点发现没有时间，所以将就先这样吧。</p>
+<ul>
+<li><p>精选<br>为什么说这些软件是精选，因为在macOS上，好的应用很多，所以精选也很多。列举的每个应用，其实都可以单独写一篇长文，还是计划以后有时间在写写。大家也可以自行搜索教程学习，建议喜欢就要早点熟悉！你一定会发现！</p>
+</li>
+<li><p>收费<br>为什么这软件收费？其实，我想说，换一个角度，这软件收费有什么优点？正因为喜欢，自己也入手了 Final Cut Pro，希望自己有时间可以做一些优美的视频~ 我想表达的不是土豪，或炫富，只是希望大家有能力，或者表达到软件的喜欢。算了，不说这些。好的软件，真的做的很好，非常敬佩！</p>
+</li>
+<li><p>下载<br>本文优先显示Mac App Store下载的链接，因为在AppStore不限制下载次数，也就是不限制安装的设备数量，并且，在新电脑直接安装就可以，非常的方便！！！</p>
+</li>
+</ul>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://zh.wikipedia.org/wiki/Wikipedia:首页" target="_blank" rel="external">维基百科</a></li>
 </ul>
