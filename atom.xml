@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-07-16T15:24:39.249Z</updated>
+  <updated>2018-07-17T14:36:58.205Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89Mac%20App/"/>
     <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选Mac App/</id>
     <published>2018-07-15T14:29:16.000Z</published>
-    <updated>2018-07-16T15:24:39.249Z</updated>
+    <updated>2018-07-17T14:36:58.205Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。也有很多在总结了相关的文档，这里是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li>程序员的macOS系列：精选Mac App</li>
@@ -611,7 +611,7 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_Word.png" width="200" height:auto="" alt="20180715-macOS-Microsoft_Word.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_Excel.png" width="200" height:auto="" alt="20180715-macOS-Microsoft_Excel.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_PowerPoint.png" width="200" height:auto="" alt="20180715-macOS-Microsoft_PowerPoint.png"></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_Word.png" width="100" height:auto="" alt="20180715-macOS-Microsoft_Word.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_Excel.png" width="100" height:auto="" alt="20180715-macOS-Microsoft_Excel.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Microsoft_PowerPoint.png" width="100" height:auto="" alt="20180715-macOS-Microsoft_PowerPoint.png"></td>
 <td>Microsoft <br>Word<br>Excel<br>PowerPoint</td>
 <td>微软Office三件套，良心！</td>
 <td>收费</td>
@@ -619,8 +619,8 @@
 <td><a href="https://support.office.com/en-us/article/download-and-install-or-reinstall-office-365-or-office-2016-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658" target="_blank" rel="external">Download and install</a></td>
 </tr>
 <tr>
-<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Keynote.png" width="200" height:auto="" alt="20180715-macOS-Keynote.png"> <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Numbers.png" width="200" height:auto="" alt="20180715-macOS-Numbers.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Pages.png" width="200" height:auto="" alt="20180715-macOS-Pages.png"></td>
-<td>Keynote<br>Numbers<pages></pages></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Keynote.png" width="100" height:auto="" alt="20180715-macOS-Keynote.png"> <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Numbers.png" width="100" height:auto="" alt="20180715-macOS-Numbers.png"><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Pages.png" width="100" height:auto="" alt="20180715-macOS-Pages.png"></td>
+<td>Keynote<br>Numbers<br>Pages</td>
 <td>Keynote是一个演示幻灯片应用软件，由苹果电脑公司出品，运行于OS X 操作系统。最早发布于2003年1月。Keynote现在与Pages、Numbers组成工具软件套装iWork。</td>
 <td>免费</td>
 <td><a href="https://www.apple.com/cn/keynote/" target="_blank" rel="external">Keynote 讲演 - Apple (中国)</a></td>
@@ -902,9 +902,9 @@
 <td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Pomodoro_Timer.png" width="200" height:auto="" alt="20180715-macOS-Pomodoro_Timer.png"></td>
 <td>Pomodoro Timer</td>
 <td>漂亮的番茄时钟。</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td>免费</td>
+<td><a href="http://www.cannonballhq.com" target="_blank" rel="external">Cannonball HQ</a></td>
+<td><a href="http://macdownload.informer.com/pomodoro-timer/" target="_blank" rel="external">Pomodoro Timer for Mac, It helps you implement the Pomodoro technique in your daily activities.</a></td>
 </tr>
 <tr>
 <td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Tomato_One.png" width="200" height:auto="" alt="20180715-macOS-Tomato_One.png"></td>
@@ -947,7 +947,7 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-WWDC.png" width="200" height:auto="" alt="20180715-macOS-WWDC.png"></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-WWDC.png" width="100" height:auto="" alt="20180715-macOS-WWDC.png"></td>
 <td>WWDC</td>
 <td>开源免费的看WWDC视频的应用！</td>
 <td>免费</td>
@@ -955,7 +955,7 @@
 <td><a href="https://github.com/insidegui/WWDC/releases" target="_blank" rel="external">Releases · insidegui/WWDC</a></td>
 </tr>
 <tr>
-<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Reeder.png" width="200" height:auto="" alt="20180715-macOS-Reeder.png"></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Reeder.png" width="100" height:auto="" alt="20180715-macOS-Reeder.png"></td>
 <td>Reeder</td>
 <td>一款很好的RSS订阅应用。</td>
 <td>收费</td>
@@ -963,7 +963,7 @@
 <td><a href="https://itunes.apple.com/us/app/reeder-3/id880001334?mt=12" target="_blank" rel="external">‎Reeder 3 on the Mac App Store</a></td>
 </tr>
 <tr>
-<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-English_Class.png" width="200" height:auto="" alt="20180715-macOS-English_Class.png"></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-English_Class.png" width="100" height:auto="" alt="20180715-macOS-English_Class.png"></td>
 <td>English Class</td>
 <td>This is a multifunctional instrument for improving and controlling English knowledge and skills.</td>
 <td>收费</td>
@@ -971,7 +971,7 @@
 <td><a href="https://itunes.apple.com/sg/app/english-class-pro/id1038312994?mt=12" target="_blank" rel="external">‎English Class Pro on the Mac App Store</a></td>
 </tr>
 <tr>
-<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iBooksAppIcon.png" width="200" height:auto="" alt="20180715-macOS-iBooksAppIcon.png"></td>
+<td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-iBooksAppIcon.png" width="100" height:auto="" alt="20180715-macOS-iBooksAppIcon.png"></td>
 <td>iBooks</td>
 <td>macOS和iOS同步看书的原生体验很棒！</td>
 <td>免费</td>
@@ -997,7 +997,7 @@
 <tr>
 <td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-163Music.png" width="200" height:auto="" alt="20180715-macOS-163Music.png"></td>
 <td>NeteaseMusic<br>（网易云音乐）</td>
-<td></td>
+<td>免费的音乐云盘赞！</td>
 <td>免费</td>
 <td><a href="https://music.163.com" target="_blank" rel="external">网易云音乐</a></td>
 <td><a href="https://itunes.apple.com/cn/app/网易云音乐/id944848654?mt=12" target="_blank" rel="external">网易云音乐 on the ‎Mac App Store</a></td>
@@ -1039,7 +1039,7 @@
 <p><br><br><br></p>
 <h3 id="总结">总结</h3><p>没想到想总结好，最后发现太多软件了，上百个应用，想写的详细点发现没有时间，所以将就先这样吧。</p>
 <ul>
-<li><p>精选<br>为什么说这些软件是精选，因为在macOS上，好的应用很多，所以精选也很多。列举的每个应用，其实都可以单独写一篇长文，还是计划以后有时间在写写。大家也可以自行搜索教程学习，建议喜欢就要早点熟悉！你一定会发现！</p>
+<li><p>精选<br>为什么说这些软件是精选，因为在macOS上，好的应用很多，所以精选也很多。列举的每个应用，其实都可以单独写一篇长文，还是计划以后有时间在写写。大家也可以自行搜索教程学习，建议喜欢就要早点熟悉！你一定会发现！如果有好的应用，也欢迎留言推荐，谢谢！</p>
 </li>
 <li><p>收费<br>为什么这软件收费？其实，我想说，换一个角度，这软件收费有什么优点？正因为喜欢，自己也入手了 Final Cut Pro，希望自己有时间可以做一些优美的视频~ 我想表达的不是土豪，或炫富，只是希望大家有能力，或者表达到软件的喜欢。算了，不说这些。好的软件，真的做的很好，非常敬佩！</p>
 </li>
