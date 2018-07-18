@@ -1085,10 +1085,10 @@
     <link href="https://iHTCboy.com/2018/07/14/2018-07-14_%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84Django%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97---%E7%AC%AC7%E9%83%A8%E5%88%86/"/>
     <id>https://iHTCboy.com/2018/07/14/2018-07-14_一个完整的Django入门指南---第7部分/</id>
     <published>2018-07-14T10:49:16.000Z</published>
-    <updated>2018-07-15T09:22:45.885Z</updated>
+    <updated>2018-07-18T14:56:14.237Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>本篇文章是翻译 <a href="https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/" target="_blank" rel="external">A Complete Beginner’s Guide to Django</a> 系列的最后一篇文章 <a href="https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html" target="_blank" rel="external">A Complete Beginner’s Guide to Django - Part 7</a>，因为搜索找了很久都没有找到对应的中文翻译篇（如果有，就是我没有找到…），又因为这个系列真的非常的好，简单，容易，非常适配入门，所以就打算自已试试翻译，也当是自己学习入门的一步吧！</p>
 <a id="more"></a>
-<h3 id="简介（Introduction）">简介（Introduction）</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-A-Complete Beginner&#39;s-Guide-to-Django-Part7.jpg" alt="20180714-A-Complete Beginner&#39;s-Guide-to-Django-Part7.jpg"></p>
+<h3 id="简介（Introduction）">简介（Introduction）</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-A-Complete-Beginner&#39;s-Guide-to-Django-Part7.jpg" alt="20180714-A-Complete-Beginner&#39;s-Guide-to-Django-Part7.jpg"></p>
 <p>欢迎来到我们教程系列的最后一部分！这篇文章，我们将把Django应用程序部署到生产服务器。我们还将为我们的服务器配置Email服务和HTTPS证书。</p>
 <p>首先，我想到了给一个使用虚拟专用服务器（VPS）的例子，它更通用，然后使用一个平台比如 Heroku 服务。但它我写得太详细了，所以本教程我最终偏向关于VPS的内容。</p>
 <p>我们的项目已经上线啦！您可以在阅读本文之前点击在线查看，这是我们本文要部署的应用程序：<a href="https://www.djangoboards.com" target="_blank" rel="external">www.djangoboards.com</a>。</p>
@@ -1176,7 +1176,7 @@
 <h3 id="域名（Domain_Name）">域名（Domain Name）</h3><p>如果我们要正确部署Django应用程序，我们将需要一个域名（译者注：如果部署外网，给别人使用需要域名，但如果是内网使用，只有IP地址也可以访问。此处，作者意思要处理上线外网。）。拥有域名来为应用程序提供服务，配置电子邮件服务和配置https证书非常重要。</p>
 <p>最近，我一直在使用 <a href="https://namecheap.pxf.io/c/477033/386170/5618" target="_blank" rel="external">Namecheap</a> 。您可以以8.88美元/年的价格获得.com域名，或者如果您只是尝试一下，您可以用 0.99美元/年 的价格注册.xyz域名。（译者注：在中国，可以注册阿里云、腾讯云等著名的注册商都有域名卖买，大家可自行搜索官网。）</p>
 <p>无论如何，您可以自由使用任何注册商。为了演示部署过程，我注册了 <a href="https://www.djangoboards.com/" target="_blank" rel="external">www.DjangoBoards.com</a> 域名。</p>
-<h3 id="部署策略（20180714-GitHub-Initial-Commit-pn）">部署策略（20180714-GitHub-Initial-Commit.pn）</h3><p>以下是我们将在本教程中使用的部署策略的概述：</p>
+<h3 id="部署策略（Deployment_Strategy）">部署策略（Deployment Strategy）</h3><p>以下是我们将在本教程中使用的部署策略的概述：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180714-Django-Deployment-Strategy.jpg" alt="20180714-Django-Deployment-Strategy.jpg"></p>
 <p>云服务是使用 <a href="https://m.do.co/c/074832454ff1" target="_blank" rel="external">Digital Ocean</a> 提供的虚拟专用服务器。您可以使用我的会员链接注册Digital Ocean以获得 <a href="https://m.do.co/c/074832454ff1" target="_blank" rel="external">免费的10美元信用额度</a>（仅适用于新帐户）。（译者注：云服务商在中国可选择阿里云、腾讯云）</p>
 <p>首先我们将使用 <strong><a href="https://www.nginx.com/" target="_blank" rel="external">NGINX</a></strong>（译者注：Nginx是一个异步框架的 Web服务器，通常作为负载均衡器。），其商标是食人魔。NGINX将收到访问者对服务器的所有请求。但如果请求数据，它不会尝试做任何不聪明的事情（译者注：Nginx主要负责处理请求，并分发给文件系统或HTTP服务器等。）。它所要做的就是确定所请求的信息是否是一个可以自行提供的静态资源，或者它是否更复杂。如果是，它会将请求传递给 <strong><a href="http://gunicorn.org/" target="_blank" rel="external">Gunicorn</a></strong>（译者注：Gunicorn“绿色独角兽”是一个被广泛使用的高性能的Python WSGI UNIX HTTP服务器，移植自Ruby的独角兽（Unicorn ）项目,使用pre-fork worker模式，具有使用非常简单，轻量级的资源消耗，以及高性能等特点。）。</p>
