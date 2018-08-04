@@ -204,6 +204,103 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2018-03-05_两个NSInvocation崩溃引起的反思" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/05/2018-03-05_两个NSInvocation崩溃引起的反思/">两个NSInvocation崩溃引起的反思</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/05/2018-03-05_两个NSInvocation崩溃引起的反思/" class="archive-article-date">
+  	<time datetime="2018-03-05T15:42:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、前言">1、前言</h3><p>最近在使用NSInvocation进行多参数方法调用，结果就崩溃了！signature为nil 和 一直提示找不到方法！！！</p>
+<p><code>method signature argument cannot be nil</code> 崩溃信息：<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** <span class="type">Terminating</span> app due to uncaught exception '<span class="type">NSInvalidArgumentException</span>', reason: '+[<span class="type">NSInvocation</span> _invocationWithMethodSignature:frame:]: <span class="keyword">method</span> signature argument cannot be <span class="keyword">nil</span>'</span><br><span class="line">*** <span class="type">First</span> throw call stack:</span><br><span class="line">(<span class="number">0x1831a6d8c</span>  .........)</span><br><span class="line">libc++abi.dylib: terminating <span class="keyword">with</span> uncaught exception <span class="keyword">of</span> <span class="keyword">type</span> <span class="type">NSException</span></span><br></pre></td></tr></table></figure></p>
+<p><code>unrecognized selector sent to instance</code>崩溃信息：<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-<span class="keyword">[</span>ViewController openView]: unrecognized selector sent to<span class="instruction"> instance </span>0x10510b1b0'</span><br><span class="line">*** First<span class="instruction"> throw </span>call stack:</span><br><span class="line">(0x1831a6d8c ......<span class="function">)</span></span><br><span class="line">libc++abi.dylib: terminating with uncaught exception of type NSException</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/03/05/2018-03-05_两个NSInvocation崩溃引起的反思/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">NSInvocation</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">NSMethodSignature</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/05/2018-03-05_两个NSInvocation崩溃引起的反思/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2018-02-25_Gitment评论功能接入踩坑教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1074,102 +1171,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/18/2017_11_你真的懂使用Runtime进行swizzle的最佳写法？/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017_11_使用AutoLayout约束, 为啥图片的大小(Image size)却还以实际大小显示？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/2017_11_使用AutoLayout约束, 为啥图片的大小(Image size)却还以实际大小显示？/">使用AutoLayout约束, 为啥图片的大小(Image size)却还以实际大小显示？</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/18/2017_11_使用AutoLayout约束, 为啥图片的大小(Image size)却还以实际大小显示？/" class="archive-article-date">
-  	<time datetime="2017-11-18T12:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="问题">问题</h3><p>给一个 UIImageView 设置一张图片时，使用 AutoLayout 给 UIImageView 约束宽高，但是实际显示的大小，图片以实际的大小显示出来，代码也没有设置 frame，设置contentMode为UIViewContentModeScaleAspectFit 也不起作用。</p>
-<h3 id="原因">原因</h3><p>最后注册到约束时，设置了 <code>@property NSLayoutPriority priority;</code> ，就是设置了线束的优先级为<code>UILayoutPriorityDefaultHigh</code>，导致这个约束级别比图片默认显示的大小的优先级低。</p>
-        
-          <a class="article-more-a" href="/2017/11/18/2017_11_使用AutoLayout约束, 为啥图片的大小(Image size)却还以实际大小显示？/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">AutoLayout</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Imagesize</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">图片实际大小显示</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/18/2017_11_使用AutoLayout约束, 为啥图片的大小(Image size)却还以实际大小显示？/">显示全文 >></a>
         </p>
       
 
@@ -2116,6 +2117,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SDK制作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">on_delete</a>
               </li>
             
             <div class="clearfix"></div>
