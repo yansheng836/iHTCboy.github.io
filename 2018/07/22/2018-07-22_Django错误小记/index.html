@@ -9,18 +9,18 @@
   <link rel="canonical" href="https://ihtcboy.com" />
   <title>Django 2.0 model on_delete错误小记 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、前言今天用 Django 2.
+  <meta name="description" content="1、前言今天用 Django 2.0 时模型的外键报了一个错误：
 1TypeError: __init__() missing 1 required positional argument: &apos;on_delete&apos;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django 2.0 model on_delete错误小记">
 <meta property="og:url" content="https://iHTCboy.com/2018/07/22/2018-07-22_Django错误小记/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="1、前言今天用 Django 2.
+<meta property="og:description" content="1、前言今天用 Django 2.0 时模型的外键报了一个错误：
 1TypeError: __init__() missing 1 required positional argument: &apos;on_delete&apos;">
-<meta property="og:updated_time" content="2018-08-04T15:34:28.431Z">
+<meta property="og:updated_time" content="2018-08-04T15:37:15.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django 2.0 model on_delete错误小记">
-<meta name="twitter:description" content="1、前言今天用 Django 2.
+<meta name="twitter:description" content="1、前言今天用 Django 2.0 时模型的外键报了一个错误：
 1TypeError: __init__() missing 1 required positional argument: &apos;on_delete&apos;">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
@@ -226,7 +226,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、前言">1、前言</h3><p>今天用 Django 2.</p>
+        <h3 id="1、前言">1、前言</h3><p>今天用 Django 2.0 时模型的外键报了一个错误：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: __init__() missing <span class="number">1</span> required positional argument: <span class="string">'on_delete'</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="2、原因">2、原因</h3><p>经过筛查，在创建多对一的关系的，需要在<code>Foreign</code>的第二参数中加入 <code>on_delete=models.CASCADE</code>  主外关系键中，级联删除，也就是当删除主表的数据时候从表中的数据也随着一起删除。</p>

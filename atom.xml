@@ -455,8 +455,8 @@
     <link href="https://iHTCboy.com/2018/07/22/2018-07-22_Django%E9%94%99%E8%AF%AF%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/07/22/2018-07-22_Django错误小记/</id>
     <published>2018-07-22T08:49:16.000Z</published>
-    <updated>2018-08-04T15:34:28.431Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>今天用 Django 2.</p>
+    <updated>2018-08-04T15:37:15.173Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>今天用 Django 2.0 时模型的外键报了一个错误：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: __init__() missing <span class="number">1</span> required positional argument: <span class="string">'on_delete'</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="2、原因">2、原因</h3><p>经过筛查，在创建多对一的关系的，需要在<code>Foreign</code>的第二参数中加入 <code>on_delete=models.CASCADE</code>  主外关系键中，级联删除，也就是当删除主表的数据时候从表中的数据也随着一起删除。</p>
@@ -490,7 +490,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>今天用 Django 2.</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>今天用 Django 2.0 时模型的外键报了一个错误：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: __init__() missing <span class="number">1</span> required positional argument: <span class="string">'on_delete'</span></span><br></pre></td></tr></table></figure>]]>
     
     </summary>
