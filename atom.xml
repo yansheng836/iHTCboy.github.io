@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-08-04T15:16:21.422Z</updated>
+  <updated>2018-08-04T15:40:19.949Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/08/04/2018-08-04_PyCharm_for_Mac%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/08/04/2018-08-04_PyCharm_for_Mac快捷键小记/</id>
     <published>2018-08-04T15:09:16.000Z</published>
-    <updated>2018-08-04T15:16:21.422Z</updated>
+    <updated>2018-08-04T15:40:19.949Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>总结一下自己平时常用的PyCharm for Mac快捷键，因为网上经常找到的都是Windows版本，所以当是备忘也好，后续会不定期更新。</p>
 <a id="more"></a>
 <h3 id="2、PyCharm_for_Mac_快捷键">2、PyCharm for Mac 快捷键</h3><table>
@@ -164,7 +164,20 @@
 </tr>
 </tbody>
 </table>
-<h3 id="参考">参考</h3><p><br></p>
+<h3 id="参考">参考</h3><p>下面是PyCharm教程、Flask、Django框架学习的一些链接！大家有空可以看看~</p>
+<ul>
+<li>PyCharm</li>
+</ul>
+<p>PyCharm 收藏多年快捷键分享~ - Henry Z’s blog~ <a href="https://changchen.me/blog/20170607/pycharm-shortcut/" target="_blank" rel="external">https://changchen.me/blog/20170607/pycharm-shortcut/</a><br>pycharm 使用教程 <a href="https://www.jianshu.com/p/2bfc19e1381c" target="_blank" rel="external">https://www.jianshu.com/p/2bfc19e1381c</a><br>PyCharm IDE 链接sqlite、建表、添加、查询数据 - CSDN博客 <a href="https://blog.csdn.net/qq_36482772/article/details/53458400" target="_blank" rel="external">https://blog.csdn.net/qq_36482772/article/details/53458400</a><br>Pycharm快捷键整理（Mac） - 简书 <a href="https://www.jianshu.com/p/be0bdc02f7da" target="_blank" rel="external">https://www.jianshu.com/p/be0bdc02f7da</a><br>你有哪些想要分享的 PyCharm 使用技巧？ - 知乎<a href="https://www.zhihu.com/question/37787004/answer/186042335" target="_blank" rel="external">https://www.zhihu.com/question/37787004/answer/186042335</a><br>PyCharm速览 <a href="http://www.liujiangblog.com/blog/28/" target="_blank" rel="external">http://www.liujiangblog.com/blog/28/</a><br>迈出Pycharm第一步-刘江的博客 <a href="http://www.liujiangblog.com/blog/29/" target="_blank" rel="external">http://www.liujiangblog.com/blog/29/</a></p>
+<ul>
+<li>Flask框架</li>
+</ul>
+<p>快速入门 — Flask 0.10.1 文档 <a href="http://docs.jinkan.org/docs/flask/quickstart.html#quickstart" target="_blank" rel="external">http://docs.jinkan.org/docs/flask/quickstart.html#quickstart</a><br>    Flask 入门指南 <a href="https://blog.igevin.info/posts/flask-startup-guideline/" target="_blank" rel="external">https://blog.igevin.info/posts/flask-startup-guideline/</a><br>    利用pycharm学习flask教程 <a href="https://www.jianshu.com/p/a7d988fb807f" target="_blank" rel="external">https://www.jianshu.com/p/a7d988fb807f</a><br>    python flask搭建web应用 - CSDN博客  <a href="https://blog.csdn.net/u012734441/article/details/62036503" target="_blank" rel="external">https://blog.csdn.net/u012734441/article/details/62036503</a><br>《Flask Web开发——基于Python的Web应用开发实践》一字一句上机实践（上） - 舞动的心 - 博客园  <a href="http://www.cnblogs.com/liuzhen1995/p/8001040.html" target="_blank" rel="external">http://www.cnblogs.com/liuzhen1995/p/8001040.html</a><br>Flask Web开发学习笔记（一）~（6） <a href="https://www.jianshu.com/p/303057e51417" target="_blank" rel="external">https://www.jianshu.com/p/303057e51417</a><br>Flask 的部署 <a href="https://windard.com/project/2016/12/01/Deploy-Flask-APP" target="_blank" rel="external">https://windard.com/project/2016/12/01/Deploy-Flask-APP</a><br>如果你也想写Flask| 编程派 | Coding Python <a href="http://codingpy.com/article/if-you-also-want-to-write-flask/" target="_blank" rel="external">http://codingpy.com/article/if-you-also-want-to-write-flask/</a><br>Introduction | Flask之旅 <a href="https://spacewander.github.io/explore-flask-zh/index.html" target="_blank" rel="external">https://spacewander.github.io/explore-flask-zh/index.html</a></p>
+<ul>
+<li>Django框架</li>
+</ul>
+<p>介紹 | Django Book 2.0 中文版 <a href="https://wizardforcel.gitbooks.io/django-book-20-zh-cn/content/index.html" target="_blank" rel="external">https://wizardforcel.gitbooks.io/django-book-20-zh-cn/content/index.html</a><br>从Python到Django入门教程 <a href="https://borisliu.gitbooks.io/from-python-to-django/content/introduction/preface.html" target="_blank" rel="external">https://borisliu.gitbooks.io/from-python-to-django/content/introduction/preface.html</a><br>Django新手图文入门教程 <a href="http://www.liujiangblog.com/blog/3/" target="_blank" rel="external">http://www.liujiangblog.com/blog/3/</a></p>
+<p><br></p>
 <ul>
 <li>如有疑问，欢迎在评论区一起讨论！</li>
 <li>如有不正确的地方，欢迎指导！</li>
@@ -372,7 +385,7 @@
     <link href="https://iHTCboy.com/2018/07/28/2018-07-28_Vim%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/07/28/2018-07-28_Vim快捷键小记/</id>
     <published>2018-07-28T07:49:16.000Z</published>
-    <updated>2018-08-04T15:31:19.737Z</updated>
+    <updated>2018-08-04T15:40:22.839Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>总结一下自己平时常用的vim快捷键，当是忘记也好，后续会不定期更新。</p>
 <a id="more"></a>
 <h3 id="2、vim_快捷键">2、vim 快捷键</h3><table>
