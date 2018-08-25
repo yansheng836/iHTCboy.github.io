@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-08-25T15:14:43.003Z</updated>
+  <updated>2018-08-25T15:24:22.432Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[2018-08-25_Python爬虫天猫店铺全部商品一记]]></title>
+    <title><![CDATA[Python爬虫天猫店铺全部商品一记]]></title>
     <link href="https://iHTCboy.com/2018/08/25/2018-08-25_Python%E7%88%AC%E8%99%AB%E5%A4%A9%E7%8C%AB%E5%BA%97%E9%93%BA%E5%85%A8%E9%83%A8%E5%95%86%E5%93%81%E4%B8%80%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/08/25/2018-08-25_Python爬虫天猫店铺全部商品一记/</id>
     <published>2018-08-25T07:49:16.000Z</published>
-    <updated>2018-08-25T15:14:43.003Z</updated>
+    <updated>2018-08-25T15:24:22.432Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近小姐姐工作需要，需要爬取天猫某店的全部商品，正好小哥学习了Python几个月，就答应上手试试！结果第一道题就难住了，天猫登陆需要账号密码和验证码！！！虽然知道可以通过模拟和Session操作，但是，始终是新手开车，还没有学习那么高深，感觉会走很多弯路！！另外，也想想，有没有什么更简单的方法？？？</p>
 <p>不出意思，还真发现啦！天猫的手机版可以不用登陆，全部数据访问！！！就这样~ </p>
 <p>开始吧！</p>
@@ -45,7 +45,11 @@
 <p>下图图片失败的提示，原因是天猫接口返回的商品数据如下：</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attribute">item_id</span>: <span class="number">14292263734</span>,</span><br><span class="line"><span class="attribute">title</span>: <span class="string">"XXXXXX"</span>,</span><br><span class="line"><span class="attribute">img</span>: <span class="string">"//img.alicdn.com/bao/uploaded/i2/821705368/TB1Us3Qcr_I8KJjy1XaXXbsxpXa_!!0-item_pic.jpg"</span>,</span><br><span class="line"><span class="attribute">sold</span>: <span class="string">"3"</span>,</span><br><span class="line"><span class="attribute">quantity</span>: <span class="number">0</span>,</span><br><span class="line"><span class="attribute">totalSoldQuantity</span>: <span class="number">2937</span>,</span><br><span class="line"><span class="attribute">url</span>: <span class="string">"//detail.m.tmall.com/item.htm?id=xxxxx"</span>,</span><br><span class="line"><span class="attribute">price</span>: <span class="string">"188.00"</span>,</span><br><span class="line"><span class="attribute">titleUnderIconList</span>: [ ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>不带协议名字！！！不知道是什么时候的历史留下的坑点吧！！！大厂也是有坑的！！</p>
-<h3 id="3、总结">3、总结</h3><p>具体的代码，可参考我github <a href="https://github.com/iHTCboy/WebCrawlerExample" target="_blank" rel="external">iHTCboy/WebCrawlerExample: 网页爬虫实践示例</a>，详细的解析还是参考这位大哥的 <a href="https://www.cnblogs.com/gopythoner/p/7885093.html" target="_blank" rel="external">利用Python爬虫爬取指定天猫店铺全店商品信息 - 晴空行 - 博客园</a>。</p>
+<h3 id="3、总结">3、总结</h3><p>具体的代码，可参考我github代码：</p>
+<ul>
+<li><a href="https://github.com/iHTCboy/WebCrawlerExample" target="_blank" rel="external">iHTCboy/WebCrawlerExample: 网页爬虫实践示例</a></li>
+</ul>
+<p>代码详细的解析还是参考这位大神的 <a href="https://www.cnblogs.com/gopythoner/p/7885093.html" target="_blank" rel="external">利用Python爬虫爬取指定天猫店铺全店商品信息 - 晴空行 - 博客园</a>，写的非常的详细！</p>
 <p>整体来说，因为天猫的商品数据通过js来获取，所以比较容易获取到数据，而不用大量的爬取页面的商品，这个很赞！所以，爬虫这技术活，有很多方法，能找到好的方法，才是爬虫的最高境界啊！加油~ </p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://github.com/iHTCboy/WebCrawlerExample" target="_blank" rel="external">iHTCboy/WebCrawlerExample: 网页爬虫实践示例</a></li>
