@@ -466,7 +466,7 @@
     <link href="https://iHTCboy.com/2018/07/28/2018-07-28_Vim%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/07/28/2018-07-28_Vim快捷键小记/</id>
     <published>2018-07-28T07:49:16.000Z</published>
-    <updated>2018-08-05T09:11:27.076Z</updated>
+    <updated>2018-09-01T04:54:36.513Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。总结一下自己平时常用的vim快捷键，当是忘记也好，后续会不定期更新。</p>
 <a id="more"></a>
 <h3 id="2、vim_快捷键">2、vim 快捷键</h3><table>
@@ -486,7 +486,7 @@
 <td></td>
 </tr>
 <tr>
-<td>命令模式</td>
+<td>【命令模式】</td>
 <td>可以移动光标、删除字符等</td>
 </tr>
 <tr>
@@ -663,19 +663,19 @@
 </tr>
 <tr>
 <td>ctrl + b</td>
-<td>向后翻一页</td>
-</tr>
-<tr>
-<td>ctrl + f</td>
 <td>向前翻一页</td>
 </tr>
 <tr>
+<td>ctrl + f</td>
+<td>向后翻一页</td>
+</tr>
+<tr>
 <td>ctrl + u</td>
-<td>向后翻半页</td>
+<td>向前翻半页</td>
 </tr>
 <tr>
 <td>ctrl + d</td>
-<td>向前翻半页</td>
+<td>向后翻半页</td>
 </tr>
 <tr>
 <td>ctrl + e</td>
@@ -734,7 +734,7 @@
 <td></td>
 </tr>
 <tr>
-<td>选择模式</td>
+<td>【选择模式】</td>
 <td></td>
 </tr>
 <tr>
@@ -754,7 +754,7 @@
 <td></td>
 </tr>
 <tr>
-<td>插入模式</td>
+<td>【插入模式】</td>
 <td>在此模式下可以输入字符，按ESC将回到命令模式。</td>
 </tr>
 <tr>
@@ -895,7 +895,7 @@
     <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89MacApp/"/>
     <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/</id>
     <published>2018-07-15T14:29:16.000Z</published>
-    <updated>2018-08-05T09:11:41.093Z</updated>
+    <updated>2018-09-01T04:51:24.783Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。也有很多在总结了相关的文档，这里是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
@@ -1106,7 +1106,7 @@
 <td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Dash.png" width="200" height:auto="" alt="20180715-macOS-Dash.png"></td>
 <td>Dash</td>
 <td>Dash is an API Documentation Browser and Code Snippet Manager. Dash stores snippets of code and instantly searches offline documentation sets for 200+ APIs, 100+ cheat sheets and more. You can even generate your own docsets or request docsets to be included.</td>
-<td>收费</td>
+<td>免费/收费</td>
 <td><a href="https://kapeli.com/dash" target="_blank" rel="external">Dash for macOS</a></td>
 <td><a href="https://kapeli.com/dash" target="_blank" rel="external">Dash for macOS</a></td>
 </tr>
