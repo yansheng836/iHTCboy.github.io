@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-08-27T14:09:53.304Z</updated>
+  <updated>2018-09-01T08:00:19.854Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,86 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[shell技巧1 - 生成ipa文件]]></title>
+    <link href="https://iHTCboy.com/2018/08/31/2018-08-31_shell%E6%8A%80%E5%B7%A71_%E7%94%9F%E6%88%90ipa%E6%96%87%E4%BB%B6/"/>
+    <id>https://iHTCboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/</id>
+    <published>2018-08-31T13:19:16.000Z</published>
+    <updated>2018-09-01T08:00:19.854Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTunes 12.7 之前，可以下载ipa应用包、打开ipa包，也生成ipa文件！但是在这12.7之后，关于ipa的所有功能已经移除，如果还想下载ipa包，可以参考我之前的文章：<a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a>，今天我们主要来说说制作ipa文件的功能。</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-iTunes12.7-new-change.png" alt="20180831-iTunes12.7-new-change.png"></p>
+<a id="more"></a>
+<h3 id="2、ipa文件结构">2、ipa文件结构</h3><p>其实ipa文件可以理解为一个zip的压缩文件，所以解压ipa文件后，得到ipa的目录 <code>ipafilename/Payload/xxx.app</code>，以微信示例：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-ipa-file-path.png" alt="20180831-ipa-file-path.png"></p>
+<p>所以，如果我们编译的项目，想生成ipa文件，以前是拖拽到iTunes就会自动生成ipa文件，现在不行了，根据这个原理，我们在Xcode中编译生成的<code>.app</code>目录，按照前面说的目录结构，进行压缩就行啦！</p>
+<h3 id="3、bash脚本">3、bash脚本</h3><ul>
+<li><p>生成.app目录内容：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-Xcode-build-app.png" alt="20180831-Xcode-build-app.png"></p>
+</li>
+<li><p>执行shell脚本生成ipa文件：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-bash-make-ipa-file.png" alt="20180831-bash-make-ipa-file.png"></p>
+</li>
+<li><p>生成成功后，自动打开ipa文件所在目录：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-finish.png" alt="20180831-make-ipa-finish.png"></p>
+</li>
+</ul>
+<h3 id="4、全部代码">4、全部代码</h3><p>具体的代码，可参考我的Github代码：</p>
+<ul>
+<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="comment"># 定义用到的变量</span></span><br><span class="line">projectAppPath=<span class="string">""</span></span><br><span class="line">outputPath=<span class="string">""</span></span><br><span class="line">ipaFileName=<span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义读取输入字符的函数</span></span><br><span class="line"><span class="function"><span class="title">getProjectAppPath</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter .app path: "</span> projectAppPath</span><br><span class="line">	<span class="comment"># 如果为空值，从新监听</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$projectAppPath</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		getprojectAppPath</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">getOutputPath</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter output path: "</span> outputPath</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$outputPath</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		<span class="comment"># 如果没有输出路径，默认输出到桌面</span></span><br><span class="line">	  outputPath=<span class="string">"Desktop"</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">getipaFileName</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter ipa FileName: "</span> ipaFileName</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$ipaFileName</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		getipaFileName</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行函数，给变量赋值</span></span><br><span class="line">getProjectAppPath</span><br><span class="line">getOutputPath</span><br><span class="line">getipaFileName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到当前用户的home目录，方便创建桌面目录</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在输出路径下创建 Payload 文件夹</span></span><br><span class="line">mkdir -p <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>/Payload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将.app 文件复制到 输出路径的 Payload 文件夹下</span></span><br><span class="line">cp -r <span class="string">"<span class="variable">$&#123;projectAppPath&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>/Payload/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到输出路径</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 Payload 文件夹压缩成 ipa 包</span></span><br><span class="line">zip -r <span class="string">"<span class="variable">$&#123;ipaFileName&#125;</span>.ipa"</span> Payload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除当前路径下 Payload 文件夹【-r 就是向下递归，不管有多少级目录，一并删除 -f 就是直接强行删除，不作任何提示的意思】</span></span><br><span class="line">rm -rf <span class="string">"Payload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 成功提示</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\n\n=====================【转换ipa完成】=========================\n"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;outputPath&#125;</span></span><br><span class="line"><span class="comment">## 打开输出的路径</span></span><br><span class="line"><span class="comment">#open -a Finder "$&#123;outputPath&#125;"</span></span><br><span class="line"><span class="comment"># 从当前位置打开finder</span></span><br><span class="line">open .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结束退出</span></span><br><span class="line"><span class="built_in">exit</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h3 id="5、优化">5、优化</h3><h4 id="方法一">方法一</h4><p>每次想生成ipa文件，就要打开终端，执行 <code>sh make_ipa_file.sh</code>，相当麻烦，所以，如果生成别名，直接在终端输入别名就可以执行啦，是不是很棒！</p>
+<p>为.bash_profile添加了一个别名：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkipa=<span class="string">'sh /Users/HTC/Documents/iBash/make_ipa_file.sh'</span></span><br></pre></td></tr></table></figure></p>
+<p>以后直接在终端输入：<code>mkipa</code>就可以啦，这不是很棒！！！</p>
+<h4 id="方法二">方法二</h4><p>如果是 Unix 可执行文件，直接点击，会自动打开终端执行。</p>
+<p>把 <code>make_ipa_file.sh</code> 改为 <code>make_ipa_file_sh</code> 名字，然后在终端为文件添加可执行权限：<br><code>chmod +x /Users/HTC/Desktop/make_ipa_file_sh</code> </p>
+<p>这样就生成了 Unix 文件，双击就会打开到终端：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-Unix-file.png" alt="20180831-make-ipa-Unix-file.png"></p>
+<h4 id="方法三">方法三</h4><p>在  ~/.bashrc 里面添加本函数，或添加脚本路径，也可以方便执行。</p>
+<h4 id="方法四">方法四</h4><p>如果是macOS环境，还可以通过苹果的apple脚本服务，来做到一键化，以后有机会在谈谈。</p>
+<h3 id="6、总结">6、总结</h3><p>通过这个简单又复杂的示例，其实使用脚本的最终目录，也是想提高效率！！所以，打包ipa包的效率，也是向着这样的方向努力！如果你对shell还不熟悉，可以看看下面这2个教程，当前我学习的时候，还没有人给指导，所以，你们是幸福的一代程序员！加油！</p>
+<ul>
+<li><a href="http://www.runoob.com/linux/linux-shell.html" target="_blank" rel="external">Shell 教程 | 菜鸟教程</a></li>
+<li><a href="https://bestswifter.gitbook.io/effectivemac/zhong-ji-wu-qi-zsh/zhi-hang-shell-jiao-ben" target="_blank" rel="external">执行 Shell 脚本 - EffectiveMac</a></li>
+</ul>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
+<li><a href="https://support.apple.com/zh-cn/HT208075" target="_blank" rel="external">新版 iTunes 的变化 - Apple 支持</a></li>
+<li><a href="http://www.cnblogs.com/skywang12345/archive/2013/05/30/3106570.html" target="_blank" rel="external">Linux bash总结(一) 基础部分(适合初学者学习和非初学者参考)  - 博客园</a></li>
+<li><a href="http://www.cnblogs.com/wengzilin/p/4601684.html" target="_blank" rel="external">ios打包ipa的四种实用方法(.app转.ipa)</a></li>
+<li><a href="https://stackoverflow.com/questions/281372/executing-shell-scripts-from-the-os-x-dock?answertab=votes" target="_blank" rel="external">osx - Executing Shell Scripts from the OS X Dock? - Stack Overflow</a></li>
+<li><a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTunes 12.7 之前，可以下载ipa应用包、打开ipa包，也生成ipa文件！但是在这12.7之后，关于ipa的所有功能已经移除，如果还想下载ipa包，可以参考我之前的文章：<a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a>，今天我们主要来说说制作ipa文件的功能。</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-iTunes12.7-new-change.png" alt="20180831-iTunes12.7-new-change.png"></p>]]>
+    
+    </summary>
+    
+      <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
+    
+      <category term="ipa" scheme="https://iHTCboy.com/tags/ipa/"/>
+    
+      <category term="itunes" scheme="https://iHTCboy.com/tags/itunes/"/>
+    
+      <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
+    
+      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Python爬虫天猫店铺全部商品一记]]></title>
     <link href="https://iHTCboy.com/2018/08/25/2018-08-25_Python%E7%88%AC%E8%99%AB%E5%A4%A9%E7%8C%AB%E5%BA%97%E9%93%BA%E5%85%A8%E9%83%A8%E5%95%86%E5%93%81%E4%B8%80%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/08/25/2018-08-25_Python爬虫天猫店铺全部商品一记/</id>
     <published>2018-08-25T07:49:16.000Z</published>
-    <updated>2018-08-27T14:09:53.304Z</updated>
+    <updated>2018-09-01T07:58:28.266Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近小姐姐工作需要，需要爬取天猫某店的全部商品，正好小哥学习了Python几个月，就答应上手试试！结果第一道题就难住了，天猫登陆需要账号密码和验证码！！！虽然知道可以通过模拟和Session操作，但是，始终是新手开车，还没有学习那么高深，感觉会走很多弯路！！另外，也想想，有没有什么更简单的方法？？？</p>
 <p>不出意思，还真发现啦！天猫的手机版可以不用登陆，全部数据访问！！！就这样~ </p>
 <p>开始吧！</p>
@@ -45,7 +120,7 @@
 <p>下图图片失败的提示，原因是天猫接口返回的商品数据如下：</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attribute">item_id</span>: <span class="number">14292263734</span>,</span><br><span class="line"><span class="attribute">title</span>: <span class="string">"XXXXXX"</span>,</span><br><span class="line"><span class="attribute">img</span>: <span class="string">"//img.alicdn.com/bao/uploaded/i2/821705368/TB1Us3Qcr_I8KJjy1XaXXbsxpXa_!!0-item_pic.jpg"</span>,</span><br><span class="line"><span class="attribute">sold</span>: <span class="string">"3"</span>,</span><br><span class="line"><span class="attribute">quantity</span>: <span class="number">0</span>,</span><br><span class="line"><span class="attribute">totalSoldQuantity</span>: <span class="number">2937</span>,</span><br><span class="line"><span class="attribute">url</span>: <span class="string">"//detail.m.tmall.com/item.htm?id=xxxxx"</span>,</span><br><span class="line"><span class="attribute">price</span>: <span class="string">"188.00"</span>,</span><br><span class="line"><span class="attribute">titleUnderIconList</span>: [ ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>不带协议名字！！！不知道是什么时候的历史留下的坑点吧！！！大厂也是有坑的！！</p>
-<h3 id="3、总结">3、总结</h3><p>具体的代码，可参考我github代码：</p>
+<h3 id="3、总结">3、总结</h3><p>具体的代码，可参考我的Github代码：</p>
 <ul>
 <li><a href="https://github.com/iHTCboy/WebCrawlerExample" target="_blank" rel="external">iHTCboy/WebCrawlerExample: 网页爬虫实践示例</a></li>
 </ul>
@@ -3083,72 +3158,6 @@
       <category term="iOS" scheme="https://iHTCboy.com/tags/iOS/"/>
     
       <category term="nil" scheme="https://iHTCboy.com/tags/nil/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[AppStore无法内购相关问题解决的解决方案]]></title>
-    <link href="https://iHTCboy.com/2018/03/14/2018-03-14_AppStore%E6%97%A0%E6%B3%95%E5%86%85%E8%B4%AD%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://iHTCboy.com/2018/03/14/2018-03-14_AppStore无法内购相关问题解决的解决方案/</id>
-    <published>2018-03-14T14:12:26.000Z</published>
-    <updated>2018-05-06T08:46:14.204Z</updated>
-    <content type="html"><![CDATA[<h3 id="1-如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：">1.如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：</h3><ol>
-<li>请确认应用是从 App Store 上面下载的。</li>
-<li>请确认不是越狱安装破解插件导致无法购买。</li>
-<li>请确认网络是否通畅</li>
-<li>请确认在 系统设置 &gt; 通用 &gt; 访问限制 中的 “App 内购买项目” 是否为打开状态。</li>
-<li>注销你的 Apple ID 重新进入游戏，重新尝试购买；</li>
-<li><p>如果你已经购买成功但是却没有收到金币，那么你可以切换网络成移动数据网络，然后重新打开游戏确认。</p>
-<a id="more"></a>
-</li>
-</ol>
-<p><code>如果以上情况都排除了还是无法进行购买，请联系我们技术。</code></p>
-<h3 id="2-点击支付购买的时候，提示“您的购买无法完成，如需帮助，请联系iTunes支持”">2.点击支付购买的时候，提示“您的购买无法完成，如需帮助，请联系iTunes支持”</h3><p>您好，此情况是触发了苹果公司的安全机制，例如：高频率的购买、频繁更换国家/地区购买、高额的购买等等原因，需联系苹果公司客服提供Apple ID 核实具体原因。建议直接拨打苹果客服电话：</p>
-<blockquote>
-<p>中國大陸：400-666-8800<br>香港（中文） ：(852) 2112-0099<br>香港（英文）： (852) 2112-0099<br>澳門：先撥 0800-111， 再撥 800-708-5413<br>紐西蘭：0800127753<br>馬來西亞：1-800803638<br>澳洲：（61）1300321456<br>新加坡境內： 800-186-1087<br>新加坡境外： (65) 6835-1812<br>印尼：08001027753<br>日本境內： 0120-27753-5<br>日本境外： (81) 3-6365-4705<br>越南： 1800 1127</p>
-</blockquote>
-<p>更多查看：<a href="https://support.apple.com/zh-cn/HT201232" target="_blank" rel="external">联系 Apple 获取支持和服务 - Apple 支持</a></p>
-<h3 id="3-为什么我用苹果手机充值的时候偶尔会出现延迟到账的情况？">3.为什么我用苹果手机充值的时候偶尔会出现延迟到账的情况？</h3><p>苹果系统用户在使用内购服务时候，均通过苹果账号生成订单并提交给我司进行对于商品发货，费用并非由我司直接扣除，因此中间可能会产生延迟发货情况，还请在交易过程中耐心等待。</p>
-<h3 id="4-获取其他_iTunes_购买项目的帮助">4.获取其他 iTunes 购买项目的帮助</h3><ul>
-<li>有些超过 90 天的项目和购买不符合退款条件。请<a href="https://www.apple.com/legal/internet-services/itunes/appstore/cn/terms.html" target="_blank" rel="external">参阅条款和条件以了解更多信息</a>。</li>
-<li>了解 <a href="https://support.apple.com/zh-cn/HT201359" target="_blank" rel="external">iTunes Store 购买项目如何收费</a> — 包括通过“家人共享”功能购买的项目。</li>
-<li>如果您收到一封关于帐户收费的电子邮件，但您不记得授权过这笔收费，请<a href="https://support.apple.com/zh-cn/HT204759" target="_blank" rel="external">检查确认这封电子邮件是不是合法</a>。</li>
-<li>获取有关通过您可能已下载到设备上的应用进行的<a href="https://support.apple.com/zh-cn/HT202039" target="_blank" rel="external">订阅和重复购买</a>的帮助。</li>
-<li>获取关于 <a href="https://support.apple.com/zh-cn/HT207594" target="_blank" rel="external">iCloud 储存空间方案降级</a>方面的帮助。</li>
-<li>您还可以在 <a href="https://support.apple.com/zh-cn/HT204088" target="_blank" rel="external">App Store 或 iTunes Store 中查看购买历史记录</a>。</li>
-</ul>
-<h3 id="5-参考">5.参考</h3><ul>
-<li><a href="https://support.apple.com/zh-cn/HT202023" target="_blank" rel="external">关于 App 内购买项目 - Apple 支持</a></li>
-<li><a href="https://support.apple.com/zh-cn/HT204530#contact" target="_blank" rel="external">如果您没有看到应用内购买项目 - Apple 支持</a></li>
-<li><a href="https://support.apple.com/zh-cn/HT204084" target="_blank" rel="external">获取关于从 App Store、iTunes Store 或 iBooks Store 所购项目的帮助 - Apple 支持</a></li>
-<li><a href="https://griddiary.uservoice.com/knowledgebase/articles/486079-无法内购问题检查列表" target="_blank" rel="external">无法内购问题检查列表 – Support Center | Grid Diary</a></li>
-<li><a href="https://support.apple.com/zh-cn/HT201266" target="_blank" rel="external">更改或移除 Apple ID 付款信息</a></li>
-<li><a href="https://support.apple.com/zh-cn/HT202039" target="_blank" rel="external">查看、更改或取消您的订阅 - Apple 支持</a></li>
-<li><a href="https://support.apple.com/zh-cn/HT201232" target="_blank" rel="external">联系 Apple 获取支持和服务 - Apple 支持</a></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1-如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：">1.如果游戏无法进行内购，或者购买显示为不可用，需要玩家配合检查确认以下情况：</h3><ol>
-<li>请确认应用是从 App Store 上面下载的。</li>
-<li>请确认不是越狱安装破解插件导致无法购买。</li>
-<li>请确认网络是否通畅</li>
-<li>请确认在 系统设置 &gt; 通用 &gt; 访问限制 中的 “App 内购买项目” 是否为打开状态。</li>
-<li>注销你的 Apple ID 重新进入游戏，重新尝试购买；</li>
-<li><p>如果你已经购买成功但是却没有收到金币，那么你可以切换网络成移动数据网络，然后重新打开游戏确认。</p>]]>
-    
-    </summary>
-    
-      <category term="AppStore" scheme="https://iHTCboy.com/tags/AppStore/"/>
-    
-      <category term="无法内购" scheme="https://iHTCboy.com/tags/%E6%97%A0%E6%B3%95%E5%86%85%E8%B4%AD/"/>
-    
-      <category term="苹果客服电话" scheme="https://iHTCboy.com/tags/%E8%8B%B9%E6%9E%9C%E5%AE%A2%E6%9C%8D%E7%94%B5%E8%AF%9D/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
