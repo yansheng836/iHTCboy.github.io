@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-bash-make-ipa-file.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-finish.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-Unix-file.png">
-<meta property="og:updated_time" content="2018-09-01T08:00:19.854Z">
+<meta property="og:updated_time" content="2018-09-09T12:59:57.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell技巧1 - 生成ipa文件">
 <meta name="twitter:description" content="1、前言iTunes 12.7 之前，可以下载ipa应用包、打开ipa包，也生成ipa文件！但是在这12.7之后，关于ipa的所有功能已经移除，如果还想下载ipa包，可以参考我之前的文章：解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题，今天我们主要来说说制作ipa文件的功能。">
@@ -263,10 +263,11 @@ var _hmt = _hmt || [];
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-Unix-file.png" alt="20180831-make-ipa-Unix-file.png"></p>
 <h4 id="方法三">方法三</h4><p>在  ~/.bashrc 里面添加本函数，或添加脚本路径，也可以方便执行。</p>
 <h4 id="方法四">方法四</h4><p>如果是macOS环境，还可以通过苹果的apple脚本服务，来做到一键化，以后有机会在谈谈。</p>
+<h4 id="方法五">方法五</h4><p>也通过 <code>spotlight</code> 或 第三方软件 <code>Alfred</code> 快速查找文件打开~</p>
 <h3 id="6、总结">6、总结</h3><p>通过这个简单又复杂的示例，其实使用脚本的最终目录，也是想提高效率！！所以，打包ipa包的效率，也是向着这样的方向努力！如果你对shell还不熟悉，可以看看下面这2个教程，当前我学习的时候，还没有人给指导，所以，你们是幸福的一代程序员！加油！</p>
 <ul>
 <li><a href="http://www.runoob.com/linux/linux-shell.html" target="_blank" rel="external">Shell 教程 | 菜鸟教程</a></li>
-<li><a href="https://bestswifter.gitbook.io/effectivemac/zhong-ji-wu-qi-zsh/zhi-hang-shell-jiao-ben" target="_blank" rel="external">执行 Shell 脚本 - EffectiveMac</a></li>
+<li><del><a href="https://bestswifter.gitbook.io/effectivemac/zhong-ji-wu-qi-zsh/zhi-hang-shell-jiao-ben" target="_blank" rel="external">执行 Shell 脚本 - EffectiveMac</a></del></li>
 </ul>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
@@ -275,6 +276,8 @@ var _hmt = _hmt || [];
 <li><a href="http://www.cnblogs.com/wengzilin/p/4601684.html" target="_blank" rel="external">ios打包ipa的四种实用方法(.app转.ipa)</a></li>
 <li><a href="https://stackoverflow.com/questions/281372/executing-shell-scripts-from-the-os-x-dock?answertab=votes" target="_blank" rel="external">osx - Executing Shell Scripts from the OS X Dock? - Stack Overflow</a></li>
 <li><a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a></li>
+<li><a href="http://www.runoob.com/linux/linux-shell.html" target="_blank" rel="external">Shell 教程 | 菜鸟教程</a></li>
+<li><a href="https://bestswifter.gitbook.io/effectivemac/zhong-ji-wu-qi-zsh/zhi-hang-shell-jiao-ben" target="_blank" rel="external">执行 Shell 脚本 - EffectiveMac</a></li>
 </ul>
 <p><br></p>
 <ul>
@@ -422,6 +425,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2018/09/05/2018-09-05_post参数为数组时django中request问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          django中ajax post数据时request.POST获取数组问题
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/08/25/2018-08-25_Python爬虫天猫店铺全部商品一记/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Python爬虫天猫店铺全部商品一记</div>
@@ -451,7 +463,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、ipa文件结构"><span class="toc-number">2.</span> <span class="toc-text">2、ipa文件结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、bash脚本"><span class="toc-number">3.</span> <span class="toc-text">3、bash脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、全部代码"><span class="toc-number">4.</span> <span class="toc-text">4、全部代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、优化"><span class="toc-number">5.</span> <span class="toc-text">5、优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法一"><span class="toc-number">5.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法二"><span class="toc-number">5.2.</span> <span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法三"><span class="toc-number">5.3.</span> <span class="toc-text">方法三</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法四"><span class="toc-number">5.4.</span> <span class="toc-text">方法四</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、总结"><span class="toc-number">6.</span> <span class="toc-text">6、总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">7.</span> <span class="toc-text">参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、ipa文件结构"><span class="toc-number">2.</span> <span class="toc-text">2、ipa文件结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、bash脚本"><span class="toc-number">3.</span> <span class="toc-text">3、bash脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、全部代码"><span class="toc-number">4.</span> <span class="toc-text">4、全部代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、优化"><span class="toc-number">5.</span> <span class="toc-text">5、优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法一"><span class="toc-number">5.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法二"><span class="toc-number">5.2.</span> <span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法三"><span class="toc-number">5.3.</span> <span class="toc-text">方法三</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法四"><span class="toc-number">5.4.</span> <span class="toc-text">方法四</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法五"><span class="toc-number">5.5.</span> <span class="toc-text">方法五</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、总结"><span class="toc-number">6.</span> <span class="toc-text">6、总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">7.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -606,6 +618,34 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">网易云音乐</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">request.POST</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">post数组参数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
@@ -619,10 +659,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">itunes</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,19 +706,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Console.app</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">苹果控制台</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
