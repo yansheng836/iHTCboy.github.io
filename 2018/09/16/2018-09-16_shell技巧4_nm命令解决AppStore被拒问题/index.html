@@ -9,23 +9,23 @@
   <link rel="canonical" href="https://ihtcboy.com" />
   <title>shell技巧4 - nm命令解决AppStore2.5.2被拒问题 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、前言2、定位和查到问题找到了方向，就是利用 nm命令查到所有第三方的 .a / .framework是否有相关的方法。
-但是如果一个一个库去查找，效率非常低，每一个库的目录不一样，所以，想到用sehll脚本，整个工程遍历全部的文件，查到到库的，然后打印出来！这才是万利的方法啊！！
-3、shell 编程这里思路大家应该也想到，就是遍历目录，一个一个文件判断，问题的关键出来了！就是怎么判断一个文件">
+  <meta name="description" content="1、前言最近App Store审核被拒，2. 5 Performance: Software Requirements，Guideline 2.5.2 - Performance - Software Requirements，遇到这样的问题，回信问苹果，肯定得不到答案，苹果就是礼貌的回复。经过一个星期的重复被拒，只能自己找问题，热更新问题，苹果拒审信一直长这样：
+从中找到了一些关键点：
+1dlo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell技巧4 - nm命令解决AppStore2.5.2被拒问题">
 <meta property="og:url" content="https://iHTCboy.com/2018/09/16/2018-09-16_shell技巧4_nm命令解决AppStore被拒问题/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="1、前言2、定位和查到问题找到了方向，就是利用 nm命令查到所有第三方的 .a / .framework是否有相关的方法。
-但是如果一个一个库去查找，效率非常低，每一个库的目录不一样，所以，想到用sehll脚本，整个工程遍历全部的文件，查到到库的，然后打印出来！这才是万利的方法啊！！
-3、shell 编程这里思路大家应该也想到，就是遍历目录，一个一个文件判断，问题的关键出来了！就是怎么判断一个文件">
+<meta property="og:description" content="1、前言最近App Store审核被拒，2. 5 Performance: Software Requirements，Guideline 2.5.2 - Performance - Software Requirements，遇到这样的问题，回信问苹果，肯定得不到答案，苹果就是礼貌的回复。经过一个星期的重复被拒，只能自己找问题，热更新问题，苹果拒审信一直长这样：
+从中找到了一些关键点：
+1dlo">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180916-nm-show-lists.png">
-<meta property="og:updated_time" content="2018-09-16T15:25:09.116Z">
+<meta property="og:updated_time" content="2018-09-16T15:25:52.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell技巧4 - nm命令解决AppStore2.5.2被拒问题">
-<meta name="twitter:description" content="1、前言2、定位和查到问题找到了方向，就是利用 nm命令查到所有第三方的 .a / .framework是否有相关的方法。
-但是如果一个一个库去查找，效率非常低，每一个库的目录不一样，所以，想到用sehll脚本，整个工程遍历全部的文件，查到到库的，然后打印出来！这才是万利的方法啊！！
-3、shell 编程这里思路大家应该也想到，就是遍历目录，一个一个文件判断，问题的关键出来了！就是怎么判断一个文件">
+<meta name="twitter:description" content="1、前言最近App Store审核被拒，2. 5 Performance: Software Requirements，Guideline 2.5.2 - Performance - Software Requirements，遇到这样的问题，回信问苹果，肯定得不到答案，苹果就是礼貌的回复。经过一个星期的重复被拒，只能自己找问题，热更新问题，苹果拒审信一直长这样：
+从中找到了一些关键点：
+1dlo">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -236,7 +236,13 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、前言">1、前言</h3><h3 id="2、定位和查到问题">2、定位和查到问题</h3><p>找到了方向，就是利用 <code>nm</code>命令查到所有第三方的 <code>.a</code> / <code>.framework</code>是否有相关的方法。</p>
+        <h3 id="1、前言">1、前言</h3><p>最近App Store审核被拒，<code>2. 5 Performance: Software Requirements，Guideline 2.5.2 - Performance - Software Requirements</code>，遇到这样的问题，回信问苹果，肯定得不到答案，苹果就是<code>礼貌</code>的回复。经过一个星期的重复被拒，只能自己找问题，热更新问题，苹果拒审信一直长这样：</p>
+<p>从中找到了一些关键点：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">dlopen</span><span class="params">()</span></span>, <span class="function"><span class="title">dlsym</span><span class="params">()</span></span>, respondsToSelector:, performSelector:, <span class="function"><span class="title">method_exchangeImplementations</span><span class="params">()</span></span>,</span><br></pre></td></tr></table></figure>
+<p>然后在 <a href="https://zhuanlan.zhihu.com/p/41863648" target="_blank" rel="external">「iOS」热更新审核被拒的解决方法</a> 文章中，找到可以打印下第三方的.a文件看看，看有没有 dlopen(), dlsym()，命令行：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nm -u libwechaat.a &#62;&#62; xxx.txt</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="2、定位和查到问题">2、定位和查到问题</h3><p>找到了方向，就是利用 <code>nm</code>命令查到所有第三方的 <code>.a</code> / <code>.framework</code>是否有相关的方法。</p>
 <p>但是如果一个一个库去查找，效率非常低，每一个库的目录不一样，所以，想到用sehll脚本，整个工程遍历全部的文件，查到到库的，然后打印出来！这才是万利的方法啊！！</p>
 <h3 id="3、shell_编程">3、shell 编程</h3><p>这里思路大家应该也想到，就是遍历目录，一个一个文件判断，问题的关键出来了！就是怎么判断一个文件是不是<code>.a</code> 或 <code>.framework</code> ？ </p>
 <p>其实，可以利用 <code>file</code> 打印当前读取的文件的类型，如果是 <code>Mach-O</code> 类型，就是库文件。比如终端执行 <code>file libWeChatSDK.a</code> 会打印如下：</p>
