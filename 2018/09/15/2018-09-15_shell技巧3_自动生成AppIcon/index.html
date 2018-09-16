@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-creat-AppIcon.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-move-to-Xcode-Assets.xcassets-AppIcon.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-Xcode-Assets.xcassets-AppIcon-icon.png">
-<meta property="og:updated_time" content="2018-09-16T11:10:10.022Z">
+<meta property="og:updated_time" content="2018-09-16T15:09:20.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell技巧3 - 自动生成AppIcon">
 <meta name="twitter:description" content="1、前言上一篇讲到 shell技巧2 - 图片旋转缩放转换格式等，而平时iOS开发中，Xcode中Assets.xcassets的AppIcon 需要设计师或开发者自行放置对应尺寸的图标，虽然我经常使用macOS下的 Prepo 应用生成多尺寸的图标，但是依然需要一张一张的放置到Xcode中，并且步骤非常不智能化，部分图标需要人工对应位置放置。如果通过使用 sips 命令，其实可以自动生成对应尺寸">
@@ -363,13 +363,13 @@ var _hmt = _hmt || [];
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-move-to-Xcode-Assets.xcassets-AppIcon.png" alt="20180915-move-to-Xcode-Assets.xcassets-AppIcon.png"></p>
 <p>5.打开Xcode，就能看到图片已经自动显示好！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-Xcode-Assets.xcassets-AppIcon-icon.png" alt="20180915-Xcode-Assets.xcassets-AppIcon-icon.png"></p>
 <p>这里说一下大概的思路，其实也不难，首先判断输出的路径，如果不是<code>目录</code>、<code>不存在的目录</code>、<code>格式不符合的图片</code>，就可以图片处理，否则重新输入路径。然后创建图片同级的文件夹用于生成的图标和配置的json文件，由于 “1024”图片最大，所以，先转成png，然后从大到小，一张一张剪切，另外，需要注意，1024如果是png，因为有透明度的话上传到AppStore是不成功的，所以，这里最后转换1024图片格式为jpg，这样保证万无一失。其它图标都是png，也不用切成圆角，因为苹果最终显示时系统自动切成图角。</p>
-<h3 id="4、图片旋转代码实现">4、图片旋转代码实现</h3><p>具体的代码，可参考我的Github代码：</p>
+<h3 id="4、源代码">4、源代码</h3><p>具体的代码，可参考我的Github代码：</p>
 <ul>
 <li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash&#10;&#10;# &#23450;&#20041;&#29992;&#21040;&#30340;&#21464;&#37327;&#10;image_path=&#34;&#34;&#10;&#10;# &#23450;&#20041;&#35835;&#21462;&#36755;&#20837;&#23383;&#31526;&#30340;&#20989;&#25968;&#10;getImagePath() &#123;&#10;&#9;echo -e &#34;\n================================================&#34;&#10;&#9;# &#30417;&#21548;&#36755;&#20837;&#24182;&#19988;&#36171;&#20540;&#32473;&#21464;&#37327;&#10;&#9;read -p &#34;Enter origin image path: &#34; image_path&#10;&#9;# &#22914;&#26524;&#23383;&#31526;&#20018;&#30340;&#38271;&#24230;&#20026;&#38646;&#21017;&#20026;&#30495;&#20026;&#31354;&#20540;&#65292;&#20174;&#26032;&#30417;&#21548;&#65292;&#21542;&#21017;&#25191;&#34892;&#26059;&#36716;&#20989;&#25968;&#10;&#9;if&#9;test -z &#34;$image_path&#34;; then&#10;&#9;&#9; getImagePath&#10;&#9;else&#10;&#9;&#9;# &#22914;&#26524;&#25991;&#20214;&#23384;&#22312;&#19988;&#20026;&#30446;&#24405;&#21017;&#20026;&#30495;&#10;&#9;&#9;if test -d &#34;$image_path&#34;; then&#10;&#9;&#9;&#9;echo -e &#34;\n------- [Error] the file path is directory --------&#34;&#10;&#9;&#9;&#9;getImagePath&#10;&#9;&#9;else&#10;&#9;&#9;&#9;# &#22914;&#26524;&#25991;&#20214;&#23384;&#22312;&#19988;&#21487;&#35835;&#21017;&#20026;&#30495;&#10;&#9;&#9;&#9;if test -r &#34;$image_path&#34;; then&#10;&#9;&#9;&#9;&#9;ext=&#34;\.jpeg|\.jpg|\.png|\.JPEG|\.JPG|\.PNG|\.gif|\.bmp&#34;&#10;&#9;&#9;&#9;&#9;# get the images that need process.&#10;&#9;&#9;&#9;&#9;valid_img=$(echo &#34;$image_path&#34; | grep -E &#34;$&#123;ext&#125;&#34;)&#10;&#9;&#9;&#9;&#9;# &#21305;&#37197;&#21040;&#22270;&#29255;&#26684;&#24335;&#25165;&#22788;&#29702;&#10;&#9;&#9;&#9;&#9;if test -z &#34;$valid_img&#34;; then&#10;&#9;&#9;&#9;&#9;&#9;echo -e &#34;\n------- [Error] the file is not&#39;s legal format --------&#34;&#10;&#9;&#9;&#9;&#9;&#9;getImagePath&#10;&#9;&#9;&#9;&#9;else&#10;&#9;&#9;&#9;&#9;&#9;creatAppIcon&#9;&#10;&#9;&#9;&#9;&#9;fi&#10;&#9;&#9;&#9;else&#9;&#9;&#9;&#10;&#9;&#9;&#9;&#9;echo -e &#34;\n------- [Error] the file path is not&#39;s find --------&#34;&#10;&#9;&#9;&#9;&#9;getImagePath&#10;&#9;&#9;&#9;fi&#9;&#10;&#9;&#9;fi&#10;&#9;fi&#10;&#125;&#10;&#10;creatAppIcon() &#123;&#10;&#9;echo -e &#34;\n------- start processing -------&#34;&#10;&#9;&#10;&#9;# &#22270;&#29255;&#30340;&#19978;&#19968;&#32423;&#30446;&#24405;&#10;&#9;prev_path=$(dirname &#34;$image_path&#34;)&#10;&#9;&#10;&#9;# &#36755;&#20986;icon&#30340;&#30446;&#24405;&#10;&#9;icon_paht=&#34;$&#123;prev_path&#125;/iOS_icon_`date +%Y%m%d_%H%M%S`&#34;&#10;&#9;&#10;&#9;# &#21019;&#24314;&#30446;&#24405;&#10;&#9;mkdir -p $&#123;icon_paht&#125;&#10;&#9;&#10;&#9;# 1024 icon &#29305;&#21035;&#22788;&#29702;&#10;&#9;icon_1024_path=&#34;$&#123;icon_paht&#125;/icon-1024.png&#34;&#10;&#9;cp $&#123;image_path&#125; $&#123;icon_1024_path&#125;&#10;&#9;&#10;&#9;sips -s format png $&#123;image_path&#125; --out $&#123;icon_1024_path&#125; &#62; /dev/null 2&#62;&#38;1&#10;&#9;[ $? -eq 0 ] &#38;&#38; echo -e &#34;info:\tresize copy 1024 successfully.&#34; || echo -e &#34;info:\tresize copy 1024 failed.&#34;&#10;&#9;&#10;&#9;sips -z 1024 1024 $&#123;icon_1024_path&#125; &#62; /dev/null 2&#62;&#38;1&#10;&#9;[ $? -eq 0 ] &#38;&#38; echo -e &#34;info:\tresize 1024 successfully.&#34; || echo -e &#34;info:\tresize 1024 failed.&#34;&#10;&#9;&#10;&#9;prev_size_path=$&#123;icon_1024_path&#125; #&#29992;&#20110;&#22797;&#21046;&#23567;&#22270;&#65292;&#20943;&#23569;&#20869;&#23384;&#28040;&#32791;&#10;&#9;# &#38656;&#35201;&#29983;&#25104;&#30340;&#22270;&#26631;&#23610;&#23544;&#10;&#9;icons=(180 167 152 120 87 80 60 58 40)&#10;&#9;for size in $&#123;icons[@]&#125;&#10;&#9;do&#10;&#9;&#9;size_path=&#34;$&#123;icon_paht&#125;/icon-$&#123;size&#125;.png&#34;&#10;&#9;&#9;cp $&#123;prev_size_path&#125; $&#123;size_path&#125;&#10;&#9;&#9;prev_size_path=$&#123;size_path&#125;&#10;&#9;&#9;sips -Z $size $&#123;size_path&#125; &#62; /dev/null 2&#62;&#38;1&#10;&#9;&#9;[ $? -eq 0 ] &#38;&#38; echo -e &#34;info:\tresize $&#123;size&#125; successfully.&#34; || echo -e &#34;info:\tresize $&#123;size&#125; failed.&#34;&#10;&#9;done&#10;&#9;&#10;&#9;# &#36716;&#25442;1024&#22270;&#29255;&#20026;jpg&#65292;&#38450;&#27490;&#26377;&#36879;&#26126;&#21306;&#22495;&#23548;&#33268;&#19978;&#20256; App Store &#22833;&#36133;&#10;&#9;icon_1024_jpg_path=&#34;$&#123;icon_paht&#125;/icon-1024.jpg&#34;&#10;&#9;mv $&#123;icon_1024_path&#125; $&#123;icon_1024_jpg_path&#125;&#10;&#9;sips -s format jpeg $&#123;icon_1024_jpg_path&#125; --out $&#123;icon_1024_jpg_path&#125; &#62; /dev/null 2&#62;&#38;1&#10;&#9;[ $? -eq 0 ] &#38;&#38; echo -e &#34;info:\tresize 1024 to jpg successfully.&#34; || echo -e &#34;info:\tresize 1024 to jpg  failed.&#34;&#10;&#9;&#10;&#9;contents_json_path=&#34;$&#123;icon_paht&#125;/Contents.json&#34;&#10;&#9;# &#29983;&#25104;&#22270;&#26631;&#23545;&#24212;&#30340;&#37197;&#32622;&#25991;&#20214;&#10;&#9;echo &#39;&#123;&#10;&#9;&#9;&#34;images&#34; : [&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;20x20&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-40.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;20x20&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-60.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;3x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;29x29&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-58.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;29x29&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-87.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;3x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;40x40&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-80.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;40x40&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-120.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;3x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;60x60&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-120.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;60x60&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-180.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;3x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;20x20&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;20x20&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-40.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;29x29&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;29x29&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-58.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;40x40&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;40x40&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-80.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;76x76&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;76x76&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-152.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;83.5x83.5&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-167.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;1024x1024&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ios-marketing&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-1024.jpg&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;],&#10;&#9;&#9;&#34;info&#34; : &#123;&#10;&#9;&#9;&#9;&#34;version&#34; : 1,&#10;&#9;&#9;&#9;&#34;author&#34; : &#34;xcode&#34;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#39; &#62; $&#123;contents_json_path&#125;&#10;&#9;&#9;&#10;&#9;echo -e &#34;\n creat iOS AppIcon finished!&#34;&#10;&#9;echo -e &#34;\n------- end processing -------&#34;&#10;&#125;&#10;&#10;&#10;# &#39318;&#20808;&#25191;&#34892;&#20989;&#25968;&#65292;&#22635;&#20889;1024&#22270;&#29255;&#30340;&#36335;&#24452;&#36171;&#20540;&#10;getImagePath</span><br></pre></td></tr></table></figure>
 <h3 id="5、总结">5、总结</h3><p>通过 ship 命令和 shell脚本和前面几篇技巧，大家应该能感受到shell脚本编程的魅力，希望大家能举一反三，授鱼不如授渔！生活工作中结合 sehll 脚本，提高效率和自动化，珍爱时间不是梦！</p>
-<p>其实，只要用命令有终端的地方，都是可以用shell脚本！后续有更多会继续给大家期待~</p>
+<p>其实，只要用命令有终端的地方，都是可以用shell脚本！后续有更多技巧，还会继续给大家分享，期待吧~</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://ihtcboy.com/2018/09/14/2018-09-14_shell技巧2_图片旋转缩放等/">shell技巧2 - 图片旋转缩放转换格式等 | iHTCboy’s blog</a></li>
 <li><a href="http://www.voidcn.com/article/p-xrygdftf-bmv.html" target="_blank" rel="external">利器: Mac自带的图片工具Sips</a></li>
@@ -530,6 +530,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2018/09/16/2018-09-16_shell技巧4_nm命令解决AppStore被拒问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          shell技巧4 - nm命令解决AppStore2.5.2被拒问题
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/09/14/2018-09-14_shell技巧2_图片旋转缩放等/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">shell技巧2 - 图片旋转缩放转换格式等</div>
@@ -559,7 +568,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、AppIcon_要求"><span class="toc-number">2.</span> <span class="toc-text">2、AppIcon 要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、shell_编程"><span class="toc-number">3.</span> <span class="toc-text">3、shell 编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、图片旋转代码实现"><span class="toc-number">4.</span> <span class="toc-text">4、图片旋转代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、总结"><span class="toc-number">5.</span> <span class="toc-text">5、总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、AppIcon_要求"><span class="toc-number">2.</span> <span class="toc-text">2、AppIcon 要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、shell_编程"><span class="toc-number">3.</span> <span class="toc-text">3、shell 编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、源代码"><span class="toc-number">4.</span> <span class="toc-text">4、源代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、总结"><span class="toc-number">5.</span> <span class="toc-text">5、总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -719,6 +728,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bash</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">nm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppStore</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,10 +955,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppStore</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">无法内购</a>
               </li>
              
@@ -1027,10 +1040,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">strings</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">nm</a>
               </li>
              
               <li class="article-tag-list-item">

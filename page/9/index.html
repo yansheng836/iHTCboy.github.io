@@ -210,6 +210,100 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2015_AppStore-打包上传后提示“二进制文件无效”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/06/2015_AppStore-打包上传后提示“二进制文件无效”/">Xcode打包上传后, AppStore提示“二进制文件无效”</a>
+    </h1>
+  
+
+        
+        <a href="/2015/07/06/2015_AppStore-打包上传后提示“二进制文件无效”/" class="archive-article-date">
+  	<time datetime="2015-07-06T08:20:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>搜索了2个小时，上传了5个版本后，终于解决了。网上是这样说的：</p>
+<blockquote>
+<p><a href="http://stackoverflow.com/questions/26163856/invalid-swift-support-invalid-implementation-of-swift">http://stackoverflow.com/questions/26163856/invalid-swift-support-invalid-implementation-of-swift</a><br>1、重启Xcode，clean build<br>2、重启Mac OSX<br>3、换个新版本Xcode </p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2015/07/06/2015_AppStore-打包上传后提示“二进制文件无效”/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二进制文件无效</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/07/06/2015_AppStore-打包上传后提示“二进制文件无效”/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2015_App-Store被拒绝后的解决方案中心" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1090,103 +1184,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2015_iOS开发必备HUD(透明指示层)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/10/2015_iOS开发必备HUD(透明指示层)/">iOS开发必备HUD(透明指示层)</a>
-    </h1>
-  
-
-        
-        <a href="/2015/05/10/2015_iOS开发必备HUD(透明指示层)/" class="archive-article-date">
-  	<time datetime="2015-05-10T03:18:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-MBProgressHUD">1.MBProgressHUD</h3><p>GitHub地址：<a href="https://github.com/jdg/MBProgressHUD">https://github.com/jdg/MBProgressHUD</a><br>基本上看到的主流iOS应用都集成了这个，Star 7k了，最近看到很多应用HUD隐藏时，有一个动画过程，我还以为是自己扩展的，后来研究才发现，有这个属性<code>animationType</code>:</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">@property</span> (<span class="built_in">assign</span>) MBProgressHUDAnimation animationType<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSInteger, MBProgressHUDAnimation) &#123;</span><br><span class="line">/<span class="keyword">*</span><span class="keyword">*</span> Opacity animation <span class="keyword">*</span>/</span><br><span class="line">MBProgressHUDAnimationFade,</span><br><span class="line">/<span class="keyword">*</span><span class="keyword">*</span> Opacity + scale animation <span class="keyword">*</span>/</span><br><span class="line">MBProgressHUDAnimationZoom,</span><br><span class="line">MBProgressHUDAnimationZoomOut = MBProgressHUDAnimationZoom,</span><br><span class="line">MBProgressHUDAnimationZoomIn</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2015/05/10/2015_iOS开发必备HUD(透明指示层)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">HUD</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">透明指示层</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/05/10/2015_iOS开发必备HUD(透明指示层)/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
@@ -1316,6 +1313,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bash</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">nm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppStore</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1535,10 +1540,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppStore</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">无法内购</a>
               </li>
              
@@ -1624,10 +1625,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">strings</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">nm</a>
               </li>
              
               <li class="article-tag-list-item">
