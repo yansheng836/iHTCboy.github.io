@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-09-16T05:16:22.739Z</updated>
+  <updated>2018-09-16T11:01:09.526Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,189 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[shell技巧3 - 自动生成AppIcon]]></title>
+    <link href="https://iHTCboy.com/2018/09/15/2018-09-15_shell%E6%8A%80%E5%B7%A73_%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90AppIcon/"/>
+    <id>https://iHTCboy.com/2018/09/15/2018-09-15_shell技巧3_自动生成AppIcon/</id>
+    <published>2018-09-15T08:20:16.000Z</published>
+    <updated>2018-09-16T11:01:09.526Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>上一篇讲到 <a href="https://ihtcboy.com/2018/09/14/2018-09-14_shell技巧2_图片旋转缩放等/">shell技巧2 - 图片旋转缩放转换格式等</a>，而平时iOS开发中，Xcode中Assets.xcassets的AppIcon需要设计师或开发者自行放置对应尺寸的图标，虽然我经常使用macOS下的 <code>Prepo</code> 应用生成多尺寸的图标，但是依然需要一张一张的放置到Xcode中，并且步骤非常不智能化，部分图标需要人工对应位置放置。，如果通过使用 <code>sips</code> 命令，其实可以自动生成对应尺寸的图片，就可以灵活和自动化的批量生成AppIcon的全部图标，绝对的效率！</p>
+<a id="more"></a>
+<h3 id="2、AppIcon_要求">2、AppIcon 要求</h3><p>平时，我们的应用的图标，都会在 Assets.xcassets 的AppIcon 设置，对于 iOS 来说，需要如下：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-Xcode-Assets.xcassets-AppIcon.png" alt="20180915-Xcode-Assets.xcassets-AppIcon.png"></p>
+<p>其中，因为App如果只支持iOS7以上，1x 的设备也不需要支持了，那么大概导出需要如下的尺寸：</p>
+<table>
+<thead>
+<tr>
+<th>pt</th>
+<th>像素密度(scale)</th>
+<th>尺寸(px)</th>
+<th>用途</th>
+<th>支持系统版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20pt</td>
+<td>2x</td>
+<td>40*40</td>
+<td>iPhone Notificafion</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>20pt</td>
+<td>3x</td>
+<td>60*60</td>
+<td>iPhone Notificafion</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>29pt</td>
+<td>2x</td>
+<td>58*58</td>
+<td>iPhone Spotlight/Settings</td>
+<td>iOS 5-6/5-12</td>
+</tr>
+<tr>
+<td>29pt</td>
+<td>3x</td>
+<td>87*87</td>
+<td>iPhone Spotlight/Settings</td>
+<td>iOS 5-6/5-12</td>
+</tr>
+<tr>
+<td>40pt</td>
+<td>2x</td>
+<td>80*80</td>
+<td>iPhone Spotlight</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>40pt</td>
+<td>3x</td>
+<td>120*120</td>
+<td>iPhone Spotlight</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>60pt</td>
+<td>2x</td>
+<td>120*120</td>
+<td>iPhone App</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>60pt</td>
+<td>3x</td>
+<td>180*180</td>
+<td>iPhone App</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>20pt</td>
+<td>2x</td>
+<td>40*40</td>
+<td>iPad Notificafion</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>29pt</td>
+<td>2x</td>
+<td>58*58</td>
+<td>iPad Settings</td>
+<td>iOS 5-12</td>
+</tr>
+<tr>
+<td>40pt</td>
+<td>2x</td>
+<td>80*80</td>
+<td>iPad Spotlight</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>76pt</td>
+<td>2x</td>
+<td>152*152</td>
+<td>iPad App</td>
+<td>iOS 7-12</td>
+</tr>
+<tr>
+<td>83.5</td>
+<td>2x</td>
+<td>167*167</td>
+<td>iPad Pro App</td>
+<td>iOS 9-12</td>
+</tr>
+<tr>
+<td>1024pt</td>
+<td>1x</td>
+<td>1024*1024</td>
+<td>App Store</td>
+<td>iOS 7-12</td>
+</tr>
+</tbody>
+</table>
+<p>从上面表格可以看出，这些尺寸还是有一些重复的，所以导出尺寸时，其实没有那么多的啊，因为如果相同尺寸，可以使用同一张图片，来减少包的体积啊。</p>
+<h3 id="3、shell_编程">3、shell 编程</h3><p>通过使用 <code>sips</code> 命令进行图片处理，这里简单的写一下iOS App图标生成，apple watch 或 macOS app的图标生成的示例，希望大家能举一反三，这都是授鱼不如授渔！ </p>
+<p>先说一下操作步骤：</p>
+<p>1.在终端执行shell脚本：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /Users/HTC/Desktop/make_iOSAppIcon.sh</span><br></pre></td></tr></table></figure>
+<p>2.然后拖拽1024图片路径到终端：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">================================================&#10;Enter origin image path: /Users/HTC/Desktop/apple.jpg</span><br></pre></td></tr></table></figure>
+<p>3.执行成功:</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">------- start processing -------</span><br><span class="line"><span class="label">info:</span>	resize copy <span class="number">1024</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">1024</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">180</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">167</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">152</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">120</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">87</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">80</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">60</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">58</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">40</span> successfully.</span><br><span class="line"><span class="label">info:</span>	resize <span class="number">1024</span> to jpg successfully.</span><br><span class="line"></span><br><span class="line">creat iOS AppIcon finished!</span><br><span class="line"></span><br><span class="line">------- end processing -------</span><br></pre></td></tr></table></figure>
+<p>生成的图标和json文件：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-creat-AppIcon.png" alt="20180915-creat-AppIcon.png"></p>
+<p>4.然后找到输出的文件夹（默认是在填写的图片的同级目录），复制到Xcode项目中 <code>Project/Assets.xcassets/AppIcon.appiconset/</code> 即可。（如果还要省略这一步，也可以直接将生成的输出到项目的目录中，这步就交给读者需要自行添加啊）</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-move-to-Xcode-Assets.xcassets-AppIcon.png" alt="20180915-move-to-Xcode-Assets.xcassets-AppIcon.png"></p>
+<p>5.打开Xcode，就能看到图片已经自动显示好！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180915-Xcode-Assets.xcassets-AppIcon-icon.png" alt="20180915-Xcode-Assets.xcassets-AppIcon-icon.png"></p>
+<p>这里说一下大概的思路，其实也不难，首先判断输出的路径，如果不是<code>目录</code>、<code>不存在的目录</code>、<code>格式不符合的图片</code>，就可以图片处理，否则重新输入路径。然后创建图片同级的文件夹用于生成的图标和配置的json文件，由于 “1024”图片最大，所以，先转成png，然后从大到小，一张一张剪切，另外，需要注意，1024如果是png，因为有透明度的话上传到AppStore是不成功的，所以，这里最后转换1024图片格式为jpg，这样保证万无一失。其它图标都是png，也不用切成圆角，因为苹果最终显示时系统自动切成图角。</p>
+<h3 id="4、图片旋转代码实现">4、图片旋转代码实现</h3><p>具体的代码，可参考我的Github代码：</p>
+<ul>
+<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash&#10;&#10;# &#23450;&#20041;&#29992;&#21040;&#30340;&#21464;&#37327;&#10;image_path=&#34;&#34;&#10;&#10;# &#23450;&#20041;&#35835;&#21462;&#36755;&#20837;&#23383;&#31526;&#30340;&#20989;&#25968;&#10;getImagePath() &#123;&#10;&#9;echo -e &#34;\n================================================&#34;&#10;&#9;# &#30417;&#21548;&#36755;&#20837;&#24182;&#19988;&#36171;&#20540;&#32473;&#21464;&#37327;&#10;&#9;read -p &#34;Enter origin image path: &#34; image_path&#10;&#9;# &#22914;&#26524;&#23383;&#31526;&#20018;&#30340;&#38271;&#24230;&#20026;&#38646;&#21017;&#20026;&#30495;&#20026;&#31354;&#20540;&#65292;&#20174;&#26032;&#30417;&#21548;&#65292;&#21542;&#21017;&#25191;&#34892;&#26059;&#36716;&#20989;&#25968;&#10;&#9;if&#9;test -z &#34;$image_path&#34;; then&#10;&#9;&#9; getImagePath&#10;&#9;else&#10;&#9;&#9;# &#22914;&#26524;&#25991;&#20214;&#23384;&#22312;&#19988;&#20026;&#30446;&#24405;&#21017;&#20026;&#30495;&#10;&#9;&#9;if test -d &#34;$image_path&#34;; then&#10;&#9;&#9;&#9;echo -e &#34;\n------- [Error] the file path is directory --------&#34;&#10;&#9;&#9;&#9;getImagePath&#10;&#9;&#9;else&#10;&#9;&#9;&#9;# &#22914;&#26524;&#25991;&#20214;&#23384;&#22312;&#19988;&#21487;&#35835;&#21017;&#20026;&#30495;&#10;&#9;&#9;&#9;if test -r &#34;$image_path&#34;; then&#10;&#9;&#9;&#9;&#9;ext=&#34;\.jpeg|\.jpg|\.png|\.JPEG|\.JPG|\.PNG|\.gif|\.bmp&#34;&#10;&#9;&#9;&#9;&#9;# get the images that need process.&#10;&#9;&#9;&#9;&#9;valid_img=$(echo &#34;$image_path&#34; | grep -E &#34;$&#123;ext&#125;&#34;)&#10;&#9;&#9;&#9;&#9;# &#21305;&#37197;&#21040;&#22270;&#29255;&#26684;&#24335;&#25165;&#22788;&#29702;&#10;&#9;&#9;&#9;&#9;if test -z &#34;$valid_img&#34;; then&#10;&#9;&#9;&#9;&#9;&#9;echo -e &#34;\n------- [Error] the file is not&#39;s legal format --------&#34;&#10;&#9;&#9;&#9;&#9;&#9;getImagePath&#10;&#9;&#9;&#9;&#9;else&#10;&#9;&#9;&#9;&#9;&#9;creatAppIcon&#9;&#10;&#9;&#9;&#9;&#9;fi&#10;&#9;&#9;&#9;else&#9;&#9;&#9;&#10;&#9;&#9;&#9;&#9;echo -e &#34;\n------- [Error] the file path is not&#39;s find --------&#34;&#10;&#9;&#9;&#9;&#9;getImagePath&#10;&#9;&#9;&#9;fi&#9;&#10;&#9;&#9;fi&#10;&#9;fi&#10;&#125;&#10;&#10;creatAppIcon() &#123;&#10;&#9;echo -e &#34;\n------- start processing -------&#34;&#10;&#9;&#10;&#9;# &#22270;&#29255;&#30340;&#19978;&#19968;&#32423;&#30446;&#24405;&#10;&#9;prev_path=$(dirname &#34;$image_path&#34;)&#10;&#9;&#10;&#9;# &#36755;&#20986;icon&#30340;&#30446;&#24405;&#10;&#9;icon_paht=&#34;$&#123;prev_path&#125;/iOS_icon_`date +%Y%m%d_%H%M%S`&#34;&#10;&#9;&#10;&#9;# &#21019;&#24314;&#30446;&#24405;&#10;&#9;mkdir -p $&#123;icon_paht&#125;&#10;&#9;&#10;&#9;# 1024 icon &#29305;&#21035;&#22788;&#29702;&#10;&#9;icon_1024_path=&#34;$&#123;icon_paht&#125;/icon-1024.png&#34;&#10;&#9;cp $&#123;image_path&#125; $&#123;icon_1024_path&#125;&#10;&#9;&#10;&#9;sips -s format png $&#123;image_path&#125; --out $&#123;icon_1024_path&#125; &#62; /dev/null 2&#62;&#38;1&#10;&#9;[ $? -eq 0 ] &#38;&#38; echo -e &#34;info:\tresize copy 1024 successfully.&#34; || echo -e &#34;info:\tresize copy 1024 failed.&#34;&#10;&#9;&#10;&#9;sips -z 1024 1024 $&#123;icon_1024_path&#125; &#62; /dev/null 2&#62;&#38;1&#10;&#9;[ $? -eq 0 ] &#38;&#38; echo -e &#34;info:\tresize 1024 successfully.&#34; || echo -e &#34;info:\tresize 1024 failed.&#34;&#10;&#9;&#10;&#9;prev_size_path=$&#123;icon_1024_path&#125; #&#29992;&#20110;&#22797;&#21046;&#23567;&#22270;&#65292;&#20943;&#23569;&#20869;&#23384;&#28040;&#32791;&#10;&#9;# &#38656;&#35201;&#29983;&#25104;&#30340;&#22270;&#26631;&#23610;&#23544;&#10;&#9;icons=(180 167 152 120 87 80 60 58 40)&#10;&#9;for size in $&#123;icons[@]&#125;&#10;&#9;do&#10;&#9;&#9;size_path=&#34;$&#123;icon_paht&#125;/icon-$&#123;size&#125;.png&#34;&#10;&#9;&#9;cp $&#123;prev_size_path&#125; $&#123;size_path&#125;&#10;&#9;&#9;prev_size_path=$&#123;size_path&#125;&#10;&#9;&#9;sips -Z $size $&#123;size_path&#125; &#62; /dev/null 2&#62;&#38;1&#10;&#9;&#9;[ $? -eq 0 ] &#38;&#38; echo -e &#34;info:\tresize $&#123;size&#125; successfully.&#34; || echo -e &#34;info:\tresize $&#123;size&#125; failed.&#34;&#10;&#9;done&#10;&#9;&#10;&#9;# &#36716;&#25442;1024&#22270;&#29255;&#20026;jpg&#65292;&#38450;&#27490;&#26377;&#36879;&#26126;&#21306;&#22495;&#23548;&#33268;&#19978;&#20256; App Store &#22833;&#36133;&#10;&#9;icon_1024_jpg_path=&#34;$&#123;icon_paht&#125;/icon-1024.jpg&#34;&#10;&#9;mv $&#123;icon_1024_path&#125; $&#123;icon_1024_jpg_path&#125;&#10;&#9;sips -s format jpeg $&#123;icon_1024_jpg_path&#125; --out $&#123;icon_1024_jpg_path&#125; &#62; /dev/null 2&#62;&#38;1&#10;&#9;[ $? -eq 0 ] &#38;&#38; echo -e &#34;info:\tresize 1024 to jpg successfully.&#34; || echo -e &#34;info:\tresize 1024 to jpg  failed.&#34;&#10;&#9;&#10;&#9;contents_json_path=&#34;$&#123;icon_paht&#125;/Contents.json&#34;&#10;&#9;# &#29983;&#25104;&#22270;&#26631;&#23545;&#24212;&#30340;&#37197;&#32622;&#25991;&#20214;&#10;&#9;echo &#39;&#123;&#10;&#9;&#9;&#34;images&#34; : [&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;20x20&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-40.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;20x20&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-60.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;3x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;29x29&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-58.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;29x29&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-87.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;3x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;40x40&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-80.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;40x40&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-120.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;3x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;60x60&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-120.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;60x60&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;iphone&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-180.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;3x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;20x20&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;20x20&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-40.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;29x29&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;29x29&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-58.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;40x40&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;40x40&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-80.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;76x76&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;76x76&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-152.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;83.5x83.5&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ipad&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-167.png&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;2x&#34;&#10;&#9;&#9;&#9;&#125;,&#10;&#9;&#9;&#9;&#123;&#10;&#9;&#9;&#9;&#9;&#34;size&#34; : &#34;1024x1024&#34;,&#10;&#9;&#9;&#9;&#9;&#34;idiom&#34; : &#34;ios-marketing&#34;,&#10;&#9;&#9;&#9;&#9;&#34;filename&#34; : &#34;icon-1024.jpg&#34;,&#10;&#9;&#9;&#9;&#9;&#34;scale&#34; : &#34;1x&#34;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;],&#10;&#9;&#9;&#34;info&#34; : &#123;&#10;&#9;&#9;&#9;&#34;version&#34; : 1,&#10;&#9;&#9;&#9;&#34;author&#34; : &#34;xcode&#34;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#39; &#62; $&#123;contents_json_path&#125;&#10;&#9;&#9;&#10;&#9;echo -e &#34;\n creat iOS AppIcon finished!&#34;&#10;&#9;echo -e &#34;\n------- end processing -------&#34;&#10;&#125;&#10;&#10;&#10;# &#39318;&#20808;&#25191;&#34892;&#20989;&#25968;&#65292;&#22635;&#20889;1024&#22270;&#29255;&#30340;&#36335;&#24452;&#36171;&#20540;&#10;getImagePath</span><br></pre></td></tr></table></figure>
+<h3 id="5、总结">5、总结</h3><p>通过 ship 命令和 shell脚本和前面几篇技巧，大家应该能感受到shell脚本编程的魅力，希望大家能举一反三，授鱼不如授渔！生活工作中结合 sehll 脚本，提高效率和自动化，珍爱时间不是梦！</p>
+<p>其实，只要用命令有终端的地方，都是可以用shell脚本！后续有更多会继续给大家期待~</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://ihtcboy.com/2018/09/14/2018-09-14_shell技巧2_图片旋转缩放等/">shell技巧2 - 图片旋转缩放转换格式等 | iHTCboy’s blog</a></li>
+<li><a href="http://www.voidcn.com/article/p-xrygdftf-bmv.html" target="_blank" rel="external">利器: Mac自带的图片工具Sips</a></li>
+<li><a href="https://ss64.com/osx/sips.html" target="_blank" rel="external">sips MAN page Man Page - macOS - SS64.com</a></li>
+<li><a href="https://www.jianshu.com/p/7246c5a5b083" target="_blank" rel="external">使用sips命令自动缩减图片尺寸</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>上一篇讲到 <a href="https://ihtcboy.com/2018/09/14/2018-09-14_shell技巧2_图片旋转缩放等/">shell技巧2 - 图片旋转缩放转换格式等</a>，而平时iOS开发中，Xcode中Assets.xcassets的AppIcon需要设计师或开发者自行放置对应尺寸的图标，虽然我经常使用macOS下的 <code>Prepo</code> 应用生成多尺寸的图标，但是依然需要一张一张的放置到Xcode中，并且步骤非常不智能化，部分图标需要人工对应位置放置。，如果通过使用 <code>sips</code> 命令，其实可以自动生成对应尺寸的图片，就可以灵活和自动化的批量生成AppIcon的全部图标，绝对的效率！</p>]]>
+    
+    </summary>
+    
+      <category term="Assets.xcassets" scheme="https://iHTCboy.com/tags/Assets-xcassets/"/>
+    
+      <category term="appicon" scheme="https://iHTCboy.com/tags/appicon/"/>
+    
+      <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
+    
+      <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
+    
+      <category term="sips" scheme="https://iHTCboy.com/tags/sips/"/>
+    
+      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[shell技巧2 - 图片旋转缩放转换格式等]]></title>
     <link href="https://iHTCboy.com/2018/09/14/2018-09-14_shell%E6%8A%80%E5%B7%A72_%E5%9B%BE%E7%89%87%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%AD%89/"/>
     <id>https://iHTCboy.com/2018/09/14/2018-09-14_shell技巧2_图片旋转缩放等/</id>
     <published>2018-09-14T13:20:16.000Z</published>
-    <updated>2018-09-16T05:16:22.739Z</updated>
+    <updated>2018-09-16T09:47:04.439Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在macOS下，如果对大量图片进行处理或数据收集，查找了一下，通过使用 <code>sips</code> 命令，可以进行图片的大部分操作处理，如果使用 <code>shell</code>，就可以灵活和自动化的批量操作图片！</p>
 <a id="more"></a>
 <h3 id="2、sips_用法">2、sips 用法</h3><p>常用的用法可以参考： <a href="http://www.voidcn.com/article/p-xrygdftf-bmv.html" target="_blank" rel="external">利器: Mac自带的图片工具Sips</a>，全部的用法可以参考：<a href="https://ss64.com/osx/sips.html" target="_blank" rel="external">sips MAN page Man Page - macOS - SS64.com</a></p>
@@ -41,7 +219,7 @@
 
 注：上面命令可以对图片进行水平翻转，-f支持水平和垂直两种翻转，水平（horizontal），垂直（vertical）。
 </code></pre><p>5.修改图片格式</p>
-<pre><code><span class="variable"><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sips -s format jpeg input.png -o output.jpg</span><br></pre></td></tr></table></figure></span>
+<pre><code><span class="variable"><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sips -s format jpeg input.png --out output.jpg</span><br></pre></td></tr></table></figure></span>
 
 注：使用-s参数可以修改图片格式为指定值，sips支持jpeg |<span class="string"> tiff </span>|<span class="string"> png </span>|<span class="string"> gif </span>|<span class="string"> jp2 </span>|<span class="string"> pict </span>|<span class="string"> bmp </span>|<span class="string"> qtif </span>|<span class="string"> psd </span>|<span class="string"> sgi </span>|<span class="string"> tga共11种格式。并且-s除了能修改文件格式外，还能修改图片的其它meta数据，具体可以通过man sips查看。</span>
 </code></pre><p>6.获取图片meta信息</p>
@@ -79,11 +257,9 @@
     
       <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
     
-      <category term="ipa" scheme="https://iHTCboy.com/tags/ipa/"/>
-    
-      <category term="itunes" scheme="https://iHTCboy.com/tags/itunes/"/>
-    
       <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
+    
+      <category term="sips" scheme="https://iHTCboy.com/tags/sips/"/>
     
       <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
     
@@ -3164,58 +3340,6 @@
       <category term="重定向" scheme="https://iHTCboy.com/tags/%E9%87%8D%E5%AE%9A%E5%90%91/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[忆爷爷 —— 留守老人的一代]]></title>
-    <link href="https://iHTCboy.com/2018/05/05/2018-05-05_%E5%BF%86%E7%88%B7%E7%88%B7%E2%80%94%E2%80%94%E7%95%99%E5%AE%88%E8%80%81%E4%BA%BA%E7%9A%84%E4%B8%80%E4%BB%A3/"/>
-    <id>https://iHTCboy.com/2018/05/05/2018-05-05_忆爷爷——留守老人的一代/</id>
-    <published>2018-05-04T16:05:16.000Z</published>
-    <updated>2018-05-12T14:35:59.187Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/myGrandpa.jpg" alt="my grandpa"></p>
-<h3 id="忆">忆</h3><p>爷爷生于三十年代，抗日战争之际。</p>
-<p>听爷爷说，我们家以前是地主，解放后，我们家族就走下坡路，爷辈各兄弟分散多地。</p>
-<p>读书时，还不能体会到地主阶级的痛，改革开放后家族迁于麓阳村。</p>
-<a id="more"></a>
-<p>到了我爸那一代，小时候读书被人欺负，是随便一个人都可以欺负地主家的孩子，也许已经没有人能想象到是什么一个场景，历史过去，没有留下记忆的境头，没有人敢写的历史问题，越来越多的消失。最后我爸连小学都没能毕业。到了我叔那辈，读到初中，家里还穷，那时我大伯和我爸已经娶妻生子，我叔南下广东打工，为家里带来了很多改变，新录音机，当时可是了不起，因为那时家里就一台黑白小电视。</p>
-<p>也就97年香港回归后，我叔在广东学会了很多，从打杂工、洗车，然后做厨师，在外面无依无靠，靠自己努力做到，在当时已经了不起，听爷爷说，当时叔的工资都寄回家了。家里穷，我依然记得吃肥猪肉都是很奢侈。</p>
-<p>99年，千禧年来临前，在叔的带领下来到广州。然后一直到现在，在外打工将近二十个年头。背井离乡，那时间我才10岁不到，爷爷一个人在家里照顾2个姐姐，2个哥哥，直到他们都出来打工，最后一个一个远走他乡，离他而去。</p>
-<p>20年，对于一个老人，每年过年过节一个人！春节、清明节、端午节、中秋节，都没有回去过，对于老人来说，什么又是对又是错，钱又有什么用。</p>
-<p>说说那时交通，20个小时班车，因为火车站在广州市中心，所以只能就近坐班车，从下午到晚上，然后第二天早上回到南宁，回到家里，真的不容易。现在动车4个小时，公交车和地铁方便，回家当天就到，也许以后也没有人知道，甚至大多数90后也不了而之，随着历史的迁移只会越小人知道，然后就最后没有人知道这些历史，没有人知道上一辈人的辛苦，上一辈人的辛酸。</p>
-<p>爷爷写的一手好的毛笔字，村里的红事白事都会叫他写，惟一的春联他就不敢写，都是叫村里的老师帮写，也许他还觉得自己文采不够？另外，爷爷自学了针灸，平时有空都会帮别人治治，虽然我不确认效果，但是中国的针灸历史很久。从这两个方面，就觉得爷爷有什么东西值得我去学习，在那个年代，那个压力，这种精神，永远不朽！</p>
-<h3 id="念">念</h3><p>读高中时，因为广东不给外地人读，所以回南宁读书，有几个寒暑假都在家里陪爷爷一起过。想起高中的那时候，由于学业繁忙，每天都是爷爷买菜煮饭给我吃，这就这样，一辈子的回忆。也只有这样的机会，我才能了解这些故事，少数人才记得的历史。</p>
-<p>听爷爷常常唠叨，他以为家族一辈子都不会在兴旺起来。当年闹饥荒，地主被批斗，奶奶就是被批斗而逝去。在我记忆里，没有奶奶的画面，听爷爷说，我很小时奶奶就去了。</p>
-<p>爷爷不经常提说这些历史，就像他说恨毛主席。爷爷经历了我们这一代无法想象的苦，我们又享受上一辈奋斗带来的富，已经没有多少人会记住历史。就像爷爷说希望当年那些对待他的人，让他们知道错。在别人看来，爷爷过于自我，普通人没有人会理解，别人会恶评。</p>
-<p>那又如何，我已经没有办法帮爷爷实现梦想了，因为历史永远回不去。大家习惯于现在，现在的小康生活。那一代人，知青，上山下乡，慢慢的被人忘记了，那些老人也慢慢消失。那一代人，在这近二十年，也许做了一些常人无法理解的事，大家都不了解。没有人知道为什么，也没有人关心，最后也再没有人知道了。</p>
-<p>越来越多的留守老人逝去，越来越多的留守儿童长大成人，然后背井离乡，回到旧路。</p>
-<p>有时候站在历史的回流中，看着城市里面永远不会熄灭的灯光，其实是最大的阴影，最大的黑暗。</p>
-<p>在历史的车轮碾压下，尘归尘土归土。现在的小康生活，来的太容易。每天纸醉金迷，玩物丧志，玩弄人生。最可怕的是，只会羡慕别人，完全没有自我的那些生命。一辈子就这些长，有些事要记住，有些事要去做，如果不能体会到的困境，就不会意识到自己在睡觉吧。</p>
-<p>那些无奈，辛勤的日子，依然会有人记得，带着梦想去奋斗吧！</p>
-<p><del>忆往昔，爷爷一路走好，愿天堂没有孤独。</del></p>
-<p><br></p>
-<p align="right">5月4日 夜</p>
-
-
-
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/myGrandpa.jpg" alt="my grandpa"></p>
-<h3 id="忆">忆</h3><p>爷爷生于三十年代，抗日战争之际。</p>
-<p>听爷爷说，我们家以前是地主，解放后，我们家族就走下坡路，爷辈各兄弟分散多地。</p>
-<p>读书时，还不能体会到地主阶级的痛，改革开放后家族迁于麓阳村。</p>]]>
-    
-    </summary>
-    
-      <category term="下一代" scheme="https://iHTCboy.com/tags/%E4%B8%8B%E4%B8%80%E4%BB%A3/"/>
-    
-      <category term="爷爷" scheme="https://iHTCboy.com/tags/%E7%88%B7%E7%88%B7/"/>
-    
-      <category term="留守儿童" scheme="https://iHTCboy.com/tags/%E7%95%99%E5%AE%88%E5%84%BF%E7%AB%A5/"/>
-    
-      <category term="留守老人" scheme="https://iHTCboy.com/tags/%E7%95%99%E5%AE%88%E8%80%81%E4%BA%BA/"/>
-    
-      <category term="life" scheme="https://iHTCboy.com/categories/life/"/>
     
   </entry>
   
