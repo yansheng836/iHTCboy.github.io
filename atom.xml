@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-09-17T00:59:47.772Z</updated>
+  <updated>2018-09-17T03:22:16.629Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[shell技巧5 - 全自动打包ipa]]></title>
+    <link href="https://iHTCboy.com/2018/09/17/2018-09-17_shell%E6%8A%80%E5%B7%A75_%E5%85%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85%E7%94%9F%E6%88%90ipa/"/>
+    <id>https://iHTCboy.com/2018/09/17/2018-09-17_shell技巧5_全自动打包生成ipa/</id>
+    <published>2018-09-17T03:22:16.000Z</published>
+    <updated>2018-09-17T03:22:16.629Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在研究上传ipa文件自动上传到苹果后台（后续有时间也分享给大家啊），然后，就需要制作大量的ipa文件啊！如果手工的<code>Archive</code> 那不就死啦，整个步骤，大概要5分针过程，而且不是一步到位等5分钟，所以就研究了一下项目如何自动打ipa，最后找到了 <a href="https://www.jianshu.com/p/9792b704b18f" target="_blank" rel="external">iOS项目之自动化打包 - 简书</a> 这篇文件，然后根据需求，扩展做了全能自动化的，app-store、ad-hoc、dev 三种类型证书，另外项目如果是用cocoapod，需要用 <code>-workspace</code>，否则用 <code>-project</code>，都做了相当自能化的改造，下面就来看看吧！</p>
+<a id="more"></a>
+<h3 id="2、使用说明">2、使用说明</h3><p>本文，也不打算讲 <code>xcodebuild</code> 命令的原理，大家需要自动搜索，网上很多教程了。所以，我们先过一下，怎么打包吧！</p>
+<ul>
+<li><p>把 <code>build_ipa_shell</code> 脚本和证书配置文件夹复制到项目</p>
+<p>  <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Shell-copy-script-to-project.png" alt="20180917-Shell-copy-script-to-project.png"></p>
+</li>
+<li><p>根据要求修改项目名字和配置</p>
+<p>  <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Shell-build-setting.png" alt="20180917-Shell-build-setting.png"></p>
+</li>
+<li><p>在终端执行 <code>sh build_ipa.sh</code>，不要求切换到项目的目录啊，然后选择打包的类型，然后等待就好！</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~ &#62; sh /Users/HTC/Desktop/BuildIPAExample/build_ipa_shell/build_ipa.sh &#10;Place enter the number you want to export ? [ 1:app-store 2:ad-hoc 3:dev]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>编译打包成功后，会自动打开ipa文件的目录！<br>  <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Shell-build-success-ipa.png" alt="20180917-Shell-build-success-ipa.png"></li>
+</ul>
+<h3 id="3、配置说明">3、配置说明</h3><p>上面已经说了 <code>build_ipa.sh</code>的配置，就是 <code>ExportOptions-appstore.plist</code> /<code>ExportOptions-dev.plist</code> / <code>ExportOptions-adhoc.plist</code> 三个证书的配置没有说，其实也很简单，自己配置，或者让Xcode生成配置！</p>
+<p>自己配置的就不说了，自己搜索一下教程就好，让Xcode生成，就是要 <code>Archive</code> 项目，然后选择 <code>Export...</code>：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Build-Archives.png" alt="20180917-Xcode-Build-Archives.png"></p>
+<p>上面三个文件，就对应下面的三个选项:<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Archives-Select-Method.png" alt="20180917-Xcode-Archives-Select-Method.png"></p>
+<p>如果选择手动，就是使用本地的证书（如果是选择自动，就是Xcode中登陆了开发者账号，自动生成和匹配证书）：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Archives-Select-Manually.png" alt="20180917-Xcode-Archives-Select-Manually.png"></p>
+<p>等待Xcode生成ipa包，选择 <code>Export</code>，Xcode就会自动生成ipa文件和证书配置文件，跟我们的脚本一样的：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Archives-Select-Automatically.png" alt="20180917-Xcode-Archives-Select-Automatically.png"></p>
+<p>最后，导出的文件中，更改<code>ExportOptions.plist</code> 文件名字为对应的 <code>ExportOptions-appstore.plist</code> /<code>ExportOptions-dev.plist</code> / <code>ExportOptions-adhoc.plist</code>，然后复制到  <code>build_ipa_shell</code> 脚本目录就可以啦！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Archives-ExportOptions-plist.png" alt="20180917-Xcode-Archives-ExportOptions-plist.png"></p>
+<h3 id="4、一些坑点">4、一些坑点</h3><p>打包时，遇到下面报错：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2018</span>-<span class="number">09</span>-<span class="number">17</span> <span class="number">10</span>:<span class="number">35</span>:<span class="number">23.068</span> xcodebuild[<span class="number">11322</span>:<span class="number">5883826</span>] [MT] IDEDistribution: Step failed: &lt;IDEDistributionPackagingStep: <span class="number">0x7ff88e7ab7c0</span>&gt;: Error Domain=NSCocoaErrorDomain Code=<span class="number">3840</span> <span class="string">"No value."</span> UserInfo=&#123;NSDebugDescription=No value., NSFilePath=/var/folders/<span class="number">12</span>/yqg0r8s508lfmzw6b91nh97m0000gn/T/ipatool-json-filepath-vo804k&#125;</span><br><span class="line">error: exportArchive: The data couldn’t be read because it isn’t in the correct format.</span><br><span class="line"></span><br><span class="line">Error Domain=NSCocoaErrorDomain Code=<span class="number">3840</span> <span class="string">"No value."</span> UserInfo=&#123;NSDebugDescription=No value., NSFilePath=/var/folders/<span class="number">12</span>/yqg0r8s508lfmzw6b91nh97m0000gn/T/ipatool-json-filepath-vo804k&#125;</span><br><span class="line"></span><br><span class="line">** EXPORT FAILED **</span><br></pre></td></tr></table></figure></p>
+<p>解决方法：<br>将对应打包的证书plist文件的<code>compileBitcode</code>内容由 <code>true</code> 改为 <code>false</code> 就可以：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">key</span>&gt;</span>compileBitcode<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">false</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="5、源代码">5、源代码</h3><p>具体的代码，也可参考我的Github代码：</p>
+<ul>
+<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;#&#33719;&#21462;&#33050;&#26412;&#25191;&#34892;&#30446;&#24405;&#10;scrip_path=&#34;$( cd &#34;$( dirname &#34;$&#123;BASH_SOURCE[0]&#125;&#34; )&#34; &#38;&#38; pwd )&#34;&#10;&#10;#&#24037;&#31243;&#32477;&#23545;&#36335;&#24452;&#10;project_path=$(dirname &#34;$scrip_path&#34;)&#10;&#10;#&#24037;&#31243;&#21517; &#23558;XXX&#26367;&#25442;&#25104;&#33258;&#24049;&#30340;&#24037;&#31243;&#21517;&#10;project_name=BuildIPAExample&#10;&#10;#scheme&#21517; &#23558;XXX&#26367;&#25442;&#25104;&#33258;&#24049;&#30340;sheme&#21517;&#10;scheme_name=BuildIPAExample&#10;&#10;#project_type &#39033;&#30446;&#22914;&#26524;&#26159;&#29992;cocoapod&#65292;&#23601;&#25913;&#20026; xcworkspace&#65292;&#21542;&#21017;&#29992; xcodeproj&#10;project_type=xcodeproj&#10;&#10;#&#25171;&#21253;&#27169;&#24335; Debug/Release&#10;development_mode=Debug&#10;&#10;#build&#25991;&#20214;&#22841;&#36335;&#24452;&#10;build_path=$&#123;project_path&#125;/build&#10;&#10;#plist&#25991;&#20214;&#25152;&#22312;&#36335;&#24452;&#10;exportOptionsPlistPath=$&#123;project_path&#125;/build_ipa_shell/ExportOptions-dev.plist&#10;&#10;&#10;echo &#34;Place enter the number you want to export ? [ 1:app-store 2:ad-hoc 3:dev] &#34;&#10;&#10;read number&#10;while([[ $number != 1 ]] &#38;&#38; [[ $number != 2 ]] &#38;&#38; [[ $number != 3 ]])&#10;do&#10;echo &#34;Error! Should enter 1 or 2 or 3&#34;&#10;echo &#34;Place enter the number you want to export ? [ 1:app-store 2:ad-hoc 3:dev] &#34;&#10;read number&#10;done&#10;&#10;if [ $number == 1 ];then&#10;&#9;development_mode=Release&#10;&#9;exportOptionsPlistPath=$&#123;project_path&#125;/build_ipa_shell/ExportOptions-appstore.plist&#10;&#10;elif [ $number == 2 ];then&#10;&#9;development_mode=Release&#10;&#9;exportOptionsPlistPath=$&#123;project_path&#125;/build_ipa_shell/ExportOptions-adhoc.plist&#10;else&#10;&#9;development_mode=Debug&#10;&#9;exportOptionsPlistPath=$&#123;project_path&#125;/build_ipa_shell/ExportOptions-dev.plist&#10;fi&#10;&#10;#&#23548;&#20986;.ipa&#25991;&#20214;&#25152;&#22312;&#36335;&#24452;&#10;exportIpaPath=$&#123;project_path&#125;/ipa_files/$&#123;development_mode&#125;&#10;&#10;# &#29983;&#25104;&#20445;&#23384;ipa&#25991;&#20214;&#30340;&#30446;&#24405;&#10;if [ ! -d $&#123;project_path&#125;/ipa_files ];&#10;then&#10;mkdir -p $&#123;project_path&#125;/ipa_files;&#10;fi&#10;&#10;# &#25171;&#21253;&#31867;&#22411;&#10;if [ $project_type == &#34;xcodeproj&#34; ];&#10;then&#10;&#9;project_build=project&#10;else&#10;&#9;project_build=workspace&#10;fi&#10;&#10;&#10;# &#36827;&#20837;&#39033;&#30446;&#30446;&#24405;&#65292;&#26041;&#20415;&#21518;&#38754;&#30340;&#25805;&#20316;&#10;cd $&#123;project_path&#125;&#10;&#10;&#10;&#10;echo &#39;///-----------&#39;&#10;echo &#39;/// &#27491;&#22312;&#28165;&#29702;&#24037;&#31243;&#39;&#10;echo &#39;///-----------&#39;&#10;xcodebuild \&#10;clean -configuration $&#123;development_mode&#125; -quiet  || exit&#10;&#10;&#10;echo &#39;///--------&#39;&#10;echo &#39;/// &#28165;&#29702;&#23436;&#25104;&#39;&#10;echo &#39;///--------&#39;&#10;echo &#39;&#39;&#10;&#10;echo &#39;///-----------&#39;&#10;echo &#39;/// &#27491;&#22312;&#32534;&#35793;&#24037;&#31243;:&#39;$&#123;development_mode&#125;&#10;echo &#39;///-----------&#39;&#10;xcodebuild \&#10;archive -$&#123;project_build&#125; $&#123;project_path&#125;/$&#123;project_name&#125;.$&#123;project_type&#125; \&#10;-scheme $&#123;scheme_name&#125; \&#10;-configuration $&#123;development_mode&#125; \&#10;-archivePath $&#123;build_path&#125;/$&#123;project_name&#125;.xcarchive  -quiet  || exit&#10;&#10;echo &#39;///--------&#39;&#10;echo &#39;/// &#32534;&#35793;&#23436;&#25104;&#39;&#10;echo &#39;///--------&#39;&#10;echo &#39;&#39;&#10;&#10;echo &#39;///----------&#39;&#10;echo &#39;/// &#24320;&#22987;ipa&#25171;&#21253;&#39;&#10;echo &#39;///----------&#39;&#10;xcodebuild -exportArchive -archivePath $&#123;build_path&#125;/$&#123;project_name&#125;.xcarchive \&#10;-configuration $&#123;development_mode&#125; \&#10;-exportPath $&#123;exportIpaPath&#125; \&#10;-exportOptionsPlist $&#123;exportOptionsPlistPath&#125; \&#10;-quiet || exit&#10;&#10;if [ -e $exportIpaPath/$scheme_name.ipa ]; then&#10;echo &#39;///----------&#39;&#10;echo &#39;/// ipa&#21253;&#24050;&#23548;&#20986;&#39;&#10;echo &#39;///----------&#39;&#10;open $exportIpaPath&#10;else&#10;echo &#39;///-------------&#39;&#10;echo &#39;/// ipa&#21253;&#23548;&#20986;&#22833;&#36133; &#39;&#10;echo &#39;///-------------&#39;&#10;fi&#10;echo &#39;///------------&#39;&#10;echo &#39;/// &#25171;&#21253;ipa&#23436;&#25104;  &#39;&#10;echo &#39;///-----------=&#39;&#10;echo &#39;&#39;&#10;&#10;# &#25171;&#24320;&#29983;&#25104;ipa&#30340;&#30446;&#24405;&#10;open $&#123;exportIpaPath&#125;&#10;&#10;# echo &#39;///-------------&#39;&#10;# echo &#39;/// &#24320;&#22987;&#21457;&#24067;ipa&#21253; &#39;&#10;# echo &#39;///-------------&#39;&#10;&#10;# if [ $number == 1 ];then&#10;&#10;# #&#39564;&#35777;&#24182;&#19978;&#20256;&#21040;App Store&#10;# # &#23558;-u &#21518;&#38754;&#30340;XXX&#26367;&#25442;&#25104;&#33258;&#24049;&#30340;AppleID&#30340;&#36134;&#21495;&#65292;-p&#21518;&#38754;&#30340;XXX&#26367;&#25442;&#25104;&#33258;&#24049;&#30340;&#23494;&#30721;&#10;# altoolPath=&#34;/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool&#34;&#10;# &#34;$altoolPath&#34; --validate-app -f $&#123;exportIpaPath&#125;/$&#123;scheme_name&#125;.ipa -u XXX -p XXX -t ios --output-format xml&#10;# &#34;$altoolPath&#34; --upload-app -f $&#123;exportIpaPath&#125;/$&#123;scheme_name&#125;.ipa -u  XXX -p XXX -t ios --output-format xml&#10;# else&#10;&#10;# #&#19978;&#20256;&#21040;Fir&#10;# # &#23558;XXX&#26367;&#25442;&#25104;&#33258;&#24049;&#30340;Fir&#24179;&#21488;&#30340;token&#10;# fir login -T XXX&#10;# fir publish $exportIpaPath/$scheme_name.ipa&#10;&#10;# fi&#10;&#10;exit 0</span><br></pre></td></tr></table></figure>
+<h3 id="6、总结">6、总结</h3><p>通过本次脚本，又让效率提升了n倍，以后打包不在害怕啦！！！另外，脚本中，还包含 上传到 <code>AppStore</code> 或第三方平台的功能，这里就先不写啦，大家有兴趣可以自行实践，和前面几篇技巧一样，大家应该能感受到shell脚本编程的魅力，希望大家能举一反三，授鱼不如授渔！生活工作中结合 sehll 脚本，提高效率和自动化，珍爱时间不是梦！</p>
+<p>后续有更多技巧，会继续给大家分享，期待~</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://www.jianshu.com/p/9792b704b18f" target="_blank" rel="external">iOS项目之自动化打包 - 简书</a></li>
+<li><a href="https://forums.developer.apple.com/thread/100065" target="_blank" rel="external">Xcode9 iOS export archive fails on correct format |Apple Developer Forums</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在研究上传ipa文件自动上传到苹果后台（后续有时间也分享给大家啊），然后，就需要制作大量的ipa文件啊！如果手工的<code>Archive</code> 那不就死啦，整个步骤，大概要5分针过程，而且不是一步到位等5分钟，所以就研究了一下项目如何自动打ipa，最后找到了 <a href="https://www.jianshu.com/p/9792b704b18f">iOS项目之自动化打包 - 简书</a> 这篇文件，然后根据需求，扩展做了全能自动化的，app-store、ad-hoc、dev 三种类型证书，另外项目如果是用cocoapod，需要用 <code>-workspace</code>，否则用 <code>-project</code>，都做了相当自能化的改造，下面就来看看吧！</p>]]>
+    
+    </summary>
+    
+      <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
+    
+      <category term="ipa" scheme="https://iHTCboy.com/tags/ipa/"/>
+    
+      <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
+    
+      <category term="xcodebuild" scheme="https://iHTCboy.com/tags/xcodebuild/"/>
+    
+      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[shell技巧4 - nm命令解决AppStore2.5.2被拒问题]]></title>
@@ -3281,62 +3352,6 @@
       <category term="iTerm配置导出" scheme="https://iHTCboy.com/tags/iTerm%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA/"/>
     
       <category term="iTerm配置迁移" scheme="https://iHTCboy.com/tags/iTerm%E9%85%8D%E7%BD%AE%E8%BF%81%E7%A7%BB/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[mac版QQ聊天信息备份与导出方法]]></title>
-    <link href="https://iHTCboy.com/2018/05/08/2018-05-08_mac%E7%89%88QQ%E8%81%8A%E5%A4%A9%E4%BF%A1%E6%81%AF%E5%A4%87%E4%BB%BD%E4%B8%8E%E5%AF%BC%E5%87%BA%E6%96%B9%E6%B3%95/"/>
-    <id>https://iHTCboy.com/2018/05/08/2018-05-08_mac版QQ聊天信息备份与导出方法/</id>
-    <published>2018-05-08T11:35:16.000Z</published>
-    <updated>2018-07-08T10:08:58.995Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>最近，我司终于更换新电脑的计划落实啦！！！</p>
-<blockquote>
-<p>Mac mini 3.0GHz 双核 Intel Core i7 处理器 (Turbo Boost 高达 3.5GHz)<br>16GB 1600MHz LPDDR3 SDRAM<br>1TB 融合硬盘<br>Intel Iris Graphics 图形处理器</p>
-</blockquote>
-<p>非常值的可贺！然而，就是新电脑，一切都是新！一切都是白！！非常多工具的数据需要迁移，开发环境需要配置，最近也打算总结一下新电脑配置方面的文章，作为自己备份，或者给新手参考，相信有很大帮助。今天就先从QQ说起吧~</p>
-<a id="more"></a>
-<h3 id="正题">正题</h3><p>说回来，因为QQ内容是工作的主要记录，所以，</p>
-<h4 id="企业QQ聊天内容迁移">企业QQ聊天内容迁移</h4><p>将下面目录：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>用户名<span class="regexp">/Library/</span>Containers<span class="regexp">/com.tencent.eimmac/</span>Data<span class="regexp">/Library/</span>Application Support<span class="regexp">/QQ</span></span><br></pre></td></tr></table></figure>
-<p>复制目录下所有内容到新电脑，就可以啦!</p>
-<h4 id="用户版QQ聊天内容迁移">用户版QQ聊天内容迁移</h4><p>将下面目录：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>用户名<span class="regexp">/Library/</span>Containers<span class="regexp">/com.tencent.qq/</span>Data<span class="regexp">/Library/</span>Application Support<span class="regexp">/QQ/</span></span><br></pre></td></tr></table></figure>
-<p>复制目录下所有内容到新电脑，</p>
-<p>如果需要把聊天中的图片也迁移，就需要在复制目录：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>用户名<span class="regexp">/Library/</span>Containers<span class="regexp">/com.tencent.qq/</span>Data<span class="regexp">/Documents/</span></span><br></pre></td></tr></table></figure>
-<p>注意：</p>
-<ul>
-<li>上面目录中 <code>用户名</code> 是你电脑的账户名</li>
-<li>企业QQ是在com.tencent.eimmac目录下，而用户版QQ是在 com.tencent.qq 下</li>
-</ul>
-<h4 id="授鱼&amp;授渔">授鱼&amp;授渔</h4><p>如果是其它功能的内容迁移，道理相似，把对应的软件的目录的内容复制到新电脑就可以了。当然，想方便查看软件的目录备份内容，可以用 CleanMyMac 卸载器 查看：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180508-CleanMyMac_unloader.png" alt="CleanMyMac_unloader"></p>
-<h3 id="总结">总结</h3><p>作为程序员，越来越觉得云端的好处，迁移数据是一件痛苦（辛苦）的事件，如果是电脑小白，那更加是的。所以，有必要作一些更好的方法，比如云端备份软件的配置，用脚本来操作迁移过程，因为不是经常性换电脑，所以这个就不作进一步实践了。</p>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>最近，我司终于更换新电脑的计划落实啦！！！</p>
-<blockquote>
-<p>Mac mini 3.0GHz 双核 Intel Core i7 处理器 (Turbo Boost 高达 3.5GHz)<br>16GB 1600MHz LPDDR3 SDRAM<br>1TB 融合硬盘<br>Intel Iris Graphics 图形处理器</p>
-</blockquote>
-<p>非常值的可贺！然而，就是新电脑，一切都是新！一切都是白！！非常多工具的数据需要迁移，开发环境需要配置，最近也打算总结一下新电脑配置方面的文章，作为自己备份，或者给新手参考，相信有很大帮助。今天就先从QQ说起吧~</p>]]>
-    
-    </summary>
-    
-      <category term="mac版QQ信息导出" scheme="https://iHTCboy.com/tags/mac%E7%89%88QQ%E4%BF%A1%E6%81%AF%E5%AF%BC%E5%87%BA/"/>
-    
-      <category term="聊天内容迁移" scheme="https://iHTCboy.com/tags/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E8%BF%81%E7%A7%BB/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
