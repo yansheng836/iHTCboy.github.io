@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-nm -nm path.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-file path - static Lib.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-file path - dynamically Lib.png">
-<meta property="og:updated_time" content="2018-08-05T16:07:40.467Z">
+<meta property="og:updated_time" content="2018-09-17T00:51:10.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac查看文件内容常用的命令小结">
 <meta name="twitter:description" content="前言最近苹果的热更新和私有库问题检查的更严了，如果应用被拒，苹果在拒绝信中会说到使用strings/otool/nm命令进行自查，所以总结了一些命令，方便查找和定位文件内容相关信息。
@@ -300,6 +300,7 @@ var _hmt = _hmt || [];
 <li><p>使用示例：<br>  <code>nm path</code> //得到Mach-O中的程序符号表</p>
 <p>  <code>nm -nm path</code>//目标文件的所有符号<br>  <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/02/0204-nm -nm path.png" alt="nm -nm path.png"></p>
 <p>  符号表中标示为 undefined，意思是目标文件引用了类_XXX（XXX库），不过这并没有实现它。</p>
+<p> <code>nm -u path</code> //Display only undefined symbols.</p>
 </li>
 <li><p>更多用法 <code>man nm</code></p>
 </li>

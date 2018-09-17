@@ -238,6 +238,7 @@ var _hmt = _hmt || [];
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">dlopen</span><span class="params">()</span></span>, <span class="function"><span class="title">dlsym</span><span class="params">()</span></span>, respondsToSelector:, performSelector:, <span class="function"><span class="title">method_exchangeImplementations</span><span class="params">()</span></span>,</span><br></pre></td></tr></table></figure>
 <p>然后在 <a href="https://zhuanlan.zhihu.com/p/41863648">「iOS」热更新审核被拒的解决方法</a> 文章中，找到可以打印下第三方的.a文件看看，看有没有 dlopen(), dlsym()，命令行：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nm -u libwechaat.a &#62;&#62; xxx.txt</span><br></pre></td></tr></table></figure>
+<p>注：<code>nm -u path</code>：Display only undefined symbols。更多 <code>nm</code> 命令可查看我之前总结的文章 <a href="https://ihtcboy.com/2018/02/04/2018-02-04_Mac查看文件内容常用的命令小结/">Mac查看文件内容常用的命令小结</a></p>
         
           <a class="article-more-a" href="/2018/09/16/2018-09-16_shell技巧4_nm命令解决AppStore被拒问题/#more">more >></a>
         
