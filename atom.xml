@@ -3264,7 +3264,7 @@
     <link href="https://iHTCboy.com/2018/06/09/2018-06-09_iOSApp%E8%BD%AC%E8%AE%A9%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     <id>https://iHTCboy.com/2018/06/09/2018-06-09_iOSApp转让问题总结/</id>
     <published>2018-06-09T04:49:16.000Z</published>
-    <updated>2018-09-19T14:43:04.224Z</updated>
+    <updated>2018-09-19T14:45:23.605Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>因为转移应用后，没有使用新账号的证书打包上传时报错：</p>
 <blockquote>
 <p>iTunes Store Operation Failed ERROR ITMS-90159: “Invalid provisioning profile…”</p>
