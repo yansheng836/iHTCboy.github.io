@@ -988,6 +988,113 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-2018-06-09_iOSApp转让问题总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/09/2018-06-09_iOSApp转让问题总结/">AppStore App 转让问题总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/09/2018-06-09_iOSApp转让问题总结/" class="archive-article-date">
+  	<time datetime="2018-06-09T04:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、前言">1、前言</h3><p>因为转移应用后，没有使用新账号的证书打包上传时报错：</p>
+<blockquote>
+<p>iTunes Store Operation Failed ERROR ITMS-90159: “Invalid provisioning profile…”</p>
+</blockquote>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/06/20180609-AppStore-ERROR-ITMS-90159.png" alt="20180609-AppStore-ERROR-ITMS-90159.png"></p>
+<p>修改证书后重新上传时，警告⚠️：</p>
+<blockquote>
+<p>WARNING ITMS-90076: “Potential Loss of Keychain Access. The previous version of software has an application-identifier value of [‘HZVSAS9COL.com.ihtcboy.abc’] and the new version of software being submitted has an application-identifier of [‘SEGO5FPL9U.com.qq.abc’]. This will result in a loss of keychain access.”</p>
+</blockquote>
+<p>这个是因为证书团队 ID更变的警告，不影响上传到AppStore。需要注意，如果应用有使用 <code>keychain group</code>，则会导致原来用 <code>keychain</code>存储的数据掉失。如果与账号有关联的逻辑，最好在更新版本前通知用户，告诉注意事项，是否要绑定手机等。</p>
+<ul>
+<li><a href="https://developer.apple.com/library/content/qa/qa1726/_index.html">Technical Q&amp;A QA1726: Resolving the Potential Loss of Keychain Access warning</a></li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/06/09/2018-06-09_iOSApp转让问题总结/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AppStore</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">App转让</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ITMS-90159</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/09/2018-06-09_iOSApp转让问题总结/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2018-05-26_iOS快速清除全部的消息推送" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1051,101 +1158,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/26/2018-05-26_iOS快速清除全部的消息推送/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018-05-12_iTerm配置导出与迁移方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/12/2018-05-12_iTerm配置导出与迁移方法/">iTerm配置导出与迁移方法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/12/2018-05-12_iTerm配置导出与迁移方法/" class="archive-article-date">
-  	<time datetime="2018-05-12T15:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、前言">1、前言</h3><p>iTerm软件的实用就不用在说了，最近迁移新工作电脑，打算把自己电脑配置好的iTerm迁移到新电脑，网上找了很久都没有找到教程，看到iTerm的profiles下有 ‘Copy Profile as JSON’，但没有导出成文件，也没有找到导入配置的地方！！ 找了好久，最后还是在官网上找到了说明，所以，软件的使用教程，直接去官网找，别在谷歌百度了！！！</p>
-        
-          <a class="article-more-a" href="/2018/05/12/2018-05-12_iTerm配置导出与迁移方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iTerm2_DynamicProfiles</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">iTerm配置导出</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">iTerm配置迁移</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/12/2018-05-12_iTerm配置导出与迁移方法/">显示全文 >></a>
         </p>
       
 
@@ -1448,6 +1460,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sandbox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">App转让</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ITMS-90159</a>
               </li>
              
               <li class="article-tag-list-item">
