@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Archives-Select-Manually.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Archives-Select-Automatically.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Archives-ExportOptions-plist.png">
-<meta property="og:updated_time" content="2018-09-17T03:37:34.892Z">
+<meta property="og:updated_time" content="2018-09-19T14:19:03.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell技巧5 - 全自动打包ipa">
 <meta name="twitter:description" content="1、前言最近在研究上传ipa文件自动上传到苹果后台（后续有时间也分享给大家啊），然后，就需要制作大量的ipa文件啊！如果手工的Archive 那不就死啦，整个步骤，大概要5分钟过程，而且不是一步到位等5分钟，所以就研究了一下项目如何自动打ipa，最后找到了 iOS项目之自动化打包 - 简书 这篇文件，然后根据需求，扩展做了全能自动化的，app-store、ad-hoc、dev 三种类型证书，另外项">
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1、前言">1、前言</h3><p>最近在研究上传ipa文件自动上传到苹果后台（后续有时间也分享给大家啊），然后，就需要制作大量的ipa文件啊！如果手工的<code>Archive</code> 那不就死啦，整个步骤，大概要5分钟过程，而且不是一步到位等5分钟，所以就研究了一下项目如何自动打ipa，最后找到了 <a href="https://www.jianshu.com/p/9792b704b18f" target="_blank" rel="external">iOS项目之自动化打包 - 简书</a> 这篇文件，然后根据需求，扩展做了全能自动化的，app-store、ad-hoc、dev 三种类型证书，另外项目如果是用cocoapod，需要用 <code>-workspace</code>，否则用 <code>-project</code>，都做了相当自能化的改造，下面就来看看吧！</p>
-<p>ps: <code>fastlane</code> 当然能做到这些事情，但是这个工具太重，需要的配置也需要熟悉，对于刚毕业或陌生的同学有点难，学习一下<code>ruby</code>也是好事~</p>
+<p>ps: <code>fastlane</code> 当然能做到这些事情，但是这个工具太重，需要的配置也需要熟悉，对于刚毕业或陌生的同学有点难，学习一下<code>ruby</code>也是好事，大家有兴趣可以自行研究一下~</p>
 <a id="more"></a>
 <h3 id="2、使用说明">2、使用说明</h3><p>本文，也不打算讲 <code>xcodebuild</code> 命令的原理，大家需要自动搜索，网上很多教程了。所以，我们先过一下，怎么打包吧！</p>
 <ul>
@@ -255,6 +255,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>编译打包成功后，会自动打开ipa文件的目录！<br>  <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Shell-build-success-ipa.png" alt="20180917-Shell-build-success-ipa.png"></li>
 </ul>
+<p>如果配置好后，只要执行一下命令，就自动打ipa包，并且成功后自己打开ipa包的目录，简直不能在简单了！</p>
 <h3 id="3、配置说明">3、配置说明</h3><p>上面已经说了 <code>build_ipa.sh</code>的配置，就是 <code>ExportOptions-appstore.plist</code> /<code>ExportOptions-dev.plist</code> / <code>ExportOptions-adhoc.plist</code> 三个证书的配置没有说，其实也很简单，自己配置，或者让Xcode生成配置！</p>
 <p>自己配置的就不说了，自己搜索一下教程就好，让Xcode生成，就是要 <code>Archive</code> 项目，然后选择 <code>Export...</code>：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180917-Xcode-Build-Archives.png" alt="20180917-Xcode-Build-Archives.png"></p>
@@ -278,6 +279,7 @@ var _hmt = _hmt || [];
 <li><a href="https://forums.developer.apple.com/thread/100065" target="_blank" rel="external">Xcode9 iOS export archive fails on correct format |Apple Developer Forums</a></li>
 <li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
 <li><a href="https://github.com/iHTCboy/BuildIPAExample" target="_blank" rel="external">iHTCboy/BuildIPAExample: Build IPA file Example</a></li>
+<li><a href="https://ihtcboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/">shell技巧1 - 生成ipa文件 | iHTCboy’s blog</a></li>
 </ul>
 <p><br></p>
 <ul>
