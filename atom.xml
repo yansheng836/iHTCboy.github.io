@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-09-24T13:19:04.378Z</updated>
+  <updated>2018-09-24T13:20:41.777Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/09/24/2018-09-24_%E8%8B%B9%E6%9E%9C%E5%AE%A1%E6%A0%B8%E8%A2%AB%E6%8B%92PLA_2.3/"/>
     <id>https://iHTCboy.com/2018/09/24/2018-09-24_苹果审核被拒PLA_2.3/</id>
     <published>2018-09-24T06:49:16.000Z</published>
-    <updated>2018-09-24T13:19:04.378Z</updated>
+    <updated>2018-09-24T13:20:41.777Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近更新了一下之前开源的一些iOS App，适配了一下iPhone X / Xs / XR / Xs Max，然后收到这样的拒审信：</p>
 <blockquote>
 <p>2018年9月24日 上午1:08<br>发件人 Apple</p>
@@ -79,7 +79,7 @@
 <p>App Store Review</p>
 </blockquote>
 <h3 id="3、总结">3、总结</h3><p>还是第一次遇到这样的情况，苹果不允许发布无上线的硬件或软件产品，也就是说，不能写错名字！！！确实，这样的要求，完全合理！！！</p>
-<p>经过这事，苹果的审核确实还是存在很多问题，经过这几年，审核速度变快的，但是“审核质量” 却一直没有得到提升，导致开发者和审核员一直来回被拒来拒绝，相互怀疑和猜测，导致效率并没有真正的提高。希望，后续苹果能提供更优质的审核机制和流程标准。像谷歌play那样的机器审核也未必不行，后续在抽查，发现违反的，直接下架。这样对于开发者，都没有什么要向老板交待，直接了当！</p>
+<p>经过这事，苹果的审核确实还是存在很多问题，经过这几年，审核速度可以给予肯定，从原来一个星期，变快到1~2天，但是“审核质量” 却一直没有得到提升，导致开发者和审核员一直来回被拒来拒绝，相互怀疑和猜测，导致效率并没有真正的提高。希望，后续苹果能提供更优质的审核机制和流程标准。像谷歌play那样的机器审核也未必不行，后续在抽查，发现违反的，直接下架。这样对于开发者，都没有什么要向老板交待，直接了当！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="http://swiftcn.io/topics/48?reply=185" target="_blank" rel="external">最近被拒，不知道什么原因，内容是 PLA 2.3 - Swift中国</a></li>
 <li><a href="https://www.apple.com/cn/shop/buy-iphone/iphone-xr" target="_blank" rel="external">购买 iPhone XR - Apple (中国)</a></li>
