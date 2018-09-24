@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-09-19T14:19:03.336Z</updated>
+  <updated>2018-09-24T07:32:11.576Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[AppStore 拒绝审核原因：PLA 2.3]]></title>
+    <link href="https://iHTCboy.com/2018/09/24/2018-09-24_%E8%8B%B9%E6%9E%9C%E5%AE%A1%E6%A0%B8%E8%A2%AB%E6%8B%92PLA_2.3/"/>
+    <id>https://iHTCboy.com/2018/09/24/2018-09-24_苹果审核被拒PLA_2.3/</id>
+    <published>2018-09-24T06:49:16.000Z</published>
+    <updated>2018-09-24T07:32:11.576Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近更新了一下之前开源的一些iOS App，适配了一下iPhone X / Xs / XR / Xs Max，然后收到这样的拒审信：</p>
+<blockquote>
+<p>2018年9月24日 上午1:08<br>发件人 Apple</p>
+<ol>
+<li>10.0 Before You Submit: Program License Agreement<br>PLA 2.3</li>
+</ol>
+<p>Your app or its metadata contains references to a pre-release version of Apple software or hardware. Apps with compatibility references to a pre-GM version of iOS SDK or pre-released Apple hardware are not in compliance with the Apple Developer Program License Agreement.</p>
+<p>Specifically, section 2.3 states:</p>
+<p>“Apple may provide You with pre-release versions of the Apple Software or related services that constitute Apple Confidential Information and are subject to the confidentiality obligations of this Agreement.”</p>
+<p>Next Steps</p>
+<p>Please remove all references to pre-release versions of Apple software and hardware from your app and its metadata.</p>
+<p>Since your App Store Connect status is Metadata Rejected, we do NOT require a new binary. To revise the metadata, visit App Store Connect to select your app and revise the desired metadata values. Once you’ve completed all changes, reply to this message in Resolution Center and we will continue the review.</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="2、解决">2、解决</h3><p>刚开始以为自己使用了 Xcode GM 版本提交应用，但反复检查就是正式的Xcode Version 10.0 (10A255)!</p>
+<p>最后，还是通过网络搜索找到答案：</p>
+<blockquote>
+<p>此版本的新增内容:</p>
+<ul>
+<li>v5.0.0 适配iPhoneX、XR、Xmax ；</li>
+<li>修复新闻列表闪退问题；</li>
+<li>优化一些功能细节体验</li>
+</ul>
+</blockquote>
+<p>引用网友的话：</p>
+<blockquote>
+<p>你的发布介绍里提到了苹果没开卖的iPadPro，删掉重新审核就行，不用重新上传包。回复大概这意思</p>
+</blockquote>
+<p>然后搜索iPhone Xs上市时间?</p>
+<blockquote>
+<p>将在9月14日周五开启预售，9月21日正式上市</p>
+</blockquote>
+<p>没毛病！！！今天已经2018年9月24号啦！<br>最后，还是发现，字母拼写错啦！！！</p>
+<blockquote>
+<ul>
+<li>v5.0.0 适配 iPhone X、XR、XS Max；</li>
+<li>修复新闻列表闪退问题；</li>
+<li>优化一些功能细节体验</li>
+</ul>
+</blockquote>
+<h3 id="3、总结">3、总结</h3><p>还是第一次遇到这样的情况，苹果不允许发布无上线的硬件或软件产品，也就是说，不能写错名字！！！确实，这样的要求，完全合理！！！</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="http://swiftcn.io/topics/48?reply=185" target="_blank" rel="external">最近被拒，不知道什么原因，内容是 PLA 2.3 - Swift中国</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近更新了一下之前开源的一些iOS App，适配了一下iPhone X / Xs / XR / Xs Max，然后收到这样的拒审信：</p>
+<blockquote>
+<p>2018年9月24日 上午1:08<br>发件人 Apple</p>
+<ol>
+<li>10.0 Before You Submit: Program License Agreement<br>PLA 2.3</li>
+</ol>
+<p>Your app or its metadata contains references to a pre-release version of Apple software or hardware. Apps with compatibility references to a pre-GM version of iOS SDK or pre-released Apple hardware are not in compliance with the Apple Developer Program License Agreement.</p>
+<p>Specifically, section 2.3 states:</p>
+<p>“Apple may provide You with pre-release versions of the Apple Software or related services that constitute Apple Confidential Information and are subject to the confidentiality obligations of this Agreement.”</p>
+<p>Next Steps</p>
+<p>Please remove all references to pre-release versions of Apple software and hardware from your app and its metadata.</p>
+<p>Since your App Store Connect status is Metadata Rejected, we do NOT require a new binary. To revise the metadata, visit App Store Connect to select your app and revise the desired metadata values. Once you’ve completed all changes, reply to this message in Resolution Center and we will continue the review.</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="AppStore" scheme="https://iHTCboy.com/tags/AppStore/"/>
+    
+      <category term="PLA2.3" scheme="https://iHTCboy.com/tags/PLA2-3/"/>
+    
+      <category term="review-guidelines" scheme="https://iHTCboy.com/tags/review-guidelines/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[shell技巧5 - 全自动打包ipa]]></title>
@@ -3381,52 +3468,6 @@
       <category term="App转让" scheme="https://iHTCboy.com/tags/App%E8%BD%AC%E8%AE%A9/"/>
     
       <category term="ITMS-90159" scheme="https://iHTCboy.com/tags/ITMS-90159/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[iOS快速清除全部的消息推送]]></title>
-    <link href="https://iHTCboy.com/2018/05/26/2018-05-26_iOS%E5%BF%AB%E9%80%9F%E6%B8%85%E9%99%A4%E5%85%A8%E9%83%A8%E7%9A%84%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/"/>
-    <id>https://iHTCboy.com/2018/05/26/2018-05-26_iOS快速清除全部的消息推送/</id>
-    <published>2018-05-26T15:46:16.000Z</published>
-    <updated>2018-07-12T15:09:02.721Z</updated>
-    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>越来越多的应用，请求用户推送权限，一般情况下，普通应用我是不允许的，除了通讯应用、支付宝（银行app有很多不羊毛的活动推送，不允许）、GTD（Things、Due）、健身（Kepp、SixPack），其它的像淘宝天猫、京东，每次打开app，都要反复问我还要不要打开推送，你们就不能先调查一下我用的iOS系统多久吗？请问一个用了4年以上的用户，如果他还想打你们家的app推送，难道不知道在那里开吗？脑子进水吧。</p>
-<h3 id="iOS10_以上">iOS10 以上</h3><p>如果是iOS10以上，并且是iPhone 6S、iPhone 6S plus ，就可以利用3D Touch一键清除通知。</p>
-<a id="more"></a>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Clear-All-Push-notification.jpeg" alt="20180526-iOS-Clear-All-Push-notification.jpeg"></p>
-<p>如果是点击推送的 x ，就会出现 Clear，点击后会清除当前区的推送<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Push-notification-Clear.jpeg" alt="20180526-iOS-Push-notification-Clear.jpeg"></p>
-<p>如果长压（3D Touch），就出现 Clear All Notifications，点击就会清楚全部的推送<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Clear-All-Push-notification.jpeg" alt="20180526-iOS-Clear-All-Push-notification.jpeg"></p>
-<h3 id="iOS_9">iOS 9</h3><p>如果是iOS 9 和更老的机型，首先按住锁屏上方的把手把通知中心拉下来，拖到底，松手，然后再向上把它拖回去，锁屏瞬间清空!</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Push-notification-Pull.png" alt="20180526-iOS-Push-notification-Pull.png"></p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/05/20180526-iOS-Push-notification-Push.png" alt="20180526-iOS-Push-notification-Push.png"></p>
-<h3 id="总结">总结</h3><p>iOS10以后的通知中心，合并了全部和未读消息，然后没有提供一个更好的展示形式，只是推送内容和交互更新，并没有解决推送过多的问题，就比如微信推送的消息是最多的，并且推送的类型也不一样，轻重急缓不分！<br>推送作为中国人工作和生活提示，已经越来越重要，更加高效和智能的推送展现，迫在眉睫。</p>
-<p>听说iOS12会重新设计通知，希望是真的，非常期待，因为苹果这2年已经没有为系统做更多的创新或颠覆，希望苹果有所创新！</p>
-<h3 id="参考引用">参考引用</h3><ul>
-<li><a href="https://sspai.com/post/35483" target="_blank" rel="external">具透丨好的 iOS 体验，从用好通知开始：iOS 10 通知详解 - 少数派</a></li>
-<li><a href="https://www.i4.cn/news_detail_6588.html" target="_blank" rel="external">教你快速清除烦人的消息推送<em>iPhone技巧</em>爱思助手</a></li>
-<li><a href="http://www.gq.com.cn/digital/news_14320c4d37b8beea-3.html#pid=4" target="_blank" rel="external">NO.3一键清除通知_数码_GQ男士网</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="前言">前言</h3><p>越来越多的应用，请求用户推送权限，一般情况下，普通应用我是不允许的，除了通讯应用、支付宝（银行app有很多不羊毛的活动推送，不允许）、GTD（Things、Due）、健身（Kepp、SixPack），其它的像淘宝天猫、京东，每次打开app，都要反复问我还要不要打开推送，你们就不能先调查一下我用的iOS系统多久吗？请问一个用了4年以上的用户，如果他还想打你们家的app推送，难道不知道在那里开吗？脑子进水吧。</p>
-<h3 id="iOS10_以上">iOS10 以上</h3><p>如果是iOS10以上，并且是iPhone 6S、iPhone 6S plus ，就可以利用3D Touch一键清除通知。</p>]]>
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://iHTCboy.com/tags/iOS/"/>
-    
-      <category term="消息推送" scheme="https://iHTCboy.com/tags/%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
