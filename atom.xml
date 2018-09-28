@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-09-28T14:31:28.774Z</updated>
+  <updated>2018-09-28T14:34:39.452Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/09/27/2018-09-27-Hopper-Disassembler%E9%80%86%E5%90%91WD-MyPassport%20%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%8F%E5%8E%86/"/>
     <id>https://iHTCboy.com/2018/09/27/2018-09-27-Hopper-Disassembler逆向WD-MyPassport 的失败经历/</id>
     <published>2018-09-27T13:49:16.000Z</published>
-    <updated>2018-09-28T14:31:28.774Z</updated>
+    <updated>2018-09-28T14:34:39.452Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>一直以来，用是使用西数的移动硬盘，最开始256G的 <code>My Passport</code>，当时也不知道，在电脑城就买了，回家发现可以设置密码，当然，我记得有密码的存储设备，是台电的U盘，当年16G的加密U盘，我也有3个，所以，之后就与加密的存储设备相惜相爱，现在西数的移动硬盘也是几代后的AES 256位硬件加密。然后，几天前，购买了4T的 WD My Passport 加密移动硬盘，设置了一个新密码，过完中秋，发现！密码记不起来了！！！</p>
 <a id="more"></a>
 <h3 id="2、怎么办？">2、怎么办？</h3><p>先说一下，WD怎么打开硬盘，密码位数不限制，字数数据都可以，然后，只能点击界面上的 <code>硬盘解锁</code> 才能解锁。按回车没有反应：</p>
@@ -40,7 +40,13 @@
 <h3 id="总结">总结</h3><p>最后，查了一些方法，也没有办法修改这个硬盘的这个目录属性，唉，这个方法不知道有没有效果？？？ 最后，还是乱输入时，记起了密码！！！然后就没有然后了。</p>
 <p>总结。西数硬盘这个5次失败密码要重新链接的功能，让破解密码变得复杂，当然，能一直尝试密码也是有好处的。</p>
 <p>最后，发现会一点逆向技术，不管是正向的开发，还是逆向的开发，都会对提高自己开发的系统的安全性，有更好的思考！！！另外，真的需要有时候，回来学习一下汇编语言，是提高逆向内功的必经之路，在这里，先立个目录，回头尝尝，大家一起加油~ 监督！</p>
-<h3 id="参考">参考</h3><p><br></p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://www.jianshu.com/p/c04ac36c6641" target="_blank" rel="external">最简单的Hopper Disassembler玩转Mac逆向 - 简书</a></li>
+<li><a href="http://www.blogfshare.com/ioss-hopper.html" target="_blank" rel="external">iOS安全–使用Hopper修改程序逻辑跳过验证</a></li>
+<li><a href="https://bestswifter.com/app-crack/" target="_blank" rel="external">一个数字的魔法——破解Mac上198元的Paw</a></li>
+<li><a href="https://www.jianshu.com/p/33e40af6e328" target="_blank" rel="external">Mac OSX 之自己动手初步学习破解软件入门 - 简书</a></li>
+</ul>
+<p><br></p>
 <ul>
 <li>如有疑问，欢迎在评论区一起讨论！</li>
 <li>如有不正确的地方，欢迎指导！</li>
