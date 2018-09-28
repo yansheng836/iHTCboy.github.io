@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Hopper Disassembler 逆向西数硬盘 WD My Passport 的失败经历]]></title>
-    <link href="https://iHTCboy.com/2018/09/27/2018-09-27-Hopper-Disassembler%E9%80%86%E5%90%91WD-MyPassport%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%8F%E5%8E%86/"/>
-    <id>https://iHTCboy.com/2018/09/27/2018-09-27-Hopper-Disassembler逆向WD-MyPassport的失败经历/</id>
+    <link href="https://iHTCboy.com/2018/09/27/2018-09-27-Hopper%E9%80%86%E5%90%91WD-MyPassport%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%8F%E5%8E%86/"/>
+    <id>https://iHTCboy.com/2018/09/27/2018-09-27-Hopper逆向WD-MyPassport的失败经历/</id>
     <published>2018-09-27T13:49:16.000Z</published>
     <updated>2018-09-28T14:34:39.452Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>一直以来，用是使用西数的移动硬盘，最开始256G的 <code>My Passport</code>，当时也不知道，在电脑城就买了，回家发现可以设置密码，当然，我记得有密码的存储设备，是台电的U盘，当年16G的加密U盘，我也有3个，所以，之后就与加密的存储设备相惜相爱，现在西数的移动硬盘也是几代后的AES 256位硬件加密。然后，几天前，购买了4T的 WD My Passport 加密移动硬盘，设置了一个新密码，过完中秋，发现！密码记不起来了！！！</p>
