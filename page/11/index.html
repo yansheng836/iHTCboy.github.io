@@ -210,6 +210,103 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2015_iOS自定义版本更新检查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/26/2015_iOS自定义版本更新检查/">iOS自定义版本更新检查</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/26/2015_iOS自定义版本更新检查/" class="archive-article-date">
+  	<time datetime="2015-04-26T05:01:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、效果图">1、效果图</h2><p><img src="http://upload-images.jianshu.io/upload_images/99517-cc725ddfef91fb35.PNG" alt="提示新版本"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-ba566e2120caa5ed.PNG" alt="提示新版本（读取了AppStore写的更新方案）"></p>
+<h2 id="2、关键点">2、关键点</h2><p>请求<code>http://itunes.apple.com/lookup?id=968615456</code>，就会返回关于这个应用的详细内容的JSON数据，后面就简单了吧</p>
+        
+          <a class="article-more-a" href="/2015/04/26/2015_iOS自定义版本更新检查/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">更新</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">版本</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/26/2015_iOS自定义版本更新检查/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2015_推荐GitHub很火的两个视图转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1093,106 +1190,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-2015_iOS单独集成QQ分享功能的苦逼经验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/27/2015_iOS单独集成QQ分享功能的苦逼经验/">iOS单独集成QQ分享功能的苦逼经验</a>
-    </h1>
-  
-
-        
-        <a href="/2015/02/27/2015_iOS单独集成QQ分享功能的苦逼经验/" class="archive-article-date">
-  	<time datetime="2015-02-27T15:17:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这个过程其实很简单，就是腾讯的文档真的不敢恭维！</p>
-<p>如果只是想把一段文字，或一张图片分享到QQ（包括好友、群、讨论组、空间），那么你看文档会感觉到很无助，不知道从那里开始，并且地魔（demo）跑不起来！（ps，腾讯的员工是不是经常跳槽到微信？）</p>
-<h3 id="（1）首先，把TencentOpenAPI-framework、TencentOpenApi_IOS_Bundle-bundle导入工程中。">（1）首先，把TencentOpenAPI.framework、TencentOpenApi_IOS_Bundle.bundle导入工程中。</h3><p>ps: 我在搜索资料时，看到有人说TencentOpenAPI.framework要放在工程根目录，我在Xcode6下试了一下，结果是不放根目录也行，同时Xcode6下，导入framework就好，其它操作都自动了，官方sdk文档好像好久没更新了，我又想吐槽？不要阻止我！what’s up？</p>
-        
-          <a class="article-more-a" href="/2015/02/27/2015_iOS单独集成QQ分享功能的苦逼经验/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">QQsdk</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">QQ分享</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/02/27/2015_iOS单独集成QQ分享功能的苦逼经验/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span>
+      <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
     </nav>
   
 
@@ -1312,6 +1312,26 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hopper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Disassembler</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">西数硬盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">WD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MyPassport</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">AppStore</a>
