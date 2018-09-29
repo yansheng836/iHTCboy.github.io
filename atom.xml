@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-09-28T14:34:39.452Z</updated>
+  <updated>2018-09-29T12:50:19.624Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,8 +19,9 @@
     <link href="https://iHTCboy.com/2018/09/27/2018-09-27-Hopper%E9%80%86%E5%90%91WD-MyPassport%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%8F%E5%8E%86/"/>
     <id>https://iHTCboy.com/2018/09/27/2018-09-27-Hopper逆向WD-MyPassport的失败经历/</id>
     <published>2018-09-27T13:49:16.000Z</published>
-    <updated>2018-09-28T14:34:39.452Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>一直以来，用是使用西数的移动硬盘，最开始256G的 <code>My Passport</code>，当时也不知道，在电脑城就买了，回家发现可以设置密码，当然，我记得有密码的存储设备，是台电的U盘，当年16G的加密U盘，我也有3个，所以，之后就与加密的存储设备相惜相爱，现在西数的移动硬盘也是几代后的AES 256位硬件加密。然后，几天前，购买了4T的 WD My Passport 加密移动硬盘，设置了一个新密码，过完中秋，发现！密码记不起来了！！！</p>
+    <updated>2018-09-29T12:50:19.624Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>一直以来都是使用西数的移动硬盘，最开始256G的 <code>My Passport</code>，当时也不知道，在电脑城就买了，回家发现可以设置密码，当然，我记得有密码的存储设备，是台电的U盘，当年16G的加密U盘，我也有3个，所以，之后就与加密的存储设备相惜相爱，现在西数的移动硬盘也是几代后的AES 256位硬件加密。加密功能的存储设备越来越受喜爱，除了大部分网盘破产外，就是隐私的问题，大家都希望有自己的小空间。</p>
+<p>几天前，购买了4T的 WD My Passport 加密移动硬盘，设置了一个新密码，然后过完中秋，发现！密码记不起来了！！！反复尝试，只能看到破解！！！</p>
 <a id="more"></a>
 <h3 id="2、怎么办？">2、怎么办？</h3><p>先说一下，WD怎么打开硬盘，密码位数不限制，字数数据都可以，然后，只能点击界面上的 <code>硬盘解锁</code> 才能解锁。按回车没有反应：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180927-WD-unlock-drive.jpg" alt="20180927-WD-unlock-drive.jpg"></p>
@@ -57,7 +58,8 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>一直以来，用是使用西数的移动硬盘，最开始256G的 <code>My Passport</code>，当时也不知道，在电脑城就买了，回家发现可以设置密码，当然，我记得有密码的存储设备，是台电的U盘，当年16G的加密U盘，我也有3个，所以，之后就与加密的存储设备相惜相爱，现在西数的移动硬盘也是几代后的AES 256位硬件加密。然后，几天前，购买了4T的 WD My Passport 加密移动硬盘，设置了一个新密码，过完中秋，发现！密码记不起来了！！！</p>]]>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>一直以来都是使用西数的移动硬盘，最开始256G的 <code>My Passport</code>，当时也不知道，在电脑城就买了，回家发现可以设置密码，当然，我记得有密码的存储设备，是台电的U盘，当年16G的加密U盘，我也有3个，所以，之后就与加密的存储设备相惜相爱，现在西数的移动硬盘也是几代后的AES 256位硬件加密。加密功能的存储设备越来越受喜爱，除了大部分网盘破产外，就是隐私的问题，大家都希望有自己的小空间。</p>
+<p>几天前，购买了4T的 WD My Passport 加密移动硬盘，设置了一个新密码，然后过完中秋，发现！密码记不起来了！！！反复尝试，只能看到破解！！！</p>]]>
     
     </summary>
     
@@ -187,7 +189,7 @@
     <link href="https://iHTCboy.com/2018/09/17/2018-09-17_shell%E6%8A%80%E5%B7%A75_%E5%85%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85%E7%94%9F%E6%88%90ipa/"/>
     <id>https://iHTCboy.com/2018/09/17/2018-09-17_shell技巧5_全自动打包生成ipa/</id>
     <published>2018-09-17T03:22:16.000Z</published>
-    <updated>2018-09-19T14:19:03.000Z</updated>
+    <updated>2018-09-28T15:22:42.259Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在研究上传ipa文件自动上传到苹果后台（后续有时间也分享给大家啊），然后，就需要制作大量的ipa文件啊！如果手工的<code>Archive</code> 那不就死啦，整个步骤，大概要5分钟过程，而且不是一步到位等5分钟，所以就研究了一下项目如何自动打ipa，最后找到了 <a href="https://www.jianshu.com/p/9792b704b18f" target="_blank" rel="external">iOS项目之自动化打包 - 简书</a> 这篇文件，然后根据需求，扩展做了全能自动化的，app-store、ad-hoc、dev 三种类型证书，另外项目如果是用cocoapod，需要用 <code>-workspace</code>，否则用 <code>-project</code>，都做了相当自能化的改造，下面就来看看吧！</p>
 <p>ps: <code>fastlane</code> 当然能做到这些事情，但是这个工具太重，需要的配置也需要熟悉，对于刚毕业或陌生的同学有点难，学习一下<code>ruby</code>也是好事，大家有兴趣可以自行研究一下~</p>
 <a id="more"></a>
