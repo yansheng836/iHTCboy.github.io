@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://github.com/sindresorhus/quick-look-plugins/raw/master/screenshots/QLMarkdown.png">
 <meta property="og:image" content="https://github.com/sindresorhus/quick-look-plugins/raw/master/screenshots/ProvisionQL.png">
 <meta property="og:image" content="https://github.com/sindresorhus/quick-look-plugins/raw/master/screenshots/QuickLookAPK.png">
-<meta property="og:updated_time" content="2018-10-01T00:40:30.545Z">
+<meta property="og:updated_time" content="2018-10-01T00:45:53.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="程序员的macOS系列：Mac开发环境配置">
 <meta name="twitter:description" content="1、前言最近在写《程序员的macOS系列》文章，之前写的第一篇 程序员的macOS系列：精选Mac App，大家都希望尽快更新，今天开始写第二篇，其实macOS开发环境，系统默认自带ruby、python2、gcc、g++、bash等环境，并且因为macOS是以Unix为基础，所以有传统Unix/Linux的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高">
@@ -317,9 +317,7 @@ var _hmt = _hmt || [];
 <p>QuickLookAPK：<br><img src="https://github.com/sindresorhus/quick-look-plugins/raw/master/screenshots/QuickLookAPK.png" alt="QuickLookAPK.png"></p>
 <h4 id="Hexo_博客">Hexo 博客</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure>
 <p>具体<code>hexo</code>使用，可能参考之前的文章：<a href="https://ihtcboy.com/2015/09/06/2015_Hexo搭建Github-Pages博客填坑教程/">Hexo搭建Github Pages博客填坑教程</a></p>
-<p>建议每一个技术人员都搭建自己一个博客，依靠<code>GitHub</code>、<code>oschina</code>或<code>Coding.net</code>提供的免费服务，完全没问题，如果需要自己的域名，购买一个域名也就几百元就10年啦。程序员要多总结。比如你学习了一个技术或做了一个项目，没有记录，没有总结，没有思考，那么你能有收获吗？？？</p>
-<h4 id="报错：无法打开已损坏的安装包">报错：无法打开已损坏的安装包</h4><p>遇到打开自己下载的安装包失败时，可执行下面命令解决：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+<p>建议每一个技术人员都搭建自己一个博客，依靠<code>GitHub</code>、<code>oschina</code>或<code>Coding.net</code>提供的免费服务，完全没问题，如果需要自己的域名，购买一个域名也就几百元就10年啦。程序员要多总结。比如你学习了一个技术或做了一个项目，没有一点记录，没有一点总结，没有一点思考，那么你能有收获吗？？？</p>
 <h4 id="Safari_Extensions">Safari Extensions</h4><p>Safari 浏览器的插件<br><a href="https://safari-extensions.apple.com" target="_blank" rel="external">Apple - Safari - Safari Extensions Gallery</a></p>
 <p>我这里就推荐几个常用的：</p>
 <ul>
@@ -330,7 +328,12 @@ var _hmt = _hmt || [];
 <li><a href="https://safari-extensions.apple.com/details/?id=com.diigo.safari.awesomescreenshot-5DXNM3K2CT" target="_blank" rel="external">Awesome Screenshot</a></li>
 </ul>
 <p>另外，macOS 10.14 后，苹果 Safari 浏览器不再支持不安全的扩展。只可以在 App Store 或 Safari 浏览器扩展库中查找经过 Apple 审核的更新扩展。</p>
-<h4 id="终端命令">终端命令</h4><p>在终端和vim下，程序员的效率一定提升不少，对于新手，下面也列出一些重要的终端命令，方便大家重点掌握，更多就大家自动搜索了：</p>
+<h4 id="报错：无法打开已损坏的安装包">报错：无法打开已损坏的安装包</h4><p>遇到打开自己下载的安装包失败时，可执行下面命令解决：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+<p>macOS 10.14 后，苹果对安全和隐私保护这一块更加严厉，当然，事件有好的一面，也有不好（不方便）的一面，大家智者见智，我一般是把这个命令当成别名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> macss=<span class="string">"sudo spctl --master-disable"</span></span><br></pre></td></tr></table></figure>
+<p>这里在终端输入 <code>macss</code> 就可以啦~</p>
+<h4 id="终端命令">终端命令</h4><p>在终端和vim下，程序员的效率一定提升不少，但对于新手，下面也列出一些重要的终端命令，方便大家重点掌握，更多就大家自动搜索了：</p>
 <table>
 <thead>
 <tr>
@@ -382,6 +385,14 @@ var _hmt = _hmt || [];
 <tr>
 <td>killall Finder</td>
 <td>重启Finder</td>
+</tr>
+<tr>
+<td>touch xxx</td>
+<td>创建xxx文件</td>
+</tr>
+<tr>
+<td>mkdir xxx</td>
+<td>创建xxx文件夹</td>
 </tr>
 <tr>
 <td>rm xxx</td>
@@ -603,7 +614,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、开发环境配置"><span class="toc-number">2.</span> <span class="toc-text">2、开发环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Homebrew"><span class="toc-number">2.1.</span> <span class="toc-text">Homebrew</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令行工具（Command_Line_Tools)"><span class="toc-number">2.2.</span> <span class="toc-text">命令行工具（Command Line Tools)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bash（Zsh）"><span class="toc-number">2.3.</span> <span class="toc-text">Bash（Zsh）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#node/npm"><span class="toc-number">2.4.</span> <span class="toc-text">node/npm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vi(vim)"><span class="toc-number">2.5.</span> <span class="toc-text">vi(vim)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git"><span class="toc-number">2.6.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#python3"><span class="toc-number">2.7.</span> <span class="toc-text">python3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jenkins"><span class="toc-number">2.8.</span> <span class="toc-text">jenkins</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CocoaPods"><span class="toc-number">2.9.</span> <span class="toc-text">CocoaPods</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Carthage"><span class="toc-number">2.10.</span> <span class="toc-text">Carthage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、其它环境配置和插件"><span class="toc-number">3.</span> <span class="toc-text">3、其它环境配置和插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Finder（访达）预览插件"><span class="toc-number">3.1.</span> <span class="toc-text">Finder（访达）预览插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hexo_博客"><span class="toc-number">3.2.</span> <span class="toc-text">Hexo 博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#报错：无法打开已损坏的安装包"><span class="toc-number">3.3.</span> <span class="toc-text">报错：无法打开已损坏的安装包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Safari_Extensions"><span class="toc-number">3.4.</span> <span class="toc-text">Safari Extensions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#终端命令"><span class="toc-number">3.5.</span> <span class="toc-text">终端命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、开发环境配置"><span class="toc-number">2.</span> <span class="toc-text">2、开发环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Homebrew"><span class="toc-number">2.1.</span> <span class="toc-text">Homebrew</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令行工具（Command_Line_Tools)"><span class="toc-number">2.2.</span> <span class="toc-text">命令行工具（Command Line Tools)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bash（Zsh）"><span class="toc-number">2.3.</span> <span class="toc-text">Bash（Zsh）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#node/npm"><span class="toc-number">2.4.</span> <span class="toc-text">node/npm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vi(vim)"><span class="toc-number">2.5.</span> <span class="toc-text">vi(vim)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git"><span class="toc-number">2.6.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#python3"><span class="toc-number">2.7.</span> <span class="toc-text">python3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jenkins"><span class="toc-number">2.8.</span> <span class="toc-text">jenkins</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CocoaPods"><span class="toc-number">2.9.</span> <span class="toc-text">CocoaPods</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Carthage"><span class="toc-number">2.10.</span> <span class="toc-text">Carthage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、其它环境配置和插件"><span class="toc-number">3.</span> <span class="toc-text">3、其它环境配置和插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Finder（访达）预览插件"><span class="toc-number">3.1.</span> <span class="toc-text">Finder（访达）预览插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hexo_博客"><span class="toc-number">3.2.</span> <span class="toc-text">Hexo 博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Safari_Extensions"><span class="toc-number">3.3.</span> <span class="toc-text">Safari Extensions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#报错：无法打开已损坏的安装包"><span class="toc-number">3.4.</span> <span class="toc-text">报错：无法打开已损坏的安装包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#终端命令"><span class="toc-number">3.5.</span> <span class="toc-text">终端命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
