@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-10-01T01:12:59.556Z</updated>
+  <updated>2018-10-01T01:13:39.188Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/09/30/2018-09-30_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9AMac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://iHTCboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/</id>
     <published>2018-09-30T15:49:16.000Z</published>
-    <updated>2018-10-01T01:12:59.556Z</updated>
+    <updated>2018-10-01T01:13:39.188Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望尽快更新，今天开始写第二篇，其实macOS开发环境，系统默认自带ruby、python2、gcc、g++、bash等环境，并且因为macOS是以Unix为基础，所以有传统Unix/Linux的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！其它也没有什么高深介绍，当然，由于楼主目前主职是iOS，所以其它的开发环境接触不多(谦虚)，当前大家要学以至用，环境搭建都是相似的，熟悉了就不是问题。文章短短不可能详尽也，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力提高！</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
@@ -76,10 +76,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install python3</span><br></pre></td></tr></table></figure>
 <p>查看 <code>python3</code>的版本：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 --version</span><br></pre></td></tr></table></figure>
-<p><code>python</code> 能做的事件就不多说了，人工智能，机器学习，大数据分析，爬虫，web，已经可以说，<code>python</code>已经渗透到各个地方~</p>
+<p><code>python</code> 能做的事件就不多说了，人工智能，机器学习，大数据分析，爬虫，web，可以说<code>python</code>已经渗透到各个地方~</p>
 <h4 id="jenkins">jenkins</h4><p>暂时留存，日后回来写</p>
 <h4 id="CocoaPods">CocoaPods</h4><p><code>CocoaPods</code> 是iOS的包管理工具，类似于 java 的<code>Maven</code>、Node.js 的 <code>npm</code>、Python 的 <code>pip</code>、Ruby 的 <code>gem</code>。</p>
-<p><code>CocoaPods</code> 基于<code>Ruby</code>开发的，因此安装<code>CocoaPods</code>前需要先安装<code>Ruby</code>环境。而前面提到macOS系统默认自带Ruby环境! 所以，直接安装吧~</p>
+<p><code>CocoaPods</code> 基于<code>Ruby</code>开发的，因此安装<code>CocoaPods</code>前需要先安装<code>Ruby</code>环境。而前面提到macOS系统默认自带Ruby环境! 所以，直接用 Ruby 的 <code>gem</code> 环境安装吧~</p>
 <p>安装命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
 <p>配置<code>CocoaPods</code>环境，安装<code>Specs</code>库，由于库很大，需要一些时间和网速：</p>
