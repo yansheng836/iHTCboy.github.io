@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-09-30T16:20:06.608Z</updated>
+  <updated>2018-10-01T00:13:10.893Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,14 +19,14 @@
     <link href="https://iHTCboy.com/2018/09/30/2018-09-30_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9AMac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://iHTCboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/</id>
     <published>2018-09-30T15:49:16.000Z</published>
-    <updated>2018-09-30T16:20:06.608Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望尽快更新，今天开始写第二篇，其实macOS开发环境，系统默认自带ruby、python2、gcc、g++、bash等环境，并且因为macOS是以Unix为基础，所以有传统Unix/Linux的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！其它也没有什么高深介绍，当然，因为楼主目前主学iOS，所以其它的开发环境接触不多，当前大家要学以至用，环境搭建都是相似的要学好每一个点也不是那么简单，文章短短也不可能详尽，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力！</p>
-<p>目前计划写《程序员的macOS系列》这三篇，后续有想法在增加吧~</p>
+    <updated>2018-10-01T00:13:10.893Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望尽快更新，今天开始写第二篇，其实macOS开发环境，系统默认自带ruby、python2、gcc、g++、bash等环境，并且因为macOS是以Unix为基础，所以有传统Unix/Linux的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！其它也没有什么高深介绍，当然，由于楼主目前主职是iOS，所以其它的开发环境接触不多(谦虚)，当前大家要学以至用，环境搭建都是相似的，熟悉了就不是问题。文章短短不可能详尽也，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力提高！</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
 <li><a href="https://ihtcboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/">程序员的macOS系列：Mac开发环境配置</a></li>
 <li>程序员的macOS系列：高效Alfred进阶</li>
 </ul>
+<p>目前计划写《程序员的macOS系列》三篇，后续有想法在更新吧~</p>
 <a id="more"></a>
 <h3 id="2、开发环境配置">2、开发环境配置</h3><p>需要提前说明一下，本文不使用代理源，如果命令无效，大家记得翻墙一下啊。</p>
 <h4 id="Homebrew">Homebrew</h4><p><code>Homebrew</code> 是强大的终端工具，用来管理很多在终端下操作的程序以及软件包的依赖，对于经常需要使用终端应用的程序员来说，是必不可少的第一步！</p>
@@ -206,13 +206,13 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望尽快更新，今天开始写第二篇，其实macOS开发环境，系统默认自带ruby、python2、gcc、g++、bash等环境，并且因为macOS是以Unix为基础，所以有传统Unix/Linux的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！其它也没有什么高深介绍，当然，因为楼主目前主学iOS，所以其它的开发环境接触不多，当前大家要学以至用，环境搭建都是相似的要学好每一个点也不是那么简单，文章短短也不可能详尽，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力！</p>
-<p>目前计划写《程序员的macOS系列》这三篇，后续有想法在增加吧~</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望尽快更新，今天开始写第二篇，其实macOS开发环境，系统默认自带ruby、python2、gcc、g++、bash等环境，并且因为macOS是以Unix为基础，所以有传统Unix/Linux的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！其它也没有什么高深介绍，当然，由于楼主目前主职是iOS，所以其它的开发环境接触不多(谦虚)，当前大家要学以至用，环境搭建都是相似的，熟悉了就不是问题。文章短短不可能详尽也，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力提高！</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
 <li><a href="https://ihtcboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/">程序员的macOS系列：Mac开发环境配置</a></li>
 <li>程序员的macOS系列：高效Alfred进阶</li>
-</ul>]]>
+</ul>
+<p>目前计划写《程序员的macOS系列》三篇，后续有想法在更新吧~</p>]]>
     
     </summary>
     
@@ -1958,11 +1958,11 @@
     <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89MacApp/"/>
     <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/</id>
     <published>2018-07-15T14:29:16.000Z</published>
-    <updated>2018-09-17T01:15:28.000Z</updated>
+    <updated>2018-10-01T00:12:55.924Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。网上也有很多总结了Mac App的文章，但本文是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
-<li>程序员的macOS系列：Mac开发环境配置</li>
+<li><a href="https://ihtcboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/">程序员的macOS系列：Mac开发环境配置</a></li>
 <li>程序员的macOS系列：高效Alfred进阶</li>
 </ul>
 <p>目前计划写《程序员的macOS系列》这三篇，后续有想法在增加吧~</p>
@@ -3002,7 +3002,7 @@
     <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。网上也有很多总结了Mac App的文章，但本文是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
-<li>程序员的macOS系列：Mac开发环境配置</li>
+<li><a href="https://ihtcboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/">程序员的macOS系列：Mac开发环境配置</a></li>
 <li>程序员的macOS系列：高效Alfred进阶</li>
 </ul>
 <p>目前计划写《程序员的macOS系列》这三篇，后续有想法在增加吧~</p>]]>
