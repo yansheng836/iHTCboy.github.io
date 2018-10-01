@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2018-10-01T00:39:41.604Z</updated>
+  <updated>2018-10-01T00:40:30.545Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2018/09/30/2018-09-30_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9AMac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://iHTCboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/</id>
     <published>2018-09-30T15:49:16.000Z</published>
-    <updated>2018-10-01T00:39:41.604Z</updated>
+    <updated>2018-10-01T00:40:30.545Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望尽快更新，今天开始写第二篇，其实macOS开发环境，系统默认自带ruby、python2、gcc、g++、bash等环境，并且因为macOS是以Unix为基础，所以有传统Unix/Linux的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！其它也没有什么高深介绍，当然，由于楼主目前主职是iOS，所以其它的开发环境接触不多(谦虚)，当前大家要学以至用，环境搭建都是相似的，熟悉了就不是问题。文章短短不可能详尽也，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力提高！</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
@@ -104,7 +104,7 @@
 <p>QuickLookAPK：<br><img src="https://github.com/sindresorhus/quick-look-plugins/raw/master/screenshots/QuickLookAPK.png" alt="QuickLookAPK.png"></p>
 <h4 id="Hexo_博客">Hexo 博客</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure>
 <p>具体<code>hexo</code>使用，可能参考之前的文章：<a href="https://ihtcboy.com/2015/09/06/2015_Hexo搭建Github-Pages博客填坑教程/">Hexo搭建Github Pages博客填坑教程</a></p>
-<p>建议每一个技术人员都搭建自己一个博客，依靠<code>GitHub</code>、<code>oschina</code>或<code>Coding.net</code>提供的免费服务，完全没问题，如果需要自己的域名，购买一个域名也就几百元就10年啦。程序员要多总结，</p>
+<p>建议每一个技术人员都搭建自己一个博客，依靠<code>GitHub</code>、<code>oschina</code>或<code>Coding.net</code>提供的免费服务，完全没问题，如果需要自己的域名，购买一个域名也就几百元就10年啦。程序员要多总结。比如你学习了一个技术或做了一个项目，没有记录，没有总结，没有思考，那么你能有收获吗？？？</p>
 <h4 id="报错：无法打开已损坏的安装包">报错：无法打开已损坏的安装包</h4><p>遇到打开自己下载的安装包失败时，可执行下面命令解决：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
 <h4 id="Safari_Extensions">Safari Extensions</h4><p>Safari 浏览器的插件<br><a href="https://safari-extensions.apple.com" target="_blank" rel="external">Apple - Safari - Safari Extensions Gallery</a></p>
