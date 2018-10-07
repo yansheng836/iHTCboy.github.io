@@ -133,7 +133,7 @@ if ((typeof __MOBX_DEVTOOLS_GLOBAL_HOOK__ === "undefined" ? "undefined" : _typeo
 }
 module.exports.default = module.exports;
 var actionFieldDecorator = createClassPropertyDecorator(function (target, key, value, args, originalDescriptor) {
-    var actionName = args && args.length === 1 ? args[0] : value.name || key || "<unnamed action="">";
+    var actionName = args && args.length === 1 ? args[0] : value.name || key || '<unnamed action="">';
     var wrappedAction = action(actionName, value);
     addHiddenProp(target, key, wrappedAction);
 }, function (key) {
@@ -149,7 +149,7 @@ var boundActionDecorator = createClassPropertyDecorator(function (target, key, v
     invariant(false, getMessage("m001"));
 }, false, false);
 var action = function action(arg1, arg2, arg3, arg4) {
-    if (arguments.length === 1 && typeof arg1 === "function") return createAction(arg1.name || "<unnamed action="">", arg1);
+    if (arguments.length === 1 && typeof arg1 === "function") return createAction(arg1.name || '<unnamed action="">', arg1);
     if (arguments.length === 2 && typeof arg2 === "function") return createAction(arg1, arg2);
     if (arguments.length === 1 && typeof arg1 === "string") return namedActionDecorator(arg1);
     return namedActionDecorator(arg2).apply(null, arguments);
@@ -175,7 +175,7 @@ function namedActionDecorator(name) {
     };
 }
 function runInAction(arg1, arg2, arg3) {
-    var actionName = typeof arg1 === "string" ? arg1 : arg1.name || "<unnamed action="">";
+    var actionName = typeof arg1 === "string" ? arg1 : arg1.name || '<unnamed action="">';
     var fn = typeof arg1 === "function" ? arg1 : arg2;
     var scope = typeof arg1 === "function" ? arg2 : arg3;
     invariant(typeof fn === "function", getMessage("m002"));
