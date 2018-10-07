@@ -210,6 +210,781 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2015_iOS版本更新判断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/23/2015_iOS版本更新判断/">iOS版本更新判断</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/23/2015_iOS版本更新判断/" class="archive-article-date">
+  	<time datetime="2015-04-23T12:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>应用每开发一个新版本时，都可能会有新特性介绍页面。所以在应用里就要判断是不是新版本，并且能判断只有第一次进入应用时，才是新版本。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//*  在delegate里判断*/</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">//1、 取出沙盒中存储的上次使用软件的版本号</span></span><br><span class="line">   <span class="built_in">NSString</span> *key = <span class="string">@"CFBundleShortVersionString"</span>;</span><br><span class="line">   <span class="built_in">NSUserDefaults</span> *defaults = [<span class="built_in">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">   <span class="built_in">NSString</span> *lastVersion = [defaults stringForKey:key];</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// 2、获得当前软件的版本号</span></span><br><span class="line">   <span class="built_in">NSString</span> *currentVersion = [<span class="built_in">NSBundle</span> mainBundle]<span class="variable">.infoDictionary</span>[key];</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 3、判断版本号</span></span><br><span class="line">   <span class="keyword">if</span> ([currentVersion isEqualToString:lastVersion])</span><br><span class="line">   &#123;<span class="comment">// 旧版本</span></span><br><span class="line">       </span><br><span class="line">   &#125;<span class="keyword">else</span>&#123; <span class="comment">// 新版本</span></span><br><span class="line">     </span><br><span class="line">       <span class="comment">// 存储新版本</span></span><br><span class="line">       [defaults setObject:currentVersion forKey:key];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2015/04/23/2015_iOS版本更新判断/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">应用版本</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">版本更新</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/23/2015_iOS版本更新判断/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2015-04-22_JSBadgeView的基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/22/2015-04-22_JSBadgeView的基本使用/">JSBadgeView的基本使用</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/22/2015-04-22_JSBadgeView的基本使用/" class="archive-article-date">
+  	<time datetime="2015-04-22T15:24:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、前言">1、前言</h3><p><a href="https://github.com/JaviSoto/JSBadgeView">JSBadgeView </a> 是iOS开发常用的显示数字图标的库：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-6fa0f9ff45c986e2.png" alt="iOS 7以上风格"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-18d9bc7af2ca3947.png" alt="iOS 6风格"></p>
+        
+          <a class="article-more-a" href="/2015/04/22/2015-04-22_JSBadgeView的基本使用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JSBadgeView</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/22/2015-04-22_JSBadgeView的基本使用/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2015-04-22_使用StoryBoard设置UIButton背景图片时出现蓝点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/22/2015-04-22_使用StoryBoard设置UIButton背景图片时出现蓝点/">使用StoryBoard设置UIButton背景图片时出现蓝点</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/22/2015-04-22_使用StoryBoard设置UIButton背景图片时出现蓝点/" class="archive-article-date">
+  	<time datetime="2015-04-22T07:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、前言">1、前言</h3><p>使用<code>StoryBoard</code>设置<code>UIButton</code>的背景图片时出现蓝点：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-96ebfde841239962.PNG" alt="设置按钮的背影图片选择时显示蓝点"></p>
+        
+          <a class="article-more-a" href="/2015/04/22/2015-04-22_使用StoryBoard设置UIButton背景图片时出现蓝点/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">StoryBoard</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">UIButton</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/22/2015-04-22_使用StoryBoard设置UIButton背景图片时出现蓝点/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2015_iOS判断汉字个数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/18/2015_iOS判断汉字个数/">iOS判断汉字个数</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/18/2015_iOS判断汉字个数/" class="archive-article-date">
+  	<time datetime="2015-04-17T16:31:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在做注册登陆的认证，需求：<br><code>用户名为6～12位“字符”</code><br>也就是说，一个英文是一个字符，<strong>一个中文是两个字符</strong>，用正则表达式好像不容易实现吧？</p>
+<p>没什么好说的，直接上答案了：</p>
+        
+          <a class="article-more-a" href="/2015/04/18/2015_iOS判断汉字个数/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">判断汉字</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">汉字个数</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/18/2015_iOS判断汉字个数/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2015_基于NSTimer的倒计时" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/17/2015_基于NSTimer的倒计时/">基于NSTimer的倒计时</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/17/2015_基于NSTimer的倒计时/" class="archive-article-date">
+  	<time datetime="2015-04-17T07:12:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天做手机短信验证码的功能，不用GCD，简单的NSTimer就可以完成,不知道有没有bug,测试中。。。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - &#20498;&#35745;&#26102;&#10;- (void)startCount&#10;&#123;&#10;   /**&#10;    *  &#28155;&#21152;&#23450;&#26102;&#22120;&#10;    */&#10;   self.currentCountDown = 120;&#10;   self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];&#10;   [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];&#10;   [self.timer fire];&#10;&#125;&#10;&#10;- (void)countDown&#123;&#10;   &#10;   if (self.currentCountDown &#62;0) &#123;&#10;       //&#35774;&#32622;&#30028;&#38754;&#30340;&#25353;&#38062;&#26174;&#31034; &#26681;&#25454;&#33258;&#24049;&#38656;&#27714;&#35774;&#32622;&#10;       [self.captchaBtn setTitle:[NSString stringWithFormat:@&#34;(%ld)&#37325;&#26032;&#33719;&#21462;&#34;,(long)self.currentCountDown] forState:UIControlStateNormal];&#10;       //self.captchaBtn.enabled = NO;&#10;       self.currentCountDown -= 1;&#10;   &#125;else&#123;&#10;       [self removeTimer];&#10;   &#125;  &#10;&#125;&#10;&#10;/**&#10;*  &#31227;&#38500;&#23450;&#26102;&#22120;&#10;*/&#10;- (void)removeTimer&#10;&#123;&#10;   self.currentCountDown = 0;&#10;   [self setCaptchaEnable:YES];&#10;   [self.timer invalidate];&#10;   self.timer = nil;&#10;&#125;&#10;&#10;&#10;//&#22240;&#20026;iOS 7&#19979; &#25353;&#38062; enabled= NO, &#19981;&#33021;&#35774;&#32622;&#25991;&#23383;&#10;#pragma mark - &#35774;&#32622;&#25353;&#38062;&#29366;&#24577;&#10;- (void)setCaptchaEnable:(BOOL)enabled&#123;&#10;   //&#21487;&#20197;&#25353;&#10;   if (enabled) &#123;&#10;       self.captchaBtn.userInteractionEnabled = YES;&#10;       [self.captchaBtn setBackgroundImage:[UIImage imageNamed:@&#34;back_red&#34;] forState:UIControlStateNormal];&#10;       [self.captchaBtn setTitle:@&#34;&#33719;&#21462;&#39564;&#35777;&#30721;&#34; forState:UIControlStateNormal];&#10;       &#10;   &#125;else&#123;&#10;       self.captchaBtn.userInteractionEnabled = NO;&#10;       [self.captchaBtn setBackgroundImage:[UIImage imageNamed:@&#34;back_gray&#34;] forState:UIControlStateNormal];&#10;   &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在项目中目前是自己写的一个集成倒计时的按钮，这个思路暂时可以行！</p>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">NSTimer</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">倒计时</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/17/2015_基于NSTimer的倒计时/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2015_iOS报错：linker_command_failed_with_exit_code_1_(use_-v_to_see_invocation)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/2015_iOS报错：linker_command_failed_with_exit_code_1_(use_-v_to_see_invocation)/">Xcode真机运行报错：the application could not be verified</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/15/2015_iOS报错：linker_command_failed_with_exit_code_1_(use_-v_to_see_invocation)/" class="archive-article-date">
+  	<time datetime="2015-04-15T12:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Xcode 提示的报错：<strong> the application could not be verified. </strong></p>
+<p>开发的应用一直真机安装不了，网上查看资料，都是说证书出错，最后在stackoverflow.com 找到原因：</p>
+<blockquote>
+<p>I deleted the app from the device, restarted Xcode, and the app subsequently installed on the device just fine without any error message. Not sure if deleting the app was the fix, or the problem was due to “the phase of the moon”.<br>就是把手机上安装了的应用删除掉，在安装就行了！</p>
+</blockquote>
+<p>分析：我猜测是因为之前我在另一台电脑上安装了这个应用，调试证书导致的错误？还是，最近升级了OS X 10.10.3 、Xcode 6.3 导致的错误？不得而之了。总之，如果下次遇到这个问题，先删掉原来的应用，如果不行，那考虑其它原因就是证书等问题。</p>
+<p>～nice</p>
+        
+          <a class="article-more-a" href="/2015/04/15/2015_iOS报错：linker_command_failed_with_exit_code_1_(use_-v_to_see_invocation)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">编译报错</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/15/2015_iOS报错：linker_command_failed_with_exit_code_1_(use_-v_to_see_invocation)/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2015_你可能永远不知道的iPhone功能！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/14/2015_你可能永远不知道的iPhone功能！/">你可能永远不知道的iPhone功能！</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/14/2015_你可能永远不知道的iPhone功能！/" class="archive-article-date">
+  	<time datetime="2015-04-14T14:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、前言">1、前言</h3><p>在最新的iPhone6设备上，5.5寸大屏一代，不只是屏幕变大，功能也是有提升，每次苹果出新产品，都想买，作为果粉，但是肾不够用啊，钱💰~~~</p>
+        
+          <a class="article-more-a" href="/2015/04/14/2015_你可能永远不知道的iPhone功能！/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AppStore</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">iPhone</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">iTunes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/14/2015_你可能永远不知道的iPhone功能！/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2015_App-Store付费应用退款流程（2015超级详细版）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/11/2015_App-Store付费应用退款流程（2015超级详细版）/">AppStore付费应用退款流程（2015超级详细版）</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/11/2015_App-Store付费应用退款流程（2015超级详细版）/" class="archive-article-date">
+  	<time datetime="2015-04-11T10:38:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、关于退款说明">一、关于退款说明</h1><p>首先说明，苹果允许用户用一切理由来退款，并且是可以退款成功的.</p>
+<h3 id="首先登陆苹果“问题报告”网站">首先登陆苹果“问题报告”网站</h3><p> <a href="https://reportaproblem.apple.com">https://reportaproblem.apple.com</a></p>
+<blockquote>
+<p>网站是报告最近 90 天购买的 iTunes Store、App Store、iBooks Store 或 Mac App Store 项目相关问题。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2015/04/11/2015_App-Store付费应用退款流程（2015超级详细版）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AppStore</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">iTunes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/11/2015_App-Store付费应用退款流程（2015超级详细版）/">显示全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2015-04-10_Xcode6.3_IneligibleDevices-临时解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -363,761 +1138,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2015/04/08/2015-04-08_关于监听UITextField的问题/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2015-04-05_iOS关于UITableView选择Cell方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/05/2015-04-05_iOS关于UITableView选择Cell方法/">iOS关于UITableView选择Cell方法</a>
-    </h1>
-  
-
-        
-        <a href="/2015/04/05/2015-04-05_iOS关于UITableView选择Cell方法/" class="archive-article-date">
-  	<time datetime="2015-04-05T14:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、问题">1、问题</h3><p>选择cell有两个方法，今天搞错了，一直以为cell错乱呢，真是人都有掉坑的时候：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;&#10;&#10;- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(3_0);</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2015/04/05/2015-04-05_iOS关于UITableView选择Cell方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">UITableView</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/04/05/2015-04-05_iOS关于UITableView选择Cell方法/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2015_iOS错误---“A-valid-provisioning-profile-for-this-executable-was-not-foun" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/23/2015_iOS错误---“A-valid-provisioning-profile-for-this-executable-was-not-foun/">iOS错误---“A valid provisioning profile for this executable was not found”</a>
-    </h1>
-  
-
-        
-        <a href="/2015/03/23/2015_iOS错误---“A-valid-provisioning-profile-for-this-executable-was-not-foun/" class="archive-article-date">
-  	<time datetime="2015-03-23T02:34:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>linker command failed with exit code 1 (use -v to see invocation)</p>
-</blockquote>
-<p>网上答案：</p>
-<blockquote>
-<p>1、我以前添加开源的.a文件时也遇到过类似的情况，问题大多主要是出现在Ohter Linker Flags 这个属性，找到Build settings-&gt;Linking-&gt;Other Linker Flags，将此属性修改成-all_load</p>
-<p>2、把Other Linker Flags下的属性全删除了。</p>
-<p>3、错误信息中出现了某个类的名字，去原文件中看看#import了哪些第三方库，把这些库挨个注释排除，找到出错的那个库，然后按照官方提供的步骤重新添加一遍。</p>
-<p>4、看看是不是有新添加的文件跟之前文件同名</p>
-</blockquote>
-<p>经过多次排查，最后答案是：</p>
-<blockquote>
-<p>出现这种情况很可能是，项目中引入了多个相同的文件。</p>
-</blockquote>
-<p>删除一个就ok！</p>
-<ul>
-<li>如果有什么疑问，可以在评论区一起讨论；</li>
-<li>如果有什么不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="http://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">编译报错</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/03/23/2015_iOS错误---“A-valid-provisioning-profile-for-this-executable-was-not-foun/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2015-03-22_Xcode断点没有跳到断点的代码行" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/22/2015-03-22_Xcode断点没有跳到断点的代码行/">Xcode断点没有跳到断点的代码行</a>
-    </h1>
-  
-
-        
-        <a href="/2015/03/22/2015-03-22_Xcode断点没有跳到断点的代码行/" class="archive-article-date">
-  	<time datetime="2015-03-22T14:51:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、前言">1、前言</h3><p>最近不知道是什么原因（操作）改变<code>Xcode</code>设置了，打断点时没有自动跳到断点的代码行上，结果跳到了debug视图（汇编代码）。</p>
-        
-          <a class="article-more-a" href="/2015/03/22/2015-03-22_Xcode断点没有跳到断点的代码行/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">AlwaysShowDisassemly</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Xcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/03/22/2015-03-22_Xcode断点没有跳到断点的代码行/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2015-03-18_UICollectionView实现列表有间隙的原因" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/18/2015-03-18_UICollectionView实现列表有间隙的原因/">UICollectionView实现列表，有&#39;非法&#39;间距的原因</a>
-    </h1>
-  
-
-        
-        <a href="/2015/03/18/2015-03-18_UICollectionView实现列表有间隙的原因/" class="archive-article-date">
-  	<time datetime="2015-03-18T15:24:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、前言">1、前言</h3><p>今天用CollectionView实现的列表效果不理想，UICollectionView实现列表有间隙，开始一直找不知道问题出现在那里。</p>
-        
-          <a class="article-more-a" href="/2015/03/18/2015-03-18_UICollectionView实现列表有间隙的原因/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">UICollectionView</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/03/18/2015-03-18_UICollectionView实现列表有间隙的原因/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2015-03-15_iOS代理方法导致崩溃的思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/15/2015-03-15_iOS代理方法导致崩溃的思考/">iOS代理方法导致崩溃的思考</a>
-    </h1>
-  
-
-        
-        <a href="/2015/03/15/2015-03-15_iOS代理方法导致崩溃的思考/" class="archive-article-date">
-  	<time datetime="2015-03-14T16:12:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、前言">1、前言</h3><p>崩溃信息：</p>
-<blockquote>
-<p><em>*</em> Terminating app due to uncaught exception ‘NSInvalidArgumentException’, reason: ‘-[ProductPropViewController valueChanged:]: unrecognized selector sent to instance 0x7a69f2e0’</p>
-</blockquote>
-<p>最近在实习，由于是接手上一个人工程师写的项目，改了一些方法，导致了错误崩溃。</p>
-        
-          <a class="article-more-a" href="/2015/03/15/2015-03-15_iOS代理方法导致崩溃的思考/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">delegate</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/03/15/2015-03-15_iOS代理方法导致崩溃的思考/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2015-03-12_一段iOS代码的演变史" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/12/2015-03-12_一段iOS代码的演变史/">一段iOS代码的演变史</a>
-    </h1>
-  
-
-        
-        <a href="/2015/03/12/2015-03-12_一段iOS代码的演变史/" class="archive-article-date">
-  	<time datetime="2015-03-12T07:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、前言">1、前言</h3><p>代码的重构，不只是简洁的代码好看，也是对设计框架的基础，如果能使用系统方法，不只是节省时候，而且是对自己的思维提高的认同。</p>
-        
-          <a class="article-more-a" href="/2015/03/12/2015-03-12_一段iOS代码的演变史/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">代码简洁</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/03/12/2015-03-12_一段iOS代码的演变史/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2015-03-12_.cer文件添加到钥匙串报错：不能修改“SystemRoots”钥匙串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/12/2015-03-12_.cer文件添加到钥匙串报错：不能修改“SystemRoots”钥匙串/">.cer 文件添加到钥匙串报错：不能修改“System Roots”钥匙串</a>
-    </h1>
-  
-
-        
-        <a href="/2015/03/12/2015-03-12_.cer文件添加到钥匙串报错：不能修改“SystemRoots”钥匙串/" class="archive-article-date">
-  	<time datetime="2015-03-11T17:17:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、报错信息：">1、报错信息：</h3><p>不能修改“System Roots”钥匙串：</p>
-<p>要更改根证书是否会被信任，请在“钥匙串访问”中打开它，然后修改它的信任设置</p>
-        
-          <a class="article-more-a" href="/2015/03/12/2015-03-12_.cer文件添加到钥匙串报错：不能修改“SystemRoots”钥匙串/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">System Roots</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">钥匙串</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/03/12/2015-03-12_.cer文件添加到钥匙串报错：不能修改“SystemRoots”钥匙串/">显示全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2015_Xcode真机运行报错：the_application_could_not_be_verified" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/12/2015_Xcode真机运行报错：the_application_could_not_be_verified/">Xcode真机运行报错：&quot;the application could not be verified&quot;</a>
-    </h1>
-  
-
-        
-        <a href="/2015/03/12/2015_Xcode真机运行报错：the_application_could_not_be_verified/" class="archive-article-date">
-  	<time datetime="2015-03-11T16:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>昨天苹果更新Xcode 6.2 ,升级后项目编译后报错，网上的搜索到的方法试了，结果都不成功，最后在Xcode 设置里重新设置帐号就可以了。<br>1、用“—”删除你的帐号</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-73bdc63dc475022d.png" alt="左下角“—”删除帐号"></p>
-        
-          <a class="article-more-a" href="/2015/03/12/2015_Xcode真机运行报错：the_application_could_not_be_verified/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">编译报错</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology//" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/03/12/2015_Xcode真机运行报错：the_application_could_not_be_verified/">显示全文 >></a>
         </p>
       
 
@@ -2027,6 +2047,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">iPhone</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">iTunes</a>
               </li>
              
@@ -2199,6 +2223,34 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">她</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笑谈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">《恋恋笔记本》</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">观后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">《当幸福来敲门》</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">《千与千寻》</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">《两小无猜》</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">绝代宠妓</a>
               </li>
              
@@ -2208,6 +2260,22 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">电影观后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">iOS动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">StoryBoard</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UIButton</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JSBadgeView</a>
               </li>
              
               <li class="article-tag-list-item">
