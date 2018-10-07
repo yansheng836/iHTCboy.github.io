@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="iHTCboy's blog">
 <meta property="og:description" content="最近在做自定义相机，然后就是iOS8要授权才能使用，如果用户拒绝，那么，就不能操作。
 问题是，怎么知道用户第一次选择相机，并且应用有打开相机的权限？">
-<meta property="og:updated_time" content="2018-05-01T15:09:44.000Z">
+<meta property="og:updated_time" content="2018-10-07T04:38:44.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS8相机授权判断">
 <meta name="twitter:description" content="最近在做自定义相机，然后就是iOS8要授权才能使用，如果用户拒绝，那么，就不能操作。
@@ -238,6 +238,10 @@ var _hmt = _hmt || [];
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#22312;iOS7 &#26102;&#65292;&#21482;&#26377;&#37096;&#20998;&#22320;&#21306;&#35201;&#27714;&#25480;&#26435;&#25165;&#33021;&#25171;&#24320;&#30456;&#26426;&#10;if (floor(NSFoundationVersionNumber) &#60;= NSFoundationVersionNumber_iOS_7_1) &#123;&#10;        // Pre iOS 8 -- No camera auth required.&#10;            &#10; &#125;else &#123;&#10;        // iOS 8 &#21518;&#65292;&#20840;&#37096;&#37117;&#35201;&#25480;&#26435;&#10;        &#10;        // Thanks: http://stackoverflow.com/a/24684021/2611971&#10;        &#10;        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];&#10;        switch (status) &#123;&#10;            case AVAuthorizationStatusNotDetermined:&#123;&#10;                // &#35768;&#21487;&#23545;&#35805;&#27809;&#26377;&#20986;&#29616;&#65292;&#21457;&#36215;&#25480;&#26435;&#35768;&#21487;&#10;   &#10;                [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) &#123;&#10;                   &#10;                    if (granted) &#123;&#10;                        //&#31532;&#19968;&#27425;&#29992;&#25143;&#25509;&#21463;&#10;                    &#125;else&#123;&#10;                         //&#29992;&#25143;&#25298;&#32477;&#10;                    &#125;&#10;                &#125;];&#10;                break;&#10;            &#125;&#10;            case AVAuthorizationStatusAuthorized:&#123;&#10;                // &#24050;&#32463;&#24320;&#21551;&#25480;&#26435;&#65292;&#21487;&#32487;&#32493;&#10;               &#10;                break;&#10;            &#125;&#10;            case AVAuthorizationStatusDenied:&#10;            case AVAuthorizationStatusRestricted:&#10;                // &#29992;&#25143;&#26126;&#30830;&#22320;&#25298;&#32477;&#25480;&#26435;&#65292;&#25110;&#32773;&#30456;&#26426;&#35774;&#22791;&#26080;&#27861;&#35775;&#38382;&#10;                &#10;                break;&#10;            default:&#10;                break;&#10;        &#125;&#10;        &#10;    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="最后一个坑：">最后一个坑：</h3><p>没有解决：<br>而问题的关键是，在第一次授权时，弹出的AlertView，其实，应用已经在后台了。当用户选择其中一个时，会从新回到前台，导致第一次时，如果要打开相机，会非常的慢，暂时还不知道这个问题怎么解决？欢迎在讨论区，谢谢大家！</p>
 <h3 id="补充:2015-7-26">补充:2015.7.26</h3><p>发现其它相机应用，刚打开时，就询问打授权，可能这就是目前比较好的解决方案？</p>
+<h3 id="更新_2018-10-07">更新 2018.10.07</h3><p>感谢 <code>AlvinCrash</code> 提供的打开慢的原因和解决方法：</p>
+<p>打开慢是因为异步问题，不是前后台哦</p>
+<figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">    <span class="keyword">if</span> (granted) &#123;</span><br><span class="line">        <span class="comment">//第一次用户接受</span></span><br><span class="line">        allowBlock();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//用户拒绝</span></span><br><span class="line">        showAlert(<span class="string">@"已拒绝授权，打开相机失败"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>回到主线程 提示就可以了</p>
 <ul>
 <li>如果有什么疑问，可以在评论区一起讨论；</li>
 <li>如果有什么不正确的地方，欢迎指导！</li>
@@ -413,7 +417,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最后一个坑："><span class="toc-number">1.</span> <span class="toc-text">最后一个坑：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充:2015-7-26"><span class="toc-number">2.</span> <span class="toc-text">补充:2015.7.26</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最后一个坑："><span class="toc-number">1.</span> <span class="toc-text">最后一个坑：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充:2015-7-26"><span class="toc-number">2.</span> <span class="toc-text">补充:2015.7.26</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新_2018-10-07"><span class="toc-number">3.</span> <span class="toc-text">更新 2018.10.07</span></a></li></ol>
                     </div>
                 </span>
             </div>

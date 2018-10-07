@@ -21,10 +21,10 @@ iOS导航栏的返回按钮，一直都是开发中比较头痛的问题。
 iOS导航栏的返回按钮，一直都是开发中比较头痛的问题。
 
 正好在做毕业设计时，想到要设置全局的返回样式，只要图片，不要文字，形式如下：">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-72a0e769c8b09c16.png">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-38db7c658561331b.png">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-ac06349a58357a38.png">
-<meta property="og:updated_time" content="2018-05-01T15:08:45.000Z">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2015/04/最终效果图.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2015/04/带有上一级导航标题.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2015/04/最后效果图.png">
+<meta property="og:updated_time" content="2018-10-07T03:26:30.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1分钟解决iOS_backBarButtonItem问题">
 <meta name="twitter:description" content="1、序
@@ -245,7 +245,7 @@ var _hmt = _hmt || [];
 <li>iOS导航栏的返回按钮，一直都是开发中比较头痛的问题。</li>
 </ul>
 <p>正好在做毕业设计时，想到要设置全局的返回样式，只要图片，不要文字，形式如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-72a0e769c8b09c16.png" alt="最终效果图"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2015/04/最终效果图.png" alt="最终效果图.png"></p>
 <a id="more"></a>
 <h2 id="2、思考过程">2、思考过程</h2><ul>
 <li>网上有很多种方法，但是我都认为太麻烦，所以看能不能简单的设置一个全局样式</li>
@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>以上代码实现了全局的形式如下：</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-38db7c658561331b.png" alt="带有上一级导航标题"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2015/04/带有上一级导航标题.png" alt="带有上一级导航标题.png"></p>
 <p>（2）讨论：全局下，箭头都是自定义样式了，但是文字怎么去掉？网上的方法很多，有用到时在设置，或全局的利用运行时重载方法，问题都是没有达到简单的方法，后来找到这样一个方法如下：</p>
 <ul>
 <li>利用全局的UIBarButtonItem，然后巧妙的设置文字的偏移值，达到“隐藏”效果</li>
@@ -264,7 +264,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>不知道这个方法是不是最简单，和这个方法是不有什么“bug”，能力有限，欢迎指点！</li>
 </ul>
-<h2 id="3、最后效果如下：">3、最后效果如下：</h2><p><img src="http://upload-images.jianshu.io/upload_images/99517-ac06349a58357a38.png" alt="最后效果图"></p>
+<h2 id="3、最后效果如下：">3、最后效果如下：</h2><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2015/04/最后效果图.png" alt="最后效果图.png"></p>
 <h2 id="4、快速使用方法">4、快速使用方法</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setNaviBack&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">UINavigationBar</span> * navigationBar = [<span class="built_in">UINavigationBar</span> appearance];</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回按钮的箭头颜色</span></span><br><span class="line"></span><br><span class="line">[navigationBar setTintColor:[<span class="built_in">UIColor</span> colorWithRed:<span class="number">0.984</span> green:<span class="number">0.000</span> blue:<span class="number">0.235</span> alpha:<span class="number">1.000</span>]];</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置返回样式图片</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">UIImage</span> *image = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"navi_back"</span>];</span><br><span class="line"></span><br><span class="line">image = [image imageWithRenderingMode:<span class="built_in">UIImageRenderingModeAlwaysOriginal</span>];</span><br><span class="line"></span><br><span class="line">navigationBar<span class="variable">.backIndicatorImage</span> = image;</span><br><span class="line"></span><br><span class="line">navigationBar<span class="variable">.backIndicatorTransitionMaskImage</span> = image;</span><br><span class="line"></span><br><span class="line"><span class="built_in">UIBarButtonItem</span> *buttonItem = [<span class="built_in">UIBarButtonItem</span> appearanceWhenContainedIn:[<span class="built_in">UINavigationBar</span> class], <span class="literal">nil</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">UIOffset</span> offset;</span><br><span class="line"></span><br><span class="line">offset<span class="variable">.horizontal</span> = - <span class="number">500</span>;</span><br><span class="line"></span><br><span class="line">offset<span class="variable">.vertical</span> =  - <span class="number">500</span>;</span><br><span class="line"></span><br><span class="line">[buttonItem setBackButtonTitlePositionAdjustment:offset forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="5、总结">5、总结</h2><p>在AppDelegate里集成上面代码，应用只要push后，不设置left按钮，默认都是统一的返回图片，快不快！而且保留了系统自带的左滑返回手势</p>
 <h2 id="6、Bug">6、Bug</h2><p>感谢 @binMyth 、 @简书坤  提醒，bug:</p>
