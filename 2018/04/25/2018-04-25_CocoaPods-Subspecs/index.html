@@ -19,7 +19,7 @@
 2、Subspecs（子库）为什么要使用子库?假设我们实现了一个完整的远程私有库 BaseComponent，可以升级，依赖其他的库，提供给其他人使用，但是现在还有一点问题，其他人如果要用我们的库，就需要把 BaseComponent 完整的克隆">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180425-Pods-AFNetworking.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180425-subPod.png">
-<meta property="og:updated_time" content="2018-10-07T10:23:37.663Z">
+<meta property="og:updated_time" content="2018-10-07T10:27:50.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods Subspecs 子库">
 <meta name="twitter:description" content="1、前言就像 Git 有 Submodules（子模块）共享库的代码，CocoaPods 也有 Subspecs （子库）的功能，用于共享库的部分代码。
@@ -275,14 +275,9 @@ var _hmt = _hmt || [];
 <li>嵌套的subspecs。(Nested subspecs.)</li>
 </ul>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">Pod:</span><span class="symbol">:Spec</span>.new <span class="keyword">do</span> |s|</span><br><span class="line">  s.name = <span class="string">'Root'</span></span><br><span class="line"></span><br><span class="line">  s.subspec <span class="string">'Level_1'</span> <span class="keyword">do</span> |sp|</span><br><span class="line">    sp.subspec <span class="string">'Level_2'</span> <span class="keyword">do</span> |ssp|</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h4 id="注意事项">注意事项</h4><ol>
-<li><p>pod下来的<code>Pods</code>目录下的库，不在以真实的文件夹区分子库，只会显示全部的源代码文件：<br> <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180425-Pods-AFNetworking.png" alt="20180425-Pods-AFNetworking.png"></p>
-</li>
-<li><p>如果使用子库方式 pod 下来，那么那些没有未分到子库的源代码文件不会 pod 到项目中，如果需要使用必须放到一个子库中，或者整个库 pod 下来。</p>
-</li>
-<li><p>子库下的目录文件包含关系，是否遍历子路径的问题<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180425-subPod.png" alt="20180425-subPod.png"></p>
-</li>
-</ol>
+<h4 id="注意事项">注意事项</h4><p>1.pod下来的<code>Pods</code>目录下的库，不在以真实的文件夹区分子库，只会显示全部的源代码文件：<br>    <img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180425-Pods-AFNetworking.png" alt="20180425-Pods-AFNetworking.png"></p>
+<p>2.如果使用子库方式 pod 下来，那么那些没有未分到子库的源代码文件不会 pod 到项目中，如果需要使用必须放到一个子库中，或者整个库 pod 下来。</p>
+<p>3.子库下的目录文件包含关系，是否遍历子路径的问题<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180425-subPod.png" alt="20180425-subPod.png"></p>
 <h3 id="3、总结">3、总结</h3><p><code>CocoaPods</code> 是一个非常强大的iOS库管理工具，所以能满足大多数框架开发下的业务逻辑的功能，另外，项目随着时间和开发迭代，越来越庞大，而公司可能有新业务，而底层公共功能接口是一样的。此时，为了快速开发，子库的作用是非常明显的。<code>CocoaPods</code>  是用 <code>Ruby</code> 开发的，所以，有时候还是学习一下，这对于理解 <code>CocoaPods</code>  非常有帮助，也能自主修改<code>CocoaPods</code> 功能，任重路远，加油~</p>
 <h3 id="参考扩展">参考扩展</h3><ul>
 <li><a href="https://guides.cocoapods.org/syntax/podspec.html#subspec" target="_blank" rel="external">CocoaPods Guides subspec - Podspec Syntax Reference <span>v1.2.0.beta.1</span></a></li>
