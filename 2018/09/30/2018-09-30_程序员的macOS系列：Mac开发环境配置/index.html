@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://github.com/sindresorhus/quick-look-plugins/raw/master/screenshots/QLMarkdown.png">
 <meta property="og:image" content="https://github.com/sindresorhus/quick-look-plugins/raw/master/screenshots/ProvisionQL.png">
 <meta property="og:image" content="https://github.com/sindresorhus/quick-look-plugins/raw/master/screenshots/QuickLookAPK.png">
-<meta property="og:updated_time" content="2019-02-08T15:58:47.372Z">
+<meta property="og:updated_time" content="2019-02-08T16:43:38.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="程序员的macOS系列：Mac开发环境配置">
 <meta name="twitter:description" content="1、前言最近在写《程序员的macOS系列》文章，之前写的第一篇 程序员的macOS系列：精选Mac App，大家都希望楼主尽快更新，结果拖到了2个月后，所以今天终于更新啦！其实macOS开发环境，系统默认自带ruby、php、python2、gcc、g++、bash等环境，并且因为macOS是以Unix为基础，所以有传统Unix/Linux的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通">
@@ -265,7 +265,7 @@ var _hmt = _hmt || [];
 <p>安装 <code>zsh</code>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install zsh</span><br></pre></td></tr></table></figure>
 <p>使用 <code>oh-my-zsh</code> 可以将zsh变得更加强大而灵巧：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure></p>
-<p>另外可以安装 oh-my-zsh 一些插件，比如实现自动跳转：<a href="https://github.com/joelthelion/autojump" target="_blank" rel="external">autojump</a>、<a href="https://github.com/clvv/fasd" target="_blank" rel="external">fasd</a></p>
+<p>另外可以安装 oh-my-zsh 一些插件，比如实现自动跳转：<a href="https://github.com/joelthelion/autojump" target="_blank" rel="external">autojump</a>、<a href="https://github.com/clvv/fasd" target="_blank" rel="external">fasd</a>、命令行自动提示<a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="external">zsh-autosuggestions</a></p>
 <p>个性化配置，包括别名，都在目录 <code>~/.zshrc</code> 下，需要深入教程的大家自动网上搜索啊。这里只是配置入门，修行还是看个人啊！</p>
 <p>创建别名的示例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc //vim 命令下面会说到</span><br><span class="line"><span class="built_in">alias</span> myblog=<span class="string">'cd /Users/HTC/Documents/iHTCBlog'</span> //快速到达指定目录</span><br><span class="line"><span class="built_in">alias</span> st=<span class="string">'open -a "Sublime Text"'</span> //打开某个app</span><br></pre></td></tr></table></figure>
@@ -288,6 +288,9 @@ var _hmt = _hmt || [];
 <p><code>git</code>基本配置：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &#34;iHTCboy&#34;&#10;git config --global user.email &#34;ihetiancong@gmail.com&#34;&#10;git config --global color.ui true&#10;git config --global alias.co checkout  # &#21035;&#21517;&#10;git config --global alias.ci commit&#10;git config --global alias.st status&#10;git config --global alias.br branch&#10;git config --global core.editor &#34;vim&#34;  # &#35774;&#32622;Editor&#20351;&#29992;vim&#10;git config --global core.quotepath false # &#35774;&#32622;&#26174;&#31034;&#20013;&#25991;&#25991;&#20214;&#21517;</span><br></pre></td></tr></table></figure>
 <p>用户的git配置文件目录： <code>~/.gitconfig</code></p>
+<ul>
+<li><a href="https://github.com/jonas/tig" target="_blank" rel="external">tig</a> 高亮美化, 让 git 命令行可视化</li>
+</ul>
 <p><code>git</code> 更多命令教程，大家自行搜索，如果要达到熟悉，还是要多实践练习啊~ 当然，原理也是必不可少的一步！</p>
 <h4 id="python3">python3</h4><p>python3 是未来，所以还是要安装使用和开发的！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install python3</span><br></pre></td></tr></table></figure>
@@ -394,6 +397,10 @@ var _hmt = _hmt || [];
 <td>返回到上一步操作目录</td>
 </tr>
 <tr>
+<td>cat xx</td>
+<td>查看xx文件的内容</td>
+</tr>
+<tr>
 <td>man xx</td>
 <td>查看命令的详细帮助，比如 mac ls</td>
 </tr>
@@ -435,6 +442,9 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
+<ul>
+<li><a href="https://github.com/jingweno/ccat" target="_blank" rel="external">ccat</a> 高亮 cat 内容</li>
+</ul>
 <h3 id="总结">总结</h3><p>macOS的开发环境大概就讲到这些，如果大家还有不清楚的，网上搜索已经一大片，这里只是总结和归纳一下，让大家有一个系统性的了解和学习，只有大家系统性的全面了解，才能深入每一个知识点学习。这也是本文的目的，授于鱼，不如授于渔，希望大家努力学习~</p>
 <p>楼主目前接触前端H5和后台开发时间不长，暂时不知道它们需要在macOS配置一些什么特别的环境，这些后续在补充，下面引用的参考，大家有时间一定要看看哦。这一篇就先这样~ 大家也可以留言反馈。国庆快乐~</p>
 <h3 id="参考">参考</h3><ul>
@@ -449,6 +459,8 @@ var _hmt = _hmt || [];
 <li><a href="https://bestswifter.gitbook.io/effectivemac/" target="_blank" rel="external">EffectiveMac - bestswifter</a></li>
 <li><a href="https://ohmyz.sh" target="_blank" rel="external">Oh My Zsh - a delightful &amp; open source framework for Z-Shell</a></li>
 <li><a href="https://leohxj.gitbooks.io/a-programmer-prepares/software/mac/softwares/zsh.html" target="_blank" rel="external">zsh | 程序员的自我修养</a></li>
+<li><a href="https://github.com/jonas/tig" target="_blank" rel="external">tig</a></li>
+<li><a href="https://github.com/jingweno/ccat" target="_blank" rel="external">ccat</a></li>
 <li><a href="https://github.com/sindresorhus/quick-look-plugins" target="_blank" rel="external">sindresorhus/quick-look-plugins: List of useful Quick Look plugins for developers</a></li>
 <li><a href="https://cocoapods.org" target="_blank" rel="external">CocoaPods.org</a></li>
 <li><a href="https://github.com/Carthage/Carthage" target="_blank" rel="external">Carthage/Carthage: A simple, decentralized dependency manager for Cocoa</a></li>
