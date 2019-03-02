@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-02-08T10:44:40.714Z</updated>
+  <updated>2019-03-02T09:32:48.390Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,468 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[《商业模式新生代》读书笔记]]></title>
+    <link href="https://iHTCboy.com/2019/02/27/2019-02-27_%E3%80%8A%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E6%96%B0%E7%94%9F%E4%BB%A3%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>https://iHTCboy.com/2019/02/27/2019-02-27_《商业模式新生代》读书笔记/</id>
+    <published>2019-02-27T00:49:16.000Z</published>
+    <updated>2019-03-02T09:32:48.390Z</updated>
+    <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>今年读的第一本书，时间节奏快，还是要在细细读第二次！非常优秀的实践指导书，值得每一个创业者，都读一下，不管是已经创业失败，还是准备创业，或者正在创业的小伙伴们，都赶紧来读读吧！</p>
+<h3 id="框架">框架</h3><p>读一本书，不是为了知识而知识，需要总结或吸收书中的知识框架，以便成为自己的知识体系！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-book-《商业模式新生代》-思维导图.png" alt="20190227-book-《商业模式新生代》-思维导图.png"></p>
+<h3 id="画布_canvas">画布 canvas</h3><h4 id="9个构造块_Building_Blocks">9个构造块 Building Blocks</h4><ol>
+<li><p>CS 客户细分（Customer Segments）</p>
+<blockquote>
+<p>企业或机构所服务的一个或多个客户分类群体。</p>
+</blockquote>
+<ul>
+<li>大众市场（Mass market）</li>
+<li>利基市场（Niche market）</li>
+<li>区隔化市场（Segmented）</li>
+<li>多元化市场（Diversified）</li>
+<li>多边平台或多边市场（Multi-sided platforms/multi-sided markets）</li>
+</ul>
+</li>
+<li><p>VP 价值主张（Value Propositions）</p>
+<blockquote>
+<p>通过价值主张来解决客户难题和满足客户需求。</p>
+</blockquote>
+<ul>
+<li>新颖（Newness）</li>
+<li>定制化（Customization）</li>
+<li>设计（Design）</li>
+<li>品牌/身份地位（Brand/status）</li>
+<li>价格（Price）</li>
+<li>成本削减（Cost reduction）</li>
+<li>风险抑制（Risk reduction）</li>
+<li>可达性（Accessibility）</li>
+<li>便利性/可用性（Convenience/usability）</li>
+</ul>
+</li>
+<li><p>CH 渠道通路（Channels）</p>
+<blockquote>
+<p>通过沟通、分销和销售渠道向客户传递价值主张。</p>
+</blockquote>
+<ul>
+<li>渠道类型<ul>
+<li>自有渠道<ul>
+<li>销售团队</li>
+<li>在线销售</li>
+<li>自有店铺</li>
+</ul>
+</li>
+<li>合作伙伴渠道 （非直接渠道）<ul>
+<li>合作伙伴店铺</li>
+<li>批发商</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>渠道阶段<ul>
+<li>认知</li>
+<li>评估</li>
+<li>购买</li>
+<li>传递</li>
+<li>售后</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-01渠道通路.jpg" alt="20190227-01-渠道通路.jpg"></p>
+</li>
+<li><p>CR 客户关系（Customer Relationships）</p>
+<blockquote>
+<p>在每一个客户细分市场建立和维系客户关系。</p>
+</blockquote>
+<ul>
+<li>动机驱动<ul>
+<li>客户获取</li>
+<li>客户维系</li>
+<li>提升销售额（追加销售）</li>
+</ul>
+</li>
+<li>类型<ul>
+<li>个人助理（Personal assistance）</li>
+<li>专用个人助理（Dedicated personal assistance）</li>
+<li>自助服务（Self-service）</li>
+<li>自动化服务（Automated services）</li>
+<li>社区（Communities）</li>
+<li>共同创作（Co-creation）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>R$ 收入来源（Revenue Streams）</p>
+<blockquote>
+<p>收入来源产生于成功提供给客户的价值主张。</p>
+</blockquote>
+<ul>
+<li>资产销售（Asset sale）</li>
+<li>使用收费（Usage fee）</li>
+<li>订阅收费（Subscription fees）</li>
+<li>租赁收费（Lending/Renting/Leasing）</li>
+<li>授权收费（Licensing）</li>
+<li>经纪收费（Brokerage fees）</li>
+<li>广告收费（Advertising）</li>
+</ul>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-02收入来源-定价机制.jpg" alt="20190227-02-收入来源-定价机制.jpg"></p>
+</li>
+</ol>
+<ol>
+<li><p>KR 核心资源（Key Resources）</p>
+<blockquote>
+<p>核心资源是提供和交付先前描述要素所必备的重要资产…</p>
+</blockquote>
+<ul>
+<li>实体资产（Physical）</li>
+<li>知识资产（Intellectual）</li>
+<li>人力资源（Human）</li>
+<li>金融资产（Financial）</li>
+</ul>
+</li>
+<li><p>KA 关键业务（Key Activities）</p>
+<blockquote>
+<p>通过执行一些关键业务活动，运转商业模式。</p>
+</blockquote>
+<ul>
+<li>制造产品（Production）</li>
+<li>问题解决（Problem solving）</li>
+<li>平台/网络 （Platform/network）</li>
+</ul>
+</li>
+<li><p>KP 重要合作（Key Partnership）</p>
+<blockquote>
+<p>有些业务要外包，而另外一些资源需要从企业外部获得。</p>
+</blockquote>
+<ul>
+<li>类型<ul>
+<li>在非竞争者之间的战略联盟关系；</li>
+<li>竞合：在竞争者之间的战略合作关系；</li>
+<li>为开发新业务而构建的合资关系；</li>
+<li>为确保可靠供应的购买方—供应商关系。</li>
+</ul>
+</li>
+<li>动机<ul>
+<li>商业模式的优化和规模经济的运用</li>
+<li>风险和不确定性的降低</li>
+<li>特定资源和业务的获取</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>C$ 成本结构（Cost Structure）</p>
+<blockquote>
+<p>商业模式上述要素所引发的成本构成。</p>
+</blockquote>
+<ul>
+<li>类型<ul>
+<li>成本驱动（Cost-driven）</li>
+<li>价值驱动（Value-driven）</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>固定成本（Fixed costs）</li>
+<li>可变成本（Variable costs）</li>
+<li>规模经济（Economies of scale）</li>
+<li>范围经济（Economies of scope）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>这9个商业模式构造块组成了构建商业模式便捷工具的基础，这个工具我们称之为商业模式画布（Business Model Canvas）。</p>
+<h4 id="商业模式画布（Business_Model_Canvas）">商业模式画布（Business Model Canvas）</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-03商业模式画布.jpg" alt="20190227-03-商业模式画布.jpg"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-03商业模式画布2.jpg" alt="20190227-03-商业模式画布2.jpg"></p>
+<h3 id="式样_patterns">式样 patterns</h3><ul>
+<li>非绑定式商业模式</li>
+<li>长尾式商业模式</li>
+<li>多边平台式商业模式</li>
+<li>免费式商业模式</li>
+<li>开放式商业模式</li>
+</ul>
+<h4 id="非绑定式商业模式">非绑定式商业模式</h4><blockquote>
+<p>“非绑定”企业的概念认为，存在三种不同的基本业务类型：客户关系型业务、产品创新型业务和基础设施型业务。每种类型都包含不同的经济驱动因素、竞争驱动因素和文化驱动因素。这三种类型可能同时存在于一家公司里，但是理论上这三种业务“分离”成独立的实体，以便避免冲突或不利的权衡妥协。</p>
+</blockquote>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-04三种核心的业务类型.jpg" alt="20190227-04-三种核心的业务类型.jpg"></p>
+<ul>
+<li>私人银行商业模式<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-04私人银行商业模式.jpg" alt="20190227-04-私人银行商业模式.jpg"></li>
+</ul>
+<h4 id="长尾式商业模式">长尾式商业模式</h4><blockquote>
+<p>长尾式商业模式的核心是多样少量：他们关注于为利基市场提供大量产品，每种产品相对而言卖得都少。利基产品销售总额可以与凭借少量畅销产品产生绝大多数销售额的传统模式相媲美。长尾模式需要低库存成本和强大的平台，并使得利基产品对于兴趣买家来说容易获得。</p>
+</blockquote>
+<ul>
+<li><p>乐高工厂：客户设计（玩具）套件<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-05-乐高工厂：客户设计（玩具）套件.jpg" alt="20190227-05-乐高工厂：客户设计（玩具）套件.jpg"></p>
+<p>  乐高<br>  ＋ 乐高的用户可以自己设计产品并在线订购<br>  ＝ 乐高工厂<br>  ＋ 乐高允许用户销售自己设计的产品<br>  ＝ 乐高的用户产品目录</p>
+</li>
+</ul>
+<h4 id="多边平台式商业模式">多边平台式商业模式</h4><blockquote>
+<p>多边平台将两个或者更多有明显区别但又相互依赖的客户群体集合在一起。<br>只有相关客户群体同时存在的时候，这样的平台才具有价值。多边平台通过促进各方客户群体之间的互动来创造价值。多边平台需要提升其价值，直到它达到可以吸引更多用户的程度，这种现象被称为网络效应。</p>
+</blockquote>
+<ul>
+<li><p>Google的商业模式<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-06-Google的商业模式.jpg" alt="20190227-06-Google的商业模式.jpg"></p>
+</li>
+<li><p>任天堂 Wii 对决PSP/Xbox<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-07-任天堂 Wii 对决PSP、Xbox-01.jpg" alt="20190227-07-任天堂 Wii 对决PSP、Xbox-01.jpg"></p>
+</li>
+</ul>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-07-任天堂 Wii 对决PSP、Xbox-02.jpg" alt="20190227-07-任天堂 Wii 对决PSP、Xbox-02.jpg"></p>
+<h4 id="免费式商业模式">免费式商业模式</h4><blockquote>
+<p>免费，在免费式商业模式中，至少有一个庞大的客户细分群体可以享受持续的免费服务。免费服务可以来自多种模式。通过该商业模式的其他部分或其他客户细分群体，给非付费客户细分群体提供财务支持。</p>
+</blockquote>
+<ul>
+<li><p>Metro<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-08-免费式商业模式-Metro.jpg" alt="20190227-08-免费式商业模式-Metro.jpg"></p>
+</li>
+<li><p>Flickr<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-08-免费式商业模式-Flickr.jpg" alt="20190227-08-免费式商业模式-Flickr.jpg"></p>
+</li>
+<li><p>Red Hat<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-08-免费式商业模式-RedHat.jpg" alt="20190227-08-免费式商业模式-RedHat.jpg"></p>
+</li>
+<li><p>Skype<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-08-免费式商业模式-Skype-01.jpg" alt="20190227-08-免费式商业模式-Skype-01.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-08-免费式商业模式-Skype-02.jpg" alt="20190227-08-免费式商业模式-Skype-02.jpg"></p>
+</li>
+<li><p>REGA<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-08-免费式商业模式-REGA.jpg" alt="20190227-08-免费式商业模式-REGA.jpg"></p>
+</li>
+<li><p>免费移动电话的诱钓模式<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-08-免费式商业模式-免费移动电话的诱钓模式.jpg" alt="20190227-08-免费式商业模式-免费移动电话的诱钓模式.jpg"></p>
+</li>
+<li><p>剃刀与刀片：吉列<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-08-免费式商业模式-剃刀与刀片：吉列.jpg" alt="20190227-08-免费式商业模式-剃刀与刀片：吉列.jpg"></p>
+</li>
+</ul>
+<h4 id="开放式商业模式">开放式商业模式</h4><blockquote>
+<p>开放式商业模式可以用于那些通过与外部伙伴系统性合作，来创造和捕捉价值的企业。这种模式可以是“由外到内”，将外部的创意引入到公司内部，也可以是“由内到外”，将企业内部闲置的创意和资产提供给外部伙伴。</p>
+</blockquote>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-09-开放式商业模式-创新的原则.jpg" alt="20190227-09-开放式商业模式-创新的原则.jpg"></p>
+<ul>
+<li>Innocentive<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-09-开放式商业模式-Innocentive.jpg" alt="20190227-09-开放式商业模式-Innocentive.jpg"></li>
+</ul>
+<h4 id="式样总览">式样总览</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-10-式样总览01.jpg" alt="20190227-10-式样总览01.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-10-式样总览02.jpg" alt="20190227-10-式样总览02.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-10-式样总览03.jpg" alt="20190227-10-式样总览03.jpg"></p>
+<h3 id="设计">设计</h3><blockquote>
+<p>商业模式设计方法</p>
+</blockquote>
+<ul>
+<li>客户洞察</li>
+<li>创意构思</li>
+<li>可视思考</li>
+<li>原型制作</li>
+<li>故事讲述</li>
+<li>情景推测</li>
+</ul>
+<h4 id="客户洞察">客户洞察</h4><ul>
+<li>移情图</li>
+</ul>
+<blockquote>
+<p>移情图（empathy map，感同身受之意）</p>
+</blockquote>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-11-移情图.jpg" alt="20190227-11-移情图.jpg"></p>
+<ol>
+<li><p>她看到的是什么？</p>
+<blockquote>
+<p>描述客户在她的环境里看到了什么</p>
+</blockquote>
+<ul>
+<li>环境看起来像什么？</li>
+<li>谁在她周围？</li>
+<li>谁是她的朋友？</li>
+<li>她每天接触什么类型的产品或服务（相对于所有市场产品或服务）？</li>
+<li>她遭遇的问题是什么？</li>
+</ul>
+</li>
+<li><p>她听到的是什么？</p>
+<blockquote>
+<p>描述客户所处环境是如何影响客户的</p>
+</blockquote>
+<ul>
+<li>她的朋友说什么？她的配偶呢？</li>
+<li>谁能真正影响她？如何影响？</li>
+<li>哪些媒体渠道能影响她？</li>
+</ul>
+</li>
+<li><p>她真正的想法和感觉是什么？</p>
+<blockquote>
+<p>设法概述你的客户所想的是什么</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>对她来说，什么是最重要的（她可能不公开说）？</li>
+<li>想象一下她的情感。</li>
+<li>什么能感动她？</li>
+<li>什么能让她失眠？</li>
+<li>尝试着描述她的梦想和愿望。</li>
+</ul>
+<ol>
+<li><p>她说些什么又做些什么？</p>
+<blockquote>
+<p>想象这位客户可能会说什么或者在公开场合可能的行为</p>
+</blockquote>
+<ul>
+<li>她的态度是什么？</li>
+<li>她会给别人讲什么？</li>
+<li>要特别留意在客户所说和她真正想法与感受之间的潜在冲突。</li>
+</ul>
+</li>
+<li><p>这个客户的痛苦是什么？</p>
+<ul>
+<li>她最大的挫折是什么？</li>
+<li>在她和她想要事物或需要达到的目标之间有什么障碍？</li>
+<li>她会害怕承担哪些风险？</li>
+</ul>
+</li>
+<li><p>这个客户想得到什么？</p>
+<ul>
+<li>她真正想要和希望达到的是什么？</li>
+<li>她如何衡量成功？</li>
+<li>猜想一些她可能用来实现其目标的策略。</li>
+</ul>
+</li>
+</ol>
+<h4 id="创意构思">创意构思</h4><ul>
+<li>资源驱动</li>
+<li>产品/服务驱动</li>
+<li>客户驱动</li>
+<li>财务驱动</li>
+<li>多中心驱动</li>
+</ul>
+<h5 id="创意构思的过程">创意构思的过程</h5><ol>
+<li>团队构成</li>
+<li>全情投入</li>
+<li>扩展</li>
+<li>条件筛选</li>
+<li>“原型制作”</li>
+</ol>
+<h5 id="一个多样化的商业模式创新团队的成员应该">一个多样化的商业模式创新团队的成员应该</h5><ul>
+<li>来自不同业务部门</li>
+<li>年龄不同</li>
+<li>具备不同领域的专业技能</li>
+<li>有不同层次的资历</li>
+<li>拥有不同经验阅历</li>
+<li>来自不同文化背景</li>
+</ul>
+<h5 id="头脑风暴的规则">头脑风暴的规则</h5><ul>
+<li>保持聚焦</li>
+<li>执行规则</li>
+<li>可视思考</li>
+<li>做好准备</li>
+</ul>
+<h4 id="可视思考">可视思考</h4><ul>
+<li>通过便利贴实现视觉化</li>
+<li>通过绘图来实现视觉化</li>
+<li>理解本质</li>
+<li>促进对话</li>
+<li>探索创意</li>
+<li>促进交流</li>
+<li>针对不同需求的不同类型的视觉化</li>
+</ul>
+<h4 id="原型制作">原型制作</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-12-原型制作01.jpg" alt="20190227-12-原型制作01.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-12-原型制作02.jpg" alt="20190227-12-原型制作02.jpg"></p>
+<h4 id="故事讲述">故事讲述</h4><h4 id="情景推测">情景推测</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-13-情景推测01.jpg" alt="20190227-13-情景推测01.jpg"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-13-情景推测02.jpg" alt="20190227-13-情景推测02.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-13-情景推测03.jpg" alt="20190227-13-情景推测03.jpg"></p>
+<h3 id="战略">战略</h3><ul>
+<li>商业模式环境</li>
+<li>评估商业模式</li>
+<li>商业模式视角下的蓝海战略</li>
+<li>管理多个商业模式</li>
+</ul>
+<h4 id="商业模式环境">商业模式环境</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-14-商业模式环境.jpg" alt="20190227-14-商业模式环境.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-14-商业模式环境-市场影响因素-市场分析.jpg" alt="20190227-14-商业模式环境-市场影响因素-市场分析.jpg"></p>
+<ul>
+<li>制药行业环境分析<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-14-商业模式环境-制药行业环境分析01.jpg" alt="20190227-14-商业模式环境-制药行业环境分析01.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-14-商业模式环境-制药行业环境分析02.jpg" alt="20190227-14-商业模式环境-制药行业环境分析02.jpg"></li>
+</ul>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-14-商业模式环境-制药行业环境分析03.jpg" alt="20190227-14-商业模式环境-制药行业环境分析03.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-14-商业模式环境-制药行业环境分析04.jpg" alt="20190227-14-商业模式环境-制药行业环境分析04.jpg"><br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-14-商业模式环境-制药行业环境分析05.jpg" alt="20190227-14-商业模式环境-制药行业环境分析05.jpg"></p>
+<h4 id="评估商业模式">评估商业模式</h4><ul>
+<li><p>亚马逊在2005年的主要优势和劣势<br><img src="media/15513174011132.jpg" alt=""></p>
+</li>
+<li><p>亚马逊在2006年探索到的机会：<br><img src="media/15513174844811.jpg" alt=""></p>
+</li>
+<li><p>详尽地SWOT评估每一个构造块<br><img src="media/15513175292260.jpg" alt=""></p>
+</li>
+</ul>
+<h4 id="商业模式视角下的蓝海战略">商业模式视角下的蓝海战略</h4><p>金和莫博涅提出了他们称之为“四项行动架构”的分析工具<br><img src="media/15514030152504.jpg" alt=""></p>
+<p><img src="media/15514030607147.jpg" alt=""></p>
+<ul>
+<li><p>在商业模式画布中融入蓝海战略框架<br><img src="media/15514030990675.jpg" alt=""></p>
+</li>
+<li><p>太阳马戏团（Cirque Du Soleil）<br><img src="media/15514031493900.jpg" alt=""></p>
+</li>
+</ul>
+<p><img src="media/15514031709613.jpg" alt=""><br>来源：改编自《蓝海战略》</p>
+<ul>
+<li><p>任天堂的wii<br><img src="media/15514032027163.jpg" alt=""><br><img src="media/15514032229649.jpg" alt=""></p>
+</li>
+<li><p>用“四项行动构架”来质疑你的商业模式画布<br><img src="media/15514033410276.jpg" alt=""></p>
+</li>
+</ul>
+<h4 id="管理多个商业模式">管理多个商业模式</h4><ul>
+<li><p>瑞表（SMH）为斯沃琪（Swatch）选择独立模式<br><img src="media/15514033986289.jpg" alt=""></p>
+</li>
+<li><p>雀巢咖啡业务的商业模式组合<br><img src="media/15514034255617.jpg" alt=""></p>
+</li>
+<li><p>戴姆勒的“随租随行”（CAR2GO）商业模式<br><img src="media/15514034488926.jpg" alt=""></p>
+</li>
+</ul>
+<h3 id="流程">流程</h3><ul>
+<li>商业模式设计流程</li>
+<li>设计理念</li>
+<li>5 个阶段</li>
+</ul>
+<h4 id="商业模式设计流程">商业模式设计流程</h4><p>商业模式的创新有四大目标：</p>
+<ul>
+<li>（1）满足被忽视的市场需求；</li>
+<li>（2）把新技术、产品和服务推向市场；</li>
+<li>（3）通过一个更好的商业模式来改进、颠覆或变革现有的市场；</li>
+<li>（4）创造一个全新的市场。</li>
+</ul>
+<p>挑战</p>
+<ul>
+<li>找出合适的模式</li>
+<li>全面上市之前进行测试模式</li>
+<li>推动市场接受新的模式</li>
+<li>结合市场反馈，持续不断地调整模式</li>
+<li>管理不确定因素</li>
+</ul>
+<h4 id="设计理念">设计理念</h4><p><img src="media/15514036339224.jpg" alt=""></p>
+<h4 id="5_个阶段">5 个阶段</h4><blockquote>
+<p>5个阶段：动员、理解、设计、实施、管理</p>
+</blockquote>
+<p><img src="media/15514038106796.jpg" alt=""></p>
+<p><img src="media/15514039285936.jpg" alt=""></p>
+<h3 id="展望">展望</h3><ul>
+<li>不以赢利为目的的商业模式</li>
+<li>电脑辅助商业模式设计</li>
+<li>商业模式和商业计划书<ul>
+<li>团队</li>
+<li>商业模式</li>
+<li>财务分析</li>
+<li>外部环境</li>
+<li>实施路线图</li>
+<li>风险分析</li>
+</ul>
+</li>
+<li>在企业中实施商业模式<ul>
+<li>战略</li>
+<li>结构</li>
+<li>流程</li>
+<li>激励</li>
+<li>人员</li>
+</ul>
+</li>
+<li>IT 系统配合业务</li>
+</ul>
+<h4 id="不以赢利为目的的商业模式">不以赢利为目的的商业模式</h4><p><img src="media/15514041211298.jpg" alt=""><br><img src="media/15514041381381.jpg" alt=""></p>
+<h4 id="电脑辅助商业模式设计">电脑辅助商业模式设计</h4><p><img src="media/15514545725992.jpg" alt=""></p>
+<h4 id="商业模式和商业计划书">商业模式和商业计划书</h4><p><img src="media/15514546279699.jpg" alt=""></p>
+<h4 id="在企业中实施商业模式">在企业中实施商业模式</h4><p><img src="media/15514546818591.jpg" alt=""></p>
+<h4 id="IT_系统配合业务">IT 系统配合业务</h4><p><img src="media/15514547221327.jpg" alt=""></p>
+<h3 id="《商业模式新生代》的商业模式画布">《商业模式新生代》的商业模式画布</h3><p><img src="media/15514547937803.jpg" alt=""></p>
+<h3 id="个人总结">个人总结</h3><p>建筑自已对商业模式的认识，有一个清晰的方法论，作者给了全面的9个商业要素，并且本书根据这个画布，组构、分析、优化，并在案例分析和结合其它想维框架，给出很多商业模式的示例，最后，需要读者自已给出自已创新的模式！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="前言">前言</h3><p>今年读的第一本书，时间节奏快，还是要在细细读第二次！非常优秀的实践指导书，值得每一个创业者，都读一下，不管是已经创业失败，还是准备创业，或者正在创业的小伙伴们，都赶紧来读读吧！</p>
+<h3 id="框架">框架</h3><p>读一本]]>
+    </summary>
+    
+      <category term="商业模式新生代" scheme="https://iHTCboy.com/tags/%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E6%96%B0%E7%94%9F%E4%BB%A3/"/>
+    
+      <category term="读书笔记" scheme="https://iHTCboy.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="读后感" scheme="https://iHTCboy.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+      <category term="life" scheme="https://iHTCboy.com/categories/life/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[2019，猪你好！]]></title>
@@ -2126,7 +2588,7 @@
     <link href="https://iHTCboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89MacApp/"/>
     <id>https://iHTCboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/</id>
     <published>2018-07-15T14:29:16.000Z</published>
-    <updated>2018-10-05T00:29:46.985Z</updated>
+    <updated>2019-03-02T09:49:36.888Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近打算写《程序员的macOS系列》文章，总结一下自己程序员几年的macOS系统使用，本文是《程序员的macOS系列》的第一篇精选Mac App，介绍一下程序员macOS的应用，所以这系列文章是指向于程序员，可能会偏向iOS开发，尽量写大全吧。网上也有很多总结了Mac App的文章，但本文是一个程序员系列的，注意定位就好。</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
@@ -3011,8 +3473,7 @@
 <td>漂亮的番茄时钟。</td>
 <td>免费</td>
 <td><a href="http://www.cannonballhq.com" target="_blank" rel="external">Cannonball HQ</a>、<a href="http://macdownload.informer.com/pomodoro-timer/" target="_blank" rel="external">Pomodoro Timer for Mac, It helps you implement the Pomodoro technique in your daily activities.</a></td>
-<td>[Pomodoro Timer mac版</td>
-<td>Pomodoro Timer for mac下载 1.5](<a href="http://www.pc6.com/mac/136806.html" target="_blank" rel="external">http://www.pc6.com/mac/136806.html</a>)</td>
+<td><a href="http://www.pc6.com/mac/136806.html" target="_blank" rel="external">Pomodoro Timer mac版 - Pomodoro Timer for mac下载 1.5</a></td>
 </tr>
 <tr>
 <td><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180715-macOS-Tomato_One.png" width="200" height:auto="" alt="20180715-macOS-Tomato_One.png"></td>
@@ -3617,95 +4078,6 @@
       <category term="macOS" scheme="https://iHTCboy.com/tags/macOS/"/>
     
       <category term="苹果控制台" scheme="https://iHTCboy.com/tags/%E8%8B%B9%E6%9E%9C%E6%8E%A7%E5%88%B6%E5%8F%B0/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Python爬虫实践入门篇]]></title>
-    <link href="https://iHTCboy.com/2018/07/10/2018-07-10_Python%E7%88%AC%E8%99%AB%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8%E7%AF%87/"/>
-    <id>https://iHTCboy.com/2018/07/10/2018-07-10_Python爬虫实践入门篇/</id>
-    <published>2018-07-10T13:49:16.000Z</published>
-    <updated>2018-08-25T03:36:28.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>
-<h3 id="2、需要的准备">2、需要的准备</h3><ul>
-<li>Python：需要基本的python语法基础</li>
-<li>requests：专业用于请求处理，<a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">requests库学习文档中文版</a></li>
-<li>lxml：其实可以用pythonth自带的正则表达式库re，但是为了更加简单入门，用 <a href="https://lxml.de/index.html" target="_blank" rel="external">lxml</a> 中的 etree 进行网页数据定位爬取。</li>
-</ul>
-<a id="more"></a>
-<p>通过pip安装 requests 和 lxml 库，在终端输入：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> requests</span><br><span class="line">pip <span class="keyword">install</span> lxml</span><br></pre></td></tr></table></figure></p>
-<p>注：如果是安装到Python3就用<code>pip3 install</code></p>
-<p>下载过程成功的输出：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collecting lxml</span><br><span class="line">  Cache entry deserialization failed, entry ignored</span><br><span class="line">  Downloading https:<span class="comment">//files.pythonhosted.org/packages/00/fd/5e65f293e366a63198dade275b886e5d24752367c2e67e3993023b0d58ef/lxml-4.2.3-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (8.7MB)</span></span><br><span class="line">    <span class="number">100</span>% |████████████████████████████████| <span class="number">8.7</span>MB <span class="number">821</span>kB/s </span><br><span class="line">Installing collected packages: lxml</span><br><span class="line">Successfully installed lxml-<span class="number">4.2</span><span class="number">.3</span></span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>注：<br>如果安装过程遇到任何问题，请谷歌吧，如果网上找不到答案，也不要问我！找不到答案我直播吃翔！！！</li>
-</ul>
-<h3 id="3、实践过程">3、实践过程</h3><p>为了这过程有点兴趣，我找了一个美图的网站，爬虫了一波图片~</p>
-<p>实践爬虫的网站链接：<a href="https://www点aitaotu点com（注意，这不是打广告！）" target="_blank" rel="external">https://www点aitaotu点com（注意，这不是打广告！）</a></p>
-<ul>
-<li>下载页面html内容：</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page = <span class="string">'https://www点aitaotu点com/guonei/36350.html'</span></span><br><span class="line">data = requests.get(page).text</span><br><span class="line">dom = etree.HTML(data)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>解析(定位)元素:</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title_path = <span class="string">'//*[@id="photos"]/h1/text()'</span></span><br><span class="line">totalpage_path = <span class="string">'//*[@id="picnum"]/span[2]/text()'</span></span><br><span class="line">image_path = <span class="string">'//*[@id="big-pic"]/p/a/img'</span></span><br></pre></td></tr></table></figure>
-<p>这里的xpath怎么获取，就是网页里面，打开开发者检查元素工具，在safari和chrome都有这个功能：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-html-show-element.png" alt="20180710-html-show-element.png"></p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-html-copy-xpath.png" alt="20180710-html-copy-xpath.png"></p>
-<ul>
-<li>获取元素内容：</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title = dom.xpath(title_path)[<span class="number">0</span>]</span><br><span class="line">total = dom.xpath(totalpage_path)[<span class="number">0</span>]</span><br><span class="line">image_url = dom.xpath(image_path)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">img_src = image_url.xpath(<span class="string">'./@src'</span>)[<span class="number">0</span>]</span><br><span class="line">img_alt = image_url.xpath(<span class="string">'./@alt'</span>)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<p>这里解析就不解析了，其实通过PyCharm IDE可能实时查看每个对象的属性，可以更清晰的了解解析的元素结构，帮助理解，这里就暂时不说IDE的方法啦，大家有兴趣可以试试，也是很简单的~</p>
-<p>最后拿到图片链接，就是下载图片然后保存输出到电脑啊！（文章尾附完整代码！）</p>
-<h3 id="4、总结">4、总结</h3><p>爬虫入门就这样结束啦！学习了python后，发现语法很简单，代码很轻松就完成！不到100行！！！</p>
-<p>python通过各种库，解决了编程语言自身的庞大，完成了自己是胶水语言的特点！</p>
-<p>通过这次实践，其实，有很多细节东西，只有自己做了才知道，比较说保存图片的路径，找到当前目录，怎么分目录保存，目录文件操作，这些都是自己之前实践了一个django工具学习过来的。所以，现在经历多了，才知道，什么时候学习都不晚，有些东西，真的是不知道什么时候你会用上，真的，自己早知道这个道理几年，就不像年轻时那么想，这东西怎么可能会用上，不学！！！果然是年轻坑爹！！！<strong>学会老，学到老吧！</strong></p>
-<h3 id="5、代码">5、代码</h3><ul>
-<li><a href="https://github.com/iHTCboy/WebCrawlerExample" target="_blank" rel="external">iHTCboy/WebCrawlerExample: 网页爬虫实践示例</a></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin/python3</span></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">downloadImages</span><span class="params">(url)</span>:</span></span><br><span class="line">    data = requests.get(page).text</span><br><span class="line">    dom = etree.HTML(data)</span><br><span class="line"></span><br><span class="line">    title_path = <span class="string">'//*[@id="photos"]/h1/text()'</span></span><br><span class="line">    totalpage_path = <span class="string">'//*[@id="picnum"]/span[2]/text()'</span></span><br><span class="line">    image_path = <span class="string">'//*[@id="big-pic"]/p/a/img'</span></span><br><span class="line"></span><br><span class="line">    title = dom.xpath(title_path)[<span class="number">0</span>]</span><br><span class="line">    total = dom.xpath(totalpage_path)[<span class="number">0</span>]</span><br><span class="line">    image_url = dom.xpath(image_path)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    img_src = image_url.xpath(<span class="string">'./@src'</span>)[<span class="number">0</span>]</span><br><span class="line">    img_alt = image_url.xpath(<span class="string">'./@alt'</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    print(title, total, img_src, img_alt)</span><br><span class="line"></span><br><span class="line">    cwd = os.getcwd()</span><br><span class="line">    save_path = os.path.join(cwd, <span class="string">'images/'</span> + title)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(save_path):</span><br><span class="line">        os.makedirs(save_path)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">u'保存图片的路径：'</span>, save_path)</span><br><span class="line"></span><br><span class="line">    img_path = os.path.dirname(img_src)</span><br><span class="line">    img_name = os.path.basename(img_src)</span><br><span class="line">    img_format = img_name.split(<span class="string">'.'</span>)[<span class="number">1</span>]</span><br><span class="line">    print(img_path, img_name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, int(total) + <span class="number">1</span>):</span><br><span class="line">        new_img_url = <span class="string">'%s/%02d.%s'</span> % (img_path, i, img_format)</span><br><span class="line">        save_img_path = <span class="string">'%s/%02d.%s'</span> % (save_path, i, img_format)</span><br><span class="line">        <span class="comment"># 下载图片</span></span><br><span class="line">        image = requests.get(new_img_url)</span><br><span class="line">        <span class="comment"># 命名并保存图片</span></span><br><span class="line">        <span class="keyword">with</span> open(save_img_path, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    url = <span class="string">'https://www.aitaotu.com/'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># download list</span></span><br><span class="line">    list = [<span class="string">'guonei/36350.html'</span>, <span class="string">'guonei/36352.html'</span>, <span class="string">'guonei/36351.html'</span>, <span class="string">'guonei/36357.html'</span>, <span class="string">'guonei/36250.html'</span>,</span><br><span class="line">            <span class="string">'guonei/36341.html'</span>, <span class="string">'guonei/36334.html'</span>, <span class="string">'guonei/36306.html'</span>, <span class="string">'guonei/35969.html'</span>, <span class="string">'guonei/35219.html'</span>,</span><br><span class="line">            <span class="string">'guonei/36290.html'</span>, <span class="string">'guonei/36277.html'</span>, <span class="string">'guonei/36263.html'</span>, <span class="string">'gangtai/36303.html'</span>, <span class="string">'gangtai/36226.html'</span>,</span><br><span class="line">            <span class="string">'guonei/35260.html'</span>, <span class="string">'guonei/35247.html'</span>, <span class="string">'guonei/36257.html'</span>, <span class="string">'guonei/36221.html'</span>, <span class="string">'guonei/21647.html'</span>,</span><br><span class="line">            <span class="string">'guonei/21499.html'</span>, <span class="string">'guonei/36319.html'</span>, <span class="string">'guonei/34903.html'</span>, <span class="string">'guonei/14148.html'</span>, <span class="string">'guonei/33780.html'</span>,</span><br><span class="line">            <span class="string">'guonei/14338.html'</span>, <span class="string">'guonei/14550.html'</span>, <span class="string">'guonei/14818.html'</span>, <span class="string">'guonei/16820.html'</span>, <span class="string">'guonei/18388.html'</span>,</span><br><span class="line">            <span class="string">'guonei/13447.html'</span>, <span class="string">'guonei/25912.html'</span>, <span class="string">'guonei/13991.html'</span>, <span class="string">'guonei/8246.html'</span>, <span class="string">'guonei/36171.html'</span></span><br><span class="line">            ]</span><br><span class="line"></span><br><span class="line">    print(<span class="string">u'准备下载：%d套图'</span>, len(list))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> type <span class="keyword">in</span> list:</span><br><span class="line">        page = url + type</span><br><span class="line">        downloadImages(page)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    print(<span class="string">u'下载完成啦！'</span>)</span><br></pre></td></tr></table></figure>
-<p>代码就没有太多注释，因为很简单，就说一下运行方式吧，在终端：</p>
-<p>python2:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
-<p>python3:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python3</span> YellowImage.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
-<p>最后的成果：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180710-last-results.png" alt="20180710-last-results.png"></p>
-<h3 id="6、参考">6、参考</h3><ul>
-<li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">Python教程 - 廖雪峰的官方网站</a></li>
-<li><a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">Requests: 让 HTTP 服务人类 — Requests 2.18.1 文档</a></li>
-<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html" target="_blank" rel="external">Beautiful Soup 4.2.0 文档</a></li>
-<li><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">正则表达式30分钟入门教程</a></li>
-<li><a href="http://tool.oschina.net/regex/" target="_blank" rel="external">在线正则表达式测试</a></li>
-<li><a href="https://lxml.de/index.html" target="_blank" rel="external">lxml - Processing XML and HTML with Python</a></li>
-<li><a href="https://www.kawabangga.com/posts/2058" target="_blank" rel="external">Python lxml教程 | 卡瓦邦噶！</a></li>
-<li><a href="https://piaosanlang.gitbooks.io/spiders/02day/section2.3.html" target="_blank" rel="external">非结构化数据之lxml库 · 网络爬虫教程</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>学习Python二个多月啦，周末时开始兴趣学习爬虫，虽然有点概念，但是也折腾了大半天，下面就开始简要记录一下吧。</p>
-<h3 id="2、需要的准备">2、需要的准备</h3><ul>
-<li>Python：需要基本的python语法基础</li>
-<li>requests：专业用于请求处理，<a href="http://docs.python-requests.org/zh_CN/latest/">requests库学习文档中文版</a></li>
-<li>lxml：其实可以用pythonth自带的正则表达式库re，但是为了更加简单入门，用 <a href="https://lxml.de/index.html">lxml</a> 中的 etree 进行网页数据定位爬取。</li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="Python" scheme="https://iHTCboy.com/tags/Python/"/>
-    
-      <category term="Python爬虫" scheme="https://iHTCboy.com/tags/Python%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="爬虫" scheme="https://iHTCboy.com/tags/%E7%88%AC%E8%99%AB/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
