@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-03-17T14:36:10.952Z</updated>
+  <updated>2019-03-17T14:50:00.069Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[shell技巧7 - 提高效率的常用脚本用法]]></title>
+    <link href="https://iHTCboy.com/2019/03/14/2019-03-14_shell%E6%8A%80%E5%B7%A77-git%E6%9B%B4%E6%96%B0%E7%AD%89%E6%95%88%E7%8E%87%E8%84%9A%E6%9C%AC/"/>
+    <id>https://iHTCboy.com/2019/03/14/2019-03-14_shell技巧7-git更新等效率脚本/</id>
+    <published>2019-03-14T14:20:16.000Z</published>
+    <updated>2019-03-17T14:50:00.069Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>经过前面那么多节的脚本使用技巧，相信大家一定已经掌握了基本的shell脚本编写，但是可能还是没有想明白，或者想到说平时工作生活中，有什么作用？今天，写写我自己在工作中，一些提高效率的脚本一起来看看吧~</p>
+<a id="more"></a>
+<h3 id="2、git_pull_更新">2、git pull 更新</h3><p>工作中，我们都知道，更新工作代码库：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> pull</span><br></pre></td></tr></table></figure></p>
+<p>但是，有没有想过，如果你有10个库呢？是不是要命令行切换目录输出10次？或者你有Sourcetree，在界面也要切换10次吧？</p>
+<p>所以，有没有想过，如果用脚本，能不能一次的把全部的库，都<code>git pull</code>下来？想到这样，相信大家已经知道，肯定可以啊！</p>
+<p>直接上代码（具体的代码，可参考我的Github代码：</p>
+<ul>
+<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a>）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="comment"># 定义用到的变量</span></span><br><span class="line">directory_path=<span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义读取输入字符的函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">getDirectoryPath</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter directory path: "</span> directory_path</span><br><span class="line">	<span class="comment"># 如果为空值，从新监听</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"directory_path"</span>; <span class="keyword">then</span></span><br><span class="line">		getDirectoryPath</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">read</span>_dir <span class="variable">$&#123;directory_path&#125;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">read_dir</span></span>()&#123;</span><br><span class="line">	<span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$1</span>`       <span class="comment">#注意此处这是两个反引号，表示运行系统命令</span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		<span class="keyword">if</span> [ <span class="operator">-d</span> <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> ]  <span class="comment">#注意此处之间一定要加上空格，否则会报错</span></span><br><span class="line">		<span class="keyword">then</span></span><br><span class="line">			<span class="comment">#在此处处理目录即可</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"-----------------------------\n"</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"check directory:《"</span> <span class="variable">$file</span> <span class="string">"》"</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"message:"</span></span><br><span class="line">			<span class="built_in">cd</span> <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span></span><br><span class="line">			git pull</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"\n"</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#读取第一个参数</span></span><br><span class="line">getDirectoryPath</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\n------- finish processing -------"</span></span><br></pre></td></tr></table></figure>
+<p>使用方法非常简单，执行脚本，输入在你所有库的根目录，然后脚本会循环所有目录<code>git pull</code>。当然，如果是公司电脑，那你可以用别名<code>alias</code>定义一个通用命令来执行，明天早上上班，执行一下，效率满满的！！！</p>
+<h3 id="3、git_clone_下载">3、git clone 下载</h3><p>有时候，你换了新电脑，或者像我不小心，电脑挂了，重装系统，新的电脑，需要一个一个库的拉取下来，这时候，你也可以写一个脚本来统一执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iHTCboy/OneMindMap.git;</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iHTCboy/NotesEveryDay.git;</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iHTCboy/macOSConfig.git;</span><br></pre></td></tr></table></figure>
+<p> 编写自己的库或公司库脚本，放到git仓库，是不是又学到一招！</p>
+<h3 id="4、git_commit">4、git commit</h3><p>这个大家应该想到了吧？可以放到 <code>.bash_profile</code> 或 <code>.zshrc</code> 当成一个别名使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">glazy</span></span>() &#123;</span><br><span class="line">    git add .</span><br><span class="line">    git commit <span class="operator">-a</span> -m <span class="string">"<span class="variable">$1</span>"</span></span><br><span class="line">    git push</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用方法很简单：<br><code>glazy &#39;XXXX&#39;</code> 就可以一步到位：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">➜  iShell git:(master) ✗ glazy <span class="string">'shell技巧6 - iOS最大构建版本文件大小'</span></span><br><span class="line">[master <span class="number">15</span>a0b97] shell技巧<span class="number">6</span> - iOS最大构建版本文件大小</span><br><span class="line"> <span class="number">1</span> file changed, <span class="number">72</span> insertions(+)</span><br><span class="line"> create mode <span class="number">100644</span> Shell/calculate_Mach-<span class="number">0</span>__Text-Size .sh</span><br><span class="line">Counting objects: <span class="number">4</span>, done.</span><br><span class="line">Delta compression using up to <span class="number">4</span> threads.</span><br><span class="line">Compressing objects: <span class="number">100</span>% (<span class="number">4</span>/<span class="number">4</span>), done.</span><br><span class="line">Writing objects: <span class="number">100</span>% (<span class="number">4</span>/<span class="number">4</span>), <span class="number">1.52</span> KiB | <span class="number">1.52</span> MiB/s, done.</span><br><span class="line">Total <span class="number">4</span> (delta <span class="number">2</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)</span><br><span class="line">remote: Resolving deltas: <span class="number">100</span>% (<span class="number">2</span>/<span class="number">2</span>), completed with <span class="number">2</span> <span class="built_in">local</span> objects.</span><br><span class="line">To https://github.com/iHTCboy/iShell.git</span><br><span class="line">   <span class="number">6</span>f39dfe..<span class="number">15</span>a0b97  master -&gt; master</span><br></pre></td></tr></table></figure>
+<h3 id="5、备份文件">5、备份文件</h3><p>为了避免数据掉失，我会经常定时备份博客的文档，如果需要人工手动，重复，反复，一个一个，切换目录，其实，写一个脚本就搞定：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">blog_dir=<span class="string">"/Users/HTC/Documents/Personal/P-Project/iHTCBlog/source/"</span></span><br><span class="line">backup_dir=<span class="string">"/Users/HTC/Documents/Personal/P-Project/macOSConfig/iHTCboy_Blog/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># copy files</span></span><br><span class="line">cp -r <span class="string">"<span class="variable">$&#123;blog_dir&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;backup_dir&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># delete drafts file</span></span><br><span class="line">rm -rf <span class="string">"<span class="variable">$&#123;backup_dir&#125;</span>/_drafts"</span></span><br></pre></td></tr></table></figure>
+<p>当然，为了方便，不可能每次都打开终端才执行，如果Mac或Linux，可以用 Unix 可执行文件，直接点击，会自动打开终端执行。</p>
+<p>比如脚本叫 <code>backup_sh.sh</code> 改为 <code>backup_sh</code> 名字，然后在终端为文件添加可执行权限：<br><code>chmod +x /Users/HTC/Desktop/backup_sh</code> </p>
+<p>以后，直接双击<code>backup_sh</code>这个文件，就会自动在终端执行，备份完成！</p>
+<p>注：其它方法可参考 <a href="https://ihtcboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/">shell技巧1 - 生成ipa文件 | iHTCboy’s blog</a> 第5小节。</p>
+<h3 id="6、总结">6、总结</h3><p>关于shell脚本就讲到这里，更多技巧和提交效率的方式，希望大家能举一反三，这都是授鱼不如授渔！ </p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
+<li><a href="https://ihtcboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/">shell技巧1 - 生成ipa文件 | iHTCboy’s blog</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>经过前面那么多节的脚本使用技巧，相信大家一定已经掌握了基本的shell脚本编写，但是可能还是没有想明白，或者想到说平时工作生活中，有什么作用？今天，写写我自己在工作中，一些提高效率的脚本一起来看看吧~</p>]]>
+    
+    </summary>
+    
+      <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
+    
+      <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
+    
+      <category term="效率" scheme="https://iHTCboy.com/tags/%E6%95%88%E7%8E%87/"/>
+    
+      <category term="脚本" scheme="https://iHTCboy.com/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[shell技巧6 - iOS最大构建版本文件大小]]></title>
@@ -1917,68 +1979,6 @@
       <category term="sips" scheme="https://iHTCboy.com/tags/sips/"/>
     
       <category term="xcassets" scheme="https://iHTCboy.com/tags/xcassets/"/>
-    
-      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[shell技巧7 - 提高效率的常用脚本用法]]></title>
-    <link href="https://iHTCboy.com/2018/09/14/2019-03-14_shell%E6%8A%80%E5%B7%A77-git%E6%9B%B4%E6%96%B0%E7%AD%89%E6%95%88%E7%8E%87%E8%84%9A%E6%9C%AC/"/>
-    <id>https://iHTCboy.com/2018/09/14/2019-03-14_shell技巧7-git更新等效率脚本/</id>
-    <published>2018-09-14T14:20:16.000Z</published>
-    <updated>2019-03-17T14:43:44.180Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>经过前面那么多节的脚本使用技巧，相信大家一定已经掌握了基本的shell脚本编写，但是可能还是没有想明白，或者想到说平时工作生活中，有什么作用？今天，写写我自己在工作中，一些提高效率的脚本一起来看看吧~</p>
-<a id="more"></a>
-<h3 id="2、git_pull_更新">2、git pull 更新</h3><p>工作中，我们都知道，更新工作代码库：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> pull</span><br></pre></td></tr></table></figure></p>
-<p>但是，有没有想过，如果你有10个库呢？是不是要命令行切换目录输出10次？或者你有Sourcetree，在界面也要切换10次吧？</p>
-<p>所以，有没有想过，如果用脚本，能不能一次的把全部的库，都<code>git pull</code>下来？想到这样，相信大家已经知道，肯定可以啊！</p>
-<p>直接上代码（具体的代码，可参考我的Github代码：</p>
-<ul>
-<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a>）：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="comment"># 定义用到的变量</span></span><br><span class="line">directory_path=<span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义读取输入字符的函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">getDirectoryPath</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter directory path: "</span> directory_path</span><br><span class="line">	<span class="comment"># 如果为空值，从新监听</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"directory_path"</span>; <span class="keyword">then</span></span><br><span class="line">		getDirectoryPath</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">read</span>_dir <span class="variable">$&#123;directory_path&#125;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">read_dir</span></span>()&#123;</span><br><span class="line">	<span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$1</span>`       <span class="comment">#注意此处这是两个反引号，表示运行系统命令</span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		<span class="keyword">if</span> [ <span class="operator">-d</span> <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> ]  <span class="comment">#注意此处之间一定要加上空格，否则会报错</span></span><br><span class="line">		<span class="keyword">then</span></span><br><span class="line">			<span class="comment">#在此处处理目录即可</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"-----------------------------\n"</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"check directory:《"</span> <span class="variable">$file</span> <span class="string">"》"</span></span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"message:"</span></span><br><span class="line">			<span class="built_in">cd</span> <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span></span><br><span class="line">			git pull</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"\n"</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#读取第一个参数</span></span><br><span class="line">getDirectoryPath</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\n------- finish processing -------"</span></span><br></pre></td></tr></table></figure>
-<p>使用方法非常简单，执行脚本，输入在你所有库的根目录，然后脚本会循环所有目录<code>git pull</code>。当然，如果是公司电脑，那你可以用别名<code>alias</code>定义一个通用命令来执行，明天早上上班，执行一下，效率满满的！！！</p>
-<h3 id="3、git_clone_下载">3、git clone 下载</h3><p>有时候，你换了新电脑，或者像我不小心，电脑挂了，重装系统，新的电脑，需要一个一个库的拉取下来，这时候，你也可以写一个脚本来统一执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iHTCboy/OneMindMap.git;</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iHTCboy/NotesEveryDay.git;</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iHTCboy/macOSConfig.git;</span><br></pre></td></tr></table></figure>
-<p> 编写自己的库或公司库脚本，放到git仓库，是不是又学到一招！</p>
-<h3 id="4、git_commit">4、git commit</h3><p>这个大家应该想到了吧？可以放到 <code>.bash_profile</code> 或 <code>.zshrc</code> 当成一个别名使用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">glazy</span></span>() &#123;</span><br><span class="line">    git add .</span><br><span class="line">    git commit <span class="operator">-a</span> -m <span class="string">"<span class="variable">$1</span>"</span></span><br><span class="line">    git push</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用方法很简单：<br><code>glazy &#39;XXXX&#39;</code> 就可以一步到位：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">➜  iShell git:(master) ✗ glazy <span class="string">'shell技巧6 - iOS最大构建版本文件大小'</span></span><br><span class="line">[master <span class="number">15</span>a0b97] shell技巧<span class="number">6</span> - iOS最大构建版本文件大小</span><br><span class="line"> <span class="number">1</span> file changed, <span class="number">72</span> insertions(+)</span><br><span class="line"> create mode <span class="number">100644</span> Shell/calculate_Mach-<span class="number">0</span>__Text-Size .sh</span><br><span class="line">Counting objects: <span class="number">4</span>, done.</span><br><span class="line">Delta compression using up to <span class="number">4</span> threads.</span><br><span class="line">Compressing objects: <span class="number">100</span>% (<span class="number">4</span>/<span class="number">4</span>), done.</span><br><span class="line">Writing objects: <span class="number">100</span>% (<span class="number">4</span>/<span class="number">4</span>), <span class="number">1.52</span> KiB | <span class="number">1.52</span> MiB/s, done.</span><br><span class="line">Total <span class="number">4</span> (delta <span class="number">2</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)</span><br><span class="line">remote: Resolving deltas: <span class="number">100</span>% (<span class="number">2</span>/<span class="number">2</span>), completed with <span class="number">2</span> <span class="built_in">local</span> objects.</span><br><span class="line">To https://github.com/iHTCboy/iShell.git</span><br><span class="line">   <span class="number">6</span>f39dfe..<span class="number">15</span>a0b97  master -&gt; master</span><br></pre></td></tr></table></figure>
-<h3 id="5、备份文件">5、备份文件</h3><p>为了避免数据掉失，我会经常定时备份博客的文档，如果需要人工手动，重复，反复，一个一个，切换目录，其实，写一个脚本就搞定：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">blog_dir=<span class="string">"/Users/HTC/Documents/Personal/P-Project/iHTCBlog/source/"</span></span><br><span class="line">backup_dir=<span class="string">"/Users/HTC/Documents/Personal/P-Project/macOSConfig/iHTCboy_Blog/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># copy files</span></span><br><span class="line">cp -r <span class="string">"<span class="variable">$&#123;blog_dir&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;backup_dir&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># delete drafts file</span></span><br><span class="line">rm -rf <span class="string">"<span class="variable">$&#123;backup_dir&#125;</span>/_drafts"</span></span><br></pre></td></tr></table></figure>
-<p>当然，为了方便，不可能每次都打开终端才执行，如果Mac或Linux，可以用 Unix 可执行文件，直接点击，会自动打开终端执行。</p>
-<p>比如脚本叫 <code>backup_sh.sh</code> 改为 <code>backup_sh</code> 名字，然后在终端为文件添加可执行权限：<br><code>chmod +x /Users/HTC/Desktop/backup_sh</code> </p>
-<p>以后，直接双击<code>backup_sh</code>这个文件，就会自动在终端执行，备份完成！</p>
-<p>注：其它方法可参考 <a href="https://ihtcboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/">shell技巧1 - 生成ipa文件 | iHTCboy’s blog</a> 第5小节。</p>
-<h3 id="6、总结">6、总结</h3><p>关于shell脚本就讲到这里，更多技巧和提交效率的方式，希望大家能举一反三，这都是授鱼不如授渔！ </p>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
-<li><a href="https://ihtcboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/">shell技巧1 - 生成ipa文件 | iHTCboy’s blog</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>经过前面那么多节的脚本使用技巧，相信大家一定已经掌握了基本的shell脚本编写，但是可能还是没有想明白，或者想到说平时工作生活中，有什么作用？今天，写写我自己在工作中，一些提高效率的脚本一起来看看吧~</p>]]>
-    
-    </summary>
-    
-      <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
-    
-      <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
-    
-      <category term="效率" scheme="https://iHTCboy.com/tags/%E6%95%88%E7%8E%87/"/>
-    
-      <category term="脚本" scheme="https://iHTCboy.com/tags/%E8%84%9A%E6%9C%AC/"/>
     
       <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
     
