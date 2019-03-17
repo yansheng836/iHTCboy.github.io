@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-03-17T15:17:57.914Z</updated>
+  <updated>2019-03-17T15:18:58.506Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/03/14/2019-03-14_shell%E6%8A%80%E5%B7%A77-git%E6%9B%B4%E6%96%B0%E7%AD%89%E6%95%88%E7%8E%87%E8%84%9A%E6%9C%AC/"/>
     <id>https://iHTCboy.com/2019/03/14/2019-03-14_shell技巧7-git更新等效率脚本/</id>
     <published>2019-03-14T14:20:16.000Z</published>
-    <updated>2019-03-17T15:17:57.914Z</updated>
+    <updated>2019-03-17T15:18:58.506Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>经过前面那么多节的脚本使用技巧，相信大家一定已经掌握了基本的shell脚本编写，但是可能还是没有想明白，或者想到说平时工作生活中，有什么作用？今天，写写我自己在工作中，一些提高效率的脚本一起来看看吧~</p>
 <a id="more"></a>
 <h3 id="2、git_pull_更新">2、git pull 更新</h3><p>工作中，我们都知道，更新工作代码库：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> pull</span><br></pre></td></tr></table></figure></p>
