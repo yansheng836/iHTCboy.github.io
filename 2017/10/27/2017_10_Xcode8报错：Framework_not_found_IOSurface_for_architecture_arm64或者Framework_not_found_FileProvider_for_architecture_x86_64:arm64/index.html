@@ -23,9 +23,9 @@ Framework not found IOSurface for architecture arm64或者 Framework not found F
 Framework not found IOSurface for architecture arm64或者 Framework not found FileProvider for architecture x86_64/arm64. 
 
 原因IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xco">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-01T15:16:03.000Z">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2017/10/iTunes-Connet-Error.jpg">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2017/10/Xcode-Settings.jpeg">
+<meta property="og:updated_time" content="2019-03-18T15:26:36.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode8报错："Framework not found IOSurface for architecture arm64"或者 "Framework not found FileProvider for architecture x86_64/arm64".">
 <meta name="twitter:description" content="Xcode8 编译报错：
@@ -250,10 +250,11 @@ var _hmt = _hmt || [];
 <h3 id="原因">原因</h3><p>IOSurface.framework和 FileProvider.framework是 iOS11 新增加的库，但  Xcode8下没有这个库。打包静态库的时候，有一个Link Frameworks Automatically设置，默认为YES，会自动链接框架。所以Xcode 9打包的静态库时，在Xcode 8项目编译时候会提示找不到 IOSurface.framework和 FileProvider.framework。</p>
 <a id="more"></a>
 <p>题外话，这个在 Xcode5 和 Xcode6 过度时，Metal.framework 时发生过，可能过了就忘记了。也发现 Xcode 很多特性平时没有注意，有空真要多看看 LLVM 的知识。</p>
-<h3 id="结果">结果</h3><p>如果原厂升级到 Xcode9，则不受影响。如果 Xcode8 编译报错，网上最初给出的方案，在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，结果最后坑定了！</p>
-<p>在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，上传iTunes Connet 报错：<br><img src="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512" alt="iTunes Connet 报错使用非法 API.jpg"></p>
+<h3 id="结果">结果</h3><p>如果升级到 Xcode9，则不受影响。如果 Xcode8 编译报错，网上最初给出的方案，在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，结果最后坑定了！</p>
+<p>在 Xcode8 中添加IOSurface.framework和 FileProvider.framework后打包，上传iTunes Connet 报错：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2017/10/iTunes-Connet-Error.jpg" alt="iTunes Connet 报错使用非法 API.jpg"></p>
 <h3 id="正解解决方案">正解解决方案</h3><p> Build Settings 中 Link Frameworks Automatically 把默认Yes 改成 No ，在 Xcode8 编译就能通过。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-5a686cb71bee2de9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置 Link Frameworks Automatically 为 NO.jpeg"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2017/10/Xcode-Settings.jpeg" alt="设置 Link Frameworks Automatically 为 NO.jpeg"></p>
 <h3 id="参考&amp;扩展阅读">参考&amp;扩展阅读</h3><ul>
 <li><a href="https://stackoverflow.com/questions/25804696/xcode-6-gm-linker-error-when-building-for-device-metal-not-found/25924645" target="_blank" rel="external">ios8 - XCode 6 GM: linker error when building for device (Metal not found) - Stack Overflow</a></li>
 <li><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/WhatsNewXcode/Chapters/xcode_5_0.html#//apple_ref/doc/uid/TP40012953-SW1" target="_blank" rel="external">New Features in Xcode 5</a></li>
@@ -402,18 +403,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/10/28/2017_10_为新iPhoneX添加启动图片/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/27/2017_10_沙盒测试账号：不允许创建iTunes账户/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          为新 iPhone X 添加启动图片
+          沙盒测试账号：不允许创建 iTunes 账户
         
       </div>
     </a>
   
   
-    <a href="/2017/10/27/2017_10_沙盒测试账号：不允许创建iTunes账户/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">沙盒测试账号：不允许创建 iTunes 账户</div>
+    <a href="/2017/10/12/2017_10_Xcode9打包AppStore_Icon(1024xp)_WARNING_ITMS-90704-90717问题解决/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Xcode9 打包App Store Icon(1024xp) WARNING ITMS-90704 -90717 问题解决</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -593,6 +594,22 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Xcode10</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IOSurface</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CoreServices</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Framework not found</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
@@ -1184,14 +1201,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ITMS-90717</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IOSurface</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Framework not found</a>
               </li>
              
               <li class="article-tag-list-item">

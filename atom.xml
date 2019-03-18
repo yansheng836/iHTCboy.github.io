@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-03-17T15:22:54.037Z</updated>
+  <updated>2019-03-18T15:40:22.247Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xcode10再坑之framework not found CoreServices for architecture armv7]]></title>
+    <link href="https://iHTCboy.com/2019/03/15/2019-03-15_iOS-framework-not-found-xxx-for-architecture-armv7/"/>
+    <id>https://iHTCboy.com/2019/03/15/2019-03-15_iOS-framework-not-found-xxx-for-architecture-armv7/</id>
+    <published>2019-03-15T13:19:16.000Z</published>
+    <updated>2019-03-18T15:40:22.247Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>之前升级 Xcode10<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: framework not found CoreServices <span class="keyword">for</span> architecture armv7</span><br></pre></td></tr></table></figure></p>
+<p>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</p>
+<p>其实，之前的文章已经说过解决方案： <a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></p>
+<p>当时，反复确认后，网上有些第三方的SDK提供商说升级Xcode10吧！！！慌张~ 你们就只能让别人升级啦！解决不了，重启，升级！但，NO，最后发现是新项目是使用 <code>CocoaPods</code> 导致的坑，一个地方进2次，还真不简单！</p>
+<a id="more"></a>
+<h3 id="2、问题原因">2、问题原因</h3><p>因为我们新的项目使用 <code>CocoaPods</code> 组件化，所以最后打SDK的项目是CocoaPods集成的，问题就出在这里！上一个文章说到解决方法很简单：（<a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a>）</p>
+<blockquote>
+<p>Build Settings 中 Link Frameworks Automatically 把默认Yes 改成 No </p>
+</blockquote>
+<p>但是，如果用 <code>CocoaPods</code> 集成，默认是 <code>Yes</code>！！！ 尼玛！！！</p>
+<p>知道原因，解决就好办啦！但是，突然想到，以后 <code>pod install</code> 或 <code>pod update</code> 时，难道要人工的设置一次？？？ 不可能！不可能！不可能！</p>
+<p>最后，还是在 <code>CocoaPods</code> 官方文档找到答案 <a href="https://guides.cocoapods.org/syntax/podfile.html#post_install" target="_blank" rel="external">CocoaPods Guides - post_install</a>：</p>
+<p>在 <code>Podfile</code> 文件最后，添加下面代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">post_install <span class="keyword">do</span> |installer|</span><br><span class="line">    installer.pods_project.targets.each <span class="keyword">do</span> |target|</span><br><span class="line">        target.build_configurations.each <span class="keyword">do</span> |config|</span><br><span class="line">            config.build_settings[<span class="string">'CLANG_MODULES_AUTOLINK'</span>] = <span class="string">'NO'</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这个是一个勾子<code>hook</code>，在pod安装完成前，允许更改配置或做些别的事件！</p>
+<h3 id="3、总结">3、总结</h3><p>这个问题，2次进坑，解决的问题本质是一个，只是自己开始不相信！所以，遇到问题，还是要学会找到原因，不要放弃，不然，只能让别人升级环境来适配你，这可不好哦！</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></li>
+<li><a href="https://www.youzanyun.com/support/faq/3476?qa_id=9026" target="_blank" rel="external">SDK引入_常见问题 - 有赞云</a></li>
+<li><a href="https://developer.apple.com/documentation/coreservices" target="_blank" rel="external">Core Services | Apple Developer Documentation</a></li>
+<li><a href="https://stackoverflow.com/questions/22736056/error-when-trying-to-link-fat-binary-with-64-bit-simulator-target/53280331#53280331" target="_blank" rel="external">ios - Error when trying to link fat binary with 64-bit simulator target - Stack Overflow</a></li>
+<li><a href="https://github.com/facebook/react-native/issues/21768" target="_blank" rel="external">ld: framework not found CoreServices for architecture x86_64 · Issue #21768 · facebook/react-native</a></li>
+<li><a href="https://blog.appsee.com/xcodes-new-link-frameworks-automatically-how-to-fix-framework-not-found-metal-for-architecture-armv7/" target="_blank" rel="external">XCode’s New “Link Frameworks Automatically” &amp; How to Fix “framework not found Metal for architecture armv7”</a></li>
+<li><a href="https://github.com/CocoaPods/cocoapods-packager/issues/48" target="_blank" rel="external">Add option to set “LINK FRAMEWORKS AUTOMATICALLY” to NO · Issue #48 · CocoaPods/cocoapods-packager</a></li>
+<li><a href="https://guides.cocoapods.org/syntax/podfile.html#post_install" target="_blank" rel="external">CocoaPods Guides - Podfile Syntax Reference <span>v1.7.0.beta.2</span></a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>之前升级 Xcode10<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: framework not found CoreServices <span class="keyword">for</span> architecture armv7</span><br></pre></td></tr></table></figure></p>
+<p>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</p>
+<p>其实，之前的文章已经说过解决方案： <a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></p>
+<p>当时，反复确认后，网上有些第三方的SDK提供商说升级Xcode10吧！！！慌张~ 你们就只能让别人升级啦！解决不了，重启，升级！但，NO，最后发现是新项目是使用 <code>CocoaPods</code> 导致的坑，一个地方进2次，还真不简单！</p>]]>
+    
+    </summary>
+    
+      <category term="CoreServices" scheme="https://iHTCboy.com/tags/CoreServices/"/>
+    
+      <category term="Framework not found" scheme="https://iHTCboy.com/tags/Framework-not-found/"/>
+    
+      <category term="IOSurface" scheme="https://iHTCboy.com/tags/IOSurface/"/>
+    
+      <category term="Xcode10" scheme="https://iHTCboy.com/tags/Xcode10/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[shell技巧7 - git提高效率的一些用法]]></title>
@@ -1204,7 +1266,7 @@
     <link href="https://iHTCboy.com/2018/09/30/2018-09-30_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9AMac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://iHTCboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/</id>
     <published>2018-09-30T15:49:16.000Z</published>
-    <updated>2019-02-08T16:43:38.630Z</updated>
+    <updated>2019-03-18T15:22:48.938Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望楼主尽快更新，结果拖到了2个月后，所以今天终于更新啦！其实macOS开发环境，系统默认自带ruby、php、python2、gcc、g++、bash等环境，并且因为<code>macOS</code>是以<code>Unix</code>为基础，所以有传统<code>Unix/Linux</code>的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！也没有什么高深介绍，当然，由于楼主目前主职是iOS，所以其它的开发环境接触不多(谦虚)，当前大家要学以至用，环境搭建都是相似的，熟悉了就不是问题。文章短短不可能详尽也，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力提高！</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
@@ -1318,6 +1380,18 @@
 <li><a href="https://safari-extensions.apple.com/details/?id=com.diigo.safari.awesomescreenshot-5DXNM3K2CT" target="_blank" rel="external">Awesome Screenshot</a></li>
 </ul>
 <p>另外，macOS 10.14 后，苹果 Safari 浏览器不再支持不安全的扩展。只可以在 App Store 或 Safari 浏览器扩展库中查找经过 Apple 审核的更新扩展。</p>
+<h4 id="Finder_访达">Finder 访达</h4><p>很多人可能跟我一样，不喜欢用第三方的文件管理应用，一般苹果自带能用的，我都不会使用第三方，一方便迁移成本高，另一方面系统自带的稳定性和内存占用都是做的较好。</p>
+<p>对我来说，经常的痛点是，没有绝对路径显示！！！在 macOS 系统，可以通过 <code>option + command + P</code> 在Finder底部显示完整的当前路径和跳转。其它，还有一个骚操作，就是显示在标题栏：</p>
+<ul>
+<li>在 Finder 标题栏显示完整路径</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES;killall Finder</span><br></pre></td></tr></table></figure>
+<ul>
+<li>还原</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults delete com.apple.finder _FXShowPosixPathInTitle;killall Finder</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512" alt="20180930-Finder-Path.png"></p>
 <h4 id="报错：无法打开已损坏的安装包">报错：无法打开已损坏的安装包</h4><p>遇到打开自己下载的安装包失败时，可执行下面命令解决：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
 <p>macOS 10.14 后，苹果对安全和隐私保护这一块更加严厉，当然，事件有好的一面，也有不好（不方便）的一面，大家智者见智，我一般是把这个命令当成别名：</p>
@@ -3141,59 +3215,6 @@
       <category term="shortcut" scheme="https://iHTCboy.com/tags/shortcut/"/>
     
       <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Django 2.0 model on_delete错误小记]]></title>
-    <link href="https://iHTCboy.com/2018/07/22/2018-07-22_Django%E9%94%99%E8%AF%AF%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://iHTCboy.com/2018/07/22/2018-07-22_Django错误小记/</id>
-    <published>2018-07-22T08:49:16.000Z</published>
-    <updated>2018-08-04T15:37:15.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>今天用 Django 2.0 时模型的外键报了一个错误：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: __init__() missing <span class="number">1</span> required positional argument: <span class="string">'on_delete'</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="2、原因">2、原因</h3><p>经过筛查，在创建多对一的关系的，需要在<code>Foreign</code>的第二参数中加入 <code>on_delete=models.CASCADE</code>  主外关系键中，级联删除，也就是当删除主表的数据时候从表中的数据也随着一起删除。</p>
-<p>on_delete参数的各个值（可选的值都内置在django.db.models中）的含义:</p>
-<ul>
-<li>CASCADE：级联删除，模拟SQL语言中的ON DELETE CASCADE约束，将定义有外键的模型对象同时删除！</li>
-<li>PROTECT: 保护模式，阻止上面的删除操作，但是弹出ProtectedError异常</li>
-<li>SET_NULL：置空模式，将外键字段设为null，只有当字段设置了null=True时，方可使用该值。</li>
-<li>SET_DEFAULT: 置默认值，将外键字段设为默认值。只有当字段设置了default参数时，方可使用。</li>
-<li>DO_NOTHING：什么也不做。</li>
-<li>SET()：设置为一个传递给SET()的值或者一个回调函数的返回值，注意大小写。自定义一个值，该值当然只能是对应的实体。</li>
-</ul>
-<p>示例：</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">author = models.ForeignKey(AuthModel, <span class="literal">null</span>=<span class="literal">True</span>, blank=<span class="literal">True</span>, on_delete=models.SET_NULL)</span><br></pre></td></tr></table></figure>
-<p>关于SET()的使用：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**&#23448;&#26041;&#26696;&#20363;**&#10;def get_sentinel_user():&#10;    return get_user_model().objects.get_or_create(username=&#39;deleted&#39;)[0]&#10;&#10;class MyModel(models.Model):&#10;    user = models.ForeignKey(&#10;        settings.AUTH_USER_MODEL,&#10;        on_delete=models.SET(get_sentinel_user),&#10;    )</span><br></pre></td></tr></table></figure>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://blog.csdn.net/hpu_yly_bj/article/details/78927121" target="_blank" rel="external">on_delete=models.CASCADE级联删除 - CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/kuangshp128/article/details/78946316" target="_blank" rel="external">django数据模型中关于on_delete的使用 - CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/buxianghejiu/article/details/79086011" target="_blank" rel="external">django2.0 关联表的必填on_delete参数的含义 - CSDN博客</a></li>
-<li><a href="http://www.liujiangblog.com/course/django/96" target="_blank" rel="external">django 关系类型字段 - 刘江的django教程</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>今天用 Django 2.0 时模型的外键报了一个错误：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: __init__() missing <span class="number">1</span> required positional argument: <span class="string">'on_delete'</span></span><br></pre></td></tr></table></figure>]]>
-    
-    </summary>
-    
-      <category term="Django" scheme="https://iHTCboy.com/tags/Django/"/>
-    
-      <category term="on_delete" scheme="https://iHTCboy.com/tags/on-delete/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
   </entry>
   
