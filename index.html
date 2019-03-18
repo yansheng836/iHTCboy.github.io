@@ -230,7 +230,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、前言">1、前言</h3><p>之前升级 Xcode10<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: framework not found CoreServices <span class="keyword">for</span> architecture armv7</span><br></pre></td></tr></table></figure></p>
+        <h3 id="1、前言">1、前言</h3><p>之前升级 Xcode10 后，给别人的SDK会报错：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: framework not found CoreServices <span class="keyword">for</span> architecture armv7</span><br></pre></td></tr></table></figure>
 <p>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</p>
 <p>其实，之前的文章已经说过解决方案： <a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></p>
 <p>当时，反复确认后，网上有些第三方的SDK提供商说升级Xcode10吧！！！慌张~ 你们就只能让别人升级啦！解决不了，重启，升级！但，NO，最后发现是新项目是使用 <code>CocoaPods</code> 导致的坑，一个地方进2次，还真不简单！</p>
