@@ -22,7 +22,7 @@
 为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？
 其实，翻开之前写的文章已经说">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/03/20190315-youzanyun-sdk.png">
-<meta property="og:updated_time" content="2019-03-19T14:03:53.778Z">
+<meta property="og:updated_time" content="2019-03-19T14:05:23.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode10再坑之framework not found CoreServices for architecture armv7">
 <meta name="twitter:description" content="1、前言前段时间，升级了 Xcode10 后，提供给第三方用户的SDK，客户反馈说报错：
@@ -258,7 +258,7 @@ var _hmt = _hmt || [];
 <p>在 <code>Podfile</code> 文件最后，添加下面代码：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">post_install <span class="keyword">do</span> |installer|</span><br><span class="line">    installer.pods_project.targets.each <span class="keyword">do</span> |target|</span><br><span class="line">        target.build_configurations.each <span class="keyword">do</span> |config|</span><br><span class="line">            config.build_settings[<span class="string">'CLANG_MODULES_AUTOLINK'</span>] = <span class="string">'NO'</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>这个是一个勾子<code>hook</code>，在pod安装完成前，允许更改配置或做些别的事件！</p>
-<h3 id="3、总结">3、总结</h3><p>这个问题，2次进坑，解决的问题本质是一个，只是自己开始不相信！所以，遇到问题，还是要学会找到原因，不要放弃，不然，只能让别人升级环境来适配你，这可不好哦！</p>
+<h3 id="3、总结">3、总结</h3><p>这个问题，2次进坑，解决的问题本质就是一个，只是自己开始不相信！所以，遇到问题，还是要学会找到原因，只是通往答案的道路各不相同，只要不放弃，不抛弃，一定能为大家提供优质的服务！相信科技的力量！不然，只能让别人升级环境来适配你，这可不好哦！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></li>
 <li><a href="https://www.youzanyun.com/support/faq/3476?qa_id=9026" target="_blank" rel="external">SDK引入_常见问题 - 有赞云</a></li>
