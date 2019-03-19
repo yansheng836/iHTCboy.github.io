@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-03-18T15:43:06.674Z</updated>
+  <updated>2019-03-19T14:03:53.778Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,13 +19,16 @@
     <link href="https://iHTCboy.com/2019/03/15/2019-03-15_iOS-framework-not-found-xxx-for-architecture-armv7/"/>
     <id>https://iHTCboy.com/2019/03/15/2019-03-15_iOS-framework-not-found-xxx-for-architecture-armv7/</id>
     <published>2019-03-15T13:19:16.000Z</published>
-    <updated>2019-03-18T15:43:06.674Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>之前升级 Xcode10 后，给别人的SDK会报错：</p>
+    <updated>2019-03-19T14:03:53.778Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>前段时间，升级了 Xcode10 后，提供给第三方用户的SDK，客户反馈说报错：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: framework not found CoreServices <span class="keyword">for</span> architecture armv7</span><br></pre></td></tr></table></figure>
-<p>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</p>
-<p>其实，之前的文章已经说过解决方案： <a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></p>
-<p>当时，反复确认后，网上有些第三方的SDK提供商说升级Xcode10吧！！！慌张~ 你们就只能让别人升级啦！解决不了，重启，升级！但，NO，最后发现是新项目是使用 <code>CocoaPods</code> 导致的坑，一个地方进2次，还真不简单！</p>
+<p><strong>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</strong></p>
+<p>其实，翻开之前写的文章已经说过解决方案： <a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></p>
+<p>当时，反复确认后，网上有些第三方的SDK提供商说升级 Xcode10 吧！！！慌张~ 你们就只能让别人升级啦！解决不了，重启，升级！但，NO，最后发现是新项目是使用 <code>CocoaPods</code> 导致的坑，一个地方进2次，还真不简单！</p>
 <a id="more"></a>
+<p>其中，看到有赞云这样说：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/03/20190315-youzanyun-sdk.png" alt="20190315-youzanyun-sdk.png"></p>
+<p>我只能说，坑的一个算一个，第三方用户就是这样，希望技术真的改变生活！包括技术的生活！</p>
 <h3 id="2、问题原因">2、问题原因</h3><p>因为我们新的项目使用 <code>CocoaPods</code> 组件化，所以最后打SDK的项目是CocoaPods集成的，问题就出在这里！上一个文章说到解决方法很简单：（<a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a>）</p>
 <blockquote>
 <p>Build Settings 中 Link Frameworks Automatically 把默认Yes 改成 No </p>
@@ -58,11 +61,11 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>之前升级 Xcode10 后，给别人的SDK会报错：</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>前段时间，升级了 Xcode10 后，提供给第三方用户的SDK，客户反馈说报错：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: framework not found CoreServices <span class="keyword">for</span> architecture armv7</span><br></pre></td></tr></table></figure>
-<p>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</p>
-<p>其实，之前的文章已经说过解决方案： <a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></p>
-<p>当时，反复确认后，网上有些第三方的SDK提供商说升级Xcode10吧！！！慌张~ 你们就只能让别人升级啦！解决不了，重启，升级！但，NO，最后发现是新项目是使用 <code>CocoaPods</code> 导致的坑，一个地方进2次，还真不简单！</p>]]>
+<p><strong>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</strong></p>
+<p>其实，翻开之前写的文章已经说过解决方案： <a href="https://ihtcboy.com/2017/10/27/2017_10_Xcode8%E6%8A%A5%E9%94%99%EF%BC%9AFramework_not_found_IOSurface_for_architecture_arm64%E6%88%96%E8%80%85Framework_not_found_FileProvider_for_architecture_x86_64:arm64/">Xcode8报错：”Framework not found IOSurface for architecture arm64”或者 “Framework not found FileProvider for architecture x86_64/arm64”. | iHTCboy’s blog</a></p>
+<p>当时，反复确认后，网上有些第三方的SDK提供商说升级 Xcode10 吧！！！慌张~ 你们就只能让别人升级啦！解决不了，重启，升级！但，NO，最后发现是新项目是使用 <code>CocoaPods</code> 导致的坑，一个地方进2次，还真不简单！</p>]]>
     
     </summary>
     
