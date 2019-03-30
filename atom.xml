@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-03-19T15:33:32.816Z</updated>
+  <updated>2019-03-26T16:07:04.697Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/03/15/2019-03-15_iOS-framework-not-found-xxx-for-architecture-armv7/"/>
     <id>https://iHTCboy.com/2019/03/15/2019-03-15_iOS-framework-not-found-xxx-for-architecture-armv7/</id>
     <published>2019-03-15T13:19:16.000Z</published>
-    <updated>2019-03-19T15:33:32.816Z</updated>
+    <updated>2019-03-26T16:07:04.697Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>前段时间，升级了 Xcode10 后，提供给第三方用户的SDK，客户反馈说报错：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: framework not found CoreServices <span class="keyword">for</span> architecture armv7</span><br></pre></td></tr></table></figure>
 <p><strong>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</strong></p>
@@ -2474,10 +2474,11 @@
     <link href="https://iHTCboy.com/2018/08/04/2018-08-04_PyCharm_for_Mac%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/08/04/2018-08-04_PyCharm_for_Mac快捷键小记/</id>
     <published>2018-08-04T15:09:16.000Z</published>
-    <updated>2018-08-05T09:12:27.000Z</updated>
+    <updated>2019-03-30T08:23:03.004Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>总结一下自己平时常用的PyCharm for Mac快捷键，因为网上经常找到的都是Windows版本，所以当是备忘也好，后续会不定期更新。</p>
 <a id="more"></a>
-<h3 id="2、PyCharm_for_Mac_快捷键">2、PyCharm for Mac 快捷键</h3><table>
+<h3 id="2、PyCharm_for_Mac_快捷键">2、PyCharm for Mac 快捷键</h3><h4 id="思维导图">思维导图</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180804-PyCharm-Shortcut-20190330.png" alt="20180804-PyCharm-Shortcut-20190330.png"></p>
+<h4 id="快捷键">快捷键</h4><table>
 <thead>
 <tr>
 <th>快捷键</th>
@@ -2494,11 +2495,11 @@
 <td>在下一行复制本行的内容</td>
 </tr>
 <tr>
-<td>cmd []</td>
-<td>光标之前/后的位置</td>
+<td>cmd [ / ]</td>
+<td>跳转的页面回退或前进</td>
 </tr>
 <tr>
-<td>cmd + opt + []</td>
+<td>cmd + opt + [ / ]</td>
 <td>函数和方法前后的位置</td>
 </tr>
 <tr>
@@ -2579,7 +2580,7 @@
 </tr>
 <tr>
 <td>ctr + tab</td>
-<td>史上最NB的导航窗口（工程文件列表、文件结构列表、命令行模式、代码检查、VCS等，下面两个是可以被替换的）</td>
+<td>史上最NB的导航窗口（工程文件列表、文件结构列表、命令行模式、代码检查、VCS等）</td>
 </tr>
 <tr>
 <td>alt + F12</td>
@@ -2660,10 +2661,11 @@
     <link href="https://iHTCboy.com/2018/08/03/2018-08-03_iTerm%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/08/03/2018-08-03_iTerm快捷键小记/</id>
     <published>2018-08-03T13:19:16.000Z</published>
-    <updated>2018-08-06T15:10:26.000Z</updated>
+    <updated>2019-03-30T08:23:56.836Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>总结一下自己平时常用的iTerm快捷键，当是备忘也好，后续会不定期更新。</p>
 <a id="more"></a>
-<h3 id="2、iTerm2_快捷键">2、iTerm2 快捷键</h3><table>
+<h3 id="2、iTerm2_快捷键">2、iTerm2 快捷键</h3><h4 id="思维导图">思维导图</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180803-iTerm2-Shortcut-20190330.png" alt="20180803-iTerm2-Shortcut-20190330.png"></p>
+<h4 id="快捷键">快捷键</h4><table>
 <thead>
 <tr>
 <th>快捷键</th>
@@ -2852,10 +2854,11 @@
     <link href="https://iHTCboy.com/2018/07/28/2018-07-28_Vim%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/07/28/2018-07-28_Vim快捷键小记/</id>
     <published>2018-07-28T07:49:16.000Z</published>
-    <updated>2018-09-01T04:54:36.000Z</updated>
+    <updated>2019-03-30T08:22:00.399Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。总结一下自己平时常用的vim快捷键，当是忘记也好，后续会不定期更新。</p>
 <a id="more"></a>
-<h3 id="2、vim_快捷键">2、vim 快捷键</h3><table>
+<h3 id="2、vim_快捷键">2、vim 快捷键</h3><h4 id="思维导图">思维导图</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180728-vi(vim" alt="20180728-vi(vim)-Shortcut-20190330.png">-Shortcut-20190330.png)</p>
+<h4 id="快捷键">快捷键</h4><table>
 <thead>
 <tr>
 <th>快捷键</th>
@@ -3096,8 +3099,8 @@
 <td>保存正在编辑的文件</td>
 </tr>
 <tr>
-<td>:w</td>
-<td>new.txt //保存至new.tex文件</td>
+<td>:w new.txt</td>
+<td>保存至new.tex文件</td>
 </tr>
 <tr>
 <td>:q</td>
