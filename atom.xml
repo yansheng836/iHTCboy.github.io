@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-03-26T16:07:04.697Z</updated>
+  <updated>2019-03-30T15:43:48.767Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/03/15/2019-03-15_iOS-framework-not-found-xxx-for-architecture-armv7/"/>
     <id>https://iHTCboy.com/2019/03/15/2019-03-15_iOS-framework-not-found-xxx-for-architecture-armv7/</id>
     <published>2019-03-15T13:19:16.000Z</published>
-    <updated>2019-03-26T16:07:04.697Z</updated>
+    <updated>2019-03-30T15:43:48.767Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>前段时间，升级了 Xcode10 后，提供给第三方用户的SDK，客户反馈说报错：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: framework not found CoreServices <span class="keyword">for</span> architecture armv7</span><br></pre></td></tr></table></figure>
 <p><strong>为什么 iOS SDK 拖入项目中就报错”ld: framework not found IOSurface for architecture arm64”？</strong></p>
@@ -1271,7 +1271,7 @@
     <link href="https://iHTCboy.com/2018/09/30/2018-09-30_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9AMac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://iHTCboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/</id>
     <published>2018-09-30T15:49:16.000Z</published>
-    <updated>2019-03-18T15:22:48.938Z</updated>
+    <updated>2019-04-02T15:23:42.282Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望楼主尽快更新，结果拖到了2个月后，所以今天终于更新啦！其实macOS开发环境，系统默认自带ruby、php、python2、gcc、g++、bash等环境，并且因为<code>macOS</code>是以<code>Unix</code>为基础，所以有传统<code>Unix/Linux</code>的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！也没有什么高深介绍，当然，由于楼主目前主职是iOS，所以其它的开发环境接触不多(谦虚)，当前大家要学以至用，环境搭建都是相似的，熟悉了就不是问题。文章短短不可能详尽也，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力提高！</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
@@ -1396,7 +1396,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults delete com.apple.finder _FXShowPosixPathInTitle;killall Finder</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99517-d26868c558da3c89.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/512" alt="20180930-Finder-Path.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180930-Finder-Path.png" alt="20180930-Finder-Path.png"></p>
 <h4 id="报错：无法打开已损坏的安装包">报错：无法打开已损坏的安装包</h4><p>遇到打开自己下载的安装包失败时，可执行下面命令解决：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
 <p>macOS 10.14 后，苹果对安全和隐私保护这一块更加严厉，当然，事件有好的一面，也有不好（不方便）的一面，大家智者见智，我一般是把这个命令当成别名：</p>
@@ -1493,6 +1493,7 @@
 </tr>
 </tbody>
 </table>
+<p>还有非常多命令，大家可以自行搜索，比如</p>
 <ul>
 <li><a href="https://github.com/jingweno/ccat" target="_blank" rel="external">ccat</a> 高亮 cat 内容</li>
 </ul>
@@ -2661,7 +2662,7 @@
     <link href="https://iHTCboy.com/2018/08/03/2018-08-03_iTerm%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/08/03/2018-08-03_iTerm快捷键小记/</id>
     <published>2018-08-03T13:19:16.000Z</published>
-    <updated>2019-03-30T08:23:56.836Z</updated>
+    <updated>2019-03-30T08:26:13.186Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>总结一下自己平时常用的iTerm快捷键，当是备忘也好，后续会不定期更新。</p>
 <a id="more"></a>
 <h3 id="2、iTerm2_快捷键">2、iTerm2 快捷键</h3><h4 id="思维导图">思维导图</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180803-iTerm2-Shortcut-20190330.png" alt="20180803-iTerm2-Shortcut-20190330.png"></p>
