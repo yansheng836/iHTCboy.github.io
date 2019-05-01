@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-03-30T15:43:48.767Z</updated>
+  <updated>2019-05-01T15:29:54.842Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,227 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[谈一谈 IPA 上传到 App Store Connect 的几种方法]]></title>
+    <link href="https://iHTCboy.com/2019/04/07/2019-04-07_%E4%B8%8A%E4%BC%A0IPA%E5%88%B0AppStoreConnet%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>https://iHTCboy.com/2019/04/07/2019-04-07_上传IPA到AppStoreConnet的几种方法/</id>
+    <published>2019-04-07T07:49:16.000Z</published>
+    <updated>2019-05-01T15:29:54.842Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于上传ipa包到 App Store Connect 的方法，相信做过 iOS 开发的同学，一定知道完成 App 开发后，怎么打包上传到苹果后台，一般都是用 Xcode 的 Archive 打包后，所以，是不是只能这样呢？答案肯定不是啊，本文是给大家有一个相对全面的了解，苹果开发的知识，非常多，官方文档也很多，能够学好学完，不一定能够做到。在我的理解，iOS进阶，不是说你必须掌握很高深的技术，而是了解全面的知识，能做做出不一定的产品、体验，这个才是优秀的开发者！</p>
+<a id="more"></a>
+<h3 id="2、Xcode">2、Xcode</h3><p>利用 Xcode 的 Archive 生成 app 包后，选择 Distribute App ，将 App 通过 Xcode 上传到  App Store Connect 后台，这个就不多说的，iOS 开发都需要经历一下。</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Xcode-Distribute-App.png" alt="20190407-Xcode-Distribute-App.png"></p>
+<h3 id="3、Application_Loader">3、Application Loader</h3><p>当然，Xcode 这种方式，是需要有源代码情况下，才能上传。所以，就会有没有源代码的情况，怎么上传的情况啦！</p>
+<p>Application Loader 就是这样一种方式：</p>
+<blockquote>
+<p>Application Loader 是一款 Apple 工具能够帮助您将 App 的二进制文件上传至 App Store。</p>
+<p>Application Loader 上传速度快、连接稳定并且具备早期验证警告功能。</p>
+</blockquote>
+<p>登陆界面：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Application-Loader-Login.png" alt="20190407-Application-Loader-Login.png"></p>
+<p>主界面：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Application-Loader-Upload.png" alt="20190407-Application-Loader-Upload.png"></p>
+<p>其实，如果了解历史的，会知道现在的 Application Loader App 的功能已经被苹果弱化了，以前还能够批量创建提交内购品项，现在新版本已经去掉了。另外，以前在苹果开发者官网，有单独的页面，可以下载独立版本的 Application Loader 软件，现在也已经去掉了。</p>
+<p>可能的原因，在我看来有几点。第1点是，单独维护这样一个软件，需要人力，因为，如果不依赖于 Xcode，在一台电脑只安装了 Application Loader，那个肯定需要安装 <code>Command Line Tools</code> 这个命令行工具，如果是安装 Xcode 默认也带上，如果更新了 Xcode 版，也会跟随升级，所以，维护 Application Loader 软件，不只是单独的一个应用入口，当然，也是因为这个 Application Loader 做了一些早期验证警告：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Xcode-Distribute-App.png" alt="20190407-Xcode-Distribute-App.png"></p>
+<p>上传 ipa 包时，工具会检查一些要求和内容格式等，如果不符合，就会报错，所以，这些初步的检查报错，也是 Application Loader 需要维护的。</p>
+<p>第2点，Application Loader 需要的人并不多，站在开发者环境，大多数开发者负责上传 ipa 包，另外，批量上传内购品项，一定很多人不知道，所以，苹果也去掉了。开发者后台也去掉了，所以，Application Loader 现在是集成在 Xcode 中，说不定，那天就直接去掉。</p>
+<p>第3点，越来越多的声音，希望苹果能通过 App Store Connect 后台能直接上传 ipa 包、批量创建内购品项等功能。但根据我观察这几年的 WWDC，苹果对 App Store Connect 后台进行了比较大的改变，2018年就是对 App Store Connect 和 Apple Developer 后台，2个账号体系合并，主线上，还是整个系统性上，对于功能和UI界面上，不知道有没有相关计划。我的猜测，还是有希望的。因为近年来，跨平台开发， React Native/ Weex / Flutter，其实，可以不需要依赖 Xcode、macOS 进行开发，打包上传 ipa 却需要一台 macOS 和 Xcode，有一点不可理解？（当然，也不排除苹果希望大家因此，能多卖出几台 Mac 电脑，也许我的猜测是错的吧，但愿~）</p>
+<p>具体关于 Application Loader 使用方法，大家可以看看官方使用文档，已经非常详细，而且这几年，苹果很多文档都已经有翻译中文版本啦！Application Loader 介绍（中文）：<a href="https://help.apple.com/itc/apploader/" target="_blank" rel="external">https://help.apple.com/itc/apploader/</a></p>
+<h3 id="4、altool">4、altool</h3><blockquote>
+<p>您可以使用 Application Loader 的命令行工具 altool，验证 App 二进制文件并将其上传至 App Store。</p>
+</blockquote>
+<p>所以，Application Loader 应用界面下，也是基于 altool 命令来处理 ipa 文件。明白了这点，对于命令行就没有什么问题啦。</p>
+<blockquote>
+<p>若要在上传之前验证构建版本或将有效构建版本自动上传至 App Store，您可在您的持续集成系统中包含 altool。altool 位于以下文件夹中：<br><code>Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/</code></p>
+</blockquote>
+<p>对于这点，如果有做过自动化或 shell 脚本命令的人，应该就知道，我们很多时候，希望自动上传，而不是人工操作UI，一步一傻瓜的操作，这不是程序员的工作方式！所以，用命令行的目的就在这里。需要说明一下，刚才也提到 Application Loader 是有早期验证警告功能，也就是说，可以检查这个 ipa 包的内容或格式，是不是符合苹果的规定和要求。</p>
+<p>所以，若要运行 altool，请在命令行指定以下一项操作，可以是检查（<code>--validate-app</code>），或者上传（<code>--upload-app</code>）操作：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ altool --validate-app -f file -u username [-p password] [--output-format xml]&#10;$ altool --upload-app -f file -u username [-p password] [--output-format xml]</span><br></pre></td></tr></table></figure>
+<p>命令参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数命令</th>
+<th>详细说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–validate-app</td>
+<td>您要验证指定的 App。</td>
+</tr>
+<tr>
+<td>–upload-app</td>
+<td>您要上传指定的 App。</td>
+</tr>
+<tr>
+<td>-f file 正在验证或上传的 App 的路径和文件名。</td>
+</tr>
+<tr>
+<td>-u username</td>
+<td>您的用户名。</td>
+</tr>
+<tr>
+<td>-p password</td>
+<td>您的用户密码。</td>
+</tr>
+<tr>
+<td>–output-format [xml</td>
+<td>normal]</td>
+<td>您想让 Application Loader 以结构化的 XML 格式还是非结构化的文本格式返回输出信息。默认情况下，Application Loader 以文本格式返回输出信息。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5、Transporter">5、Transporter</h3><p>也许，对于一般的开发者来说，<code>altool</code> 已经能满足基本的上传 ipa 文件的需求。但是，正好前面说的，如果你需要进行批量创建内购品项，还有其它操作，可能大多数开发者不知道，苹果除了 iOS，还有非常多的服务， iTunes Connect 帐户（图书发行商或音乐提供商）、 iTunes Store、Apple Books，尽管我们中国地区有些服务或者非常少用。</p>
+<p>所以，苹果提供 <code>Transporter</code> 来处理大量和差异化数据的操作的工具（可以在 macOS、Windows 和 Linux 操作系统上安装和运行 Transporter。）：</p>
+<blockquote>
+<p>Transporter 是 Apple 基于 Java 的命令行工具，用于进行大量目录交付。您可以使用 Transporter 将预生成的内容以 Store 数据包的形式交付至 iTunes Store、Apple Books 和 App Store。</p>
+<p>不论您使用 iTunes Connect 帐户（图书发行商或音乐提供商）、App Store Connect 帐户（App 开发者）或是编码工作室帐户来交付图书、视频、音乐或 App 内容，您都可以使用 Transporter 以确保您的元数据和素材（例如音频、视频、图书和 App 文件）适当地交付至 iTunes Store、Apple Books 或 App Store，并根据 Apple 的规范验证 Store 数据包。</p>
+</blockquote>
+<p>这里，只会介绍用 <code>Transporter</code> 命令来上传 ipa 文件，更多的功能和说明，大家可以查看官方文档（中文）：<a href="https://help.apple.com/itc/transporteruserguide/" target="_blank" rel="external">https://help.apple.com/itc/transporteruserguide/</a></p>
+<p><strong>注意：</strong> 下面命令中的 <code>iTMSTransporter</code> 是一个变量名，<a href="https://help.apple.com/itc/transporteruserguide/#/apdAbeb95d60" target="_blank" rel="external">【重要事项】</a> 作为一名 App 开发者，您可以在已安装 Xcode 或 Application Loader 的情况下使用 Transporter，或者您也可以手动下载 Transporter。有关如何为 App 开发者安装 Transporter 的信息，<a href="https://help.apple.com/itc/transporteruserguide/#/apdAbeb95d60" target="_blank" rel="external">请参见 App 开发者的安装说明</a>。</p>
+<p>因为我们默认都安装了 Xcode，所以 <code>Transporter</code> 命令，我们引用 Xcode 中的 Application Loader 里的 <code>iTMSTransporter</code>, 在 .bash_profile 添加了一个别名，这样可以在任何目录路径调用 <code>iTMSTransporter</code> 命令:</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> iTMSTransporter='`xcode-<span class="keyword">select</span> <span class="comment">--print-path`/../Applications/Application\ Loader.app/Contents/MacOS/itms/bin/iTMSTransporter'</span></span><br></pre></td></tr></table></figure>
+<p>注： </p>
+<ul>
+<li>1、其中 <code>xcode-select --print-path</code>： print the path of the active developer directory（打印当前使用的Xcode版本软件的开发人员目录的路径），然后在当前使用的 Xcode 版本对应的 Application Loader 下的 <code>iTMSTransporter</code>。</li>
+<li>2、当然，也可能通过设置全局环境变量来直接使用命令，添加 TRANSPORTER_HOME 环境变量。要添加 TRANSPORTER_HOME 环境变量，请在您的 .bash_profile 中添加以下行：export TRANSPORTER_HOME=<file path="" to="" transporter="">。例如，如果您安装了 Xcode，则该行应如下所示：</file></li>
+</ul>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export TRANSPORTER_HOME=`xcode-select --<span class="keyword">print</span>-path`<span class="regexp">/../</span>Applications<span class="regexp">/Application\ Loader.app/</span>Contents<span class="regexp">/MacOS/i</span>tms<span class="regexp">/bin</span></span><br></pre></td></tr></table></figure>
+<p>其中，我们除了刚才说的检查和上传模式外，可能会用于这个命令的几种模式，</p>
+<ul>
+<li>Lookup Metadata 模式</li>
+</ul>
+<blockquote>
+<p>检索您之前上传的某个 App 当前的元数据。如果您之前上传的是 .itmsp 数据包且 Apple 在您初次上传后修改了元数据，您需要先检索修改后的元数据，再重新发送元数据更新的数据包。</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iTMSTransporter -m lookupMetadata -u [user] -p [password] -apple_id(-apple_ids) -destination [output_path]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Provider 模式</li>
+</ul>
+<blockquote>
+<p>确定您有权限为哪些帐户交付内容。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iTMSTransporter</span> <span class="tag">-m</span> <span class="tag">provider</span> <span class="tag">-u</span> <span class="attr_selector">[user]</span> <span class="tag">-p</span> <span class="attr_selector">[password]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Verify 模式</li>
+</ul>
+<blockquote>
+<p>验证您的 .itmsp 数据包，并在交付前确保元数据和素材符合技术要求，以保证上传数据包前解决任何潜在的问题。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iTMSTransporter</span> <span class="tag">-m</span> <span class="tag">verify</span> <span class="tag">-u</span> <span class="attr_selector">[user]</span> <span class="tag">-p</span> <span class="attr_selector">[password]</span> <span class="tag">-f</span> <span class="attr_selector">[itmsp_path]</span> <span class="attr_selector">[-vp &lt;text | json&gt;]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Upload 模式</li>
+</ul>
+<blockquote>
+<p>检查您的素材和 .itmsp 数据包，验证它们是否准备就绪以供交付，然后向 App Store 上传内容和元数据。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iTMSTransporter</span> <span class="tag">-m</span> <span class="tag">upload</span> <span class="tag">-u</span> <span class="attr_selector">[user]</span> <span class="tag">-p</span> <span class="attr_selector">[password]</span> <span class="tag">-f</span> <span class="attr_selector">[itmsp_path]</span></span><br></pre></td></tr></table></figure>
+<p>关于这些模式的参数，苹果文档有非常详细的说明，虽然需要花一点的脑子去理解（文档真的很~），好了。下面简单说明一下，上传命令怎么使用吧</p>
+<ul>
+<li>上传 ipa 示例：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iTMSTransporter -m upload -u xxx@xxx.com -p xxx -f /Users/HTC/Desktop/Upload.itmsp</span><br></pre></td></tr></table></figure>
+<p><code>xxx@xxx.com</code> ：App Store Connect 账号<br><code>xxx</code> ：App Store Connect 账号的密码<br><code>/Users/HTC/Desktop/Upload.itmsp</code> ：这个一个目录，<code>Upload.itmsp</code> 是一个文件夹名字，不是文件，里面包含2个文件，一个就是要上传的 ipa 文件，另一个是一个 xml ，描述这个 ipa 文件的信息。</p>
+<p>ipa_metadata.xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">package</span> <span class="attribute">version</span>=<span class="value">"software5.10"</span> <span class="attribute">xmlns</span>=<span class="value">"http://apple.com/itunes/importer"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">software_assets</span> <span class="attribute">apple_id</span>=<span class="value">"&#123;apple_id&#125;"</span> <span class="attribute">app_platform</span>=<span class="value">"&#123;app_platform&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">asset</span> <span class="attribute">type</span>=<span class="value">"&#123;archive_type&#125;"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">data_file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">size</span>&gt;</span>&#123;file_size&#125;<span class="tag">&lt;/<span class="title">size</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">file_name</span>&gt;</span>&#123;file_name&#125;<span class="tag">&lt;/<span class="title">file_name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">checksum</span> <span class="attribute">type</span>=<span class="value">"md5"</span>&gt;</span>&#123;file_md5&#125;<span class="tag">&lt;/<span class="title">checksum</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">data_file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">asset</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">software_assets</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>需要修改 xml 中的一些参数：</p>
+<p><code>{apple_id}</code> ：这个 ipa 文件对应的app的 apple id<br><code>{app_platform}</code> ： app的平台，填写<code>ios</code><br><code>{archive_type}</code> ：归档类型，填写<code>bundle</code><br><code>{file_size}</code> ：ipa 文件的大小<br><code>{file_name}</code> ：ipa 文件的名字<br><code>{file_md5}</code>： ipa 文件的md5值</p>
+<ul>
+<li>一些重要参数说明：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-itc_provider <shortname></shortname></td>
+<td>检查和上传时建议加子账号的团队id，但测试发现不用 也行，先不带，因为获取很麻烦</td>
+</tr>
+<tr>
+<td>-errorLogs <path></path></td>
+<td>存储错误日志的目录</td>
+</tr>
+<tr>
+<td>-loghistory <path></path></td>
+<td>记录成功上传的数据包</td>
+</tr>
+<tr>
+<td>-outputFormat xml</td>
+<td>以 XML 格式返回输出信息</td>
+</tr>
+<tr>
+<td>-throughput</td>
+<td>显示成功上传数据包的总传输时间以及数据包大小和每秒字节数</td>
+</tr>
+<tr>
+<td>[-o <output>]</output></td>
+<td>记录输出信息</td>
+</tr>
+<tr>
+<td>[-v <verbosity>]</verbosity></td>
+<td>日志级别，默认eXtreme，详细</td>
+</tr>
+<tr>
+<td>-vp &lt;text</td>
+<td>json&gt;</td>
+<td>在验证或上传数据包文件时显示进度信息</td>
+</tr>
+<tr>
+<td>[-Xmx4096m]</td>
+<td>指定 4 GB  Java 虚拟机 (JVM) 堆栈内存</td>
+</tr>
+</tbody>
+</table>
+<h3 id="总结">总结</h3><p>最后，这就是几种上传ipa包的方法，当然，如果经验丰富的开发者，可能使用过 <code>fastlane</code> 、<code>shenzhen</code> 这样的自动化工具命令，也是可以上传 ipa 文件，如果你研究过它们的源代码，你就会发现，他们使用的命令就是 <code>iTMSTransporter</code>，这也正是，我想写这篇文章的原因，希望大家在开发过程中，一直想提升自己，想进阶，想高手，然后找不到途径？不要忽视开发过程的每一个重要的环节，这就是进阶的途径，愿大家都能感悟达到~</p>
+<p>最后的最后，想说一下，最新不怎么更新文章？除了没有时间外，写好一篇文章，还需要去考查相关的资料知识，因为当我发现博客的访问量越来越多时，为了不误解别人，需要承担的责任感觉也大了。所以，这也是写文章的好处吧，除了整理思维，体系构建，表达自己，还有分享，责任，担当中国技术传承的一份子，安乐~</p>
+<p>finally，五一快乐！致敬劳动者！</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://help.apple.com/xcode/mac/current/" target="_blank" rel="external">Xcode Help</a></li>
+<li><a href="https://help.apple.com/itc/apploader/#/" target="_blank" rel="external">使用 Application Loader</a></li>
+<li><a href="https://help.apple.com/itc/apploader/#/apdATD1E53-D1E1A1303-D1E53A1126" target="_blank" rel="external">通过 altool 上传 App 的二进制文件 - 使用 Application Loader</a></li>
+<li><a href="https://help.apple.com/itc/transporteruserguide/#/itc0d5b535bf" target="_blank" rel="external">Transporter 是什么？ - Transporter 用户指南 1.13</a></li>
+<li><a href="https://help.apple.com/itc/podcasts_connect/#/itcc0e1eaa94" target="_blank" rel="external">Podcasts Connect 概览 - Podcasts Connect 帮助</a></li>
+<li><a href="https://help.apple.com/itc/apploader/#/apdATD1E887-D1E1A1303-D1E887A1126" target="_blank" rel="external">支持的格式 - 使用 Application Loader</a></li>
+<li><a href="https://stackoverflow.com/questions/16582119/how-use-itmstransporter" target="_blank" rel="external">How use iTMSTransporter?</a></li>
+<li><a href="https://github.com/fastlane/fastlane" target="_blank" rel="external">GitHub - fastlane</a></li>
+<li><a href="https://docs.fastlane.tools/actions/deliver/" target="_blank" rel="external">fastlane deliver 上传app到App Store</a></li>
+<li><a href="https://github.com/nomad/shenzhen/blob/master/lib/shenzhen/plugins/itunesconnect.rb" target="_blank" rel="external">GitHub - shenzhen</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>关于上传ipa包到 App Store Connect 的方法，相信做过 iOS 开发的同学，一定知道完成 App 开发后，怎么打包上传到苹果后台，一般都是用 Xcode 的 Archive 打包后，所以，是不是只能这样呢？答案肯定不是啊，本文是给大家有一个相对全面的了解，苹果开发的知识，非常多，官方文档也很多，能够学好学完，不一定能够做到。在我的理解，iOS进阶，不是说你必须掌握很高深的技术，而是了解全面的知识，能做做出不一定的产品、体验，这个才是优秀的开发者！</p>]]>
+    
+    </summary>
+    
+      <category term="Application Loader" scheme="https://iHTCboy.com/tags/Application-Loader/"/>
+    
+      <category term="IPA" scheme="https://iHTCboy.com/tags/IPA/"/>
+    
+      <category term="Transporter" scheme="https://iHTCboy.com/tags/Transporter/"/>
+    
+      <category term="Xcode" scheme="https://iHTCboy.com/tags/Xcode/"/>
+    
+      <category term="altool" scheme="https://iHTCboy.com/tags/altool/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xcode10再坑之framework not found CoreServices for architecture armv7]]></title>
@@ -2843,383 +3064,6 @@
     </summary>
     
       <category term="iTerm" scheme="https://iHTCboy.com/tags/iTerm/"/>
-    
-      <category term="shortcut" scheme="https://iHTCboy.com/tags/shortcut/"/>
-    
-      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[vi(vim)快捷键小记]]></title>
-    <link href="https://iHTCboy.com/2018/07/28/2018-07-28_Vim%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://iHTCboy.com/2018/07/28/2018-07-28_Vim快捷键小记/</id>
-    <published>2018-07-28T07:49:16.000Z</published>
-    <updated>2019-05-01T08:30:39.799Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。总结一下自己平时常用的vim快捷键，当是忘记也好，后续会不定期更新。</p>
-<a id="more"></a>
-<h3 id="2、vim_快捷键">2、vim 快捷键</h3><h4 id="思维导图">思维导图</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180728-vi（vim）-Shortcut-20190330.png" alt="20180728-vi(vim)-Shortcut-20190330.png"></p>
-<h4 id="快捷键">快捷键</h4><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>vi[m] + file</td>
-<td>打开[新建]文件</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>【命令模式】</td>
-<td>可以移动光标、删除字符等</td>
-</tr>
-<tr>
-<td>h,j,k,l</td>
-<td>左，下，上，右</td>
-</tr>
-<tr>
-<td>Blankspace</td>
-<td>向右</td>
-</tr>
-<tr>
-<td>Backspace</td>
-<td>向左</td>
-</tr>
-<tr>
-<td>Enter</td>
-<td>移动到下一行首</td>
-</tr>
-<tr>
-<td>-</td>
-<td>移动到上一行首</td>
-</tr>
-<tr>
-<td>b</td>
-<td>上一个词的词首</td>
-</tr>
-<tr>
-<td>w</td>
-<td>下一个词的词首</td>
-</tr>
-<tr>
-<td>e</td>
-<td>下一个词的词尾</td>
-</tr>
-<tr>
-<td>^</td>
-<td>行首</td>
-</tr>
-<tr>
-<td>$</td>
-<td>行尾</td>
-</tr>
-<tr>
-<td>f/F + 字符</td>
-<td>向前/向后移动到特定的字符（行内）</td>
-</tr>
-<tr>
-<td>gg</td>
-<td>文件的第一行</td>
-</tr>
-<tr>
-<td>G</td>
-<td>文件的最后一行</td>
-</tr>
-<tr>
-<td>nG</td>
-<td>移动到第n行</td>
-</tr>
-<tr>
-<td>n+</td>
-<td>向下跳n行</td>
-</tr>
-<tr>
-<td>n-</td>
-<td>向上跳n行</td>
-</tr>
-<tr>
-<td>/字</td>
-<td>正向查找搜素字符串</td>
-</tr>
-<tr>
-<td>?字</td>
-<td>反向查找搜素字符串</td>
-</tr>
-<tr>
-<td>n</td>
-<td>向下搜索前一个搜素动作</td>
-</tr>
-<tr>
-<td>N</td>
-<td>向上搜索前一个搜索动作</td>
-</tr>
-<tr>
-<td>x</td>
-<td>删除字符</td>
-</tr>
-<tr>
-<td>nx</td>
-<td>删除从光标开始的n个字符</td>
-</tr>
-<tr>
-<td>df + 字符</td>
-<td>删除从当前字符到指定字符</td>
-</tr>
-<tr>
-<td>dw/daw</td>
-<td>删除单词</td>
-</tr>
-<tr>
-<td>d$</td>
-<td>删除从当前光标到行尾</td>
-</tr>
-<tr>
-<td>dd</td>
-<td>删除当前行</td>
-</tr>
-<tr>
-<td>ndd</td>
-<td>向下删除当前行在内的n行</td>
-</tr>
-<tr>
-<td>dd + p</td>
-<td>delete一行，然后放在当前光标下方</td>
-</tr>
-<tr>
-<td>dd + P</td>
-<td>delete一行，然后放在当前光标上方</td>
-</tr>
-<tr>
-<td>dw + p</td>
-<td>delete单词，然后放在当前光标后面</td>
-</tr>
-<tr>
-<td>dw + P</td>
-<td>delete单词，然后放在当前光标前面</td>
-</tr>
-<tr>
-<td>p/P</td>
-<td>重复粘贴，粘贴剪切板里的内容在光标后/前</td>
-</tr>
-<tr>
-<td>yw</td>
-<td>复制单词</td>
-</tr>
-<tr>
-<td>yf + 字符</td>
-<td>复制从当前字符到指定字符</td>
-</tr>
-<tr>
-<td>yy</td>
-<td>复制整行</td>
-</tr>
-<tr>
-<td>y$</td>
-<td>复制当前光标到行尾的内容</td>
-</tr>
-<tr>
-<td>y^</td>
-<td>复制从光标到行首的内容</td>
-</tr>
-<tr>
-<td>J</td>
-<td>合并光标所在行及下一行为一行</td>
-</tr>
-<tr>
-<td>.</td>
-<td>重复上一个操作</td>
-</tr>
-<tr>
-<td>n+action</td>
-<td>表示执行某个操作n次</td>
-</tr>
-<tr>
-<td>u</td>
-<td>撤销上一步操作</td>
-</tr>
-<tr>
-<td>U</td>
-<td>撤销对当前行的所有操作</td>
-</tr>
-<tr>
-<td>ctrl + r</td>
-<td>重做</td>
-</tr>
-<tr>
-<td>ctrl + b</td>
-<td>向前翻一页</td>
-</tr>
-<tr>
-<td>ctrl + f</td>
-<td>向后翻一页</td>
-</tr>
-<tr>
-<td>ctrl + u</td>
-<td>向前翻半页</td>
-</tr>
-<tr>
-<td>ctrl + d</td>
-<td>向后翻半页</td>
-</tr>
-<tr>
-<td>ctrl + e</td>
-<td>下滚一行</td>
-</tr>
-<tr>
-<td>:set  nu</td>
-<td>显示行号</td>
-</tr>
-<tr>
-<td>:set nonu</td>
-<td>取消显示行号</td>
-</tr>
-<tr>
-<td>:s/old/new</td>
-<td>用new替换行中首次出现的old</td>
-</tr>
-<tr>
-<td>:s/old/new/g</td>
-<td>用new替换行中所有的old</td>
-</tr>
-<tr>
-<td>:n,m s/old/new/g</td>
-<td>用new替换从n到m行里所有的old</td>
-</tr>
-<tr>
-<td>:%s/old/new/g</td>
-<td>用new替换当前文件里所有的old</td>
-</tr>
-<tr>
-<td>:w</td>
-<td>保存正在编辑的文件</td>
-</tr>
-<tr>
-<td>:w new.txt</td>
-<td>保存至new.tex文件</td>
-</tr>
-<tr>
-<td>:q</td>
-<td>退出不保存（文件未修改时）</td>
-</tr>
-<tr>
-<td>:q!</td>
-<td>退出编辑器，且不保存</td>
-</tr>
-<tr>
-<td>:wq</td>
-<td>保存后退出正在编辑的文件</td>
-</tr>
-<tr>
-<td>:help</td>
-<td>显示相关命令的帮助</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>【选择模式】</td>
-<td></td>
-</tr>
-<tr>
-<td>v</td>
-<td>不规则选择</td>
-</tr>
-<tr>
-<td>V</td>
-<td>按行选择</td>
-</tr>
-<tr>
-<td>Ctrl + v</td>
-<td>按列选择</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>【插入模式】</td>
-<td>在此模式下可以输入字符，按ESC将回到命令模式。</td>
-</tr>
-<tr>
-<td>i</td>
-<td>在当前字符前面插入</td>
-</tr>
-<tr>
-<td>I</td>
-<td>在行首插入</td>
-</tr>
-<tr>
-<td>a</td>
-<td>在当前字符后面插入</td>
-</tr>
-<tr>
-<td>A</td>
-<td>在行尾插入</td>
-</tr>
-<tr>
-<td>o</td>
-<td>在当前行的下一行插入</td>
-</tr>
-<tr>
-<td>O</td>
-<td>在当前行的上一行插入</td>
-</tr>
-<tr>
-<td>r</td>
-<td>更改当前的字符</td>
-</tr>
-<tr>
-<td>R</td>
-<td>更改多个字符</td>
-</tr>
-<tr>
-<td>cw/caw</td>
-<td>更改单词</td>
-</tr>
-<tr>
-<td>cf + 字符</td>
-<td>更改从当前字符到指定字符</td>
-</tr>
-<tr>
-<td>c$</td>
-<td>更改从当前字符到行尾</td>
-</tr>
-<tr>
-<td>cc</td>
-<td>更改整行</td>
-</tr>
-</tbody>
-</table>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://www.vpser.net/manage/vi.html" target="_blank" rel="external">Linux上vi(vim)编辑器使用教程 - VPS侦探</a></li>
-<li><a href="https://coolshell.cn/articles/5426.html" target="_blank" rel="external">简明 Vim 练级攻略 | | 酷 壳 - CoolShell</a></li>
-<li><a href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/" target="_blank" rel="external">YBlog - Learn Vim Progressively</a></li>
-<li><a href="https://www.jianshu.com/p/a0b452f8f720" target="_blank" rel="external">Vim配置、插件和使用技巧 - 简书</a></li>
-<li><a href="https://www.cnblogs.com/jikey/archive/2011/12/28/2304341.html" target="_blank" rel="external">Vim快捷键分类 - 豪情 - 博客园</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。总结一下自己平时常用的vim快捷键，当是忘记也好，后续会不定期更新。</p>]]>
-    
-    </summary>
-    
-      <category term="Vim" scheme="https://iHTCboy.com/tags/Vim/"/>
     
       <category term="shortcut" scheme="https://iHTCboy.com/tags/shortcut/"/>
     
