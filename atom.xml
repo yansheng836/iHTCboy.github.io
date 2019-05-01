@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-01T15:36:37.451Z</updated>
+  <updated>2019-05-01T15:37:37.916Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/04/07/2019-04-07_%E4%B8%8A%E4%BC%A0IPA%E5%88%B0AppStoreConnet%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2019/04/07/2019-04-07_上传IPA到AppStoreConnet的几种方法/</id>
     <published>2019-04-07T07:49:16.000Z</published>
-    <updated>2019-05-01T15:36:37.451Z</updated>
+    <updated>2019-05-01T15:37:37.916Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于上传ipa包到 App Store Connect 的方法，相信做过 iOS 开发的同学，一定知道完成 App 开发后，怎么打包上传到苹果后台，一般都是用 Xcode 的 Archive 打包后，所以，是不是只能这样呢？答案肯定不是啊，本文是给大家有一个相对全面的了解，苹果开发的知识，非常多，官方文档也很多，能够学好学完，不一定能够做到。在我的理解，iOS进阶，不是说你必须掌握很高深的技术，而是了解全面的知识，能做做出不一定的产品、体验，这个才是优秀的开发者！</p>
 <a id="more"></a>
 <h3 id="2、Xcode">2、Xcode</h3><p>利用 Xcode 的 Archive 生成 app 包后，选择 Distribute App ，将 App 通过 Xcode 上传到  App Store Connect 后台，这个就不多说的，iOS 开发都需要经历一下。</p>
@@ -36,7 +36,7 @@
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Application-Loader-Upload.png" alt="20190407-Application-Loader-Upload.png"></p>
 <p>其实，如果了解历史的，会知道现在的 Application Loader App 的功能已经被苹果弱化了，以前还能够批量创建提交内购品项，现在新版本已经去掉了。另外，以前在苹果开发者官网，有单独的页面，可以下载独立版本的 Application Loader 软件，现在也已经去掉了。</p>
 <p>可能的原因，在我看来有几点。第1点是，单独维护这样一个软件，需要人力，因为，如果不依赖于 Xcode，在一台电脑只安装了 Application Loader，那个肯定需要安装 <code>Command Line Tools</code> 这个命令行工具，如果是安装 Xcode 默认也带上，如果更新了 Xcode 版，也会跟随升级，所以，维护 Application Loader 软件，不只是单独的一个应用入口，当然，也是因为这个 Application Loader 做了一些早期验证警告：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Xcode-Distribute-App.png" alt="20190407-Xcode-Distribute-App.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Application-Loader-Error.png" alt="20190407-Xcode-Distribute-App.png"></p>
 <p>上传 ipa 包时，工具会检查一些要求和内容格式等，如果不符合，就会报错，所以，这些初步的检查报错，也是 Application Loader 需要维护的。</p>
 <p>第2点，Application Loader 需要的人并不多，站在开发者环境，大多数开发者负责上传 ipa 包，另外，批量上传内购品项，一定很多人不知道，所以，苹果也去掉了。开发者后台也去掉了，所以，Application Loader 现在是集成在 Xcode 中，说不定，那天就直接去掉。</p>
 <p>第3点，越来越多的声音，希望苹果能通过 App Store Connect 后台能直接上传 ipa 包、批量创建内购品项等功能。但根据我观察这几年的 WWDC，苹果对 App Store Connect 后台进行了比较大的改变，2018年就是对 App Store Connect 和 Apple Developer 后台，2个账号体系合并，主线上，还是整个系统性上，对于功能和UI界面上，不知道有没有相关计划。我的猜测，还是有希望的。因为近年来，跨平台开发， React Native/ Weex / Flutter，其实，可以不需要依赖 Xcode、macOS 进行开发，打包上传 ipa 却需要一台 macOS 和 Xcode，有一点不可理解？（当然，也不排除苹果希望大家因此，能多卖出几台 Mac 电脑，也许我的猜测是错的吧，但愿~）</p>
