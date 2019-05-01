@@ -2855,10 +2855,10 @@
     <link href="https://iHTCboy.com/2018/07/28/2018-07-28_Vim%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2018/07/28/2018-07-28_Vim快捷键小记/</id>
     <published>2018-07-28T07:49:16.000Z</published>
-    <updated>2019-03-30T08:22:00.399Z</updated>
+    <updated>2019-05-01T08:30:39.799Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。总结一下自己平时常用的vim快捷键，当是忘记也好，后续会不定期更新。</p>
 <a id="more"></a>
-<h3 id="2、vim_快捷键">2、vim 快捷键</h3><h4 id="思维导图">思维导图</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180728-vi(vim" alt="20180728-vi(vim)-Shortcut-20190330.png">-Shortcut-20190330.png)</p>
+<h3 id="2、vim_快捷键">2、vim 快捷键</h3><h4 id="思维导图">思维导图</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/07/20180728-vi（vim）-Shortcut-20190330.png" alt="20180728-vi(vim)-Shortcut-20190330.png"></p>
 <h4 id="快捷键">快捷键</h4><table>
 <thead>
 <tr>
