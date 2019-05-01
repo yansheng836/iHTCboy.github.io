@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-01T15:38:07.830Z</updated>
+  <updated>2019-05-01T15:39:37.230Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/04/07/2019-04-07_%E4%B8%8A%E4%BC%A0IPA%E5%88%B0AppStoreConnet%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2019/04/07/2019-04-07_上传IPA到AppStoreConnet的几种方法/</id>
     <published>2019-04-07T07:49:16.000Z</published>
-    <updated>2019-05-01T15:38:07.830Z</updated>
+    <updated>2019-05-01T15:39:37.230Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于上传ipa包到 App Store Connect 的方法，相信做过 iOS 开发的同学，一定知道完成 App 开发后，怎么打包上传到苹果后台，一般都是用 Xcode 的 Archive 打包后，所以，是不是只能这样呢？答案肯定不是啊，本文是给大家有一个相对全面的了解，苹果开发的知识，非常多，官方文档也很多，能够学好学完，不一定能够做到。在我的理解，iOS进阶，不是说你必须掌握很高深的技术，而是了解全面的知识，能做做出不一定的产品、体验，这个才是优秀的开发者！</p>
 <a id="more"></a>
 <h3 id="2、Xcode">2、Xcode</h3><p>利用 Xcode 的 Archive 生成 app 包后，选择 Distribute App ，将 App 通过 Xcode 上传到  App Store Connect 后台，这个就不多说的，iOS 开发都需要经历一下。</p>
