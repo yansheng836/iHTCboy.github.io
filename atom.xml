@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-01T15:39:37.230Z</updated>
+  <updated>2019-05-02T00:58:46.905Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="https://iHTCboy.com/2019/04/07/2019-04-07_%E4%B8%8A%E4%BC%A0IPA%E5%88%B0AppStoreConnet%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2019/04/07/2019-04-07_上传IPA到AppStoreConnet的几种方法/</id>
     <published>2019-04-07T07:49:16.000Z</published>
-    <updated>2019-05-01T15:39:37.230Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于上传ipa包到 App Store Connect 的方法，相信做过 iOS 开发的同学，一定知道完成 App 开发后，怎么打包上传到苹果后台，一般都是用 Xcode 的 Archive 打包后，所以，是不是只能这样呢？答案肯定不是啊，本文是给大家有一个相对全面的了解，苹果开发的知识，非常多，官方文档也很多，能够学好学完，不一定能够做到。在我的理解，iOS进阶，不是说你必须掌握很高深的技术，而是了解全面的知识，能做做出不一定的产品、体验，这个才是优秀的开发者！</p>
+    <updated>2019-05-02T00:58:46.905Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于上传 ipa 包到 App Store Connect 的方法，相信做过 iOS 开发的同学，一定知道完成 App 开发后，一般都是用 Xcode 的 Archive 打包后上传到苹果后台。所以，这个就是今天的答案？显示不是呢？答案肯定不是啊，本文给大家有一个相对全面的了解，苹果开发的知识，非常多，官方文档也很多，能够学好学完，不一定人人能够做到。在我的理解，iOS进阶，不是说你必须掌握很高深的技术，而是了解全面的知识，能够做出不一样的产品、体验，这个才是优秀的开发者！</p>
 <a id="more"></a>
 <h3 id="2、Xcode">2、Xcode</h3><p>利用 Xcode 的 Archive 生成 app 包后，选择 Distribute App ，将 App 通过 Xcode 上传到  App Store Connect 后台，这个就不多说的，iOS 开发都需要经历一下。</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Xcode-Distribute-App.png" alt="20190407-Xcode-Distribute-App.png"></p>
@@ -34,7 +34,7 @@
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Application-Loader-Login.png" alt="20190407-Application-Loader-Login.png"></p>
 <p>主界面：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Application-Loader-Upload.png" alt="20190407-Application-Loader-Upload.png"></p>
-<p>其实，如果了解历史的，会知道现在的 Application Loader App 的功能已经被苹果弱化了，以前还能够批量创建提交内购品项，现在新版本已经去掉了。另外，以前在苹果开发者官网，有单独的页面，可以下载独立版本的 Application Loader 软件，现在也已经去掉了。</p>
+<p>其实，如果了解 Xcode 历史的同学，会知道现在的 Application Loader App 的功能已经被苹果弱化了，以前还能够批量创建提交内购品项等，现在新版本已经去掉了。另外，以前在苹果开发者官网，有单独的页面，可以下载独立版本的 Application Loader 软件，现在也已经去掉了。</p>
 <p>可能的原因，在我看来有几点。第1点是，单独维护这样一个软件，需要人力，因为，如果不依赖于 Xcode，在一台电脑只安装了 Application Loader，那个肯定需要安装 <code>Command Line Tools</code> 这个命令行工具，如果是安装 Xcode 默认也带上，如果更新了 Xcode 版，也会跟随升级，所以，维护 Application Loader 软件，不只是单独的一个应用入口，当然，也是因为这个 Application Loader 做了一些早期验证警告：</p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190407-Application-Loader-Error.png" alt="20190407-Xcode-Distribute-App.png"></p>
 <p>上传 ipa 包时，工具会检查一些要求和内容格式等，如果不符合，就会报错，所以，这些初步的检查报错，也是 Application Loader 需要维护的。</p>
@@ -48,7 +48,7 @@
 <blockquote>
 <p>若要在上传之前验证构建版本或将有效构建版本自动上传至 App Store，您可在您的持续集成系统中包含 altool。altool 位于以下文件夹中：<br><code>Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/</code></p>
 </blockquote>
-<p>对于这点，如果有做过自动化或 shell 脚本命令的人，应该就知道，我们很多时候，希望自动上传，而不是人工操作UI，一步一傻瓜的操作，这不是程序员的工作方式！所以，用命令行的目的就在这里。需要说明一下，刚才也提到 Application Loader 是有早期验证警告功能，也就是说，可以检查这个 ipa 包的内容或格式，是不是符合苹果的规定和要求。</p>
+<p>对于这点，如果有做过自动化打包、上传发布或 shell 脚本命令的同学，应该就知道，我们很多时候，希望自动上传，而不是人工操作UI，一步一傻瓜的操作，这不是程序员的工作方式！所以，用命令行的目的就在这里。需要说明一下，刚才也提到 Application Loader 是有早期验证警告功能，也就是说，可以检查这个 ipa 包的内容或格式，是不是符合苹果的规定和要求。</p>
 <p>所以，若要运行 altool，请在命令行指定以下一项操作，可以是检查（<code>--validate-app</code>），或者上传（<code>--upload-app</code>）操作：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ altool --validate-app -f file -u username [-p password] [--output-format xml]&#10;$ altool --upload-app -f file -u username [-p password] [--output-format xml]</span><br></pre></td></tr></table></figure>
 <p>命令参数说明：</p>
@@ -190,8 +190,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="总结">总结</h3><p>最后，这就是几种上传ipa包的方法，当然，如果经验丰富的开发者，可能使用过 <code>fastlane</code> 、<code>shenzhen</code> 这样的自动化工具命令，也是可以上传 ipa 文件，如果你研究过它们的源代码，你就会发现，他们使用的命令就是 <code>iTMSTransporter</code>，这也正是，我想写这篇文章的原因，希望大家在开发过程中，一直想提升自己，想进阶，想高手，然后找不到途径？不要忽视开发过程的每一个重要的环节，这就是进阶的途径，愿大家都能感悟达到~</p>
-<p>最后的最后，想说一下，最新不怎么更新文章？除了没有时间外，写好一篇文章，还需要去考查相关的资料知识，因为当我发现博客的访问量越来越多时，为了不误解别人，需要承担的责任感觉也大了。所以，这也是写文章的好处吧，除了整理思维，体系构建，表达自己，还有分享，责任，担当中国技术传承的一份子，安乐~</p>
+<h3 id="总结">总结</h3><p>最后，这就是几种上传ipa包的方法，当然，如果经验丰富的开发者，可能使用过 <code>fastlane</code> 、<code>shenzhen</code> 这样的自动化工具命令，也是可以上传 ipa 文件，如果你研究过它们的源代码，你就会发现，他们使用的命令就是 <code>iTMSTransporter</code>，这也正是，我想写这篇文章的原因。现在大家在开发过程中，一直想提升自己，想进阶，想成为高手，然而找不到途径？我希望，大家不要忽视开发过程的每一个重要的环节，这就是进阶的途径！愿大家都能感悟达到~</p>
+<p>最后的最后，想说一下最近不怎么更新博客的原因？除了比较忙外（什么时候闲！），写好一篇文章，需要去考查相关的资料和知识，对每一行文字，都要精斟细酌，因为当我看到博客的访问量越来越多人时，为了不误导大家，所以需要承担的责任感觉也大了。这也是写文章的好处吧，除了整理思维，体系构建，表达自己，还有分享，责任，担当中国IT技术传承的一份子，安乐~</p>
 <p>finally，五一快乐！致敬劳动者！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://help.apple.com/xcode/mac/current/" target="_blank" rel="external">Xcode Help</a></li>
@@ -216,7 +216,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>关于上传ipa包到 App Store Connect 的方法，相信做过 iOS 开发的同学，一定知道完成 App 开发后，怎么打包上传到苹果后台，一般都是用 Xcode 的 Archive 打包后，所以，是不是只能这样呢？答案肯定不是啊，本文是给大家有一个相对全面的了解，苹果开发的知识，非常多，官方文档也很多，能够学好学完，不一定能够做到。在我的理解，iOS进阶，不是说你必须掌握很高深的技术，而是了解全面的知识，能做做出不一定的产品、体验，这个才是优秀的开发者！</p>]]>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>关于上传 ipa 包到 App Store Connect 的方法，相信做过 iOS 开发的同学，一定知道完成 App 开发后，一般都是用 Xcode 的 Archive 打包后上传到苹果后台。所以，这个就是今天的答案？显示不是呢？答案肯定不是啊，本文给大家有一个相对全面的了解，苹果开发的知识，非常多，官方文档也很多，能够学好学完，不一定人人能够做到。在我的理解，iOS进阶，不是说你必须掌握很高深的技术，而是了解全面的知识，能够做出不一样的产品、体验，这个才是优秀的开发者！</p>]]>
     
     </summary>
     
