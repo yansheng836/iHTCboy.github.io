@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-04T06:40:01.026Z</updated>
+  <updated>2019-05-04T12:37:11.371Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/04/14/2019-04-14_macOS%E4%BD%BF%E7%94%A8Sparkle%E8%BF%9B%E8%A1%8C%E8%BD%AF%E4%BB%B6%E8%87%AA%E6%9B%B4%E6%96%B0/"/>
     <id>https://iHTCboy.com/2019/04/14/2019-04-14_macOS使用Sparkle进行软件自更新/</id>
     <published>2019-04-14T13:49:16.000Z</published>
-    <updated>2019-05-04T06:40:01.026Z</updated>
+    <updated>2019-05-04T12:37:11.371Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>其实，这个文章应该是上一年打算写的，结果，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动增加接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且是下载压缩包，需要自动手动替换，甚是痛苦。所以，看了很多开源项目，看到了一个macOS专用的更新库 <code>Sparkle</code>, 然后，网上的教程，已经非常旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新库，大家需要可以自行了解，以主流库为主，维护更好，这也是项目选型，考虑的条件之一，也许是强者更强~</p>
 <a id="more"></a>
 <h3 id="2、Sparkle">2、Sparkle</h3><blockquote>
@@ -103,7 +103,11 @@
 </li>
 <li><p>AppStore版本<br>如果是上架 AppStore，则不能使用 <code>Sparkle</code> ，因为苹果审核禁止检查更新和自动更新，需要更新，要求用户使用 AppStore。</p>
 </li>
+<li><p>编译报错</p>
+</li>
 </ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>HTC<span class="regexp">/Desktop/</span>SparkleDemo-macOS<span class="regexp">/Pods/</span>Target Support Files<span class="regexp">/Pods-macOSDemo/</span>Pods-macOSDemo-frameworks.<span class="string">sh:</span> line <span class="number">104</span>: <span class="string">EXPANDED_CODE_SIGN_IDENTITY:</span> unbound variable</span><br><span class="line">Command PhaseScriptExecution failed with a nonzero exit code</span><br></pre></td></tr></table></figure>
+<p>在Xcode菜单栏选择 File -&gt; Workspace Setting 就会弹出一个界面，看出 Xcode10 是默认选中的最新的 <code>New Build System(Default)</code>，在这个编译系统的环境下，编译脚本一直会报错。把 build system 切换到 <code>Legacy Build System</code>，使用旧的编译系统就正常运行。怀疑是新的编译系统，流程有变动，如果有问题，后续在深研。</p>
 <h3 id="总结">总结</h3><p>其实，官方文档已经给出了很好的教程。这里写的原因:</p>
 <p>其一是，官方的文档比较旧，针对 Xcode10，一些操作已经发生了比较大的变化，对于新入门的苹果开发者，可以比较懵。</p>
 <p>其二，对于英文或者想最快的方式入门使用的同学，提供一个最简洁的教程，节省大家的时间，对大家都好的事件，应该做！</p>
