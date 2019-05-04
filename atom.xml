@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-04T12:39:24.802Z</updated>
+  <updated>2019-05-04T14:37:45.196Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/05/04/2019-05-04_macOS%E4%BD%BF%E7%94%A8Sparkle%E8%BF%9B%E8%A1%8C%E8%BD%AF%E4%BB%B6%E8%87%AA%E6%9B%B4%E6%96%B0/"/>
     <id>https://iHTCboy.com/2019/05/04/2019-05-04_macOS使用Sparkle进行软件自更新/</id>
     <published>2019-05-04T06:49:16.000Z</published>
-    <updated>2019-05-04T12:39:24.802Z</updated>
+    <updated>2019-05-04T14:37:45.196Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>其实，这个文章应该是上一年打算写的，结果，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动增加接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且是下载压缩包，需要自动手动替换，甚是痛苦。所以，看了很多开源项目，看到了一个macOS专用的更新库 <code>Sparkle</code>, 然后，网上的教程，已经非常旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新库，大家需要可以自行了解，以主流库为主，维护更好，这也是项目选型，考虑的条件之一，也许是强者更强~</p>
 <a id="more"></a>
 <h3 id="2、Sparkle">2、Sparkle</h3><blockquote>
@@ -149,6 +149,91 @@
       <category term="macOS" scheme="https://iHTCboy.com/tags/macOS/"/>
     
       <category term="软件检查更新" scheme="https://iHTCboy.com/tags/%E8%BD%AF%E4%BB%B6%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[django 定时任务 django-crontab 的使用]]></title>
+    <link href="https://iHTCboy.com/2019/04/14/2019-04-14_django%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1django-crontab%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://iHTCboy.com/2019/04/14/2019-04-14_django定时任务django-crontab的使用/</id>
+    <published>2019-04-14T11:19:16.000Z</published>
+    <updated>2019-05-04T15:18:15.288Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可以是定点时间，比如 14:00 执行，也可以是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 <code>django-crontab</code> 库比较多用，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功能也很全面，当然，也存在一此无法解决的问题，使用时需要注意的。</p>
+<a id="more"></a>
+<h3 id="2、使用教程">2、使用教程</h3><p>1.安装:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-crontab</span><br></pre></td></tr></table></figure>
+<p>2.添加配置到 settings.py <code>INSTALLED_APPS</code> 中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = (</span><br><span class="line">    <span class="string">'django_crontab'</span>,</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>3.编写定时函数:</p>
+<p>在django的app中新建一个myapp/cron.py文件，把需要定时执行的代码放进去</p>
+<p>示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_scheduled_job</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<p>4.在 settings.py 中增加<code>CRONJOBS</code>配置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CRONJOBS = [</span><br><span class="line">    (<span class="string">'*/5 * * * *'</span>, <span class="string">'myapp.cron.my_scheduled_job'</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>也可以定义一些关键字参数，有2种格式：</p>
+<p>格式1：</p>
+<ul>
+<li>要求：cron计时通常格式（有关更多示例，请参阅 <a href="http://en.wikipedia.org/wiki/Cron#Format" target="_blank" rel="external">Wikipedia</a> 和 <a href="https://crontab.guru/examples.html" target="_blank" rel="external">crontab.guru</a>）</li>
+<li>要求：python模块路径下待执行定时任务</li>
+<li>可选：特定于定时任务的后缀（例如，将 out/err 重定向到文件，默认值为’’）</li>
+</ul>
+<p>示例：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CRONJOBS = [</span><br><span class="line">    ('<span class="keyword">*</span>/1 <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span>', 'appname.test_crontab.test','&gt;&gt;/home/python/test_crontab.log')</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>格式2：</p>
+<ul>
+<li>要求：cron计时通常格式</li>
+<li>要求：python模块路径下待执行定时任务</li>
+<li>可选：方法的位置参数列表（默认值：[]）</li>
+<li>可选：方法的关键字参数的dict（默认值：{}）</li>
+<li>可选：特定于定时任务的后缀（例如，将 out/err 重定向到文件，默认值为’’）</li>
+</ul>
+<p>示例：<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="name">CRONJOBS</span> = [</span><br><span class="line">    (<span class="string">'*/5 * * * *'</span>, <span class="string">'myapp.cron.other_scheduled_job'</span>, [<span class="string">'arg1'</span>, <span class="string">'arg2'</span>], &#123;<span class="string">'verbose'</span>: <span class="number">0</span>&#125;),</span><br><span class="line">    (<span class="string">'0   4 * * *'</span>, <span class="string">'django.core.management.call_command'</span>, [<span class="string">'clearsessions'</span>]),</span><br><span class="line">    </span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>对于熟悉 Linux 中定时任务<code>crontab</code> 的同学可能对上面第一个参数的语法很亲切。上面表示每隔1分钟执行一次代码。</p>
+<p>Linux 中的定时任务<code>crontab</code>的语法如下:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*  *  *  *  * command&#10;&#20998;&#38047;(0-59) &#23567;&#26102;(0-23) &#27599;&#20010;&#26376;&#30340;&#21738;&#19968;&#22825;(1-31) &#26376;&#20221;(1-12) &#21608;&#20960;(0-6) shell&#33050;&#26412;&#25110;&#32773;&#21629;&#20196;</span><br></pre></td></tr></table></figure>
+<p>有几个特殊的符号：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 代表所有的取值范围的数字</span><br><span class="line">/ 代表每的意思，*/<span class="number">5</span>就是每<span class="number">5</span>个单位</span><br><span class="line">- 代表从某个数字到某个数字</span><br><span class="line">, 分开几个离散的数字</span><br></pre></td></tr></table></figure>
+<p>示例:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#27599;&#20004;&#20010;&#23567;&#26102;    0 */2 * * *&#10;&#26202;&#19978;11&#28857;&#21040;&#26089;&#19978;8&#28857;&#20043;&#38388;&#27599;&#20004;&#20010;&#23567;&#26102;&#65292;&#26089;&#19978;8&#28857;    0 23-7,8 * * *&#10;&#27599;&#20010;&#26376;&#30340;4&#21495;&#21644;&#27599;&#20010;&#31036;&#25308;&#30340;&#31036;&#25308;&#19968;&#21040;&#31036;&#25308;&#19977;&#30340;&#26089;&#19978;11&#28857;    0 11 4 * 1-3&#10;1&#26376;1&#26085;&#26089;&#19978;4&#28857;    0 4 1 1 *</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 6 * * * commands &#62;&#62; /tmp/test.log # &#27599;&#22825;&#26089;&#19978;6&#28857;&#25191;&#34892;, &#24182;&#23558;&#20449;&#24687;&#36861;&#21152;&#21040;test.log&#20013;&#10;0 */2 * * * commands # &#27599;&#38548;2&#23567;&#26102;&#25191;&#34892;&#19968;&#27425;</span><br></pre></td></tr></table></figure>
+<p>有兴趣的小伙伴可以深入研究下 Linux 的<code>crontab</code>定时任务。如果不了解和不熟悉可以想看： <a href="https://www.jianshu.com/p/c6a729c81a24" target="_blank" rel="external">cron语法格式学习</a></p>
+<p>5.添加并启动定时任务</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py crontab add</span><br></pre></td></tr></table></figure>
+<p>其它命令：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python manage.py crontab show <span class="comment">#显示当前的定时任务</span></span><br><span class="line">python manage.py crontab remove <span class="comment">#删除所有定时任务</span></span><br></pre></td></tr></table></figure>
+<h3 id="一些问题">一些问题</h3><h3 id="总结">总结</h3><p>通过这个需求，可以看到很多知识点其实是串联起来的，从python到django到Linux的crontab，所以，学习知识只会越来越多，也</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://github.com/kraiz/django-crontab" target="_blank" rel="external">kraiz/django-crontab: dead simple crontab powered job scheduling for django.</a></li>
+<li><a href="https://segmentfault.com/a/1190000016515891" target="_blank" rel="external">django开发-定时任务的使用 - wyzane - SegmentFault 思否</a></li>
+<li><a href="http://www.voidcn.com/article/p-tgyycvyp-bqm.html" target="_blank" rel="external">django-crontab 定时执行任务方法 - 程序园</a></li>
+<li><a href="https://www.leipengkai.com/article/8/" target="_blank" rel="external">django-crontab实现Django定时任务</a></li>
+<li><a href="https://www.jianshu.com/p/27f003149090" target="_blank" rel="external">django使用django-crontab实现定时任务 - 简书</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1121891" target="_blank" rel="external">使用django-crontab实现定时任务 - 腾讯云</a></li>
+<li><a href="https://www.jianshu.com/p/c6a729c81a24" target="_blank" rel="external">cron语法格式学习 - 简书</a></li>
+<li><a href="https://github.com/kraiz/django-crontab/issues/76" target="_blank" rel="external">django-crontab is missing job hash after one day · Issue #76 · kraiz/django-crontab</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cron#Format" target="_blank" rel="external">Cron Format - Wikipedia</a></li>
+<li><a href="https://crontab.guru/examples.html" target="_blank" rel="external">crontab.guru</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可以是定点时间，比如 14:00 执行，也可以是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 <code>django-crontab</code> 库比较多用，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功能也很全面，当然，也存在一此无法解决的问题，使用时需要注意的。</p>]]>
+    
+    </summary>
+    
+      <category term="django" scheme="https://iHTCboy.com/tags/django/"/>
+    
+      <category term="django-crontab" scheme="https://iHTCboy.com/tags/django-crontab/"/>
+    
+      <category term="python" scheme="https://iHTCboy.com/tags/python/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
@@ -2827,193 +2912,6 @@
       <category term="爬虫" scheme="https://iHTCboy.com/tags/%E7%88%AC%E8%99%AB/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[PyCharm for Mac快捷键小记]]></title>
-    <link href="https://iHTCboy.com/2018/08/04/2018-08-04_PyCharm_for_Mac%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://iHTCboy.com/2018/08/04/2018-08-04_PyCharm_for_Mac快捷键小记/</id>
-    <published>2018-08-04T15:09:16.000Z</published>
-    <updated>2019-03-30T08:23:03.004Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>总结一下自己平时常用的PyCharm for Mac快捷键，因为网上经常找到的都是Windows版本，所以当是备忘也好，后续会不定期更新。</p>
-<a id="more"></a>
-<h3 id="2、PyCharm_for_Mac_快捷键">2、PyCharm for Mac 快捷键</h3><h4 id="思维导图">思维导图</h4><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180804-PyCharm-Shortcut-20190330.png" alt="20180804-PyCharm-Shortcut-20190330.png"></p>
-<h4 id="快捷键">快捷键</h4><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmd + b</td>
-<td>跳转到声明处（cmd加鼠标）</td>
-</tr>
-<tr>
-<td>cmd + d</td>
-<td>在下一行复制本行的内容</td>
-</tr>
-<tr>
-<td>cmd [ / ]</td>
-<td>跳转的页面回退或前进</td>
-</tr>
-<tr>
-<td>cmd + opt + [ / ]</td>
-<td>函数和方法前后的位置</td>
-</tr>
-<tr>
-<td>cmd + backspace</td>
-<td>删除当前行</td>
-</tr>
-<tr>
-<td>cmd + c</td>
-<td>复制光标当前行,剪切同理</td>
-</tr>
-<tr>
-<td>cmd + f</td>
-<td>当前文件搜索（回车下一个 shift回车上一个）</td>
-</tr>
-<tr>
-<td>cmd + r</td>
-<td>当前文件替换</td>
-</tr>
-<tr>
-<td>cmd + shift + f</td>
-<td>全局搜索</td>
-</tr>
-<tr>
-<td>cmd + shift + r</td>
-<td>全局替换</td>
-</tr>
-<tr>
-<td>cmd + shift + a</td>
-<td>搜索动作</td>
-</tr>
-<tr>
-<td>cmd + o</td>
-<td>搜索class</td>
-</tr>
-<tr>
-<td>cmd + opt + o</td>
-<td>搜索符号（函数等)</td>
-</tr>
-<tr>
-<td>cmd + shift + o</td>
-<td>搜索文件</td>
-</tr>
-<tr>
-<td>shift + shift</td>
-<td>任意搜索功能</td>
-</tr>
-<tr>
-<td>cmd + l</td>
-<td>指定行数跳转</td>
-</tr>
-<tr>
-<td>shift + enter</td>
-<td>在行中的时候直接到下一行(新建)</td>
-</tr>
-<tr>
-<td>cmd +</td>
-<td>展开当前</td>
-</tr>
-<tr>
-<td>cmd -</td>
-<td>折叠当前</td>
-</tr>
-<tr>
-<td>cmd shift +</td>
-<td>展开所有</td>
-</tr>
-<tr>
-<td>cmd shift -</td>
-<td>折叠所有</td>
-</tr>
-<tr>
-<td>cmd /</td>
-<td>注释/取消注释一行</td>
-</tr>
-<tr>
-<td>cmd + opt + /</td>
-<td>批量注释(pycharm不生效)</td>
-</tr>
-<tr>
-<td>ctr + tab</td>
-<td>史上最NB的导航窗口（工程文件列表、文件结构列表、命令行模式、代码检查、VCS等）</td>
-</tr>
-<tr>
-<td>alt + F12</td>
-<td>打开命令行栏</td>
-</tr>
-<tr>
-<td>cmd + F12</td>
-<td>显示文件结构</td>
-</tr>
-<tr>
-<td>cmd + j</td>
-<td>代码智能补全</td>
-</tr>
-<tr>
-<td>alt + F1</td>
-<td>定位编辑文件所在位置:</td>
-</tr>
-<tr>
-<td>cmd + F6</td>
-<td>更改变量</td>
-</tr>
-<tr>
-<td>cmd + opt + t</td>
-<td>指定代码被注释语句或者逻辑结构、函数包围</td>
-</tr>
-<tr>
-<td>Tab / Shift + Tab</td>
-<td>缩进、不缩进当前行</td>
-</tr>
-<tr>
-<td>cmd + opt + l</td>
-<td>代码块对齐</td>
-</tr>
-<tr>
-<td>opt + F7</td>
-<td>find usage</td>
-</tr>
-</tbody>
-</table>
-<h3 id="参考">参考</h3><p>下面是PyCharm教程、Flask、Django框架学习的一些链接！大家有空可以看看~</p>
-<ul>
-<li>PyCharm</li>
-</ul>
-<p>PyCharm 收藏多年快捷键分享~ - Henry Z’s blog~ <a href="https://changchen.me/blog/20170607/pycharm-shortcut/" target="_blank" rel="external">https://changchen.me/blog/20170607/pycharm-shortcut/</a><br>pycharm 使用教程 <a href="https://www.jianshu.com/p/2bfc19e1381c" target="_blank" rel="external">https://www.jianshu.com/p/2bfc19e1381c</a><br>PyCharm IDE 链接sqlite、建表、添加、查询数据 - CSDN博客 <a href="https://blog.csdn.net/qq_36482772/article/details/53458400" target="_blank" rel="external">https://blog.csdn.net/qq_36482772/article/details/53458400</a><br>Pycharm快捷键整理（Mac） - 简书 <a href="https://www.jianshu.com/p/be0bdc02f7da" target="_blank" rel="external">https://www.jianshu.com/p/be0bdc02f7da</a><br>你有哪些想要分享的 PyCharm 使用技巧？ - 知乎<a href="https://www.zhihu.com/question/37787004/answer/186042335" target="_blank" rel="external">https://www.zhihu.com/question/37787004/answer/186042335</a><br>PyCharm速览 <a href="http://www.liujiangblog.com/blog/28/" target="_blank" rel="external">http://www.liujiangblog.com/blog/28/</a><br>迈出Pycharm第一步-刘江的博客 <a href="http://www.liujiangblog.com/blog/29/" target="_blank" rel="external">http://www.liujiangblog.com/blog/29/</a></p>
-<ul>
-<li>Flask框架</li>
-</ul>
-<p>快速入门 — Flask 0.10.1 文档 <a href="http://docs.jinkan.org/docs/flask/quickstart.html#quickstart" target="_blank" rel="external">http://docs.jinkan.org/docs/flask/quickstart.html#quickstart</a><br>    Flask 入门指南 <a href="https://blog.igevin.info/posts/flask-startup-guideline/" target="_blank" rel="external">https://blog.igevin.info/posts/flask-startup-guideline/</a><br>    利用pycharm学习flask教程 <a href="https://www.jianshu.com/p/a7d988fb807f" target="_blank" rel="external">https://www.jianshu.com/p/a7d988fb807f</a><br>    python flask搭建web应用 - CSDN博客  <a href="https://blog.csdn.net/u012734441/article/details/62036503" target="_blank" rel="external">https://blog.csdn.net/u012734441/article/details/62036503</a><br>《Flask Web开发——基于Python的Web应用开发实践》一字一句上机实践（上） - 舞动的心 - 博客园  <a href="http://www.cnblogs.com/liuzhen1995/p/8001040.html" target="_blank" rel="external">http://www.cnblogs.com/liuzhen1995/p/8001040.html</a><br>Flask Web开发学习笔记（一）~（6） <a href="https://www.jianshu.com/p/303057e51417" target="_blank" rel="external">https://www.jianshu.com/p/303057e51417</a><br>Flask 的部署 <a href="https://windard.com/project/2016/12/01/Deploy-Flask-APP" target="_blank" rel="external">https://windard.com/project/2016/12/01/Deploy-Flask-APP</a><br>如果你也想写Flask| 编程派 | Coding Python <a href="http://codingpy.com/article/if-you-also-want-to-write-flask/" target="_blank" rel="external">http://codingpy.com/article/if-you-also-want-to-write-flask/</a><br>Introduction | Flask之旅 <a href="https://spacewander.github.io/explore-flask-zh/index.html" target="_blank" rel="external">https://spacewander.github.io/explore-flask-zh/index.html</a></p>
-<ul>
-<li>Django框架</li>
-</ul>
-<p>介紹 | Django Book 2.0 中文版 <a href="https://wizardforcel.gitbooks.io/django-book-20-zh-cn/content/index.html" target="_blank" rel="external">https://wizardforcel.gitbooks.io/django-book-20-zh-cn/content/index.html</a><br>从Python到Django入门教程 <a href="https://borisliu.gitbooks.io/from-python-to-django/content/introduction/preface.html" target="_blank" rel="external">https://borisliu.gitbooks.io/from-python-to-django/content/introduction/preface.html</a><br>Django新手图文入门教程 <a href="http://www.liujiangblog.com/blog/3/" target="_blank" rel="external">http://www.liujiangblog.com/blog/3/</a></p>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>总结一下自己平时常用的PyCharm for Mac快捷键，因为网上经常找到的都是Windows版本，所以当是备忘也好，后续会不定期更新。</p>]]>
-    
-    </summary>
-    
-      <category term="PyCharm" scheme="https://iHTCboy.com/tags/PyCharm/"/>
-    
-      <category term="shortcut" scheme="https://iHTCboy.com/tags/shortcut/"/>
-    
-      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
     
   </entry>
   
