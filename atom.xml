@@ -159,7 +159,7 @@
     <link href="https://iHTCboy.com/2019/04/14/2019-04-14_django%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1django-crontab%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>https://iHTCboy.com/2019/04/14/2019-04-14_django定时任务django-crontab的使用/</id>
     <published>2019-04-14T11:19:16.000Z</published>
-    <updated>2019-05-04T15:18:15.288Z</updated>
+    <updated>2019-05-04T15:23:55.400Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可以是定点时间，比如 14:00 执行，也可以是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 <code>django-crontab</code> 库比较多用，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功能也很全面，当然，也存在一此无法解决的问题，使用时需要注意的。</p>
 <a id="more"></a>
 <h3 id="2、使用教程">2、使用教程</h3><p>1.安装:</p>
@@ -201,7 +201,10 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py crontab add</span><br></pre></td></tr></table></figure>
 <p>其它命令：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python manage.py crontab show <span class="comment">#显示当前的定时任务</span></span><br><span class="line">python manage.py crontab remove <span class="comment">#删除所有定时任务</span></span><br></pre></td></tr></table></figure>
-<h3 id="一些问题">一些问题</h3><h3 id="总结">总结</h3><p>通过这个需求，可以看到很多知识点其实是串联起来的，从python到django到Linux的crontab，所以，学习知识只会越来越多，也</p>
+<h3 id="一些问题">一些问题</h3><p>如果配置成这样：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))&#10;&#10;CRONJOBS = [&#10;(&#39;0 7 * * 1-5&#39;, &#39;api.cron.email_to_late_docs&#39;, &#39;&#62;&#62; &#123;&#125;&#39;.format(BASE_DIR + &#39;/logs/log_&#123;:%d_%m_%Y&#125;.log&#39;.format(time.now()))),&#10;(&#39;0 7 * * 1-5&#39;, &#39;api.cron.email_ten_days_before&#39;, &#39;&#62;&#62; &#123;&#125;&#39;.format(BASE_DIR + &#39;logs/log_&#123;:%d_%m_%Y&#125;.log&#39;.format(time.now())))&#10;]</span><br></pre></td></tr></table></figure>
+<p>当您替换当天时，<code>CRONJOBS</code> 中的值每天都在变化。这导致不同的定时任务哈希值（hashes）。我建议您的日志文件使用稳定的名称。</p>
+<h3 id="总结">总结</h3><p>通过这个需求，可以看到很多知识点其实是串联起来的，从python到django到Linux的crontab，所以，学习无止境，学习知识只会越来越多，如果你前提掌握了某些知识，那么学习新知识的成本就会降低很多，比如你学习了 Linux， 了解过 cron ，那么对于学习这个 django 的定时任务会轻松很多。永远不要认识有些知识你永远用不上，可能现在的永远很短！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://github.com/kraiz/django-crontab" target="_blank" rel="external">kraiz/django-crontab: dead simple crontab powered job scheduling for django.</a></li>
 <li><a href="https://segmentfault.com/a/1190000016515891" target="_blank" rel="external">django开发-定时任务的使用 - wyzane - SegmentFault 思否</a></li>
