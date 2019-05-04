@@ -17,8 +17,9 @@
 <meta property="og:description" content="1、前言其实，这个文章应该是上一年打算写的，结果，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动增加接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且是下载压缩包，需要自动手动替换，甚是痛苦。所以，看了很多开源项目，看到了一个macOS专用的更新库 Sparkle, 然后，网上的教程，已经非常旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-Sparkle.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-AddObjectToMenu.png">
+<meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-SUUpdaterObject.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-AddActionToUpdaterObject.png">
-<meta property="og:updated_time" content="2019-05-04T06:32:56.386Z">
+<meta property="og:updated_time" content="2019-05-04T06:40:01.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macOS 使用 Sparkle 检查软件自更新">
 <meta name="twitter:description" content="1、前言其实，这个文章应该是上一年打算写的，结果，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动增加接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且是下载压缩包，需要自动手动替换，甚是痛苦。所以，看了很多开源项目，看到了一个macOS专用的更新库 Sparkle, 然后，网上的教程，已经非常旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新">
@@ -252,6 +253,7 @@ var _hmt = _hmt || [];
 <li>如果需要，可以添加一个检查更新的菜单项，设置它的 target 为刚才的 <code>SUUpdater</code> 实例，action 为 <code>checkForUpdates:</code></li>
 </ol>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-AddObjectToMenu.png" alt="20190414-AddObjectToMenu.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-SUUpdaterObject.png" alt="20190414-SUUpdaterObject.png"></p>
 <p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-AddActionToUpdaterObject.png" alt="20190414-AddActionToUpdaterObject.png"></p>
 <p>2.3 数字签名</p>
 <p><code>Sparkle</code> 能够下载软件并进行替换，所以为了保证安全，确保全程是软件作者行为，给出了3点建议：</p>
