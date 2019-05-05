@@ -9,20 +9,20 @@
   <link rel="canonical" href="https://ihtcboy.com" />
   <title>macOS 使用 Sparkle 检查软件自更新 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、前言其实，这个文章应该是上一年打算写的，结果，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动增加接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且是下载压缩包，需要自动手动替换，甚是痛苦。所以，看了很多开源项目，看到了一个macOS专用的更新库 Sparkle, 然后，网上的教程，已经非常旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新">
+  <meta name="description" content="1、前言其实，本篇文章应该是上一年就打算写的，结果呢，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动编写增加 API 接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且下载的是压缩包，需要解压后自动手动替换 App，甚是痛苦。所以，看了很多开源项目，看到了一个 macOS 专用的更新库 Sparkle, 然而现有网上的教程，已经非常陈旧，花了点时间才悟">
 <meta property="og:type" content="article">
 <meta property="og:title" content="macOS 使用 Sparkle 检查软件自更新">
 <meta property="og:url" content="https://iHTCboy.com/2019/05/04/2019-05-04_macOS使用Sparkle进行软件自更新/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="1、前言其实，这个文章应该是上一年打算写的，结果，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动增加接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且是下载压缩包，需要自动手动替换，甚是痛苦。所以，看了很多开源项目，看到了一个macOS专用的更新库 Sparkle, 然后，网上的教程，已经非常旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新">
+<meta property="og:description" content="1、前言其实，本篇文章应该是上一年就打算写的，结果呢，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动编写增加 API 接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且下载的是压缩包，需要解压后自动手动替换 App，甚是痛苦。所以，看了很多开源项目，看到了一个 macOS 专用的更新库 Sparkle, 然而现有网上的教程，已经非常陈旧，花了点时间才悟">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-Sparkle.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-AddObjectToMenu.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-SUUpdaterObject.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190414-AddActionToUpdaterObject.png">
-<meta property="og:updated_time" content="2019-05-04T14:37:45.196Z">
+<meta property="og:updated_time" content="2019-05-05T15:06:53.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macOS 使用 Sparkle 检查软件自更新">
-<meta name="twitter:description" content="1、前言其实，这个文章应该是上一年打算写的，结果，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动增加接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且是下载压缩包，需要自动手动替换，甚是痛苦。所以，看了很多开源项目，看到了一个macOS专用的更新库 Sparkle, 然后，网上的教程，已经非常旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新">
+<meta name="twitter:description" content="1、前言其实，本篇文章应该是上一年就打算写的，结果呢，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动编写增加 API 接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且下载的是压缩包，需要解压后自动手动替换 App，甚是痛苦。所以，看了很多开源项目，看到了一个 macOS 专用的更新库 Sparkle, 然而现有网上的教程，已经非常陈旧，花了点时间才悟">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -233,7 +233,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、前言">1、前言</h3><p>其实，这个文章应该是上一年打算写的，结果，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动增加接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且是下载压缩包，需要自动手动替换，甚是痛苦。所以，看了很多开源项目，看到了一个macOS专用的更新库 <code>Sparkle</code>, 然后，网上的教程，已经非常旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新库，大家需要可以自行了解，以主流库为主，维护更好，这也是项目选型，考虑的条件之一，也许是强者更强~</p>
+        <h3 id="1、前言">1、前言</h3><p>其实，本篇文章应该是上一年就打算写的，结果呢，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动编写增加 API 接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且下载的是压缩包，需要解压后自动手动替换 App，甚是痛苦。所以，看了很多开源项目，看到了一个 macOS 专用的更新库 <code>Sparkle</code>, 然而现有网上的教程，已经非常陈旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新库，大家需要可以自行了解，以主流库为主，维护更好，这也是项目选型考虑的条件之一，也许是强者更强，劣币驱逐良币现象在开源界好像没有发生过~</p>
 <a id="more"></a>
 <h3 id="2、Sparkle">2、Sparkle</h3><blockquote>
 <p>Sparkle的原理是根据提前配置好的xml文件地址，每次启动后解析xml，看看有没有比当前版本新的数据，有的话提示更新。<br>xml文件可以存在任何可以访问xml元数据的服务器，包括 GitHub 仓库。</p>
@@ -283,19 +283,13 @@ var _hmt = _hmt || [];
 <p><strong>生成数字签名</strong><br>使用 <code>generate_dsa_keys_macos_10.12_only</code> 命令生成 dsa_priv.pem（私钥）和dsa_pub.pem（公钥）两个文件。其中私钥千万不能丢，否则将无法签署升级包。</p>
 <p>然后，把dsa_pub.pam添加到项目中。</p>
 <p><strong>配置公钥</strong><br>在 <code>Info.plist</code> 添加 <code>SUPublicDSAKeyFile</code> 属性字段，其值设置为 <code>dsa_pub.pem</code>  公钥的文件名。</p>
-<p><strong>配置更新信息</strong><br>在 <code>Info.plist</code> 添加 <code>SUFeedURL</code> 属性字段，其值设置为 <code>dsa_pub.pem</code>  公钥的文件名。</p>
+<p><strong>配置更新信息</strong><br>在 <code>Info.plist</code> 添加 <code>SUFeedURL</code> 属性字段，其值设置为将应用更新的 URL, 例如<code>https://xxx.com/appcast.xml</code>，下文有xml文件内容说明，与上面 EdDSA 有一些区别。</p>
 <p><strong>更新版本签名</strong><br>把新版本生成的程序打包成zip。因为这个是升级包，因此我们要对升级包进行数字签名。方法很简单：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sparkle/bin/old_dsa_scripts/sign_update path_to_your_update.zip ~/.ssh/dsa_priv.pem</span><br></pre></td></tr></table></figure>
 <p>记录下返回的字符串，这就是升级包的签名。使用填下到 <code>appcast.xml</code> 中。</p>
 <p>appcast.xml 内容：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">rss</span> <span class="attribute">version</span>=<span class="value">"2.0"</span> <span class="attribute">xmlns:sparkle</span>=<span class="value">"http://www.andymatuschak.org/xml-namespaces/sparkle"</span> <span class="attribute">xmlns:dc</span>=<span class="value">"http://purl.org/dc/elements/1.1/"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">channel</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">title</span>&gt;</span>应用名称<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">description</span>&gt;</span>Most recent changes with links to updates.<span class="tag">&lt;/<span class="title">description</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">language</span>&gt;</span>en<span class="tag">&lt;/<span class="title">language</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">title</span>&gt;</span>Version 1.4.14<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">sparkle:releaseNotesLink</span>&gt;</span></span><br><span class="line">                http://xxx.com/release-note.html</span><br><span class="line">            <span class="tag">&lt;/<span class="title">sparkle:releaseNotesLink</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">pubDate</span>&gt;</span>Wed, 10 Apr 2019 19:58:11 +0000<span class="tag">&lt;/<span class="title">pubDate</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">enclosure</span></span><br><span class="line">                <span class="attribute">url</span>=<span class="value">"https://xxx.com/app.zip"</span></span><br><span class="line">                <span class="attribute">sparkle:shortVersionString</span>=<span class="value">"1.4.14"</span></span><br><span class="line">                <span class="attribute">sparkle:version</span>=<span class="value">"2019.05.04"</span></span><br><span class="line">                <span class="attribute">length</span>=<span class="value">"6605799"</span></span><br><span class="line">                <span class="attribute">type</span>=<span class="value">"application/octet-stream"</span></span><br><span class="line">                <span class="attribute">sparkle:dsaSignature</span>=<span class="value">"MEYCIQCQaUqxcrhhEABlWxk+1At5QSwty+Li8d6Sr3q6jJF1JgIhAOWGpIkYLwXC</span><br><span class="line">                RFfaA8uz34Dy7CXCczpmSyCOQ5+rfOFL"</span></span><br><span class="line">            /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">sparkle:minimumSystemVersion</span>&gt;</span>10.11<span class="tag">&lt;/<span class="title">sparkle:minimumSystemVersion</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">channel</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">rss</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>releaseNotesLink</code>: 更新日志的说明网页，最好是html<br><code>url</code>: zip压缩包下载地扯<br><code>length</code>: zip压缩文件大小（字节）<br><code>dsaSignature</code>: 升级包的数据签名</p>
-<p>Web 服务器：</p>
-<ol>
-<li>appupdate.xml，</li>
-<li>release save@note.youdao.com的页面。</li>
-</ol>
-<p>用python开启本地文件夹服务器<br>  python -m http.server 或者<br>  python -m SimpleHTTPServer</p>
 <h3 id="一些问题&amp;坑点">一些问题&amp;坑点</h3><ul>
 <li>web服务器<br>上面说明的 <code>http://xxx.comappcast.xml</code> 更新信息文件，还是 <code>http://xxx.com/release-note.html</code> 更新说明页面，还是应用的zip文件下载链接，都是需要通过服务器进行访问。</li>
 </ul>
