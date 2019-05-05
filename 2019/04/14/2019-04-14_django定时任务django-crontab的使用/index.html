@@ -9,16 +9,16 @@
   <link rel="canonical" href="https://ihtcboy.com" />
   <title>django 定时任务 django-crontab 的使用 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、前言在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可以是定点时间，比如 14:00 执行，也可以是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 django-crontab 库比较多用，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功">
+  <meta name="description" content="1、前言在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可能是定点时间，比如 14:00 执行，也可能是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 django-crontab 库比较多教程和资料，虽然 star 数才五百，但是 API 接口比较简单，接入也很">
 <meta property="og:type" content="article">
 <meta property="og:title" content="django 定时任务 django-crontab 的使用">
 <meta property="og:url" content="https://iHTCboy.com/2019/04/14/2019-04-14_django定时任务django-crontab的使用/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="1、前言在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可以是定点时间，比如 14:00 执行，也可以是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 django-crontab 库比较多用，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功">
-<meta property="og:updated_time" content="2019-05-04T15:25:15.034Z">
+<meta property="og:description" content="1、前言在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可能是定点时间，比如 14:00 执行，也可能是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 django-crontab 库比较多教程和资料，虽然 star 数才五百，但是 API 接口比较简单，接入也很">
+<meta property="og:updated_time" content="2019-05-05T15:20:05.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="django 定时任务 django-crontab 的使用">
-<meta name="twitter:description" content="1、前言在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可以是定点时间，比如 14:00 执行，也可以是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 django-crontab 库比较多用，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功">
+<meta name="twitter:description" content="1、前言在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可能是定点时间，比如 14:00 执行，也可能是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 django-crontab 库比较多教程和资料，虽然 star 数才五百，但是 API 接口比较简单，接入也很">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -229,7 +229,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、前言">1、前言</h3><p>在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可以是定点时间，比如 14:00 执行，也可以是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 <code>django-crontab</code> 库比较多用，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功能也很全面，当然，也存在一此无法解决的问题，使用时需要注意的。</p>
+        <h3 id="1、前言">1、前言</h3><p>在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可能是定点时间，比如 14:00 执行，也可能是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 <code>django-crontab</code> 库比较多教程和资料，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功能也很全面，当然，也存在一此无法解决的问题，使用时需要注意的。</p>
 <a id="more"></a>
 <h3 id="2、使用教程">2、使用教程</h3><p>1.安装:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-crontab</span><br></pre></td></tr></table></figure>
@@ -267,12 +267,15 @@ var _hmt = _hmt || [];
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 6 * * * commands &#62;&#62; /tmp/test.log # &#27599;&#22825;&#26089;&#19978;6&#28857;&#25191;&#34892;, &#24182;&#23558;&#20449;&#24687;&#36861;&#21152;&#21040;test.log&#20013;&#10;0 */2 * * * commands # &#27599;&#38548;2&#23567;&#26102;&#25191;&#34892;&#19968;&#27425;</span><br></pre></td></tr></table></figure>
 <p>有兴趣的小伙伴可以深入研究下 Linux 的<code>crontab</code>定时任务。如果不了解和不熟悉可以想看： <a href="https://www.jianshu.com/p/c6a729c81a24" target="_blank" rel="external">cron语法格式学习</a></p>
 <p>5.添加并启动定时任务</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py crontab add</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加并启动定时任务</span></span><br><span class="line">python manage.py crontab add</span><br></pre></td></tr></table></figure>
 <p>其它命令：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python manage.py crontab show <span class="comment">#显示当前的定时任务</span></span><br><span class="line">python manage.py crontab remove <span class="comment">#删除所有定时任务</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#显示当前的定时任务</span></span><br><span class="line">python manage.py crontab show</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除所有定时任务</span></span><br><span class="line">python manage.py crontab remove</span><br></pre></td></tr></table></figure>
 <h3 id="一些问题">一些问题</h3><p>如果配置成这样：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))&#10;&#10;CRONJOBS = [&#10;(&#39;0 7 * * 1-5&#39;, &#39;api.cron.email_to_late_docs&#39;, &#39;&#62;&#62; &#123;&#125;&#39;.format(BASE_DIR + &#39;/logs/log_&#123;:%d_%m_%Y&#125;.log&#39;.format(time.now()))),&#10;(&#39;0 7 * * 1-5&#39;, &#39;api.cron.email_ten_days_before&#39;, &#39;&#62;&#62; &#123;&#125;&#39;.format(BASE_DIR + &#39;logs/log_&#123;:%d_%m_%Y&#125;.log&#39;.format(time.now())))&#10;]</span><br></pre></td></tr></table></figure>
-<p>当您替换当天时，<code>CRONJOBS</code> 中的值每天都在变化。这导致不同的定时任务哈希值（hashes）。我建议您的日志文件使用稳定的名称。</p>
+<p>上述代码的目的是，希望对任务的输出和错误日志，进行 log_ddmmYY 格式进行文件每天分开保存。</p>
+<p><strong>但是这个任务，在第二天时，就不会在执行啦！！</strong></p>
+<p>因为，<code>CRONJOBS</code> 生成任务时，会生成对应的哈希值（hashes），标识每个任务。所以，当文件名变更时，<code>CRONJOBS</code> 中的值每天都在变化，导致不同的定时任务哈希值（hashes）。</p>
+<p>针对这种情况，解决方法是，日志文件名称固定，然后创建一个任务，用来每天把日志文件重命名（move）成想要的格式名称，这样就可以啦！</p>
 <h3 id="总结">总结</h3><p>通过这个需求，可以看到很多知识点其实是串联起来的，从python到django到Linux的crontab，所以，学习无止境，学习知识只会越来越多，如果你前提掌握了某些知识，那么学习新知识的成本就会降低很多，比如你学习了 Linux， 了解过 cron ，那么对于学习这个 django 的定时任务会轻松很多。永远不要认识有些知识你永远用不上，可能现在的永远很短！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://github.com/kraiz/django-crontab" target="_blank" rel="external">kraiz/django-crontab: dead simple crontab powered job scheduling for django.</a></li>
