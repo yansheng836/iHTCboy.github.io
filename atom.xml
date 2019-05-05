@@ -153,7 +153,7 @@
     <link href="https://iHTCboy.com/2019/04/14/2019-04-14_django%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1django-crontab%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>https://iHTCboy.com/2019/04/14/2019-04-14_django定时任务django-crontab的使用/</id>
     <published>2019-04-14T11:19:16.000Z</published>
-    <updated>2019-05-05T15:20:05.721Z</updated>
+    <updated>2019-05-05T15:22:30.117Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可能是定点时间，比如 14:00 执行，也可能是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 <code>django-crontab</code> 库比较多教程和资料，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功能也很全面，当然，也存在一此无法解决的问题，使用时需要注意的。</p>
 <a id="more"></a>
 <h3 id="2、使用教程">2、使用教程</h3><p>1.安装:</p>
@@ -201,7 +201,7 @@
 <p><strong>但是这个任务，在第二天时，就不会在执行啦！！</strong></p>
 <p>因为，<code>CRONJOBS</code> 生成任务时，会生成对应的哈希值（hashes），标识每个任务。所以，当文件名变更时，<code>CRONJOBS</code> 中的值每天都在变化，导致不同的定时任务哈希值（hashes）。</p>
 <p>针对这种情况，解决方法是，日志文件名称固定，然后创建一个任务，用来每天把日志文件重命名（move）成想要的格式名称，这样就可以啦！</p>
-<h3 id="总结">总结</h3><p>通过这个需求，可以看到很多知识点其实是串联起来的，从python到django到Linux的crontab，所以，学习无止境，学习知识只会越来越多，如果你前提掌握了某些知识，那么学习新知识的成本就会降低很多，比如你学习了 Linux， 了解过 cron ，那么对于学习这个 django 的定时任务会轻松很多。永远不要认识有些知识你永远用不上，可能现在的永远很短！</p>
+<h3 id="总结">总结</h3><p>通过这个需求，可以看到很多知识点其实是串联起来的，从<code>python</code>到<code>django</code>到<code>Linux</code>的<code>crontab</code>，所以，学习无止境，知识学习只会越来越多，如果你提前掌握了某些知识，那么学习新（旧）知识的成本就会降低很多，或者理解成本，比如你学习了 <code>Linux</code>， 了解过 <code>cron</code> ，那么对于学习这个 <code>django</code> 的定时任务会轻松很多！永远不要认为有些知识你永远用不上，所以不学，可能现在的永远已经很短啦！加油~</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://github.com/kraiz/django-crontab" target="_blank" rel="external">kraiz/django-crontab: dead simple crontab powered job scheduling for django.</a></li>
 <li><a href="https://segmentfault.com/a/1190000016515891" target="_blank" rel="external">django开发-定时任务的使用 - wyzane - SegmentFault 思否</a></li>
