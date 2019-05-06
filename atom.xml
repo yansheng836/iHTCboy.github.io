@@ -153,7 +153,7 @@
     <link href="https://iHTCboy.com/2019/04/14/2019-04-14_django%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1django-crontab%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>https://iHTCboy.com/2019/04/14/2019-04-14_django定时任务django-crontab的使用/</id>
     <published>2019-04-14T11:19:16.000Z</published>
-    <updated>2019-05-06T13:35:49.928Z</updated>
+    <updated>2019-05-06T14:15:54.228Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在做 django 开发需求时，多多少少都会遇到需要定时任务的功能，比如定时执行任务，检查订单之类的。可能是一段时间，比如每隔 10分钟执行一次，也可能是定点时间，比如 14:00 执行，也可能是长时间，比如每周几，每个月的哪一天等。查看了一下相关资料， django 定时任务 <code>django-crontab</code> 库比较多教程和资料，虽然 star 数才五百，但是 API 接口比较简单，接入也很方便，功能也很全面，当然，也存在一此无法解决的问题，使用时需要注意的。</p>
 <a id="more"></a>
 <h3 id="2、使用教程">2、使用教程</h3><p>1.安装:</p>
@@ -162,7 +162,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = (</span><br><span class="line">    <span class="string">'django_crontab'</span>,</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>3.编写定时函数:</p>
 <blockquote>
-<p>定时任务可以分成两种，一种是执行自定义的mange.py的命令，另一种是执行自定义函数。</p>
+<p>定时任务可以分成两种，一种是执行自定义的 <code>mange.py</code> 的命令，另一种是执行自定义函数。</p>
 </blockquote>
 <p>在django的app中新建一个myapp/cron.py文件，把需要定时执行的代码放进去</p>
 <p>示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_scheduled_job</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
@@ -744,7 +744,7 @@
     <link href="https://iHTCboy.com/2019/03/03/2019-03-03_%E3%80%8A%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E6%96%B0%E7%94%9F%E4%BB%A3%EF%BC%88%E4%B8%AA%E4%BA%BA%E7%AF%87%EF%BC%89%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2019/03/03/2019-03-03_《商业模式新生代（个人篇）》读书笔记/</id>
     <published>2019-03-03T14:49:16.000Z</published>
-    <updated>2019-03-16T11:36:00.941Z</updated>
+    <updated>2019-05-06T13:45:20.717Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>引用 推荐序：</p>
 <blockquote>
 <p>这世界越来越疯狂。对企业而言，顾客在变，供应商在变，竞争对手在变，企业在不停地变化。对于个人而言，环境在变，能力在变，兴趣在变，关系在变。这些变化多数都超越了大部分组织及个人的掌控范围。<br>因为无法改变整体大环境，组织及个人为了持续生存及发展，就必须不断评估及尝试改变自己的商业模式，有时甚至要创建新的模式。这是一个瞄准、射击、再瞄准的时代，我们需要适应快速变化的世界，以全新的思考方式来指导规划我们的人生。商业模式思维是适应快速变化世界的最佳系统思考方式。</p>
@@ -1139,6 +1139,16 @@
 </blockquote>
 <h3 id="总结">总结</h3><p>本来是打算写一下各章节的总结，但是发现再添加，就是画蛇添足，文章已经简单易懂、步骤分明，是我读取的非常优秀的书本，不带功利，只求实际，虽然我读书不是很多。重点要是说一下，书本反复强调，不要把关键业务当成价值服务，文中列举了很多例子，比如把日文翻译成英文法律文件的工作，不要把自己能给客户的价值简单的看成翻译工作，因为翻译只是关键业务，不是真正带给客户价值的价值服务！真正的价值是翻译后的文件带来的证据和最后的胜诉。其实，从上文中的个人画布中，也能看出来，关键业务+核心资源 指向 价值服务，希望每个人都思考一下，自己的价值服务到底是什么，这样才更有利于自己对自己的清晰认识，定位更具体和更有效的目标，从而给客户提供最好的价值，实现最好的收入来源！</p>
 <p>这本书是《商业模式新生代》的续集，还不如说是升级版本，可以说个人篇不只是企业版的升级，而是升华，对于个人，应该也要像经营企业一样，所以，画布的9大模块也适配于个人，书中给了非常详细方法实践论和宝贵的案例，应该能够解答自己和大家对于人生目标的一些答案吧！</p>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+<p><br></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="前言">前言</h3><p>引用 推荐序：</p>
@@ -1165,7 +1175,7 @@
     <link href="https://iHTCboy.com/2019/02/27/2019-02-27_%E3%80%8A%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E6%96%B0%E7%94%9F%E4%BB%A3%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <id>https://iHTCboy.com/2019/02/27/2019-02-27_《商业模式新生代》读书笔记/</id>
     <published>2019-02-27T00:49:16.000Z</published>
-    <updated>2019-03-02T14:48:00.308Z</updated>
+    <updated>2019-05-06T13:43:26.036Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p>今年读的第一本书，时间节奏快，还是要在细细读第二次！非常优秀的实践指导书，值得每一个创业者，都读一下，不管是已经创业失败，还是准备创业，或者正在创业的小伙伴们，都赶紧来读读吧！</p>
 <h3 id="框架">框架</h3><p>读一本书，不是为了知识而知识，需要总结或吸收书中的知识框架，以便成为自己的知识体系！</p>
 <a id="more"></a>
@@ -1589,6 +1599,15 @@
 <h3 id="《商业模式新生代》的商业模式画布">《商业模式新生代》的商业模式画布</h3><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/02/20190227-25-《商业模式新生代》的商业模式画布.jpg" alt="20190227-25-《商业模式新生代》的商业模式画布.jpg"></p>
 <h3 id="个人总结">个人总结</h3><p>建筑自已对商业模式的认识，有一个清晰的方法论，作者给了全面的9个商业要素，并且本书根据这个画布，组构、分析、优化，并在案例分析和结合其它想维框架，给出很多商业模式的示例，最后，需要读者自已给出自已创新的模式！</p>
 <p>平时还真的较少读商业的书，读了这本书之后，其它很多东西没有完全理解，能把商业划分如此，思考+总结+实践，画出公司的商业模式，或自己的商业模式，一定能解答自己一直对公司或自己的理解，有更新更好的认识吧！</p>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="前言">前言</h3><p>今年读的第一本书，时间节奏快，还是要在细细读第二次！非常优秀的实践指导书，值得每一个创业者，都读一下，不管是已经创业失败，还是准备创业，或者正在创业的小伙伴们，都赶紧来读读吧！</p>
