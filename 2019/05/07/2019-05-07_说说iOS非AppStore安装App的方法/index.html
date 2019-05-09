@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="iHTCboy's blog">
 <meta property="og:description" content="1、前言关于 iOS 安装 App 的方法，相信熟悉 iOS 的朋友都知道，如果是越狱设备，随便搞。但是，现实中，大部分用户都是小白，不会自己去越狱，安全是一方面。所以，普通情况下，AppStore 一家独大，企业账号可以玩一玩的情况，这也是苹果优秀的地方！ 今天就是想说说，关于新出的玩法~">
 <meta property="og:image" content="http://www.skyfox.org/wp-content/uploads/2015/07/ota_developer_flow_chart.jpg">
-<meta property="og:updated_time" content="2019-05-07T15:24:08.649Z">
+<meta property="og:updated_time" content="2019-05-09T14:49:20.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="说说 iOS 非 AppStore 安装App的方法">
 <meta name="twitter:description" content="1、前言关于 iOS 安装 App 的方法，相信熟悉 iOS 的朋友都知道，如果是越狱设备，随便搞。但是，现实中，大部分用户都是小白，不会自己去越狱，安全是一方面。所以，普通情况下，AppStore 一家独大，企业账号可以玩一玩的情况，这也是苹果优秀的地方！ 今天就是想说说，关于新出的玩法~">
@@ -281,17 +281,21 @@ var _hmt = _hmt || [];
 </ul>
 <p>基于这2点，正常情况下，没有人会想到用这样的方法提供安装App，但现在的情况不一样，苹果今天的审核已经很严格，基本过不了审核，另一方面企业账号，被苹果封杀和难申请，已经15万元都买不到！</p>
 <p>现在，这终于成为新的安装方式！那就要解决上面说到的 2 个缺点， UDID 获取，如果让普通用户自己获取，然后提交在，在添加证书，在，，，， 这个流程太长！！ 所以，还是有解决方案！ 而，100台设备限制无解，只能多准备n个开发者账号啊！！</p>
+<p>原理：</p>
+<blockquote>
+<p>通过网页，用户接受授权就拿到iOS设备的<code>UDID</code> ,然后把你的<code>UDID</code>添加到他们的证书里面，用这个新证书重新签名原来的IPA包，此时，你的<code>UDID</code>在IPA包的证书里面，这样，你的iOS设备就能下载这个IPA包啊</p>
+</blockquote>
 <h3 id="4、UDID_获取">4、UDID 获取</h3><p><code>UDID</code> (Unique Device Identifier)，唯一标示符,是iOS设备的一个唯一识别码，每台iOS设备都有一个独一无二的编码，UDID其实也是在设备量产的时候,生成随机的UUID写入到iOS设备硬件或者某一块存储器中,所以变成了固定的完全不会改变的一个标识，用来区别每一个唯一的iOS设备，包括 iPhones, iPads, 以及 iPod touches。</p>
-<h4 id="MDM">MDM</h4><p>iOS支持企业级的MDM（Mobile Device Managment），也就是所谓的移动设备管理，目的就是让企业能够方便的管理 iPhone、Pad等移动设备。具体的做法是通过在系统中安装配置文件（Profiles）的方式实现各种功能，设备管理，设备安全，获取设备信息，设备配置，备份和恢复等几类功能，可以根据不同应用场景实现很多具体小功能。</p>
-<h4 id="通过苹果Safari浏览器获取iOS设备UDID步骤">通过苹果Safari浏览器获取iOS设备UDID步骤</h4><p>苹果公司允许开发者通过iOS设备和Web服务器之间的某个操作（其实就是MDM的获取设备信息功能），来获得IOS设备的UDID(包括其他的一些参数)。以下为简要概述：<br>1、在你的Web服务器上创建一个.mobileconfig的XML格式的描述文件；<br>2、用户在所有操作之前必须通过某个点击操作完成.mobileconfig描述文件的安装；<br>3、服务器需要的数据，比如：UDID，需要在.mobileconfig描述文件中配置好，以及服务器接收数据的URL地址；<br>4、当用户设备完成数据的手机后，返回提示给客户端用户；</p>
+<h4 id="MDM">MDM</h4><p>iOS支持企业级的MDM（Mobile Device Managment），也就是所谓的移动设备管理，目的就是让企业能够方便的管理 iPhone、iPad等移动设备。具体的做法是通过在系统中安装配置文件（Profiles）的方式实现各种功能，设备管理，设备安全，获取设备信息，设备配置，备份和恢复等几类功能，可以根据不同应用场景实现很多具体小功能。</p>
+<h4 id="通过_Safari_浏览器获取iOS设备UDID步骤">通过 Safari 浏览器获取iOS设备UDID步骤</h4><p>苹果公司允许开发者通过iOS设备和Web服务器之间的某个操作（其实就是MDM的获取设备信息功能），来获得IOS设备的UDID(包括其他的一些参数)。以下为简要概述：<br>1、在你的Web服务器上创建一个.mobileconfig的XML格式的描述文件；<br>2、用户在所有操作之前必须通过某个点击操作完成.mobileconfig描述文件的安装；<br>3、服务器需要的数据，比如：UDID，需要在.mobileconfig描述文件中配置好，以及服务器接收数据的URL地址；<br>4、当用户设备完成数据的手机后，返回提示给客户端用户；</p>
 <p><img src="http://www.skyfox.org/wp-content/uploads/2015/07/ota_developer_flow_chart.jpg" alt=""></p>
 <p>具体流程可参考文章：</p>
 <p><a href="http://www.skyfox.org/safari-ios-device-udid.html" target="_blank" rel="external">通过Safari浏览器获取iOS设备UDID(设备唯一标识符)-天狐博客</a></p>
 <p>具体后台开发代码可参考：</p>
 <p><a href="https://github.com/shaojiankui/iOS-UDID-Safari" target="_blank" rel="external">shaojiankui/iOS-UDID-Safari: iOS-UDID-Safari,（不能上架Appstore！！！）通过Safari获取iOS设备真实UDID，use safari and mobileconfig get ios device real udid</a></p>
-<h4 id="添加UDID到证书">添加UDID到证书</h4><p>TODO</p>
-<h4 id="IPA包重签名">IPA包重签名</h4><p>TODO</p>
-<h3 id="总结">总结</h3><p>其实，这个做为一个<code>创新</code>的安装 App 的方式，不掉包！ 已经是企业证书无法比的，而且，不需要用户到设置里点击<code>验证</code>证书！ 完全在 Safari 里完成整个安装流程，确实是举足轻重的一步，未来将怎么样发展？期待吧！</p>
+<h4 id="添加_UDID_到证书">添加 UDID 到证书</h4><p>TODO</p>
+<h4 id="IPA_包重签名">IPA 包重签名</h4><p>TODO</p>
+<h4 id="Safari_安装_IPA_包">Safari 安装 IPA 包</h4><h3 id="总结">总结</h3><p>其实，这个做为一个<code>创新</code>的安装 App 的方式，不掉包！ 已经是企业证书无法比的，而且，不需要用户到设置里点击<code>验证</code>证书！ 完全在 Safari 里完成整个安装流程，确实是举足轻重的一步，未来将怎么样发展？期待吧！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/iPhoneOTAConfiguration/ConfigurationProfileExamples/ConfigurationProfileExamples.html" target="_blank" rel="external">Configuration Profile Examples</a></li>
 <li><a href="https://github.com/shaojiankui/iOS-UDID-Safari" target="_blank" rel="external">shaojiankui/iOS-UDID-Safari: iOS-UDID-Safari,（不能上架Appstore！！！）通过Safari获取iOS设备真实UDID，use safari and mobileconfig get ios device real udid</a></li>
@@ -469,7 +473,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、账号证书类型"><span class="toc-number">2.</span> <span class="toc-text">2、账号证书类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、新安装方式"><span class="toc-number">3.</span> <span class="toc-text">3、新安装方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、UDID_获取"><span class="toc-number">4.</span> <span class="toc-text">4、UDID 获取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MDM"><span class="toc-number">4.1.</span> <span class="toc-text">MDM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过苹果Safari浏览器获取iOS设备UDID步骤"><span class="toc-number">4.2.</span> <span class="toc-text">通过苹果Safari浏览器获取iOS设备UDID步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加UDID到证书"><span class="toc-number">4.3.</span> <span class="toc-text">添加UDID到证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPA包重签名"><span class="toc-number">4.4.</span> <span class="toc-text">IPA包重签名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、前言"><span class="toc-number">1.</span> <span class="toc-text">1、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、账号证书类型"><span class="toc-number">2.</span> <span class="toc-text">2、账号证书类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、新安装方式"><span class="toc-number">3.</span> <span class="toc-text">3、新安装方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、UDID_获取"><span class="toc-number">4.</span> <span class="toc-text">4、UDID 获取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MDM"><span class="toc-number">4.1.</span> <span class="toc-text">MDM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过_Safari_浏览器获取iOS设备UDID步骤"><span class="toc-number">4.2.</span> <span class="toc-text">通过 Safari 浏览器获取iOS设备UDID步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加_UDID_到证书"><span class="toc-number">4.3.</span> <span class="toc-text">添加 UDID 到证书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPA_包重签名"><span class="toc-number">4.4.</span> <span class="toc-text">IPA 包重签名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Safari_安装_IPA_包"><span class="toc-number">4.5.</span> <span class="toc-text">Safari 安装 IPA 包</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
