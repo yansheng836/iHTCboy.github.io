@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-09T14:49:20.347Z</updated>
+  <updated>2019-05-09T14:51:54.976Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/05/07/2019-05-07_%E8%AF%B4%E8%AF%B4iOS%E9%9D%9EAppStore%E5%AE%89%E8%A3%85App%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2019/05/07/2019-05-07_说说iOS非AppStore安装App的方法/</id>
     <published>2019-05-07T14:49:16.000Z</published>
-    <updated>2019-05-09T14:49:20.347Z</updated>
+    <updated>2019-05-09T14:51:54.976Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于 iOS 安装 App 的方法，相信熟悉 iOS 的朋友都知道，如果是越狱设备，随便搞。但是，现实中，大部分用户都是小白，不会自己去越狱，安全是一方面。所以，普通情况下，AppStore 一家独大，企业账号可以玩一玩的情况，这也是苹果优秀的地方！ 今天就是想说说，关于新出的玩法~</p>
 <a id="more"></a>
 <h3 id="2、账号证书类型">2、账号证书类型</h3><table>
@@ -85,7 +85,8 @@
 <p><a href="https://github.com/shaojiankui/iOS-UDID-Safari" target="_blank" rel="external">shaojiankui/iOS-UDID-Safari: iOS-UDID-Safari,（不能上架Appstore！！！）通过Safari获取iOS设备真实UDID，use safari and mobileconfig get ios device real udid</a></p>
 <h4 id="添加_UDID_到证书">添加 UDID 到证书</h4><p>TODO</p>
 <h4 id="IPA_包重签名">IPA 包重签名</h4><p>TODO</p>
-<h4 id="Safari_安装_IPA_包">Safari 安装 IPA 包</h4><h3 id="总结">总结</h3><p>其实，这个做为一个<code>创新</code>的安装 App 的方式，不掉包！ 已经是企业证书无法比的，而且，不需要用户到设置里点击<code>验证</code>证书！ 完全在 Safari 里完成整个安装流程，确实是举足轻重的一步，未来将怎么样发展？期待吧！</p>
+<h4 id="Safari_安装_IPA_包">Safari 安装 IPA 包</h4><p>TODO</p>
+<h3 id="总结">总结</h3><p>其实，这个做为一个<code>创新</code>的安装 App 的方式，不掉包！ 已经是企业证书无法比的，而且，不需要用户到设置里点击<code>验证</code>证书！ 完全在 Safari 里完成整个安装流程，确实是举足轻重的一步，未来将怎么样发展？期待吧！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/iPhoneOTAConfiguration/ConfigurationProfileExamples/ConfigurationProfileExamples.html" target="_blank" rel="external">Configuration Profile Examples</a></li>
 <li><a href="https://github.com/shaojiankui/iOS-UDID-Safari" target="_blank" rel="external">shaojiankui/iOS-UDID-Safari: iOS-UDID-Safari,（不能上架Appstore！！！）通过Safari获取iOS设备真实UDID，use safari and mobileconfig get ios device real udid</a></li>
