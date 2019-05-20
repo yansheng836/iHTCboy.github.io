@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iHTCboy.com/more/ins.css</loc>
+    <lastmod>2019-05-20T14:46:27.169Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://iHTCboy.com/more/index.html</loc>
-    <lastmod>2019-05-20T14:43:35.223Z</lastmod>
+    <lastmod>2019-05-20T14:44:32.509Z</lastmod>
   </url>
   
   <url>
@@ -753,11 +758,6 @@
   
   <url>
     <loc>https://iHTCboy.com/more/ins.js</loc>
-    <lastmod>2017-07-28T03:51:08.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://iHTCboy.com/more/ins.css</loc>
     <lastmod>2017-07-28T03:51:08.000Z</lastmod>
   </url>
   
