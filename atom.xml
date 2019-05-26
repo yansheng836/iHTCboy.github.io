@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-26T13:27:27.635Z</updated>
+  <updated>2019-05-26T13:29:05.636Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/05/07/2019-05-07_%E8%AF%B4%E8%AF%B4iOS%E9%9D%9EAppStore%E5%AE%89%E8%A3%85App%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2019/05/07/2019-05-07_说说iOS非AppStore安装App的方法/</id>
     <published>2019-05-07T14:49:16.000Z</published>
-    <updated>2019-05-26T13:27:27.635Z</updated>
+    <updated>2019-05-26T13:29:05.636Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于 iOS 安装 App 的方法，相信熟悉 iOS 的朋友都知道，如果是越狱设备，随便搞。但是，现实中，大部分用户都是小白，不会自己去越狱，安全是一方面。所以，普通情况下，AppStore 一家独大，企业账号可以玩一玩的情况，这也是苹果优秀的地方！ 今天就是想说说，关于新出的玩法~</p>
 <a id="more"></a>
 <h3 id="2、账号证书类型">2、账号证书类型</h3><table>
@@ -78,7 +78,7 @@
 <h3 id="4、UDID_获取">4、UDID 获取</h3><p><code>UDID</code> (Unique Device Identifier)，唯一标示符,是iOS设备的一个唯一识别码，每台iOS设备都有一个独一无二的编码，UDID其实也是在设备量产的时候,生成随机的UUID写入到iOS设备硬件或者某一块存储器中,所以变成了固定的完全不会改变的一个标识，用来区别每一个唯一的iOS设备，包括 iPhones, iPads, 以及 iPod touches。</p>
 <h4 id="MDM">MDM</h4><p>iOS支持企业级的MDM（Mobile Device Managment），也就是所谓的移动设备管理，目的就是让企业能够方便的管理 iPhone、iPad等移动设备。具体的做法是通过在系统中安装配置文件（Profiles）的方式实现各种功能，设备管理，设备安全，获取设备信息，设备配置，备份和恢复等几类功能，可以根据不同应用场景实现很多具体小功能。</p>
 <h4 id="通过_Safari_浏览器获取iOS设备UDID步骤">通过 Safari 浏览器获取iOS设备UDID步骤</h4><p>苹果公司允许开发者通过iOS设备和Web服务器之间的某个操作（其实就是MDM的获取设备信息功能），来获得IOS设备的UDID(包括其他的一些参数)。以下为简要概述：<br>1、在你的Web服务器上创建一个.mobileconfig的XML格式的描述文件；<br>2、用户在所有操作之前必须通过某个点击操作完成.mobileconfig描述文件的安装；<br>3、服务器需要的数据，比如：UDID，需要在.mobileconfig描述文件中配置好，以及服务器接收数据的URL地址；<br>4、当用户设备完成数据的手机后，返回提示给客户端用户；</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/04/20190507-Device-registration-process-ota_developer_flow_chart.jpg" alt="20190507-Device-registration-process-ota_developer_flow_chart.jpg"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/05/20190507-Device-registration-process-ota_developer_flow_chart.jpg" alt="20190507-Device-registration-process-ota_developer_flow_chart.jpg"></p>
 <p>具体流程可参考文章：</p>
 <p><a href="http://www.skyfox.org/safari-ios-device-udid.html" target="_blank" rel="external">通过Safari浏览器获取iOS设备UDID(设备唯一标识符)-天狐博客</a></p>
 <p>具体后台开发代码可参考：</p>
