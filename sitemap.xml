@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iHTCboy.com/more/photos.js</loc>
+    <lastmod>2019-05-26T15:06:59.555Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://iHTCboy.com/more/photos.json</loc>
+    <lastmod>2019-05-26T15:06:19.864Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://iHTCboy.com/more/index.html</loc>
     <lastmod>2019-05-26T15:02:50.044Z</lastmod>
   </url>
