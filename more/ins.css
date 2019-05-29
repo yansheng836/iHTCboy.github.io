@@ -268,22 +268,22 @@
 }
 
 .production-picture #bj1 {
-    background: url(img/app/iLeetCoder.jpg) no-repeat center;
+    background: url(image/iLeetCoder.jpg) no-repeat center;
     background-size: cover;
 }
 
 .production-picture .bj2 {
-    background: url(img/app/iWubi.jpg) no-repeat center;
+    background: url(image/iWubi.jpg) no-repeat center;
     background-size: cover;
 }
 
 .production-picture .bj3 {
-    background: url(img/app/iTer.jpg) no-repeat center;
+    background: url(image/iTer.jpg) no-repeat center;
     background-size: cover;
 }
 
 .production-picture .bj4 {
-    background: url(img/app/SecurityNote.jpg) no-repeat center;
+    background: url(image/SecurityNote.jpg) no-repeat center;
     background-size: cover;
 }
 
