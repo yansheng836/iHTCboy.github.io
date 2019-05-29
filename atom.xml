@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-27T14:45:37.591Z</updated>
+  <updated>2019-05-29T13:40:54.078Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/05/07/2019-05-07_%E8%AF%B4%E8%AF%B4iOS%E9%9D%9EAppStore%E5%AE%89%E8%A3%85App%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2019/05/07/2019-05-07_说说iOS非AppStore安装App的方法/</id>
     <published>2019-05-07T14:49:16.000Z</published>
-    <updated>2019-05-27T14:45:37.591Z</updated>
+    <updated>2019-05-29T13:40:54.078Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于 iOS 安装 App 的方法，相信熟悉 iOS 的朋友都知道，如果是越狱设备，随便搞。但是，现实中，大部分用户都是小白，不会自己去越狱，安全是一方面。所以，普通情况下，AppStore 一家独大，企业账号可以玩一玩的情况，这也是苹果优秀的地方！ 今天就是想说说，关于新出的玩法~</p>
 <a id="more"></a>
 <h3 id="2、账号证书类型">2、账号证书类型</h3><table>
@@ -95,7 +95,7 @@
 <li><a href="https://github.com/atelierdumobile/appdeploy" target="_blank" rel="external">atelierdumobile/appdeploy: 🚀 AppDeploy is the fastest way to get info on your mobile app &amp; deploy it OTA without specific server configuration</a></li>
 </ul>
 <p>TODO</p>
-<h3 id="总结">总结</h3><p>其实，这个做为一个<code>创新</code>的安装 App 的方式，不掉包！ 已经是企业证书无法比的，而且，不需要用户到设置里点击<code>验证</code>证书！ 完全在 Safari 里完成整个安装流程，确实是举足轻重的一步，未来将怎么样发展？期待吧！</p>
+<h3 id="总结">总结</h3><p>其实，这个作为一个<code>创新</code>的安装 App 的方式，不掉包！ 已经是企业证书无法比的，而且，不需要用户到设置里点击<code>验证</code>证书！ 完全在 Safari 里完成整个安装流程，确实是举足轻重的一步，未来将怎么样发展？期待吧！</p>
 <ul>
 <li>2019.05.26 更新<br>本来想打算继续写完本文，但是发现已经有同志完成了，<a href="https://juejin.im/post/5cdeb72151882525cc707729?utm_source=gold_browser_extension" target="_blank" rel="external">超级签名-原理/机制/技术细节-完全解析 - 掘金</a>，所以，本文就这样先啦，大家有什么不明白的，讨论区一起交流~</li>
 </ul>
@@ -141,7 +141,7 @@
     <link href="https://iHTCboy.com/2019/05/04/2019-05-04_macOS%E4%BD%BF%E7%94%A8Sparkle%E8%BF%9B%E8%A1%8C%E8%BD%AF%E4%BB%B6%E8%87%AA%E6%9B%B4%E6%96%B0/"/>
     <id>https://iHTCboy.com/2019/05/04/2019-05-04_macOS使用Sparkle进行软件自更新/</id>
     <published>2019-05-04T06:49:16.000Z</published>
-    <updated>2019-05-06T13:36:41.107Z</updated>
+    <updated>2019-05-29T13:38:41.949Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>其实，本篇文章应该是上一年就打算写的，结果呢，最近才有时间整理。开发 macOS 软件也有一段时间，对于软件更新，之前是自己手动编写增加 API 接口来提示是否有新版本，但一直觉得不智能，界面也不友好，而且下载的是压缩包，需要解压后自动手动替换 App，甚是痛苦。所以，看了很多开源项目，看到了一个 macOS 专用的更新库 <code>Sparkle</code>, 然而现有网上的教程，已经非常陈旧，花了点时间才悟，所以，写一个总结吧。另外，也有其它的更新库，大家需要可以自行了解，以主流库为主，维护更好，这也是项目选型考虑的条件之一，也许是强者更强，好像<code>劣币驱逐良币现象</code>在开源界没有发生过吧~</p>
 <a id="more"></a>
 <h3 id="2、Sparkle">2、Sparkle</h3><blockquote>
@@ -199,34 +199,23 @@
 <p>appcast.xml 内容：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">rss</span> <span class="attribute">version</span>=<span class="value">"2.0"</span> <span class="attribute">xmlns:sparkle</span>=<span class="value">"http://www.andymatuschak.org/xml-namespaces/sparkle"</span> <span class="attribute">xmlns:dc</span>=<span class="value">"http://purl.org/dc/elements/1.1/"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">channel</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">title</span>&gt;</span>应用名称<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">description</span>&gt;</span>Most recent changes with links to updates.<span class="tag">&lt;/<span class="title">description</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">language</span>&gt;</span>en<span class="tag">&lt;/<span class="title">language</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">title</span>&gt;</span>Version 1.4.14<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">sparkle:releaseNotesLink</span>&gt;</span></span><br><span class="line">                http://xxx.com/release-note.html</span><br><span class="line">            <span class="tag">&lt;/<span class="title">sparkle:releaseNotesLink</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">pubDate</span>&gt;</span>Wed, 10 Apr 2019 19:58:11 +0000<span class="tag">&lt;/<span class="title">pubDate</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">enclosure</span></span><br><span class="line">                <span class="attribute">url</span>=<span class="value">"https://xxx.com/app.zip"</span></span><br><span class="line">                <span class="attribute">sparkle:shortVersionString</span>=<span class="value">"1.4.14"</span></span><br><span class="line">                <span class="attribute">sparkle:version</span>=<span class="value">"2019.05.04"</span></span><br><span class="line">                <span class="attribute">length</span>=<span class="value">"6605799"</span></span><br><span class="line">                <span class="attribute">type</span>=<span class="value">"application/octet-stream"</span></span><br><span class="line">                <span class="attribute">sparkle:dsaSignature</span>=<span class="value">"MEYCIQCQaUqxcrhhEABlWxk+1At5QSwty+Li8d6Sr3q6jJF1JgIhAOWGpIkYLwXC</span><br><span class="line">                RFfaA8uz34Dy7CXCczpmSyCOQ5+rfOFL"</span></span><br><span class="line">            /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">sparkle:minimumSystemVersion</span>&gt;</span>10.11<span class="tag">&lt;/<span class="title">sparkle:minimumSystemVersion</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">channel</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">rss</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>releaseNotesLink</code>: 更新日志的说明网页，最好是html<br><code>url</code>: zip压缩包下载地扯<br><code>length</code>: zip压缩文件大小（字节）<br><code>dsaSignature</code>: 升级包的数据签名</p>
-<h3 id="一些问题&amp;坑点">一些问题&amp;坑点</h3><ul>
-<li>web服务器<br>上面说明的 <code>http://xxx.comappcast.xml</code> 更新信息文件，还是 <code>http://xxx.com/release-note.html</code> 更新说明页面，还是应用的zip文件下载链接，都是需要通过服务器进行访问。</li>
-</ul>
+<h3 id="一些问题&amp;坑点">一些问题&amp;坑点</h3><h4 id="web服务器">web服务器</h4><p>上面说明的 <code>http://xxx.comappcast.xml</code> 更新信息文件，还是 <code>http://xxx.com/release-note.html</code> 更新说明页面，还是应用的zip文件下载链接，都是需要通过服务器进行访问。</p>
 <p>这里比较简单的方法，就是上传到 <code>GitHub</code> 上，就以访问到文件或链接。</p>
 <p>如果是本地调试，也可以利用 macOS 自带的 <code>python</code> 创建一个本地的文件服务器：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer</span><br><span class="line">或者 </span><br><span class="line">python -m http.server</span><br></pre></td></tr></table></figure>
 <p>示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ python -m SimpleHTTPServer</span><br><span class="line">Serving HTTP on <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span> port <span class="number">8000</span> ...</span><br></pre></td></tr></table></figure>
 <p>然后就可以通过 <code>http://0.0.0.0:8000</code> 就能访问电脑的所有文档和文件目录。</p>
-<ul>
-<li>HTTPS</li>
-</ul>
-<p>macOS 10.11 起苹果默认开启 App Transport Security ，也就是应用只能访问 HTTPS 的链接，HTTP 的默认不能访问。</p>
+<h4 id="HTTPS">HTTPS</h4><p>macOS 10.11 起苹果默认开启 App Transport Security ，也就是应用只能访问 HTTPS 的链接，HTTP 的默认不能访问。</p>
 <p>建议当然是使用https，如果没有能力部署，也可以在应用的 <code>Info.plist</code> 配置允许访问http:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">key</span>&gt;</span>NSAppTransportSecurity<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dict</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>NSAllowsArbitraryLoads<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">true</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dict</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>版本号<br>注意，版本号是 <code>shortVersionString</code>；不是 <code>version</code> 字段。但是这2个字段都配置了的话，2个都需要大于旧应用的对应版本号，否则，<code>Sparkle</code> 认为没有新版本。</p>
-</li>
-<li><p>AppStore版本<br>如果是上架 AppStore，则不能使用 <code>Sparkle</code> ，因为苹果审核禁止检查更新和自动更新，需要更新，要求用户使用 AppStore。</p>
-</li>
-<li><p>编译报错</p>
-</li>
-</ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>HTC<span class="regexp">/Desktop/</span>SparkleDemo-macOS<span class="regexp">/Pods/</span>Target Support Files<span class="regexp">/Pods-macOSDemo/</span>Pods-macOSDemo-frameworks.<span class="string">sh:</span> line <span class="number">104</span>: <span class="string">EXPANDED_CODE_SIGN_IDENTITY:</span> unbound variable</span><br><span class="line">Command PhaseScriptExecution failed with a nonzero exit code</span><br></pre></td></tr></table></figure>
-<p>在Xcode菜单栏选择 <code>File</code> -&gt; <code>Workspace Setting</code> 就会弹出一个界面，看出 Xcode10 是默认选中的最新的 <code>New Build System(Default)</code>，在这个编译系统的环境下，编译脚本一直会报错。把 build system 切换到 <code>Legacy Build System</code>，使用旧的编译系统就正常运行。怀疑是新的编译系统，流程有变动，如果有问题，后续在深研。</p>
-<h3 id="总结">总结</h3><p>其实，官方文档已经给出了很好的教程。这里写的原因:</p>
+<h4 id="版本号">版本号</h4><p>注意，版本号是 <code>shortVersionString</code>；不是 <code>version</code> 字段。但是这2个字段都配置了的话，2个都需要大于旧应用的对应版本号，否则，<code>Sparkle</code> 认为没有新版本。</p>
+<h4 id="AppStore版本">AppStore版本</h4><p>如果是上架 AppStore，则不能使用 <code>Sparkle</code> ，因为苹果审核禁止检查更新和自动更新，需要更新，要求用户使用 AppStore。</p>
+<h4 id="编译报错">编译报错</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>HTC<span class="regexp">/Desktop/</span>SparkleDemo-macOS<span class="regexp">/Pods/</span>Target Support Files<span class="regexp">/Pods-macOSDemo/</span>Pods-macOSDemo-frameworks.<span class="string">sh:</span> line <span class="number">104</span>: <span class="string">EXPANDED_CODE_SIGN_IDENTITY:</span> unbound variable</span><br><span class="line">Command PhaseScriptExecution failed with a nonzero exit code</span><br></pre></td></tr></table></figure>
+<p>在Xcode菜单栏选择 <code>File</code> -&gt; <code>Workspace Setting</code> 就会弹出一个界面，看出 Xcode10 是默认选中的最新的 <code>New Build System(Default)</code>，在这个编译系统的环境下，编译脚本一直会报错。把 build system 切换到 <code>Legacy Build System</code>，使用旧的编译系统就正常运行。怀疑是新的编译系统，流程有变动，这个问题，后续在深研吧。</p>
+<h3 id="总结">总结</h3><p>其实，官方文档已经给出了很好的教程。这里为什么还写教程的原因:</p>
 <p>其一是，官方的文档比较旧，针对 Xcode10，一些操作已经发生了比较大的变化，对于新入门的苹果开发者，可以比较懵。</p>
-<p>其二，对于英文或者想最快的方式入门使用的同学，提供一个最简洁的教程，节省大家的时间，对大家都好的事件，应该做！</p>
+<p>其二，对于英文或者想快速的入门使用的同学，提供一个最简洁的教程，节省大家的时间，对大家都好的事件，应该做！</p>
 <p>其三，对于刚刚入门 macOS 软件开发的同学，可能还不知道有这样优秀的第三方更新软件库，所以，心若所诚，力行心从！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://github.com/sparkle-project/Sparkle" target="_blank" rel="external">sparkle-project/Sparkle: A software update framework for macOS</a></li>
