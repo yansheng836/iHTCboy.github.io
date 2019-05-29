@@ -313,6 +313,23 @@
     }
 }
 
+.article-more {
+    padding-right: 5.0%;
+    padding-left: 5.0%
+}
+
+.article-more ul li:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    background: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    float: left;
+    margin-top: 10px
+}
 
 
 /* ====== video ===== */
