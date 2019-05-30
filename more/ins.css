@@ -150,9 +150,9 @@
     font-size: 15px;
 }
 
-#shijianzhou li {
+#noliststyle li {
     font-size: 13px;
-    list-style:none;
+    list-style: none;
 }
 
 .track-list ul li {
