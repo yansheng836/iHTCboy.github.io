@@ -178,6 +178,7 @@
 }
 
 .track-list li {
+	list-style-type: none !important;
     position: relative;
     padding: 9px 0 0 25px;
     line-height: 18px;
