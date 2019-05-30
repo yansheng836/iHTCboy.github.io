@@ -153,6 +153,7 @@
 #noliststyle li {
     font-size: 13px;
     list-style: none;
+    list-style-type: none;
 }
 
 .track-list ul li {
