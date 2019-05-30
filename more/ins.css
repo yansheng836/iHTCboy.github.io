@@ -187,7 +187,7 @@
     border-left-color: #fff;
 }
 
-.track-list li .node-icon {
+.track-list li   {
     position: absolute;
     left: -6px;
     top: 65%;
@@ -314,8 +314,10 @@
 }
 
 .article-more {
+	line-height: 2;
     padding-right: 5.0%;
-    padding-left: 5.0%
+    padding-left: 5.0%;
+    color: #2c3e50
 }
 
 .article-more ul li:before {
