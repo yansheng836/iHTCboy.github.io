@@ -152,6 +152,7 @@
 
 #shijianzhou li {
     font-size: 13px;
+    list-style:none;
 }
 
 .track-list ul li {
@@ -187,7 +188,7 @@
     border-left-color: #fff;
 }
 
-.track-list li   {
+.track-list li .node-icon {
     position: absolute;
     left: -6px;
     top: 65%;
@@ -314,6 +315,7 @@
 }
 
 .article-more {
+	line-height: 2;
     padding-right: 5.0%;
     padding-left: 5.0%;
     color: #2c3e50
