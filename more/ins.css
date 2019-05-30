@@ -153,16 +153,13 @@
 #noliststyle li {
     font-size: 13px;
     list-style: none;
-    list-style-type: none;
 }
 
 .track-list ul li {
-	list-style-type: none !important;
     list-style: none !important;
 }
 
 .track-list ul li:before {
-	list-style-type: none !important;
     list-style: none !important;
 }
 
@@ -178,7 +175,6 @@
 }
 
 .track-list li {
-	list-style-type: none !important;
     position: relative;
     padding: 9px 0 0 25px;
     line-height: 18px;
