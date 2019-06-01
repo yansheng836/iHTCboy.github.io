@@ -168,15 +168,6 @@
     list-style: none;
 }
 
-.track-list ul li {
-    list-style: none !important;
-}
-
-.track-list ul li:before {
-    list-style: none !important;
-    content: "";
-}
-
 .track-rcol {
     width: 100%;
     border: 1px solid #eee;
