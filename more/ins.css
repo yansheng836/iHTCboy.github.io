@@ -163,16 +163,12 @@
     margin-top: 10px
 }
 
-#noliststyle ul li {
+#noliststyle li {
     font-size: 13px;
-    list-style: none;
-}
-
-#noliststylet ul li {
     list-style: none !important;
 }
 
-#noliststyle ul li:before {
+#noliststyle li:before {
     list-style: none !important;
     content: "";
 }
