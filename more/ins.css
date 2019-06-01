@@ -150,7 +150,7 @@
     font-size: 15px;
 }
 
-#noliststyle li {
+#noliststyle ul li {
     font-size: 13px;
     list-style: none;
 }
