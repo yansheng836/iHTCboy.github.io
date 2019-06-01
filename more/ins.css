@@ -146,8 +146,21 @@
 
 /* ====== more ===== */
 
-#jieshao li {
+#summary li {
     font-size: 15px;
+}
+
+#summary li:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    background: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    float: left;
+    margin-top: 10px
 }
 
 #noliststyle ul li {
@@ -320,19 +333,6 @@
     padding-right: 5.0%;
     padding-left: 5.0%;
     color: #2c3e50
-}
-
-#summary li:before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border: 1px solid #ff0000;
-    border-radius: 10px;
-    background: #fff;
-    display: inline-block;
-    margin-right: 10px;
-    float: left;
-    margin-top: 10px
 }
 
 
