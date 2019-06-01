@@ -322,7 +322,7 @@
     color: #2c3e50
 }
 
-.article-more ul li:before {
+#summary li:before {
     content: "";
     width: 6px;
     height: 6px;
