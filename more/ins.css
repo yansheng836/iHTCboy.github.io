@@ -146,33 +146,6 @@
 
 /* ====== more ===== */
 
-#summary li {
-    font-size: 15px;
-}
-
-#summary li:before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border: 1px solid #ff0000;
-    border-radius: 10px;
-    background: #fff;
-    display: inline-block;
-    margin-right: 10px;
-    float: left;
-    margin-top: 10px
-}
-
-#noliststyle li {
-    font-size: 13px;
-    list-style: none !important;
-}
-
-#noliststyle li:before {
-    list-style: none !important;
-    content: "";
-}
-
 .track-rcol {
     width: 100%;
     border: 1px solid #eee;
@@ -329,6 +302,33 @@
     padding-right: 5.0%;
     padding-left: 5.0%;
     color: #2c3e50
+}
+
+#summary li {
+    font-size: 15px;
+}
+
+#summary li:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    background: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    float: left;
+    margin-top: 10px
+}
+
+#noliststyle li {
+    font-size: 13px;
+    list-style: none !important;
+}
+
+#noliststyle li:before {
+    list-style: none !important;
+    content: "";
 }
 
 
