@@ -329,12 +329,14 @@
 #noliststyle ul li:before {
     list-style: none !important;
     content: "";
+    width: 0px;
+    height: 0px;
+    border: 0px;
+    margin-right: 0px;
+    float: left; 
+    margin-top:00px;
 }
 
-.article-entry ul li:before {
-     content:""; 
-    list-style: none !important;
-}
 
 
 /* ====== video ===== */
