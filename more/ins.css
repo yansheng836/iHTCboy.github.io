@@ -326,9 +326,14 @@
     list-style: none !important;
 }
 
-#noliststyle li:before {
+#noliststyle ul li:before {
     list-style: none !important;
     content: "";
+}
+
+.article-entry ul li:before {
+     content:""; 
+    list-style: none !important;
 }
 
 
