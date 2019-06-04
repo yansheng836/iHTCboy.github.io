@@ -2,18 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iHTCboy.com/more/index.html</loc>
+    <lastmod>2019-06-04T14:36:03.949Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://iHTCboy.com/more/photos.html</loc>
+    <lastmod>2019-06-04T14:35:26.939Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://iHTCboy.com/more/videos.html</loc>
-    <lastmod>2019-06-02T15:35:10.838Z</lastmod>
+    <lastmod>2019-06-04T14:35:00.205Z</lastmod>
   </url>
   
   <url>
     <loc>https://iHTCboy.com/more/onemindmap.html</loc>
     <lastmod>2019-06-02T15:34:54.135Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://iHTCboy.com/more/index.html</loc>
-    <lastmod>2019-06-02T04:46:44.330Z</lastmod>
   </url>
   
   <url>
@@ -204,11 +209,6 @@
   <url>
     <loc>https://iHTCboy.com/2019/05/04/2019-05-04_macOS%E4%BD%BF%E7%94%A8Sparkle%E8%BF%9B%E8%A1%8C%E8%BD%AF%E4%BB%B6%E8%87%AA%E6%9B%B4%E6%96%B0/</loc>
     <lastmod>2019-05-29T13:38:41.949Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://iHTCboy.com/more/photos.html</loc>
-    <lastmod>2019-05-28T15:00:41.005Z</lastmod>
   </url>
   
   <url>
