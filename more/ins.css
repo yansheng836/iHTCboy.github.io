@@ -271,6 +271,16 @@
     background-size: cover;
 }
 
+.production-picture .bj5 {
+    background: url(image/CampusOfGLUT.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.production-picture .bj6 {
+    background: url(image/GLUTCloud.jpg) no-repeat center;
+    background-size: cover;
+}
+
 .production-info {
     padding-left: 120px;
     display: block;
