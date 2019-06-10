@@ -357,7 +357,9 @@ code {
   background: white;
 }
 
-
+.article-entry p code {
+	background: white;
+}
 
 
 /* ====== video ===== */
