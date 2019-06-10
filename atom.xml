@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-06-10T15:32:59.573Z</updated>
+  <updated>2019-05-29T13:40:54.078Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,26 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://iHTCboy.com/2019/06/10/2013-04-26_%E7%9D%9B%E6%80%80/"/>
-    <id>https://iHTCboy.com/2019/06/10/2013-04-26_睛怀/</id>
-    <published>2019-06-10T15:32:59.580Z</published>
-    <updated>2019-06-10T15:32:59.573Z</updated>
-    <content type="html"><![CDATA[<p>title: 睛怀<br>date: 2013-04-26 10:23:16<br>categories: poetry #life poetry<br>tags: [诗歌,散文,随记]  # <a id="more"></a><br>reward: true</p>
-<h1 id="—">—</h1><p>轻轻幽风，<br>朵朵暖阳。<br>悠悠雁山，<br>片片书香。</p>
-<!--more-->
-<ul>
-<li>[来源：个人QQ空间]</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>title: 睛怀<br>date: 2013-04-26 10:23:16<br>categories: poetry #life poetry<br>tags: [诗歌,散文,随记]  #]]>
-    
-    </summary>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[说说 iOS 非 AppStore 安装App的方法]]></title>
@@ -2915,6 +2895,84 @@
       <category term="request.POST" scheme="https://iHTCboy.com/tags/request-POST/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[shell技巧1 - 生成ipa文件]]></title>
+    <link href="https://iHTCboy.com/2018/08/31/2018-08-31_shell%E6%8A%80%E5%B7%A71_%E7%94%9F%E6%88%90ipa%E6%96%87%E4%BB%B6/"/>
+    <id>https://iHTCboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/</id>
+    <published>2018-08-31T13:19:16.000Z</published>
+    <updated>2018-09-09T12:59:57.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTunes 12.7 之前，可以下载ipa应用包、打开ipa包，也生成ipa文件！但是在这12.7之后，关于ipa的所有功能已经移除，如果还想下载ipa包，可以参考我之前的文章：<a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a>，今天我们主要来说说制作ipa文件的功能。</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-iTunes12.7-new-change.png" alt="20180831-iTunes12.7-new-change.png"></p>
+<a id="more"></a>
+<h3 id="2、ipa文件结构">2、ipa文件结构</h3><p>其实ipa文件可以理解为一个zip的压缩文件，所以解压ipa文件后，得到ipa的目录 <code>ipafilename/Payload/xxx.app</code>，以微信示例：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-ipa-file-path.png" alt="20180831-ipa-file-path.png"></p>
+<p>所以，如果我们编译的项目，想生成ipa文件，以前是拖拽到iTunes就会自动生成ipa文件，现在不行了，根据这个原理，我们在Xcode中编译生成的<code>.app</code>目录，按照前面说的目录结构，进行压缩就行啦！</p>
+<h3 id="3、bash脚本">3、bash脚本</h3><ul>
+<li><p>生成.app目录内容：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-Xcode-build-app.png" alt="20180831-Xcode-build-app.png"></p>
+</li>
+<li><p>执行shell脚本生成ipa文件：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-bash-make-ipa-file.png" alt="20180831-bash-make-ipa-file.png"></p>
+</li>
+<li><p>生成成功后，自动打开ipa文件所在目录：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-finish.png" alt="20180831-make-ipa-finish.png"></p>
+</li>
+</ul>
+<h3 id="4、全部代码">4、全部代码</h3><p>具体的代码，可参考我的Github代码：</p>
+<ul>
+<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="comment"># 定义用到的变量</span></span><br><span class="line">projectAppPath=<span class="string">""</span></span><br><span class="line">outputPath=<span class="string">""</span></span><br><span class="line">ipaFileName=<span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义读取输入字符的函数</span></span><br><span class="line"><span class="function"><span class="title">getProjectAppPath</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter .app path: "</span> projectAppPath</span><br><span class="line">	<span class="comment"># 如果为空值，从新监听</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$projectAppPath</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		getprojectAppPath</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">getOutputPath</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter output path: "</span> outputPath</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$outputPath</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		<span class="comment"># 如果没有输出路径，默认输出到桌面</span></span><br><span class="line">	  outputPath=<span class="string">"Desktop"</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">getipaFileName</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter ipa FileName: "</span> ipaFileName</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$ipaFileName</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		getipaFileName</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行函数，给变量赋值</span></span><br><span class="line">getProjectAppPath</span><br><span class="line">getOutputPath</span><br><span class="line">getipaFileName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到当前用户的home目录，方便创建桌面目录</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在输出路径下创建 Payload 文件夹</span></span><br><span class="line">mkdir -p <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>/Payload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将.app 文件复制到 输出路径的 Payload 文件夹下</span></span><br><span class="line">cp -r <span class="string">"<span class="variable">$&#123;projectAppPath&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>/Payload/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到输出路径</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 Payload 文件夹压缩成 ipa 包</span></span><br><span class="line">zip -r <span class="string">"<span class="variable">$&#123;ipaFileName&#125;</span>.ipa"</span> Payload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除当前路径下 Payload 文件夹【-r 就是向下递归，不管有多少级目录，一并删除 -f 就是直接强行删除，不作任何提示的意思】</span></span><br><span class="line">rm -rf <span class="string">"Payload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 成功提示</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\n\n=====================【转换ipa完成】=========================\n"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;outputPath&#125;</span></span><br><span class="line"><span class="comment">## 打开输出的路径</span></span><br><span class="line"><span class="comment">#open -a Finder "$&#123;outputPath&#125;"</span></span><br><span class="line"><span class="comment"># 从当前位置打开finder</span></span><br><span class="line">open .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结束退出</span></span><br><span class="line"><span class="built_in">exit</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h3 id="5、优化">5、优化</h3><h4 id="方法一">方法一</h4><p>每次想生成ipa文件，就要打开终端，执行 <code>sh make_ipa_file.sh</code>，相当麻烦，所以，如果生成别名，直接在终端输入别名就可以执行啦，是不是很棒！</p>
+<p>为.bash_profile添加了一个别名：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkipa=<span class="string">'sh /Users/HTC/Documents/iBash/make_ipa_file.sh'</span></span><br></pre></td></tr></table></figure></p>
+<p>以后直接在终端输入：<code>mkipa</code>就可以啦，这不是很棒！！！</p>
+<h4 id="方法二">方法二</h4><p>如果是 Unix 可执行文件，直接点击，会自动打开终端执行。</p>
+<p>把 <code>make_ipa_file.sh</code> 改为 <code>make_ipa_file_sh</code> 名字，然后在终端为文件添加可执行权限：<br><code>chmod +x /Users/HTC/Desktop/make_ipa_file_sh</code> </p>
+<p>这样就生成了 Unix 文件，双击就会打开到终端：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-Unix-file.png" alt="20180831-make-ipa-Unix-file.png"></p>
+<h4 id="方法三">方法三</h4><p>在  ~/.bashrc 里面添加本函数，或添加脚本路径，也可以方便执行。</p>
+<h4 id="方法四">方法四</h4><p>如果是macOS环境，还可以通过苹果的apple脚本服务，来做到一键化，以后有机会在谈谈。</p>
+<h4 id="方法五">方法五</h4><p>也通过 <code>spotlight</code> 或 第三方软件 <code>Alfred</code> 快速查找文件打开~</p>
+<h3 id="6、总结">6、总结</h3><p>通过这个简单又复杂的示例，其实使用脚本的最终目录，也是想提高效率！！所以，打包ipa包的效率，也是向着这样的方向努力！如果你对shell还不熟悉，可以看看下面这2个教程，当前我学习的时候，还没有人给指导，所以，你们是幸福的一代程序员！加油！</p>
+<ul>
+<li><a href="http://www.runoob.com/linux/linux-shell.html" target="_blank" rel="external">Shell 教程 | 菜鸟教程</a></li>
+<li><del><a href="https://bestswifter.gitbook.io/effectivemac/zhong-ji-wu-qi-zsh/zhi-hang-shell-jiao-ben" target="_blank" rel="external">执行 Shell 脚本 - EffectiveMac</a></del></li>
+</ul>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
+<li><a href="https://support.apple.com/zh-cn/HT208075" target="_blank" rel="external">新版 iTunes 的变化 - Apple 支持</a></li>
+<li><a href="http://www.cnblogs.com/skywang12345/archive/2013/05/30/3106570.html" target="_blank" rel="external">Linux bash总结(一) 基础部分(适合初学者学习和非初学者参考)  - 博客园</a></li>
+<li><a href="http://www.cnblogs.com/wengzilin/p/4601684.html" target="_blank" rel="external">ios打包ipa的四种实用方法(.app转.ipa)</a></li>
+<li><a href="https://stackoverflow.com/questions/281372/executing-shell-scripts-from-the-os-x-dock?answertab=votes" target="_blank" rel="external">osx - Executing Shell Scripts from the OS X Dock? - Stack Overflow</a></li>
+<li><a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a></li>
+<li><a href="http://www.runoob.com/linux/linux-shell.html" target="_blank" rel="external">Shell 教程 | 菜鸟教程</a></li>
+<li><a href="https://bestswifter.gitbook.io/effectivemac/zhong-ji-wu-qi-zsh/zhi-hang-shell-jiao-ben" target="_blank" rel="external">执行 Shell 脚本 - EffectiveMac</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTunes 12.7 之前，可以下载ipa应用包、打开ipa包，也生成ipa文件！但是在这12.7之后，关于ipa的所有功能已经移除，如果还想下载ipa包，可以参考我之前的文章：<a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a>，今天我们主要来说说制作ipa文件的功能。</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-iTunes12.7-new-change.png" alt="20180831-iTunes12.7-new-change.png"></p>]]>
+    
+    </summary>
+    
+      <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
+    
+      <category term="ipa" scheme="https://iHTCboy.com/tags/ipa/"/>
+    
+      <category term="itunes" scheme="https://iHTCboy.com/tags/itunes/"/>
+    
+      <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
+    
+      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
     
   </entry>
   
