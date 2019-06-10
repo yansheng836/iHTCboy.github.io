@@ -358,6 +358,7 @@ code {
 }
 
 .article-entry code {
+	padding-top: 10px;
 	background: white;
 	border: 1px solid #ccc;
 }
