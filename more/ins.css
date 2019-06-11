@@ -359,9 +359,16 @@ code {
 }
 
 .article-entry code {
-	margin-top: 15px;
 	background: white;
 	border: 1px solid #ccc;
+}
+
+.article-entry li code {
+	background: white;
+}
+
+.ihtcboy {
+	margin-bottom: 30px;
 }
 
 
