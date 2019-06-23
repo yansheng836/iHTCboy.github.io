@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iHTCboy.com/more/ins.json</loc>
+    <lastmod>2019-06-23T15:24:14.212Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://iHTCboy.com/more/index.html</loc>
     <lastmod>2019-06-14T14:31:31.759Z</lastmod>
   </url>
@@ -324,11 +329,6 @@
   <url>
     <loc>https://iHTCboy.com/more/ins.js</loc>
     <lastmod>2019-05-26T14:46:25.002Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://iHTCboy.com/more/ins.json</loc>
-    <lastmod>2019-05-26T14:31:15.167Z</lastmod>
   </url>
   
   <url>
