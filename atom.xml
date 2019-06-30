@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-06-30T06:53:59.992Z</updated>
+  <updated>2019-06-30T06:58:42.333Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/06/28/2019-06-28_Python%E5%BA%93pyOpenSSL%E8%AF%BB%E5%8F%96p12%E8%AF%81%E4%B9%A6/"/>
     <id>https://iHTCboy.com/2019/06/28/2019-06-28_Python库pyOpenSSL读取p12证书/</id>
     <published>2019-06-28T15:19:16.000Z</published>
-    <updated>2019-06-30T06:53:59.992Z</updated>
+    <updated>2019-06-30T06:58:42.333Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>本文主要是讲解如何用python读取<code>p12</code>的信息。</p>
 <p>如果有过iOS团队开发经验的朋友，一定对<code>p12</code>有所了解，因为苹果开发者网站制作的cer证书，只能用生成上传苹果后台的 <code>CSR</code>（Certificate Signing Request）文件 ————<code>CertificateSigningRequest.certSigningRequest</code> 的macOS系统安装使用，同时，普通个人开发账号最多可注册iOS Development/Distribution 证书各2个。所以，<code>p12</code> 就是解决在多个电脑之间共享证书的一种方式。本文不会详解iOS证书相关知识，可以查看本文末的参考链接。</p>
 <a id="more"></a>
@@ -42,7 +42,7 @@
 <p>执行命令后，会要求输入<code>p12</code>文件的密码，如果密码错误：<code>Mac verify error: invalid password?</code> ，如果密码正确：<code>MAC verified OK</code>。</p>
 <p>示例：</p>
 <p>p12：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/06/20190628-HTC.p12.png" alt="20190628-HTC.p12.png"></p>
-<p>pem：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/07/20190628-HTC.pem.png" alt="20190628-HTC.pem.png"></p>
+<p>pem：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/06/20190628-HTC.pem.png" alt="20190628-HTC.pem.png"></p>
 <h3 id="pyOpenSSL_使用">pyOpenSSL 使用</h3><p>所以，python 解析 <code>p12</code> 可以使用 <code>pyOpenSSL</code> ，这里就没有什么多说的，看代码就好：</p>
 <p>先安装 <code>pyOpenSSL</code>：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyOpenSSL</span><br></pre></td></tr></table></figure>
