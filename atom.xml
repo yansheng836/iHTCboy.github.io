@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-05-29T13:40:54.078Z</updated>
+  <updated>2019-06-30T06:51:56.880Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,80 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[用Python库pyOpenSSL读取iOS的p12证书]]></title>
+    <link href="https://iHTCboy.com/2019/06/28/2019-06-28_Python%E5%BA%93pyOpenSSL%E8%AF%BB%E5%8F%96p12%E8%AF%81%E4%B9%A6/"/>
+    <id>https://iHTCboy.com/2019/06/28/2019-06-28_Python库pyOpenSSL读取p12证书/</id>
+    <published>2019-06-28T15:19:16.000Z</published>
+    <updated>2019-06-30T06:51:56.880Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>本文主要是讲解如何用python读取<code>p12</code>的信息。</p>
+<p>如果有过iOS团队开发经验的朋友，一定对<code>p12</code>有所了解，因为苹果开发者网站制作的cer证书，只能用生成上传苹果后台的 <code>CSR</code>（Certificate Signing Request）文件 ————<code>CertificateSigningRequest.certSigningRequest</code> 的macOS系统安装使用，同时，普通个人开发账号最多可注册iOS Development/Distribution 证书各2个。所以，<code>p12</code> 就是解决在多个电脑之间共享证书的一种方式。本文不会详解iOS证书相关知识，可以查看本文末的参考链接。</p>
+<a id="more"></a>
+<h3 id="2、p12证书">2、p12证书</h3><p>在讲解之前，先给大家说说原理。 个人信息交换 <code>p12</code> — KCS12 file holds the private key and certificate. </p>
+<p><code>p12</code> 存放了证书和私钥，使用的是DER编码。那什么是DER呢? 这里就要讲讲证书的知识：</p>
+<h4 id="证书标准">证书标准</h4><p><code>X.509</code> - 一种证书标准，主要定义了证书中应该包含哪些内容。其详情可以参考<code>RFC5280</code>，<code>SSL</code> 使用的就是这种证书标准。</p>
+<h4 id="编码格式">编码格式</h4><p>同样的<code>X.509</code>证书，可能有不同的编码格式，目前有以下两种编码格式：</p>
+<ul>
+<li><p><code>DER</code> - Distinguished Encoding Rules，打开看是二进制格式，不可读.</p>
+</li>
+<li><p><code>PEM</code> - Privacy Enhanced Mail，打开看文本格式，以”—–BEGIN…”开头，”—–END…”结尾,内容是BASE64编码。</p>
+</li>
+</ul>
+<p>所以，要查看<code>p12</code>的内容，最好是转换成<code>PEM</code>格式。那么这里一种证书标准的格式，就需要实现了这种标准的工具就能解析：</p>
+<ul>
+<li><code>OpenSSL</code> - OpenSSL是<code>SSL</code>的一个实现，SSL只是一种规范。理论上来说，SSL这种规范是安全的，目前的技术水平很难破解，但SSL的实现就可能有些漏洞，如著名的”心脏出血”。OpenSSL还提供了一大堆强大的工具软件，强大到90%我们都用不到。</li>
+</ul>
+<p>所以，使用 <code>OpenSSL</code> 就可以读取<code>p12</code>的信息，可以通过以下命令把<code>p12</code>转换为<code>pem</code>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs12 -in XXX.p12  -out XXX.pem -nodes</span><br></pre></td></tr></table></figure>
+<p>执行命令后，会要求输入<code>p12</code>文件的密码，如果密码错误：<code>Mac verify error: invalid password?</code> ，如果密码正确：<code>MAC verified OK</code>。</p>
+<p>示例：</p>
+<p>p12：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/06/20190628-HTC.p12.png" alt="20190628-HTC.p12.png"></p>
+<p>pem：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/07/20190628-HTC.pem.png" alt="20190628-HTC.pem.png"></p>
+<h3 id="pyOpenSSL_使用">pyOpenSSL 使用</h3><p>所以，python 解析 <code>p12</code> 可以使用 <code>pyOpenSSL</code> ，这里就没有什么多说的，看代码就好：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># load OpenSSL.crypto</span></span><br><span class="line"><span class="keyword">from</span> OpenSSL <span class="keyword">import</span> crypto</span><br><span class="line"></span><br><span class="line"><span class="comment"># open it, using password. Supply/read your own from stdin.</span></span><br><span class="line">p12 = crypto.load_pkcs12(open(<span class="string">"/Users/HTC/Desktop/HTC.p12"</span>, <span class="string">'rb'</span>).read(), <span class="string">'123456'</span>)</span><br><span class="line"></span><br><span class="line">cer = p12.get_certificate()     <span class="comment"># (signed) certificate object</span></span><br><span class="line">pkey = p12.get_privatekey()      <span class="comment"># private key.</span></span><br><span class="line">ca_cer = p12.get_ca_certificates() <span class="comment"># ca chain.</span></span><br><span class="line">print(cer, pkey, ca_cer)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'版本'</span>, cer.get_version())</span><br><span class="line">print(<span class="string">'签名算法'</span>, cer.get_signature_algorithm())</span><br><span class="line">print(<span class="string">'序列号：'</span>, cer.get_serial_number())</span><br><span class="line">print(<span class="string">'证书是否过期：'</span>, cer.has_expired())</span><br><span class="line">print(<span class="string">'在此之前无效：'</span>, cer.get_notBefore())</span><br><span class="line">print(<span class="string">'在此之后无效'</span>, cer.get_notAfter())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#主题名称</span></span><br><span class="line">subject = cer.get_subject()</span><br><span class="line">s_components = subject.get_components()</span><br><span class="line">print(s_components)</span><br><span class="line"></span><br><span class="line">key_dict = &#123;<span class="string">'UID'</span>: <span class="string">'用户 ID'</span>,</span><br><span class="line">			<span class="string">'CN'</span>: <span class="string">'常用名称'</span>,</span><br><span class="line">			<span class="string">'OU'</span>: <span class="string">'组织单位'</span>,</span><br><span class="line">			<span class="string">'O'</span>: <span class="string">'组织'</span>,</span><br><span class="line">			<span class="string">'C'</span>: <span class="string">'国家或地区'</span></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (key, value) <span class="keyword">in</span> s_components:</span><br><span class="line">	print(key, value)</span><br><span class="line">	print(key_dict.get(key.decode(), key))</span><br><span class="line"></span><br><span class="line"><span class="comment">#签发者名称</span></span><br><span class="line">suer = cer.get_issuer()</span><br><span class="line">print(suer.get_components())</span><br><span class="line"></span><br><span class="line"><span class="comment">#证书扩展信息</span></span><br><span class="line">print(<span class="string">'扩展数：'</span>, cer.get_extension_count())</span><br><span class="line">print(<span class="string">'扩展1：'</span>, cer.get_extension(<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="总结">总结</h3><p>现在 Xcode8 之后，已经可以通过登陆开发者账号，自动下载和管理证书，从而减少开发者配置证书遇到的各位问题，非常的方便。当然，如果是多人开发或跨域团队，或者不想让开发人员拿到最高权限，使用<code>p12</code>还是目前最好的方式！因为如果一个主账号下的子账号都可以操作证书，其实影响和安全性很难保证，所以，苹果也有一定道理，很难在Xcode的账号中，分权限管理吧。</p>
+<p>关于证书，这里只是介绍的说说<code>p12</code>的简单知识，证书体系有非常多的标准和知识，还需要多学习，加油！</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://stackoverflow.com/questions/6345786/python-reading-a-pkcs12-certificate-with-pyopenssl-crypto/6346268#6346268" target="_blank" rel="external">cryptography - Python: reading a pkcs12 certificate with pyOpenSSL.crypto - Stack Overflow</a></li>
+<li><a href="https://codeday.me/bug/20181207/432700.html" target="_blank" rel="external">Python：用pyOpenSSL.crypto读取pkcs12证书 - 代码日志</a></li>
+<li><a href="https://blog.csdn.net/phj_88/article/details/53045748" target="_blank" rel="external">关于开发证书配置（Certificates &amp; Identifiers &amp; Provisioning Profiles）IOS发布 - 前端栈开发 - CSDN博客</a></li>
+<li><a href="http://nuoerlz.is-programmer.com/posts/47670.html" target="_blank" rel="external">iOS开发者证书-详解/生成/使用 - Echo’s Blog -</a></li>
+<li><a href="https://www.jianshu.com/p/7b84f95bdf6f" target="_blank" rel="external">Python查看ipa UDID和其他基本信息 - 简书</a></li>
+<li><a href="https://www.cnblogs.com/guogangj/p/4118605.html" target="_blank" rel="external">那些证书相关的玩意儿(SSL,X.509,PEM,DER,CRT,CER,KEY,CSR,P12等) - guogangj - 博客园</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源<br><br></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>本文主要是讲解如何用python读取<code>p12</code>的信息。</p>
+<p>如果有过iOS团队开发经验的朋友，一定对<code>p12</code>有所了解，因为苹果开发者网站制作的cer证书，只能用生成上传苹果后台的 <code>CSR</code>（Certificate Signing Request）文件 ————<code>CertificateSigningRequest.certSigningRequest</code> 的macOS系统安装使用，同时，普通个人开发账号最多可注册iOS Development/Distribution 证书各2个。所以，<code>p12</code> 就是解决在多个电脑之间共享证书的一种方式。本文不会详解iOS证书相关知识，可以查看本文末的参考链接。</p>]]>
+    
+    </summary>
+    
+      <category term="Python" scheme="https://iHTCboy.com/tags/Python/"/>
+    
+      <category term="iOS" scheme="https://iHTCboy.com/tags/iOS/"/>
+    
+      <category term="p12" scheme="https://iHTCboy.com/tags/p12/"/>
+    
+      <category term="pyOpenSSL" scheme="https://iHTCboy.com/tags/pyOpenSSL/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[说说 iOS 非 AppStore 安装App的方法]]></title>
     <link href="https://iHTCboy.com/2019/05/07/2019-05-07_%E8%AF%B4%E8%AF%B4iOS%E9%9D%9EAppStore%E5%AE%89%E8%A3%85App%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>https://iHTCboy.com/2019/05/07/2019-05-07_说说iOS非AppStore安装App的方法/</id>
     <published>2019-05-07T14:49:16.000Z</published>
-    <updated>2019-05-29T13:40:54.078Z</updated>
+    <updated>2019-06-30T02:39:54.768Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>关于 iOS 安装 App 的方法，相信熟悉 iOS 的朋友都知道，如果是越狱设备，随便搞。但是，现实中，大部分用户都是小白，不会自己去越狱，安全是一方面。所以，普通情况下，AppStore 一家独大，企业账号可以玩一玩的情况，这也是苹果优秀的地方！ 今天就是想说说，关于新出的玩法~</p>
 <a id="more"></a>
 <h3 id="2、账号证书类型">2、账号证书类型</h3><table>
@@ -97,7 +166,7 @@
 <p>TODO</p>
 <h3 id="总结">总结</h3><p>其实，这个作为一个<code>创新</code>的安装 App 的方式，不掉包！ 已经是企业证书无法比的，而且，不需要用户到设置里点击<code>验证</code>证书！ 完全在 Safari 里完成整个安装流程，确实是举足轻重的一步，未来将怎么样发展？期待吧！</p>
 <ul>
-<li>2019.05.26 更新<br>本来想打算继续写完本文，但是发现已经有同志完成了，<a href="https://juejin.im/post/5cdeb72151882525cc707729?utm_source=gold_browser_extension" target="_blank" rel="external">超级签名-原理/机制/技术细节-完全解析 - 掘金</a>，所以，本文就这样先啦，大家有什么不明白的，讨论区一起交流~</li>
+<li>2019.05.26 更新<br>因为之前比较忙部分文章内容没有给出方案，博主想打算继续写完时，发现已经有同志完成了，<a href="https://juejin.im/post/5cdeb72151882525cc707729?utm_source=gold_browser_extension" target="_blank" rel="external">超级签名-原理/机制/技术细节-完全解析 - 掘金</a>，所以，本文就不在重复给出方案啦（当然，可以自己根据实现需要定制自己的签名流，以后有机会做这一块在给大家分享吧），大家有什么不明白的，讨论区一起交流~</li>
 </ul>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/iPhoneOTAConfiguration/ConfigurationProfileExamples/ConfigurationProfileExamples.html" target="_blank" rel="external">Configuration Profile Examples</a></li>
@@ -646,7 +715,7 @@
     <link href="https://iHTCboy.com/2019/03/14/2019-03-14_shell%E6%8A%80%E5%B7%A77-git%E6%9B%B4%E6%96%B0%E7%AD%89%E6%95%88%E7%8E%87%E8%84%9A%E6%9C%AC/"/>
     <id>https://iHTCboy.com/2019/03/14/2019-03-14_shell技巧7-git更新等效率脚本/</id>
     <published>2019-03-14T14:20:16.000Z</published>
-    <updated>2019-03-17T15:22:54.037Z</updated>
+    <updated>2019-06-30T02:33:47.514Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>经过前面那么多节的脚本使用技巧，相信大家一定已经掌握了基本的shell脚本编写，但是可能还是没有想明白，或者想到说平时工作生活中，有什么作用？今天，写写我自己在工作中，一些提高效率的脚本一起来看看吧~</p>
 <a id="more"></a>
 <h3 id="2、git_pull_更新">2、git pull 更新</h3><p>工作中，我们都知道，更新工作代码库：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> pull</span><br></pre></td></tr></table></figure></p>
@@ -671,7 +740,7 @@
 <p>比如脚本叫 <code>backup_sh.sh</code> 改为 <code>backup_sh</code> 名字，然后在终端为文件添加可执行权限：<br><code>chmod +x /Users/HTC/Desktop/backup_sh</code> </p>
 <p>以后，直接双击<code>backup_sh</code>这个文件，就会自动在终端执行，备份完成！</p>
 <p>注：其它方法可参考 <a href="https://ihtcboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/">shell技巧1 - 生成ipa文件 | iHTCboy’s blog</a> 第5小节。</p>
-<h3 id="6、总结">6、总结</h3><p>关于shell脚本就讲到这里，更多技巧和提交效率的方式，希望大家能举一反三，这都是授鱼不如授渔！ </p>
+<h3 id="6、总结">6、总结</h3><p>关于shell脚本就讲到这里，更多技巧和提交效率的方式，希望大家能举一反三，这都是授鱼不如授渔！ 关键，还是大家要熟悉学习和掌握<code>shell</code>编码，就能在工作生活中提高效率。</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
 <li><a href="https://ihtcboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/">shell技巧1 - 生成ipa文件 | iHTCboy’s blog</a></li>
@@ -2895,84 +2964,6 @@
       <category term="request.POST" scheme="https://iHTCboy.com/tags/request-POST/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[shell技巧1 - 生成ipa文件]]></title>
-    <link href="https://iHTCboy.com/2018/08/31/2018-08-31_shell%E6%8A%80%E5%B7%A71_%E7%94%9F%E6%88%90ipa%E6%96%87%E4%BB%B6/"/>
-    <id>https://iHTCboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/</id>
-    <published>2018-08-31T13:19:16.000Z</published>
-    <updated>2018-09-09T12:59:57.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>iTunes 12.7 之前，可以下载ipa应用包、打开ipa包，也生成ipa文件！但是在这12.7之后，关于ipa的所有功能已经移除，如果还想下载ipa包，可以参考我之前的文章：<a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a>，今天我们主要来说说制作ipa文件的功能。</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-iTunes12.7-new-change.png" alt="20180831-iTunes12.7-new-change.png"></p>
-<a id="more"></a>
-<h3 id="2、ipa文件结构">2、ipa文件结构</h3><p>其实ipa文件可以理解为一个zip的压缩文件，所以解压ipa文件后，得到ipa的目录 <code>ipafilename/Payload/xxx.app</code>，以微信示例：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-ipa-file-path.png" alt="20180831-ipa-file-path.png"></p>
-<p>所以，如果我们编译的项目，想生成ipa文件，以前是拖拽到iTunes就会自动生成ipa文件，现在不行了，根据这个原理，我们在Xcode中编译生成的<code>.app</code>目录，按照前面说的目录结构，进行压缩就行啦！</p>
-<h3 id="3、bash脚本">3、bash脚本</h3><ul>
-<li><p>生成.app目录内容：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-Xcode-build-app.png" alt="20180831-Xcode-build-app.png"></p>
-</li>
-<li><p>执行shell脚本生成ipa文件：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-bash-make-ipa-file.png" alt="20180831-bash-make-ipa-file.png"></p>
-</li>
-<li><p>生成成功后，自动打开ipa文件所在目录：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-finish.png" alt="20180831-make-ipa-finish.png"></p>
-</li>
-</ul>
-<h3 id="4、全部代码">4、全部代码</h3><p>具体的代码，可参考我的Github代码：</p>
-<ul>
-<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="comment"># 定义用到的变量</span></span><br><span class="line">projectAppPath=<span class="string">""</span></span><br><span class="line">outputPath=<span class="string">""</span></span><br><span class="line">ipaFileName=<span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义读取输入字符的函数</span></span><br><span class="line"><span class="function"><span class="title">getProjectAppPath</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter .app path: "</span> projectAppPath</span><br><span class="line">	<span class="comment"># 如果为空值，从新监听</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$projectAppPath</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		getprojectAppPath</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">getOutputPath</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter output path: "</span> outputPath</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$outputPath</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		<span class="comment"># 如果没有输出路径，默认输出到桌面</span></span><br><span class="line">	  outputPath=<span class="string">"Desktop"</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">getipaFileName</span></span>() &#123;</span><br><span class="line">	<span class="comment"># 输出换行，方便查看</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"\n================================================"</span></span><br><span class="line">	<span class="comment"># 监听输入并且赋值给变量</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">" Enter ipa FileName: "</span> ipaFileName</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">test</span> -z <span class="string">"<span class="variable">$ipaFileName</span>"</span>; <span class="keyword">then</span></span><br><span class="line">		getipaFileName</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行函数，给变量赋值</span></span><br><span class="line">getProjectAppPath</span><br><span class="line">getOutputPath</span><br><span class="line">getipaFileName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到当前用户的home目录，方便创建桌面目录</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在输出路径下创建 Payload 文件夹</span></span><br><span class="line">mkdir -p <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>/Payload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将.app 文件复制到 输出路径的 Payload 文件夹下</span></span><br><span class="line">cp -r <span class="string">"<span class="variable">$&#123;projectAppPath&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>/Payload/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到输出路径</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$&#123;outputPath&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 Payload 文件夹压缩成 ipa 包</span></span><br><span class="line">zip -r <span class="string">"<span class="variable">$&#123;ipaFileName&#125;</span>.ipa"</span> Payload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除当前路径下 Payload 文件夹【-r 就是向下递归，不管有多少级目录，一并删除 -f 就是直接强行删除，不作任何提示的意思】</span></span><br><span class="line">rm -rf <span class="string">"Payload"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 成功提示</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\n\n=====================【转换ipa完成】=========================\n"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;outputPath&#125;</span></span><br><span class="line"><span class="comment">## 打开输出的路径</span></span><br><span class="line"><span class="comment">#open -a Finder "$&#123;outputPath&#125;"</span></span><br><span class="line"><span class="comment"># 从当前位置打开finder</span></span><br><span class="line">open .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结束退出</span></span><br><span class="line"><span class="built_in">exit</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h3 id="5、优化">5、优化</h3><h4 id="方法一">方法一</h4><p>每次想生成ipa文件，就要打开终端，执行 <code>sh make_ipa_file.sh</code>，相当麻烦，所以，如果生成别名，直接在终端输入别名就可以执行啦，是不是很棒！</p>
-<p>为.bash_profile添加了一个别名：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkipa=<span class="string">'sh /Users/HTC/Documents/iBash/make_ipa_file.sh'</span></span><br></pre></td></tr></table></figure></p>
-<p>以后直接在终端输入：<code>mkipa</code>就可以啦，这不是很棒！！！</p>
-<h4 id="方法二">方法二</h4><p>如果是 Unix 可执行文件，直接点击，会自动打开终端执行。</p>
-<p>把 <code>make_ipa_file.sh</code> 改为 <code>make_ipa_file_sh</code> 名字，然后在终端为文件添加可执行权限：<br><code>chmod +x /Users/HTC/Desktop/make_ipa_file_sh</code> </p>
-<p>这样就生成了 Unix 文件，双击就会打开到终端：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-make-ipa-Unix-file.png" alt="20180831-make-ipa-Unix-file.png"></p>
-<h4 id="方法三">方法三</h4><p>在  ~/.bashrc 里面添加本函数，或添加脚本路径，也可以方便执行。</p>
-<h4 id="方法四">方法四</h4><p>如果是macOS环境，还可以通过苹果的apple脚本服务，来做到一键化，以后有机会在谈谈。</p>
-<h4 id="方法五">方法五</h4><p>也通过 <code>spotlight</code> 或 第三方软件 <code>Alfred</code> 快速查找文件打开~</p>
-<h3 id="6、总结">6、总结</h3><p>通过这个简单又复杂的示例，其实使用脚本的最终目录，也是想提高效率！！所以，打包ipa包的效率，也是向着这样的方向努力！如果你对shell还不熟悉，可以看看下面这2个教程，当前我学习的时候，还没有人给指导，所以，你们是幸福的一代程序员！加油！</p>
-<ul>
-<li><a href="http://www.runoob.com/linux/linux-shell.html" target="_blank" rel="external">Shell 教程 | 菜鸟教程</a></li>
-<li><del><a href="https://bestswifter.gitbook.io/effectivemac/zhong-ji-wu-qi-zsh/zhi-hang-shell-jiao-ben" target="_blank" rel="external">执行 Shell 脚本 - EffectiveMac</a></del></li>
-</ul>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
-<li><a href="https://support.apple.com/zh-cn/HT208075" target="_blank" rel="external">新版 iTunes 的变化 - Apple 支持</a></li>
-<li><a href="http://www.cnblogs.com/skywang12345/archive/2013/05/30/3106570.html" target="_blank" rel="external">Linux bash总结(一) 基础部分(适合初学者学习和非初学者参考)  - 博客园</a></li>
-<li><a href="http://www.cnblogs.com/wengzilin/p/4601684.html" target="_blank" rel="external">ios打包ipa的四种实用方法(.app转.ipa)</a></li>
-<li><a href="https://stackoverflow.com/questions/281372/executing-shell-scripts-from-the-os-x-dock?answertab=votes" target="_blank" rel="external">osx - Executing Shell Scripts from the OS X Dock? - Stack Overflow</a></li>
-<li><a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a></li>
-<li><a href="http://www.runoob.com/linux/linux-shell.html" target="_blank" rel="external">Shell 教程 | 菜鸟教程</a></li>
-<li><a href="https://bestswifter.gitbook.io/effectivemac/zhong-ji-wu-qi-zsh/zhi-hang-shell-jiao-ben" target="_blank" rel="external">执行 Shell 脚本 - EffectiveMac</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>iTunes 12.7 之前，可以下载ipa应用包、打开ipa包，也生成ipa文件！但是在这12.7之后，关于ipa的所有功能已经移除，如果还想下载ipa包，可以参考我之前的文章：<a href="https://ihtcboy.com/2017/10/30/2017_10_解决iTunes12.7无法下载AppStore应用的IPA包问题/">解决 iTunes 12.7 无法下载 AppStore应用的IPA包问题</a>，今天我们主要来说说制作ipa文件的功能。</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/08/20180831-iTunes12.7-new-change.png" alt="20180831-iTunes12.7-new-change.png"></p>]]>
-    
-    </summary>
-    
-      <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
-    
-      <category term="ipa" scheme="https://iHTCboy.com/tags/ipa/"/>
-    
-      <category term="itunes" scheme="https://iHTCboy.com/tags/itunes/"/>
-    
-      <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
-    
-      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
     
   </entry>
   
