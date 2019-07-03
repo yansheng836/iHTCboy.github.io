@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything, Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-07-01T15:31:13.641Z</updated>
+  <updated>2019-07-03T14:32:18.559Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="https://iHTCboy.com/2019/06/28/2019-06-28_Python%E5%BA%93pyOpenSSL%E8%AF%BB%E5%8F%96p12%E8%AF%81%E4%B9%A6/"/>
     <id>https://iHTCboy.com/2019/06/28/2019-06-28_Python库pyOpenSSL读取p12证书/</id>
     <published>2019-06-28T15:19:16.000Z</published>
-    <updated>2019-07-01T15:31:13.641Z</updated>
+    <updated>2019-07-03T14:32:18.559Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>本文主要是讲解如何用python读取<code>p12</code>的信息。</p>
-<p>如果有过iOS团队开发经验的朋友，一定对<code>p12</code>有所了解，因为苹果开发者网站制作的cer证书，只能用生成上传苹果后台的 <code>CSR</code>（Certificate Signing Request）文件 ————<code>CertificateSigningRequest.certSigningRequest</code> 的macOS系统安装使用，同时，普通个人开发账号最多可注册iOS Development/Distribution 证书各2个。所以，<code>p12</code> 就是解决在多个电脑之间共享证书的一种方式。本文不会详解iOS证书相关知识，可以查看本文末的参考链接。</p>
+<p>如果有过iOS团队开发经验的朋友，一定对<code>p12</code>有所了解，因为苹果开发者网站制作的cer证书，只能用生成 <code>CSR</code>（Certificate Signing Request）文件 ———<code>CertificateSigningRequest.certSigningRequest</code> 的macOS系统安装，因为生成<code>CSR</code>时，私钥保存地本地电脑中，同时，普通个人开发账号最多可注册iOS Development/Distribution 证书各2个。所以，<code>p12</code> 就是解决在多个电脑之间共享证书的一种方式。本文不会详解iOS证书相关知识，可以查看本文末的参考链接。</p>
 <a id="more"></a>
 <h3 id="2、p12证书">2、p12证书</h3><p>在讲解之前，先给大家说说原理。 <code>p12</code> — KCS12 file holds the private key and certificate. 个人信息交换（personal information exchange file）</p>
 <p><code>p12</code> 存放了证书和私钥，使用的是DER编码。那什么是DER呢? 这里就要讲讲证书的知识：</p>
@@ -74,7 +74,7 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="1、前言">1、前言</h3><p>本文主要是讲解如何用python读取<code>p12</code>的信息。</p>
-<p>如果有过iOS团队开发经验的朋友，一定对<code>p12</code>有所了解，因为苹果开发者网站制作的cer证书，只能用生成上传苹果后台的 <code>CSR</code>（Certificate Signing Request）文件 ————<code>CertificateSigningRequest.certSigningRequest</code> 的macOS系统安装使用，同时，普通个人开发账号最多可注册iOS Development/Distribution 证书各2个。所以，<code>p12</code> 就是解决在多个电脑之间共享证书的一种方式。本文不会详解iOS证书相关知识，可以查看本文末的参考链接。</p>]]>
+<p>如果有过iOS团队开发经验的朋友，一定对<code>p12</code>有所了解，因为苹果开发者网站制作的cer证书，只能用生成 <code>CSR</code>（Certificate Signing Request）文件 ———<code>CertificateSigningRequest.certSigningRequest</code> 的macOS系统安装，因为生成<code>CSR</code>时，私钥保存地本地电脑中，同时，普通个人开发账号最多可注册iOS Development/Distribution 证书各2个。所以，<code>p12</code> 就是解决在多个电脑之间共享证书的一种方式。本文不会详解iOS证书相关知识，可以查看本文末的参考链接。</p>]]>
     
     </summary>
     
