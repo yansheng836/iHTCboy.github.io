@@ -9,14 +9,12 @@
   <link rel="canonical" href="https://ihtcboy.com" />
   <title>PyCharm 2018 for mac 数据库实战：链接SQLite、建表、添加、查询数据 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言
-最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
+  <meta name="description" content="一、前言最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyCharm 2018 for mac 数据库实战：链接SQLite、建表、添加、查询数据">
 <meta property="og:url" content="https://iHTCboy.com/2018/04/03/2018-04-03_PyCharm_2018_for_mac数据库实战_链接SQLite_建表_添加_查询数据/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="一、前言
-最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
+<meta property="og:description" content="一、前言最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createDBfile.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-openSqliteConfig.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-downloadSqliteDriver.png">
@@ -29,11 +27,10 @@
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-SelectFrom.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-referencesForeignKey.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-insertInfoValuesMore.png">
-<meta property="og:updated_time" content="2018-05-06T13:03:14.000Z">
+<meta property="og:updated_time" content="2019-07-14T08:55:22.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PyCharm 2018 for mac 数据库实战：链接SQLite、建表、添加、查询数据">
-<meta name="twitter:description" content="一、前言
-最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
+<meta name="twitter:description" content="一、前言最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -250,11 +247,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、前言">一、前言</h3><hr>
-<p>最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~</p>
+        <h3 id="一、前言">一、前言</h3><p>最近开始入门python，当然是要使用PyCharm，然后在项目中遇到.db数据库文件，双击打不开？网上找到了windows版本的教程，版本也比较旧，所以有空就来一发，当备忘也好~</p>
 <a id="more"></a>
-<h3 id="二、链接SQLite">二、链接SQLite</h3><hr>
-<h6 id="2-1_控制台创建数据库DB文件">2.1 控制台创建数据库DB文件</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createDBfile.png" alt="创建数据库DB文件"></p>
+<h3 id="二、链接SQLite">二、链接SQLite</h3><h6 id="2-1_控制台创建数据库DB文件">2.1 控制台创建数据库DB文件</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-createDBfile.png" alt="创建数据库DB文件"></p>
 <h6 id="2-2_打开sqlite配置界面">2.2 打开sqlite配置界面</h6><p>按下图步骤打开sqlite配置目录<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-openSqliteConfig.png" alt="打开sqlite配置界面"></p>
 <h6 id="2-3_安装sqlite驱动">2.3 安装sqlite驱动</h6><p>点击下载驱动，直到显示提示“no objects”：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-downloadSqliteDriver.png" alt="安装sqlite驱动"></p>
 <h6 id="2-4_链接刚才创建的数据库_ios_test-db文件">2.4  链接刚才创建的数据库 ios_test.db文件</h6><p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/04/20180403-ConnectionSqliteFile.png" alt=" 链接数据库Sqlite文件"></p>
@@ -270,7 +265,7 @@ var _hmt = _hmt || [];
 <p>相关代码：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建一个表</span></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> iOSDevice(</span><br><span class="line">  deviceName <span class="built_in">TEXT</span></span><br><span class="line">);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 插入数据</span></span><br><span class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> iOSDevice <span class="keyword">values</span>(<span class="string">'iPhone8'</span>);</span></span><br><span class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> iOSDevice <span class="keyword">values</span>(<span class="string">'iPhone8 Plus'</span>);</span></span><br><span class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> iOSDevice <span class="keyword">values</span>(<span class="string">'iPhoneX'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询所有数据</span></span><br><span class="line"><span class="operator">select * <span class="keyword">from</span> iOSDevice;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建一个新表</span></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> iProduct (</span><br><span class="line">  Mac    <span class="built_in">text</span>,</span><br><span class="line">  iPhone <span class="built_in">text</span>,</span><br><span class="line">  iPad   <span class="built_in">text</span>,</span><br><span class="line">  Watch  <span class="built_in">text</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">--  关联表</span></span><br><span class="line">  foreign <span class="keyword">key</span> (iPhone) <span class="keyword">references</span> iOSDevice(deviceName)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--  插入多个值</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> iProduct <span class="keyword">values</span>(</span><br><span class="line">  <span class="string">'Macbook Pro'</span>,</span><br><span class="line">  <span class="string">'iPhone'</span>,</span><br><span class="line">  <span class="string">'iPad mini4'</span>,</span><br><span class="line">  <span class="string">'apple Watch'</span></span><br><span class="line">);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询表数据</span></span><br><span class="line"><span class="operator">select * <span class="keyword">from</span> iProduct;</span></span><br></pre></td></tr></table></figure>
 <h3 id="四、总结">四、总结</h3><hr>
-<p>通过PyCharm进行SQLite操作，之前真没有想到PyCharm如此强大！IDE就是<code>IDE</code>，收费也是硬道理！希望好好利用PyCharm做更多有趣的事件~</p>
+<p>通过PyCharm进行SQLite操作，之前真没有想到PyCharm如此强大！IDE就是<code>IDE</code>，收费也是硬道理！希望好好利用PyCharm做更多有趣的Py事情，加油~</p>
 <h3 id="五、参考引用">五、参考引用</h3><ul>
 <li><a href="https://blog.csdn.net/qq_36482772/article/details/53458400" target="_blank" rel="external">PyCharm IDE 链接sqlite、建表、添加、查询数据 - CSDN博客 </a></li>
 </ul>
