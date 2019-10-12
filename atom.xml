@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-07-27T11:28:12.544Z</updated>
+  <updated>2019-10-12T15:07:35.081Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在旧的Mac上使用随航(Sidecar)]]></title>
+    <link href="https://iHTCboy.com/2019/10/12/2019-10-12_%E5%9C%A8%E6%97%A7%E7%9A%84Mac%E4%B8%8A%E4%BD%BF%E7%94%A8%E9%9A%8F%E8%88%AASidecar/"/>
+    <id>https://iHTCboy.com/2019/10/12/2019-10-12_在旧的Mac上使用随航Sidecar/</id>
+    <published>2019-10-12T15:01:16.000Z</published>
+    <updated>2019-10-12T15:07:35.081Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>6月 <code>WWDC2019</code> 上苹果发布新的 <code>macOS 10.15</code>，同时发布 <code>Sidecar</code>（随航）功能，可以把 <code>macOS</code> 界面转发到 <code>iPad</code> 上，但是对于旧的 Mac 电脑，不支持随航功能！我的 <code>MacBook Pro (Retina, 13-inch, Mid 2014)</code> 哭晕在厕所~</p>
+<a id="more"></a>
+<h3 id="2、正文">2、正文</h3><h3 id="3、总结">3、总结</h3><h3 id="参考">参考</h3><p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源<br><br></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>6月 <code>WWDC2019</code> 上苹果发布新的 <code>macOS 10.15</code>，同时发布 <code>Sidecar</code>（随航）功能，可以把 <code>macOS</code> 界面转发到 <code>iPad</code> 上，但是对于旧的 Mac 电脑，不支持随航功能！我的 <code>MacBook Pro (Retina, 13-inch, Mid 2014)</code> 哭晕在厕所~</p>]]>
+    
+    </summary>
+    
+      <category term="Mac" scheme="https://iHTCboy.com/tags/Mac/"/>
+    
+      <category term="Sidecar" scheme="https://iHTCboy.com/tags/Sidecar/"/>
+    
+      <category term="macOS" scheme="https://iHTCboy.com/tags/macOS/"/>
+    
+      <category term="随航" scheme="https://iHTCboy.com/tags/%E9%9A%8F%E8%88%AA/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[用Python库pyOpenSSL读取iOS的p12证书]]></title>
@@ -2883,94 +2918,6 @@
       <category term="爬虫" scheme="https://iHTCboy.com/tags/%E7%88%AC%E8%99%AB/"/>
     
       <category term="网易云音乐" scheme="https://iHTCboy.com/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[django中ajax post数据时request.POST获取数组问题]]></title>
-    <link href="https://iHTCboy.com/2018/09/05/2018-09-05_post%E5%8F%82%E6%95%B0%E4%B8%BA%E6%95%B0%E7%BB%84%E6%97%B6django%E4%B8%ADrequest%E9%97%AE%E9%A2%98/"/>
-    <id>https://iHTCboy.com/2018/09/05/2018-09-05_post参数为数组时django中request问题/</id>
-    <published>2018-09-05T10:49:16.000Z</published>
-    <updated>2018-09-09T14:31:59.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在使用django开发web页面时，使用ajax的post参数中带有数组，然后在 <code>request.POST</code> 里获取的数组时，数组变成了一个元组！！！官方给出的通过 <code>request.POST.getlist(&#39;key&#39;)</code>来获取也是很鸡肉！那要怎么解决呢？</p>
-<a id="more"></a>
-<h3 id="2、问题">2、问题</h3><p>问题是这样，在前端js的post请求参数带有数组或字典：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = &#123;</span><br><span class="line">    <span class="string">'account'</span>: account,</span><br><span class="line">    <span class="string">'password'</span>: password,</span><br><span class="line">    <span class="string">'array'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">    <span class="string">'dict'</span>: &#123;<span class="string">'k1'</span>: <span class="string">'v1'</span>, <span class="string">'k2'</span>: <span class="string">'v2'</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: url,</span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    data: body,</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>在django后python解析request.POST，获取数组就变成这样：</p>
-<p>如果是这样写：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">    array = request.POST[<span class="string">'array'</span>]</span><br><span class="line">    dict = request.POST[<span class="string">'dict'</span>]</span><br></pre></td></tr></table></figure>
-<p>直接是报错：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">raise <span class="function"><span class="title">MultiValueDictKeyError</span><span class="params">(key)</span></span></span><br><span class="line">django<span class="class">.utils</span><span class="class">.datastructures</span><span class="class">.MultiValueDictKeyError</span>: <span class="string">'array'</span></span><br></pre></td></tr></table></figure>
-<p>所以我们要看看 <code>request.POST</code> 到底是什么类型，内容又是什么？？？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">request.POST：</span><br><span class="line">&lt;QueryDict: &#123;<span class="string">'account'</span>: [<span class="string">'account'</span>], <span class="string">'password'</span>: [<span class="string">'password'</span>], <span class="string">'array[]'</span>: [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>], <span class="string">'dict[k1]'</span>: [<span class="string">'v1'</span>], <span class="string">'dict[k2]'</span>: [<span class="string">'v2'</span>]&#125;&gt;</span><br></pre></td></tr></table></figure>
-<p><code>QueryDict</code> ？？？字典！！！</p>
-<p>从前端传入的数组，变成了字典，问题有三个：</p>
-<ul>
-<li><code>array</code> 变成 <code>array[]</code> 键</li>
-<li><code>[1, 2, 3]</code> 变成 <code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</code></li>
-<li><code>dict</code> 变成 <code>dict[k1]</code>、<code>dict[k1]</code></li>
-</ul>
-<p>其实，这个不是bug！！！</p>
-<blockquote>
-<p>这是一个 django 自定义的类似字典的类，用来处理同一个键带多个值的情况。 python 原始的字典中，当一个键出现多个值的时候会发生冲突，只保留最后一个值。而在 HTML 表单中，通常会发生一个键有多个值的情况。</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> query_string 需要一个字符串 a=<span class="number">1</span>&amp;a=<span class="number">2</span>&amp;c=<span class="number">3</span>，例如：</span><br><span class="line"></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>QueryDict(<span class="string">'a=1&amp;a=2&amp;c=3'</span>)</span><br><span class="line">&lt;QueryDict: &#123;<span class="string">'a'</span>: [<span class="string">'1'</span>, <span class="string">'2'</span>], <span class="string">'c'</span>: [<span class="string">'3'</span>]&#125;&gt;</span><br></pre></td></tr></table></figure>
-<p>那么怎么取值呢？</p>
-<p>按照<code>getlist(key)</code> 拿不到：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180905-request.POST-getlist-key.png" alt="20180905-request.POST-getlist-key.png"></p>
-<p>用 <code>[key]</code> 只取到容器的最后一个值：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180905-request.POST-get.png" alt="20180905-request.POST-get.png"></p>
-<p>用 <code>getlist(key[])</code> 数组可以拿到字符串数组，但是字典就只能一个一个拿了！<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180905-request.POST-getlist.png" alt="20180905-request.POST-getlist.png"></p>
-<h3 id="3、解决方法">3、解决方法</h3><ul>
-<li>方法一</li>
-</ul>
-<p>在前端的body参数变成json字符串：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">    <span class="string">'account'</span>: account,</span><br><span class="line">    <span class="string">'password'</span>: password,</span><br><span class="line">    <span class="string">'array'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">    <span class="string">'dict'</span>: &#123;<span class="string">'k1'</span>: <span class="string">'v1'</span>, <span class="string">'k2'</span>: <span class="string">'v2'</span>&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>但在后端得到的是这样：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;QueryDict: &#123;<span class="string">'&#123;"account":"account","password":"password","array":[1,2,3],"dict":&#123;"k1":"v1","k2":"v2"&#125;&#125;'</span>: [<span class="string">''</span>]&#125;&gt;</span><br></pre></td></tr></table></figure>
-<p>全部参数作为key的字典，显示不符合要求，并且导致处理复杂起来。</p>
-<ul>
-<li>方法二<br>子级变成json字符串：</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = &#123;</span><br><span class="line">    <span class="string">'account'</span>: account,</span><br><span class="line">    <span class="string">'password'</span>: password,</span><br><span class="line">    <span class="string">'array'</span>: <span class="built_in">JSON</span>.stringify([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]),</span><br><span class="line">    <span class="string">'dict'</span>: <span class="built_in">JSON</span>.stringify(&#123;<span class="string">'k1'</span>: <span class="string">'v1'</span>, <span class="string">'k2'</span>: <span class="string">'v2'</span>&#125;)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>得到的结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;QueryDict: &#123;<span class="string">'account'</span>: [<span class="string">'account'</span>], <span class="string">'password'</span>: [<span class="string">'password'</span>], <span class="string">'array'</span>: [<span class="string">'[1,2,3]'</span>], <span class="string">'dict'</span>: [<span class="string">'&#123;"k1":"v1","k2":"v2"&#125;'</span>]&#125;&gt;</span><br></pre></td></tr></table></figure>
-<p>数组和字典的全部值作为value，并且是string类型，显示不符合要求，并且导致处理复杂起来。</p>
-<ul>
-<li>方法三<br>其实，我们知道后端为了多个相同key存在，所以才这样处理，那么我们可以这样考虑，让数据和字典不在是数组和字典，后端在还原不就可以啦！</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = &#123;</span><br><span class="line">    <span class="string">'account'</span>: account,</span><br><span class="line">    <span class="string">'password'</span>: password,</span><br><span class="line">    <span class="string">'array'</span>: <span class="string">'1'</span> + <span class="built_in">JSON</span>.stringify([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]),</span><br><span class="line">    <span class="string">'dict'</span>: <span class="string">'1'</span> + <span class="built_in">JSON</span>.stringify(&#123;<span class="string">'k1'</span>: <span class="string">'v1'</span>, <span class="string">'k2'</span>: <span class="string">'v2'</span>&#125;)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>让 ‘array’、’dict’ 变成 ‘1’ + json字符串形式，然后后端按规则还原：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;QueryDict: &#123;<span class="string">'account'</span>: [<span class="string">'account'</span>], <span class="string">'password'</span>: [<span class="string">'password'</span>], <span class="string">'array'</span>: [<span class="string">'1[1,2,3]'</span>], <span class="string">'dict'</span>: [<span class="string">'1&#123;"k1":"v1","k2":"v2"&#125;'</span>]&#125;&gt;</span><br></pre></td></tr></table></figure>
-<p>按规则还原：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array = request.POST[<span class="string">'array'</span>]</span><br><span class="line">dict = request.POST[<span class="string">'dict'</span>]</span><br><span class="line">array_list = json.loads(array[<span class="number">1</span>:])</span><br><span class="line">dict_list = json.loads(dict[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2018/09/20180905-request.POST-irregular.png" alt="20180905-request.POST-irregular.png"></p>
-<p>这样拿也许不是好办法，但是当你数组或字典数据非常多时，也就这样啦，当然，也可以json字符串后加密，这样后端也不能解析，如果需要，大家也可以这样做啊~</p>
-<h3 id="总结">总结</h3><p>在处理这些数据时，可能是为了方便而方便，有时候只有清楚知道原因，才能更好的处理，上面的方法确实不是<code>好方法</code>，有时候还是按规则来处理更好，一个人开发还好，如果是多人，那将来可能会留下坑啊。</p>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://www.jianshu.com/p/7af7e1e783ee" target="_blank" rel="external">关于ajax post 数据时django中request.body与request.POST问题 - 简书</a></li>
-<li><a href="https://www.cnblogs.com/scolia/p/5634591.html" target="_blank" rel="external">django-QueryDict 对象 - scolia - 博客园</a></li>
-<li><a href="https://docs.djangoproject.com/en/dev/ref/request-response/#django.http.QueryDict.getlist" target="_blank" rel="external">Request and response objects | Django documentation | Django</a></li>
-<li><a href="https://www.cnblogs.com/ccorz/p/6346883.html" target="_blank" rel="external">django中同通过getlist() 接收页面form的post数组 - ccorz - 博客园</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在使用django开发web页面时，使用ajax的post参数中带有数组，然后在 <code>request.POST</code> 里获取的数组时，数组变成了一个元组！！！官方给出的通过 <code>request.POST.getlist(&#39;key&#39;)</code>来获取也是很鸡肉！那要怎么解决呢？</p>]]>
-    
-    </summary>
-    
-      <category term="django" scheme="https://iHTCboy.com/tags/django/"/>
-    
-      <category term="post数组参数" scheme="https://iHTCboy.com/tags/post%E6%95%B0%E7%BB%84%E5%8F%82%E6%95%B0/"/>
-    
-      <category term="request.POST" scheme="https://iHTCboy.com/tags/request-POST/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
