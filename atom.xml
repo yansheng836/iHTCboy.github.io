@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-10-13T16:19:19.752Z</updated>
+  <updated>2019-10-14T15:34:49.711Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/10/12/2019-10-12_%E5%9C%A8%E6%97%A7%E7%9A%84Mac%E4%B8%8A%E4%BD%BF%E7%94%A8%E9%9A%8F%E8%88%AASidecar/"/>
     <id>https://iHTCboy.com/2019/10/12/2019-10-12_在旧的Mac上使用随航Sidecar/</id>
     <published>2019-10-12T15:01:16.000Z</published>
-    <updated>2019-10-13T16:19:19.752Z</updated>
+    <updated>2019-10-14T15:34:49.711Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>6月 <code>WWDC2019</code> 上苹果发布新的 <code>macOS 10.15</code>，同时发布 <code>Sidecar</code>（随航）功能，可以把 <code>macOS</code> 界面转发到 <code>iPad</code> 上，但是对于旧的 Mac 电脑，不支持随航功能！我的 <code>MacBook Pro (Retina, 13-inch, Mid 2014)</code> 哭晕在厕所~</p>
 <a id="more"></a>
 <h3 id="2、Sidecar（随航）">2、Sidecar（随航）</h3><p>按苹果的介绍：</p>
@@ -29,7 +29,7 @@
 </blockquote>
 <p>翻译过来就是：</p>
 <blockquote>
-<p>Sidecar系列：苹果展开工作空间和创造力与iPad </p>
+<p>Sidecar：扩展 Mac 的工作空间和用 iPad 创作</p>
 <p>新的 Sidecar 功能通过使用 iPad 作为第二显示器，让他们把她们的工作延长了用户的 Mac 工作区。边三轮，您可以使用 iPad 显示屏的平板电脑输入画，素描或与苹果铅笔在任何苹果或支持手写笔输入的第三方 Mac 应用程序编写。三轮有线连接上运行，以便为他们工作的用户可以收取他们的 iPad 或对流动性较大的无线连接，使用一切从插图的应用程序和视频编辑应用到3D 应用程序，如 Photoshop，Illustrator 和 ZBrush的。</p>
 </blockquote>
 <h3 id="2、解决的方法">2、解决的方法</h3><h4 id="前述">前述</h4><p>在 macOS10.15 beta 版本时，旧版的Mac电脑，可以通过下面的命令开启 Sidecar：</p>
@@ -44,12 +44,21 @@
 <p>具体脚本见：<a href="http://dev.zeppel.eu/luca/SidecarCorePatch" target="_blank" rel="external">luca/SidecarCorePatch: Enables Sidecar support on MacOS Catalina 10.15 Beta on non Apple supported devices. - Zeppel</a></p>
 <p>在这里就不多说了，因人而异。</p>
 <p><strong>需要补充说明一下，虽然这个方法可以让旧的 Mac 实现 Sidecar（随航），但是会出现闪屏！！闪屏！！闪屏！！</strong></p>
-<h3 id="最佳的情况">最佳的情况</h3><p>对于采用桌面支持类似的限制。你需要一个2015年或更高版本的iMac，2018年的Mac mini，iMac的Pro或即将推出的Mac Pro。这也是值得注意的，你需要一个相对较新的iPad采取功能的优势。在这里，苹果公司表示，与苹果铅笔支持的iPad和iPadOS 13是需要使用的Sidecar。该功能的另一个限制是，你只能进行身份验证的相同的Apple ID两个设备使用。因此，你不能说，例如，借用一个家庭成员的iPad，如果他们绑到不同的帐户。</p>
-<p>您必须登录到同一个Apple ID的两台设备上的Sidecar工作<br>双因素身份验证，必须在iPad和Mac上启用<br>蓝牙也都必须是设备上的活动<br>如果以无线方式连接，确保两个设备连接到同一个WiFi网络</p>
+<p>所以，如果只是想体验的，可以试试，否则，还是放弃吧…</p>
+<h3 id="3、最佳的情况">3、最佳的情况</h3><p>按 <a href="https://www.apple.com/macos/catalina/docs/Sidecar_Tech_Brief_Oct_2019.pdf" target="_blank" rel="external">苹果的文档</a> Sidecar 对设备的要求：</p>
 <h4 id="Macs">Macs</h4><p>MacBook introduced in 2016 or later<br>MacBook Air introduced in 2018 or later<br>MacBook Pro introduced in 2016 or later<br>Mac mini introduced in 2018 or later<br>iMac introduced in late 2015 or later<br>iMac Pro introduced in 2017 or later<br>Mac Pro introduced in 2019</p>
 <h4 id="iPads">iPads</h4><p>12.9-inch iPad Pro<br>11-inch iPad Pro<br>10.5-inch iPad Pro<br>9.7-inch iPad Pro<br>iPad (6th generation or later)<br>iPad mini (5th generation)<br>iPad Air (3rd generation)</p>
-<h3 id="3、总结">3、总结</h3><p>Duet</p>
+<h4 id="环境要求">环境要求</h4><ol>
+<li>必须登录同一个 Apple ID 的两台设备上（一台Mac，一台iPad）</li>
+<li>Apple ID 开启了双重因素身份验证，必须在iPad和Mac上启用</li>
+<li>必须是设备上开启蓝牙</li>
+<li>如果以无线方式连接，确保两个设备连接到同一个WiFi网络</li>
+<li>Mac 系统为 <code>macOS 10.15</code> 以上，iPad 系统为 <code>iPadOS 13</code> 以上</li>
+</ol>
+<h3 id="3、总结">3、总结</h3><p>总的来说，又多了一个理由换 MBP! </p>
+<p>当然，如果真想用，还有第三方软件 <code>Duet</code>，但是我依然觉得太卡~</p>
 <h3 id="参考">参考</h3><ul>
+<li><a href="https://www.apple.com/macos/catalina/docs/Sidecar_Tech_Brief_Oct_2019.pdf" target="_blank" rel="external">Sidecar_Tech_Brief_Oct_2019 - Apple</a></li>
 <li><a href="https://www.reddit.com/r/apple/comments/bx3eet/sidecar_support_on_older_macs/" target="_blank" rel="external">Sidecar support on older Macs : apple</a></li>
 <li><a href="https://appletoolbox.com/sidecar-not-working-in-ipados-and-macos-how-to-fix-sidecar-problems/" target="_blank" rel="external">Sidecar not working in iPadOS and macOS? How to fix Sidecar problems - AppleToolBox</a></li>
 <li><a href="https://www.engadget.com/2019/10/08/apple-macos-sidecar-newer-macs/" target="_blank" rel="external">Apple’s Sidecar feature only works on newer Macs</a></li>
