@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-10-14T15:34:49.711Z</updated>
+  <updated>2019-10-15T14:37:20.825Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/10/12/2019-10-12_%E5%9C%A8%E6%97%A7%E7%9A%84Mac%E4%B8%8A%E4%BD%BF%E7%94%A8%E9%9A%8F%E8%88%AASidecar/"/>
     <id>https://iHTCboy.com/2019/10/12/2019-10-12_在旧的Mac上使用随航Sidecar/</id>
     <published>2019-10-12T15:01:16.000Z</published>
-    <updated>2019-10-14T15:34:49.711Z</updated>
+    <updated>2019-10-15T14:37:20.825Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>6月 <code>WWDC2019</code> 上苹果发布新的 <code>macOS 10.15</code>，同时发布 <code>Sidecar</code>（随航）功能，可以把 <code>macOS</code> 界面转发到 <code>iPad</code> 上，但是对于旧的 Mac 电脑，不支持随航功能！我的 <code>MacBook Pro (Retina, 13-inch, Mid 2014)</code> 哭晕在厕所~</p>
 <a id="more"></a>
 <h3 id="2、Sidecar（随航）">2、Sidecar（随航）</h3><p>按苹果的介绍：</p>
@@ -55,7 +55,7 @@
 <li>如果以无线方式连接，确保两个设备连接到同一个WiFi网络</li>
 <li>Mac 系统为 <code>macOS 10.15</code> 以上，iPad 系统为 <code>iPadOS 13</code> 以上</li>
 </ol>
-<h3 id="3、总结">3、总结</h3><p>总的来说，又多了一个理由换 MBP! </p>
+<h3 id="3、总结">3、总结</h3><p>总的来说，又多了一个理由换 MBP! 对于程序员，写代码的环境，总是觉得屏幕不够大！</p>
 <p>当然，如果真想用，还有第三方软件 <code>Duet</code>，但是我依然觉得太卡~</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://www.apple.com/macos/catalina/docs/Sidecar_Tech_Brief_Oct_2019.pdf" target="_blank" rel="external">Sidecar_Tech_Brief_Oct_2019 - Apple</a></li>
