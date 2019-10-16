@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-10-15T14:37:20.825Z</updated>
+  <updated>2019-10-16T15:17:41.152Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/10/12/2019-10-12_%E5%9C%A8%E6%97%A7%E7%9A%84Mac%E4%B8%8A%E4%BD%BF%E7%94%A8%E9%9A%8F%E8%88%AASidecar/"/>
     <id>https://iHTCboy.com/2019/10/12/2019-10-12_在旧的Mac上使用随航Sidecar/</id>
     <published>2019-10-12T15:01:16.000Z</published>
-    <updated>2019-10-15T14:37:20.825Z</updated>
+    <updated>2019-10-16T15:17:41.152Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>6月 <code>WWDC2019</code> 上苹果发布新的 <code>macOS 10.15</code>，同时发布 <code>Sidecar</code>（随航）功能，可以把 <code>macOS</code> 界面转发到 <code>iPad</code> 上，但是对于旧的 Mac 电脑，不支持随航功能！我的 <code>MacBook Pro (Retina, 13-inch, Mid 2014)</code> 哭晕在厕所~</p>
 <a id="more"></a>
 <h3 id="2、Sidecar（随航）">2、Sidecar（随航）</h3><p>按苹果的介绍：</p>
@@ -56,7 +56,8 @@
 <li>Mac 系统为 <code>macOS 10.15</code> 以上，iPad 系统为 <code>iPadOS 13</code> 以上</li>
 </ol>
 <h3 id="3、总结">3、总结</h3><p>总的来说，又多了一个理由换 MBP! 对于程序员，写代码的环境，总是觉得屏幕不够大！</p>
-<p>当然，如果真想用，还有第三方软件 <code>Duet</code>，但是我依然觉得太卡~</p>
+<p>苹果这几年来的创新，应该就是对生态系统的整合，从 <code>Handoff</code> 到收购 <code>workflow</code>，变成 <code>Shortcuts</code>, iOS 到 iPadOS，企图壮大<code>macOS</code>！当然，从家长监控软件，到<code>Duet</code>，大家都是觉得苹果<code>抄</code>他们的生活的绝路，也许绝路才是最好的前路！</p>
+<p>当然，如果真想用，还是用第三方软件 <code>Duet</code>，但是我依然觉得太卡~</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://www.apple.com/macos/catalina/docs/Sidecar_Tech_Brief_Oct_2019.pdf" target="_blank" rel="external">Sidecar_Tech_Brief_Oct_2019 - Apple</a></li>
 <li><a href="https://www.reddit.com/r/apple/comments/bx3eet/sidecar_support_on_older_macs/" target="_blank" rel="external">Sidecar support on older Macs : apple</a></li>
