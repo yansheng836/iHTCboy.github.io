@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-10-16T15:17:41.152Z</updated>
+  <updated>2019-10-17T15:09:27.611Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/10/12/2019-10-12_%E5%9C%A8%E6%97%A7%E7%9A%84Mac%E4%B8%8A%E4%BD%BF%E7%94%A8%E9%9A%8F%E8%88%AASidecar/"/>
     <id>https://iHTCboy.com/2019/10/12/2019-10-12_在旧的Mac上使用随航Sidecar/</id>
     <published>2019-10-12T15:01:16.000Z</published>
-    <updated>2019-10-16T15:17:41.152Z</updated>
+    <updated>2019-10-17T15:09:27.611Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>6月 <code>WWDC2019</code> 上苹果发布新的 <code>macOS 10.15</code>，同时发布 <code>Sidecar</code>（随航）功能，可以把 <code>macOS</code> 界面转发到 <code>iPad</code> 上，但是对于旧的 Mac 电脑，不支持随航功能！我的 <code>MacBook Pro (Retina, 13-inch, Mid 2014)</code> 哭晕在厕所~</p>
 <a id="more"></a>
 <h3 id="2、Sidecar（随航）">2、Sidecar（随航）</h3><p>按苹果的介绍：</p>
@@ -42,6 +42,21 @@
 </blockquote>
 <h4 id="后述">后述</h4><p>当然，这样的情况下，还是有大神做了一个脚本，执行后，可以修改 SidecarCore 苹果私有框架（SidecarCore.framework）从黑名单中移除您的Mac机型。</p>
 <p>具体脚本见：<a href="http://dev.zeppel.eu/luca/SidecarCorePatch" target="_blank" rel="external">luca/SidecarCorePatch: Enables Sidecar support on MacOS Catalina 10.15 Beta on non Apple supported devices. - Zeppel</a></p>
+<ol>
+<li>Backup /System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore in case something goes wrong.</li>
+<li>Disable SIP. Check status with $ csrutil status</li>
+<li>clone this repo $ git clone <a href="http://dev.zeppel.eu/luca/SidecarCorePatch.git" target="_blank" rel="external">http://dev.zeppel.eu/luca/SidecarCorePatch.git</a></li>
+<li>run the patch as root $ sudo swift patch.swift</li>
+<li>reboot your mac</li>
+</ol>
+<ol>
+<li>备份 /System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore 以备无防.</li>
+<li>关闭 SIP. 通过这个命令检查是否关闭： <code>$ csrutil status</code></li>
+<li>克隆本仓库 <code>$ git clone http://dev.zeppel.eu/luca/SidecarCorePatch.git</code></li>
+<li>使用管理员权限执行脚本：<code>$ sudo swift patch.swift</code></li>
+<li>重启 mac</li>
+</ol>
+<p>注：关于 <a href="https://en.wikipedia.org/wiki/System_Integrity_Protection" target="_blank" rel="external">SIP</a>（System Integrity Protection, 系统完整性保护）这里就不多说，可以<a href="https://www.jianshu.com/p/fe78d2036192" target="_blank" rel="external">自行搜索</a>。要关闭 SIP，需要进入恢复系统模式的终端下执行 <code>csrutil disable</code>。</p>
 <p>在这里就不多说了，因人而异。</p>
 <p><strong>需要补充说明一下，虽然这个方法可以让旧的 Mac 实现 Sidecar（随航），但是会出现闪屏！！闪屏！！闪屏！！</strong></p>
 <p>所以，如果只是想体验的，可以试试，否则，还是放弃吧…</p>
@@ -55,14 +70,15 @@
 <li>如果以无线方式连接，确保两个设备连接到同一个WiFi网络</li>
 <li>Mac 系统为 <code>macOS 10.15</code> 以上，iPad 系统为 <code>iPadOS 13</code> 以上</li>
 </ol>
-<h3 id="3、总结">3、总结</h3><p>总的来说，又多了一个理由换 MBP! 对于程序员，写代码的环境，总是觉得屏幕不够大！</p>
-<p>苹果这几年来的创新，应该就是对生态系统的整合，从 <code>Handoff</code> 到收购 <code>workflow</code>，变成 <code>Shortcuts</code>, iOS 到 iPadOS，企图壮大<code>macOS</code>！当然，从家长监控软件，到<code>Duet</code>，大家都是觉得苹果<code>抄</code>他们的生活的绝路，也许绝路才是最好的前路！</p>
-<p>当然，如果真想用，还是用第三方软件 <code>Duet</code>，但是我依然觉得太卡~</p>
+<h3 id="3、总结">3、总结</h3><p>当然，如果真想用分屏多屏，还是可以用著名的第三方软件 <code>Duet</code>！但是我依然觉得太卡~ 虽然它支持多系统平台。</p>
+<p>总的来说，又多了一个理由换 MBP! 对于程序员，写代码的环境，总是觉得屏幕不够大！</p>
+<p>苹果这几年来的创新，应该就是对生态系统的整合，从 <code>Handoff</code> 到收购 <code>workflow</code>，变成 <code>Shortcuts</code>, iOS 到 iPadOS，企图壮大<code>macOS</code>！当然，从家长监控软件，到<code>Duet</code>，大家都是觉得苹果<code>抄</code>他们的生活的绝路，也许绝路才是最好的前路！也许，也是我们所期待的苹果~</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://www.apple.com/macos/catalina/docs/Sidecar_Tech_Brief_Oct_2019.pdf" target="_blank" rel="external">Sidecar_Tech_Brief_Oct_2019 - Apple</a></li>
 <li><a href="https://www.reddit.com/r/apple/comments/bx3eet/sidecar_support_on_older_macs/" target="_blank" rel="external">Sidecar support on older Macs : apple</a></li>
 <li><a href="https://appletoolbox.com/sidecar-not-working-in-ipados-and-macos-how-to-fix-sidecar-problems/" target="_blank" rel="external">Sidecar not working in iPadOS and macOS? How to fix Sidecar problems - AppleToolBox</a></li>
 <li><a href="https://www.engadget.com/2019/10/08/apple-macos-sidecar-newer-macs/" target="_blank" rel="external">Apple’s Sidecar feature only works on newer Macs</a></li>
+<li><a href="https://www.jianshu.com/p/fe78d2036192" target="_blank" rel="external">Mac开启关闭SIP（系统完整性保护） - 简书</a></li>
 </ul>
 <p><br></p>
 <ul>
