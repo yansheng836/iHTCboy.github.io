@@ -2023,7 +2023,7 @@
     <link href="https://iHTCboy.com/2018/09/30/2018-09-30_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9AMac%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://iHTCboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/</id>
     <published>2018-09-30T15:49:16.000Z</published>
-    <updated>2019-08-03T15:01:31.287Z</updated>
+    <updated>2019-10-27T14:30:54.843Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近在写《程序员的macOS系列》文章，之前写的第一篇 <a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a>，大家都希望楼主尽快更新，结果拖到了2个月后，所以今天终于更新啦！其实macOS开发环境，系统默认自带ruby、php、python2、gcc、g++、bash等环境，并且因为<code>macOS</code>是以<code>Unix</code>为基础，所以有传统<code>Unix/Linux</code>的特性，很适合高效少折腾的开发者。所以，本文主要讲解一些通用开发环境配置，主要是以必须和提高效率为主！也没有什么高深介绍，当然，由于楼主目前主职是iOS，所以其它的开发环境接触不多(谦虚)，当前大家要学以至用，环境搭建都是相似的，熟悉了就不是问题。文章短短不可能详尽也，要学好每一个点也不是那么简单，惟有抛砖引玉，希望大家努力提高！</p>
 <ul>
 <li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_程序员的macOS系列：精选MacApp/">程序员的macOS系列：精选Mac App</a></li>
@@ -2155,6 +2155,8 @@
 <p>macOS 10.14 后，苹果对安全和隐私保护这一块更加严厉，当然，事件有好的一面，也有不好（不方便）的一面，大家智者见智，我一般是把这个命令当成别名：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> macss=<span class="string">"sudo spctl --master-disable"</span></span><br></pre></td></tr></table></figure>
 <p>这里在终端输入 <code>macss</code> 就可以啦~</p>
+<h4 id="macOS_Catalina_10-15_第三方软件文件提示已损坏解决办法">macOS Catalina 10.15 第三方软件文件提示已损坏解决办法</h4><p>macOS 10.15 后，苹果加强了对第三方渠道下载软件的证书校验，对于无证书的应用，不允许打开。可以试试使用下面命令：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">sudo</span> <span class="tag">xattr</span> <span class="tag">-r</span> <span class="tag">-d</span> <span class="tag">com</span><span class="class">.apple</span><span class="class">.quarantine</span> <span class="tag">xxx</span><span class="class">.app</span></span><br></pre></td></tr></table></figure>
 <h4 id="终端命令">终端命令</h4><p>在终端和vim下，程序员的效率一定提升不少，但对于新手，下面也列出一些重要的终端命令，方便大家重点掌握，更多就大家自动搜索了：</p>
 <table>
 <thead>
