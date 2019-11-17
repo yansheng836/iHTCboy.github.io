@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-10-20T07:35:10.360Z</updated>
+  <updated>2019-11-17T14:56:09.449Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[实现 Alfred Workflow 聊天消息引用快速回复]]></title>
+    <link href="https://iHTCboy.com/2019/11/17/2019-11-17_%E4%B8%80%E4%B8%AAAlfred%E7%9A%84Workflow%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%BC%95%E7%94%A8%E6%B6%88%E6%81%AF/"/>
+    <id>https://iHTCboy.com/2019/11/17/2019-11-17_一个Alfred的Workflow聊天内容引用消息/</id>
+    <published>2019-11-17T12:22:01.000Z</published>
+    <updated>2019-11-17T14:56:09.449Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是如果是回复多条或者就是想回复一下，自带的功能也许真不够自定义的好用。最主要是我司现在用的企业QQ macOS版本不支持这个功能，所以，想想自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
+<p>传送门下载：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow" target="_blank" rel="external">Reply Message v1.0.alfredworkflow</a></p>
+<a id="more"></a>
+<h3 id="2、已实现的效果">2、已实现的效果</h3><p>目前已经实现了几个功能：</p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Reply-Message-alfredworkflow.png" alt="Alfred-Reply-Message-alfredworkflow.png"></p>
+<ol>
+<li><p><code>自动模板</code>：复制内容，打开 Alfred 输入 <code>R</code> 键后回车，就会自动粘贴到聊天软件中<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Copy-Template.png" alt="Alfred-Copy-Template.png"></p>
+</li>
+<li><p><code>回复内容</code>：复制内容，打开 Alfred 输入 <code>R</code> 键，空格后输入要回复的内容，完成后回车就会自动粘贴到聊天软件中<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Copy-Template-Reply.png" alt="Alfred-Copy-Template-Reply.png"></p>
+</li>
+<li><p><code>快捷符模板</code>：复制内容后，在聊天软件中输入 <code>\\rp</code>，会自动粘贴回复的模板到聊天框<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Shortcuts-Key.gif" alt="Alfred-Shortcuts-Key.gif"></p>
+</li>
+<li><p><code>自定义快捷键</code>：如果觉得还不够快？可以自定义一个自己喜欢的快捷键，快速生成回复模板<br>这个就不演示了，自己配置快捷键就可以啊</p>
+</li>
+</ol>
+<p>注意说明：<br>1、以上说的快捷键，大家都可以自己定义，不是固定的啊。<br>2、快捷符模板需要开启Alfred监听键盘权限：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Automatically-expand-snippets.png" alt="Alfred-Automatically-expand-snippets.png"></p>
+<p>下载地址：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow" target="_blank" rel="external">Reply Message v1.0.alfredworkflow</a></p>
+<h3 id="3、背后的简单原理">3、背后的简单原理</h3><h3 id="4、总结">4、总结</h3><h3 id="5、参考">5、参考</h3><p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源<br><br></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是如果是回复多条或者就是想回复一下，自带的功能也许真不够自定义的好用。最主要是我司现在用的企业QQ macOS版本不支持这个功能，所以，想想自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
+<p>传送门下载：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow">Reply Message v1.0.alfredworkflow</a></p>]]>
+    
+    </summary>
+    
+      <category term="Alfred" scheme="https://iHTCboy.com/tags/Alfred/"/>
+    
+      <category term="Workflow" scheme="https://iHTCboy.com/tags/Workflow/"/>
+    
+      <category term="引用回复" scheme="https://iHTCboy.com/tags/%E5%BC%95%E7%94%A8%E5%9B%9E%E5%A4%8D/"/>
+    
+      <category term="引用消息" scheme="https://iHTCboy.com/tags/%E5%BC%95%E7%94%A8%E6%B6%88%E6%81%AF/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[在旧的Mac上使用随航(Sidecar)]]></title>
@@ -2890,99 +2941,6 @@
       <category term="sips" scheme="https://iHTCboy.com/tags/sips/"/>
     
       <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Python爬虫实践-网易云音乐]]></title>
-    <link href="https://iHTCboy.com/2018/09/09/2018-09-09_Python%E7%88%AC%E8%99%AB%E5%AE%9E%E8%B7%B5-%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD/"/>
-    <id>https://iHTCboy.com/2018/09/09/2018-09-09_Python爬虫实践-网易云音乐下载/</id>
-    <published>2018-09-09T12:56:16.000Z</published>
-    <updated>2018-09-09T14:50:20.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>最近，网易的音乐很多听不到了，刚好也看到很多教程，跟进学习了一下，也集大全了吧，本来想优化一下的，但是发现问题还是有点复杂，最后另辟捷径，提供了简单的方法啊！</p>
-<p>本文主要参考 <a href="https://www.jianshu.com/p/25bc4822af16" target="_blank" rel="external">python编写GUI版网易云音乐爬虫</a> 后改写，有兴趣的可以看看文章的GUI，了解更多知识~</p>
-<a id="more"></a>
-<h3 id="2、Python_+_爬虫">2、Python + 爬虫</h3><p>首先，说一下准备工作：</p>
-<ul>
-<li>Python：需要基本的python语法基础</li>
-<li>requests：专业用于请求处理，<a href="http://docs.python-requests.org/zh_CN/latest/" target="_blank" rel="external">requests库学习文档中文版</a></li>
-<li>lxml：其实可以用pythonth自带的正则表达式库re，但是为了更加简单入门，用 <a href="https://lxml.de/index.html" target="_blank" rel="external">lxml</a> 中的 etree 进行网页数据定位爬取。</li>
-<li>re：python正则表达式处理</li>
-<li>json：python的json处理库</li>
-</ul>
-<p>如果大家对上面的库还比不懂，可以看看我的之前文章 <a href="https://ihtcboy.com/2018/07/10/2018-07-10_Python爬虫实践入门篇/">《Python爬虫实践入门篇》</a></p>
-<p>然后，说一下我们现在已经知道下载链接是这样的：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://music.163.com/song/media/outer/url?id='</span><br></pre></td></tr></table></figure>
-<p><code>id</code> 就是歌曲的id！</p>
-<p>所以，现在我们爬虫主要的工作就是找到这个id，当然为了更好的保存，也要找到这个歌名啦！</p>
-<p>那现在就是要找到我们需要爬虫的网站链接啦！我分析了一下，大概是下面三种：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#歌曲清单</span></span><br><span class="line"><span class="setting">music_list = <span class="value"><span class="string">'https://music.163.com/#/playlist?id=2412826586'</span> </span></span></span><br><span class="line"><span class="comment">#歌手排行榜</span></span><br><span class="line"><span class="setting">artist_list = <span class="value"><span class="string">'https://music.163.com/#/artist?id=8325'</span></span></span></span><br><span class="line"><span class="comment">#搜索列表 </span></span><br><span class="line"><span class="setting">search_list = <span class="value"><span class="string">'https://music.163.com/#/search/m/?order=hot&amp;cat=全部&amp;limit=435&amp;offset=435&amp;s=梁静茹'</span></span></span></span><br></pre></td></tr></table></figure>
-<p>如果你已经只是想下载一首歌，比如静茹-勇气：<code>https://music.163.com/#/song?id=254485</code>，那你直接就用浏览器打开 <code>http://music.163.com/song/media/outer/url?id=254485</code> 就可以了，没必要爬虫啊！</p>
-<p>好啦！感觉重点都说完了，提取和解析就是用 lxml，不懂的就看我之前的文章啊  <a href="https://ihtcboy.com/2018/07/10/2018-07-10_Python爬虫实践入门篇/">《Python爬虫实践入门篇》</a></p>
-<h3 id="3、下载歌词">3、下载歌词</h3><p>如果还要下载歌词，那也很简单，通过接口，有歌曲的id就可以：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">'http://music.163.com/api/song/lyric?id=&#123;&#125;&amp;lv=-1&amp;kv=-1&amp;tv=-1'</span>.format(song_id)</span><br></pre></td></tr></table></figure>
-<p>返回的json数据大概长这样：</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sgc: true,</span><br><span class="line">    sfy: false,</span><br><span class="line">    qfy: false,</span><br><span class="line">    lrc:</span><br><span class="line">    &#123;</span><br><span class="line">        version: 7,</span><br><span class="line">        lyric: "[<span class="number">00:39.070</span>]开了窗 等待天亮\n[<span class="number">00:46.160</span>]看这城市 悄悄的 熄了光\n[<span class="number">00:51.850</span>]听风的方向\n[<span class="number">00:55.090</span>]这一刻 是否和我一样\n[<span class="number">00:58.730</span>]孤单的飞翔\n[<span class="number">01:02.300</span>]模糊了眼眶\n[<span class="number">01:07.760</span>]广播里 那首歌曲\n[<span class="number">01:14.830</span>]重复当时 那条街那个你\n[<span class="number">01:20.410</span>]相同的桌椅\n[<span class="number">01:23.740</span>]不用言语 就会有默契\n[<span class="number">01:27.470</span>]这份亲密\n[<span class="number">01:30.560</span>]那么熟悉\n[<span class="number">01:33.850</span>]在爱里 等着你\n[<span class="number">01:37.480</span>]被你疼惜 有种暖意\n[<span class="number">01:41.090</span>]在梦里 全是你\n[<span class="number">01:43.920</span>]不要再迟疑 把我抱紧"</span><br><span class="line">    &#125;,</span><br><span class="line">    klyric:</span><br><span class="line">    &#123;</span><br><span class="line">        version: 0,</span><br><span class="line">        lyric: null</span><br><span class="line">    &#125;,</span><br><span class="line">    tlyric:</span><br><span class="line">    &#123;</span><br><span class="line">        version: 0,</span><br><span class="line">        lyric: null</span><br><span class="line">    &#125;,</span><br><span class="line">    code: 200</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>剩下的也没有什么好说的啦！</p>
-<h3 id="4、坑点与进阶">4、坑点与进阶</h3><p>表面上很简单，但是需要注意的是，网易返回的链接，数据是js动态加载，也就是爬虫得到的网页数据和浏览器得到的dom内容和结构不一样！</p>
-<ul>
-<li><p>坑<br>其中，搜索列表爬虫回来的内容，完全得不到歌曲id！！！</p>
-</li>
-<li><p>解决<br>解决方法也是有的！</p>
-<ul>
-<li><p>python模拟浏览器<br>使用selenium+phantomjs无界面浏览器，这两者的结合其实就是直接操作浏览器，可以获取JavaScript渲染后的页面数据。</p>
-<p>缺点：</p>
-<blockquote>
-<p>由于是无界面浏览器，采用此方案效率极低，如果大批量抓取不推荐。<br>对于异步请求并且数据在源码中并不存在的，同时也就无法抓取到的数据。</p>
-</blockquote>
-</li>
-<li><p>搜索的歌曲变成歌单<br>比如想下载全部的某一歌手的全部音乐，用手机云音乐搜索，然后全部保存到新建一个歌单，这样就可以啦！</p>
-</li>
-</ul>
-</li>
-<li><p>进阶<br>如果想使用了解更多网易云音乐js的加密解密过程，可以看看这个 <a href="https://www.zhihu.com/question/21471960/answer/154098407" target="_blank" rel="external">Python 爬虫如何获取 JS 生成的 URL 和网页内容？ - 路人甲的回答 - 知乎</a></p>
-</li>
-</ul>
-<h3 id="总结">总结</h3><p>用python，就一定要简单，我认为复杂的东西，还是尽量少做，能取巧就取巧，所以本文没有使用selenium+phantomjs实践，如果想了解更多<code>selenium+phantomjs</code>内容，可以参考文末引用链接。</p>
-<p><strong>注：本文只是技术交流，请不要商业用途~ 如有违反，本人一概不负责。</strong></p>
-<h3 id="全部代码">全部代码</h3><p>又是非常简单的100行代码完事！！！</p>
-<p>GitHub: <a href="https://github.com/iHTCboy/WebCrawlerExample/blob/master/WebCrawler/163_NeteaseMusic.py" target="_blank" rel="external">WebCrawlerExample/163_NeteaseMusic.py at master · iHTCboy/WebCrawlerExample</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_songs</span><span class="params">(url=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> url <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        url = <span class="string">'https://music.163.com/#/playlist?id=2384642500'</span></span><br><span class="line"></span><br><span class="line">    url = url.replace(<span class="string">'/#'</span>, <span class="string">''</span>).replace(<span class="string">'https'</span>, <span class="string">'http'</span>)  <span class="comment"># 对字符串进行去空格和转协议处理</span></span><br><span class="line">    <span class="comment"># 网易云音乐外链url接口：http://music.163.com/song/media/outer/url?id=xxxx</span></span><br><span class="line">    out_link = <span class="string">'http://music.163.com/song/media/outer/url?id='</span></span><br><span class="line">    <span class="comment"># 请求头</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36'</span>,</span><br><span class="line">        <span class="string">'Referer'</span>: <span class="string">'https://music.163.com/'</span>,</span><br><span class="line">        <span class="string">'Host'</span>: <span class="string">'music.163.com'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment"># 请求页面的源码</span></span><br><span class="line">    res = requests.get(url=url, headers=headers).text</span><br><span class="line"></span><br><span class="line">    tree = etree.HTML(res)</span><br><span class="line">    <span class="comment"># 音乐列表</span></span><br><span class="line">    song_list = tree.xpath(<span class="string">'//ul[@class="f-hide"]/li/a'</span>)</span><br><span class="line">    <span class="comment"># 如果是歌手页面</span></span><br><span class="line">    artist_name_tree = tree.xpath(<span class="string">'//h2[@id="artist-name"]/text()'</span>)</span><br><span class="line">    artist_name = str(artist_name_tree[<span class="number">0</span>]) <span class="keyword">if</span> artist_name_tree <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 如果是歌单页面：</span></span><br><span class="line">    <span class="comment">#song_list_tree = tree.xpath('//*[@id="m-playlist"]/div[1]/div/div/div[2]/div[2]/div/div[1]/table/tbody')</span></span><br><span class="line">    song_list_name_tree = tree.xpath(<span class="string">'//h2[contains(@class,"f-ff2")]/text()'</span>)</span><br><span class="line">    song_list_name = str(song_list_name_tree[<span class="number">0</span>]) <span class="keyword">if</span> song_list_name_tree <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置音乐下载的文件夹为歌手名字或歌单名</span></span><br><span class="line">    folder = <span class="string">'./'</span> + artist_name <span class="keyword">if</span> artist_name <span class="keyword">else</span> <span class="string">'./'</span> + song_list_name</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(folder):</span><br><span class="line">        os.mkdir(folder)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i, s <span class="keyword">in</span> enumerate(song_list):</span><br><span class="line">        href = str(s.xpath(<span class="string">'./@href'</span>)[<span class="number">0</span>])</span><br><span class="line">        song_id = href.split(<span class="string">'='</span>)[-<span class="number">1</span>]</span><br><span class="line">        src = out_link + song_id  <span class="comment"># 拼接获取音乐真实的src资源值</span></span><br><span class="line">        title = str(s.xpath(<span class="string">'./text()'</span>)[<span class="number">0</span>])  <span class="comment"># 音乐的名字</span></span><br><span class="line">        filename = title + <span class="string">'.mp3'</span></span><br><span class="line">        filepath = folder + <span class="string">'/'</span> + filename</span><br><span class="line">        print(<span class="string">'开始下载第&#123;&#125;首音乐：&#123;&#125;\n'</span>.format(i + <span class="number">1</span>, filename))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:  <span class="comment"># 下载音乐</span></span><br><span class="line">            <span class="comment">#下载歌词</span></span><br><span class="line">            <span class="comment">#download_lyric(title, song_id)</span></span><br><span class="line"></span><br><span class="line">            data = requests.get(src).content  <span class="comment"># 音乐的二进制数据</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">with</span> open(filepath, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">                f.write(data)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(e)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'&#123;&#125;首全部歌曲已经下载完毕！'</span>.format(len(song_list)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_lyric</span><span class="params">(song_name, song_id)</span>:</span></span><br><span class="line">    url = <span class="string">'http://music.163.com/api/song/lyric?id=&#123;&#125;&amp;lv=-1&amp;kv=-1&amp;tv=-1'</span>.format(song_id)</span><br><span class="line">    <span class="comment"># 请求头</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36'</span>,</span><br><span class="line">        <span class="string">'Referer'</span>: <span class="string">'https://music.163.com/'</span>,</span><br><span class="line">        <span class="string">'Host'</span>: <span class="string">'music.163.com'</span></span><br><span class="line">        <span class="comment"># 'Origin': 'https://music.163.com'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment"># 请求页面的源码</span></span><br><span class="line">    res = requests.get(url=url, headers=headers).text</span><br><span class="line">    json_obj = json.loads(res)</span><br><span class="line">    lyric = json_obj[<span class="string">'lrc'</span>][<span class="string">'lyric'</span>]</span><br><span class="line">    reg = re.compile(<span class="string">r'\[.*\]'</span>)</span><br><span class="line">    lrc_text = re.sub(reg, <span class="string">''</span>, lyric).strip()</span><br><span class="line"></span><br><span class="line">    print(song_name, lrc_text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment">#music_list = 'https://music.163.com/#/playlist?id=2384642500' #歌曲清单</span></span><br><span class="line">    music_list = <span class="string">'https://music.163.com/#/artist?id=8325'</span> <span class="comment">#歌手排行榜</span></span><br><span class="line">    <span class="comment"># music_list = 'https://music.163.com/#/search/m/?order=hot&amp;cat=全部&amp;limit=435&amp;offset=435&amp;s=梁静茹' #搜索列表</span></span><br><span class="line">    download_songs(music_list)</span><br></pre></td></tr></table></figure>
-<h3 id="参考">参考</h3><ul>
-<li><a href="https://www.jianshu.com/p/25bc4822af16" target="_blank" rel="external">python编写GUI版网易云音乐爬虫</a> </li>
-<li><a href="https://ihtcboy.com/2018/07/10/2018-07-10_Python爬虫实践入门篇/">Python爬虫实践入门篇 | iHTCboy’s blog</a></li>
-<li><a href="https://www.zhihu.com/question/21471960/answer/154098407" target="_blank" rel="external">Python 爬虫如何获取 JS 生成的 URL 和网页内容？ - 路人甲的回答 - 知乎</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzU4NjUxMDk5Mg==&amp;mid=2247484026&amp;idx=1&amp;sn=393eb1f4eb577b88e49b7ce10ff0e500&amp;chksm=fdfb6585ca8cec93a6d70f4666bd3fab69a7eb9390d4a1207f21142dc127975b6e209be32f1a&amp;scene=21#wechat_redirect" target="_blank" rel="external">Python 爬虫获取网易云音乐歌手歌词</a></li>
-<li><a href="https://www.jianshu.com/p/520749be7377" target="_blank" rel="external">python爬虫的最佳实践(五)–selenium+PhantomJS的简单使用</a></li>
-<li><a href="https://selenium-python.readthedocs.io/index.html" target="_blank" rel="external">Selenium with Python — Selenium Python Bindings 2 documentation</a></li>
-<li><a href="https://github.com/ariya/phantomjs" target="_blank" rel="external">ariya/phantomjs: Scriptable Headless Browser</a></li>
-<li><a href="https://github.com/iHTCboy/WebCrawlerExample/blob/master/WebCrawler/163_NeteaseMusic.py" target="_blank" rel="external">WebCrawlerExample/163_NeteaseMusic.py at master · iHTCboy/WebCrawlerExample</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>最近，网易的音乐很多听不到了，刚好也看到很多教程，跟进学习了一下，也集大全了吧，本来想优化一下的，但是发现问题还是有点复杂，最后另辟捷径，提供了简单的方法啊！</p>
-<p>本文主要参考 <a href="https://www.jianshu.com/p/25bc4822af16">python编写GUI版网易云音乐爬虫</a> 后改写，有兴趣的可以看看文章的GUI，了解更多知识~</p>]]>
-    
-    </summary>
-    
-      <category term="Python" scheme="https://iHTCboy.com/tags/Python/"/>
-    
-      <category term="Python爬虫" scheme="https://iHTCboy.com/tags/Python%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="爬虫" scheme="https://iHTCboy.com/tags/%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="网易云音乐" scheme="https://iHTCboy.com/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
   </entry>
   
