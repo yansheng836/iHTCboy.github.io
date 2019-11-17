@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-11-17T15:07:59.654Z</updated>
+  <updated>2019-11-17T15:09:34.845Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[实现 Alfred Workflow 聊天消息引用快速回复]]></title>
+    <title><![CDATA[用 Alfred Workflow 实现聊天内容快速引用回复]]></title>
     <link href="https://iHTCboy.com/2019/11/17/2019-11-17_%E4%B8%80%E4%B8%AAAlfred%E7%9A%84Workflow%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%BC%95%E7%94%A8%E6%B6%88%E6%81%AF/"/>
     <id>https://iHTCboy.com/2019/11/17/2019-11-17_一个Alfred的Workflow聊天内容引用消息/</id>
     <published>2019-11-17T12:22:01.000Z</published>
-    <updated>2019-11-17T15:07:59.654Z</updated>
+    <updated>2019-11-17T15:09:34.845Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是如果是回复多条或者就是想回复一下，自带的功能也许真不够自定义的好用。最主要是我司现在用的企业QQ macOS版本不支持这个功能，所以，想想自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
 <p>传送门下载：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow" target="_blank" rel="external">Reply Message v1.0.alfredworkflow</a></p>
 <a id="more"></a>
