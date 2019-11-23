@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-11-19T13:38:58.209Z</updated>
+  <updated>2019-11-23T02:52:57.608Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="https://iHTCboy.com/2019/11/17/2019-11-17_%E4%B8%80%E4%B8%AAAlfred%E7%9A%84Workflow%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%BC%95%E7%94%A8%E6%B6%88%E6%81%AF/"/>
     <id>https://iHTCboy.com/2019/11/17/2019-11-17_一个Alfred的Workflow聊天内容引用消息/</id>
     <published>2019-11-17T12:22:01.000Z</published>
-    <updated>2019-11-19T13:38:58.209Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是如果是回复多条或者就是想回复一下，自带的功能也许真不够自定义的好用。最主要是我司现在用的企业QQ macOS版本不支持这个功能，所以，想想自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
+    <updated>2019-11-23T02:52:57.608Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的企业QQ macOS版本不支持这个功能，所以，就想到自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
 <p>传送门下载：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow" target="_blank" rel="external">Reply Message v1.0.alfredworkflow</a></p>
 <a id="more"></a>
 <h3 id="2、已实现的效果">2、已实现的效果</h3><p>目前已经实现了几个功能：</p>
@@ -35,11 +35,11 @@
 <li><p><code>自定义快捷键</code>：如果觉得还不够快？可以自定义一个自己喜欢的快捷键，快速生成回复模板<br>这个就不演示了，自己配置快捷键就可以啊</p>
 </li>
 </ol>
-<p>注意说明：<br>1、以上说的快捷键，大家都可以自己定义，不是固定的啊。<br>2、快捷符模板需要开启Alfred监听键盘权限：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Automatically-expand-snippets.png" alt="Alfred-Automatically-expand-snippets.png"><br>3、本次使用到 Alfred 相关的功能正版是需要付费的，或者使用xx版本。</p>
+<p>注意说明：<br>1、以上说的快捷键，大家都可以自己定义，不是固定的啊。<br>2、快捷符模板需要开启Alfred监听键盘权限：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Automatically-expand-snippets.png" alt="Alfred-Automatically-expand-snippets.png"><br>3、本次使用到 Alfred 相关的功能正版是需要付费的，或者使用xx版本。当然对于有条件的朋友建议购买正版，这也是一个提高效率的方式~</p>
 <p>下载地址：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow" target="_blank" rel="external">Reply Message v1.0.alfredworkflow</a></p>
 <h3 id="3、背后的简单原理">3、背后的简单原理</h3><p>其实，原理非常的简单，就是二行代码的事：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clipboardtext=`pbpaste`</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="operator">-e</span> -n <span class="string">"「 <span class="variable">$&#123;clipboardtext&#125;</span> 」\n- - - - - - - - - - - - - - -\n\n：&#123;query&#125;"</span></span><br></pre></td></tr></table></figure>
-<p>就是用shell的macOS命令<code>pbpaste</code>获取剪切版的内容，然后拼接生成需要的格式，最后内容通过 <code>{query}</code> 传递给 Alfred。至少前期的快捷键，键盘监听、后续的推送通知、粘贴内容到输入框，全部是 Alfred 全自动封装好的完成，不需要用户关心！！！</p>
+<p>就是用 shell 的 macOS 命令 <code>pbpaste</code> 获取剪切版的内容，然后拼接生成需要的格式，最后内容通过 <code>{query}</code> 传递给 Alfred。至于前期的快捷键、键盘监听，后续的推送通知、粘贴内容到输入框，全部是 Alfred 软件全自动封装好的完成，不需要我们用户关心！！！</p>
 <p>上面的二行代码很短，但是有很多知识，大家明白了吗？</p>
 <p>到这里，是不是感受到 Alfred 功能的强大啦！！！</p>
 <p>备注：（<code>-e</code> 表示echo命令内容<code>\n</code>不转义， <code>-n</code>表示 echo 命令后不自动添加换行。）</p>
@@ -49,7 +49,7 @@
 <li><a href="https://ihtcboy.com/2018/09/30/2018-09-30_程序员的macOS系列：Mac开发环境配置/">程序员的macOS系列：Mac开发环境配置</a></li>
 <li>程序员的macOS系列：高效Alfred进阶</li>
 </ul>
-<p>所以，其实，Alfred 很强大，用的好，效率是成倍成倍的提高，希望我今年还有时间的话，补一下这个文章吧，当然，最好大家自行也可以搜索一些资料自己学习。知识的价值是无价，经验更加是无价（当然，我会尽量的全面简单而深入浅出，又犯骄傲啦…），Alfred版本也从3.x升到了4.x，macOS 10.15 也有很多调整，真不幸，现在写总结，生命有效时间也越来越短了。好吧，这次先到这里，下回聊~</p>
+<p>所以，相信大家能感受到 Alfred 很强大，用的好，效率是成倍成倍的提高，希望我今年还有时间的话，补一下这个文章吧，当然，最好大家自行也可以搜索一些资料自己学习，制作自己需要的 workflow 提高效率是最棒的！知识的价值是无价，经验更加是无价（当然，我会尽量的全面简单而深入浅出，我认为文章能简单或深入的点到为止，这才是写文章的乐趣，让大多数人都能学习到~），Alfred版本也从3.x升到了4.x，同时最新的 macOS 10.15 也有很多调整，真不幸，现在写总结，生命有效时间也越来越短了，知识保质期短，文章还没有写已经过期了，太难了。好吧，这次先到这里，下回聊，加油~</p>
 <h3 id="5、参考">5、参考</h3><ul>
 <li><a href="http://louiszhai.github.io/2018/05/31/alfred/" target="_blank" rel="external">Alfred神器使用手册 | louis blog</a></li>
 <li><a href="https://sspai.com/post/47710" target="_blank" rel="external">从 0 到 1 写一个 Alfred Workflow - 少数派</a></li>
@@ -65,7 +65,7 @@
 </blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是如果是回复多条或者就是想回复一下，自带的功能也许真不够自定义的好用。最主要是我司现在用的企业QQ macOS版本不支持这个功能，所以，想想自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的企业QQ macOS版本不支持这个功能，所以，就想到自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
 <p>传送门下载：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow">Reply Message v1.0.alfredworkflow</a></p>]]>
     
     </summary>
@@ -173,6 +173,335 @@
       <category term="macOS" scheme="https://iHTCboy.com/tags/macOS/"/>
     
       <category term="随航" scheme="https://iHTCboy.com/tags/%E9%9A%8F%E8%88%AA/"/>
+    
+      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS包重签名技术知识]]></title>
+    <link href="https://iHTCboy.com/2019/07/30/2019-07-30_iOS%E5%8C%85%E9%87%8D%E7%AD%BE%E5%90%8D%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86/"/>
+    <id>https://iHTCboy.com/2019/07/30/2019-07-30_iOS包重签名技术知识/</id>
+    <published>2019-07-30T13:22:16.000Z</published>
+    <updated>2019-11-23T02:53:11.190Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、简介">1、简介</h3><p>利用Xcode的命令 security 和 codesign 处理ipa重签。重签名与Xcode打包签名本质上是一个原理，具体来说，先了解一下iOS相关的证书类型。</p>
+<p><strong>证书类型：</strong></p>
+<table>
+<thead>
+<tr>
+<th>证书类型</th>
+<th style="text-align:left">使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发(Development)证书和描述文件</td>
+<td style="text-align:left">用于开发测试，在Xcode中打包后，可在真机环境调试、安装</td>
+</tr>
+<tr>
+<td>发布(Distribution)证书和描述文件</td>
+<td style="text-align:left">用于提交Appstore，在Xcode中打包后，可使用Xcode、Application Loader提交到Appstore审核发布</td>
+</tr>
+</tbody>
+</table>
+<p><strong>证书作用：</strong></p>
+<table>
+<thead>
+<tr>
+<th>证书</th>
+<th style="text-align:left">文件后缀</th>
+<th style="text-align:left">文件类型</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Provisioning Profile</td>
+<td style="text-align:left">.mobileprovision</td>
+<td style="text-align:left">描述文件</td>
+<td style="text-align:left">Provisioning Profiles文件（配置文件）， 作用是绑定设备UDID，所以在申请开发描述文件之前，先添加调试的设备。双击时打开Xcode安装在电脑上的描述文件，用命令行可以查看安装的描述文件，可以过滤掉过期的描述文件。</td>
+</tr>
+<tr>
+<td>Signing Certificate</td>
+<td style="text-align:left">.cer/.p12</td>
+<td style="text-align:left">证书文件</td>
+<td style="text-align:left">有开发和发布的证书，可以在钥匙串查看安装的可用的证书，过期时间等。p12是一个加密的文件，只要知道其密码，就可以供给所有的 Mac 设备使用，是这个应用的唯一标识证书和开发者，用于对应 bundleID 的应用开发和打包测试。</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<p>注：</p>
+<ul>
+<li>描述文件保存在 macOS 路径：<code>~/Library/MobileDevice/Provisioning\ Profiles/</code></li>
+<li>查看安装的证书使用命令：<code>security find-identity -p codesigning -v</code></li>
+</ul>
+<p>如果是团队开发，一般会生成p12证书提供给组员使用，这样更加好管理证书。</p>
+<table>
+<thead>
+<tr>
+<th>证书名字</th>
+<th style="text-align:left">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adhocXXX.mobileprovision</td>
+<td style="text-align:left">描述文件。用于生成 adhoc 包时，描述可以安装ipa包的设备UDID和证书关系。（包含推送、apple pay等权限声明内容）</td>
+</tr>
+<tr>
+<td>devXXX.mobileprovision</td>
+<td style="text-align:left">描述文件。用于生成 dev 包时，描述可以安装ipa包的设备UDID和证书关系。（包含推送、apple pay等权限声明内容）</td>
+</tr>
+<tr>
+<td>devXXXPushXXX.p12</td>
+<td style="text-align:left">推送证书。用于 dev 包推送时，认证和关联 应用bundleID 的证书关系。</td>
+</tr>
+<tr>
+<td>devXXX.p12</td>
+<td style="text-align:left">开发证书。用于打包App时，生成 dev 的 ipa 包需要的开发者信息。</td>
+</tr>
+<tr>
+<td>disXXX.mobileprovision</td>
+<td style="text-align:left">描述文件。用于生成 dis 包时，描述应用bundleID与证书的关系。（包含推送、apple pay等权限声明内容）</td>
+</tr>
+<tr>
+<td>disXXXPushXXX.p12</td>
+<td style="text-align:left">推送证书。用于 dis（或adhoc） 包推送时，认证和关联 应用bundleID 的证书关系。</td>
+</tr>
+<tr>
+<td>disXXX.p12</td>
+<td style="text-align:left">发布证书。用于打包App时，生成 dis (或adhoc) 的 ipa 包需要的开发者信息。</td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ul>
+<li>如果需要添加新的设备UDID，其实只需要更新 .mobileprovision 描述文件就可以；</li>
+<li>如果证书超过了有效期，.p12 和 .mobileprovision 文件需要重新生成，如果 revoke 生成新的证书，旧的证书和证书对应的ipa包不能再安装在设备上。</li>
+</ul>
+<p><strong>关于证书类型说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th style="text-align:left">dev</th>
+<th style="text-align:left">adhoc</th>
+<th style="text-align:left">dis</th>
+<th style="text-align:left">企业证书</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能否用于送审</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">不能</td>
+</tr>
+<tr>
+<td>不越狱且不添加到证书的设备能否安装</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">能</td>
+</tr>
+<tr>
+<td>不越狱但添加到证书的设备能否安装</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">能</td>
+</tr>
+<tr>
+<td>越狱设备能否安装</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+</tr>
+<tr>
+<td>能否用于沙盒储值测试</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+</tr>
+<tr>
+<td>越狱设备(模拟器)能否用于沙盒储值测试</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+</tr>
+<tr>
+<td>能否用于送审 TestFlight</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">不能</td>
+</tr>
+<tr>
+<td>不越狱能否打开应用的“Documents、Library、tmp”目录</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+<td style="text-align:left">不能</td>
+</tr>
+<tr>
+<td>越狱设备能否打开应用的“Documents、Library、tmp”目录</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+<td style="text-align:left">能</td>
+</tr>
+</tbody>
+</table>
+<p><strong>添加设备UDID到证书：</strong><br><a href="https://www.jianshu.com/p/c44d5c3424be" target="_blank" rel="external">iPhone手机轻松获取UDID的六种方式 - 简书</a></p>
+<h3 id="2、重签名流程">2、重签名流程</h3><ol>
+<li>添加p12证书：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import items into a keychain.</span></span><br><span class="line">$ security import inputfile [-k keychain] [-t <span class="built_in">type</span>] [<span class="operator">-f</span> format] [-w] [-P passphrase] [options...]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ security import /Users/htc/Desktop/distest.p12 -P <span class="string">'123456'</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>解压ipa包</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ unzip yourApp.ipa</span><br><span class="line">查找 .app目录，删除系统临时文件</span><br><span class="line">$ rm -rf ./Payload/yourAppName.app/.DS_Store</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>修改内容<br>修改Payload/yourName.app中的icon图标、Info.plist文件的信息等，如有需要也可以更改比如版本号，应用名称等。</p>
+</li>
+<li><p>删除之前的签名 →_CodeSignature：</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rm -rf ./Payload/yourAppName.app/_CodeSignature</span><br></pre></td></tr></table></figure>
+<ol>
+<li>用包里的描述文件生成entitlements.plist文件<br>查看描述文件内容的命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ security cms -D -i <span class="string">"xxx.mobileprovision"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上面命令会输出内容：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">plist</span> <span class="attribute">version</span>=<span class="value">"1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dict</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>AppIDName<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">string</span>&gt;</span>iLeetCode<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>ApplicationIdentifierPrefix<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">array</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">string</span>&gt;</span>28PV6G96R7<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">array</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>CreationDate<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">date</span>&gt;</span>2019-10-01T12:57:15Z<span class="tag">&lt;/<span class="title">date</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>Platform<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">array</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">string</span>&gt;</span>iOS<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">array</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>IsXcodeManaged<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">true</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>DeveloperCertificates<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">array</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">data</span>&gt;</span><span class="tag">&lt;/<span class="title">data</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">array</span>&gt;</span>						</span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>Entitlements<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">dict</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="title">key</span>&gt;</span>application-identifier<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">string</span>&gt;</span>28PV6G96R7.com.iHTCboy.iLeetCoder<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="title">key</span>&gt;</span>keychain-access-groups<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">array</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="title">string</span>&gt;</span>28PV6G96R7.*<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">array</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="title">key</span>&gt;</span>get-task-allow<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">true</span>/&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="title">key</span>&gt;</span>com.apple.developer.team-identifier<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">string</span>&gt;</span>28PV6G96R7<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="title">key</span>&gt;</span>aps-environment<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">string</span>&gt;</span>development<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">dict</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>ExpirationDate<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">date</span>&gt;</span>2020-09-30T12:57:15Z<span class="tag">&lt;/<span class="title">date</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>Name<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">string</span>&gt;</span>iOS Team Provisioning Profile: com.iHTCboy.iLeetCoder<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>ProvisionedDevices<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">array</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">string</span>&gt;</span>c286167280be0083fd23e59aaa805e1f3fbdwsd0<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">array</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>TeamIdentifier<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">array</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">string</span>&gt;</span>28PV6G96R7<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">array</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>TeamName<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">string</span>&gt;</span>he tiancong<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>TimeToLive<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">integer</span>&gt;</span>365<span class="tag">&lt;/<span class="title">integer</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>UUID<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">string</span>&gt;</span>9f1fb7b7-2549-4fc6-8893-344f4ddb3580<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>Version<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">integer</span>&gt;</span>1<span class="tag">&lt;/<span class="title">integer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">plist</span>&gt;</span>%</span><br></pre></td></tr></table></figure>
+<p>可以用命令 <code>&gt;</code> 保存成 plist 文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ security cms -D -i embedded.mobileprovision &gt; entitlement_full.plist</span><br></pre></td></tr></table></figure></p>
+<p>如果只保留 <code>Entitlements</code> 属性内容，则可以使用<code>PlistBuddy</code>命令，我们重签只需要 Entitlements 属性：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/libexec/PlistBuddy -x -c \<span class="string">'Print:Entitlements\'</span> entitlement_full.plist &gt; entitlement.plist</span><br></pre></td></tr></table></figure></p>
+<p>注：本步骤的 Entitlements 属性内容非常重要，不能多字段，或者字段设置true或false错误，都会导致异常情况，否则重签是有效，但导致ipa包安装失败~</p>
+<ol>
+<li>替换描述文件：<br>把新的描述文件复制替换到解压后的目录中。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp ./embedded.mobileprovision ./Payload/yourAppName.app/embedded.mobileprovision</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果需要查看系统中已经保存的描述文件：<code>~/Library/MobileDevice/Provisioning\ Profiles/</code></p>
+<ol>
+<li>获取证书内容：<br>这一步需要读取钥匙串中的开发者证书，可以用以下命令查看下有哪些证书：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ security find-identity -p codesigning -v</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上面命令输出：<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1) <span class="keyword">A</span><span class="number">80A1543C48</span>DBCB<span class="number">85F4F185B2</span>D<span class="number">38E7A25E5</span>A48E5 "iPhone Developer: ihtcboy@htc.com (8RRC787ZH2)"</span><br><span class="line">2) D<span class="number">7A8D149</span>DCCFB882BEDFA<span class="number">68913B50623</span>D38C8C49 "iPhone Distribution: Guangzhou HTC Internet Technology Co.,LTD"</span><br><span class="line">3) 900EC6AC<span class="number">6961B824</span>BBAED<span class="number">3303E036</span><span class="keyword">A</span><span class="number">2F5421935</span><span class="keyword">A</span> "iPhone Developer: iHTCboy (2HT78BY87T)"</span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>注意，下面的重签命令，需要使用上面的 “iPhone Developer: ihtcboy@htc.com (8RRC787ZH2)” 参数</p>
+<ol>
+<li>重新签名：</li>
+</ol>
+<p>先重签名framework和dylib（不重签的话，就删除无法签名的插件文件： <code>Framework</code>、<code>PlugIns</code> 文件夹、<code>Watch</code> 文件夹）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sign</span></span><br><span class="line">codesign <span class="operator">-s</span> identity [-fv*] [-o flags] [-r reqs] [-i ident] path ... </span><br><span class="line"></span><br><span class="line"><span class="comment"># verify</span></span><br><span class="line">codesign -v [-v*] [-R=&lt;req string&gt;|-R &lt;req file path&gt;] path|[+]pid ... </span><br><span class="line"></span><br><span class="line"><span class="comment"># display contents</span></span><br><span class="line">codesign <span class="operator">-d</span> [options] path ... </span><br><span class="line"></span><br><span class="line"><span class="comment"># display hosting paths</span></span><br><span class="line">codesign -h pid ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/bin/codesign --force --sign <span class="string">"iPhone Distribution:xxxxx"</span> /Payload/XX.app/Frameworks/xxx.framework</span><br></pre></td></tr></table></figure>
+<p>再签名.app：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/bin/codesign <span class="operator">-f</span> <span class="operator">-s</span> <span class="string">"iPhone Distribution:xxxxx"</span>  --entitlements entitlements.plist ./Desktop/Payload/yourAppName.app</span><br></pre></td></tr></table></figure></p>
+<p>注意：签名app需要添加参数 <code>--entitlements entitlements.plist</code></p>
+<p>重签成功后提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./Payload/yourAppName.app: replacing existing signature.</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>压缩Payload，就完成了重签：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ zip -ry ABC.ipa Payload</span><br></pre></td></tr></table></figure>
+<ol>
+<li>验证：查看签名信息并在真机上进行安装</li>
+</ol>
+<p>验证签名正确性：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ codesign -v Payload/XX.app</span><br></pre></td></tr></table></figure></p>
+<p>查看app的签名信息:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ codesign -vv -<span class="keyword">d</span> Payload/XX.<span class="keyword">app</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>删除安装的p12证书：<br>如果是公共设备环境，可能执行删除命令，删除步骤1中导入的证书。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ security <span class="operator"><span class="keyword">delete</span>-certificate -<span class="keyword">c</span> <span class="string">"iPhone Distribution: Guangzhou HTC Internet Technology Co.,LTD"</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其它可能使用到的命令</p>
+</li>
+</ol>
+<p>检查一下是否安装了AppleWWDRCA.cer：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">security <span class="built_in">find</span>-certificate -<span class="built_in">c</span> <span class="string">"Apple Worldwide Developer Relations Certification Authority"</span></span><br></pre></td></tr></table></figure></p>
+<p>查看app的 entitlements：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">codesign --entitlements :- -<span class="keyword">d</span> Payload/yourAppName.<span class="keyword">app</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="3、总结">3、总结</h3><p>关于iOS重签名流程这样就已经简单和较清晰的列出来了，但是有非常多的深入知识点需要大家自行实践，还有很多坑点，这里只是简单提一下，深入的命令使用和证书知识、证书安全、还有命令的注意事项，需要大家实践见真知！</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://github.com/HanProjectCoder/ResignForiOS" target="_blank" rel="external">HanProjectCoder/ResignForiOS: ipa resign</a></li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/sigh" target="_blank" rel="external">fastlane/sigh at master · fastlane/fastlane</a></li>
+<li><a href="https://github.com/cjsliuj/Scalpel" target="_blank" rel="external">cjsliuj/Scalpel: A MacOS app with resign, dylib link injection/delete, ipa metadata edit.</a></li>
+<li><a href="https://blog.csdn.net/jerryandliujie/article/details/84845162" target="_blank" rel="external">Scalpel的实现：一款集动态库注入与删除、IPA重签名、IPA元数据修改为一体的MacOS App</a></li>
+<li><a href="https://gist.github.com/FredCox3/0617eba0818a3ba957b7" target="_blank" rel="external">cfgutil man page</a></li>
+<li><a href="https://stackoverflow.com/questions/7485806/install-p12-or-cer-in-console-macos" target="_blank" rel="external">shell - install .p12 or .cer in console macos - Stack Overflow</a></li>
+<li><a href="https://github.com/hongbaoshi/reSignature/blob/master/reSignature/TFSignature.py" target="_blank" rel="external">reSignature/TFSignature.py at master · hongbaoshi/reSignature</a></li>
+<li><a href="https://www.jianshu.com/p/ce2893d99bd4" target="_blank" rel="external">iOS开发中的应用打包方式及重签名的一些总结 - 简书</a></li>
+<li><a href="https://blog.0x5e.cn/2016/09/25/ios-codesign-things/" target="_blank" rel="external">iOS代码签名与重签名 · 0x5e的博客</a></li>
+<li><a href="https://github.com/DanTheMan827/ios-app-signer" target="_blank" rel="external">DanTheMan827/ios-app-signer: This is an app for OS X that can (re)sign apps and bundle them into ipa files that are ready to be installed on an iOS device.</a></li>
+<li><a href="http://dantheman827.github.io/ios-app-signer/" target="_blank" rel="external">iOS App Signer - Instructions</a></li>
+<li><a href="https://www.jianshu.com/p/c44d5c3424be" target="_blank" rel="external">iPhone手机轻松获取UDID的六种方式 - 简书</a></li>
+<li><a href="https://developer.apple.com/library/archive/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html" target="_blank" rel="external">About Code Signing</a></li>
+<li><a href="https://stackoverflow.com/questions/39078983/re-signing-an-ipa-that-contains-a-framework" target="_blank" rel="external">ios - Re-signing an IPA that contains a Framework - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/20205162/user-interaction-is-not-allowed-trying-to-sign-an-osx-app-using-codesign" target="_blank" rel="external">“User interaction is not allowed” trying to sign an OSX app using codesign</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源<br><br></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、简介">1、简介</h3><p>利用Xcode的命令 security 和 codesign 处理ipa重签。重签名与Xcode打包签名本质上是一个原理，具体来说，先了解一下iOS相关的证书类型。</p>
+<p><strong>证书类型：</strong></p>
+<table>
+<thead>
+<tr>
+<th>证书类型</th>
+<th style="text-align:left">使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发(Development)证书和描述文件</td>
+<td style="text-align:left">用于开发测试，在Xcode中打包后，可在真机环境调试、安装</td>
+</tr>
+<tr>
+<td>发布(Distribution)证书和描述文件</td>
+<td style="text-align:left">用于提交Appstore，在Xcode中打包后，可使用Xcode、Application Loader提交到Appstore审核发布</td>
+</tr>
+</tbody>
+</table>
+<p><strong>证书作用：</strong></p>
+<table>
+<thead>
+<tr>
+<th>证书</th>
+<th style="text-align:left">文件后缀</th>
+<th style="text-align:left">文件类型</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Provisioning Profile</td>
+<td style="text-align:left">.mobileprovision</td>
+<td style="text-align:left">描述文件</td>
+<td style="text-align:left">Provisioning Profiles文件（配置文件）， 作用是绑定设备UDID，所以在申请开发描述文件之前，先添加调试的设备。双击时打开Xcode安装在电脑上的描述文件，用命令行可以查看安装的描述文件，可以过滤掉过期的描述文件。</td>
+</tr>
+<tr>
+<td>Signing Certificate</td>
+<td style="text-align:left">.cer/.p12</td>
+<td style="text-align:left">证书文件</td>
+<td style="text-align:left">有开发和发布的证书，可以在钥匙串查看安装的可用的证书，过期时间等。p12是一个加密的文件，只要知道其密码，就可以供给所有的 Mac 设备使用，是这个应用的唯一标识证书和开发者，用于对应 bundleID 的应用开发和打包测试。</td>
+</tr>
+</tbody>
+</table>]]>
+    
+    </summary>
+    
+      <category term="codesign" scheme="https://iHTCboy.com/tags/codesign/"/>
+    
+      <category term="iOS" scheme="https://iHTCboy.com/tags/iOS/"/>
+    
+      <category term="重签名" scheme="https://iHTCboy.com/tags/%E9%87%8D%E7%AD%BE%E5%90%8D/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
@@ -2956,80 +3285,6 @@
       <category term="sips" scheme="https://iHTCboy.com/tags/sips/"/>
     
       <category term="xcassets" scheme="https://iHTCboy.com/tags/xcassets/"/>
-    
-      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[shell技巧2 - 图片旋转缩放转换格式等]]></title>
-    <link href="https://iHTCboy.com/2018/09/14/2018-09-14_shell%E6%8A%80%E5%B7%A72_%E5%9B%BE%E7%89%87%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%AD%89/"/>
-    <id>https://iHTCboy.com/2018/09/14/2018-09-14_shell技巧2_图片旋转缩放等/</id>
-    <published>2018-09-14T13:20:16.000Z</published>
-    <updated>2018-09-19T14:16:37.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在macOS下，如果对大量图片进行处理或数据收集，查找了一下，通过使用 <code>sips</code> 命令，可以进行图片的大部分操作处理，如果使用 <code>shell</code>，就可以灵活和自动化的批量操作图片！</p>
-<a id="more"></a>
-<h3 id="2、sips_用法">2、sips 用法</h3><p>常用的用法可以参考： <a href="http://www.voidcn.com/article/p-xrygdftf-bmv.html" target="_blank" rel="external">利器: Mac自带的图片工具Sips</a>，全部的用法可以参考：<a href="https://ss64.com/osx/sips.html" target="_blank" rel="external">sips MAN page Man Page - macOS - SS64.com</a></p>
-<p>以下就是引用 <a href="http://www.voidcn.com/article/p-xrygdftf-bmv.html" target="_blank" rel="external">利器: Mac自带的图片工具Sips</a> 内容：</p>
-<p>1.裁剪时固定图片宽度，高度自适应</p>
-<pre><code><span class="comment"><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sips -Z 320 iamge_file_name</span><br></pre></td></tr></table></figure></span>
-</code></pre><p>2.裁剪时指定图片宽与高</p>
-<pre><code><span class="comment"><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#35009;&#21098;&#22270;&#29255;&#20026;400x300&#22823;&#23567;&#10;sips -z 400 300 iamge_file_name</span><br></pre></td></tr></table></figure></span>
-
-
-注：需要注意的是这里的参数是小写的z，并且图片缩放方式不是锁定图片比例的，即如果图片本身是16:9，则会导致图片被挤压。
-</code></pre><p>3.旋转图片</p>
-<pre><code><span class="comment"><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sips -r 90 image_file_name</span><br></pre></td></tr></table></figure></span>
-
-
-注：上面的命令将图片顺时针旋转90度，相信机智的你已经想到逆时针90度应该是-90了。没错，顺时针用正数表示，逆时针可以用负数表示。你可以进行任意角度和方向的旋转。
-</code></pre><p>4.翻转图片</p>
-<pre><code><span class="comment"><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sips -f horizontal image_file_name</span><br></pre></td></tr></table></figure></span>
-
-注：上面命令可以对图片进行水平翻转，-f支持水平和垂直两种翻转，水平（horizontal），垂直（vertical）。
-</code></pre><p>5.修改图片格式</p>
-<pre><code><span class="variable"><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sips -s format jpeg input.png --out output.jpg</span><br></pre></td></tr></table></figure></span>
-
-注：使用-s参数可以修改图片格式为指定值，sips支持jpeg |<span class="string"> tiff </span>|<span class="string"> png </span>|<span class="string"> gif </span>|<span class="string"> jp2 </span>|<span class="string"> pict </span>|<span class="string"> bmp </span>|<span class="string"> qtif </span>|<span class="string"> psd </span>|<span class="string"> sgi </span>|<span class="string"> tga共11种格式。并且-s除了能修改文件格式外，还能修改图片的其它meta数据，具体可以通过man sips查看。</span>
-</code></pre><p>6.获取图片meta信息</p>
-<pre><code><span class="comment"><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sips -g pixelWidth -g pixelHeight image_file_name</span><br></pre></td></tr></table></figure></span>
-
-注：上面命令可以获取图片的长宽高信息，与-s参数一样，-g也支持更多的meta值，可以参见man sips的信息，这里就不做赘述了。
-</code></pre><h3 id="3、shell_编程">3、shell 编程</h3><p>通过使用 <code>sips</code> 命令进行图片处理，本来计划做一个功能库，但是想想还是没有必要，简单的写了一个图片旋转的示例，希望大家能举一反三，这都是授鱼不如授渔！ </p>
-<h3 id="4、图片旋转代码实现">4、图片旋转代码实现</h3><p>具体的代码，可参考我的Github代码：</p>
-<ul>
-<li><a href="https://github.com/iHTCboy/iShell" target="_blank" rel="external">iHTCboy/iShell: Shell脚本编程技巧，总结一些常用的提高效率的方法。</a></li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash&#10;&#10;# &#23450;&#20041;&#29992;&#21040;&#30340;&#21464;&#37327;&#10;imagePath=&#34;&#34;&#10;angle=&#34;&#34;&#10;&#10;# &#23450;&#20041;&#35835;&#21462;&#36755;&#20837;&#23383;&#31526;&#30340;&#20989;&#25968;&#10;&#10;getImagePath() &#123;&#10;&#9;echo &#34;\n================================================&#34;&#10;&#9;# &#30417;&#21548;&#36755;&#20837;&#24182;&#19988;&#36171;&#20540;&#32473;&#21464;&#37327;&#10;&#9;read -p &#34;Enter image path: &#34; imagePath&#10;&#9;# &#22914;&#26524;&#20026;&#31354;&#20540;&#65292;&#20174;&#26032;&#30417;&#21548;&#65292;&#21542;&#21017;&#25191;&#34892;&#26059;&#36716;&#20989;&#25968;&#10;&#9;if&#9;test -z &#34;$imagePath&#34;; then&#10;&#9;&#9; getImagePath&#10;&#9;else&#10;&#9;&#9;rotationImage&#10;&#9;fi&#10;&#125;&#10;&#10;&#10;rotationImage() &#123;&#10;&#9;echo &#34;\n================================================&#34;&#10;&#9;read -p &#34;Enter angle(default 90&#176;): &#34; angle&#10;&#9;# &#22914;&#26524;&#20026;&#31354;&#20540;&#65292;&#40664;&#35748;&#35774;&#32622;&#20026;90&#24230;&#10;&#9;if test -z &#34;$angle&#34;; then&#10;&#9;&#9;angle=&#34;90&#34;&#10;&#9;fi&#10;&#10;&#9;# &#20351;&#29992; sips &#21629;&#20196;&#36827;&#34892;&#22270;&#29255;&#26059;&#36716;&#10;&#9;sips -r &#34;$&#123;angle&#125;&#34; &#34;$&#123;imagePath&#125;&#34;&#10;&#9;&#9;&#10;&#9;echo &#34;\n rotation $angle &#176; finished!&#34;&#10;&#9;&#9;&#10;&#9;# &#37325;&#26032;&#35843;&#29992;&#26059;&#36716;&#20989;&#25968;&#65292;&#26041;&#20415;&#22810;&#27425;&#26059;&#36716;&#25805;&#20316;&#10;&#9;rotationImage&#10;&#9;&#10;&#125;&#10;&#10;# &#39318;&#20808;&#25191;&#34892;&#20989;&#25968;&#65292;&#32473;&#21464;&#37327;&#36171;&#20540;&#10;getImagePath</span><br></pre></td></tr></table></figure>
-<h3 id="5、总结">5、总结</h3><p>比如图片批量格式转换，图片尺寸批量获取等，通过 ship 命令，然后结合 sehll 脚本，效率和自动化不是梦！</p>
-<p>关于sips的更多使用场景，可以看看这篇文章 <a href="https://www.jianshu.com/p/7246c5a5b083" target="_blank" rel="external">使用sips命令自动缩减图片尺寸</a></p>
-<p>下一节，结合刚需，打算写一个从一张1024的图片，自动生成Xcode所需要的全部图标，这应该是一个不错的想法！期待吧~</p>
-<h3 id="参考">参考</h3><ul>
-<li><a href="http://www.voidcn.com/article/p-xrygdftf-bmv.html" target="_blank" rel="external">利器: Mac自带的图片工具Sips</a></li>
-<li><a href="https://ss64.com/osx/sips.html" target="_blank" rel="external">sips MAN page Man Page - macOS - SS64.com</a></li>
-<li><a href="https://www.jianshu.com/p/7246c5a5b083" target="_blank" rel="external">使用sips命令自动缩减图片尺寸</a></li>
-<li><a href="https://ihtcboy.com/2018/08/31/2018-08-31_shell技巧1_生成ipa文件/">shell技巧1 - 生成ipa文件 | iHTCboy’s blog</a></li>
-</ul>
-<p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>在macOS下，如果对大量图片进行处理或数据收集，查找了一下，通过使用 <code>sips</code> 命令，可以进行图片的大部分操作处理，如果使用 <code>shell</code>，就可以灵活和自动化的批量操作图片！</p>]]>
-    
-    </summary>
-    
-      <category term="bash" scheme="https://iHTCboy.com/tags/bash/"/>
-    
-      <category term="shell" scheme="https://iHTCboy.com/tags/shell/"/>
-    
-      <category term="sips" scheme="https://iHTCboy.com/tags/sips/"/>
     
       <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
     
