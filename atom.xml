@@ -183,7 +183,7 @@
     <link href="https://iHTCboy.com/2019/07/30/2019-07-30_iOS%E5%8C%85%E9%87%8D%E7%AD%BE%E5%90%8D%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86/"/>
     <id>https://iHTCboy.com/2019/07/30/2019-07-30_iOS包重签名技术知识/</id>
     <published>2019-07-30T13:22:16.000Z</published>
-    <updated>2019-11-23T03:10:26.799Z</updated>
+    <updated>2019-11-23T03:21:08.596Z</updated>
     <content type="html"><![CDATA[<h3 id="1、简介">1、简介</h3><p>利用Xcode的命令 <code>security</code> 和 <code>codesign</code> 重签ipa文件。重签名与Xcode里build打包里进行的签名操作是一个原理，具体来说，先了解一下iOS相关的证书类型。</p>
 <p><strong>证书类型：</strong></p>
 <table>
@@ -392,7 +392,7 @@
 <p><strong>12.其它可能使用到的命令（可选）</strong></p>
 <p>检查一下是否安装了AppleWWDRCA.cer：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">security <span class="built_in">find</span>-certificate -<span class="built_in">c</span> <span class="string">"Apple Worldwide Developer Relations Certification Authority"</span></span><br></pre></td></tr></table></figure></p>
 <p>查看 app 的 entitlements：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">codesign --entitlements :- -<span class="keyword">d</span> Payload/yourAppName.<span class="keyword">app</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="3、总结">3、总结</h3><p>关于iOS重签名流程这样就已经简单和较清晰的列出来了，但是有非常多的深入知识点需要大家自行实践，还有很多坑点，这里只是简单提一下，深入的命令使用和证书知识、证书安全、还有命令的注意事项，需要大家实践见真知！</p>
+<h3 id="3、总结">3、总结</h3><p>关于 iOS 重签名流程这样就已经简单和较清晰的列出来了，但是有非常多的深入知识点需要大家自行实践，还有很多坑点，这里只是简单提一下，深入的命令使用和证书知识、证书安全、还有命令的注意事项，需要大家实践见真知！</p>
 <h3 id="参考">参考</h3><ul>
 <li><a href="https://github.com/HanProjectCoder/ResignForiOS" target="_blank" rel="external">HanProjectCoder/ResignForiOS: ipa resign</a></li>
 <li><a href="https://github.com/fastlane/fastlane/tree/master/sigh" target="_blank" rel="external">fastlane/sigh at master · fastlane/fastlane</a></li>
@@ -447,6 +447,8 @@
       <category term="codesign" scheme="https://iHTCboy.com/tags/codesign/"/>
     
       <category term="iOS" scheme="https://iHTCboy.com/tags/iOS/"/>
+    
+      <category term="证书" scheme="https://iHTCboy.com/tags/%E8%AF%81%E4%B9%A6/"/>
     
       <category term="重签名" scheme="https://iHTCboy.com/tags/%E9%87%8D%E7%AD%BE%E5%90%8D/"/>
     
