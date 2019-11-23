@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-11-23T02:52:57.608Z</updated>
+  <updated>2019-11-23T02:54:34.093Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/11/17/2019-11-17_%E4%B8%80%E4%B8%AAAlfred%E7%9A%84Workflow%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%BC%95%E7%94%A8%E6%B6%88%E6%81%AF/"/>
     <id>https://iHTCboy.com/2019/11/17/2019-11-17_一个Alfred的Workflow聊天内容引用消息/</id>
     <published>2019-11-17T12:22:01.000Z</published>
-    <updated>2019-11-23T02:52:57.608Z</updated>
+    <updated>2019-11-23T02:54:34.093Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的企业QQ macOS版本不支持这个功能，所以，就想到自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
 <p>传送门下载：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow" target="_blank" rel="external">Reply Message v1.0.alfredworkflow</a></p>
 <a id="more"></a>
@@ -35,7 +35,7 @@
 <li><p><code>自定义快捷键</code>：如果觉得还不够快？可以自定义一个自己喜欢的快捷键，快速生成回复模板<br>这个就不演示了，自己配置快捷键就可以啊</p>
 </li>
 </ol>
-<p>注意说明：<br>1、以上说的快捷键，大家都可以自己定义，不是固定的啊。<br>2、快捷符模板需要开启Alfred监听键盘权限：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Automatically-expand-snippets.png" alt="Alfred-Automatically-expand-snippets.png"><br>3、本次使用到 Alfred 相关的功能正版是需要付费的，或者使用xx版本。当然对于有条件的朋友建议购买正版，这也是一个提高效率的方式~</p>
+<p>注意说明：<br>1、以上说的快捷键，大家都可以自己定义，不是固定的啊。<br>2、快捷符模板需要开启 Alfred 监听键盘权限：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Automatically-expand-snippets.png" alt="Alfred-Automatically-expand-snippets.png"><br>3、本次使用到 Alfred 相关的功能试用版不支持，需要付费的正版才支持，或者使用xx版本。当然对于有条件的朋友建议购买正版，这也是一个提高效率的方式~</p>
 <p>下载地址：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow" target="_blank" rel="external">Reply Message v1.0.alfredworkflow</a></p>
 <h3 id="3、背后的简单原理">3、背后的简单原理</h3><p>其实，原理非常的简单，就是二行代码的事：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clipboardtext=`pbpaste`</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="operator">-e</span> -n <span class="string">"「 <span class="variable">$&#123;clipboardtext&#125;</span> 」\n- - - - - - - - - - - - - - -\n\n：&#123;query&#125;"</span></span><br></pre></td></tr></table></figure>
@@ -183,7 +183,7 @@
     <link href="https://iHTCboy.com/2019/07/30/2019-07-30_iOS%E5%8C%85%E9%87%8D%E7%AD%BE%E5%90%8D%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86/"/>
     <id>https://iHTCboy.com/2019/07/30/2019-07-30_iOS包重签名技术知识/</id>
     <published>2019-07-30T13:22:16.000Z</published>
-    <updated>2019-11-23T02:53:11.190Z</updated>
+    <updated>2019-11-23T02:55:22.752Z</updated>
     <content type="html"><![CDATA[<h3 id="1、简介">1、简介</h3><p>利用Xcode的命令 security 和 codesign 处理ipa重签。重签名与Xcode打包签名本质上是一个原理，具体来说，先了解一下iOS相关的证书类型。</p>
 <p><strong>证书类型：</strong></p>
 <table>
@@ -204,6 +204,7 @@
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
 <p><strong>证书作用：</strong></p>
 <table>
 <thead>
@@ -229,7 +230,6 @@
 </tr>
 </tbody>
 </table>
-<a id="more"></a>
 <p>注：</p>
 <ul>
 <li>描述文件保存在 macOS 路径：<code>~/Library/MobileDevice/Provisioning\ Profiles/</code></li>
@@ -466,31 +466,6 @@
 <tr>
 <td>发布(Distribution)证书和描述文件</td>
 <td style="text-align:left">用于提交Appstore，在Xcode中打包后，可使用Xcode、Application Loader提交到Appstore审核发布</td>
-</tr>
-</tbody>
-</table>
-<p><strong>证书作用：</strong></p>
-<table>
-<thead>
-<tr>
-<th>证书</th>
-<th style="text-align:left">文件后缀</th>
-<th style="text-align:left">文件类型</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Provisioning Profile</td>
-<td style="text-align:left">.mobileprovision</td>
-<td style="text-align:left">描述文件</td>
-<td style="text-align:left">Provisioning Profiles文件（配置文件）， 作用是绑定设备UDID，所以在申请开发描述文件之前，先添加调试的设备。双击时打开Xcode安装在电脑上的描述文件，用命令行可以查看安装的描述文件，可以过滤掉过期的描述文件。</td>
-</tr>
-<tr>
-<td>Signing Certificate</td>
-<td style="text-align:left">.cer/.p12</td>
-<td style="text-align:left">证书文件</td>
-<td style="text-align:left">有开发和发布的证书，可以在钥匙串查看安装的可用的证书，过期时间等。p12是一个加密的文件，只要知道其密码，就可以供给所有的 Mac 设备使用，是这个应用的唯一标识证书和开发者，用于对应 bundleID 的应用开发和打包测试。</td>
 </tr>
 </tbody>
 </table>]]>
