@@ -183,7 +183,7 @@
     <link href="https://iHTCboy.com/2019/07/30/2019-07-30_iOS%E5%8C%85%E9%87%8D%E7%AD%BE%E5%90%8D%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86/"/>
     <id>https://iHTCboy.com/2019/07/30/2019-07-30_iOS包重签名技术知识/</id>
     <published>2019-07-30T13:22:16.000Z</published>
-    <updated>2019-11-23T03:09:13.710Z</updated>
+    <updated>2019-11-23T03:10:26.799Z</updated>
     <content type="html"><![CDATA[<h3 id="1、简介">1、简介</h3><p>利用Xcode的命令 <code>security</code> 和 <code>codesign</code> 重签ipa文件。重签名与Xcode里build打包里进行的签名操作是一个原理，具体来说，先了解一下iOS相关的证书类型。</p>
 <p><strong>证书类型：</strong></p>
 <table>
