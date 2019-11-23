@@ -9,21 +9,21 @@
   <link rel="canonical" href="https://ihtcboy.com" />
   <title>用 Alfred Workflow 实现聊天内容快速引用回复 | iHTCboy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、前言在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的企业QQ macOS版本不支持这个功能，于是就想到自己做一个 workflow 可以读取当前复制的">
+  <meta name="description" content="1、前言在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的 企业QQ for macOS 版本不支持这个功能，于是就想到自己做一个 workflow 可以读">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用 Alfred Workflow 实现聊天内容快速引用回复">
 <meta property="og:url" content="https://iHTCboy.com/2019/11/17/2019-11-17_一个Alfred的Workflow聊天内容引用消息/index.html">
 <meta property="og:site_name" content="iHTCboy's blog">
-<meta property="og:description" content="1、前言在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的企业QQ macOS版本不支持这个功能，于是就想到自己做一个 workflow 可以读取当前复制的">
+<meta property="og:description" content="1、前言在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的 企业QQ for macOS 版本不支持这个功能，于是就想到自己做一个 workflow 可以读">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Reply-Message-alfredworkflow.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Copy-Template.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Copy-Template-Reply.png">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Shortcuts-Key.gif">
 <meta property="og:image" content="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/11/Alfred-Automatically-expand-snippets.png">
-<meta property="og:updated_time" content="2019-11-23T03:21:52.422Z">
+<meta property="og:updated_time" content="2019-11-23T03:29:37.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 Alfred Workflow 实现聊天内容快速引用回复">
-<meta name="twitter:description" content="1、前言在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的企业QQ macOS版本不支持这个功能，于是就想到自己做一个 workflow 可以读取当前复制的">
+<meta name="twitter:description" content="1、前言在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的 企业QQ for macOS 版本不支持这个功能，于是就想到自己做一个 workflow 可以读">
   
     <link rel="alternative" href="/atom.xml" title="iHTCboy&#39;s blog" type="application/atom+xml">
   
@@ -240,7 +240,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的企业QQ macOS版本不支持这个功能，于是就想到自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到App，从而实现引用回复~</p>
+        <h3 id="1、前言">1、前言</h3><p>在微信 Mac/PC 端消息有个「引用消息」的功能，用于针对某个特定消息回复，而其它 App 没有该功能，或者有，比如 QQ / Telegram 都有实现回复（reply）功能，但是都是针对一条消息回复，如果需要对多条消息统一做回复，自带的功能也许真不够自定义的好。当然，最主要是我司现在用的 <code>企业QQ for macOS</code> 版本不支持这个功能，于是就想到自己做一个 workflow 可以读取当前复制的内容，然后生成一个带引用格式的文本，并完成后粘贴到 App，从而实现引用回复~</p>
 <p>传送门下载：<a href="https://github.com/iHTCboy/macOSConfig/blob/master/Alfred/Reply%20Message%20v1.0.alfredworkflow" target="_blank" rel="external">Reply Message v1.0.alfredworkflow</a></p>
 <a id="more"></a>
 <h3 id="2、已实现的效果">2、已实现的效果</h3><p>目前已经实现了几个功能：</p>
