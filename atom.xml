@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-11-23T16:46:30.211Z</updated>
+  <updated>2019-12-28T11:51:13.410Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -13,6 +13,1052 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[GMTC全球大前端技术大会（北京站）2019]]></title>
+    <link href="https://iHTCboy.com/2019/12/01/2019-12-01_GMTC2019beijing/"/>
+    <id>https://iHTCboy.com/2019/12/01/2019-12-01_GMTC2019beijing/</id>
+    <published>2019-12-01T03:11:11.000Z</published>
+    <updated>2019-12-28T11:51:13.410Z</updated>
+    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>工作5年来，一直投身于 iOS 开发，而这5年来移动开发一直再追赶web前端和后端开发的技术栈和思想，近2年大家直接说：“大前端”，移动开发真正变成了“UI”前端的开发，而web前端借助Node 开始转了后端开发？正是借着这些变化，我一直在思考，一直在疑问，直到看了一些 GMTC 课程，就像命悬一线的人一下子打通了任督二脉，练习武功不再于形式，需要提升认知的境界！这是一个神奇的世界，一个最好的时代！最“坏”的时代！</p>
+<a id="more"></a>
+<p>GMTC是什么？</p>
+<blockquote>
+<p>GMTC全球大前端技术大会是由极客邦科技旗下InfoQ中国主办的技术盛会，关注前端、移动、AI应用等多个技术领域，促进全球技术交流，推动国内技术升级。GMTC为期4天，包括两天的会议和两天的培训课，主要面向各行业前端、移动开发、AI技术感兴趣的中高端技术人员，大会聚焦前沿技术及实践经验，旨在帮助参会者了解大前端&amp;移动开发领域的技术趋势与实践案例。</p>
+</blockquote>
+<h3 id="2、正文">2、正文</h3><p>借知乎 <a href="https://www.zhihu.com/question/330261935/answer/724749304" target="_blank" rel="external">果大的回答</a> 的一句话:</p>
+<blockquote>
+<p>切身的一个体会就是「让多个人去做同一个项目，先不讨论项目的结果如何，最终项目组里每个人成长差别非常大」，所以大家要不断地去思考做一个项目解决一个问题参加一次会议如何能让自己有更多的收获，思考能力、执行力、沟通能力、竞品分析能力、沉淀分享能力等都是我们需要去关注的点。</p>
+</blockquote>
+<p>做技术这些年，技术不在是技术，知识不在是知识，不要停留在自己的认知世界里，多看看别人的世界，看技术前沿，看程序圈子趋势。向上，思考问题的层次，向下，编程语言的底层。</p>
+<p>目前的国内环境，最后的大前端分享，我想就是 GMTC 了，总体来讲邀请了国内技术公司大牛，分享他们过去和未来对于某个方向技术的实践与探索，每个专场都非常有代表性，最后，学习不止于知识，你的疑问？不可能通过别人有一个完美的回答，不能一鼓子copy到自己行业的业务中，应该是通过讲师的演讲，学习解决问题的思路和方法，了解未来的方向变化，有所启发，有所改进，有所触动，有所融会贯通！</p>
+<p>所以，希望把看过的视频，都做一些记录和感想吧，不管懂与否，这都是学习步伐的记录~</p>
+<h3 id="3、GMTC_北京_2019">3、GMTC 北京 2019</h3><p>以下内容可在 <a href="https://gmtc.infoq.cn/2019/beijing/schedule" target="_blank" rel="external">GMTC全球大前端技术大会（北京站）2019</a> 网站查看。</p>
+<h4 id="前端工程化">前端工程化</h4><blockquote>
+<p>前端工程化是前端业务以及技术架构复杂度提升导致的必行之路，然而工程化并不是普适的技术或者理论，业务类型、场景、技术架构甚至团队组织架构均是决定工程化具体形态的必要因素。换句话讲，工程化是与实践密不可分的。本专场我们通过分享业内一些经过实践检验的工程化方案，希望能够为大家在前端工程化的探索道路上提供借鉴和帮助。</p>
+</blockquote>
+<h5 id="《Using_webpack_to_make_Apps_fast_at_Microsoft》">《Using webpack to make Apps fast at Microsoft》</h5><p> Sean Larkin  / Microsoft Edge 研发经理 webpack 维护者</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>Sean Larkin 【<strong>廖肖恩 】</strong>is a Program Manager at Microsoft working on Edge DevTools, expert on Web Performance, and maintainer of webpack. Outside of work, he works with Fortune 500 companies helping them change their culture for Web Performance practices, Open Source, and embracing emerging technologies. In his free time he loves spending time with his family, hiking, woodworking, cooking, gardening, Orchid cultivating, playing video games, hacking on IoT, and Streaming his open source work!</p>
+<p>Sean Larkin【廖肖恩】是Microsoft的研发经理，负责Edge DevTools；他还是Web性能专家和webpack维护者。在工作之余，他与财富500强公司合作，帮助他们改变他们的文化，以实现Web性能实践、开源和采用新兴技术。在他的空闲时间里，他喜欢和家人共度时光，远足、木工、烹饪、园艺、兰花培养、玩视频游戏、黑客攻击物联网，以及打磨自己的开源作品！</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>前端工程化是前端业务以及技术架构复杂度提升导致的必行之路，工程化是与实践密不可分的。本专场我们通过分享业内一些经过实践检验的工程化方案，希望能够为大家在前端工程化的探索道路上提供借鉴和帮助。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2371" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《从一到无穷大：前端工程化中的实践与臆测》">《从一到无穷大：前端工程化中的实践与臆测》</h5><p> 王逸威 / 阿里巴巴 高级前端工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>毕业于南开大学，2015年加入去哪儿网，负责民宿客栈业务和Node.js工程化，2017年加入阿里巴巴，现任CBU技术部前端工程负责人。深耕于前端工程化领域，主导了在阿里巴巴B类事业群被多个BU广泛使用的Just工程体系的开发。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>前端工程化是前端业务以及技术架构复杂度提升导致的必行之路，工程化是与实践密不可分的。本专场我们通过分享业内一些经过实践检验的工程化方案，希望能够为大家在前端工程化的探索道路上提供借鉴和帮助。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2402" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《京东购物小程序工程化之路》">《京东购物小程序工程化之路》</h5><p> 刘慧敏 / 京东 高级前端工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>京东凹凸实验室前端工程师，京东购物小程序前端负责人。曾就职于腾讯，参与过QQ 空间相册、时光轴等核心产品的研发。2014 年加入京东，负责京东购物小程序项目的研发与管理，在前端工程化、小程序、效率提升及性能优化方面有较多的研究和积累。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>前端工程化是前端业务以及技术架构复杂度提升导致的必行之路，工程化是与实践密不可分的。本专场我们通过分享业内一些经过实践检验的工程化方案，希望能够为大家在前端工程化的探索道路上提供借鉴和帮助。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2416" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h5 id="《快手游戏直播Web站的工程进化之路》">《快手游戏直播Web站的工程进化之路》</h5><p> 俞天翔 / 快手 前端架构师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>快手前端架构师，游戏直播团队前端负责人。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>前端工程化是前端业务以及技术架构复杂度提升导致的必行之路，工程化是与实践密不可分的。本专场我们通过分享业内一些经过实践检验的工程化方案，希望能够为大家在前端工程化的探索道路上提供借鉴和帮助。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2412" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="性能优化与监控">性能优化与监控</h4><blockquote>
+<p>对于端上的性能监控与优化，也一直是热门话题。移动互联网经过近10年的发展，各大APP随着时间和业务的累加变得越来越重，复杂度高的业务模块和数量巨大的第三方插件，导致APP越来越慢、越来越卡，严重影响了用户体验。</p>
+<p>因此，对APP进行性能优化就变得尤为重要。性能优化有很多指标，比如Crash率、卡顿、CPU、内存、存储和网络等，建立完善的数据指标并进行有效采集是一项很复杂的任务。除了手动埋点以外，业界对自动化埋点和性能优化监控平台的探索也层出不穷，性能优化在一线大厂得到了高度的重视。</p>
+<p>本专场将邀请不同业务场景的一线技术专家分享相关技术实践，希望能给大家带来更多的思考和落地参考。</p>
+</blockquote>
+<h5 id="《B站的视频体验进化之路》">《B站的视频体验进化之路》</h5><p> 谭兆歆 / bilibili 资深前端工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>在B站任职五年，现负责Web播放相关工作，即HTML5播放器及播放内核开发、弹幕支持和特效研究、用户体验优化方面。参与的项目有HTML5播放器开发及在B站的全面上线、DASH内核调研开发、蒙板弹幕、播放页改版与秒开等。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>对于端上的性能监控与优化，也一直是热门话题。本专场将邀请不同业务场景的一线技术专家分享相关技术实践，希望能给大家带来更多的思考和落地参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2360" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《0-3秒完成渲染！信息流内容页“闪开”优化总结和思考》">《0.3秒完成渲染！信息流内容页“闪开”优化总结和思考》</h5><p> 庞锦贵 / 阿里巴巴 前端技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>现就职于阿里巴巴移动事业部，UC国内信息流前端负责人。有丰富的性能优化、工程化、架构设计经验，UC移动技术核心决策成员。参与了Scrat3架构建设，主导并推动了UCWeex Rax和UCWeex Vue体系的标准化建设；开发并落地了UC新一代大前端工程框架&mdash;&mdash;UFX，主导了UC离线缓存框架&mdash;&mdash;U-cache的设计和开发。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>对于端上的性能监控与优化，也一直是热门话题。本专场将邀请不同业务场景的一线技术专家分享相关技术实践，希望能给大家带来更多的思考和落地参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2361" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《字节跳动线上性能监控体系的建设》">《字节跳动线上性能监控体系的建设》</h5><p> 万里鹏 / 字节跳动 性能监控体系负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>万里鹏，就职于字节跳动客户端基础技术部门，负责Android端性能监控体系，主要包括：异常监控、性能监控、事件监控和日志系统等。主要服务于头条、抖音、西瓜视频、火山小视频、多闪等全公司级移动端产品，为业务开发、异常排查、性能优化和用户反馈提供整套监控体系。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>对于端上的性能监控与优化，也一直是热门话题。本专场将邀请不同业务场景的一线技术专家分享相关技术实践，希望能给大家带来更多的思考和落地参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2366" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《去哪儿网客户端无埋点监控与性能优化实践》">《去哪儿网客户端无埋点监控与性能优化实践》</h5><p> 孟超 / 去哪儿网 公共产品部大前端负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2014 年加入去哪儿网，主要负责客户端混合开发框架相关的工作，先后负责参与去哪儿网 Hybrid 框架、QRN 框架（基于 React Native）、热更新系统、客户端无埋点监控平台等的设计、开发、应用与实践工作，目前专注于 App 性能优化和无埋点监控方向的一体化解决方案。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>对于端上的性能监控与优化，也一直是热门话题。本专场将邀请不同业务场景的一线技术专家分享相关技术实践，希望能给大家带来更多的思考和落地参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2406" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《从重新认识前端渲染开始，小红书的前端性能监控及优化实践》">《从重新认识前端渲染开始，小红书的前端性能监控及优化实践》</h5><p> 李季骏 / 小红书 社区前端工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2016 年底加入小红书至今，目前任职于社区前端组，负责了包括小红书前端工程化、服务端同构、Hybrid 容器层建设（WebView、React Native）等方向。对于跨平台混合开发场景有丰富的实践，并在效率、性能等方向累积了一定的工程化解决方案经验。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>对于端上的性能监控与优化，也一直是热门话题。本专场将邀请不同业务场景的一线技术专家分享相关技术实践，希望能给大家带来更多的思考和落地参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2408" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《手Q_iOS客户端性能监控和优化实践》">《手Q iOS客户端性能监控和优化实践》</h5><p> 罗鑫 / 腾讯 手Q客户端基础平台团队高级工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>罗鑫（rosen），腾讯手Q客户端基础平台团队高级工程师。2015年加入腾讯，一直从事手Q iOS客户端性能相关的监控和优化工作，在卡顿、内存、发热耗电等移动终端性能优化方面有丰富的实践经验，目前负责手Q iOS客户端基础性能监控优化以及编译效率提升的工作。 </p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>对于端上的性能监控与优化，也一直是热门话题。本专场将邀请不同业务场景的一线技术专家分享相关技术实践，希望能给大家带来更多的思考和落地参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2415" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="跨平台技术">跨平台技术</h4><blockquote>
+<p>作为开发者，我们总是在追求效率和性能上不断探索和实践，这也是企业生存之道。效率和性能往往是一个矛盾点，为了效率我们探索的通用方案会带来冗余性能损耗、为了性能我们需要针对特定环境专项优化而失去通用性以至于效率折损。跨平台解决方案，以此寻求效率和性能的平衡。对于企业以及团队而言，选择合适的开发语言及框架、跨平台中UI复用、不同平台API高扩展性、基于效率之上性能最优等，都一直围绕着跨平台技术和解决方案展开探索。</p>
+<p>相约GMTC 北京2019『跨平台技术』专场，和技术专家一起交流跨平台技术方案及应用实践。</p>
+</blockquote>
+<h5 id="《基于小程序技术栈的微信客户端跨平台实践》">《基于小程序技术栈的微信客户端跨平台实践》</h5><p> 张志坚 / 微信 高级工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>张志坚，微信高级工程师，2018年加入腾讯微信团队，主要从事跨平台方向，从参与基于C++的跨平台UI框架到基于Flutter的跨平台框架研发，持续推进跨平台方案落地。曾就职于阿里UC浏览器内核团队，主要从事多媒体、浏览器内核方向，经历了UC浏览器内核从U3到U4的过程，先后主导了浏览器内核网络流媒体方面的播放和下载架构设计，持续优化TCP/IP/HTTP2网络模块，帮助提升网页性能。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>跨平台开发是为了增加代码复用，减少开发者对多个平台差异适配的工作量，降低开发成本，提高业务专注的同时，提供比Web更好的体验。本专场将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2338" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《闲鱼基于Flutter技术的架构演进与创新》">《闲鱼基于Flutter技术的架构演进与创新》</h5><p> 于佳（宗心） / 阿里巴巴 闲鱼客户端团队负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>于佳，花名宗心，闲鱼技术团队客户端负责人。2012年应届毕业加入阿里巴巴，经历集团无线化转型的重要时期，参与过集团多款重量级App以及移动中间件的设计与开发，多年客户端老兵。2014年参与了手机淘宝的iOS客户端的架构升级，该架构首次完成了对百人团队并行开发的支持，同年主导了手机天猫客户端基础架构以及交易链路向手淘架构的归一，为手机淘宝作为未来集团无线中台奠定了坚实的基础。2015年加入闲鱼客户端团队负责端架构和团队建设，工作期间完成了基于Flutter混合架构的闲鱼客户端的整体架构设计，在工程体系上完善了针对Flutter的持续集成以及高可用体系的支撑，同时推进了闲鱼主链路业务的Flutter化。未来将持续关注终端技术的演变及发展趋势。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>跨平台开发是为了增加代码复用，减少开发者对多个平台差异适配的工作量，降低开发成本，提高业务专注的同时，提供比Web更好的体验。本专场将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2347" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《基于跨平台框架_Flutter_的动态化平台建设》">《基于跨平台框架 Flutter 的动态化平台建设》</h5><p> 刘志磊 / 美团 大前端技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>刘志磊，美团大前端技术专家。2015 年加入美团，2016 年负责美团性能及 crash 监控相关工作，2017 年开始参与美团Hybrid工作，在终端动态化方向有较多研究和积累。2018年底开始尝试将 Flutter 与动态化相结合，进行 Flutter 平台化的建设。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>跨平台开发是为了增加代码复用，减少开发者对多个平台差异适配的工作量，降低开发成本，提高业务专注的同时，提供比Web更好的体验。本专场将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h5 id="《基于_Electron_的跨平台桌面客户端开发实践》">《基于 Electron 的跨平台桌面客户端开发实践》</h5><p> 王丰 / 字节跳动 Lark前端负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>Lark 前端负责人，负责 Lark 桌面客户端，Web 端，以及 Lark 其他相关 B 端、M 端产品的研发工作。曾就职于百度、网易、滴滴等公司，2018年加入字节跳动。参与过百度音乐、网易新闻客户端、小桔车服等大型项目的开发和前端技术体系建设。在前端工程化、大型 WebApp 架构设计、前端性能优化等领域有丰富的实践经验。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>跨平台开发是为了增加代码复用，减少开发者对多个平台差异适配的工作量，降低开发成本，提高业务专注的同时，提供比Web更好的体验。本专场将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2350" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h4 id="前端框架">前端框架</h4><blockquote>
+<p>前端框架逐渐形成了React、Vue、Angular三足鼎立的形势，另外还有一些公司的自研框架，每一个框架都有着自己的拥趸，这些框架有哪些落地实践，让我们为你一一道来。</p>
+</blockquote>
+<h5 id="《蚂蚁金服前端框架和工程化实践》">《蚂蚁金服前端框架和工程化实践》</h5><p> 陈成（云谦） / 蚂蚁金服 高级技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>陈成，花名云谦，蚂蚁金服高级技术专家，入职阿里已有 10 年。之前在淘宝，负责过淘宝首页、宝贝详情、购物车、下单等很多重要业务的前端部分。然后转岗到支付宝，曾负责 <a href="a href=&quot;https://github.com/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://github.com/&lt;/a&gt;spmjs/spm">spm</a>、支付宝开发者工具的开发，以及创建了 <a href="a href=&quot;https://github.com/dvajs/dva/">dva</a>“ rel=”nofollow” target=”_blank”&gt;<a href="https://github.com/dvajs/dva/" target="_blank" rel="external">https://github.com/dvajs/dva/</a>)，<a href="a href=&quot;https://github.com/sorrycc/roadhog">roadhog</a>“ rel=”nofollow” target=”_blank”&gt;<a href="https://github.com/sorrycc/roadhog" target="_blank" rel="external">https://github.com/sorrycc/roadhog</a>)，<a href="a href=&quot;https://github.com/ant-design/babel-plugin-import">babel-plugin-import</a>“ rel=”nofollow” target=”_blank”&gt;<a href="https://github.com/ant-design/babel-plugin-import" target="_blank" rel="external">https://github.com/ant-design/babel-plugin-import</a>)，<a href="a href=&quot;https://github.com/umijs/umi/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;https://github.com/umijs/umi/&lt;/a">umi</a> 等。擅长的领域有工具、前端框架以及前端性能等，热衷于开源，大家可以在 <a href="https://github.com/sorrycc" rel="nofollow" target="_blank">https://github.com/sorrycc</a> 找到我。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>前端框架逐渐形成了React、Vue、Angular三足鼎立的形势，另外还有一些公司的自研框架，每一个框架都有着自己的拥趸，这些框架有哪些落地实践，让我们为你一一道来。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2404" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《换个角度看_Vue_组件》">《换个角度看 Vue 组件》</h5><p> 唐金州 / 校宝在线技术专家 Ant Design Vue 作者</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>唐金州，校宝在线 技术专家，Ant Design Vue 作者，极客时间<a href="http://gk.link/a/103Wa" target="_blank" rel="external">《Vue开发实战》</a>视频课讲师。第二届 VueConf 演讲嘉宾，主导开发的 Ant Design Vue 在 GitHub 已有 6000+ Star，并且已经纳入 Ant Design 官方域名下，成为了蚂蚁金服 Ant Design 官方唯一指定的 Vue 版组件库。曾任职于搜狗、蚂蚁金服，并主导研发了多个 UI 框架和前端架构设计，在移动端和中后台都有丰富的开发经验。除了 Vue 之外，对 React 也有多年的开发经验。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>前端框架逐渐形成了React、Vue、Angular三足鼎立的形势，另外还有一些公司的自研框架，每一个框架都有着自己的拥趸，这些框架有哪些落地实践，让我们为你一一道来。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2403" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《多端适配框架NFES在携程的实践》">《多端适配框架NFES在携程的实践》</h5><p> 魏晓军 / 携程 高级研发经理</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2011年加入携程，主要负责前端框架和基础设施的研发工作，目前重点关注Node.js和前端新技术的落地，以及前端性能优化。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>前端框架逐渐形成了React、Vue、Angular三足鼎立的形势，另外还有一些公司的自研框架，每一个框架都有着自己的拥趸，这些框架有哪些落地实践，让我们为你一一道来。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2409" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《深入剖析React_Native下一代引擎框架重构》">《深入剖析React Native下一代引擎框架重构》</h5><p> 熊文源 / 京东 架构师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>熊文源，京东架构师，2016年加入京东，目前是技术中台多端融合平台Android端架构师，主要负责京东多端融合框架、引擎的搭建和基础组件的研发和架构设计工作，多端融合Android端的技术架构负责人，对React Native、Flutter、小程序框架有很深入的了解。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>前端框架逐渐形成了React、Vue、Angular三足鼎立的形势，另外还有一些公司的自研框架，每一个框架都有着自己的拥趸，这些框架有哪些落地实践，让我们为你一一道来。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2410" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="UI与图形渲染">UI与图形渲染</h4><blockquote>
+<p>从远古时代静态的Web Page，到如今动态的Web App，网站前端的核心竞争从视觉的表现力逐渐过渡为功能的丰富性，而功能的实现也同样需要借助视觉的反馈。所以不论前端技术生态如何演进，UI与图形始终是不变的核心。前端UI与图形渲染有丰富的技术选型：HTML+CSS足以应对大多数常规前端项目；SVG被广泛应用于二维可视化领域；地图、游戏、医学、建筑等涉及三维场景、矢量图形、大数据计算的领域对于WebGL的应用也臻至成熟。本专题邀请拥有多年经验积累的一线讲师与专家，分享各自在不同产业领域和应用场景下针对UI与图形的技术与实践经验。</p>
+</blockquote>
+<h5 id="《基于Flutter引擎的TypeScript_UI框架在树莓派上的应用》">《基于Flutter引擎的TypeScript UI框架在树莓派上的应用》</h5><p> 徐远同（二同） / 淘宝 前端渲染技术团队负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>徐远同，花名二同，淘宝前端渲染技术团队负责人。此前曾任职于华为、百度，参与过百度地图等重量级App的研发。2016年加入淘宝，负责高性能W3C标准化图形渲染引擎以及工具链的研发。主要研究方向为WebGL/WebGPU标准的自有实现，以及跨平台跨终端的UI渲染体系，以拓展前端边界为目标努力。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>不论前端技术生态如何演进，UI与图形始终是不变的核心。本专题邀请拥有多年经验积累的一线讲师与专家，分享各自在不同产业领域和应用场景下针对UI与图形的技术与实践经验。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2342" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《基于GLES的三维地图渲染技术工程实践》">《基于GLES的三维地图渲染技术工程实践》</h5><p> 王前卫 / 高德 高级地图技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>王前卫，高德高级地图技术专家，客户端地图渲染技术团队负责人。深耕AMAP地图渲染技术多年，深度参与高德AE8、大编译、SDK升级项目等几场硬仗，拥有丰富的一线实践经验。目前在高德负责地图渲染引擎及AR导航黑科技的研发，在这些技术领域有较深的研究和见解。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>不论前端技术生态如何演进，UI与图形始终是不变的核心。本专题邀请拥有多年经验积累的一线讲师与专家，分享各自在不同产业领域和应用场景下针对UI与图形的技术与实践经验。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2420" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h5 id="《结合React与D3进行数据可视化开发》">《结合React与D3进行数据可视化开发》</h5><p> 郭桦 / Twitter 数据科学家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>郭桦，Twitter数据科学家，负责Twitter内部在线互动数据可视化工具的设计与开发，主攻网络可视化与事件序列可视化。2017年获得布朗大学博士学位，就读期间主要研究以人为本的数据可视化设计在脑科学、决策等领域的应用。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>不论前端技术生态如何演进，UI与图形始终是不变的核心。本专题邀请拥有多年经验积累的一线讲师与专家，分享各自在不同产业领域和应用场景下针对UI与图形的技术与实践经验。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h5 id="《基于DOM_的可协作幻灯片编辑器架构模式》">《基于DOM 的可协作幻灯片编辑器架构模式》</h5><p> 刘怡年 / 石墨文档 幻灯片技术负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2017 年加入石墨文档担任前端开发工程师，于 2018 年参与石墨文档幻灯片项目从立项开始的工作，担任技术负责人。主要研究方向为编辑器技术方案设计与数据管理方案实现，在石墨幻灯片开发过程中积累了一定的编辑器相关技术管理和功能实现经验。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>不论前端技术生态如何演进，UI与图形始终是不变的核心。本专题邀请拥有多年经验积累的一线讲师与专家，分享各自在不同产业领域和应用场景下针对UI与图形的技术与实践经验。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2351" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="Node实战">Node实战</h4><blockquote>
+<p>Node.js在大前端布局里意义重大，除了基本构建和Web服务外，这里我还想讲2点。首先它打破了原有的前端边界，之前应用开发只分前端和API开发。但通过引入Node.js做BFF这样的API Proxy中间层，使得API开发也成了前端的工作范围，让后端同学专注于开发RPC服务，很明显这样明确的分工是极好的。其次，在前端开发过程中，有很多问题不依赖服务器端是做不到的，比如场景的性能优化，在使用React后，导致bundle过大，首屏渲染时间过长，而且存在SEO问题，这时候使用Node.js做SSR就是非常好的。</p>
+<p>当然，前端开发使用Node.js还是存在一些成本，要了解运维等技能，会略微复杂一些，不过也有解决方案，比如Servlerless就可以降级运维成本，又能完成前端开发。直白点讲，在已有Node.js拓展的边界内，降级运维成本，提高开发的灵活性，这一定会是一个大趋势。</p>
+<p>本次专场，依然专注于Node主要做的2件事儿：前端辅助 + API封装，会重点倾向于Serverless、TypeScript在Web开发框架里的相关实践、性能、SSR以及架构相关的主题进行组织分享。</p>
+</blockquote>
+<h5 id="《海量Node-js云服务的DevOps实践》">《海量Node.js云服务的DevOps实践》</h5><p> 王伟嘉 / 腾讯云研发工程师 Node 源码核心贡献者</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>王伟嘉，Starkwang，现腾讯云研发工程师，Node.js Core Collaborator，目前在腾讯云TCB团队负责小程序云开发相关的业务。对Serverless服务的设计与研发、Node.js工程运维开发有比较丰富的经验。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本次专场，依然专注于Node主要做的2件事儿：前端辅助 + API封装，会重点倾向于Serverless、TypeScript在Web开发框架里的相关实践、性能、SSR以及架构相关的主题进行组织分享。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2340" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《网易严选企业级Node及Serverless应用实践》">《网易严选企业级Node及Serverless应用实践》</h5><p> 金炳 / 网易 资深前端开发工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>金炳，网易资深前端开发工程师，网易严选Node负责人。 2016年加入网易，负责过邮箱大师、网易严选等产品前端开发，做过前端、后端、产品设计，是一名全栈工程师。目前致力于Node应用框架研究开发与生态建设，实践Node应用在Serverless、Faas场景下的迁移和落地，探索Service Mesh在Node应用中的价值。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本次专场，依然专注于Node主要做的2件事儿：前端辅助 + API封装，会重点倾向于Serverless、TypeScript在Web开发框架里的相关实践、性能、SSR以及架构相关的主题进行组织分享。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2344" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《基于_TypeScript_的_Node-js_多场景框架设计方案》">《基于 TypeScript 的 Node.js 多场景框架设计方案》</h5><p> 陈仲寅（张挺） / 淘宝 前端技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>长期耕耘于Node.js技术栈，为淘宝和阿里其他BU提供框架和中间件解决方案，负责淘宝整体的Node.js体系基础建设，解决全栈开发的各种维护和稳定性问题，也同时负责 MidwayJs系列内部和社区开源产品，包括Midway、Sandbox、Pandora、Injection等开源产品的开发、维护等工作。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本次专场，依然专注于Node主要做的2件事儿：前端辅助 + API封装，会重点倾向于Serverless、TypeScript在Web开发框架里的相关实践、性能、SSR以及架构相关的主题进行组织分享。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2353" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《使用_Node-js_的_TypeScript_多场景框架和方案实践》">《使用 Node.js  的 TypeScript 多场景框架和方案实践》</h5><p> 陈仲寅（张挺） / 淘宝 前端技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>长期耕耘于Node.js技术栈，为淘宝和阿里其他BU提供框架和中间件解决方案，负责淘宝整体的Node.js体系基础建设，解决全栈开发的各种维护和稳定性问题，也同时负责 MidwayJs系列内部和社区开源产品，包括Midway、Sandbox、Pandora、Injection等开源产品的开发、维护等工作。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本次专场，依然专注于Node主要做的2件事儿：前端辅助 + API封装，会重点倾向于Serverless、TypeScript在Web开发框架里的相关实践、性能、SSR以及架构相关的主题进行组织分享。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<h4 id="未来移动技术">未来移动技术</h4><blockquote>
+<p>移动开发中都有哪些技术，如何将新技术在工作中实际使用？本专场包含现在的技术的新的方案和实践，以及未来技术的探索，希望通过一线工程师的技术实践分享，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+<h5 id="《基于Android_App_Bundles的动态化方案探索_》">《基于Android App Bundles的动态化方案探索 》</h5><p> 陈家伟 / 爱奇艺 资深工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2014年南昌大学毕业，硕士学历，五年移动端开发经验。曾就职于步步高、平安，目前就职于爱奇艺移动架构组，主攻Android动态化相关项目。包括React Native Android端架构设计、Android热修复、Android组件化等，近一年来作为Qigsaw项目负责人开展新一代Android组件化工作。Qigsaw基于Android App Bundle实现，具有维护简单、开发方式灵活、无缝切换至国际版等优点。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>移动开发中都有哪些技术，如何将新技术在工作中实际使用？本专场包含现在的技术的新的方案和实践，以及未来技术的探索，希望通过一线工程师的技术实践分享，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2348" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《JavaScript_in_IoT》">《JavaScript in IoT》</h5><p> 刘亚中 / Rokid 研发工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>开源爱好者，Node.js Collaborator、ShadowNode 作者，目前主攻：Node.js 在 AIoT 领域的应用, 并负责 YodaOS 的社区推广工作。五年 JavaScript 开发经验，曾就职于：SeedMail、Pixbi、阿里巴巴，目前就职于 Rokid 基础平台研发中心，主要工作方向为基于 JavaScript 的物联网操作系统。近年来参与并负责 YodaOS 项目，将 IoT 和 AI 能力开放给 Node.js 社区，并实现了 Node.js 在 IoT 场景的产品级落地。同时也是 Node.js Collaborator、ShadowNode 和 TensorFlow-Node.js 作者，开源发烧友，目前给60个开源项目贡献过代码。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>移动开发中都有哪些技术，如何将新技术在工作中实际使用？本专场包含现在的技术的新的方案和实践，以及未来技术的探索，希望通过一线工程师的技术实践分享，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2345" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《移动_Web_上玩转原生游戏_》">《移动 Web 上玩转原生游戏 》</h5><p> 杨轶 / 上海木鸡网络科技有限公司 联合创始人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>杨轶是上海木鸡网络科技有限公司的联合创始人，目前负责公司技术产品化和开发者技术合作方面的工作，是木鸡科技 WEBIR 技术的布道者。在联合创建木鸡科技之前，杨轶就职于 Intel 软件和服务集团，负责 x86 Android 游戏生态在中国区的技术普及工作，专注于 x86 编译器、游戏底层代码优化、引擎和图形渲染技术。在 Intel 之前，杨轶作为 BSP 高级工程师服务于 Freescale 网络多媒体事业部，专注于解决网络处理器性能优化问题。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>移动开发中都有哪些技术，如何将新技术在工作中实际使用？本专场包含现在的技术的新的方案和实践，以及未来技术的探索，希望通过一线工程师的技术实践分享，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2349" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《Hippy_前终端一体化框架的发展与未来探索》">《Hippy 前终端一体化框架的发展与未来探索》</h5><p> 罗梦砚 / 腾讯 iOS开发高级工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>iOS开发高级工程师，2014年加入腾讯，主要从事QQ浏览器iOS版开发工作。2017年11月开始从事Hippy sdk工作。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>移动开发中都有哪些技术，如何将新技术在工作中实际使用？本专场包含现在的技术的新的方案和实践，以及未来技术的探索，希望通过一线工程师的技术实践分享，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h4 id="小程序">小程序</h4><blockquote>
+<p>小程序开发如火如荼，业界都有哪些实战经验？本专场将邀请来自一线的技术专家分享他们的实践和思考。</p>
+</blockquote>
+<h5 id="《腾讯在线教育小程序开发实践之路》">《腾讯在线教育小程序开发实践之路》</h5><p> 陈超 / 腾讯 高级Web前端工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>陈超，腾讯前端高级工程师，IMWeb团队成员，QCon明星讲师。负责腾讯课堂前端To B、小程序等业务的开发以及在线教育Web音视频的整体架构。对Web前端架构、直播技术等有深入的见解和丰富的实践经验。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>小程序开发如火如荼，业界都有哪些实战经验？本专场将邀请来自一线的技术专家分享他们的实践和思考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2363" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h5 id="《用_React_Hooks_重构你的小程序》">《用 React Hooks 重构你的小程序》</h5><p> 余澈 / 京东 高级前端工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>京东凹凸实验室前端工程师，主要负责基础设施建设和前端性能优化。热爱开源事业，先后作为主要开发者参与了 Vue.js 第一个大型 UI 库 vue-strap、高性能类 React 框架 Nerv、多端统一开发框架 Taro 的开发和维护。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>小程序开发如火如荼，业界都有哪些实战经验？本专场将邀请来自一线的技术专家分享他们的实践和思考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2417" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《苏宁易购小程序同构实践》">《苏宁易购小程序同构实践》</h5><p> 禹立彬 / 苏宁 消费者平台研发中心前端技术总监</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>禹立彬，十年Web前端开发经历，中国最早一批前端开发者，历任西祠胡同前端负责人、途牛旅游网前端架构师等职务。现任苏宁消费者平台研发中心前端技术总监，负责苏宁易购网站前端领域的技术管理工作。在基于Node.js的前后端分离，ReactNative/Weex开发有丰富的技术实践经历。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>小程序开发如火如荼，业界都有哪些实战经验？本专场将邀请来自一线的技术专家分享他们的实践和思考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2362" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="编程语言">编程语言</h4><blockquote>
+<p>编程语言专场会关注 JavaScript、Dart、Swift等这些语言的特性和应用，这些是目前大前端领域在用或者趋势性的语言。</p>
+</blockquote>
+<h5 id="《在分歧中发展——2019，我们能用_Swift_做什么》">《在分歧中发展——2019，我们能用 Swift 做什么》</h5><p> 王巍（喵神） / LINE 高级软件工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>王巍，LINE高级软件工程师，现在是一名专注于 iOS 的职业开发者。他拥有对于 Swift、Objective-C 以及网络程序设计方面的深厚知识及多年实践经验。他将这些技术运用于创建应用程序和通用框架等解决方案，其中包括 Kingfisher 等框架很多都被用户喜爱，并被开发者社区广泛使用来构建其他软件。同时，他是 ObjC 中国组织的发起人和领导者，为将最佳 iOS 实践和进阶技术引入中国而不断努力。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>编程语言专场会关注 JavaScript、Dart、Swift等这些语言的特性和应用，这些是目前大前端领域在用或者趋势性的语言。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2358" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《WebAssembly_—_技术变革，未来已来》">《WebAssembly — 技术变革，未来已来》</h5><p> 于航 / 饿了么 资深前端工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>目前在 阿里巴巴/本地生活 做前端技术工作；FCC 上海社区负责人；2016 年开始研究 WebAssembly 技术，由于当时网络上信息较少，只能通过官方博客和网站发布的信息再结合自己的实践进行研究。2017 年加入 WebAssembly 中国社区，主要负责维护 WebAssembly 相关的实践资源和技术资讯分享。同年注册成为官方 CG 成员，定期参与 CG 组织的各种在线视频研讨会议，在跟进 WebAssembly 最新发展情况的同时也为 WebAssembly 的标准化提出自己的建议和意见。2018 年深入参与到 Emscripten 编译器工具链的项目研发中，同年出版名为《深入浅出 WebAssembly》的国内第一本 Wasm 技术书籍，为推动国内 Wasm 技术的发展和落地实践做出了微小的贡献。研究方向主要为前端技术、 Wasm、编译器以及 LLVM 等相关方向。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>编程语言专场会关注 JavaScript、Dart、Swift等这些语言的特性和应用，这些是目前大前端领域在用或者趋势性的语言。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2368" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《Event_Loop、Future与Isolate_-_单线程模型下的Dart异步编程模式》">《Event Loop、Future与Isolate - 单线程模型下的Dart异步编程模式》</h5><p> 陈航 / 美团点评 高级技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>陈航，专注于大前端开发领域9年。曾就职于雅虎北研和新浪微博，2015年加入美团，经历了外卖用户端和商家端发展的多个阶段，推动了外卖移动端架构演进、线上运维及终端技术栈融合等相关工作。现任美团外卖商家业务终端团队技术负责人，致力于提升终端团队研发效率与交付质量。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>编程语言专场会关注 JavaScript、Dart、Swift等这些语言的特性和应用，这些是目前大前端领域在用或者趋势性的语言。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2359" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="质量保证">质量保证</h4><blockquote>
+<p>多变的用户场景、复杂的兼容性需求以及开发技术的迅速更迭都给质量保障和产品安全带来了重大挑战。本专场将重点关注前端测试和安全方向，我们将邀请知名互联网公司的技术专家分享他们独到的解决方案，希望通过本次专场分享给大家在质量保障方向带来更多的借鉴和思考。</p>
+</blockquote>
+<h5 id="《基于精准测试及AI技术的前端质量保证实践》">《基于精准测试及AI技术的前端质量保证实践》</h5><p> 刘道伟 / 百度 资深测试工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>百度搜索质量部资深测试工程师(T7)，2014年加入百度，成为搜索展现架构测试技术负责人，建设了搜索展现架构移动端质量保证体系。2018年开始作为搜索前端测试技术负责人，主要负责搜索前端的测试技术创新及质量保证工作，针对前端迭代快、回归量大、展现效果难以验证等难点，在测试前、中、后等不同阶段引入精准测试、图像技术、AI技术，实现单纯的UI-自动化向全环节的自动化转变，形成整个测试的闭环。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>多变的用户场景、复杂的兼容性需求以及开发技术的迅速更迭都给质量保障和产品安全带来了重大挑战。本专场将重点关注前端测试和安全方向，我们将邀请知名互联网公司的技术专家分享他们独到的解决方案，希望可以给大家在质量保障方向带来更多的借鉴和思考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2421" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《从代码保护出发详谈业务安全前端对抗》">《从代码保护出发详谈业务安全前端对抗》</h5><p> 刘忠正 / 腾讯 防水墙团队前端负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>毕业于华南师范大学，2017年加入腾讯安全平台部防水墙团队，现任腾讯防水墙团队前端负责人，负责腾讯防水墙产品的前端技术架构及产品研发。研究的方向包括前端数据保护、前端代码混淆、前端执行环境检测等。参与指导过腾讯视频、腾讯文档、微信小程序等项目的代码保护工作，为业务提供Web前端代码保护能力，如今腾讯防水墙每天为腾讯及生态内公司提供上亿次的业务安全安全防护。此前曾任职于阿里巴巴安全部，负责基础安全平台产品的研发工作。而后在51信用卡前端架构团队，负责51信用卡的前端规范制定和基础产品研发。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>多变的用户场景、复杂的兼容性需求以及开发技术的迅速更迭都给质量保障和产品安全带来了重大挑战。本专场将重点关注前端测试和安全方向，我们将邀请知名互联网公司的技术专家分享他们独到的解决方案，希望可以给大家在质量保障方向带来更多的借鉴和思考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2356" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h5 id="《搜狗精准化测试的设计与实践详解》">《搜狗精准化测试的设计与实践详解》</h5><p> 王鹏 / 搜狗 资深高级测试开发工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>王鹏，北京搜狗科技发展有限公司，资深高级测试开发工程师。2008年加入测试行业，2009-2013年在腾讯北京负责搜搜发薪、搜搜工具栏等项目的质量工作，2013年至今担任搜狗社区类项目测试负责人，主要工作内容包括测试工具平台的建设，前端测试体系的建立，精准化测试的探索与落地推广等工作。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>多变的用户场景、复杂的兼容性需求以及开发技术的迅速更迭都给质量保障和产品安全带来了重大挑战。本专场将重点关注前端测试和安全方向，我们将邀请知名互联网公司的技术专家分享他们独到的解决方案，希望可以给大家在质量保障方向带来更多的借鉴和思考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2357" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="深度培训">深度培训</h4><blockquote>
+<p>想更深入地学习热点技术吗？GMTC特设为期2天（6月22-23日）的会后深度培训，邀请业内资深专家围绕Flutter、客户端和端内H5的性能问题优化、Android应用深度优化等热门技术，展开从入门到实践的落地分享。</p>
+</blockquote>
+<h5 id="《Flutter_技术进阶与实战》">《Flutter 技术进阶与实战》</h5><p> 李会超 / 美团点评 技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>李会超，美团点评技术专家。专注于大前端开发领域多年，曾就职于新浪微博，现任美团外卖商家业务iOS负责人，致力于提升研发效率与研发质量，为商家提供稳定可靠的生产力工具。在美团的四年时间，推进了商家业务移动端架构升级和基础设施建设，探索并大规模落地了多端复用的多重可行性方案，对React Native和Flutter拥有深刻的理解及丰富的项目实践经验，是美团点评最早落地Flutter线上大规模应用的实践者和推动者。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>想更深入地学习热点技术吗？GMTC特设为期2天（6月22-23日）的会后深度培训，邀请业内资深专家围绕Flutter、客户端和端内H5的性能问题优化、Android应用深度优化等热门技术，展开从入门到实践的落地分享。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<h5 id="《客户端性能优化、用跨端突破端内H5的性能瓶颈》">《客户端性能优化、用跨端突破端内H5的性能瓶颈》</h5><p> 马华 / 滴滴 司机端iOS团队负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>马华，从事移动端开发9年，前端、客户端、后端技术全栈，先后供职于人人、新浪、百度、滴滴，在iOS安全、iOS操作系统、动态化、跨端、技术架构、Web性能优化方面有深入研究和探索，目前在滴滴负责司机端iOS团队和跨端项目Thanos团队。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>想更深入地学习热点技术吗？GMTC特设为期2天（6月22-23日）的会后深度培训，邀请业内资深专家围绕Flutter、客户端和端内H5的性能问题优化、Android应用深度优化等热门技术，展开从入门到实践的落地分享。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<h5 id="《Android应用深度优化》">《Android应用深度优化》</h5><p> 何定旭 / 美团点评 Android技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>何定旭，美团点评Android技术专家，Android基础设施组负责人，Android热更新Robust作者</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>想更深入地学习热点技术吗？GMTC特设为期2天（6月22-23日）的会后深度培训，邀请业内资深专家围绕Flutter、客户端和端内H5的性能问题优化、Android应用深度优化等热门技术，展开从入门到实践的落地分享。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<h4 id="移动AI">移动AI</h4><blockquote>
+<p>AI技术通过各种智能终端离我们的用户更近了，它除了满足用户各种各样的需求，如智能翻译、语音指令等，还能不断提高我们的研发质量，如UI自动化测试框架、图像/视频的智能识别等。在本专题下，我们将看到各个顶尖技术团队是如何结合终端+AI技术，带来更好的用户体验的。</p>
+</blockquote>
+<h5 id="《百度小游戏中AR的探索和实践》">《百度小游戏中AR的探索和实践》</h5><p> 沈毅 / 百度 资深研发工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2012年浙大毕业加入百度从事前端开发至今，目前担任百度资深研发工程师。主要研究Web图形方向（WebGL、Canvas、SVG）和数据可视化方向，游戏开发民科。是Apache ECharts的核心开发，参与过多次关于WebGL，ECharts和数据可视化的分享，现在主要负责百度的小程序小游戏项目。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>AI技术通过各种智能终端离我们的用户更近了，在本专题下，我们将看到各个顶尖技术团队是如何结合终端+AI技术，带来更好的用户体验的。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2364" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《WebNN_-_将硬件加速的深度学习带入开放式Web平台》">《WebNN - 将硬件加速的深度学习带入开放式Web平台》</h5><p> 张敏 / 英特尔亚太研发有限公司 软件技术经理</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2013-至今，目前担任英特尔亚太研发有限公司 Web Platform Engineering Team 软件技术经理，深度参与到 W3C Web Platform Test 的贡献，参与 Intel 的开源 Crosswalk Web Runtime 的完整生命周期，目前负责的团队参与到 Intel 的 Web Neural Network API, PWA 以及 WebGraphics 等项目。</p>
+<p>2007-2013，担任Opera Software 软件经理及产品经理，负责 Opera 浏览器以及欧朋浏览器的软件质量及产品 (客户端运营和关键数据）团队，负责浏览器在 Android、iOS、PC 等所有平台的质量，以及在中国市场的网站兼容性。同时负责浏览器产品的新特性定义和原型，包括 Opera 欧朋 Lite 浏览器 4.x 以及 Opera 欧朋浏览器 7、8 的产品工作。<br></p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>AI技术通过各种智能终端离我们的用户更近了，在本专题下，我们将看到各个顶尖技术团队是如何结合终端+AI技术，带来更好的用户体验的。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2365" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《MNN_-_端侧推理引擎面临的挑战与应对》">《MNN - 端侧推理引擎面临的挑战与应对》</h5><p> 陈以鎏（离青） / 淘宝 无线开发专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2015年加入淘宝，从事无线开发至今，目前担任无线开发专家一职。是阿里巴巴开源的首款端侧推理引擎 MNN (Mobile Neural Network) 的核心开发。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>AI技术通过各种智能终端离我们的用户更近了，在本专题下，我们将看到各个顶尖技术团队是如何结合终端+AI技术，带来更好的用户体验的。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2367" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="架构演进">架构演进</h4><blockquote>
+<p>本专场关注架构重构、移动中台等方向，将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+<h5 id="《如何使超大型⼯程矩阵高速运转及⾃下而上的技术演进揭秘》">《如何使超大型⼯程矩阵高速运转及⾃下而上的技术演进揭秘》</h5><p> 吴思振 / 字节跳动 资深工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>毕业于北京邮电大学，先后供职于百度、蘑菇街。2017年加入字节跳动，负责字节跳动无线研发平台，从零主导建设了字节跳动无线技术中台，向公司范围内所有业务线提供组件化通用技术支撑、CI/CD、分布式编译优化方案。现技术中台服务于公司各主要业务线，其自研的分布式编译方案为各业务线提供0成本的编译优化方案，以头条APP为例，以0成本接入方式，实现1500%的编译效率提升。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本专场关注架构重构、移动中台等方向，将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2405" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《基于_Serverless_的淘宝前端研发模式升级》">《基于 Serverless 的淘宝前端研发模式升级》</h5><p> 吴敏琦（七念） / 淘宝 高级技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>七念，2012年从 IBM 加入淘宝，曾负责淘宝前端数据产品和创新技术产品团队，后负责 Node.js 基础架构团队，并担任阿里巴巴前端委员会 Node.js 方向负责人。推动 Node.js 应用的稳定性治理，推动 Serverless 技术落地前端场景。同时也是 Node 地下铁线下沙龙创始人。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本专场关注架构重构、移动中台等方向，将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2411" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《滴滴乘客端Android架构演进解密》">《滴滴乘客端Android架构演进解密》</h5><p> 何斌斌 / 滴滴 高级技术专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>何斌斌，至今工作已有10年，一直专注于移动互联网领域研发，2014年加入滴滴，现任高级技术专家，负责滴滴乘客端Android版本、Android公共基础支撑等工作，多次主导并设计了滴滴乘客端架构的演进。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本专场关注架构重构、移动中台等方向，将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2341" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《腾讯课堂大前端架构演进历程解析》">《腾讯课堂大前端架构演进历程解析》</h5><p> 晏家红 / 腾讯 客户端高级工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>晏家红，腾讯客户端高级工程师，2016年加入腾讯，负责腾讯课堂iOS整体架构设计、跨平台方向以及音视频建设的工作，参与了从React Native、自研跨端框架Plato到基于Flutter的跨平台框架研发，同时从零主导建设了教育自研播放器ARMPlayer。对跨平台、音视频等有丰富的经验。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本专场关注架构重构、移动中台等方向，将邀请一线技术专家分享相关技术实践，给大家带来更多的思考和经验参考。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2413" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="前端团队管理和个人成长">前端团队管理和个人成长</h4><blockquote>
+<p>作为新手管理者，如何平衡业务和管理？前端框架怎么选？如何做好Code Review？个人职业规划上，如何一步步升级打怪，不断晋升？本专场着眼团队管理和个人成长两个方面，将邀请一线技术专家分享其心路成长历程，听听他们的前端职业生涯故事，给大家一些参考和经验。</p>
+</blockquote>
+<h5 id="《技术驱动型团队的组织建设经验谈》">《技术驱动型团队的组织建设经验谈》</h5><p> 吴亮（月影） / 奇虎360 奇舞团技术总监</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>吴亮（月影），奇虎360奇舞团团长，360技术委员会委员，JavaScript程序员，可视化UI框架SpriteJS作者，知名前端技术专家，w3ctech顾问。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>作为新手管理者，如何平衡业务和管理？个人职业规划上，如何一步步升级打怪，不断晋升？本专场着眼团队管理和个人成长两个方面，将邀请一线技术专家分享其心路成长历程，听听他们的前端职业生涯故事，给大家一些参考和经验。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2414" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《打造通用型高效前端团队》">《打造通用型高效前端团队》</h5><p> 吴子房 / 网易 前端开发专家</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>网易前端开发专家，网易严选ToB前端开发负责人。2005年毕业于浙江大学，2010年加入网易，负责过网易邮箱、邮箱大师、网易严选等产品前端。全栈开发，开发过前端框架、Node应用框架，TypeScript坚定拥护者，目前业务中前后端全面基于TypeScript开发。热衷于新技术的研究与应用，擅长发现与解决前后端开发痛点。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>作为新手管理者，如何平衡业务和管理？个人职业规划上，如何一步步升级打怪，不断晋升？本专场着眼团队管理和个人成长两个方面，将邀请一线技术专家分享其心路成长历程，听听他们的前端职业生涯故事，给大家一些参考和经验。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2400" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《工作10年，我在前端专业成长路上的探索（一）》">《工作10年，我在前端专业成长路上的探索（一）》</h5><p> 张鑫旭 / 《CSS世界》作者 前端开发工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>张鑫旭，前端开发工程师，国内知名前端博客&ldquo;鑫空间-鑫生活&rdquo;博主。先后就职于腾讯社交用户体验设计（ISUX）、阅文集团体验设计部（YUX）。工作已有10年，一直专注于前端开发，在与交互体验关系密切的领域花了大量时间学习与研究，如HTML/CSS/SVG/Canvas等。热衷于知识分享，400＋高质量原创技术文章，翻译撰写众多文档，如Snap.svg、Stylus、Canvas API等，因此在行业有一定的影响力，同时是畅销前端书籍《CSS世界》作者。多年来一直在一线开发，在纯前端专业领域的发展上持续探索。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>作为新手管理者，如何平衡业务和管理？个人职业规划上，如何一步步升级打怪，不断晋升？本专场着眼团队管理和个人成长两个方面，将邀请一线技术专家分享其心路成长历程，听听他们的前端职业生涯故事，给大家一些参考和经验。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2418" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h5 id="《工作10年，我在前端专业成长路上的探索（二）》">《工作10年，我在前端专业成长路上的探索（二）》</h5><p> 张鑫旭 / 《CSS世界》作者 前端开发工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>张鑫旭，前端开发工程师，国内知名前端博客&ldquo;鑫空间-鑫生活&rdquo;博主。先后就职于腾讯社交用户体验设计（ISUX）、阅文集团体验设计部（YUX）。工作已有10年，一直专注于前端开发，在与交互体验关系密切的领域花了大量时间学习与研究，如HTML/CSS/SVG/Canvas等。热衷于知识分享，400＋高质量原创技术文章，翻译撰写众多文档，如Snap.svg、Stylus、Canvas API等，因此在行业有一定的影响力，同时是畅销前端书籍《CSS世界》作者。多年来一直在一线开发，在纯前端专业领域的发展上持续探索。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>作为新手管理者，如何平衡业务和管理？个人职业规划上，如何一步步升级打怪，不断晋升？本专场着眼团队管理和个人成长两个方面，将邀请一线技术专家分享其心路成长历程，听听他们的前端职业生涯故事，给大家一些参考和经验。</p>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<p>注：由于讲师所在企业限制，不对外公布</p>
+<h4 id="多端提效与质量优化实践_（贝壳找房技术专场）">多端提效与质量优化实践  （贝壳找房技术专场）</h4><blockquote>
+<p>在泛前端飞速发展的今天，端上承载业务越来越重，业务在质量、性能、稳定性等方面要求也越来越高。同时，为了响应业务的高速发展，技术的迭代速度和效率需要大大加快。</p>
+<p>本专场将重点介绍贝壳找房在To B、To C业务的前端开发中，采取了哪些极限性能优化技术来提升业务体验，在Node服务稳定性方面有哪些实践经验；讲述在Native、Flutter、JS等多场景下的质量监控预警以及快速定位问题方法；同时分享贝壳找房在Flutter跨平台技术的架构设计、自动化集成、多业务解耦协作提效等方面的积累探索。</p>
+</blockquote>
+<h5 id="《极致前端性能优化探索》">《极致前端性能优化探索》</h5><p> 陈辰 / 贝壳找房 基础平台中心资深工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>陈辰，先后供职联想研究院、百度、阿里巴巴等公司。现任贝壳找房前端架构负责人，负责贝壳前端横向技术建设、标准规范指定、监控稳定性、效能提成等工作。开源项目灯塔负责人；慕课网认证前端性能讲师，著有多门前端性能优化课程；加州格林咨询公司特聘前端讲师；博才世杰咨询公司特聘前端讲师，贝壳前端知乎专栏《前端成长那些事儿》创始人。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本专场将介绍贝壳找房在前端性能优化、Node服务稳定性的实践经验，在Native、Flutter、JS等多场景下的质量监控预警，以及贝壳找房在Flutter跨平台提效实践等方面的积累探索。                    </p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2343" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《贝壳找房的Node服务稳定性建设实践》">《贝壳找房的Node服务稳定性建设实践》</h5><p> 徐辛承 / 贝壳找房 人店平台中心资深工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>贝壳找房资深工程师，现负责贝壳C端前端团队，2012年毕业于北航，曾就职于：人人网、百度、阿里，著有《Vue移动端实战技巧》一书。有丰富的用户体验优化、架构设计相关经验，近一年专注 Node 全栈方向。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本专场将介绍贝壳找房在前端性能优化、Node服务稳定性的实践经验，在Native、Flutter、JS等多场景下的质量监控预警，以及贝壳找房在Flutter跨平台提效实践等方面的积累探索。                    </p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2346" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《贝壳找房移动端监控体系建设实践》">《贝壳找房移动端监控体系建设实践》</h5><p> 孙旭东 / 贝壳找房 移动端架构负责人，B端APP开发负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>吉大计算机硕士毕业后，一直从事移动端开发，先后做过MTK、iOS、Android等平台，已经11年有余，2011年加入阿里巴巴担任技术专家，在阿里一干就是7年，积攒了大量的移动端架构和开发经验，2018年加入贝壳，担任移动端架构负责人，B端APP开发负责人。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本专场将介绍贝壳找房在前端性能优化、Node服务稳定性的实践经验，在Native、Flutter、JS等多场景下的质量监控预警，以及贝壳找房在Flutter跨平台提效实践等方面的积累探索。                    </p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2339" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《Flutter在贝壳的接入实践》">《Flutter在贝壳的接入实践》</h5><p> 张华峰 / 贝壳找房 移动端资深工程师</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2018年加入贝壳，入职主要负责贝壳 Android 插件化和持续集成相关工作，2019年在 Flutter发布正式版后开始调研将 Flutter 接入到当前的贝壳 APP 中，进行 Flutter 在贝壳的接入方案和平台化工作。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+<p>本专场将介绍贝壳找房在前端性能优化、Node服务稳定性的实践经验，在Native、Flutter、JS等多场景下的质量监控预警，以及贝壳找房在Flutter跨平台提效实践等方面的积累探索。                    </p>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2352" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h4 id="主题演讲">主题演讲</h4><blockquote>
+</blockquote>
+<h5 id="《大前端的下一站》">《大前端的下一站》</h5><p> 臧秀涛 / 极客邦科技 技术会议负责人</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>臧秀涛，极客邦科技技术会议负责人。曾作为 QCon 全球软件开发大会主编策划了多届大会。2010 年毕业于中国科学院计算技术研究所。曾先后在完美世界等公司从事软件开发工作。2014 年加入InfoQ。业余喜爱读书和翻译，曾翻译出版过《C++ API 设计》、《Groovy 程序设计》和《Java 性能权威指南》等技术图书。业余也维护了一个微信公众号&ldquo;开发资讯（dev-news）&rdquo;，欢迎关注。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2335" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《GMTC的正确参会姿势》">《GMTC的正确参会姿势》</h5><p> 孟夕 / 极客邦科技 会议主编</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>孟夕，极客邦科技的会议主编，主要负责公司垂直会议的内容策划和讲师邀请。2016 年加入 InfoQ，关注大前端、人工智能、云计算、运维、架构等多个技术领域，致力于为推动技术社区的发展贡献自己的力量。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>PPT链接：无</p>
+</li>
+</ul>
+<h5 id="《前端路上的思考》">《前端路上的思考》</h5><p> 郑叶飞（圆心） / 阿里巴巴集团 前端委员会主席</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>2007年加入淘宝，曾参与天猫、快乐淘宝、聚划算等创业团队。现负责淘宝终端技术团队与淘宝基础链路团队，推进了淘宝前端工程化、无线化、全栈化、智能化的快速演进。现任阿里巴巴集团前端委员会主席，致力于推进阿里前端的健康发展与价值体现，坚信可用端技术为体验创造无限可能。作为D2前端技术论坛发起人之一，一直乐于推进国内前端技术的交流与发展。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2336" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《Flutter：最新进展和未来展望》">《Flutter：最新进展和未来展望》</h5><p> 董韬 / Google Flutter 团队 高级研究员</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>董韬，高级研究员，Google Flutter 团队。董韬博士在 Google 总部负责 Flutter 及相关开发工具和编程语言的使用者体验研究。在该岗位上，他致力于实施以用户为中心的迭代设计方法，深入研究开发者需求和使用习惯，帮助改善开发工具的UI设计，提高API和编程语言的可用性。除在 Google 的工作外，他还经常担任国际计算机学会（ACM）顶尖会议和期刊的论文审稿人。董韬拥有密歇根大学安娜堡分校的人机交互博士学位。他还拥有复旦大学信息系统学士学位。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2337" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h5 id="《前端开发编程语言的过去、现在和未来》">《前端开发编程语言的过去、现在和未来》</h5><p> 贺师俊（Hax） / 百姓网 技术顾问</p>
+<ul>
+<li><p>讲师简介：</p>
+<blockquote>
+<p>贺师俊（网名Hax），百姓网技术顾问，十多年来一直活跃在前端和JavaScript社区。对多项Web标准有微小贡献，对Groovy语言并间接对Swift语言有微小贡献，近年来参与了诸多ECMAScript新草案的讨论。曾设计和实现Jedi语言并用于生产环境，对自研编程语言略有一点实践经验。三次担任QCon出品人并获得「优秀出品人」荣誉，也经常在其他众多技术活动中担任讲师、嘉宾和主持人。</p>
+</blockquote>
+</li>
+<li><p>演讲简介：</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>PPT链接：<a href="http://ppt.geekbang.org/slide/download?cid=42&amp;pid=2355" target="_blank" rel="external">下载</a></p>
+</li>
+</ul>
+<h3 id="4、思考">4、思考</h3><p>正如上述，观看演讲和PPT时，至少要看懂题目，如果没有看懂，就提前准备相关知识，否则有一些技术或专场可能完全听不懂！渐渐的学习未知的世界~</p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="https://gmtc.infoq.cn/2019/beijing/schedule" target="_blank" rel="external">GMTC全球大前端技术大会（北京站）2019</a></li>
+<li><a href="https://ppt.infoq.cn/list/gmtcbj2019" target="_blank" rel="external">GMTC北京2019PPT下载合集</a></li>
+<li><a href="https://myslide.cn/events/24468" target="_blank" rel="external">GMTC 2019 全球前端技术大会 | MySlide - 专注PPT分享，追随SlideShare和SpeakerDeck的脚步</a></li>
+<li><a href="https://www.zhihu.com/question/330261935" target="_blank" rel="external">参加 GMTC 2019 全球大前端技术大会你有什么收获？ - 知乎</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li>如有疑问，欢迎在评论区一起讨论！</li>
+<li>如有不正确的地方，欢迎指导！</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源<br><br></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1、前言">1、前言</h3><p>工作5年来，一直投身于 iOS 开发，而这5年来移动开发一直再追赶web前端和后端开发的技术栈和思想，近2年大家直接说：“大前端”，移动开发真正变成了“UI”前端的开发，而web前端借助Node 开始转了后端开发？正是借着这些变化，我一直在思考，一直在疑问，直到看了一些 GMTC 课程，就像命悬一线的人一下子打通了任督二脉，练习武功不再于形式，需要提升认知的境界！这是一个神奇的世界，一个最好的时代！最“坏”的时代！</p>]]>
+    
+    </summary>
+    
+      <category term="GMTC" scheme="https://iHTCboy.com/tags/GMTC/"/>
+    
+      <category term="GMTC2019" scheme="https://iHTCboy.com/tags/GMTC2019/"/>
+    
+      <category term="前端全栈" scheme="https://iHTCboy.com/tags/%E5%89%8D%E7%AB%AF%E5%85%A8%E6%A0%88/"/>
+    
+      <category term="大前端" scheme="https://iHTCboy.com/tags/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="移动开发" scheme="https://iHTCboy.com/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="induction" scheme="https://iHTCboy.com/categories/induction/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[用 Alfred Workflow 实现聊天内容快速引用回复]]></title>
@@ -778,41 +1824,6 @@
       <category term="macOS" scheme="https://iHTCboy.com/tags/macOS/"/>
     
       <category term="软件检查更新" scheme="https://iHTCboy.com/tags/%E8%BD%AF%E4%BB%B6%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0/"/>
-    
-      <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[XXXXX]]></title>
-    <link href="https://iHTCboy.com/2019/04/20/2019-12-01_GMTC%E5%8C%97%E4%BA%AC2019/"/>
-    <id>https://iHTCboy.com/2019/04/20/2019-12-01_GMTC北京2019/</id>
-    <published>2019-04-20T07:49:16.000Z</published>
-    <updated>2019-12-28T03:43:17.520Z</updated>
-    <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>xxxxx</p>
-<a id="more"></a>
-<p>GMTC是什么？</p>
-<blockquote>
-<p>GMTC全球大前端技术大会是由极客邦科技旗下InfoQ中国主办的技术盛会，关注前端、移动、AI应用等多个技术领域，促进全球技术交流，推动国内技术升级。GMTC为期4天，包括两天的会议和两天的培训课，主要面向各行业前端、移动开发、AI技术感兴趣的中高端技术人员，大会聚焦前沿技术及实践经验，旨在帮助参会者了解大前端&amp;移动开发领域的技术趋势与实践案例。</p>
-</blockquote>
-<h3 id="2、xxxx">2、xxxx</h3><h3 id="参考">参考</h3><p><br></p>
-<ul>
-<li>如有疑问，欢迎在评论区一起讨论！</li>
-<li>如有不正确的地方，欢迎指导！</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>注：本文首发于 <a href="https://iHTCboy.com">iHTCboy’s blog</a>，如若转载，请注来源<br><br></p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="1、前言">1、前言</h3><p>xxxxx</p>]]>
-    
-    </summary>
-    
-      <category term="Mac" scheme="https://iHTCboy.com/tags/Mac/"/>
-    
-      <category term="iMessage" scheme="https://iHTCboy.com/tags/iMessage/"/>
     
       <category term="technology" scheme="https://iHTCboy.com/categories/technology/"/>
     
