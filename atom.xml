@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn something of everything,  Learn everything of something.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://iHTCboy.com/"/>
-  <updated>2019-12-28T14:11:35.324Z</updated>
+  <updated>2019-12-28T14:21:39.550Z</updated>
   <id>https://iHTCboy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://iHTCboy.com/2019/12/02/2019-12-02_GMTC2019_%E5%9F%BA%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E6%A0%88%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/"/>
     <id>https://iHTCboy.com/2019/12/02/2019-12-02_GMTC2019_基于小程序技术栈的微信客户端跨平台实践/</id>
     <published>2019-12-02T04:49:16.000Z</published>
-    <updated>2019-12-28T14:11:35.324Z</updated>
+    <updated>2019-12-28T14:21:39.550Z</updated>
     <content type="html"><![CDATA[<h3 id="1、简介">1、简介</h3><p>《基于小程序技术栈的微信客户端跨平台实践》<br> 张志坚 / 微信 高级工程师</p>
 <ul>
 <li><p>演讲简介：</p>
@@ -37,8 +37,48 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="2、前言">2、前言</h3><p>关于本文章的原由，在之前的文章 <a href="https://ihtcboy.com/2019/12/01/2019-12-01_GMTC2019beijing/">GMTC全球大前端技术大会（北京站）2019 | iHTCboy’s blog</a>。关于课堂</p>
-<h3 id="3、演讲简介">3、演讲简介</h3><h3 id="4、PPT_简介">4、PPT 简介</h3><h3 id="5、思考">5、思考</h3><h3 id="参考">参考</h3><ul>
+<h3 id="2、前言">2、前言</h3><p>关于本文章的原由，在之前的文章 <a href="https://ihtcboy.com/2019/12/01/2019-12-01_GMTC2019beijing/">GMTC全球大前端技术大会（北京站）2019 | iHTCboy’s blog</a>。所有CMTC的内容可在 <a href="https://gmtc.infoq.cn/2019/beijing/schedule" target="_blank" rel="external">GMTC全球大前端技术大会（北京站）2019</a> 网站查看。另外，如果观看视频可以在极客时间App的每日一课中观看（需会员）。</p>
+<h3 id="3、演讲简介">3、演讲简介</h3><p>小程序自诞生以来，经过两年多的发展，成为了微信开发者生态中最具有生命力的一环，为外部开发者开辟了全新的想象空间。然而，小程序带来的改变绝不仅限于微信之外，小程序技术栈的确立，又对微信客户端的研发产生了怎样的影响？本次分享将带来微信客户端中基于小程序技术栈的跨平台开发实践。</p>
+<p>演讲提纲：</p>
+<ol>
+<li>微信客户端的跨平台实践尝试</li>
+</ol>
+<p>（1）微信客户端跨平台技术的应用历程</p>
+<pre><code>基础组件的跨平台
+
+业务开发的跨平台
+</code></pre><ol>
+<li>小程序与微信客户端</li>
+</ol>
+<p>（1）客户端视角的小程序运行框架简介</p>
+<p>（2）小程序技术栈如何为微信客户端业务服务</p>
+<ol>
+<li>基于小程序技术栈的微信客户端跨平台实践</li>
+</ol>
+<p>（1）运行效率和研发效率的平衡</p>
+<p>（2）如何解决小程序用作客户端功能开发的体验问题</p>
+<pre><code>小程序的体验问题根源
+
+类 RN 的原生渲染解决方案
+
+跨平台的 <span class="keyword">LV</span>-CPP 渲染方案
+
+使用 Flutter 优化 <span class="keyword">LV</span>-CPP 跨平台渲染方案
+</code></pre><ol>
+<li>总结与展望</li>
+</ol>
+<p>（1）Flutter 在微信中的其他应用</p>
+<p>听众收益：</p>
+<ol>
+<li><p>了解微信和小程序的技术架构</p>
+</li>
+<li><p>可以拓展 Flutter 在不同层面的应用价值</p>
+</li>
+<li><p>为跨平台方案提供新的思路，在开发效率和性能体验上提出更高的要求</p>
+</li>
+</ol>
+<h3 id="4、PPT_简介">4、PPT 简介</h3><h3 id="5、思考">5、思考</h3><p>小程序基于flutter，然后用c++跨java和objectiveC，这个思路很棒！</p>
+<h3 id="参考">参考</h3><ul>
 <li><a href="https://gmtc.infoq.cn/2019/beijing/schedule" target="_blank" rel="external">GMTC全球大前端技术大会（北京站）2019</a></li>
 <li><a href="https://ppt.infoq.cn/list/gmtcbj2019" target="_blank" rel="external">GMTC北京2019PPT下载合集</a></li>
 <li><a href="https://gmtc.infoq.cn/2019/beijing/presentation/1846" target="_blank" rel="external">专题演讲嘉宾：杨轶 — GMTC全球大前端技术大会（北京站）2019</a></li>
@@ -83,7 +123,7 @@
     <link href="https://iHTCboy.com/2019/12/01/2019-12-01_GMTC2019beijing/"/>
     <id>https://iHTCboy.com/2019/12/01/2019-12-01_GMTC2019beijing/</id>
     <published>2019-12-01T03:11:11.000Z</published>
-    <updated>2019-12-28T14:00:19.736Z</updated>
+    <updated>2019-12-28T14:20:03.872Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>工作5年来，一直投身于 iOS 开发，而这5年来移动开发一直再追赶web前端和后端开发的技术栈和思想，近2年大家直接说：“大前端”，移动开发真正变成了“UI”前端的开发，而web前端借助 Node 开始转了后端开发？正是借着这些变化，我一直在思考，一直在疑问，直到看了一些 GMTC 课程，就像命悬一线的人一下子打通了任督二脉，练习武功不再于形式，需要提升认知的境界！这是一个神奇的世界，一个最好的时代！最“坏”的时代！</p>
 <a id="more"></a>
 <p>GMTC是什么？</p>
@@ -97,7 +137,7 @@
 <p>做技术这些年，技术不在是技术，知识不在是知识，不要停留在自己的认知世界里，多看看别人的世界，看技术前沿，看程序圈子趋势。向上，思考问题的层次，向下，编程语言的底层。</p>
 <p>目前的国内环境，最后的大前端分享，我想就是 GMTC 了，总体来讲邀请了国内技术公司大牛，分享他们过去和未来对于某个方向技术的实践与探索，每个专场都非常有代表性，最后，学习不止于知识，你的疑问？不可能通过别人有一个完美的回答，不能一鼓子copy到自己行业的业务中，应该是通过讲师的演讲，学习解决问题的思路和方法，了解未来的方向变化，有所启发，有所改进，有所触动，有所融会贯通！</p>
 <p>所以，希望把看过的视频，都做一些记录和感想吧，不管懂与否，这都是学习步伐的记录~</p>
-<h3 id="3、GMTC_北京_2019">3、GMTC 北京 2019</h3><p>以下内容可在 <a href="https://gmtc.infoq.cn/2019/beijing/schedule" target="_blank" rel="external">GMTC全球大前端技术大会（北京站）2019</a> 网站查看。</p>
+<h3 id="3、GMTC_北京_2019">3、GMTC 北京 2019</h3><p>以下内容可在 <a href="https://gmtc.infoq.cn/2019/beijing/schedule" target="_blank" rel="external">GMTC全球大前端技术大会（北京站）2019</a> 网站查看。另外，如果观看视频可以在极客时间App的每日一课中观看（需会员）。</p>
 <h4 id="前端工程化">前端工程化</h4><blockquote>
 <p>前端工程化是前端业务以及技术架构复杂度提升导致的必行之路，然而工程化并不是普适的技术或者理论，业务类型、场景、技术架构甚至团队组织架构均是决定工程化具体形态的必要因素。换句话讲，工程化是与实践密不可分的。本专场我们通过分享业内一些经过实践检验的工程化方案，希望能够为大家在前端工程化的探索道路上提供借鉴和帮助。</p>
 </blockquote>
