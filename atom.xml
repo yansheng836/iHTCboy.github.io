@@ -5277,10 +5277,10 @@ DOM 架构方案在文本编辑与图形渲染操作方面的优缺点
   
   <entry>
     <title><![CDATA[iOS 13 适配]]></title>
-    <link href="https://iHTCboy.com/2019/09/26/2019-09-26_iOS13%E9%80%82%E9%85%8D/"/>
-    <id>https://iHTCboy.com/2019/09/26/2019-09-26_iOS13适配/</id>
-    <published>2019-09-26T14:49:16.000Z</published>
-    <updated>2019-12-29T09:20:22.482Z</updated>
+    <link href="https://iHTCboy.com/2019/08/26/2019-08-26_iOS13%E9%80%82%E9%85%8D/"/>
+    <id>https://iHTCboy.com/2019/08/26/2019-08-26_iOS13适配/</id>
+    <published>2019-08-26T14:49:16.000Z</published>
+    <updated>2019-12-29T09:23:23.866Z</updated>
     <content type="html"><![CDATA[<h3 id="1、前言">1、前言</h3><p>针对 iOS 13，苹果做了非常大的调整，其中 Dark 模式是最新的 UI 层面可见的改变，而针对iPad推出了 <code>iPadOS</code>，导致了与 iOS 的分化，同时为了 iPad 而不得不对 iOS 同样做出的改变，比如一个应用支持多 window 显示。所以，每年 WWDC 后，因为每个应用的情况不一样，使用的API各不相同，导致适配的工作无法一致，大家遇到的坑不相同，所以，把大家遇到的问题都汇总起来，那就是一定有作用，这就是本文的初心。</p>
 <a id="more"></a>
 <h3 id="2、iOS_13_适配问题">2、iOS 13 适配问题</h3><h4 id="1-_如何关闭程序中的暗黑模式？">1. 如何关闭程序中的暗黑模式？</h4><p>iOS13最大的特点是带来了暗黑模式，但是如果不适配的话，可能会出现该是黑色的地方用了白色了，该是白色的地方是黑色了，看不到了，怎么关掉呢？</p>
@@ -5291,7 +5291,7 @@ DOM 架构方案在文本编辑与图形渲染操作方面的优缺点
 <ul>
 <li>1.2 配置文件方式：<br>在 <code>Info.plist</code> 添加key: <code>UIUserInterfaceStyle</code> 设置为强制用暗黑模式（<code>Dark</code>）或白天模式（<code>Light</code>）</li>
 </ul>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/09/iOS13-Dark.png" alt="iOS13-Dark.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/08/iOS13-Dark.png" alt="iOS13-Dark.png"></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">key</span>&gt;</span>UIUserInterfaceStyle<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">string</span>&gt;</span>UIUserInterfaceStyleLight<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><a href="https://developer.apple.com/videos/play/wwdc2019/214/" target="_blank" rel="external">Implementing Dark Mode on iOS - WWDC 2019 - Videos - Apple Developer</a></li>
@@ -5319,7 +5319,7 @@ DOM 架构方案在文本编辑与图形渲染操作方面的优缺点
 <li><a href="https://developer.apple.com/news/?id=12232019b" target="_blank" rel="external">Updating Apps that Use Web Views - News - Apple Developer</a></li>
 </ul>
 <h4 id="3-_PresentViewController_模式变动">3. PresentViewController 模式变动</h4><p>iOS13后，Prensent方式弹出页面时，默认的模式变为了UIModalPresentationAutomatic，这样的方式也挺好的，动画也好看，自带关闭，只要下拉就关闭页面了，这样的动画方式下，之前会出现的《UITabBar在iPhoneX等Push时显示错乱问题》 的问题也不存在了。<br>但有的时候，我们不希望使用这个样式，比如需要用户不能关闭的：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/09/iOS13-PresentViewController.png" alt="iOS13-PresentViewController.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/08/iOS13-PresentViewController.png" alt="iOS13-PresentViewController.png"></p>
 <p>只要指定弹出页的 <code>modalPresentationStyle</code> 属性，注意是要Present的页面:</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIViewController</span> *vc = [[<span class="built_in">UIViewController</span> alloc] init];</span><br><span class="line">vc<span class="variable">.modalPresentationStyle</span> = <span class="built_in">UIModalPresentationFullScreen</span>;</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.navigationController</span> presentViewController:vc animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure>
 <h4 id="4-_增加”一直使用蓝牙”的权限申请">4. 增加”一直使用蓝牙”的权限申请</h4><p> iOS 13起，app的 info.plist里增加</p>
@@ -5328,12 +5328,12 @@ DOM 架构方案在文本编辑与图形渲染操作方面的优缺点
 <p>iOS 13中<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document<span class="class">.documentElement</span><span class="class">.scrollHeight</span></span><br></pre></td></tr></table></figure></p>
 <p>两者相差55 应该是浏览器定义高度变了</p>
 <h4 id="6-_UIActivityIndicatorView">6. UIActivityIndicatorView</h4><p>之前的 UIActivityIndicatorView 有三种 style 分别为 <code>whiteLarge</code>, <code>white</code> 和 <code>gray</code>，现在全部废弃。<br>增加两种 style 分别为 <code>medium</code> 和 <code>large</code>，指示器颜色用 <code>color</code> 属性修改。</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/09/iOS13-UIActivityIndicatorView.png" alt="iOS13-UIActivityIndicatorView.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/08/iOS13-UIActivityIndicatorView.png" alt="iOS13-UIActivityIndicatorView.png"></p>
 <ul>
 <li><a href="https://developer.apple.com/videos/play/wwdc2019/214/" target="_blank" rel="external">Implementing Dark Mode on iOS - WWDC 2019 - Videos - Apple Developer</a></li>
 </ul>
 <h4 id="7-_Status_Bar">7. Status Bar</h4><p>去掉原来 <code>.default</code> <code>.lightContent</code>，改为 ：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/09/iOS13-Status Bar.png" alt="iOS13-Status Bar.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/08/iOS13-Status Bar.png" alt="iOS13-Status Bar.png"></p>
 <h4 id="8-_Sign_In_with_Apple">8. Sign In with Apple</h4><ul>
 <li><a href="https://developer.apple.com/news/?id=06032019j" target="_blank" rel="external">Updates to the App Store Review Guidelines - News - Apple Developer</a></li>
 </ul>
@@ -5381,10 +5381,10 @@ DOM 架构方案在文本编辑与图形渲染操作方面的优缺点
 <p>注意: <strong>从2020年4月开始，所有使⽤ iOS13 SDK 的 App 将必须提供 LaunchScreen</strong>，LaunchImage即将退出历史舞台。</p>
 <p>再补充一点，在使用 LaunchScreen的时候，里面用到的图片资源，最好别放在 xcassets 里面，不然在你修改图片后，你会发现真机上并不会生效。</p>
 <h4 id="15-_App_Delegate">15. App Delegate</h4><p>iOS 支持多界面同时运行多个用户界面。 root view controller 的 view superview 也不直接是 UIWindow 了:</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/09/iOS13-Multiple-Windows.png" alt="iOS13-Multiple-Windows.png"></p>
-<p>iOS 13 可以多windows窗口，把ui相关的生命周期单独到 SceneDelegate：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/09/iOS13-SessionLifecycle.png" alt="iOS13-SessionLifecycle.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/08/iOS13-Multiple-Windows.png" alt="iOS13-Multiple-Windows.png"></p>
+<p>iOS 13 可以多windows窗口，把ui相关的生命周期单独到 SceneDelegate：<br><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/08/iOS13-SessionLifecycle.png" alt="iOS13-SessionLifecycle.png"></p>
 <p>如果实现 SceneDelegate 那么iOS 13会调整 SceneDalegate， 如果不实现，就会使用 AppDelegate。iOS 12 以下还是调用 AppDelegate：</p>
-<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/09/iOS13-UISessionDelegate.png" alt="iOS13-UISessionDelegate.png"></p>
+<p><img src="https://github.com/iHTCboy/iGallery/raw/master/BlogImages/2019/08/iOS13-UISessionDelegate.png" alt="iOS13-UISessionDelegate.png"></p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span>(nullable, <span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>) <span class="built_in">UIWindow</span> *keyWindow API_DEPRE<span class="built_in">CATED</span>(<span class="string">"Should not be used for applications that support multiple scenes as it returns a key window across all connected scenes"</span>, ios(<span class="number">2.0</span>, <span class="number">13.0</span>));</span><br></pre></td></tr></table></figure>
 <p>获取keyWindow 使用 [UIApplicatoin sharedApplication].keyWindow 情况就有多种：</p>
 <ul>
